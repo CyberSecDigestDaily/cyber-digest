@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Cyber Digest</title>
+<style>
+  /* ── Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:       #0D1117;
+    --surface:  #161B22;
+    --card:     #1C2833;
+    --border:   #2C3E50;
+    --muted:    #7F8C8D;
+    --text:     #D5D8DC;
+    --accent:   #5DADE2;
+    --crit:     #C0392B;
+    --high:     #E67E22;
+    --med:      #D4AC0D;
+    --low:      #27AE60;
+    --kev:      #F39C12;
+    --threat:   #E8A838;
+    --blog:     #A29BFE;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Header ── */
+  header {
+    background: linear-gradient(135deg, #1A252F 0%, #2C3E50 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .header-brand { flex: 0 0 auto; }
+  .header-title { font-size: 18px; font-weight: 700; color: #fff; white-space: nowrap; }
+  .header-sub   { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .header-actions { display: flex; gap: 8px; align-items: center; margin-left: auto; flex-wrap: wrap; }
+
+  /* ── Buttons ── */
+  .btn {
+    background: var(--border);
+    color: var(--text);
+    border: 1px solid #3D5166;
+    padding: 6px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn:hover { background: #3D5166; border-color: var(--accent); }
+  .btn.active { background: var(--accent); color: #0D1117; border-color: var(--accent); font-weight: 600; }
+  .btn-share { background: #1A3A28; color: #27AE60; border-color: #27AE60; }
+  .btn-share:hover { background: #27AE60; color: #0D1117; }
+  .btn-clear { color: var(--crit); border-color: #4A1A1A; background: #1A0A0A; }
+  .btn-clear:hover { background: var(--crit); color: #fff; }
+
+  /* Profile select */
+  .profile-select {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .profile-select:focus { border-color: var(--accent); }
+  .profile-select option { background: var(--card); }
+
+  /* ── Main layout ── */
+  .main { max-width: 1280px; margin: 0 auto; padding: 18px 24px; }
+
+  /* ── Urgency banner ── */
+  .urgency-banner {
+    border-left: 5px solid;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+  }
+  .urgency-level { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+  .urgency-text  { font-size: 13px; line-height: 1.6; }
+  .urgency-text strong { color: #fff; }
+
+  /* ── Stats ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 900px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 500px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  .stat {
+    background: var(--card);
+    border-radius: 7px;
+    padding: 10px 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .stat.filtered { border-color: var(--accent); }
+  .stat-num   { font-size: 24px; font-weight: 700; line-height: 1; }
+  .stat-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
+  .stat-sub   { font-size: 9px; color: var(--muted); margin-top: 1px; }
+
+  /* ── Filter section ── */
+  .filter-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+  }
+  .filter-row { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; align-items: center; }
+  .filter-input {
+    flex: 1;
+    min-width: 220px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 7px 11px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .filter-input:focus { border-color: var(--accent); }
+  .filter-input::placeholder { color: var(--muted); }
+
+  .filter-controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .filter-select {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .filter-select:focus { border-color: var(--accent); }
+
+  .cvss-wrap { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+  .cvss-wrap input[type=range] { width: 90px; accent-color: var(--accent); cursor: pointer; }
+  .cvss-val { min-width: 28px; font-weight: 600; color: var(--text); }
+
+  .presets { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .filter-active-note { color: var(--accent); font-weight: 600; display: none; }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 10px 16px;
+    cursor: pointer;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.15s;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-badge {
+    display: inline-block;
+    background: var(--border);
+    color: var(--muted);
+    border-radius: 10px;
+    padding: 1px 6px;
+    font-size: 10px;
+    margin-left: 4px;
+    font-weight: 400;
+  }
+  .tab.active .tab-badge { background: #1A3A50; color: var(--accent); }
+
+  /* ── Tab panels ── */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── CVE table ── */
+  .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); }
+  thead { background: var(--surface); }
+  th {
+    padding: 9px 11px;
+    text-align: left;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  td { padding: 9px 11px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #1E2D3D22; }
+  .mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 12px; }
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .score { font-weight: 700; text-align: center; font-size: 13px; }
+  .cve-vendor { font-size: 12px; color: var(--text); max-width: 130px; }
+  .cve-desc   { font-size: 12px; color: #9BA4B4; line-height: 1.4; max-width: 380px; }
+  .type-chip  { font-size: 10px; color: var(--muted); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; white-space: nowrap; }
+  mark.hl { background: #D4AC0D33; color: #D4AC0D; border-radius: 2px; padding: 0 2px; }
+  .exploit-flag { color: #E74C3C; font-size: 12px; }
+
+  /* ── KEV cards ── */
+  .kev-card {
+    background: var(--card);
+    border-left: 4px solid var(--crit);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--crit);
+  }
+  .kev-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .kev-id     { font-family: monospace; font-weight: 700; color: var(--accent); font-size: 14px; }
+  .kev-meta   { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .kev-meta strong { color: var(--text); }
+  .kev-name   { font-weight: 600; color: #E8E8E8; margin-bottom: 6px; font-size: 13px; }
+  .kev-desc   { font-size: 12px; color: #9BA4B4; line-height: 1.5; }
+  .kev-action { font-size: 11px; color: var(--kev); margin-top: 8px; }
+  .kev-action strong { color: #E8E8E8; }
+  .due-date   { color: var(--kev); font-weight: 700; }
+
+  /* ── Advisory / news / blog items ── */
+  .feed-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--card);
+  }
+  .feed-item {
+    padding: 11px 15px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .feed-item:last-child { border-bottom: none; }
+  .feed-item:hover { background: #1E2D3D33; }
+  .feed-source  { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+  .feed-title   { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+  .feed-summary { font-size: 12px; color: #9BA4B4; line-height: 1.4; }
+
+  /* ── Empty / loading / error ── */
+  .empty { color: var(--muted); font-style: italic; text-align: center; padding: 36px 20px; }
+  #loading, #error-msg {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; min-height: 60vh;
+    color: var(--muted); gap: 12px; font-size: 15px;
+  }
+  #error-msg { color: var(--crit); display: none; }
+  .spinner {
+    width: 30px; height: 30px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center; color: var(--muted); font-size: 11px;
+    padding: 28px 24px; border-top: 1px solid var(--border); margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+
+<div id="loading"><div class="spinner"></div>Loading digest…</div>
+<div id="error-msg">⚠ Failed to load digest.json — run the GitHub Action first to generate data.</div>
+
+<div id="app" style="display:none">
+
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="header-title">🛡️ Daily Cyber Digest</div>
+        <div class="header-sub" id="generated-ts">Loading…</div>
+      </div>
+      <div class="header-actions">
+        <select class="profile-select" id="profile-select" onchange="applyProfile(this.value)" title="Switch stack profile">
+          <!-- populated by JS -->
+        </select>
+        <button class="btn btn-share" onclick="shareURL()">🔗 Share View</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <div class="urgency-banner" id="urgency-banner">
+      <div class="urgency-level" id="urgency-level"></div>
+      <div class="urgency-text"  id="urgency-text"></div>
+    </div>
+
+    <div class="stats" id="stats-row"></div>
+
+    <!-- ── Filters ── -->
+    <div class="filter-section">
+      <div class="filter-row">
+        <input type="text" class="filter-input" id="vendor-input"
+               placeholder="Filter by vendor, product, tech… (comma-separate multiple)"
+               oninput="onFilterInput()">
+        <div class="filter-controls">
+          <select class="filter-select" id="type-select" onchange="render()" title="Filter by CVE type">
+            <option value="">All types</option>
+            <option value="software">Software</option>
+            <option value="os">OS</option>
+            <option value="hardware">Hardware</option>
+          </select>
+          <div class="cvss-wrap">
+            <span>CVSS ≥</span>
+            <input type="range" id="cvss-slider" min="0" max="10" step="0.5" value="0" oninput="onCvssInput()">
+            <span class="cvss-val" id="cvss-val">0</span>
+          </div>
+          <button class="btn btn-clear" onclick="clearFilter()">✕ Clear</button>
+        </div>
+      </div>
+      <div class="presets" id="presets"></div>
+      <div class="filter-note">
+        <span id="filter-active-note" class="filter-active-note"></span>
+        <span id="filter-hint">Matches across CVEs, KEV, advisories, news, and blogs. Use Share to send a filtered view to a customer.</span>
+      </div>
+    </div>
+
+    <!-- ── Tabs ── -->
+    <div class="tabs">
+      <div class="tab active" data-tab="cves"    onclick="switchTab('cves',this)">CVEs <span class="tab-badge" id="badge-cves">0</span></div>
+      <div class="tab"        data-tab="threats" onclick="switchTab('threats',this)">Threats <span class="tab-badge" id="badge-threats">0</span></div>
+      <div class="tab"        data-tab="kev"     onclick="switchTab('kev',this)">CISA KEV <span class="tab-badge" id="badge-kev">0</span></div>
+      <div class="tab"        data-tab="news"    onclick="switchTab('news',this)">News <span class="tab-badge" id="badge-news">0</span></div>
+      <div class="tab"        data-tab="blogs"   onclick="switchTab('blogs',this)">Blogs <span class="tab-badge" id="badge-blogs">0</span></div>
+    </div>
+
+    <!-- ── CVEs ── -->
+    <div class="tab-panel active" id="panel-cves">
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>CVE ID</th>
+            <th style="text-align:center">CVSS</th>
+            <th style="text-align:center">Severity</th>
+            <th>Vendor</th>
+            <th>Product</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr></thead>
+          <tbody id="cve-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Threats ── -->
+    <div class="tab-panel" id="panel-threats">
+      <div class="feed-grid" id="threats-list"></div>
+    </div>
+
+    <!-- ── CISA KEV ── -->
+    <div class="tab-panel" id="panel-kev">
+      <div id="kev-list"></div>
+    </div>
+
+    <!-- ── News ── -->
+    <div class="tab-panel" id="panel-news">
+      <div class="feed-grid" id="news-list"></div>
+    </div>
+
+    <!-- ── Blogs ── -->
+    <div class="tab-panel" id="panel-blogs">
+      <div class="feed-grid" id="blogs-list"></div>
+    </div>
+
+  </div><!-- /main -->
+
+  <footer>
+    Sources: NVD · CISA KEV · MSRC · Cisco PSIRT · Red Hat Security · CISA ICS ·
+    Bleeping Computer · The Hacker News · Dark Reading · SecurityWeek ·
+    Krebs on Security · SANS ISC Diary · Schneier on Security<br>
+    Updated daily at 09:00 UTC via GitHub Actions · All data loaded client-side · No data stored
+  </footer>
+
+</div><!-- /app -->
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+//  PROFILES — named stack filters with localStorage persistence
+// ─────────────────────────────────────────────────────────────────────────────
+const PROFILES = [
+  { name: 'All',                terms: [],                                                              tab: 'cves' },
+  { name: 'Microsoft Stack',    terms: ['microsoft','windows','azure','office','exchange','teams','iis','sharepoint'], tab: 'cves' },
+  { name: 'Linux / FOSS',       terms: ['linux','kernel','ubuntu','debian','redhat','centos','rhel','apache','nginx','openssl'], tab: 'cves' },
+  { name: 'Network / Perimeter',terms: ['cisco','fortinet','palo alto','juniper','checkpoint','f5','aruba','sophos'], tab: 'threats' },
+  { name: 'AWS Stack',          terms: ['aws','amazon','s3','lambda','ec2','iam','cloudfront','route53'], tab: 'cves' },
+  { name: 'VMware / Cloud',     terms: ['vmware','vsphere','esxi','vcenter','broadcom','azure','gcp','google cloud'], tab: 'cves' },
+  { name: 'Endpoint / IAM',     terms: ['ivanti','mobileiron','okta','crowdstrike','sentinelone','qualys','rapid7'], tab: 'cves' },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  STACK PRESETS (quick-filter buttons)
+// ─────────────────────────────────────────────────────────────────────────────
+const STACK_PRESETS = [
+  { label: 'Microsoft',  terms: ['microsoft','windows','azure','office','sharepoint','exchange','teams','iis'] },
+  { label: 'Linux',      terms: ['linux','kernel','ubuntu','debian','redhat','centos','rhel','fedora'] },
+  { label: 'Cisco',      terms: ['cisco','ios xe','meraki','webex','asa','firepower','sd-wan'] },
+  { label: 'VMware',     terms: ['vmware','vsphere','esxi','vcenter','workstation','horizon'] },
+  { label: 'Fortinet',   terms: ['fortinet','fortigate','fortios','fortimanager','fortiweb'] },
+  { label: 'Ivanti',     terms: ['ivanti','pulse','mobileiron','connect secure'] },
+  { label: 'Palo Alto',  terms: ['palo alto','panos','globalprotect','cortex','prisma'] },
+  { label: 'Apache',     terms: ['apache','tomcat','struts','log4j','httpd'] },
+  { label: 'Oracle',     terms: ['oracle','java','jdk','jre','weblogic'] },
+  { label: 'Cloud',      terms: ['aws','azure','gcp','google cloud','amazon','cloudflare','s3','lambda'] },
+];
+
+const SEV_COLOUR = {
+  CRITICAL: '#C0392B', HIGH: '#E67E22', MEDIUM: '#D4AC0D', LOW: '#27AE60', NONE: '#7F8C8D'
+};
+
+// ── State ──
+let data = null;
+let activePreset  = null;
+let activeTab     = 'cves';
+let activeProfile = localStorage.getItem('cyberDigestProfile') || 'All';
+
+// ── Boot ──
+fetch('digest.json')
+  .then(r => { if (!r.ok) throw r; return r.json(); })
+  .then(d => {
+    data = d;
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    initUI();
+    loadURLParams();
+  })
+  .catch(() => {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-msg').style.display = 'flex';
+  });
+
+function initUI() {
+  // Timestamp
+  const ts = new Date(data.generated);
+  document.getElementById('generated-ts').textContent =
+    'Updated ' + ts.toLocaleString('en-GB', {
+      weekday: 'short', day: 'numeric', month: 'short',
+      hour: '2-digit', minute: '2-digit', timeZone: 'UTC'
+    }) + ' UTC';
+
+  // Urgency banner
+  const u      = data.urgency;
+  const banner = document.getElementById('urgency-banner');
+  banner.style.cssText += `;border-color:${u.colour};background:${u.colour}18`;
+  const lvl = document.getElementById('urgency-level');
+  lvl.style.color  = u.colour;
+  lvl.textContent  = u.level;
+  document.getElementById('urgency-text').innerHTML = u.message;
+
+  // Profile dropdown
+  const sel = document.getElementById('profile-select');
+  PROFILES.forEach(p => {
+    const opt = document.createElement('option');
+    opt.value       = p.name;
+    opt.textContent = '👤 ' + p.name;
+    if (p.name === activeProfile) opt.selected = true;
+    sel.appendChild(opt);
+  });
+
+  // Stack preset buttons
+  const presetsEl = document.getElementById('presets');
+  STACK_PRESETS.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className      = 'btn';
+    btn.textContent    = p.label;
+    btn.dataset.preset = p.label;
+    btn.addEventListener('click', () => togglePreset(p, btn));
+    presetsEl.appendChild(btn);
+  });
+
+  // Apply saved profile on load (if not 'All')
+  if (activeProfile && activeProfile !== 'All') {
+    const prof = PROFILES.find(p => p.name === activeProfile);
+    if (prof && prof.terms.length) {
+      document.getElementById('vendor-input').value = prof.terms.join(', ');
+    }
+  }
+
+  render();
+}
+
+function loadURLParams() {
+  const params = new URLSearchParams(location.search);
+  if (params.has('stack')) {
+    document.getElementById('vendor-input').value = params.get('stack');
+    document.querySelectorAll('#presets .btn').forEach(btn => {
+      const p = STACK_PRESETS.find(p => p.label === btn.dataset.preset);
+      if (p && p.terms.join(', ') === params.get('stack')) {
+        btn.classList.add('active');
+        activePreset = btn.dataset.preset;
+      }
+    });
+  }
+  if (params.has('cvss')) {
+    const v = parseFloat(params.get('cvss'));
+    if (!isNaN(v)) {
+      document.getElementById('cvss-slider').value = v;
+      document.getElementById('cvss-val').textContent = v.toFixed(1);
+    }
+  }
+  if (params.has('type')) {
+    document.getElementById('type-select').value = params.get('type');
+  }
+  if (params.has('tab')) {
+    const tabEl = document.querySelector(`[data-tab="${params.get('tab')}"]`);
+    if (tabEl) switchTab(params.get('tab'), tabEl);
+  }
+  render();
+}
+
+// ── Filter helpers ──
+function getTerms() {
+  return document.getElementById('vendor-input').value
+    .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+}
+function getCvssMin() {
+  return parseFloat(document.getElementById('cvss-slider').value) || 0;
+}
+function getTypeFilter() {
+  return document.getElementById('type-select').value;
+}
+
+function matchesTerms(item, terms) {
+  if (!terms.length) return true;
+  const hay = [
+    item.id, item.vendor, item.product, item.desc, item.type,
+    item.cveID, item.vendorProject, item.vulnerabilityName, item.shortDescription,
+    item.source, item.title, item.summary
+  ].filter(Boolean).join(' ').toLowerCase();
+  return terms.some(t => hay.includes(t));
+}
+
+function hl(text, terms) {
+  if (!text || !terms.length) return text || '';
+  let out = String(text);
+  terms.forEach(t => {
+    const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    out = out.replace(re, '<mark class="hl">$1</mark>');
+  });
+  return out;
+}
+
+// ── Render ──
+function render() {
+  const terms     = getTerms();
+  const cvssMin   = getCvssMin();
+  const typeFilter= getTypeFilter();
+  const isFiltered= terms.length > 0 || cvssMin > 0 || typeFilter !== '';
+
+  // Filter datasets
+  const cves = data.cves.filter(c =>
+    matchesTerms(c, terms) &&
+    c.score >= cvssMin &&
+    (typeFilter === '' || c.type === typeFilter)
+  );
+  const kev     = data.kev.filter(k     => matchesTerms(k, terms));
+  const threats = (data.threats || []).filter(t => matchesTerms(t, terms));
+  const news    = data.news.filter(n    => matchesTerms(n, terms));
+  const blogs   = (data.blogs || []).filter(b => matchesTerms(b, terms));
+
+  // Stats
+  const crit  = cves.filter(c => c.severity === 'CRITICAL').length;
+  const high  = cves.filter(c => c.severity === 'HIGH').length;
+  const med   = cves.filter(c => c.severity === 'MEDIUM').length;
+  const explo = cves.filter(c => c.exploited).length;
+
+  document.getElementById('stats-row').innerHTML = [
+    { label: 'Critical',   num: crit,            colour: 'var(--crit)',   total: data.stats.critical },
+    { label: 'High',       num: high,            colour: 'var(--high)',   total: data.stats.high },
+    { label: 'Medium',     num: med,             colour: 'var(--med)',    total: data.stats.medium },
+    { label: 'Exploited',  num: explo,           colour: '#E74C3C',       total: data.stats.exploited },
+    { label: 'CISA KEV',   num: kev.length,      colour: 'var(--kev)',    total: data.stats.kev },
+    { label: 'Advisories', num: threats.length,  colour: 'var(--threat)', total: data.stats.threats },
+    { label: 'News',       num: news.length,     colour: 'var(--accent)', total: data.stats.news },
+  ].map(s => `
+    <div class="stat ${isFiltered ? 'filtered' : ''}">
+      <div class="stat-num" style="color:${s.colour}">${s.num}</div>
+      <div class="stat-label">${s.label}</div>
+      ${isFiltered && s.total != null ? `<div class="stat-sub">of ${s.total}</div>` : ''}
+    </div>
+  `).join('');
+
+  // Tab badges
+  document.getElementById('badge-cves').textContent    = cves.length;
+  document.getElementById('badge-threats').textContent = threats.length;
+  document.getElementById('badge-kev').textContent     = kev.length;
+  document.getElementById('badge-news').textContent    = news.length;
+  document.getElementById('badge-blogs').textContent   = blogs.length;
+
+  // Filter note
+  const noteEl = document.getElementById('filter-active-note');
+  const hintEl = document.getElementById('filter-hint');
+  if (isFiltered) {
+    const parts = [];
+    if (terms.length)     parts.push(`vendor: ${terms.join(', ')}`);
+    if (cvssMin > 0)      parts.push(`CVSS ≥ ${cvssMin}`);
+    if (typeFilter)       parts.push(`type: ${typeFilter}`);
+    noteEl.style.display = 'inline';
+    noteEl.textContent   = `Filtering — ${parts.join(' · ')} — ${cves.length} CVEs, ${kev.length} KEV, ${threats.length} advisories. `;
+    hintEl.style.display = 'none';
+  } else {
+    noteEl.style.display = 'none';
+    hintEl.style.display = 'inline';
+  }
+
+  // ── CVE table ──
+  const tbody = document.getElementById('cve-tbody');
+  if (!cves.length) {
+    tbody.innerHTML = `<tr><td colspan="7" class="empty">No CVEs match the current filter.</td></tr>`;
+  } else {
+    tbody.innerHTML = cves.map(c => {
+      const col  = SEV_COLOUR[c.severity] || '#7F8C8D';
+      const desc = c.desc.length > 200 ? c.desc.slice(0, 200) + '…' : c.desc;
+      const flag = c.exploited ? '<span class="exploit-flag" title="Actively exploited (CISA KEV)">🔥</span> ' : '';
+      return `<tr>
+        <td class="mono">${flag}<a href="https://nvd.nist.gov/vuln/detail/${c.id}" target="_blank" rel="noopener">${c.id}</a></td>
+        <td class="score" style="color:${col}">${c.score.toFixed(1)}</td>
+        <td style="text-align:center"><span class="badge" style="background:${col}">${c.severity}</span></td>
+        <td class="cve-vendor">${hl(c.vendor, terms)}</td>
+        <td class="cve-vendor">${hl(c.product, terms)}</td>
+        <td><span class="type-chip">${c.type || 'software'}</span></td>
+        <td class="cve-desc">${hl(desc, terms)}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // ── Threats ──
+  const threatsEl = document.getElementById('threats-list');
+  if (!threats.length) {
+    threatsEl.innerHTML = `<div class="empty">No threat advisories match the current filter.</div>`;
+  } else {
+    threatsEl.innerHTML = threats.map(t => `
+      <div class="feed-item">
+        <div class="feed-source">${t.source}</div>
+        <div class="feed-title"><a href="${t.link}" target="_blank" rel="noopener" style="color:var(--threat)">${hl(t.title, terms)}</a></div>
+        ${t.summary ? `<div class="feed-summary">${hl(t.summary.slice(0, 320), terms)}</div>` : ''}
+      </div>`).join('');
+  }
+
+  // ── CISA KEV ──
+  const kevEl = document.getElementById('kev-list');
+  if (!kev.length) {
+    kevEl.innerHTML = `<div class="empty">No CISA KEV entries match the current filter.</div>`;
+  } else {
+    kevEl.innerHTML = kev.map(v => `
+      <div class="kev-card">
+        <div class="kev-header">
+          <span class="kev-id">${v.cveID || 'N/A'}</span>
+          <span class="badge" style="background:#C0392B">ACTIVELY EXPLOITED</span>
+          ${v.knownRansomwareCampaignUse === 'Known' ? '<span class="badge" style="background:#8E44AD">RANSOMWARE</span>' : ''}
+        </div>
+        <div class="kev-meta">
+          <strong>Vendor:</strong> ${hl(v.vendorProject || '', terms)} &nbsp;·&nbsp;
+          <strong>Added:</strong> ${v.dateAdded || ''} &nbsp;·&nbsp;
+          <strong>Remediation due:</strong> <span class="due-date">${v.dueDate || 'N/A'}</span>
+        </div>
+        <div class="kev-name">${hl(v.vulnerabilityName || '', terms)}</div>
+        <div class="kev-desc">${hl((v.shortDescription || '').slice(0, 450), terms)}</div>
+        ${v.requiredAction ? `<div class="kev-action"><strong>Required action:</strong> ${v.requiredAction.slice(0, 280)}</div>` : ''}
+      </div>`).join('');
+  }
+
+  // ── News ──
+  const newsEl = document.getElementById('news-list');
+  if (!news.length) {
+    newsEl.innerHTML = `<div class="empty">No news items match the current filter.</div>`;
+  } else {
+    newsEl.innerHTML = news.map(n => `
+      <div class="feed-item">
+        <div class="feed-source">${n.source}</div>
+        <div class="feed-title"><a href="${n.link}" target="_blank" rel="noopener">${hl(n.title, terms)}</a></div>
+        ${n.summary ? `<div class="feed-summary">${hl(n.summary.slice(0, 300), terms)}</div>` : ''}
+      </div>`).join('');
+  }
+
+  // ── Blogs ──
+  const blogsEl = document.getElementById('blogs-list');
+  if (!blogs.length) {
+    blogsEl.innerHTML = `<div class="empty">No blog posts in the last 48 hours matching the current filter.</div>`;
+  } else {
+    blogsEl.innerHTML = blogs.map(b => `
+      <div class="feed-item">
+        <div class="feed-source">${b.source}</div>
+        <div class="feed-title"><a href="${b.link}" target="_blank" rel="noopener" style="color:var(--blog)">${hl(b.title, terms)}</a></div>
+        ${b.summary ? `<div class="feed-summary">${hl(b.summary.slice(0, 320), terms)}</div>` : ''}
+      </div>`).join('');
+  }
+}
+
+// ── Interactions ──
+function onFilterInput() {
+  // Typing manually deactivates preset buttons
+  document.querySelectorAll('#presets .btn').forEach(b => b.classList.remove('active'));
+  activePreset = null;
+  render();
+}
+
+function onCvssInput() {
+  const v = parseFloat(document.getElementById('cvss-slider').value);
+  document.getElementById('cvss-val').textContent = v.toFixed(1);
+  render();
+}
+
+function togglePreset(preset, btn) {
+  if (activePreset === preset.label) {
+    activePreset = null;
+    btn.classList.remove('active');
+    document.getElementById('vendor-input').value = '';
+  } else {
+    document.querySelectorAll('#presets .btn').forEach(b => b.classList.remove('active'));
+    activePreset = preset.label;
+    btn.classList.add('active');
+    document.getElementById('vendor-input').value = preset.terms.join(', ');
+  }
+  render();
+}
+
+function applyProfile(name) {
+  activeProfile = name;
+  localStorage.setItem('cyberDigestProfile', name);
+  const prof = PROFILES.find(p => p.name === name);
+  if (!prof) return;
+  // Clear manual filter state
+  document.querySelectorAll('#presets .btn').forEach(b => b.classList.remove('active'));
+  activePreset = null;
+  document.getElementById('vendor-input').value = prof.terms.join(', ');
+  document.getElementById('cvss-slider').value  = 0;
+  document.getElementById('cvss-val').textContent = '0';
+  document.getElementById('type-select').value  = '';
+  if (prof.tab) {
+    const tabEl = document.querySelector(`[data-tab="${prof.tab}"]`);
+    if (tabEl) switchTab(prof.tab, tabEl);
+  }
+  render();
+}
+
+function clearFilter() {
+  document.getElementById('vendor-input').value   = '';
+  document.getElementById('cvss-slider').value    = 0;
+  document.getElementById('cvss-val').textContent = '0';
+  document.getElementById('type-select').value    = '';
+  document.querySelectorAll('#presets .btn').forEach(b => b.classList.remove('active'));
+  activePreset  = null;
+  activeProfile = 'All';
+  document.getElementById('profile-select').value = 'All';
+  localStorage.setItem('cyberDigestProfile', 'All');
+  render();
+  history.replaceState({}, '', location.pathname);
+}
+
+function switchTab(tab, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  activeTab = tab;
+}
+
+function shareURL() {
+  const terms  = getTerms();
+  const cvss   = getCvssMin();
+  const type   = getTypeFilter();
+  const params = new URLSearchParams();
+  if (terms.length)    params.set('stack', terms.join(','));
+  if (cvss > 0)        params.set('cvss', cvss);
+  if (type)            params.set('type', type);
+  if (activeTab !== 'cves') params.set('tab', activeTab);
+  const url = location.origin + location.pathname + (params.toString() ? '?' + params : '');
+  navigator.clipboard.writeText(url).then(() => {
+    const btn  = document.querySelector('.btn-share');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+  });
+}
+</script>
+</body>
+</html>
