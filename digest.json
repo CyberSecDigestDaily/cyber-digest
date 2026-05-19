@@ -1,228 +1,411 @@
 {
-  "generated": "2026-05-17T09:46:14.154966+00:00",
+  "generated": "2026-05-19T11:56:20.836771+00:00",
   "urgency": {
     "level": "🔴 HIGH PRIORITY",
-    "colour": "#C0392B",
-    "message": "Today's digest needs your attention. There are <strong>3 CRITICAL</strong> and <strong>13 HIGH</strong> severity CVEs, plus <strong>2</strong> actively exploited vulnerabilities on the CISA Known Exploited list. "
+    "colour": "#D94F4F",
+    "message": "Today's digest needs your attention. There are <strong>5 CRITICAL</strong> and <strong>7 HIGH</strong> severity CVEs, plus <strong>2</strong> actively exploited vulnerabilities on the CISA Known Exploited list."
   },
   "stats": {
-    "critical": 3,
-    "high": 13,
-    "medium": 13,
-    "low": 0,
+    "critical": 5,
+    "high": 7,
+    "medium": 11,
+    "low": 1,
+    "exploited": 0,
     "kev": 2,
-    "news": 6
+    "threats": 10,
+    "news": 25,
+    "blogs": 5
   },
   "cves": [
     {
-      "id": "CVE-2020-37228",
-      "score": 9.8,
+      "id": "CVE-2026-42822",
+      "score": 10.0,
       "severity": "CRITICAL",
-      "product": "Unknown",
-      "desc": "iDS6 DSSPro Digital Signage System 6.2 contains a CAPTCHA security bypass vulnerability that allows attackers to bypass authentication by requesting the autoLoginVerifyCode object. Attackers can retrieve valid CAPTCHA codes via the login endpoint and use them to perform brute-force attacks against user accounts."
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "vendor": "Microsoft",
+      "product": "Microsoft",
+      "type": "software",
+      "desc": "Improper authentication in Azure Local Disconnected Operations allows an unauthorized attacker to elevate privileges over a network.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37239",
+      "id": "CVE-2026-7301",
       "score": 9.8,
       "severity": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "libbabl 0.1.62 contains a broken double free detection vulnerability that allows attackers to bypass memory safety checks by exploiting signature overwriting in freed chunks. Attackers can call babl_free() twice on the same pointer without triggering detection, as libc's malloc metadata overwrites babl's signature field upon freeing, enabling potential memory corruption and code execution."
+      "type": "software",
+      "desc": "SGLangs multimodal generation runtime scheduler's ROUTER socket binds to 0.0.0.0 by default and contains a sink that calls pickle.loads() on incoming messages, enabling RCE when exposed to the internet.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2021-47952",
+      "id": "CVE-2026-7304",
       "score": 9.8,
       "severity": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "python jsonpickle 2.0.0 contains a remote code execution vulnerability that allows attackers to execute arbitrary Python commands by deserializing malicious JSON payloads containing py/repr objects. Attackers can craft JSON strings with py/repr directives that invoke the eval function during deserialization to execute system commands and arbitrary code."
+      "type": "software",
+      "desc": "SGLangs multimodal generation runtime is vulnerable to unauthenticated remote code execution when the --enable-custom-logit-processor option is enabled, as Python objects loaded via dill.loads() will be deserialized without validation.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37227",
+      "id": "CVE-2026-7302",
+      "score": 9.1,
+      "severity": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "SGLangs multimodal generation runtime is vulnerable to an unauthenticated path traversal vulnerability, allowing an attacker to write arbitrary files anywhere the server process has write access, by including ../ sequences in the upload filename when sent to specific endpoints.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-45230",
+      "score": 9.1,
+      "severity": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "DumbAssets through 1.0.11 contains a path traversal vulnerability in the POST /api/delete-file endpoint and filesToDelete array parameters that allows unauthenticated attackers to delete arbitrary files by supplying ../ sequences that bypass directory boundary validation. Attackers can exploit the optional and disabled-by-default authentication control to traverse outside the intended application directory and delete critical files such as server.js or package.json, causing complete denial of service.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-57282",
       "score": 8.8,
       "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "HS Brand Logo Slider 2.1 contains an unrestricted file upload vulnerability that allows authenticated users to bypass client-side file extension validation by uploading arbitrary files. Attackers can intercept upload requests to the logoupload parameter in the admin interface and rename files to executable extensions .php to achieve remote code execution."
+      "type": "software",
+      "desc": "ngrok v4.3.3 and 5.0.0-beta.2 is vulnerable to Command Injection.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37242",
-      "score": 8.2,
+      "id": "CVE-2026-41085",
+      "score": 8.8,
       "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "Supsystic Ultimate Maps 1.1.12 contains an SQL injection vulnerability that allows unauthenticated attackers to execute arbitrary SQL queries by injecting malicious code through the 'sidx' GET parameter. Attackers can send crafted requests to the getListForTbl action with boolean-based blind or time-based blind SQL injection payloads to extract sensitive database information."
+      "type": "software",
+      "desc": "Thermo Fisher Scientific Torrent Suite Dx through 5.14.2 has a privilege escalation vulnerability that may allow an authenticated user with limited access privileges to gain unauthorized administrator-level privileges through exploitation of specific system interfaces.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37243",
-      "score": 8.2,
+      "id": "CVE-2026-41948",
+      "score": 7.7,
       "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:L",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "Supsystic Pricing Table 1.8.7 contains an SQL injection vulnerability in the 'sidx' GET parameter that allows unauthenticated attackers to execute arbitrary SQL queries through the getListForTbl action. The plugin also contains stored cross-site scripting vulnerabilities in the 'Edit name' and 'Edit HTML' fields that execute malicious scripts when viewing pricing tables."
+      "type": "software",
+      "desc": "Dify version 1.14.1 and prior contain a path traversal vulnerability that allows authenticated users to manipulate requests forwarded to the Plugin Daemon's internal REST API by exploiting insufficient URL path sanitization. Attackers can traverse out of their authorized tenant path using unencoded dot sequences in task identifiers or manipulated filename parameters to access internal endpoints such as debug interfaces, requiring only knowledge of the victim tenant's UUID. NOTE: Dify Cloud allows unauthenticated free self-registration, making account creation trivially accessible to any attacker.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37244",
-      "score": 8.2,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "Supsystic Membership 1.4.7 contains an SQL injection vulnerability that allows unauthenticated attackers to execute arbitrary SQL queries by injecting malicious code through the 'search' and 'sidx' parameters. Attackers can send GET requests to the badges module with crafted payloads to extract sensitive database information using time-based blind or UNION-based SQL injection techniques."
-    },
-    {
-      "id": "CVE-2021-47954",
-      "score": 8.2,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "LayerBB 1.1.4 contains an SQL injection vulnerability that allows unauthenticated attackers to manipulate database queries by injecting SQL code through the search_query parameter. Attackers can send POST requests to /search.php with malicious search_query values using CASE WHEN statements to extract sensitive database information."
-    },
-    {
-      "id": "CVE-2021-47956",
-      "score": 8.2,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "EgavilanMedia PHPCRUD 1.0 contains an SQL injection vulnerability that allows unauthenticated attackers to manipulate database queries by injecting SQL code through the firstname parameter. Attackers can send POST requests to insert.php with malicious firstname values to extract sensitive database information."
-    },
-    {
-      "id": "CVE-2020-37229",
-      "score": 7.8,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "OKI sPSV Port Manager 1.0.41 contains an unquoted service path vulnerability in the sPSVOpLclSrv service that allows local attackers to escalate privileges by inserting executable files into the unquoted path. Attackers can place a malicious executable in a directory within the service path that will execute with LocalSystem privileges when the service restarts or the system reboots."
-    },
-    {
-      "id": "CVE-2020-37230",
-      "score": 7.8,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "Syncplify.me Server! 5.0.37 contains an unquoted service path vulnerability in the SMWebRestServicev5 service that allows local attackers to escalate privileges by exploiting the unquoted binary path. Attackers can insert a malicious executable into the service path and execute it with LocalSystem privileges when the service restarts or the system reboots."
-    },
-    {
-      "id": "CVE-2020-37231",
-      "score": 7.8,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "Privacy Drive 3.17.0 contains an unquoted service path vulnerability in the pdsvc.exe service binary that allows local attackers to escalate privileges by exploiting the service startup process. Attackers can place malicious executables in the unquoted path directories to execute arbitrary code with LocalSystem privileges during service startup or system reboot."
-    },
-    {
-      "id": "CVE-2020-37232",
-      "score": 7.8,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "Advanced System Care Service 13.0.0.157 contains an unquoted service path vulnerability in the AdvancedSystemCareService13 service binary path that allows local attackers to escalate privileges. Attackers can place malicious executables in the system root path that will be executed with LocalSystem privileges during service startup or system reboot."
-    },
-    {
-      "id": "CVE-2020-37247",
-      "score": 7.8,
-      "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "Kite 4.2.0.1 U1 contains an unquoted service path vulnerability in the KiteService Windows service that allows local attackers to escalate privileges by exploiting the service binary path. Attackers can place a malicious executable in the Program Files directory to be executed with LocalSystem privileges when the service starts."
-    },
-    {
-      "id": "CVE-2020-37245",
+      "id": "CVE-2026-42009",
       "score": 7.5,
       "severity": "HIGH",
-      "product": "Unknown",
-      "desc": "Supsystic Digital Publications 1.6.9 contains a path traversal vulnerability in the Folder input field that allows attackers to access files outside the web root by injecting directory traversal sequences. Additionally, the plugin fails to sanitize input fields in publication settings, allowing stored cross-site scripting attacks through script injection in parameters like Area Width and Publication Width that execute when publications are viewed or edited."
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Red Hat",
+      "product": "Red Hat",
+      "type": "software",
+      "desc": "A flaw was found in gnutls. A remote attacker could exploit an issue in the Datagram Transport Layer Security (DTLS) packet reordering logic. The comparator function, responsible for ordering DTLS packets by sequence numbers, did not correctly handle packets with duplicate sequence numbers. This could lead to unstable packet ordering or undefined behavior, resulting in a denial of service.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2021-47942",
+      "id": "CVE-2026-39079",
       "score": 7.5,
       "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "Home Assistant Community Store (HACS) 1.10.0 contains a path traversal vulnerability that allows unauthenticated attackers to read sensitive files by traversing directories via the /hacsfiles/ endpoint. Attackers can retrieve the .storage/auth file containing user credentials and refresh tokens, then craft valid JWT tokens to gain administrative access to Home Assistant instances."
+      "type": "software",
+      "desc": "An issue in prestashop upsshipping all versions through at least 2.4.0 allows a remote attacker to obtain sensitive information via the /modules/upsshipping/logs/, and /modules/upsshipping/lib/UPSBaseApi.php components",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37233",
-      "score": 6.4,
+      "id": "CVE-2025-56352",
+      "score": 7.5,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In tinyMQTT commit 6226ade15bd4f97be2d196352e64dd10937c1962 (2024-02-18), the broker mishandles protocol violations during CONNECT packet parsing. When receiving a CONNECT packet with a zero-length Client ID while CleanSession is set to 0, the broker correctly replies with a CONNACK return code 0x02 (Identifier Rejected) but fails to explicitly close the TCP connection. Since the surrounding connection teardown logic is not guaranteed to execute, each such invalid CONNECT attempt leaves the underlying socket open. Repeated attempts cause server-side resource exhaustion due to accumulating file descriptors and memory usage, potentially resulting in denial of service.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-41947",
+      "score": 7.4,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Dify version 1.14.1 and prior contains an authorization bypass vulnerability that allows authenticated editor users to set and enable trace configurations for any application regardless of tenant ownership. Attackers can exploit missing tenant ownership checks in the trace configuration endpoints to redirect all messages and responses from victim applications to attacker-controlled LLM trace providers. NOTE: Dify Cloud allows unauthenticated free self-registration, making account creation trivially accessible to any attacker.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-20685",
+      "score": 6.5,
       "severity": "MEDIUM",
-      "product": "Unknown",
-      "desc": "WordPress Plugin Buddypress 6.2.0 contains a persistent cross-site scripting vulnerability that allows authenticated attackers with moderator privileges to inject malicious script code through the figure parameter in wp:html blocks. Attackers can inject iframe elements with event handlers like onload that execute when administrators or privileged users preview or view the affected page content, enabling session hijacking and persistent phishing attacks."
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "vendor": "Apple",
+      "product": "Apple",
+      "type": "software",
+      "desc": "An attacker in a privileged network position may be able to leak sensitive information. A path handling issue was addressed with improved validation. This issue is fixed in PCC Release 5E290.3.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37235",
-      "score": 6.4,
+      "id": "CVE-2026-8843",
+      "score": 6.5,
       "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "WordPress Theme Wibar 1.1.8 contains a stored cross-site scripting vulnerability in the Brand component that allows authenticated users to inject malicious scripts by manipulating the Logo URL parameter. Attackers with editor, administrator, contributor, or author privileges can inject base64-encoded script payloads through the ftc_brand_url input field to execute arbitrary JavaScript when users visit the brand page."
+      "type": "software",
+      "desc": "Creating a \"2dsphere_bucket\" index on a non-timeseries bucket collection will succeed, but any subsequent attempt to insert a document which triggers updating that index will crash the server. A similar issue occurs when creating \"queryable_encrypted_range\" indices.\n\nThis issue affects MongoDB Server v7.0 versions prior to 7.0.32, v8.0 versions prior to 8.0.21 and v8.2 versions prior to 8.2.6",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37236",
-      "score": 6.4,
-      "severity": "MEDIUM",
-      "product": "Unknown",
-      "desc": "NewsLister contains an authenticated persistent cross-site scripting vulnerability that allows authenticated administrators to inject malicious scripts through the title parameter in the news addition interface. Attackers can inject JavaScript payloads via the title field in the admin panel that execute when news items are viewed by other users."
-    },
-    {
-      "id": "CVE-2020-37237",
-      "score": 6.4,
-      "severity": "MEDIUM",
-      "product": "Unknown",
-      "desc": "Composr CMS 10.0.34 contains a persistent cross-site scripting vulnerability that allows authenticated administrators to inject malicious scripts through the banner management interface. Attackers with admin credentials can inject XSS payloads in the Description field of the Add banner functionality, which execute for all website visitors when they access the home page."
-    },
-    {
-      "id": "CVE-2020-37238",
-      "score": 6.4,
-      "severity": "MEDIUM",
-      "product": "Unknown",
-      "desc": "CMS Made Simple 2.2.15 contains a stored cross-site scripting vulnerability that allows authenticated users with Content Manager access to inject malicious scripts through SVG file uploads. Attackers can upload SVG files containing embedded JavaScript to the file manager, which executes when other authenticated users access the uploaded file, enabling cookie theft and session hijacking."
-    },
-    {
-      "id": "CVE-2020-37240",
-      "score": 6.4,
-      "severity": "MEDIUM",
-      "product": "Unknown",
-      "desc": "Queue Management System 4.0.0 contains a stored cross-site scripting vulnerability that allows authenticated administrators to inject malicious scripts through user creation fields. Attackers can insert JavaScript payloads in the First Name, Last Name, and Email fields during user creation, which execute when viewing the User List page."
-    },
-    {
-      "id": "CVE-2021-47957",
-      "score": 6.4,
-      "severity": "MEDIUM",
-      "product": "Unknown",
-      "desc": "Cookie Law Bar 1.2.1 contains a stored cross-site scripting vulnerability that allows authenticated attackers to inject malicious scripts by submitting unsanitized input to the Bar Message field. Attackers can inject script payloads through the plugin settings page that execute in the browsers of all WordPress users viewing the site, enabling cookie theft and sensitive data exfiltration."
-    },
-    {
-      "id": "CVE-2020-37234",
+      "id": "CVE-2026-38719",
       "score": 6.2,
       "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "Internet Download Manager 6.38.12 contains a buffer overflow vulnerability in the Scheduler component that allows local attackers to crash the application by supplying oversized input. Attackers can paste malicious data exceeding 5000 bytes into the 'Open the following file when done' field to trigger a denial of service condition."
+      "type": "software",
+      "desc": "OpENer v2.3-558-g1e99582 contains an out-of-bounds read vulnerability in the Common Packet Format (CPF) parser, specifically in CreateCommonPacketFormatStructure() in source/src/enet_encap/cpf.c. A crafted ENIP/CPF message can supply an attacker-controlled item_count value that is not consistently validated against the remaining data_length of the CPF slice",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37246",
-      "score": 6.2,
+      "id": "CVE-2026-29964",
+      "score": 6.1,
       "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "Supsystic Backup 2.3.9 contains a local file inclusion vulnerability that allows unauthenticated attackers to read and delete arbitrary files by manipulating the download path parameter. Attackers can modify the download parameter in admin.php requests with directory traversal sequences to access sensitive files like /etc/passwd or delete files via the removeAction parameter."
+      "type": "software",
+      "desc": "HSC MailInspector v5.3.3-7 contains a Cross-Site Scripting (XSS) vulnerability in the /tap/tap.php endpoint due to improper neutralization of user-controlled input using alternate or obfuscated JavaScript syntax. The endpoint reflects unsanitized user input in HTTP responses without adequate output encoding, allowing a remote attacker to execute arbitrary JavaScript code in the context of a victim's browser.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2021-47955",
+      "id": "CVE-2026-29965",
+      "score": 6.1,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "HSC MailInspector 5.3.3-7 is vulnerable to Cross Site Scripting (XSS) in the /police/WarningUrlPage.php endpoint due to improper neutralization of user-supplied input that uses alternate or obfuscated JavaScript syntax.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-41949",
+      "score": 5.9,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Dify version 1.14.1 and prior contain an authorization bypass vulnerability in the file preview endpoint that allows any authenticated user to read up to 3,000 characters of any uploaded document across all tenants and workspaces using only the file's UUID. Attackers can access the /console/api/files/{file_id}/preview endpoint with an intercepted file UUID to extract sensitive content from documents without ownership or workspace permission verification. NOTE: Dify Cloud allows unauthenticated free self-registration, making account creation trivially accessible to any attacker.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-32849",
+      "score": 5.5,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "NetBSD prior to commit ec8451e contains a signed integer overflow vulnerability in the cryptodev_op() function in sys/opencrypto/cryptodev.c where the local variable iov_len is declared as a signed int but assigned from an unsigned cop->dst_len value, causing undefined behavior when cop->dst_len exceeds INT_MAX. A local attacker with access to /dev/crypto and a compression session type can exploit this vulnerability by providing a dst_len value exceeding INT_MAX to trigger a kernel panic through NULL pointer dereference when CONFIG_SVS is disabled and corrupted UIO pointer arithmetic.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-45492",
       "score": 5.4,
       "severity": "MEDIUM",
-      "product": "Unknown",
-      "desc": "CouchCMS 2.2.1 contains a cross-site scripting vulnerability that allows authenticated attackers to execute arbitrary JavaScript by uploading malicious SVG files through the file upload functionality. Attackers can upload SVG files containing embedded script tags to the browse.php endpoint, which are then executed in users' browsers when the files are accessed or previewed."
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "vendor": "Microsoft",
+      "product": "Microsoft",
+      "type": "software",
+      "desc": "Improper input validation in Microsoft Edge (Chromium-based) allows an unauthorized attacker to bypass a security feature over a network.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2020-37241",
+      "id": "CVE-2026-45494",
+      "score": 5.4,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "vendor": "Microsoft",
+      "product": "Microsoft",
+      "type": "software",
+      "desc": "Microsoft Edge (Chromium-based) Spoofing Vulnerability",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-36438",
       "score": 5.3,
       "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "bloofoxCMS 0.5.2.1 contains a cross-site request forgery vulnerability that allows attackers to perform administrative actions by tricking logged-in users into visiting malicious pages. Attackers can craft hidden forms targeting the admin user creation endpoint to add new administrative accounts with arbitrary credentials without requiring explicit user consent."
+      "type": "software",
+      "desc": "An issue in Intelbras VIP-1230-D-G4 Version V2.800.00IB00C.0.T allows a remote attacker to obtain sensitive information via password reset functionality under /OutsideCmd",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2021-47934",
-      "score": 5.3,
+      "id": "CVE-2026-32848",
+      "score": 4.7,
       "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "MyBB Timeline Plugin 1.0 contains cross-site scripting vulnerabilities that allow attackers to inject malicious scripts through thread titles, post content, and user profile fields like Location and Bio. Attackers can also exploit a cross-site request forgery vulnerability in the timeline.php profile action to change a user's cover picture by crafting malicious forms that execute when victims visit affected profiles."
+      "type": "software",
+      "desc": "NetBSD prior to commit ec8451e contains a race condition vulnerability in cryptodev_op() within the opencrypto subsystem that allows local attackers to trigger a double-free condition by concurrently issuing CIOCCRYPT operations on the same session identifier on SMP systems. Attackers can exploit mutable per-operation state embedded in the csession struct to corrupt kernel heap memory.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2025-4202",
-      "score": 4.3,
-      "severity": "MEDIUM",
+      "id": "CVE-2026-8803",
+      "score": 3.7,
+      "severity": "LOW",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "The Multicollab: Content Team Collaboration and Editorial Workflow plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the 'cf_add_comment' function in all versions up to, and including, 5.2. This makes it possible for authenticated attackers, with Subscriber-level access and above, to add comments to arbitrary collaborations."
+      "type": "software",
+      "desc": "A flaw has been found in opensourcepos Open Source Point of Sale up to 3.4.2. Impacted is the function Login of the file app/Models/Employee.php of the component Employee Login. This manipulation causes use of weak hash. Remote exploitation of the attack is possible. The attack is considered to have high complexity. The exploitability is considered difficult. The actual existence of this vulnerability is currently in question. The vendor explains: \"[T]he code is still there to allow the upgrade path to work. The default password is initially seeded with the old hash function, but then migrated to a newer one after login. [T]he hash version check might be cleaned up in the future. Currently it's not actively in use as any password change will use a newer hash function.\"",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     },
     {
-      "id": "CVE-2026-46719",
+      "id": "CVE-2026-0983",
       "score": 0.0,
       "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
       "product": "Unknown",
-      "desc": "Net::Statsd::Lite versions before 0.9.0 for Perl allowed metric injections.\n\nThe metric names were not checked for newlines, colons or pipes. Metrics generated from untrusted sources could inject additional statsd metrics."
+      "type": "software",
+      "desc": "Denial-of-service condition in M-Files Server versions before 26.5.16015.0, before 26.2 LTS, and before 25.8 LTS SR3 allows an authenticated user to cause the MFserver process to crash",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-26462",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Offline Hospital Management System 5.3.0 allows remote code execution due to an improper Electron renderer configuration. The application enables Node.js integration while disabling context isolation, allowing JavaScript executed in the renderer process to access Node.js APIs and execute arbitrary operating system commands.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-45829",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "A pre-authentication, code injection vulnerability in version 1.0.0 or later of the ChromaDB Python project allows an unauthenticated attacker to run arbitrary code on the server by sending a malicious model repository and trust_remote_code set to true in the /api/v2/tenants/{tenant}/databases/{db}/collections endpoint.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2023-24215",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Incorrect access control in the /uci/get/ endpoint of NOVUS AirGate 4G firmware v1.1.16 allows unauthenticated attackers to obtain administrator credentials via a crafted POST request.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-29962",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "HSC MailInspector v5.3.3-7 contains a Local File Inclusion (LFI) vulnerability caused by improper control of user-supplied file paths. The endpoint /vendor/phpunit/phpunit.php processes user-controlled parameters that directly affect file access operations without adequate validation, sanitization, or path restriction. This allows a remote attacker to exploit Path Traversal techniques to read arbitrary files from the underlying operating system and application directories, leading to sensitive information disclosure.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-29963",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "HSC MailInspector 5.3.3-7 has a Path Traversal vulnerability due to improper validation of user-supplied input in the /tap/dw.php endpoint. The text parameter is used to construct file paths without adequate normalization or restriction to a safe base directory. A remote attacker can exploit this flaw to access arbitrary files on the underlying operating system, resulting in unauthorized disclosure of sensitive information.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
     }
   ],
   "kev": [
@@ -257,42 +440,250 @@
       ]
     }
   ],
+  "threats": [
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2025-8224 GNU Binutils BFD Library elf.c bfd_elf_get_str_section null pointer dereference",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-8224",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2025-1176 GNU Binutils ld elflink.c _bfd_elf_gc_mark_rsec heap-based overflow",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-1176",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2025-1178 GNU Binutils ld libbfd.c bfd_putl64 memory corruption",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-1178",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2025-0665 eventfd double close",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-0665",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-34757 LIBPNG has a yse-after-free in png_set_PLTE, png_set_tRNS and png_set_hIST leading to corrupted chunk data and potential heap information disclosure",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-34757",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-41080 libexpat before 2.8.0 uses insufficient entropy, and thus hash flooding can occur via a crafted XML document.",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41080",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-6357 pip self-update functionality can import newly installed modules after wheel installation",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-6357",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-3087 shutil.unpack_archive() doesn't check for Windows absolute paths in ZIPs",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-3087",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-3219 pip doesn't reject concatenated ZIP and tar archives",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-3219",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-28808 ScriptAlias CGI targets bypass directory auth in inets httpd (mod_auth vs mod_cgi path mismatch)",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-28808",
+      "summary": "Information published."
+    }
+  ],
   "news": [
     {
       "source": "Bleeping Computer",
-      "title": "Microsoft rejects critical Azure vulnerability report, no CVE issued",
-      "link": "https://www.bleepingcomputer.com/news/security/microsoft-rejects-critical-azure-vulnerability-report-no-cve-issued/",
-      "summary": "A security researcher claims Microsoft quietly fixed an Azure Backup for AKS vulnerability after rejecting his report, and without issuing a CVE. Microsoft disputes the claim, telling BleepingComputer the behavior was expected and that \"no product changes were made,\" despite the researcher documenti"
+      "title": "Microsoft confirms patching issues in restricted Windows networks",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-patching-issues-in-restricted-windows-networks/",
+      "summary": "Microsoft says customers in restricted network environments may encounter Windows Update failures after installing the January 2026 optional non-security preview updates. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Russian hackers turn Kazuar backdoor into modular P2P botnet",
-      "link": "https://www.bleepingcomputer.com/news/security/russian-hackers-turn-kazuar-backdoor-into-modular-p2p-botnet/",
-      "summary": "The Russian hacker group Secret Blizzard has developed its long-running Kazuar backdoor into a modular peer-to-peer (P2P) botnet designed for long-term persistence, stealth, and data collection. [...]"
+      "title": "INTERPOL ‘Operation Ramz’ seizes 53 malware, phishing servers",
+      "link": "https://www.bleepingcomputer.com/news/security/interpol-operation-ramz-seizes-53-malware-phishing-servers/",
+      "summary": "More than 200 individuals were arrested for cybercrime activities during INTERPOL's Operation Ramz, which focused on the Middle East and North Africa. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "SHub macOS infostealer variant spoofs Apple security updates",
+      "link": "https://www.bleepingcomputer.com/news/security/shub-macos-infostealer-variant-spoofs-apple-security-updates/",
+      "summary": "A new variant of the 'SHub' macOS infostealer uses AppleScript to show a fake security update message and installs a backdoor. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "5 Steps to Managing Shadow AI Tools Without Slowing Down Employees",
+      "link": "https://www.bleepingcomputer.com/news/security/5-steps-to-managing-shadow-ai-tools-without-slowing-down-employees/",
+      "summary": "Many employees already use shadow AI tools at work without security review. Adaptive Security breaks down how teams can build practical AI governance without adding friction for employees. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "Leaked Shai-Hulud malware fuels new npm infostealer campaign",
+      "link": "https://www.bleepingcomputer.com/news/security/leaked-shai-hulud-malware-fuels-new-npm-infostealer-campaign/",
+      "summary": "The Shai-Hulud malware leaked last week is now used in new attacks on the Node Package Manager (npm) index, as infected packages emerged over the weekend. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "Grafana says stolen GitHub token let hackers steal codebase",
+      "link": "https://www.bleepingcomputer.com/news/security/grafana-says-stolen-github-token-let-hackers-steal-codebase/",
+      "summary": "Grafana Labs disclosed that hackers have downloaded its source code after breaching its GitHub environment using a stolen access token. [...]"
     },
     {
       "source": "The Hacker News",
-      "title": "Grafana GitHub Token Breach Led to Codebase Download and Extortion Attempt",
-      "link": "https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html",
-      "summary": "Grafana has disclosed that an \"unauthorized party\" obtained a token that granted them the ability to access the company's GitHub environment and download its codebase.\n\n\n  \"Our investigation has determined that no customer data or personal information was accessed during this incident, and we have f"
+      "title": "SEPPMail Secure E-Mail Gateway Vulnerabilities Enable RCE and Mail Traffic Access",
+      "link": "https://thehackernews.com/2026/05/seppmail-secure-e-mail-gateway.html",
+      "summary": "Critical security vulnerabilities have been disclosed in SEPPMail Secure E-Mail Gateway, an enterprise-grade email security solution, that could be exploited to achieve remote code execution and enable an attacker to read arbitrary mails from the virtual appliance.\n\"These vulnerabilities could have been exploited to read all mail traffic or as an entry vector into the internal network,\""
     },
     {
       "source": "The Hacker News",
-      "title": "Funnel Builder Flaw Under Active Exploitation Enables WooCommerce Checkout Skimming",
-      "link": "https://thehackernews.com/2026/05/funnel-builder-flaw-under-active.html",
-      "summary": "A critical security vulnerability impacting the\n  Funnel Builder\n  plugin for WordPress has come under active exploitation in the wild to\n  inject malicious JavaScript code\n  into WooCommerce checkout pages with the goal of stealing payment data.\n\n\n\n  Details of the activity were\n  published\n  by Sa"
+      "title": "Compromised Nx Console 18.95.0 Targeted VS Code Developers with Credential Stealer",
+      "link": "https://thehackernews.com/2026/05/compromised-nx-console-18950-targeted.html",
+      "summary": "Cybersecurity researchers have flagged a compromised version of the Nx Console extension that was published to the Microsoft Visual Studio Code (VS Code) Marketplace.\n\nThe extension in question is rwl.angular-console (version 18.95.0), a popular user interface and plugin for code editors like VS Code, Cursor, and JetBrains. The VS Code extension has more than 2.2 million installations. The Open"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "Popular GitHub Action Tags Redirected to Imposter Commit to Steal CI/CD Credentials",
+      "link": "https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html",
+      "summary": "In yet another software supply chain attack, threat actors have compromised the popular GitHub Actions workflow, actions-cool/issues-helper, to run malicious code that harvests sensitive credentials and exfiltrates them to an attacker-controlled server.\n\n\"Every existing tag in the repository has been moved to point to an imposter commit that does not appear in the action's normal commit history,"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "Mini Shai-Hulud Pushes Malicious AntV npm Packages via Compromised Maintainer Account",
+      "link": "https://thehackernews.com/2026/05/mini-shai-hulud-pushes-malicious-antv.html",
+      "summary": "Cybersecurity researchers have discovered a fresh software supply chain attack campaign that has compromised various npm packages associated with the @antv ecosystem as part of the ongoing Mini Shai-Hulud attack wave.\n\n\"The attack affects packages tied to the npm maintainer account atool, including echarts-for-react, a widely used React wrapper for Apache ECharts with roughly 1.1 million weekly"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "INTERPOL Operation Ramz Disrupts MENA Cybercrime Networks with 201 Arrests",
+      "link": "https://thehackernews.com/2026/05/interpol-operation-ramz-disrupts-mena.html",
+      "summary": "INTERPOL has coordinated a first-of-its-kind cybercrime crackdown across the Middle East and North Africa (MENA) that led to 201 arrests and the identification of an additional 382 suspects.\nThe initiative involved the efforts of 13 countries from the region between October 2025 and February 2026, aiming to investigate and neutralize malicious infrastructure, arrest perpetrators behind these"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "⚡ Weekly Recap: Exchange 0-Day, npm Worm, Fake AI Repo, Cisco Exploit and More",
+      "link": "https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html",
+      "summary": "Monday opens with a trust problem. A mail server flaw is under active use. A network control system was targeted. Trusted packages were poisoned. A fake model page pushed a stealer. Then came the familiar ransom claim: the data was returned and deleted.\nThe pattern is clear. One weak dependency can leak keys. One leaked key can open cloud access. One cloud foothold can become a production"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "How to Reduce Phishing Exposure Before It Turns into Business Disruption",
+      "link": "https://thehackernews.com/2026/05/how-to-reduce-phishing-exposure-before.html",
+      "summary": "What happens when a phishing email looks clean enough to pass through security, but dangerous enough to expose the business after one click? That is the gap many SOCs still struggle with: the attacks that leave teams unsure what was exposed, who else was targeted, and how far the risk has spread.\nEarly phishing detection closes that gap. It helps teams move from uncertainty to evidence faster,"
     },
     {
       "source": "Dark Reading",
-      "title": "The Boring Stuff is Dangerous Now",
+      "title": "Microsoft Exchange Zero-Day Under Attack, No Patch Available",
+      "link": "https://www.darkreading.com/vulnerabilities-threats/microsoft-exchange-zero-day-no-patch",
+      "summary": "CVE-2026-42897 stems from a cross-site scripting (XSS) vulnerability and can allow an attacker to compromise Outlook Web Access (OWA) mailboxes."
+    },
+    {
+      "source": "Dark Reading",
+      "title": "'Claw Chain' Vulnerabilities Threaten OpenClaw Deployments",
+      "link": "https://www.darkreading.com/application-security/claw-chain-vulnerabilities-threaten-openclaw",
+      "summary": "The now patched vulnerabilities in the rapidly growing AI agent framework allow attackers to steal credentials, escalate privileges, and maintain persistence."
+    },
+    {
+      "source": "Dark Reading",
+      "title": "Shai-Hulud Worm Clones Spread After Code Release",
+      "link": "https://www.darkreading.com/application-security/shai-hulud-worm-clones-spread-code-release",
+      "summary": "The release of Shai-Hulud source code spells trouble for software developers as researchers worry the self-replicating worm could scale."
+    },
+    {
+      "source": "Dark Reading",
+      "title": "Fuel Tank Breaches Expand Scope of Iran's Cyber Offensive",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/fuel-tank-breaches-expand-scope-irans-cyber-offensive",
+      "summary": "Security experts have long warned that insecure automatic tank gauge (ATG) systems exposed on the Internet can be tampered with by threat actors."
+    },
+    {
+      "source": "Dark Reading",
+      "title": "The Boring Stuff Is Dangerous Now",
       "link": "https://www.darkreading.com/cyber-risk/ai-code-and-agents-forces-defenders-adapt",
       "summary": "AI agents capable of discovering and exploiting obscure vulnerabilities are emerging alongside developers producing vast amounts of potentially flawed AI-generated code, forcing defenders to adapt accordingly."
     },
     {
+      "source": "Dark Reading",
+      "title": "Boulevard of Broken Dreams: 2 Decades of Cyber Fails",
+      "link": "https://www.darkreading.com/cyber-risk/broken-dreams-2-decades-cyber-fails",
+      "summary": "From the MGM and Caesars fiasco and MOVEit's patch nightmare to epic business blunders and the jaded reality of living in a post-breach world, Dark Reading looks back at the mistakes, miscalculations, systemic failures, and cringeworthy moments that still have us shaking our heads."
+    },
+    {
       "source": "SecurityWeek",
-      "title": "PoC Code Published for Critical NGINX Vulnerability",
-      "link": "https://www.securityweek.com/poc-code-published-for-critical-nginx-vulnerability/",
-      "summary": "Introduced in 2008, the critical-severity security defect was patched this week in NGINX Plus and NGINX open source.\nThe post PoC Code Published for Critical NGINX Vulnerability appeared first on SecurityWeek."
+      "title": "Cyber Resilience is the New Business Continuity Plan",
+      "link": "https://www.securityweek.com/cyber-resilience-is-the-new-business-continuity-plan/",
+      "summary": "The organizations best prepared to face disruption are those that align security, continuity and risk management around what the business cannot afford to lose.\nThe post Cyber Resilience is the New Business Continuity Plan appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "201 Arrested in Crackdown on Cybercrime in Middle East, North Africa",
+      "link": "https://www.securityweek.com/201-arrested-in-crackdown-on-cybercrime-in-middle-east-north-africa/",
+      "summary": "The 13-country effort, named Operation Ramz, targeted cyber threats in the Middle East and North Africa region.\nThe post 201 Arrested in Crackdown on Cybercrime in Middle East, North Africa appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "PoC Released for DirtyDecrypt Linux Kernel Vulnerability",
+      "link": "https://www.securityweek.com/poc-released-for-dirtydecrypt-linux-kernel-vulnerability/",
+      "summary": "Patched in April, the underlying vulnerability allows local attackers to elevate their privileges to root.\nThe post PoC Released for DirtyDecrypt Linux Kernel Vulnerability appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "Critical Vulnerability Exposes Industrial Robot Fleets to Hacking",
+      "link": "https://www.securityweek.com/critical-vulnerability-exposes-industrial-robot-fleets-to-hacking/",
+      "summary": "The vulnerability, CVE-2026-8153, affects Universal Robots PolyScope 5 and it can be exploited for OS command injection. \nThe post Critical Vulnerability Exposes Industrial Robot Fleets to Hacking appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "Millions Impacted Across Several US Healthcare Data Breaches",
+      "link": "https://www.securityweek.com/millions-impacted-across-several-us-healthcare-data-breaches/",
+      "summary": "Several healthcare data breaches impacting hundreds of thousands and even millions were added to the HHS tracker.\nThe post Millions Impacted Across Several US Healthcare Data Breaches appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "‘Claw Chain’ OpenClaw Flaws Allow Sandbox Escape, Backdoor Delivery",
+      "link": "https://www.securityweek.com/claw-chain-openclaw-flaws-allow-sandbox-escape-backdoor-delivery/",
+      "summary": "Four vulnerabilities in OpenClaw can be chained together to steal credentials, escape the sandbox, and plant persistent backdoors.\nThe post &#8216;Claw Chain&#8217; OpenClaw Flaws Allow Sandbox Escape, Backdoor Delivery appeared first on SecurityWeek."
+    }
+  ],
+  "blogs": [
+    {
+      "source": "Krebs on Security",
+      "title": "CISA Admin Leaked AWS GovCloud Keys on Github",
+      "link": "https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/",
+      "summary": "Until this past weekend, a contractor for the Cybersecurity &#038; Infrastructure Security Agency (CISA) maintained a public GitHub repository that exposed credentials to several highly privileged AWS GovCloud accounts and a large number of internal CISA systems. Security experts said the public archive included files detailing how CISA builds, tests and deploys software internally, and that it re"
+    },
+    {
+      "source": "SANS ISC Diary",
+      "title": "ISC Stormcast For Tuesday, May 19th, 2026 https://isc.sans.edu/podcastdetail/9936, (Tue, May 19th)",
+      "link": "https://isc.sans.edu/diary/rss/32996",
+      "summary": ""
+    },
+    {
+      "source": "SANS ISC Diary",
+      "title": "TeamPCP Supply Chain Campaign: Activity Through 2026-05-17, (Mon, May 18th)",
+      "link": "https://isc.sans.edu/diary/rss/32994",
+      "summary": "Since the last update, the TeamPCP supply chain campaign produced its loudest stretch since the March Trivy disclosure: an officially confirmed Checkmarx Jenkins plugin compromise and a new self-spreading Mini Shai-Hulud worm across npm and PyPI.&#xd;"
+    },
+    {
+      "source": "Schneier on Security",
+      "title": "Laurie Anderson Is Quoting Me",
+      "link": "https://www.schneier.com/blog/archives/2026/05/laurie-anderson-is-quoting-me.html",
+      "summary": "Not by name, but Laurie Anderson quotes me in one of the tracks of her new album:\nMy favorite quote is from a cryptologist who said &#8220;If you think technology will solve your problems, you don&#8217;t understand technology and you don&#8217;t understand your problems.&#8221;\nAlso in interviews:\n&#8220;Of course, it&#8217;s ridiculous, outrageous, blah, blah, blah,&#8221; Anderson says about th"
+    },
+    {
+      "source": "Schneier on Security",
+      "title": "Zero-Day Exploit Against Windows BitLocker",
+      "link": "https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html",
+      "summary": "It&#8217;s nasty, but it requires physical access to the computer:\nThe exploit, named YellowKey, was published earlier this week by a researcher who goes by the alias Nightmare-Eclipse. It reliably bypasses default Windows 11 deployments of BitLocker, the full-volume encryption protection Microsoft provides to make disk contents off-limits to anyone without the decryption key, which is stored in a"
     }
   ]
 }
