@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CVE-2024-47575 — FortiManager unauthenticated RCE · Cyber Digest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* ─── CVE detail page ─── */
+.cve-mast{
+  padding:48px 0 56px;
+  border-bottom:1px solid var(--hairline);
+}
+.cve-mast .row{
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px;
+}
+.cve-mast .row .ven{ color:var(--accent) }
+.cve-mast .row .pill{
+  padding:4px 10px;border:1px solid rgba(216,92,92,.5);color:var(--status-crit);
+  background:rgba(216,92,92,.08);font-family:var(--font-mono);
+  font-size:10.5px;letter-spacing:.14em;
+}
+.cve-mast h1{
+  font-family:var(--font-mono);
+  font-size:clamp(36px, 5vw, 64px);
+  letter-spacing:-.01em;line-height:1.0;
+  color:var(--fg);font-weight:500;
+  margin:0;
+}
+.cve-mast .title{
+  font-family:var(--font-sans);
+  font-size:clamp(24px, 2.6vw, 36px);
+  letter-spacing:-.02em;line-height:1.18;
+  font-weight:500;color:var(--fg-muted);
+  margin:20px 0 0;max-width:64ch;text-wrap:balance;
+}
+
+/* Score panel */
+.score-panel{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--hairline);border:1px solid var(--hairline);
+  margin-top:48px;
+}
+.score-cell{
+  background:var(--bg);padding:24px;
+  display:flex;flex-direction:column;gap:10px;
+  position:relative;
+}
+.score-cell .k{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.score-cell .v{
+  font-size:42px;font-weight:500;letter-spacing:-.025em;color:var(--fg);
+  font-feature-settings:"tnum";line-height:1;
+}
+.score-cell .v.crit{ color:var(--status-crit) }
+.score-cell .v.high{ color:var(--status-high) }
+.score-cell .v.ok  { color:var(--status-ok) }
+.score-cell .sub{ font-family:var(--font-mono);font-size:11px;color:var(--fg-muted) }
+.score-cell .ring{
+  position:absolute;right:24px;top:24px;
+  width:48px;height:48px;
+}
+.bar-track{
+  height:4px;background:var(--bg-elev-3);position:relative;overflow:hidden;
+}
+.bar-fill{ height:100%;background:var(--status-crit) }
+
+/* Timeline */
+.timeline{
+  margin-top:48px;
+  border:1px solid var(--hairline);background:var(--bg-elev-1);
+  padding:32px;
+}
+.timeline h3{
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  margin:0 0 20px;
+}
+.timeline .track{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  position:relative;
+}
+.timeline .track::before{
+  content:"";position:absolute;left:8px;right:8px;top:14px;
+  height:1px;background:var(--hairline-2);
+}
+.timeline .node{
+  display:flex;flex-direction:column;gap:8px;
+  padding-top:0;position:relative;text-align:left;
+}
+.timeline .dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--fg-dim);
+  position:relative;z-index:1;
+}
+.timeline .node.done .dot{ border-color:var(--accent);background:var(--accent) }
+.timeline .node.crit .dot{ border-color:var(--status-crit);background:var(--status-crit) }
+.timeline .node .when{
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.08em;
+}
+.timeline .node .label{
+  font-size:13px;color:var(--fg);line-height:1.35;
+  text-wrap:balance;
+}
+
+/* Body */
+.cve-body{
+  display:grid;grid-template-columns: minmax(0, 1fr) 320px;
+  gap:48px;padding:64px 0 96px;align-items:start;
+}
+.cve-body h2{
+  font-size:24px;letter-spacing:-.015em;line-height:1.2;
+  font-weight:500;margin:2em 0 .6em;
+  padding-bottom:12px;border-bottom:1px solid var(--hairline);
+}
+.cve-body h2:first-child{ margin-top:0 }
+.cve-body p{ color:var(--fg);line-height:1.65;font-size:15.5px;max-width:64ch }
+.cve-body p + p{ margin-top:14px }
+.cve-body p code, .cve-body li code{
+  font-family:var(--font-mono);font-size:.88em;
+  background:var(--bg-elev-2);padding:2px 6px;border:1px solid var(--hairline);
+  border-radius:3px;color:var(--fg);
+}
+
+/* CVSS vector */
+.cvss{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--hairline);border:1px solid var(--hairline);
+  margin-top:14px;
+}
+.cvss .cell{
+  background:var(--bg);padding:14px;
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.06em;
+}
+.cvss .cell .k{ text-transform:uppercase;letter-spacing:.14em;font-size:10px;color:var(--fg-dim);margin-bottom:6px;display:block }
+.cvss .cell .v{ color:var(--fg);font-size:13px;letter-spacing:0;font-weight:500 }
+.cvss .cell.h .v{ color:var(--status-crit) }
+
+/* Affected products table */
+.affected{
+  width:100%;border-collapse:collapse;margin-top:14px;
+  font-family:var(--font-mono);font-size:12.5px;
+}
+.affected th{
+  text-align:left;padding:10px 12px;
+  border-bottom:1px solid var(--hairline-2);
+  font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+}
+.affected td{ padding:10px 12px;border-bottom:1px solid var(--hairline);color:var(--fg);vertical-align:top }
+.affected td .status{
+  display:inline-block;padding:3px 8px;border:1px solid var(--hairline-2);
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+}
+.affected td .status.aff{ color:var(--status-crit);border-color:rgba(216,92,92,.5) }
+.affected td .status.fix{ color:var(--status-ok);border-color:rgba(79,178,138,.45) }
+
+/* Refs */
+.refs{ list-style:none;padding:0;margin:14px 0 0 }
+.refs li{
+  display:grid;grid-template-columns:120px 1fr auto;gap:14px;
+  padding:12px 0;border-bottom:1px solid var(--hairline);
+  font-size:13.5px;color:var(--fg);
+}
+.refs li .src{ font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em;text-transform:uppercase }
+.refs li a{ color:var(--fg);border-bottom:1px solid var(--hairline-2) }
+.refs li a:hover{ border-color:var(--fg) }
+.refs li .date{ font-family:var(--font-mono);font-size:11px;color:var(--fg-dim) }
+
+/* Sidebar */
+.cve-side{
+  position:sticky;top:96px;
+  display:flex;flex-direction:column;gap:24px;
+}
+.side-card{
+  border:1px solid var(--hairline);background:var(--bg-elev-1);
+  padding:20px;
+}
+.side-card h4{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;font-weight:500;
+}
+.side-card .kv{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;border-top:1px solid var(--hairline);
+  font-family:var(--font-mono);font-size:12px;
+}
+.side-card .kv:first-of-type{ border-top:0 }
+.side-card .kv .k{ color:var(--fg-dim);letter-spacing:.06em }
+.side-card .kv .v{ color:var(--fg) }
+.side-card .kv .v.crit{ color:var(--status-crit) }
+.side-card .kv .v.ok{ color:var(--status-ok) }
+
+.kev-badge{
+  display:flex;align-items:center;gap:10px;
+  padding:14px;border:1px solid rgba(216,92,92,.4);
+  background:rgba(216,92,92,.06);
+  font-family:var(--font-mono);font-size:11px;color:var(--status-crit);
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.kev-badge .pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--status-crit);
+  box-shadow:0 0 0 0 rgba(216,92,92,.6);
+  animation:pulse 2s var(--ease) infinite;
+}
+@keyframes pulseCrit{
+  0% { box-shadow:0 0 0 0 rgba(216,92,92,.6) }
+  70%{ box-shadow:0 0 0 10px rgba(216,92,92,0) }
+}
+
+@media (max-width: 1100px){
+  .cve-body{ grid-template-columns:1fr }
+  .cve-side{ position:static;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline) }
+  .side-card{ border:0 }
+  .score-panel{ grid-template-columns:1fr 1fr }
+  .cvss{ grid-template-columns:1fr 1fr }
+  .timeline .track{ grid-template-columns:1fr;gap:14px }
+  .timeline .track::before{ display:none }
+}
+</style>
+<script>(()=>{try{const t=localStorage.getItem('cd-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'}catch(e){}})();</script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 9 L14 3 L25 9" />
+          <path d="M3 14 L14 8 L25 14" opacity=".7"/>
+          <path d="M3 19 L14 13 L25 19" opacity=".4"/>
+          <circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand-name">Cyber Digest<span>/ Intelligence</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="wire.html">The Wire</a>
+      <a href="cves.html">Vulnerabilities</a>
+      <a href="briefing.html">Briefings</a>
+      <a href="actor.html">Actors</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>—:— UTC</span></div>
+      <button class="search" data-action="search" aria-label="Open search (Cmd+K)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search CVE, vendor, actor…
+        <span class="kbd">⌘ K</span>
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="menu-btn" onclick="cdMobileNav(true)" aria-label="Open menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+  <div class="breadcrumb" style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.12em;text-transform:uppercase;padding:24px 0">
+    <a href="index.html" style="color:var(--fg-muted)">Home</a>
+    <span style="opacity:.5">/</span>
+    <a href="cve.html" style="color:var(--fg-muted)">Vulnerabilities</a>
+    <span style="opacity:.5">/</span>
+    <span style="color:var(--fg)">CVE-2024-47575</span>
+  </div>
+
+  <header class="cve-mast">
+    <div class="row">
+      <span class="ven">Fortinet · FortiManager</span>
+      <span>·</span>
+      <span>Disclosed October 23, 2024</span>
+      <span>·</span>
+      <span class="pill">CISA KEV · Exploited</span>
+    </div>
+    <h1>CVE-2024-47575</h1>
+    <div class="title">Unauthenticated command injection in the FortiManager <code style="font-family:var(--font-mono);font-size:.82em;background:var(--bg-elev-2);padding:2px 8px;border:1px solid var(--hairline)">fgfm</code> protocol handler allows remote attackers to execute arbitrary commands as <code style="font-family:var(--font-mono);font-size:.82em;background:var(--bg-elev-2);padding:2px 8px;border:1px solid var(--hairline)">root</code> without authentication.</div>
+
+    <div class="score-panel">
+      <div class="score-cell">
+        <div class="k">CVSS v3.1</div>
+        <div class="v crit">9.8</div>
+        <div class="sub">CRITICAL · base</div>
+        <div class="bar-track" style="margin-top:6px"><div class="bar-fill" style="width:98%"></div></div>
+      </div>
+      <div class="score-cell">
+        <div class="k">EPSS</div>
+        <div class="v high">94.2<span style="font-size:18px;color:var(--fg-muted)">%</span></div>
+        <div class="sub">Exploit probability · 30d</div>
+        <div class="bar-track" style="margin-top:6px"><div class="bar-fill" style="width:94%;background:var(--status-high)"></div></div>
+      </div>
+      <div class="score-cell">
+        <div class="k">KEV status</div>
+        <div class="v crit" style="font-size:30px">EXPLOITED</div>
+        <div class="sub">Added to CISA KEV · May 16</div>
+        <div class="bar-track" style="margin-top:6px"><div class="bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="score-cell">
+        <div class="k">Shodan exposure</div>
+        <div class="v">13,442</div>
+        <div class="sub">Reachable instances · global</div>
+        <div class="bar-track" style="margin-top:6px"><div class="bar-fill" style="width:62%;background:var(--accent)"></div></div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <h3>Timeline</h3>
+      <div class="track">
+        <div class="node done">
+          <div class="dot"></div>
+          <div class="when">October 14, 2024</div>
+          <div class="label">Mandiant identifies pre-advisory exploitation (UNC5820)</div>
+        </div>
+        <div class="node done">
+          <div class="dot"></div>
+          <div class="when">October 23, 2024</div>
+          <div class="label">Fortinet publishes advisory FG-IR-24-423</div>
+        </div>
+        <div class="node done">
+          <div class="dot"></div>
+          <div class="when">October 23, 2024</div>
+          <div class="label">CISA adds CVE-2024-47575 to KEV catalog</div>
+        </div>
+        <div class="node crit">
+          <div class="dot"></div>
+          <div class="when">November 13, 2024</div>
+          <div class="label">Federal civilian agencies patch deadline (BOD 22-01)</div>
+        </div>
+        <div class="node">
+          <div class="dot"></div>
+          <div class="when">— ongoing</div>
+          <div class="label">Continued opportunistic scanning observed; 50+ unique source ASNs</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="cve-body">
+    <article>
+      <h2>Description</h2>
+      <p>
+        A command injection vulnerability in the FortiManager <code>fgfm</code> daemon allows an
+        unauthenticated remote attacker to execute arbitrary OS commands as <code>root</code>
+        by sending a crafted request to the management interface listening on TCP/541. Successful
+        exploitation provides full control of the FortiManager appliance, which in turn manages
+        configuration across all administered FortiGate devices.
+      </p>
+      <p>
+        The flaw exists in the request-parsing routine, which interpolates a tenant-supplied field
+        into a shell command without sanitisation. Exploitation does not require valid credentials.
+        The vendor advisory rates the issue 9.8 / Critical and recommends immediate patching;
+        affected versions span FortiManager 7.0 through 7.6, and FortiManager Cloud. Mandiant attributes pre-disclosure exploitation to UNC5820, a suspected China-nexus operator.
+      </p>
+
+      <h2>CVSS v3.1 vector</h2>
+      <p style="font-family:var(--font-mono);font-size:13px;color:var(--fg-muted);max-width:none">
+        CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+      </p>
+      <div class="cvss">
+        <div class="cell h"><span class="k">Attack vector</span><span class="v">Network (AV:N)</span></div>
+        <div class="cell h"><span class="k">Attack complexity</span><span class="v">Low (AC:L)</span></div>
+        <div class="cell h"><span class="k">Privileges required</span><span class="v">None (PR:N)</span></div>
+        <div class="cell h"><span class="k">User interaction</span><span class="v">None (UI:N)</span></div>
+        <div class="cell h"><span class="k">Confidentiality</span><span class="v">High</span></div>
+        <div class="cell h"><span class="k">Integrity</span><span class="v">High</span></div>
+        <div class="cell h"><span class="k">Availability</span><span class="v">High</span></div>
+        <div class="cell"><span class="k">Scope</span><span class="v" style="color:var(--fg)">Unchanged</span></div>
+      </div>
+
+      <h2>Affected products</h2>
+      <table class="affected">
+        <thead><tr><th>Product</th><th>Affected range</th><th>Fixed in</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>FortiManager 7.6</td><td>7.6.0</td><td>7.6.1</td><td><span class="status fix">Fix available</span></td></tr>
+          <tr><td>FortiManager 7.4</td><td>7.4.0 – 7.4.4</td><td>7.4.5</td><td><span class="status fix">Fix available</span></td></tr>
+          <tr><td>FortiManager 7.2</td><td>7.2.0 – 7.2.7</td><td>7.2.8</td><td><span class="status fix">Fix available</span></td></tr>
+          <tr><td>FortiManager 7.0</td><td>7.0.0 – 7.0.12</td><td>7.0.13</td><td><span class="status fix">Fix available</span></td></tr>
+          <tr><td>FortiManager 6.x</td><td>all</td><td>—</td><td><span class="status aff">EOL · upgrade</span></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Mitigations</h2>
+      <ul style="color:var(--fg);line-height:1.7;max-width:64ch">
+        <li><strong>Patch.</strong> Upgrade to the fixed version corresponding to your major release.</li>
+        <li><strong>Restrict the management interface.</strong> Block TCP/541 at the perimeter from any source that does not require <code>fgfm</code>.</li>
+        <li><strong>Rotate credentials.</strong> Assume any administered FortiGate credentials reachable from FortiManager are compromised; rotate API tokens and admin passwords.</li>
+        <li><strong>Hunt.</strong> Search for the <code>diag_npu</code> child-process patterns documented in the Mandiant write-up.</li>
+      </ul>
+
+      <h2>References</h2>
+      <ul class="refs">
+        <li><span class="src">Vendor</span><a href="https://www.fortiguard.com/psirt/FG-IR-24-423" target="_blank" rel="noopener">FG-IR-24-423 · FortiManager security advisory</a><span class="date">Oct 23</span></li>
+        <li><span class="src">CISA KEV</span><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">Added to Known Exploited Vulnerabilities catalog</a><span class="date">Oct 23</span></li>
+        <li><span class="src">Research</span><a href="https://cloud.google.com/blog/topics/threat-intelligence/" target="_blank" rel="noopener">Mandiant · UNC5820 attribution &amp; technical analysis</a><span class="date">Oct 23</span></li>
+        <li><span class="src">NVD</span><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener">CVE-2024-47575 · National Vulnerability Database entry</a><span class="date">Oct 23</span></li>
+        <li><span class="src">Cyber Digest</span><a href="briefing.html">Operational briefing &amp; detection guidance</a><span class="date">Oct 24</span></li>
+      </ul>
+    </article>
+
+    <aside class="cve-side">
+      <div class="kev-badge">
+        <span class="pulse"></span> Actively exploited · CISA KEV
+      </div>
+      <div class="side-card">
+        <h4>At a glance</h4>
+        <div class="kv"><span class="k">CWE</span><span class="v">CWE-78 · OS Command Injection</span></div>
+        <div class="kv"><span class="k">Auth required</span><span class="v crit">No</span></div>
+        <div class="kv"><span class="k">UI required</span><span class="v ok">No</span></div>
+        <div class="kv"><span class="k">PoC public</span><span class="v crit">Yes</span></div>
+        <div class="kv"><span class="k">Patch available</span><span class="v ok">Yes</span></div>
+        <div class="kv"><span class="k">Federal deadline</span><span class="v">Nov 13, 2024</span></div>
+      </div>
+      <div class="side-card">
+        <h4>Detection</h4>
+        <div style="font-family:var(--font-mono);font-size:11.5px;color:var(--fg-muted);line-height:1.6">
+          <p style="margin:0">Outbound connections from <code>fgfm</code> to non-Fortinet IPs are anomalous and the highest-confidence signal. Pair with parent-process anomalies on <code>diag_npu</code>.</p>
+        </div>
+        <a href="briefing.html" class="btn btn-accent btn-sm" style="margin-top:14px">Open briefing <span class="arr">→</span></a>
+      </div>
+      <div class="side-card">
+        <h4>Get notified</h4>
+        <div style="font-size:13px;color:var(--fg-muted);line-height:1.55">Receive an alert when a new CVE with CVSS &ge; 9.0 enters CISA KEV.</div>
+        <div class="signup" style="margin-top:12px">
+          <div class="field"><input placeholder="you@company.com"/><button class="btn btn-primary btn-sm">Alert</button></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- Related CVEs -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Related vulnerabilities</div>
+        <h2>Other criticals you should be tracking.</h2>
+      </div>
+      <div class="right"><a href="cve.html">All vulnerabilities →</a></div>
+    </div>
+    <div class="cve-grid">
+      <article class="cve crit">
+        <div class="vendor">Palo Alto · PAN-OS</div>
+        <div class="id">CVE-2024-3400 <span class="score crit">9.6</span></div>
+        <h4>GlobalProtect command injection in PAN-OS</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
+        <div class="foot"><span>KEV · added 14 May</span><span class="kev">EXPLOITED</span></div>
+      </article>
+      <article class="cve">
+        <div class="vendor">PHP Group · PHP-CGI</div>
+        <div class="id">CVE-2024-4577 <span class="score high">8.8</span></div>
+        <h4>Deserialization in queue dispatcher leading to remote code execution</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i></div>
+        <div class="foot"><span>Vendor patch · 12 May</span><span>PoC public</span></div>
+      </article>
+      <article class="cve">
+        <div class="vendor">Microsoft · Windows</div>
+        <div class="id">CVE-2024-30040 <span class="score high">8.1</span></div>
+        <h4>MSHTML platform spoofing zero-day chained by QakBot operators</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i></div>
+        <div class="foot"><span>May rollup · 13 May</span><span>0-day</span></div>
+      </article>
+      <article class="cve mid">
+        <div class="vendor">VMware</div>
+        <div class="id">CVE-2024-37085 <span class="score mid">6.7</span></div>
+        <h4>AD-integration auth bypass allowing full ESXi host takeover via "ESX Admins" group</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
+        <div class="foot"><span>Advisory · 15 May</span><span>No PoC</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 L14 3 L25 9"/><path d="M3 14 L14 8 L25 14" opacity=".7"/><path d="M3 19 L14 13 L25 19" opacity=".4"/><circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+          <span class="brand-name">Cyber Digest</span>
+        </a>
+        <p>Independent, reader-funded threat intelligence and cybersecurity news. Written by practitioners, for practitioners.</p>
+
+      </div>
+      <div><h5>Sections</h5><ul><li><a href="wire.html">The Wire</a></li><li><a href="cves.html">Vulnerabilities</a></li><li><a href="briefing.html">Briefings</a></li><li><a href="actor.html">Threat Actors</a></li><li><a href="wire.html?cat=research">Research</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="cves.html">KEV tracker</a></li><li><a href="actor.html">Actor library</a></li><li><a href="briefing.html">Detection rules</a></li><li><a href="feed.xml">RSS feed</a></li><li><a href="feed.json">JSON feed</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html#standards">Editorial standards</a></li><li><a href="about.html#masthead">Masthead</a></li><li><a href="tip.html">Tip line</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+      <div><h5>Legal</h5><ul><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#disclosures">Disclosures</a></li><li><a href="about.html#press">Press kit</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2024 Cyber Digest. Independent — reader-funded.</div>
+      <div>Build 142.04 · Last updated <span data-clock-short>—:— UTC</span></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Inside the Volt Typhoon resurgence — Cyber Digest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* ─── briefing page ─── */
+.breadcrumb{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:24px 0;
+}
+.breadcrumb a{ color:var(--fg-muted) }
+.breadcrumb a:hover{ color:var(--fg) }
+.breadcrumb .sep{ opacity:.5 }
+
+.article-mast{
+  padding:32px 0 56px;
+  border-bottom:1px solid var(--hairline);
+}
+.article-mast .eyebrow-row{
+  display:flex;align-items:center;gap:14px;margin-bottom:28px;
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.article-mast .eyebrow-row .cat{
+  color:var(--accent);
+  padding:4px 10px;border:1px solid rgba(108,142,255,.35);
+}
+.article-mast h1{
+  font-size: clamp(40px, 5.4vw, 72px);
+  line-height:1.04;letter-spacing:-.028em;
+  font-weight:500;margin:0;text-wrap:balance;
+  max-width:22ch;
+}
+.article-mast .dek{
+  max-width:64ch;margin-top:24px;
+  font-size:20px;line-height:1.45;color:var(--fg-muted);
+  text-wrap:pretty;
+}
+.article-mast .dek em{ font-family:var(--font-serif);font-style:italic;color:var(--fg) }
+.byline{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  margin-top:40px;
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.byline .author{
+  display:flex;align-items:center;gap:10px;color:var(--fg);
+}
+.byline .avatar{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),#3F62C5);
+  display:grid;place-items:center;color:#fff;font-size:11px;
+  font-family:var(--font-sans);letter-spacing:0;
+}
+.byline .sep{ width:1px;height:14px;background:var(--hairline-2) }
+
+.article-hero{
+  margin-top:48px;
+  aspect-ratio: 21/9;
+  border:1px solid var(--hairline);
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(800px 300px at 30% 20%, rgba(108,142,255,.10), transparent 60%),
+    radial-gradient(600px 250px at 80% 80%, rgba(79,178,138,.06), transparent 60%),
+    repeating-linear-gradient(135deg, var(--bg-elev-2) 0 10px, var(--bg-elev-1) 10px 20px);
+}
+.article-hero::after{
+  content:"Editorial image · hero · 21:9";
+  position:absolute;left:18px;bottom:14px;
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.article-hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(to right, rgba(108,142,255,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(108,142,255,.06) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(60% 60% at 50% 50%, #000, transparent 70%);
+}
+
+/* Two-column body */
+.article-body{
+  display:grid;
+  grid-template-columns: 220px minmax(0, 720px) 1fr;
+  gap:64px;
+  padding:80px 0 120px;
+  align-items:start;
+}
+.article-rail{
+  position:sticky;top:96px;
+  display:flex;flex-direction:column;gap:28px;
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.article-rail h6{
+  font-size:10px;margin:0 0 10px;color:var(--fg-dim);
+  letter-spacing:.16em;font-weight:500;
+}
+.article-rail .toc a{
+  display:block;padding:8px 0;border-top:1px solid var(--hairline);
+  color:var(--fg-muted);font-size:11.5px;letter-spacing:.06em;text-transform:none;
+}
+.article-rail .toc a:hover{ color:var(--fg) }
+.article-rail .toc a.cur{ color:var(--fg) }
+.article-rail .toc a.cur::before{ content:"▸ "; color:var(--accent) }
+.article-rail .share{ display:flex;flex-direction:column;gap:6px }
+.article-rail .share button{
+  text-align:left;padding:8px 0;border-top:1px solid var(--hairline);
+  color:var(--fg-muted);font-family:var(--font-mono);font-size:11.5px;
+  letter-spacing:.06em;text-transform:none;cursor:pointer;
+}
+.article-rail .share button:hover{ color:var(--fg) }
+
+.article-prose{ font-size:17px;line-height:1.65;color:var(--fg) }
+.article-prose > * + *{ margin-top:1.2em }
+.article-prose h2{
+  font-size:30px;letter-spacing:-.02em;line-height:1.15;
+  font-weight:500;margin:2em 0 .6em;
+  text-wrap:balance;
+}
+.article-prose h3{
+  font-size:20px;letter-spacing:-.01em;line-height:1.25;
+  font-weight:500;margin:1.8em 0 .4em;
+}
+.article-prose p{ color:var(--fg);text-wrap:pretty;max-width:64ch }
+.article-prose p.lede{
+  font-size:20px;color:var(--fg);font-weight:400;line-height:1.5;
+  border-left:2px solid var(--accent);padding-left:20px;
+}
+.article-prose a{ color:var(--accent);border-bottom:1px solid rgba(108,142,255,.3) }
+.article-prose a:hover{ border-color:var(--accent) }
+.article-prose code{
+  font-family:var(--font-mono);font-size:.88em;
+  background:var(--bg-elev-2);padding:2px 6px;border:1px solid var(--hairline);
+  border-radius:3px;color:var(--fg);
+}
+.article-prose ul, .article-prose ol{
+  padding-left:1.2em;color:var(--fg);
+}
+.article-prose li{ margin:.4em 0 }
+.article-prose li::marker{ color:var(--fg-dim) }
+
+.pullquote{
+  margin:2em 0;padding:32px 0 32px 32px;
+  border-left:2px solid var(--accent);
+  font-family:var(--font-serif);font-style:italic;
+  font-size:30px;line-height:1.25;letter-spacing:-.01em;
+  color:var(--fg);text-wrap:balance;
+}
+.pullquote cite{
+  display:block;margin-top:14px;
+  font-family:var(--font-mono);font-style:normal;font-size:11px;
+  color:var(--fg-dim);letter-spacing:.12em;text-transform:uppercase;
+}
+
+.codeblock{
+  margin:2em 0;
+  border:1px solid var(--hairline);
+  background:var(--bg-elev-1);
+  font-family:var(--font-mono);font-size:13px;
+  overflow:hidden;
+}
+.codeblock .head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;border-bottom:1px solid var(--hairline);
+  font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.codeblock pre{
+  margin:0;padding:18px 22px;
+  color:var(--fg);overflow:auto;line-height:1.55;
+}
+.codeblock pre .kw{ color:var(--accent) }
+.codeblock pre .str{ color:var(--status-ok) }
+.codeblock pre .cm{ color:var(--fg-dim) }
+
+/* Aside callout */
+.callout{
+  margin:2em 0;
+  border:1px solid var(--hairline);
+  background:var(--bg-elev-1);
+  padding:24px;
+  display:grid;grid-template-columns: 140px 1fr;gap:24px;
+}
+.callout .k{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;line-height:1.5;
+}
+.callout .k .dot{
+  display:inline-block;width:6px;height:6px;background:var(--accent);
+  border-radius:1px;margin-right:6px;
+}
+.callout .v{ font-size:15px;line-height:1.55;color:var(--fg) }
+
+/* IOC table */
+.ioc{
+  width:100%;border-collapse:collapse;margin:2em 0;
+  font-family:var(--font-mono);font-size:12px;
+}
+.ioc th{
+  text-align:left;padding:10px 12px;
+  border-bottom:1px solid var(--hairline-2);
+  font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+}
+.ioc td{
+  padding:10px 12px;border-bottom:1px solid var(--hairline);
+  color:var(--fg);vertical-align:top;
+}
+.ioc td .pill{
+  display:inline-block;padding:2px 6px;border:1px solid var(--hairline-2);
+  font-size:10px;letter-spacing:.08em;color:var(--fg-muted);
+}
+.ioc td .pill.r{ color:var(--status-high);border-color:rgba(217,123,106,.4) }
+
+/* MITRE chips */
+.att-chips{ display:flex;flex-wrap:wrap;gap:8px;margin:1.4em 0 }
+.att-chip{
+  font-family:var(--font-mono);font-size:11px;
+  padding:6px 10px;border:1px solid var(--hairline-2);
+  color:var(--fg-muted);letter-spacing:.04em;
+}
+.att-chip strong{ color:var(--fg);font-weight:500;margin-right:6px }
+.att-chip:hover{ border-color:var(--fg-muted);color:var(--fg) }
+
+/* Related */
+.related{
+  border-top:1px solid var(--hairline);padding:80px 0;
+}
+.related-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--hairline);border:1px solid var(--hairline);margin-top:32px;
+}
+
+@media (max-width: 1100px){
+  .article-body{ grid-template-columns: 1fr; gap:40px }
+  .article-rail{ position:static;display:grid;grid-template-columns:1fr 1fr;gap:24px }
+  .callout{ grid-template-columns:1fr;gap:8px }
+  .related-grid{ grid-template-columns:1fr 1fr }
+}
+@media (max-width: 720px){
+  .article-mast h1{ font-size:36px }
+  .article-mast .dek{ font-size:17px }
+  .related-grid{ grid-template-columns:1fr }
+  .pullquote{ font-size:22px;padding-left:20px }
+}
+</style>
+<script>(()=>{try{const t=localStorage.getItem('cd-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'}catch(e){}})();</script>
+<script defer src="image-slot.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 9 L14 3 L25 9" />
+          <path d="M3 14 L14 8 L25 14" opacity=".7"/>
+          <path d="M3 19 L14 13 L25 19" opacity=".4"/>
+          <circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand-name">Cyber Digest<span>/ Intelligence</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="wire.html">The Wire</a>
+      <a href="cves.html">Vulnerabilities</a>
+      <a href="briefing.html">Briefings</a>
+      <a href="actor.html">Actors</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>—:— UTC</span></div>
+      <button class="search" data-action="search" aria-label="Open search (Cmd+K)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search CVE, vendor, actor…
+        <span class="kbd">⌘ K</span>
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="menu-btn" onclick="cdMobileNav(true)" aria-label="Open menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="wire.html">Briefings</a>
+    <span class="sep">/</span>
+    <span style="color:var(--fg)">Deep dive · October 27, 2024</span>
+  </div>
+
+  <!-- MAST -->
+  <header class="article-mast">
+    <div class="eyebrow-row">
+      <span class="cat">Deep dive</span>
+      <span>Threat actor · Volt Typhoon</span>
+      <span>·</span>
+      <span>09 min read</span>
+    </div>
+    <h1>Inside the Volt Typhoon resurgence: 90 days of dwell, pivot and living off the land.</h1>
+    <p class="dek">
+      The operators returned to OT-adjacent telco infrastructure in March. We reconstruct the access chain
+      — from edge router compromise to AD persistence — and map it against
+      <em>MITRE ATT&amp;CK v16.</em>
+    </p>
+    <div class="byline">
+      <span class="author">Cyber Digest desk</span>
+      <span class="sep"></span>
+      <span>Published October 27, 2024</span>
+      <span class="sep"></span>
+      <span>Updated <span data-clock-short>—:— UTC</span></span>
+
+    </div>
+  </header>
+
+  <image-slot id="briefing-hero" shape="rect" placeholder="Drop article hero image (21:9)" style="margin-top:48px;display:block;width:100%;aspect-ratio:21/9;border:1px solid var(--hairline)"></image-slot>
+</div>
+
+<!-- BODY -->
+<div class="container">
+  <div class="article-body">
+    <aside class="article-rail" aria-label="Article navigation">
+      <div>
+        <h6>Contents</h6>
+        <nav class="toc">
+          <a href="#access" class="cur">01 · The access chain</a>
+          <a href="#dwell">02 · Dwell &amp; lateral</a>
+          <a href="#persistence">03 · Persistence</a>
+          <a href="#detection">04 · Detection guidance</a>
+          <a href="#iocs">05 · Indicators</a>
+        </nav>
+      </div>
+      <div>
+        <h6>Share</h6>
+        <div class="share">
+          <button>↗ Copy link</button>
+          <button>↗ Email</button>
+          <button>↗ X / Twitter</button>
+          <button>↗ LinkedIn</button>
+        </div>
+      </div>
+      <div>
+        <h6>Cite this</h6>
+        <div style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.04em;text-transform:none;line-height:1.6;border:1px solid var(--hairline);padding:10px;background:var(--bg-elev-1)">
+          Cyber Digest desk (2024). "Volt Typhoon resurgence in US critical infrastructure." Cyber Digest.
+        </div>
+      </div>
+    </aside>
+
+    <article class="article-prose">
+      <p class="lede">
+        Between March 11 and May 14, Cyber Digest tracked at least seven intrusions consistent with
+        the operator known publicly as Volt Typhoon. The targeting pattern — telco edge, transport-adjacent
+        OT, a small number of regional water utilities — has not changed. The tradecraft, in places, has.
+      </p>
+
+      <h2 id="access">01 · The access chain</h2>
+      <p>
+        In four of the seven incidents, initial access traced to an unpatched edge router exposing a
+        management interface on a non-standard port. In the remaining three, the operators reused
+        credentials previously stolen from an MSP — credentials that had not been rotated despite a
+        2025 disclosure. Neither path is novel. What's new is the speed of pivot: median time from
+        access to first hands-on-keyboard activity collapsed from 14 hours to under 90 minutes.
+      </p>
+      <p>
+        Once inside, operators relied almost exclusively on <code>certutil</code>, <code>wmic</code>,
+        <code>netsh</code> and built-in PowerShell modules. There is no novel malware to fingerprint.
+        That, of course, is the point.
+      </p>
+
+      <div class="att-chips">
+        <div class="att-chip"><strong>T1190</strong> Exploit public-facing app</div>
+        <div class="att-chip"><strong>T1078.004</strong> Valid accounts · cloud</div>
+        <div class="att-chip"><strong>T1059.001</strong> PowerShell</div>
+        <div class="att-chip"><strong>T1021.002</strong> SMB / admin shares</div>
+        <div class="att-chip"><strong>T1112</strong> Modify registry</div>
+        <div class="att-chip"><strong>T1003.001</strong> LSASS memory</div>
+      </div>
+
+      <h2 id="dwell">02 · Dwell &amp; lateral movement</h2>
+      <p>
+        The mean dwell window across the seven cases was 47 days. In two of the longest, operators
+        appear to have deliberately limited activity to working hours in the target time zone — a
+        small behavioural detail that consistently defeats simple anomaly detection.
+      </p>
+
+      <div class="pullquote">
+        "There was no exotic implant. The most dangerous tool on the network was Notepad."
+        <cite>— Incident responder, EU telco, August 2024</cite>
+      </div>
+
+      <p>
+        Lateral movement followed a familiar shape: harvest service-account credentials from a
+        domain-joined jump box, pivot via SMB to a backup server, exfil staged data over an
+        already-allowed HTTPS path to a compromised content-delivery edge.
+      </p>
+
+      <h2 id="persistence">03 · Persistence</h2>
+      <p>
+        In every case, persistence resolved to one of three primitives: a scheduled task masquerading
+        as a Windows Update servicer, a WMI event subscription bound to system idle, or a
+        registry Run key under a HKLM hive that defenders rarely audit. None of these are
+        clever. All of them work.
+      </p>
+
+      <div class="callout">
+        <div class="k"><span class="dot"></span>Why this matters</div>
+        <div class="v">
+          The campaign is interesting not because it is novel but because it isn't. The tradecraft
+          that worked against telco operators in 2024 is still working today. The asymmetry isn't
+          the adversary's skill — it's defenders' patch cadence.
+        </div>
+      </div>
+
+      <h2 id="detection">04 · Detection guidance</h2>
+      <p>
+        Below is a high-confidence Sigma rule covering the LSASS-access pattern observed in five of
+        seven cases. It assumes Sysmon with the SwiftOnSecurity baseline.
+      </p>
+
+      <div class="codeblock">
+        <div class="head"><span>sigma · lsass-access-via-rundll32.yml</span><span>↳ Copy</span></div>
+        <pre><span class="cm"># Volt Typhoon — LSASS access via signed binary</span>
+<span class="kw">title:</span> Suspicious LSASS access via rundll32
+<span class="kw">id:</span>    5b81-2026-04-vt-01
+<span class="kw">status:</span> experimental
+<span class="kw">logsource:</span>
+  <span class="kw">product:</span> windows
+  <span class="kw">service:</span> sysmon
+<span class="kw">detection:</span>
+  selection:
+    EventID: 10
+    TargetImage|endswith: <span class="str">'\lsass.exe'</span>
+    SourceImage|endswith: <span class="str">'\rundll32.exe'</span>
+    GrantedAccess: <span class="str">'0x1410'</span>
+  condition: selection
+<span class="kw">level:</span> high
+<span class="kw">tags:</span>
+  - attack.credential_access
+  - attack.t1003.001</pre>
+      </div>
+
+      <h2 id="iocs">05 · Indicators</h2>
+      <p>
+        The following indicators were observed across at least two of the seven cases. They are
+        published here under TLP:CLEAR. SHA-256 hashes correspond to legitimate signed binaries
+        loaded into anomalous parents and are best used as hunting starts, not blocklist entries.
+      </p>
+
+      <table class="ioc">
+        <thead>
+          <tr><th>Type</th><th>Indicator</th><th>Context</th><th>Confidence</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="pill">IP</span></td><td>193.142.30.71</td><td>C2 · staging</td><td><span class="pill r">High</span></td></tr>
+          <tr><td><span class="pill">IP</span></td><td>45.61.139.204</td><td>Exfil · CDN edge</td><td><span class="pill r">High</span></td></tr>
+          <tr><td><span class="pill">Domain</span></td><td>updt-svc.brilink[.]net</td><td>Persistence beacon</td><td><span class="pill r">High</span></td></tr>
+          <tr><td><span class="pill">SHA-256</span></td><td>3b9a…f02c</td><td>Signed certutil variant</td><td><span class="pill">Medium</span></td></tr>
+          <tr><td><span class="pill">User-Agent</span></td><td>Mozilla/5.0 (compatible; SvcCheck/1.0)</td><td>Beaconing</td><td><span class="pill">Medium</span></td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        A machine-readable feed of these indicators is available to subscribers as STIX 2.1 and
+        plain JSON. The feed is updated as new intrusions are confirmed.
+      </p>
+
+      <p style="margin-top:48px;padding-top:24px;border-top:1px solid var(--hairline);color:var(--fg-muted);font-size:14px">
+        — Compiled by the Cyber Digest desk.
+        Questions, corrections or tips: <a href="#">desk@cyberdigest.io</a>.
+      </p>
+    </article>
+  </div>
+</div>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="container">
+    <div class="section-tag">Continue reading</div>
+    <h2 style="font-size:32px;letter-spacing:-.02em;font-weight:500;margin:14px 0 0">Related briefings.</h2>
+    <div class="related-grid">
+      <article class="card">
+        <div class="topline"><span class="cat">Advisory</span><span>05 min read</span></div>
+        <h3>Fortinet FortiManager FortiJump: missing authentication (CVSS 9.8)</h3>
+        <p>Mitigations, exposure heuristics, and a Sigma rule for the published exploitation pattern.</p>
+        <div class="meta"><span class="author">— Desk</span><span>Oct 26</span></div>
+      </article>
+      <article class="card">
+        <div class="topline"><span class="cat">Field notes</span><span>07 min read</span></div>
+        <h3>What MSPs got wrong about Akira's affiliate playbook</h3>
+        <p>Drawing on incident-response engagements observed by the desk. The pattern is duller than the headline.</p>
+        <div class="meta"><span class="author">— Desk</span><span>Oct 24</span></div>
+      </article>
+      <article class="card">
+        <div class="topline"><span class="cat">Research</span><span>11 min read</span></div>
+        <h3>A timing side-channel in post-quantum KEM implementations</h3>
+        <p>Multiple vendor implementations affected. Mitigation expected in the next reference release.</p>
+        <div class="meta"><span class="author">— Desk</span><span>Oct 22</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="newsletter">
+      <div>
+        <div class="section-tag">Daily briefing · 06:30 UTC</div>
+        <h2>Get briefings like this <em>before standup.</em></h2>
+        <p>Free, weekdays. Five minutes. The signal of the day, nothing else.</p>
+      </div>
+      <form class="signup" data-form="subscribe">
+        <div class="field">
+          <input type="email" placeholder="you@company.com" />
+          <button class="btn btn-primary">Subscribe <span class="arr">→</span></button>
+        </div>
+        <div class="perks">
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> No spam, ever</span>
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Unsubscribe in one click</span>
+        </form></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 L14 3 L25 9"/><path d="M3 14 L14 8 L25 14" opacity=".7"/><path d="M3 19 L14 13 L25 19" opacity=".4"/><circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+          <span class="brand-name">Cyber Digest</span>
+        </a>
+        <p>Independent, reader-funded threat intelligence and cybersecurity news. Written by practitioners, for practitioners.</p>
+
+      </div>
+      <div><h5>Sections</h5><ul><li><a href="wire.html">The Wire</a></li><li><a href="cves.html">Vulnerabilities</a></li><li><a href="briefing.html">Briefings</a></li><li><a href="actor.html">Threat Actors</a></li><li><a href="wire.html?cat=research">Research</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="cves.html">KEV tracker</a></li><li><a href="actor.html">Actor library</a></li><li><a href="briefing.html">Detection rules</a></li><li><a href="feed.xml">RSS feed</a></li><li><a href="feed.json">JSON feed</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html#standards">Editorial standards</a></li><li><a href="about.html#masthead">Masthead</a></li><li><a href="tip.html">Tip line</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+      <div><h5>Legal</h5><ul><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#disclosures">Disclosures</a></li><li><a href="about.html#press">Press kit</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2024 Cyber Digest. Independent — reader-funded.</div>
+      <div>Build 142.04 · Last updated <span data-clock-short>—:— UTC</span></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

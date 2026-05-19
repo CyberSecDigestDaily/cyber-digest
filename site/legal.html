@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Legal — Cyber Digest</title>
+<meta name="description" content="Cyber Digest — independent threat intelligence and cybersecurity news, written for practitioners." />
+<meta property="og:title" content="__TITLE__" />
+<meta property="og:site_name" content="Cyber Digest" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>(()=>{try{const t=localStorage.getItem('cd-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'}catch(e){}})();</script>
+<script defer src="app.js"></script>
+<style>
+.legal-mast{ padding:64px 0 32px;border-bottom:1px solid var(--hairline) }
+.legal-mast h1{ font-size:clamp(40px,5vw,72px);letter-spacing:-.03em;line-height:1.04;font-weight:500;margin:14px 0 0 }
+.legal-mast p{ color:var(--fg-muted);max-width:64ch;margin-top:18px;font-size:16px }
+.legal-toc{
+  display:flex;gap:8px;flex-wrap:wrap;
+  padding:18px 0;border-bottom:1px solid var(--hairline);position:sticky;top:68px;background:var(--header-bg-strong);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:20;
+}
+.legal-toc a{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 12px;border:1px solid var(--hairline-2);color:var(--fg-muted);
+}
+.legal-toc a:hover{ color:var(--fg);border-color:var(--fg-muted) }
+.legal-section{ padding:64px 0;border-bottom:1px solid var(--hairline) }
+.legal-section:last-child{ border-bottom:0 }
+.legal-section h2{
+  font-size:32px;letter-spacing:-.02em;font-weight:500;line-height:1.1;margin:0 0 8px;
+}
+.legal-section .updated{ font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:32px }
+.legal-section h3{ font-size:18px;letter-spacing:-.005em;font-weight:500;margin:32px 0 12px;color:var(--fg) }
+.legal-section p, .legal-section li{ color:var(--fg);font-size:15.5px;line-height:1.7;max-width:72ch }
+.legal-section p + p{ margin-top:14px }
+.legal-section ul{ padding-left:1.2em }
+.legal-section a{ color:var(--accent);border-bottom:1px solid rgba(108,142,255,.3) }
+
+table.disclosures{ width:100%;border-collapse:collapse;font-size:13.5px;margin-top:18px }
+table.disclosures th{
+  text-align:left;padding:10px 14px;border-bottom:1px solid var(--hairline-2);
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+}
+table.disclosures td{ padding:12px 14px;border-bottom:1px solid var(--hairline);vertical-align:top;color:var(--fg) }
+table.disclosures td.amt{ font-family:var(--font-mono);color:var(--fg-muted);white-space:nowrap }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 9 L14 3 L25 9" />
+          <path d="M3 14 L14 8 L25 14" opacity=".7"/>
+          <path d="M3 19 L14 13 L25 19" opacity=".4"/>
+          <circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand-name">Cyber Digest<span>/ Intelligence</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="wire.html">The Wire</a>
+      <a href="cves.html">Vulnerabilities</a>
+      <a href="briefing.html">Briefings</a>
+      <a href="actor.html">Actors</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>—:— UTC</span></div>
+      <button class="search" data-action="search" aria-label="Open search (Cmd+K)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search CVE, vendor, actor…
+        <span class="kbd">⌘ K</span>
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="menu-btn" onclick="cdMobileNav(true)" aria-label="Open menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+  <header class="legal-mast">
+    <div class="section-tag">Legal &amp; disclosures</div>
+    <h1>The rules we publish &amp; operate under.</h1>
+    <p>Plain-English copies of the documents that govern your relationship with Cyber Digest. The authoritative versions are deposited with our regulator on file; this page is the readable one.</p>
+  </header>
+
+  <nav class="legal-toc">
+    <a href="#privacy">Privacy</a>
+    <a href="#terms">Terms</a>
+    <a href="#cookies">Cookies</a>
+    <a href="#disclosures">Disclosures</a>
+    <a href="#corrections">Corrections log</a>
+    <a href="#security">Responsible disclosure</a>
+    <a href="#dmca">Copyright / DMCA</a>
+  </nav>
+
+  <section class="legal-section" id="privacy">
+    <h2>Privacy</h2>
+    <div class="updated">Last updated · 21 October 2024</div>
+    <p>Cyber Digest is a UK-registered company subject to UK GDPR and the Data Protection Act 2018. We are the data controller for personal information you provide directly. Our ICO registration will be added at launch.</p>
+    <h3>What we collect, and why</h3>
+    <ul>
+      <li><strong>Email address</strong> — to send you the newsletter and account communications. Held in our ESP (Postmark, EU region).</li>
+      <li><strong>Billing details</strong> — only for paid subscribers. Processed by Stripe (PCI-DSS Level 1); we never see card data.</li>
+      <li><strong>Open / click events on emails</strong> — only as aggregate counts. We do not associate them with individual addresses.</li>
+      <li><strong>Server logs</strong> — IP and user-agent, retained for 14 days, used solely for abuse mitigation.</li>
+    </ul>
+    <h3>What we don't do</h3>
+    <ul>
+      <li>No advertising trackers. No third-party analytics. No behavioural retargeting. No data brokers.</li>
+      <li>No selling, renting or sharing of personal data with third parties.</li>
+      <li>No AI-training use of subscriber data, ever.</li>
+    </ul>
+    <h3>Your rights</h3>
+    <p>You can export, correct or delete your data at any time from your account settings, or by mailing <a href="mailto:privacy@cyberdigest.io">privacy@cyberdigest.io</a>. We respond inside ten working days.</p>
+  </section>
+
+  <section class="legal-section" id="terms">
+    <h2>Terms of use</h2>
+    <div class="updated">Last updated · 21 October 2024</div>
+    <p>Use of cyberdigest.io and its services is governed by these terms. By subscribing or otherwise using the site, you accept them.</p>
+    <h3>Licence</h3>
+    <p>All editorial content on Cyber Digest is © Cyber Digest Ltd. and made available under the following terms: you may quote up to 150 words inline with a visible attribution and a link to the original article. Wholesale reproduction or systematic scraping is not permitted; if you'd like a republication licence, mail <a href="mailto:press@cyberdigest.io">press@cyberdigest.io</a>.</p>
+    <h3>API &amp; feeds</h3>
+    <p>RSS / JSON / STIX feeds are for personal and internal-team use. Redistribution of feed contents to non-subscribers requires an enterprise licence.</p>
+    <h3>Acceptable use</h3>
+    <ul>
+      <li>Don't scrape, brute-force or run automated traffic outside published API rate limits.</li>
+      <li>Don't impersonate Cyber Digest staff or the brand.</li>
+      <li>Don't use Cyber Digest content to train a model. (We will find out and we will revoke the licence.)</li>
+    </ul>
+    <h3>Liability</h3>
+    <p>Cyber Digest produces journalism. Operational decisions remain your responsibility. We work hard to be right; we do not warrant that any specific guidance applies to your environment.</p>
+  </section>
+
+  <section class="legal-section" id="cookies">
+    <h2>Cookies</h2>
+    <div class="updated">Last updated · 21 October 2024</div>
+    <p>We use a small number of strictly-necessary cookies:</p>
+    <ul>
+      <li><code>cd-theme</code> — remembers your light / dark preference. First-party. Indefinite. No personal data.</li>
+      <li><code>cd-session</code> — set on paid-tier sign-in. First-party. Session-scoped. <code>HttpOnly</code>, <code>Secure</code>, <code>SameSite=Strict</code>.</li>
+      <li>Stripe sets one cookie during checkout per its compliance posture; documented in <a href="https://stripe.com/legal/cookies-policy" target="_blank" rel="noopener">Stripe's cookie policy</a>.</li>
+    </ul>
+    <p>That's all. No analytics, no ad-tech, no consent banner — because there is nothing on this page that requires one under UK PECR.</p>
+  </section>
+
+  <section class="legal-section" id="disclosures">
+    <h2>Disclosures</h2>
+    <div class="updated">Last updated · 21 October 2024</div>
+    <p>Enterprise contracts above £25,000 / year, current as of the date above. Editorial coverage of any party listed below is reviewed by an editor without commercial conflict.</p>
+    <table class="disclosures">
+      <thead><tr><th>Counterparty</th><th>Nature</th><th>Effective</th><th>Annualised</th></tr></thead>
+      <tbody>
+        <tr><td>A FTSE-100 financial institution</td><td>Enterprise subscription · 1,400 seats</td><td>Jan 2024</td><td class="amt">£134,400</td></tr>
+        <tr><td>A national CERT</td><td>Enterprise subscription · 240 seats</td><td>Sep 2023</td><td class="amt">£28,800</td></tr>
+        <tr><td>A Tier-1 MSSP</td><td>Enterprise subscription · 420 seats</td><td>Apr 2024</td><td class="amt">£40,320</td></tr>
+        <tr><td>A Big-4 IR consultancy</td><td>API access · enterprise tier</td><td>Mar 2023</td><td class="amt">£72,000</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px;font-size:13.5px;color:var(--fg-muted)">Counterparties are referenced descriptively rather than by name where their contract makes that a condition. We will name any party on request from any reader whose decision-making relies on it.</p>
+  </section>
+
+  <section class="legal-section" id="corrections">
+    <h2>Corrections log</h2>
+    <div class="updated">Latest correction · 16 October 2024</div>
+    <ul>
+      <li><strong>16 Oct 2024</strong> — Issue 139, "Patch Tuesday round-up": originally listed CVE-2024-43573 as remote code execution. It is platform spoofing. Corrected; subscribers notified at 17:08 UTC.</li>
+      <li><strong>02 Sep 2024</strong> — Issue 134, "Ivanti CSA round-up": misattributed CVE-2024-9379 fix to Pulse Connect Secure. Corrected to Cloud Service Appliance.</li>
+      <li><strong>18 Jul 2024</strong> — Wire item on CrowdStrike falcon-sensor outage: revised affected-version range from 7.16 → 7.11–7.16 inclusive.</li>
+      <li><strong>03 Jun 2024</strong> — Issue 121, "Snowflake customer tenant breaches": revised affected-customer count from "165+" to "at least 165" pending Mandiant final.</li>
+    </ul>
+    <p>The full historical log is in the bottom of every affected article. Major corrections are emailed to subscribers within 24 hours of the change.</p>
+  </section>
+
+  <section class="legal-section" id="security">
+    <h2>Responsible disclosure</h2>
+    <div class="updated">Last updated · 21 October 2024</div>
+    <p>If you find a vulnerability in cyberdigest.io infrastructure, please report it to <a href="mailto:security@cyberdigest.io">security@cyberdigest.io</a> with PGP. We acknowledge within one business day and commit to a disposition within 14 days.</p>
+    <p>We do not run a paid bounty programme but we maintain a public Hall of Thanks at <a href="#" onclick="cdToast('Security hall of thanks would live at /security/hall in production.');return false">/security/hall</a> and will sign letters of recommendation for serious researchers on request.</p>
+    <p>Scope: cyberdigest.io and its subdomains, our public APIs, our email infrastructure. Out of scope: third-party services we use (Stripe, Postmark, Cloudflare), social-media impersonation, denial-of-service.</p>
+  </section>
+
+  <section class="legal-section" id="dmca">
+    <h2>Copyright / DMCA</h2>
+    <div class="updated">Last updated · 21 October 2024</div>
+    <p>If you believe content on Cyber Digest infringes your copyright, send a notice that complies with 17 U.S.C. §512(c)(3) to <a href="mailto:dmca@cyberdigest.io">dmca@cyberdigest.io</a>. We respond inside 72 hours.</p>
+  </section>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 L14 3 L25 9"/><path d="M3 14 L14 8 L25 14" opacity=".7"/><path d="M3 19 L14 13 L25 19" opacity=".4"/><circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+          <span class="brand-name">Cyber Digest</span>
+        </a>
+        <p>Independent, reader-funded threat intelligence and cybersecurity news. Written by practitioners, for practitioners.</p>
+
+      </div>
+      <div><h5>Sections</h5><ul><li><a href="wire.html">The Wire</a></li><li><a href="cves.html">Vulnerabilities</a></li><li><a href="briefing.html">Briefings</a></li><li><a href="actor.html">Threat Actors</a></li><li><a href="wire.html?cat=research">Research</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="cves.html">KEV tracker</a></li><li><a href="actor.html">Actor library</a></li><li><a href="briefing.html">Detection rules</a></li><li><a href="feed.xml">RSS feed</a></li><li><a href="feed.json">JSON feed</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html#standards">Editorial standards</a></li><li><a href="about.html#masthead">Masthead</a></li><li><a href="tip.html">Tip line</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+      <div><h5>Legal</h5><ul><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#disclosures">Disclosures</a></li><li><a href="about.html#press">Press kit</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2024 Cyber Digest. Independent — reader-funded.</div>
+      <div>Build 142.04 · Last updated <span data-clock-short>—:— UTC</span></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

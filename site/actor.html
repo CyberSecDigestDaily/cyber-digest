@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Volt Typhoon — Threat actor profile · Cyber Digest</title>
+<meta name="description" content="Cyber Digest — independent threat intelligence and cybersecurity news, written for practitioners." />
+<meta property="og:title" content="__TITLE__" />
+<meta property="og:site_name" content="Cyber Digest" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>(()=>{try{const t=localStorage.getItem('cd-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'}catch(e){}})();</script>
+<script defer src="app.js"></script>
+<style>
+.actor-mast{ padding:48px 0 0;border-bottom:1px solid var(--hairline) }
+.actor-mast .head{
+  display:grid;grid-template-columns: 1.4fr 1fr;gap:64px;align-items:end;
+  padding-bottom:48px;
+}
+.actor-mast h1{
+  font-size:clamp(44px, 6vw, 84px);
+  letter-spacing:-.035em;line-height:1.0;
+  font-weight:500;margin:18px 0 0;
+}
+.actor-mast h1 em{ font-family:var(--font-serif);font-style:italic;color:var(--fg-muted);font-weight:400 }
+.actor-mast p{ color:var(--fg-muted);margin-top:24px;max-width:56ch;font-size:18px;line-height:1.5 }
+.actor-card{
+  border:1px solid var(--hairline);background:var(--bg-elev-1);
+  padding:24px;
+}
+.actor-card h6{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;font-weight:500;
+}
+.actor-card .kv{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:9px 0;border-top:1px solid var(--hairline);
+  font-family:var(--font-mono);font-size:12px;color:var(--fg);
+}
+.actor-card .kv:first-of-type{ border-top:0 }
+.actor-card .kv .k{ color:var(--fg-dim);letter-spacing:.06em;flex:0 0 110px }
+.actor-card .kv .v{ text-align:right;color:var(--fg);font-weight:500 }
+.actor-card .aliases{ display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;justify-content:flex-end }
+.actor-card .alias{
+  font-family:var(--font-mono);font-size:10px;
+  padding:3px 7px;border:1px solid var(--hairline-2);
+  color:var(--fg-muted);letter-spacing:.06em;
+}
+
+.actor-section{ padding:80px 0;border-bottom:1px solid var(--hairline) }
+.actor-section:last-of-type{ border-bottom:0 }
+.actor-section h2{
+  font-size: clamp(28px, 3vw, 40px);letter-spacing:-.025em;line-height:1.1;
+  font-weight:500;margin:0 0 20px;text-wrap:balance;
+}
+.actor-section h2 em{ font-family:var(--font-serif);font-style:italic;color:var(--fg-muted);font-weight:400 }
+.actor-section p{ color:var(--fg);line-height:1.65;font-size:16px;max-width:64ch }
+.actor-section p + p{ margin-top:14px }
+
+.attck-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--hairline);border:1px solid var(--hairline);margin-top:28px;
+}
+.attck-tactic{ background:var(--bg);padding:18px;display:flex;flex-direction:column;gap:12px }
+.attck-tactic .tactic-head{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.attck-tactic .tactic-head .tcount{ color:var(--accent);margin-left:8px }
+.attck-tactic ul{ list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px }
+.attck-tactic li{
+  font-family:var(--font-mono);font-size:11.5px;color:var(--fg);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:8px;
+  padding-bottom:6px;border-bottom:1px solid var(--hairline);
+}
+.attck-tactic li:last-child{ border-bottom:0 }
+.attck-tactic li .tech{ color:var(--fg);line-height:1.35 }
+.attck-tactic li .id{ color:var(--fg-dim);letter-spacing:.02em }
+
+.targets{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--hairline);border:1px solid var(--hairline);margin-top:28px;
+}
+.target{ background:var(--bg);padding:22px;display:flex;flex-direction:column;gap:6px }
+.target .k{ font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.14em;text-transform:uppercase }
+.target .v{ font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--fg) }
+.target .d{ font-size:13px;color:var(--fg-muted);margin-top:4px;line-height:1.5 }
+
+.timeline-rows{ display:flex;flex-direction:column;margin-top:28px;border-top:1px solid var(--hairline) }
+.timeline-rows .row{
+  display:grid;grid-template-columns:140px 1fr 200px;gap:24px;align-items:start;
+  padding:18px 4px;border-bottom:1px solid var(--hairline);
+  transition: background .2s var(--ease);
+}
+.timeline-rows .row:hover{ background:var(--bg-elev-1) }
+.timeline-rows .when{ font-family:var(--font-mono);font-size:12px;color:var(--fg-dim);letter-spacing:.04em }
+.timeline-rows .what{ color:var(--fg);font-size:15px;line-height:1.5 }
+.timeline-rows .who{ font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);letter-spacing:.04em;text-align:right }
+
+@media (max-width: 1100px){
+  .actor-mast .head{ grid-template-columns:1fr;gap:32px }
+  .attck-grid{ grid-template-columns:1fr 1fr }
+  .targets{ grid-template-columns:1fr 1fr }
+  .timeline-rows .row{ grid-template-columns:100px 1fr;gap:14px }
+  .timeline-rows .who{ display:none }
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 9 L14 3 L25 9" />
+          <path d="M3 14 L14 8 L25 14" opacity=".7"/>
+          <path d="M3 19 L14 13 L25 19" opacity=".4"/>
+          <circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand-name">Cyber Digest<span>/ Intelligence</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="wire.html">The Wire</a>
+      <a href="cves.html">Vulnerabilities</a>
+      <a href="briefing.html">Briefings</a>
+      <a href="actor.html">Actors</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>—:— UTC</span></div>
+      <button class="search" data-action="search" aria-label="Open search (Cmd+K)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search CVE, vendor, actor…
+        <span class="kbd">⌘ K</span>
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="menu-btn" onclick="cdMobileNav(true)" aria-label="Open menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+  <div class="breadcrumb" style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.12em;text-transform:uppercase;padding:24px 0">
+    <a href="index.html" style="color:var(--fg-muted)">Home</a>
+    <span style="opacity:.5">/</span>
+    <a href="actor.html" style="color:var(--fg-muted)">Threat actors</a>
+    <span style="opacity:.5">/</span>
+    <span style="color:var(--fg)">Volt Typhoon</span>
+  </div>
+
+  <header class="actor-mast">
+    <div class="head">
+      <div>
+        <div class="section-tag">Actor profile · maintained by the Cyber Digest desk</div>
+        <h1>Volt Typhoon</h1>
+        <p>China-nexus state-sponsored operator focused on prepositioning access in US critical infrastructure. Active since at least 2021; attributed by CISA, NSA, FBI, NCSC, ASD, CCCS and Microsoft. The group's defining characteristic is restraint — long dwell, no novel malware, near-exclusive use of living-off-the-land techniques.</p>
+      </div>
+      <aside class="actor-card">
+        <h6>At a glance</h6>
+        <div class="kv"><span class="k">Origin</span><span class="v">China-nexus · state-sponsored</span></div>
+        <div class="kv"><span class="k">Active since</span><span class="v">≥ 2021</span></div>
+        <div class="kv"><span class="k">Sectors</span><span class="v">Telco · Energy · Water · Transport</span></div>
+        <div class="kv"><span class="k">Region</span><span class="v">North America · Pacific</span></div>
+        <div class="kv"><span class="k">Tradecraft</span><span class="v">Living-off-the-land</span></div>
+        <div class="kv"><span class="k">Motivation</span><span class="v">Prepositioning · espionage</span></div>
+        <div class="kv"><span class="k">Confidence</span><span class="v" style="color:var(--status-ok)">High · multi-source</span></div>
+        <div class="kv"><span class="k">Aliases</span>
+          <span class="v">
+            <div class="aliases">
+              <span class="alias">VOLTZITE</span>
+              <span class="alias">DEV-0391</span>
+              <span class="alias">BRONZE SILHOUETTE</span>
+              <span class="alias">Vanguard Panda</span>
+              <span class="alias">Insidious Taurus</span>
+            </div>
+          </span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- Targeting -->
+  <section class="actor-section">
+    <h2>Targeting <em>—</em> sectors and geographies the group actually touches.</h2>
+    <p>Confirmed targeting is concentrated on US and Pacific critical-infrastructure verticals. Observed access patterns favour OT-adjacent IT estate over the OT itself, consistent with a prepositioning-for-disruption thesis rather than data theft.</p>
+    <div class="targets">
+      <div class="target"><div class="k">Sector</div><div class="v">Communications</div><div class="d">Edge routers, mobile core, fixed-line provisioning</div></div>
+      <div class="target"><div class="k">Sector</div><div class="v">Energy</div><div class="d">Generation IT, transmission operators, midstream</div></div>
+      <div class="target"><div class="k">Sector</div><div class="v">Water &amp; Wastewater</div><div class="d">Municipal authorities, SCADA-adjacent IT</div></div>
+      <div class="target"><div class="k">Sector</div><div class="v">Transportation</div><div class="d">Port operators, rail, aviation IT estate</div></div>
+      <div class="target"><div class="k">Geography</div><div class="v">United States</div><div class="d">Contiguous US &amp; Guam — multi-state campaigns</div></div>
+      <div class="target"><div class="k">Geography</div><div class="v">Indo-Pacific</div><div class="d">Australia, Japan, Philippines — secondary</div></div>
+      <div class="target"><div class="k">Geography</div><div class="v">UK / EU</div><div class="d">Limited; comms-adjacent third-party hits</div></div>
+      <div class="target"><div class="k">Geography</div><div class="v">Canada</div><div class="d">Telco operators — observed since 2023</div></div>
+    </div>
+  </section>
+
+  <!-- Tradecraft -->
+  <section class="actor-section">
+    <h2>Tradecraft <em>—</em> what they actually do once inside.</h2>
+    <p>The defining property of Volt Typhoon intrusions is what isn't there: no custom implants in long dwell windows, no commodity malware on initial endpoints, no DGAs. The group relies on a tight set of Windows administrative tools, open-source proxies (FRP, Earthworm), and stolen valid credentials harvested from public-facing edge devices.</p>
+    <p>Initial access in observed cases routinely traces to SOHO-grade and small-office edge devices — Fortinet, NetGear, Cisco SMB, ASUS routers — used both as entry and as multi-hop relay between operations. A typical chain: edge-router compromise → credential capture on an LDAP-bound jumphost → SMB lateral to a backup server → exfiltration over an already-allowed HTTPS path.</p>
+
+    <div class="attck-grid">
+      <div class="attck-tactic">
+        <div class="tactic-head">Initial Access<span class="tcount">3</span></div>
+        <ul>
+          <li><span class="tech">Exploit public-facing application</span><span class="id">T1190</span></li>
+          <li><span class="tech">External remote services</span><span class="id">T1133</span></li>
+          <li><span class="tech">Valid accounts</span><span class="id">T1078</span></li>
+        </ul>
+      </div>
+      <div class="attck-tactic">
+        <div class="tactic-head">Execution<span class="tcount">3</span></div>
+        <ul>
+          <li><span class="tech">PowerShell</span><span class="id">T1059.001</span></li>
+          <li><span class="tech">Windows Command Shell</span><span class="id">T1059.003</span></li>
+          <li><span class="tech">WMI</span><span class="id">T1047</span></li>
+        </ul>
+      </div>
+      <div class="attck-tactic">
+        <div class="tactic-head">Persistence<span class="tcount">3</span></div>
+        <ul>
+          <li><span class="tech">Scheduled Task</span><span class="id">T1053.005</span></li>
+          <li><span class="tech">WMI Event Subscription</span><span class="id">T1546.003</span></li>
+          <li><span class="tech">Registry Run Keys</span><span class="id">T1547.001</span></li>
+        </ul>
+      </div>
+      <div class="attck-tactic">
+        <div class="tactic-head">Credential Access<span class="tcount">3</span></div>
+        <ul>
+          <li><span class="tech">LSASS memory</span><span class="id">T1003.001</span></li>
+          <li><span class="tech">NTDS</span><span class="id">T1003.003</span></li>
+          <li><span class="tech">DCSync</span><span class="id">T1003.006</span></li>
+        </ul>
+      </div>
+      <div class="attck-tactic">
+        <div class="tactic-head">Discovery<span class="tcount">3</span></div>
+        <ul>
+          <li><span class="tech">System Information</span><span class="id">T1082</span></li>
+          <li><span class="tech">Network Service Discovery</span><span class="id">T1046</span></li>
+          <li><span class="tech">Domain Trust Discovery</span><span class="id">T1482</span></li>
+        </ul>
+      </div>
+      <div class="attck-tactic">
+        <div class="tactic-head">Lateral Movement<span class="tcount">2</span></div>
+        <ul>
+          <li><span class="tech">SMB/Admin Shares</span><span class="id">T1021.002</span></li>
+          <li><span class="tech">Remote Services (RDP)</span><span class="id">T1021.001</span></li>
+        </ul>
+      </div>
+      <div class="attck-tactic">
+        <div class="tactic-head">Command &amp; Control<span class="tcount">3</span></div>
+        <ul>
+          <li><span class="tech">Web Protocols</span><span class="id">T1071.001</span></li>
+          <li><span class="tech">Proxy: Multi-hop</span><span class="id">T1090.003</span></li>
+          <li><span class="tech">Tool (FRP, Earthworm)</span><span class="id">S1067</span></li>
+        </ul>
+      </div>
+      <div class="attck-tactic">
+        <div class="tactic-head">Exfiltration<span class="tcount">2</span></div>
+        <ul>
+          <li><span class="tech">Over C2 channel</span><span class="id">T1041</span></li>
+          <li><span class="tech">Web service</span><span class="id">T1567</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="actor-section">
+    <h2>Significant events <em>—</em> public disclosures &amp; advisories.</h2>
+    <p>The public record on Volt Typhoon is unusually rich; below are the events Cyber Digest considers materially informative. Where possible, sources are co-signed advisories from the partner agencies of the Five Eyes.</p>
+    <div class="timeline-rows">
+      <div class="row">
+        <div class="when">May 24, 2023</div>
+        <div class="what">Initial joint disclosure by Microsoft Threat Intelligence and the Five Eyes — first public attribution of long-dwell intrusions in US critical infrastructure.</div>
+        <div class="who">Microsoft · CISA · NSA · FBI · NCSC</div>
+      </div>
+      <div class="row">
+        <div class="when">Dec 13, 2023</div>
+        <div class="what">CISA, NSA and FBI publish a follow-on cybersecurity advisory expanding tradecraft detail and recommended mitigations for OT-adjacent IT estates.</div>
+        <div class="who">CISA AA23-347A</div>
+      </div>
+      <div class="row">
+        <div class="when">Jan 31, 2024</div>
+        <div class="what">DOJ announces court-authorised takedown of a botnet of compromised US-based SOHO routers used by Volt Typhoon as multi-hop infrastructure.</div>
+        <div class="who">US DOJ · FBI</div>
+      </div>
+      <div class="row">
+        <div class="when">Feb 07, 2024</div>
+        <div class="what">CISA, NSA, FBI and partners (UK, Canada, Australia, NZ) publish joint advisory AA24-038A asserting that operators have prepositioned for years to enable disruptive impact.</div>
+        <div class="who">Five Eyes joint · AA24-038A</div>
+      </div>
+      <div class="row">
+        <div class="when">Mar 19, 2024</div>
+        <div class="what">CISA, EPA and FBI release a tailored fact-sheet for water and wastewater authorities, citing Volt Typhoon prepositioning in the sector.</div>
+        <div class="who">CISA · EPA · FBI</div>
+      </div>
+      <div class="row">
+        <div class="when">Aug 27, 2024</div>
+        <div class="what">Lumen / Black Lotus Labs reports continued exploitation of Versa Director by a related cluster targeting ISPs and managed service providers.</div>
+        <div class="who">Black Lotus Labs</div>
+      </div>
+      <div class="row">
+        <div class="when">Oct 27, 2024</div>
+        <div class="what">Cyber Digest publishes deep-dive on the 90-day resurgence campaign — tradecraft unchanged, dwell windows lengthening.</div>
+        <div class="who">Cyber Digest · Issue 142</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="actor-section">
+    <h2>Related coverage <em>—</em> on Cyber Digest.</h2>
+    <div class="feature-grid" style="margin-top:24px">
+      <article class="card large">
+        <div class="topline"><span class="cat">Deep dive</span><span>09 min read</span></div>
+        <h3>Inside the Volt Typhoon resurgence: a 90-day timeline of dwell, pivot and live-off-the-land tradecraft</h3>
+        <p>The full operational story behind the 2024 campaign — access chains, persistence primitives, detection guidance and IOCs.</p>
+        <div class="meta"><span class="author">— Desk</span><span>Oct 27, 2024</span></div>
+        <a href="briefing.html" class="arr-link">Read the briefing →</a>
+      </article>
+      <article class="card">
+        <div class="topline"><span class="cat">Advisory</span><span>04 min read</span></div>
+        <h3>What the Feb 2024 CISA advisory actually changes for defenders</h3>
+        <p>Sector-by-sector reading of AA24-038A — the operational nudges, the ones to ignore.</p>
+        <div class="meta"><span class="author">— Desk</span><span>Feb 08, 2024</span></div>
+      </article>
+      <article class="card">
+        <div class="topline"><span class="cat">Field notes</span><span>06 min read</span></div>
+        <h3>SOHO router compromise: what we keep finding in incident response</h3>
+        <p>Drawing on 24 IR engagements across telco-adjacent organisations.</p>
+        <div class="meta"><span class="author">— Desk</span><span>Mar 30, 2024</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Sources & Citations -->
+  <section class="actor-section">
+    <h2>Sources <em>—</em> what this profile draws on.</h2>
+    <ul class="refs" style="list-style:none;padding:0;margin:24px 0 0">
+      <li style="display:grid;grid-template-columns:140px 1fr auto;gap:14px;padding:12px 0;border-bottom:1px solid var(--hairline);font-size:14px"><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em;text-transform:uppercase">CISA</span><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a" target="_blank" rel="noopener" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">AA24-038A · PRC State-Sponsored Actors Compromise and Maintain Persistent Access to U.S. Critical Infrastructure</a><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Feb 2024</span></li>
+      <li style="display:grid;grid-template-columns:140px 1fr auto;gap:14px;padding:12px 0;border-bottom:1px solid var(--hairline);font-size:14px"><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em;text-transform:uppercase">Microsoft</span><a href="https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/" target="_blank" rel="noopener" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">Volt Typhoon targets US critical infrastructure with living-off-the-land techniques</a><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">May 2023</span></li>
+      <li style="display:grid;grid-template-columns:140px 1fr auto;gap:14px;padding:12px 0;border-bottom:1px solid var(--hairline);font-size:14px"><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em;text-transform:uppercase">Mandiant</span><a href="https://cloud.google.com/blog/topics/threat-intelligence" target="_blank" rel="noopener" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">Threat intelligence reporting on Volt Typhoon / VOLTZITE</a><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">2023–2024</span></li>
+      <li style="display:grid;grid-template-columns:140px 1fr auto;gap:14px;padding:12px 0;border-bottom:1px solid var(--hairline);font-size:14px"><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em;text-transform:uppercase">DOJ</span><a href="https://www.justice.gov/opa/pr/us-government-disrupts-botnet-peoples-republic-china-used-conceal-hacking-us-critical" target="_blank" rel="noopener" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">US government disrupts botnet PRC used to conceal hacking of US critical infrastructure</a><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Jan 2024</span></li>
+      <li style="display:grid;grid-template-columns:140px 1fr auto;gap:14px;padding:12px 0;font-size:14px"><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em;text-transform:uppercase">Lumen / BLL</span><a href="https://blog.lumen.com/" target="_blank" rel="noopener" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">Black Lotus Labs · Versa Director campaign analysis</a><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Aug 2024</span></li>
+    </ul>
+  </section>
+</div>
+
+<!-- More actors strip -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">More actors in the library</div>
+        <h2>The threat actors we currently track.</h2>
+      </div>
+      <div class="right">17 active profiles &nbsp;·&nbsp; <a href="actor.html">All actors →</a></div>
+    </div>
+    <div class="feature-grid">
+      <article class="card">
+        <div class="topline"><span class="cat">China-nexus</span><span>Telco · 2024</span></div>
+        <h3>Salt Typhoon</h3>
+        <p>China-nexus actor responsible for the 2024 intrusions across at least nine US telecommunications providers.</p>
+        <div class="meta"><span>GhostEmperor · Earth Estries</span></div>
+      </article>
+      <article class="card">
+        <div class="topline"><span class="cat">DPRK-nexus</span><span>Finance · ongoing</span></div>
+        <h3>Lazarus Group</h3>
+        <p>North Korea state-sponsored umbrella cluster covering APT38, BlueNoroff and Andariel sub-units.</p>
+        <div class="meta"><span>Hidden Cobra · Diamond Sleet</span></div>
+      </article>
+      <article class="card">
+        <div class="topline"><span class="cat">eCrime</span><span>Ransomware · 2023+</span></div>
+        <h3>Akira</h3>
+        <p>Eastern-European ransomware affiliate program. Active double-extortion since March 2023; Linux + ESXi variants.</p>
+        <div class="meta"><span>Successor to Conti pedigree</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 L14 3 L25 9"/><path d="M3 14 L14 8 L25 14" opacity=".7"/><path d="M3 19 L14 13 L25 19" opacity=".4"/><circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+          <span class="brand-name">Cyber Digest</span>
+        </a>
+        <p>Independent, reader-funded threat intelligence and cybersecurity news. Written by practitioners, for practitioners.</p>
+
+      </div>
+      <div><h5>Sections</h5><ul><li><a href="wire.html">The Wire</a></li><li><a href="cves.html">Vulnerabilities</a></li><li><a href="briefing.html">Briefings</a></li><li><a href="actor.html">Threat Actors</a></li><li><a href="wire.html?cat=research">Research</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="cves.html">KEV tracker</a></li><li><a href="actor.html">Actor library</a></li><li><a href="briefing.html">Detection rules</a></li><li><a href="feed.xml">RSS feed</a></li><li><a href="feed.json">JSON feed</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html#standards">Editorial standards</a></li><li><a href="about.html#masthead">Masthead</a></li><li><a href="tip.html">Tip line</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+      <div><h5>Legal</h5><ul><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#disclosures">Disclosures</a></li><li><a href="about.html#press">Press kit</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2024 Cyber Digest. Independent — reader-funded.</div>
+      <div>Build 142.04 · Last updated <span data-clock-short>—:— UTC</span></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
