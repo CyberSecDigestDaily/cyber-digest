@@ -1,414 +1,515 @@
 {
-  "generated": "2026-05-20T11:44:17.333583+00:00",
+  "generated": "2026-05-21T12:09:51.822895+00:00",
   "urgency": {
     "level": "🔴 HIGH PRIORITY",
     "colour": "#D94F4F",
-    "message": "Today's digest needs your attention. There are <strong>2 CRITICAL</strong> and <strong>6 HIGH</strong> severity CVEs, plus <strong>2</strong> actively exploited vulnerabilities on the CISA Known Exploited list."
+    "message": "Today's digest needs your attention. There are <strong>0 CRITICAL</strong> and <strong>14 HIGH</strong> severity CVEs, plus <strong>8</strong> actively exploited vulnerabilities on the CISA Known Exploited list."
   },
   "stats": {
-    "critical": 2,
-    "high": 6,
+    "critical": 0,
+    "high": 14,
     "medium": 12,
-    "low": 0,
-    "exploited": 0,
-    "kev": 2,
-    "threats": 11,
-    "news": 33,
-    "blogs": 5
+    "low": 1,
+    "exploited": 2,
+    "kev": 8,
+    "threats": 10,
+    "news": 32,
+    "blogs": 3
   },
   "cves": [
     {
-      "id": "CVE-2026-43633",
-      "score": 10.0,
-      "severity": "CRITICAL",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "HestiaCP versions 1.9.0 through 1.9.4 contain a deserialization vulnerability in the web terminal component caused by a session format mismatch between PHP and Node.js that allows unauthenticated remote attackers to achieve root-level code execution. Attackers can inject crafted data into HTTP headers that are processed by the PHP session handler but incorrectly deserialized by the Node.js web terminal component as trusted session values, resulting in arbitrary command execution on systems with the web terminal feature enabled.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-4883",
-      "score": 9.8,
-      "severity": "CRITICAL",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "The Piotnet Forms plugin for WordPress is vulnerable to arbitrary file upload due to missing file type validation in the 'piotnetforms_ajax_form_builder' function in all versions up to, and including, 2.1.40. The plugin uses an incomplete extension blacklist that only blocks php, phpt, php5, php7, and exe extensions, while allowing dangerous extensions such as .phar or .phtml to be uploaded. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible. Note: The exploit can only be exploited if a file field is added to the form.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-7504",
-      "score": 8.1,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
-      "type": "software",
-      "desc": "A flaw was found in Keycloak's URL validation logic during redirect operations. By crafting a malicious request, an attacker could bypass validation to redirect users to unauthorized URLs, potentially leading to the exposure of sensitive information within the domain or facilitating further attacks. This vulnerability specifically affects Keycloak clients configured with a wildcard (*) in the \"Valid Redirect URIs\" field and requires user interaction to be successfully exploited.\n\nThe issue stems from a discrepancy in how Keycloak and the underlying Java URI implementation handle the user-info component of a URL. If a malicious redirect URL is constructed using multiple @ characters in the user-info section, Java's URI parser fails to extract the user-info, leaving only the raw authority field. Consequently, Keycloak's validation check fails to detect the malformed user-info, falls back to a wildcard comparison, and incorrectly permits the malicious redirect.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-23558",
+      "id": "CVE-2026-41091",
       "score": 7.8,
       "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "vendor": "Xen",
-      "product": "Xen",
-      "type": "os",
-      "desc": "The adjustments made for XSA-379 as well as those subsequently becoming\nXSA-387 still left a race window, when a HVM or PVH guest does a grant\ntable version change from v2 to v1 in parallel with mapping the status\npage(s) via XENMEM_add_to_physmap.  Some of the status pages may then be\nfreed while mappings of them would still be inserted into the guest's\nsecondary (P2M) page tables.",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Microsoft",
+      "product": "Malware Protection Engine",
+      "type": "software",
+      "desc": "Improper link resolution before file access ('link following') in Microsoft Defender allows an authorized attacker to elevate privileges locally.",
+      "exploited": true,
+      "cisaDue": "2026-06-03",
+      "cisaName": "Microsoft Defender Link Following Vulnerability"
+    },
+    {
+      "id": "CVE-2026-45498",
+      "score": 4.0,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "vendor": "Microsoft",
+      "product": "Defender Antimalware Platform",
+      "type": "software",
+      "desc": "Microsoft Defender Denial of Service Vulnerability",
+      "exploited": true,
+      "cisaDue": "2026-06-03",
+      "cisaName": "Microsoft Defender Denial of Service Vulnerability"
+    },
+    {
+      "id": "CVE-2026-24425",
+      "score": 8.8,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Twig versions 2.16.x and 3.9.0 through 3.25.x contain a sandbox bypass vulnerability when using a SourcePolicyInterface that allows attackers with template rendering capabilities to pass arbitrary PHP callables to sort, filter, map, and reduce filters. Attackers can exploit the runtime check that fails to use the current template source to bypass sandbox restrictions and execute arbitrary code when the sandbox is enabled through a source policy rather than globally.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-7307",
+      "id": "CVE-2026-45584",
+      "score": 8.1,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Microsoft",
+      "product": "Malware Protection Engine",
+      "type": "software",
+      "desc": "Heap-based buffer overflow in Microsoft Defender allows an unauthorized attacker to execute code over a network.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-11954",
+      "score": 8.0,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
+      "product": "Sitemio Information Technologies Trade Ltd",
+      "type": "software",
+      "desc": "Cross-Site request forgery (CSRF) vulnerability in Sitemio Information Technologies Trade Ltd. Co. WISECP allows Cross Site Request Forgery.\n\nThis issue affects WISECP: through 20022026. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-42834",
+      "score": 7.8,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Microsoft",
+      "product": "Windows Admin Center",
+      "type": "software",
+      "desc": "Improper link resolution before file access ('link following') in Azure Portal Windows Admin Center allows an authorized attacker to elevate privileges locally.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-22554",
+      "score": 7.8,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "vendor": "Cisco",
+      "product": "Cisco",
+      "type": "software",
+      "desc": "MediaArea MediaInfoLib Channel Splitting heap-based buffer overflow vulnerability",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-42383",
+      "score": 7.6,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:L",
+      "vendor": "Unknown",
+      "product": "YITH YITH WooCommerce Product Add-Ons",
+      "type": "software",
+      "desc": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in YITH YITH WooCommerce Product Add-Ons allows Blind SQL Injection.\n\nThis issue affects YITH WooCommerce Product Add-Ons: from n/a through 4.29.0.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-3039",
       "score": 7.5,
       "severity": "HIGH",
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
+      "vendor": "Unknown",
+      "product": "Unknown",
       "type": "software",
-      "desc": "A flaw was found in Keycloak. A remote, unauthenticated attacker can send a specially crafted XML input to the Security Assertion Markup Language (SAML) endpoint. This malicious input can cause high CPU usage and worker thread starvation, leading to a Denial of Service (DoS) where the server becomes unavailable.",
+      "desc": "BIND servers that are configured to use TKEY-based authentication via GSS-API tokens are vulnerable to excessive memory consumption when receiving and processing maliciously-constructed packets.  Typically these servers will be found in Active Directory integrated DNS deployments and/or Kerberos-secured DNS environments.\nThis issue affects BIND 9 versions 9.0.0 through 9.16.50, 9.18.0 through 9.18.48, 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, 9.9.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-7507",
+      "id": "CVE-2026-5946",
       "score": 7.5,
       "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
       "type": "software",
-      "desc": "A session fixation vulnerability was found in Keycloak's login-actions endpoints. An unauthenticated attacker could exploit this flaw by pre-creating an authentication session and tricking a victim into visiting a maliciously crafted link. By leveraging the /login-actions/restart endpoint—which processes session handles without adequate CSRF protection or cookie ownership validation—an attacker can reset the authentication flow state. This causes Single Sign-On (SSO) to authenticate the victim transparently upon clicking the link, allowing the attacker to hijack the required-action form without needing the victim's credentials. A successful exploit could lead to complete account takeover, including highly privileged administrative accounts.",
+      "desc": "Multiple flaws have been identified in `named` related to the handling of DNS messages whose CLASS is not Internet (`IN`) — for example, `CHAOS` or `HESIOD`, or DNS messages that specify meta-classes (`ANY` or `NONE`) in the question section. Specially crafted requests reaching the affected code paths — recursion, dynamic updates (`UPDATE`), zone change notifications (`NOTIFY`), or processing of `IN`-specific record types in non-`IN` data — can cause assertion failures in `named`.\nThis issue affects BIND 9 versions 9.11.0 through 9.16.50, 9.18.0 through 9.18.48, 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, 9.11.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-8912",
+      "id": "CVE-2026-5947",
+      "score": 7.5,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Undefined behavior may result due to a race condition leading to a use-after-free violation.  If BIND receives an incoming DNS message signed with SIG(0), it begins work to validate that signature.  If, during that validation, the \"recursive-clients\" limit is reached (as would occur during a query flood), and that same DNS message is discarded per the limit, there is a brief window of time while the SIG(0) validation may attempt to read the now-discarded DNS message.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, and 9.20.9-S1 through 9.20.22-S1.\nBIND 9 versions 9.18.28 through 9.18.49 and 9.18.28-S1 through 9.18.49-S1 are NOT affected.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-32750",
       "score": 7.5,
       "severity": "HIGH",
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "vendor": "WordPress",
-      "product": "WordPress",
+      "vendor": "Dell",
+      "product": "Dell",
       "type": "software",
-      "desc": "The Contest Gallery plugin for WordPress is vulnerable to SQL Injection via the 'form_input' parameter in versions up to, and including, 28.1.6. This is due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query inside the unauthenticated 'post_cg_gallery_form_upload' AJAX action (specifically the 'cb' branch of the included users-upload-check.php, where $f_input_id is concatenated unquoted into 'SELECT Field_Content FROM ... WHERE id = $f_input_id'). The endpoint is gated only by a public frontend nonce ('cg1l_action' / 'cg_nonce') that is exposed in the page source of any public gallery page. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.",
+      "desc": "Dell PowerFlex Manager, version(s) <=4.6.2, contain(s) an Exposure of Information Through Directory Listing vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Information exposure.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-7571",
-      "score": 7.1,
+      "id": "CVE-2026-39047",
+      "score": 7.5,
       "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
+      "product": "EPSON L14150 FL27PB",
       "type": "software",
-      "desc": "A flaw was found in Keycloak. A low-privilege user, with knowledge of user credentials and client ID, can bypass a security control intended to disable the implicit flow in OpenID Connect (OIDC) clients. By manipulating client data during a session restart, an attacker can obtain an access token that should not be available. This vulnerability can also lead to the exposure of these access tokens in server logs, proxy logs, and HTTP Referrer headers, resulting in sensitive information disclosure.",
+      "desc": "Buffer Overflow vulnerability in EPSON L14150 FL27PB allows a remote attacker to execute arbitrary code via the RAW Printing Service (JetDirect) on TCP port 9100",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-37982",
-      "score": 6.8,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
+      "id": "CVE-2026-3593",
+      "score": 7.4,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
       "type": "software",
-      "desc": "A flaw was found in Keycloak. This authentication vulnerability allows a remote attacker to replay `ExecuteActionsActionToken` tokens within Keycloak's WebAuthn (Web Authentication) flow. By intercepting an execute-actions email link, an attacker can register their own authenticator to a victim's account. This leads to unauthorized enrollment of a hardware-backed credential, enabling persistent account takeover.",
+      "desc": "A use-after-free vulnerability exists within the DNS-over-HTTPS implementation.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, and 9.20.9-S1 through 9.20.22-S1.\nBIND 9 versions 9.18.0 through 9.18.48 and 9.18.11-S1 through 9.18.48-S1 are NOT affected.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-4630",
-      "score": 6.8,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
+      "id": "CVE-2026-29518",
+      "score": 7.0,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
       "type": "software",
-      "desc": "A flaw was found in Keycloak. An authenticated client could exploit an Insecure Direct Object Reference (IDOR) vulnerability in the Authorization Services Protection API endpoint. By knowing or obtaining a resource's unique identifier (UUID) belonging to another Resource Server within the same realm, the client could bypass authorization checks. This allows the client to perform unauthorized GET, PUT, and DELETE operations on resources, leading to information disclosure and potential unauthorized modification or deletion of data.",
+      "desc": "Rsync versions before 3.4.3 contain a time-of-check to time-of-use (TOCTOU) race condition in daemon file handling that allows attackers to redirect file writes outside intended directories by replacing parent directory components with symbolic links. Attackers with write access to a module path can exploit this race condition to create or overwrite arbitrary files, potentially modifying sensitive system files and achieving privilege escalation when the daemon runs with elevated privileges. This vulnerability can only be triggered if the chroot setting is false.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-37979",
-      "score": 6.5,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
-      "type": "software",
-      "desc": "A flaw was found in Keycloak. This access control vulnerability in Keycloak's OpenID Connect (OIDC) token introspection endpoint allows a confidential client to bypass audience restrictions. An attacker-controlled client with valid credentials can retrieve sensitive token claims intended for other resource servers, compromising the confidentiality of lightweight access tokens. This issue can be exploited remotely by any confidential client in the realm with valid credentials.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-40904",
+      "id": "CVE-2026-24573",
       "score": 6.5,
       "severity": "MEDIUM",
       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:L",
-      "vendor": "Nozominetworks",
-      "product": "Cmc, Guardian",
+      "vendor": "Unknown",
+      "product": "Themeisle Visualizer",
       "type": "software",
-      "desc": "A Stored HTML Injection vulnerability was discovered in the Smart Polling functionality due to improper validation of an input parameter. An authenticated user with limited privileges can push malicious remote strategies containing HTML tags through the sync. When a victim views the affected remote strategy in the Smart Polling functionality, the injected HTML renders in their browser, enabling phishing and possibly open redirect attacks. Full XSS exploitation and direct information disclosure are prevented by the existing input validation and Content Security Policy configuration.",
+      "desc": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Themeisle Visualizer allows Stored XSS.\n\nThis issue affects Visualizer: from n/a before 4.0.0.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-23557",
+      "id": "CVE-2026-27405",
       "score": 6.5,
       "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
-      "vendor": "Xen",
-      "product": "Xen",
-      "type": "os",
-      "desc": "Any guest can cause xenstored to crash by issuing a XS_RESET_WATCHES\ncommand within a transaction due to an assert() triggering.\n\nIn case xenstored was built with NDEBUG #defined nothing bad will\nhappen, as assert() is doing nothing in this case. Note that the\ndefault is not to define NDEBUG for xenstored builds even in release\nbuilds of Xen.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-40901",
-      "score": 5.9,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:L",
-      "vendor": "Nozominetworks",
-      "product": "Cmc, Guardian",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
+      "vendor": "Unknown",
+      "product": "Magepeople inc",
       "type": "software",
-      "desc": "A Stored HTML Injection vulnerability was discovered in the Credentials Manager functionality due to improper validation of an input parameter. An authenticated user with administrative privileges can define a malicious identity containing HTML tags. When a victim attempts to delete the affected identity, the injected HTML renders in their browser, enabling phishing and possibly open redirect attacks. Full XSS exploitation and direct information disclosure are prevented by the existing input validation and Content Security Policy configuration.",
+      "desc": "Missing Authorization vulnerability in Magepeople inc. WpBookingly allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects WpBookingly: from n/a through 1.2.9.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2025-40902",
-      "score": 5.9,
+      "id": "CVE-2026-21836",
+      "score": 6.5,
       "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:L",
-      "vendor": "Nozominetworks",
-      "product": "Cmc, Guardian",
-      "type": "software",
-      "desc": "A Stored HTML Injection vulnerability was discovered in the Users functionality due to improper validation of an input parameter. An authenticated user with administrative privileges can create a malicious user whose username contains HTML tags. When a victim attempts to delete a group containing the affected user, the injected HTML renders in their browser, enabling phishing and possibly open redirect attacks. Full XSS exploitation and direct information disclosure are prevented by the existing input validation and Content Security Policy configuration.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-40903",
-      "score": 5.9,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:L",
-      "vendor": "Nozominetworks",
-      "product": "Cmc, Guardian",
-      "type": "software",
-      "desc": "A Stored HTML Injection vulnerability was discovered in the Schedule Restore Archive functionality due to improper validation of an input parameter. An authenticated user with administrative privileges can define a malicious restore schedule containing HTML tags. When a victim views the affected schedule, the injected HTML renders in their browser, enabling phishing and possibly open redirect attacks. Full XSS exploitation and direct information disclosure are prevented by the existing input validation and Content Security Policy configuration.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-37978",
-      "score": 4.9,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
-      "type": "software",
-      "desc": "A flaw was found in Keycloak. A low-privilege administrator with the 'view-clients' role can exploit this by invoking the 'evaluate-scopes' Admin API endpoints with an arbitrary user ID (userId) parameter. This vulnerability allows for cross-role personally identifiable information (PII) leakage, enabling unauthorized visibility into user identities and authorizations across the realm. Exploitation is possible remotely via network access to the Admin API.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-40900",
-      "score": 4.6,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:L",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
       "vendor": "Unknown",
       "product": "Unknown",
       "type": "software",
-      "desc": "An Angular template injection vulnerability was discovered in the Reports functionality due to improper validation of an input parameter. An authenticated user with report privileges can define a malicious report containing an Angular template payload, or a victim can be socially engineered to import a malicious report template. When the victim views or imports the report, the Angular template executes in their browser context, allowing the attacker to modify application data, or disrupt application availability. Full XSS exploitation and direct information disclosure are prevented by the existing input validation and Content Security Policy configuration.",
+      "desc": "The HCL DominoIQ RAG feature is affected by a Broken Access Control vulnerability.  Under certain circumstances, document level access restrictions will be ignored when determining what data to return from an AI query.  This could enable an authenticated attacker to view sensitive data.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-37981",
+      "id": "CVE-2026-8485",
+      "score": 5.9,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Progress",
+      "product": "Moveit Automation",
+      "type": "software",
+      "desc": "Uncontrolled Memory Allocation vulnerability in Progress Software MOVEit Automation allows Excessive Allocation.\n\nThis issue affects MOVEit Automation: before 2025.0.11, from 2025.1.0 before 2025.1.7.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-3592",
+      "score": 5.3,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "BIND resolvers are vulnerable to an amplified resource consumption/exhaustion attack.  If a victim resolver makes a query to a specially crafted zone, the resolver will consume disproportionate resources.\nThis issue affects BIND 9 versions 9.11.0 through 9.16.50, 9.18.0 through 9.18.48, 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, 9.11.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-5950",
+      "score": 5.3,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "An unbounded resend loop vulnerability exists in the BIND 9 resolver state machine during bad-server handling, enabling a remote unauthenticated attacker to cause severe resource exhaustion by sending queries that trigger specific retry conditions.\nThis issue affects BIND 9 versions 9.18.36 through 9.18.48, 9.20.8 through 9.20.22, 9.21.7 through 9.21.21, 9.18.36-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-4293",
+      "score": 5.3,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "The affected Kieback & Peter DDC building controllers are vulnerable to cross-site scripting, enabling JavaScript to be executed by the victim's browser, which allows the attacker to control the browser.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-45443",
+      "score": 5.0,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:N",
+      "vendor": "Unknown",
+      "product": "ADD-ONS",
+      "type": "software",
+      "desc": "Missing Authorization vulnerability in ADD-ONS.ORG PDF for Elementor Forms + Drag And Drop Template Builder allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects PDF for Elementor Forms + Drag And Drop Template Builder: from n/a through 5.5.1.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-27424",
       "score": 4.3,
       "severity": "MEDIUM",
       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "vendor": "Red Hat",
-      "product": "Red Hat",
+      "vendor": "Unknown",
+      "product": "Unknown",
       "type": "software",
-      "desc": "A flaw was found in Keycloak. A broken access control vulnerability in the Account Resources user lookup endpoint allows a remote authenticated user, who owns at least one User-Managed Access (UMA) resource, to enumerate and harvest personally identifiable information (PII) for all realm users. By sending crafted requests with arbitrary usernames or email values, the endpoint returns full profile objects for unrelated users. This leads to broad profile-level information disclosure.",
+      "desc": "Missing Authorization vulnerability in WP Chill Image Photo Gallery Final Tiles Grid allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects Image Photo Gallery Final Tiles Grid: from n/a through 3.6.11.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-45442",
-      "score": 4.3,
+      "id": "CVE-2025-31973",
+      "score": 4.0,
       "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "vendor": "Unknown",
-      "product": "Brainstorm Force Presto Player",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:L",
+      "vendor": "Hcltech",
+      "product": "Bigfix Service Management",
       "type": "software",
-      "desc": "Missing Authorization vulnerability in Brainstorm Force Presto Player allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects Presto Player: from n/a through 4.1.3.",
+      "desc": "HCL BigFix Service Management (SM) is susceptible to  a Configuration – 'Insecure Use of Base Image Version'. Using outdated or insecure base images may introduce known vulnerabilities, potentially increasing the risk of exploitation in the application environment.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-43491",
+      "id": "CVE-2023-7346",
+      "score": 4.0,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:P/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Ledger Bitcoin app versions 2.1.0 and 2.1.1 contain an address derivation vulnerability that allows attackers to cause incorrect Bitcoin addresses to be displayed by exploiting improper handling of miniscript policies containing the a: fragment. Attackers can craft malicious miniscript policies that cause the device to derive and display incorrect receiving addresses, potentially leading to funds being sent to unintended addresses.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-31985",
+      "score": 3.7,
+      "severity": "LOW",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:L",
+      "vendor": "Hcltech",
+      "product": "Bigfix Service Management",
+      "type": "software",
+      "desc": "HCL BigFix Service Management (SM) is affected by a security misconfiguration due to a missing or insecure “X-Content-Type-Options” header.  This could allow browsers to perform MIME-type sniffing, potentially causing malicious content to be interpreted and executed incorrectly.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-47068",
       "score": 0.0,
       "severity": "NONE",
       "vector": "",
       "vendor": "Unknown",
       "product": "Unknown",
       "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: qrtr: ns: Limit the maximum server registration per node\n\nCurrent code does no bound checking on the number of servers added per\nnode. A malicious client can flood NEW_SERVER messages and exhaust memory.\n\nFix this issue by limiting the maximum number of server registrations to\n256 per node. If the NEW_SERVER message is received for an old port, then\ndon't restrict it as it will get replaced. While at it, also rate limit\nthe error messages in the failure path of qrtr_ns_worker().\n\nNote that the limit of 256 is chosen based on the current platform\nrequirements. If requirement changes in the future, this limit can be\nincreased.",
+      "desc": "Authorization Bypass Through User-Controlled Key vulnerability in phenixdigital phoenix_storybook allows cross-session PubSub topic injection via a URL query parameter.\n\n'Elixir.PhoenixStorybook.Story.ComponentIframeLive':handle_params/3 in lib/phoenix_storybook/live/story/component_iframe_live.ex reads a PubSub topic directly from params[\"topic\"] and broadcasts {:component_iframe_pid, self()} on it with no check that the topic belongs to the requesting session. The shared PhoenixStorybook.PubSub is used to coordinate playground LiveViews with their iframes: a playground subscribes to a session-specific topic and uses the received iframe pid to direct subsequent control messages (variation state, theme switches, extra-assign payloads) via send/2. Because the iframe trusts the query parameter, an attacker who loads /storybook/iframe/<story>?topic=<victim_topic> causes their iframe process pid to be announced on the victim's topic. The victim's playground then addresses its private messages to the attacker's iframe process.\n\nThis issue affects phoenix_storybook from 0.4.0 before 1.1.0.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-43492",
+      "id": "CVE-2026-8467",
       "score": 0.0,
       "severity": "NONE",
       "vector": "",
       "vendor": "Unknown",
       "product": "Unknown",
       "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nlib/crypto: mpi: Fix integer underflow in mpi_read_raw_from_sgl()\n\nYiming reports an integer underflow in mpi_read_raw_from_sgl() when\nsubtracting \"lzeros\" from the unsigned \"nbytes\".\n\nFor this to happen, the scatterlist \"sgl\" needs to occupy more bytes\nthan the \"nbytes\" parameter and the first \"nbytes + 1\" bytes of the\nscatterlist must be zero.  Under these conditions, the while loop\niterating over the scatterlist will count more zeroes than \"nbytes\",\nsubtract the number of zeroes from \"nbytes\" and cause the underflow.\n\nWhen commit 2d4d1eea540b (\"lib/mpi: Add mpi sgl helpers\") originally\nintroduced the bug, it couldn't be triggered because all callers of\nmpi_read_raw_from_sgl() passed a scatterlist whose length was equal to\n\"nbytes\".\n\nHowever since commit 63ba4d67594a (\"KEYS: asymmetric: Use new crypto\ninterface without scatterlists\"), the underflow can now actually be\ntriggered.  When invoking a KEYCTL_PKEY_ENCRYPT system call with a\nlarger \"out_len\" than \"in_len\" and filling the \"in\" buffer with zeroes,\ncrypto_akcipher_sync_prep() will create an all-zero scatterlist used for\nboth the \"src\" and \"dst\" member of struct akcipher_request and thereby\nfulfil the conditions to trigger the bug:\n\n  sys_keyctl()\n    keyctl_pkey_e_d_s()\n      asymmetric_key_eds_op()\n        software_key_eds_op()\n          crypto_akcipher_sync_encrypt()\n            crypto_akcipher_sync_prep()\n              crypto_akcipher_encrypt()\n                rsa_enc()\n                  mpi_read_raw_from_sgl()\n\nTo the user this will be visible as a DoS as the kernel spins forever,\ncausing soft lockup splats as a side effect.\n\nFix it.",
+      "desc": "Code Injection vulnerability in phenixdigital phoenix_storybook allows unauthenticated remote code execution via unsanitized attribute value interpolation in HEEx template generation.\n\nThe psb-assign WebSocket event handler in 'Elixir.PhoenixStorybook.Story.PlaygroundPreviewLive':handle_event/3 accepts arbitrary attribute names and values from unauthenticated clients. These values are passed to 'Elixir.PhoenixStorybook.Helpers.ExtraAssignsHelpers':handle_set_variation_assign/3, which stores them verbatim. When rendering, 'Elixir.PhoenixStorybook.Rendering.ComponentRenderer':attributes_markup/1 interpolates binary attribute values directly into a HEEx template string as name=\"<val>\" without escaping double quotes or HEEx expression delimiters. An attacker can supply a value containing a closing quote followed by a HEEx expression block (e.g. foo\" injected={EXPR} bar=\"), which causes EXPR to be treated as an inline Elixir expression. The resulting template is compiled via EEx.compile_string/2 and executed via Code.eval_quoted_with_env/3 with full Kernel imports and no sandbox, giving the attacker arbitrary code execution on the server.\n\nThis issue affects phoenix_storybook from 0.5.0 before 1.1.0.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     },
     {
-      "id": "CVE-2026-43493",
+      "id": "CVE-2026-8469",
       "score": 0.0,
       "severity": "NONE",
       "vector": "",
       "vendor": "Unknown",
       "product": "Unknown",
       "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ncrypto: pcrypt - Fix handling of MAY_BACKLOG requests\n\nMAY_BACKLOG requests can return EBUSY.  Handle them by checking\nfor that value and filtering out EINPROGRESS notifications.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-7860",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Vaadin Maven",
-      "type": "software",
-      "desc": "A possible information disclosure vulnerability exists in the Vaadin Maven plugin and Vaadin Gradle plugin that exposes the full set of environment variables in build logs whenever the frontend build process exits with a non-zero status. Because the build environment may contain credentials supplied as secrets, any failed frontend build can expose those secrets in clear text in CI logs and archived build artifacts.\n\n\nUsers of affected versions should apply the following mitigation or upgrade. Releases that have fixed this issue include:\n\nProduct version\nVaadin 23.0.0 - 23.6.9\nVaadin 24.0.0 - 24.10.3\nVaadin 25.0.0 - 25.1.4\n\nMitigation\nUpgrade to 23.6.10\nUpgrade to 24.10.4 or newer\nUpgrade to 25.1.5 or newer\n\nPlease note that Vaadin versions 10-13 and 15-22 are no longer supported and you should update either to the latest 23, 24, or 25 version.\n\nArtifactsMaven coordinatesVulnerable versionsFixed versioncom.vaadin:flow-plugin-base23.0.0 - 23.6.10≥23.6.11com.vaadin:flow-plugin-base24.0.0 - 24.10.3≥24.10.4com.vaadin:flow-plugin-base25.0.0 - 25.1.4≥25.1.5com.vaadin:flow-maven-plugin23.0.0 - 23.6.10≥23.6.11com.vaadin:flow-maven-plugin24.0.0 - 24.10.3≥24.10.4com.vaadin:flow-maven-plugin25.0.0 - 25.1.4≥25.1.5com.vaadin:flow-gradle-plugin24.0.0 - 24.10.3≥24.10.4com.vaadin:flow-gradle-plugin25.0.0 - 25.1.4≥25.1.5",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-14575",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "An Uncontrolled Search Path Element vulnerability in the OpenSSL TLS backend of Qt Network (qtbase) in Qt Qt Framework (Unix) allows a local attacker to load a rogue CA certificate as a trusted system authority via a crafted certificate file placed in the application's working directory.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-42096",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Sparx Pro Cloud Server is vulnerable to Broken Access Control within communication with the database. Due to lack of permission checks, any low privileged user can run arbitrary SQL queries within database user context.\n\nThe vendor was notified early about this vulnerability, but didn't respond with the details of vulnerability or vulnerable version range. Only version 6.1 (build 167) and below were tested and confirmed as vulnerable, other versions were not tested and might also be vulnerable.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-42097",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Sparx Pro Cloud Server requires authentication based on requested URL. An attacker can omit the \"model\" query parameter and send the model name only in the binary blob in POST request allowing SQL query execution without authentication.\n\nThe vendor was notified early about this vulnerability, but didn't respond with the details of vulnerability or vulnerable version range. Only version 6.1 (build 167) and below were tested and confirmed as vulnerable, other versions were not tested and might also be vulnerable.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-42098",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Sparx Enterprise Architect software has a security feature that limits user's actions to those specified in the role. An authenticated attacker can modify the Enterprise Architect  client behavior (e.g. using a debugger) and log in as any other user or administrator - then it is possible to do every possible change to the repository.\n\nThe vendor was notified early about this vulnerability, but didn't respond with the details of vulnerability or vulnerable version range. Only version 17.1 and below were tested and confirmed as vulnerable, other versions were not tested and might also be vulnerable.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-42099",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Sparx Pro Cloud Server is vulnerable to a Race Condition in the /data_api/dl_internal_artifact.php endpoint. The application downloads the properties of the object pointed by guid parameter and saves loaded content in current location (__DIR__) under the specified name. An attacker with repository access can control both the filename and file contents, allowing the creation of a malicious PHP file in a current directory. Although the file is deleted after processing, a race condition exists: if the response transmission is delayed (e.g., via a large file or slow client connection), the file remains accessible. During this window, the attacker can issue a second request to execute the malicious PHP file, resulting in remote code execution.\n\n\n\n\n\n\n\n\nThe vendor was notified early about this vulnerability, but didn't respond with the details of vulnerability or vulnerable version range. Only version 6.1 (build 167) and below were tested and confirmed as vulnerable, other versions were not tested and might also be vulnerable.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-42100",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Improper Handling of Syntactically Invalid Structure in Sparx Pro Cloud Server allows Denial of Service (DoS) attack to be executed by sending an specially crafted SQL query. This causes the Pro Cloud Server service to terminate unexpectedly. \n\nThe vendor was notified early about this vulnerability, but didn't respond with the details of vulnerability or vulnerable version range. Only version 6.1 (build 167) and below were tested and confirmed as vulnerable, other versions were not tested and might also be vulnerable.",
+      "desc": "Allocation of Resources Without Limits or Throttling vulnerability in phenixdigital phoenix_storybook allows unauthenticated denial-of-service via BEAM atom table exhaustion.\n\nMultiple LiveView event handlers convert user-supplied event parameter strings to atoms using String.to_atom/1 without validation: 'Elixir.PhoenixStorybook.ExtraAssignsHelpers':handle_set_variation_assign/3 interns every key of the psb-assign params map; 'Elixir.PhoenixStorybook.ExtraAssignsHelpers':handle_toggle_variation_assign/3 interns the \"attr\" value from psb-toggle events; 'Elixir.PhoenixStorybook.ExtraAssignsHelpers':to_variation_id/2 interns elements of \"variation_id\"; and 'Elixir.PhoenixStorybook.ExtraAssignsHelpers':to_value/4 interns raw string values for attributes declared as :atom or :boolean. BEAM atoms are never garbage-collected, so each unique attacker-controlled string is a permanent allocation. Once the atom table ceiling (~1,048,576 atoms) is reached, the entire BEAM node aborts, taking down all applications running on it.\n\nThis issue affects phoenix_storybook from 0.2.0 before 1.1.0.",
       "exploited": false,
       "cisaDue": "",
       "cisaName": ""
     }
   ],
   "kev": [
+    {
+      "cveID": "CVE-2008-4250",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Buffer Overflow Vulnerability",
+      "dateAdded": "2026-05-20",
+      "shortDescription": "Microsoft Windows contains a buffer overflow vulnerability in the Windows Server Service that allows remote attackers to execute arbitrary code via a crafted RPC request that triggers an overflow during path canonicalization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067 ; https://nvd.nist.gov/vuln/detail/CVE-2008-4250",
+      "cwes": [
+        "CWE-94"
+      ]
+    },
+    {
+      "cveID": "CVE-2009-1537",
+      "vendorProject": "Microsoft",
+      "product": "DirectX",
+      "vulnerabilityName": "Microsoft DirectX NULL Byte Overwrite Vulnerability",
+      "dateAdded": "2026-05-20",
+      "shortDescription": "Microsoft DirectX contains a NULL byte overwrite vulnerability in the QuickTime Movie Parser Filter in quartz.dll in DirectShow which could allow remote attackers to execute arbitrary code via a crafted QuickTime media file.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028 ; https://nvd.nist.gov/vuln/detail/CVE-2009-1537",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2009-3459",
+      "vendorProject": "Adobe",
+      "product": "Acrobat and Reader",
+      "vulnerabilityName": "Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability",
+      "dateAdded": "2026-05-20",
+      "shortDescription": "Adobe Acrobat and Reader contain a heap-based buffer overflow vulnerability which could allow remote attackers to execute arbitrary code via a crafted PDF file that triggers memory corruption.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.cisa.gov/news-events/alerts/2009/10/13/adobe-reader-and-acrobat-vulnerabilities ; https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html#:~:text=CVE%2D2009%2D3459).-,NOTE%3A,-There%20are%20reports ; https://nvd.nist.gov/vuln/detail/CVE-2009-3459",
+      "cwes": [
+        "CWE-119"
+      ]
+    },
+    {
+      "cveID": "CVE-2010-0249",
+      "vendorProject": "Microsoft",
+      "product": "Internet Explorer",
+      "vulnerabilityName": "Microsoft Internet Explorer Use-After-Free Vulnerability",
+      "dateAdded": "2026-05-20",
+      "shortDescription": "Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code by accessing a pointer associated with a deleted object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://learn.microsoft.com/en-us/security-updates/SecurityAdvisories/2010/979352 ; https://nvd.nist.gov/vuln/detail/CVE-2010-0249",
+      "cwes": [
+        "CWE-416"
+      ]
+    },
+    {
+      "cveID": "CVE-2010-0806",
+      "vendorProject": "Microsoft",
+      "product": "Internet Explorer",
+      "vulnerabilityName": "Microsoft Internet Explorer Use-After-Free Vulnerability",
+      "dateAdded": "2026-05-20",
+      "shortDescription": "Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code via vectors involving access to an invalid pointer after the deletion of an object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://learn.microsoft.com/en-us/security-updates/securityadvisories/2010/981374 ; https://nvd.nist.gov/vuln/detail/CVE-2010-0806",
+      "cwes": [
+        "CWE-399"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-41091",
+      "vendorProject": "Microsoft",
+      "product": "Defender",
+      "vulnerabilityName": "Microsoft Defender Link Following Vulnerability",
+      "dateAdded": "2026-05-20",
+      "shortDescription": "Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-41091 ; https://nvd.nist.gov/vuln/detail/CVE-2026-41091",
+      "cwes": [
+        "CWE-59"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-45498",
+      "vendorProject": "Microsoft",
+      "product": "Defender",
+      "vulnerabilityName": "Microsoft Defender Denial of Service Vulnerability",
+      "dateAdded": "2026-05-20",
+      "shortDescription": "Microsoft Defender contains an unspecified vulnerability that allows for denial of service.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-45498 ; https://nvd.nist.gov/vuln/detail/CVE-2026-45498",
+      "cwes": []
+    },
     {
       "cveID": "CVE-2026-42897",
       "vendorProject": "Microsoft",
@@ -423,65 +524,14 @@
       "cwes": [
         "CWE-79"
       ]
-    },
-    {
-      "cveID": "CVE-2026-20182",
-      "vendorProject": "Cisco",
-      "product": "Catalyst SD-WAN",
-      "vulnerabilityName": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
-      "dateAdded": "2026-05-14",
-      "shortDescription": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
-      "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlined in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
-      "dueDate": "2026-05-17",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "CISA Mitigation Instructions: https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems ; https://www.cisa.gov/news-events/directives/supplemental-direction-ed-26-03-hunt-and-hardening-guidance-cisco-sd-wan-systems ; https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW ; https://nvd.nist.gov/vuln/detail/CVE-2026-20182",
-      "cwes": [
-        "CWE-287"
-      ]
     }
   ],
   "threats": [
     {
-      "source": "CISA ICS",
-      "title": "Kieback & Peter DDC Building Controllers",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-05",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of this vulnerability could allow an attacker to take control of the victim's browser.\nThe following versions of Kieback &amp; Peter DDC Building Controllers are affected:\n\nDDC4002 &lt;=1.12.14 (CVE-2026-4293)\nDDC4100 &lt;=1.12.14 (CVE-2026-4293)\nDDC4200 &lt;=1.12.14 (CVE-2026-4293)\nDDC4200-L &lt;=1.12.14 (CVE-2026-4293)\nDDC4400 &lt;=1.12.14 (CVE-2026-4293"
-    },
-    {
-      "source": "CISA ICS",
-      "title": "Siemens RUGGEDCOM APE1808 Devices",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-02",
-      "summary": "View CSAF\nSummary\nA buffer overflow vulnerability in the User-ID™ Authentication Portal (aka Captive Portal) service of Palo Alto Networks PAN-OS software allows an unauthenticated attacker to execute arbitrary code with root privileges on the PA-Series and VM-Series firewalls by sending specially crafted packets. Siemens is preparing fix versions and recommends countermeasures for products where "
-    },
-    {
-      "source": "CISA ICS",
-      "title": "ABB CoreSense HM and CoreSense M10",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-01",
-      "summary": "View CSAF\nSummary\nAn update is available that resolves vulnerability in the product versions listed as affected in this advisory. A path traversal vulnerability in these products can allow unauthenticated users to gain access to restricted directories. Exploiting this vulnerability can lead to complete system compromise and exposure of sensitive information.\nThe following versions of ABB CoreSense"
-    },
-    {
-      "source": "CISA ICS",
-      "title": "ScadaBR",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-03",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of these vulnerabilities could allow an attacker to perform unauthenticated remote code execution.\nThe following versions of ScadaBR are affected:\n\nScadaBR 1.2.0 (CVE-2026-8602, CVE-2026-8603, CVE-2026-8604, CVE-2026-8605)\n\n\n\n\n\nCVSS\nVendor\nEquipment\nVulnerabilities\n\n\n\n\nv3 9.1\nScadaBR\nScadaBR\nMissing Authentication for Critical Function, Improper Neutraliza"
-    },
-    {
-      "source": "CISA ICS",
-      "title": "ZKTeco CCTV Cameras",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-04",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of this vulnerability could result in information disclosure, including capture of camera account credentials.\nThe following versions of ZKTeco CCTV Cameras are affected:\n\nSSC335-GC2063-Face-0b77 Solution\n\n\n\n\n\nCVSS\nVendor\nEquipment\nVulnerabilities\n\n\n\n\nv3 9.1\nZKTeco\nZKTeco CCTV Cameras\nAuthentication Bypass Using an Alternate Path or Channel\n\n\n\n\nBackground\n"
-    },
-    {
       "source": "Microsoft Security",
-      "title": "CVE-2026-34956 Openvswitch: open vswitch: denial of service via malformed ftp epasv command",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-34956",
-      "summary": "Information published."
-    },
-    {
-      "source": "Microsoft Security",
-      "title": "CVE-2026-43493 crypto: pcrypt - Fix handling of MAY_BACKLOG requests",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43493",
-      "summary": "Information published."
+      "title": "CVE-2026-45585 Windows BitLocker Security Feature Bypass Vulnerability",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45585",
+      "summary": "Added a script to implement a mitigation and removed the manual mitigations. Please read the information to decide if you need to run the provided script."
     },
     {
       "source": "Microsoft Security",
@@ -491,229 +541,253 @@
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2026-46483 Vim: Command injection in tar#Vimuntar via missing shellescape {special} flag",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-46483",
+      "title": "CVE-2026-43619 Rsync < 3.4.3 Symlink Race Condition via Path-Based Syscalls",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43619",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2026-43492 lib/crypto: mpi: Fix integer underflow in mpi_read_raw_from_sgl()",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43492",
+      "title": "CVE-2026-43618 Rsync < 3.4.3 Integer Overflow Information Disclosure",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43618",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2026-45585 Windows BitLocker Security Feature Bypass Vulnerability",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45585",
-      "summary": "Microsoft is aware of a security feature bypass vulnerability in Windows publicly referred to as \"YellowKey\". The proof of concept for this vulnerability has been made public violating coordinated vulnerability best practices.\n \nWe are issuing this CVE to provide mitigation guidance that can be implemented to protect against this vulnerability until the security update is made available."
+      "title": "CVE-2026-43620 Rsync < 3.4.3 Out-of-Bounds Array Read via recv_files()",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43620",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-47784 In memcached before 1.6.42, password data for SASL password database authentication has a timing side channel because memcmp is used by sasl_server_userdb_checkpass.",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47784",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-47783 In memcached before 1.6.42, username data for SASL password database authentication has a timing side channel because a loop exits as soon as a valid username is found by sasl_server_userdb_checkpass.",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47783",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-32792 Packet of death with DNSCrypt",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32792",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-42960 Possible cache poisoning via promiscuous records for the authority section",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42960",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-42959 Crash during DNSSEC validation of malicious content",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42959",
+      "summary": "Information published."
     }
   ],
   "news": [
     {
       "source": "Bleeping Computer",
-      "title": "Exploit released for new PinTheft Arch Linux root escalation flaw",
-      "link": "https://www.bleepingcomputer.com/news/linux/exploit-released-for-new-pintheft-arch-linux-root-escalation-flaw/",
-      "summary": "PinTheft, a recently patched Linux privilege escalation vulnerability, now has a publicly available proof-of-concept (PoC) exploit that allows local attackers to gain root privileges on Arch Linux systems. [...]"
+      "title": "Flipper One project needs community help to build open Linux platform",
+      "link": "https://www.bleepingcomputer.com/news/hardware/flipper-one-project-needs-community-help-to-build-open-linux-platform/",
+      "summary": "Flipper Devices, the maker of the Flipper Zero pentesting tool, is asking the community to help build Flipper One, an open Linux platform for connected devices. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "GitHub confirms breach of 3,800 repos via malicious VSCode extension",
-      "link": "https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/",
-      "summary": "GitHub has confirmed that roughly 3,800 internal repositories were breached after one of its employees installed a malicious VS Code extension. [...]"
+      "title": "Microsoft warns of new Defender zero-days exploited in attacks",
+      "link": "https://www.bleepingcomputer.com/news/security/microsoft-warns-of-new-defender-zero-days-exploited-in-attacks/",
+      "summary": "On Wednesday, Microsoft started rolling out security patches for two Defender vulnerabilities that have been exploited in zero-day attacks. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Microsoft shares mitigation for YellowKey Windows zero-day",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-shares-mitigation-for-yellowkey-windows-zero-day/",
-      "summary": "Microsoft has shared mitigations for YellowKey, a recently disclosed Windows BitLocker zero-day vulnerability that grants access to protected drives. [...]"
+      "title": "GitHub links repo breach to TanStack npm supply-chain attack",
+      "link": "https://www.bleepingcomputer.com/news/security/github-links-repo-breach-to-tanstack-npm-supply-chain-attack/",
+      "summary": "GitHub says the hackers who breached 3,800 internal repositories gained access via a malicious version of the Nx Console VS Code extension, compromised in last week's TanStack npm supply-chain attack. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "GitHub investigates internal repositories breach claimed by TeamPCP",
-      "link": "https://www.bleepingcomputer.com/news/security/github-investigates-internal-repositories-breach-claimed-by-teampcp/",
-      "summary": "GitHub is investigating a breach of its internal repositories after the TeamPCP hacker group claimed to have accessed approximately 4,000 repositories containing private code. [...]"
+      "title": "Ukraine identifies infostealer operator tied to 28,000 stolen accounts",
+      "link": "https://www.bleepingcomputer.com/news/security/ukraine-identifies-infostealer-operator-tied-to-28-000-stolen-accounts/",
+      "summary": "The Ukrainian cyberpolice, working in conjunction with U.S. law enforcement, has identified an 18-year-old man from Odesa suspected of running an infostealer malware operation targeting users of an online store in California. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Max-severity flaw in ChromaDB for AI apps allows server hijacking",
-      "link": "https://www.bleepingcomputer.com/news/security/max-severity-flaw-in-chromadb-for-ai-apps-allows-server-hijacking/",
-      "summary": "A max-severity vulnerability in the latest Python FastAPI version of the ChromaDB project allows unauthenticated attackers to run arbitrary code on exposed servers. [...]"
+      "title": "Hackers bypass SonicWall VPN MFA due to incomplete patching",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-bypass-sonicwall-vpn-mfa-due-to-incomplete-patching/",
+      "summary": "Threat actors brute-forced VPN credentials and bypassed multi-factor authentication (MFA) on SonicWall Gen6 SSL-VPN appliances to deploy tools used in ransomware attacks. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Cybercrime service disrupted for abusing Microsoft platform to sign malware",
-      "link": "https://www.bleepingcomputer.com/news/security/cybercrime-service-disrupted-for-abusing-microsoft-platform-to-sign-malware/",
-      "summary": "Microsoft says it has disrupted a malware-signing-as-a-service (MSaaS) operation that abused the company's Artifact Signing service to generate fraudulent code-signing certificates used by ransomware gangs and other cybercriminals. [...]"
+      "title": "Grafana breach caused by missed token rotation after TanStack attack",
+      "link": "https://www.bleepingcomputer.com/news/security/grafana-breach-caused-by-missed-token-rotation-after-tanstack-attack/",
+      "summary": "The Grafana data breach was caused by a single GitHub workflow token that slipped through the rotation process following the TanStack npm supply-chain attack last week. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Discord rolls out end-to-end encryption on voice, video calls",
-      "link": "https://www.bleepingcomputer.com/news/security/discord-rolls-out-end-to-end-encryption-on-voice-video-calls/",
-      "summary": "Discord announced that all voice and video calls through the communication platform are now protected by default with end-to-end encryption (E2EE). [...]"
+      "title": "Identity Alone Isn't Enough: Why Device Security Has to Share the Load",
+      "link": "https://www.bleepingcomputer.com/news/security/identity-alone-isnt-enough-why-device-security-has-to-share-the-load/",
+      "summary": "Identity checks alone can't stop attackers using stolen session tokens and compromised devices. Specops Software outlines why Zero Trust strategies increasingly depend on continuous device verification. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "FBI: Americans lost over $388 million to scams using crypto ATMs in 2025",
-      "link": "https://www.bleepingcomputer.com/news/security/fbi-americans-lost-over-388-million-to-scams-using-crypto-atms-in-2025/",
-      "summary": "The FBI says Americans have lost over $388 million last year to scams using cryptocurrency kiosks, also known as crypto ATMs or Bitcoin ATMs. [...]"
-    },
-    {
-      "source": "Bleeping Computer",
-      "title": "Microsoft Self-Service Password Reset abused in Azure data theft attacks",
-      "link": "https://www.bleepingcomputer.com/news/security/microsoft-self-service-password-reset-abused-in-azure-data-theft-attacks/",
-      "summary": "A threat actor targeting Microsoft 365 and Azure production environments is stealing data in attacks that abuse legitimate applications and administration features. [...]"
-    },
-    {
-      "source": "Bleeping Computer",
-      "title": "Microsoft plans to improve Windows 11 driver quality in 2026",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-plans-to-improve-windows-11-driver-quality-in-2026/",
-      "summary": "Microsoft plans to raise the quality bar of Windows 11 drivers, as drivers \"sit at the heart of every Windows experience\" and connect the OS to the \"silicon, components, and peripherals.\" [...]"
+      "title": "Drupal critical update to fix bug with high exploitation risk",
+      "link": "https://www.bleepingcomputer.com/news/security/drupal-critical-update-to-fix-bug-with-high-exploitation-risk/",
+      "summary": "Drupal has announced a \"core security release\" scheduled for later today, warning that threat actors might develop exploits within hours of the update disclosure. [...]"
     },
     {
       "source": "The Hacker News",
-      "title": "Typosquatting Is No Longer a User Problem. It's a Supply Chain Problem",
-      "link": "https://thehackernews.com/2026/05/typosquatting-is-no-longer-user-problem.html",
-      "summary": "AI-generated lookalike domains are now embedded inside the third-party scripts running on your web properties. Here's why your current stack can't see them, and what detection actually requires.\nDownload the CISO Expert Guide to Typosquatting in the AI Era →\n\n\nTL;DR&nbsp;\n\n\n  Typosquatting is no longer a user problem. Attackers now embed lookalike domains inside legitimate third-party scripts."
+      "title": "Microsoft Warns of Two Actively Exploited Defender Vulnerabilities",
+      "link": "https://thehackernews.com/2026/05/microsoft-warns-of-two-actively.html",
+      "summary": "Microsoft has disclosed that a privilege escalation and a denial-of-service flaw in Defender has come under active exploitation in the wild.\n\nThe former, tracked as CVE-2026-41091, is rated 7.8 on the CVSS scoring system. Successful exploitation of the flaw could allow an attacker to gain SYSTEM privileges.\n\n\"Improper link resolution before file access ('link following') in Microsoft Defender"
     },
     {
       "source": "The Hacker News",
-      "title": "Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit",
-      "link": "https://thehackernews.com/2026/05/microsoft-releases-mitigation-for.html",
-      "summary": "Microsoft on Tuesday released a mitigation for a BitLocker bypass vulnerability named YellowKey following its public disclosure last week.\n\nThe zero-day flaw, now tracked as CVE-2026-45585, carries a CVSS score of 6.8. It has been described as a BitLocker security feature bypass.\n\n\"Microsoft is aware of a security feature bypass vulnerability in Windows publicly referred to as 'YellowKey,'\" the"
+      "title": "When Identity is the Attack Path",
+      "link": "https://thehackernews.com/2026/05/when-identity-is-attack-path.html",
+      "summary": "Consider a cached access key on a single Windows machine. It got there the way most cached credentials do - a user logged in, and the key stored itself automatically. Standard AWS behavior. No one misconfigured anything or violated a policy. Yet that single key, which was easily accessible to a minor-league attacker, could have opened a path to some 98% of entities in the company's cloud"
     },
     {
       "source": "The Hacker News",
-      "title": "Grafana GitHub Breach Exposes Source Code via TanStack npm Attack",
-      "link": "https://thehackernews.com/2026/05/grafana-github-breach-exposes-source.html",
-      "summary": "Grafana Labs, on May 19, 2026, said an investigation into its recent breach found no evidence of customer production systems or operations being compromised.\n\nIt said the scope of the incident is limited to the Grafana Labs GitHub environment, which includes public and private source code along with internal GitHub repositories.\n\n\"After the initial assessment, we found that in addition to source"
+      "title": "9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros",
+      "link": "https://thehackernews.com/2026/05/9-year-old-linux-kernel-flaw-enables.html",
+      "summary": "Cybersecurity researchers have disclosed details of a vulnerability in the Linux kernel that remained undetected for nine years.\n\nThe vulnerability, tracked as CVE-2026-46333 (CVSS score: 5.5), is a case of improper privilege management that could permit an unprivileged local user to disclose sensitive files and execute arbitrary commands as root on default installations of several major"
     },
     {
       "source": "The Hacker News",
-      "title": "GitHub Breached — Employee Device Hack Led to Exfiltration of 3,800+ Internal Repos",
-      "link": "https://thehackernews.com/2026/05/github-investigating-teampcp-claimed.html",
-      "summary": "GitHub on Tuesday said it's investigating unauthorized access to its internal repositories after the notorious threat actor known as TeamPCP listed the platform's source code and internal organizations for sale on a cybercrime forum.\n\n\"While we currently have no evidence of impact to customer information stored outside of GitHub's internal repositories (such as our customers' enterprises,"
+      "title": "GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension",
+      "link": "https://thehackernews.com/2026/05/github-internal-repositories-breached.html",
+      "summary": "GitHub on Wednesday officially confirmed that the breach of its internal repositories was the result of a compromise of an employee device involving a poisoned version of the Nx Console Microsoft Visual Studio Code (VS Code) extension.&nbsp;\n\nThe development comes as the Nx team revealed that the extension, nrwl.angular-console, was breached after one of its developers' systems was hacked in the"
     },
     {
       "source": "The Hacker News",
-      "title": "Trapdoor Android Ad Fraud Scheme Hit 659 Million Daily Bid Requests Using 455 Apps",
-      "link": "https://thehackernews.com/2026/05/trapdoor-android-ad-fraud-scheme-hit.html",
-      "summary": "Cybersecurity researchers have disclosed details of a new ad fraud and malvertising operation dubbed Trapdoor targeting Android device users.\n\nThe activity, per HUMAN's Satori Threat Intelligence and Research Team, encompassed 455 malicious Android apps and 183 threat actor-owned command-and-control (C2) domains, turning the infrastructure into a pipeline for multi-stage fraud.\n\n\"Users"
+      "title": "Highly Critical Drupal Core Flaw Exposes PostgreSQL Sites to RCE Attacks",
+      "link": "https://thehackernews.com/2026/05/highly-critical-drupal-core-flaw.html",
+      "summary": "Drupal has released security updates for a \"highly critical\" security vulnerability in Drupal Core that could be exploited by attackers to achieve remote code execution, privilege escalation, or information disclosure.\nThe vulnerability, now tracked as CVE-2026-9082, carries a CVSS score of 6.5 out of 10.0, per CVE.org. Drupal said the vulnerability resides in a database abstraction API that is"
     },
     {
       "source": "The Hacker News",
-      "title": "DirtyDecrypt PoC Released for Linux Kernel CVE-2026-31635 LPE Vulnerability",
-      "link": "https://thehackernews.com/2026/05/dirtydecrypt-poc-released-for-linux.html",
-      "summary": "Proof-of-concept (PoC) exploit code has now been released for a recently patched security flaw in the Linux kernel that could allow for local privilege escalation (LPE).\nDubbed DirtyDecrypt (aka DirtyCBC), the vulnerability was discovered and reported by the Zellic and V12 security team on May 9, 2026, only to be informed by the maintainers that it was a duplicate of a vulnerability that had"
+      "title": "Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development",
+      "link": "https://thehackernews.com/2026/05/microsoft-open-sources-rampart-and.html",
+      "summary": "Microsoft has unveiled two new open-source tools called RAMPART and Clarity to assist developers in better testing the security of artificial intelligence (AI) agents.\n\nRAMPART, short for Risk Assessment and Measurement Platform for Agentic Red Teaming, functions as a Pytest-native safety and security testing framework for writing and running safety and security tests for AI agents, covering"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks",
+      "link": "https://thehackernews.com/2026/05/microsoft-takes-down-malware-signing.html",
+      "summary": "Microsoft on Tuesday said it disrupted a malware-signing-as-a-service (MSaaS) operation that weaponized the company's Artifact Signing system to deliver malicious code and conduct ransomware and other attacks, compromising thousands of machines and networks across the world.\n\nThe tech giant attributed the activity to a threat actor it calls Fox Tempest, which it said offered the MSaaS scheme"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "Webworm Deploys EchoCreep and GraphWorm Backdoors Using Discord and MS Graph API",
+      "link": "https://thehackernews.com/2026/05/webworm-deploys-echocreep-and-graphworm.html",
+      "summary": "Cybersecurity researchers have flagged fresh activity from a China-aligned threat actor known as Webworm in 2025, deploying custom backdoors that employ Discord and Microsoft Graph API for command-and-control (C2 or C&amp;C) communications.\n\nWebworm, first publicly documented by Broadcom-owned Symantec in September 2022, is assessed to be active since at least 2022, targeting government agencies"
     },
     {
       "source": "Dark Reading",
-      "title": "Interpol's 'Operation Ramz' Pioneers Cross-Region Collabs in Middle East",
-      "link": "https://www.darkreading.com/cybersecurity-operations/interpol-operation-ramz-cross-region-middle-east",
-      "summary": "While the numbers are modest, the crackdown on cybercrime involved 13 countries in the MENA region, the largest law enforcement collaboration to date."
+      "title": "Cyber Pros Can't Decide If AI Is a Good or a Bad Thing",
+      "link": "https://www.darkreading.com/cybersecurity-analytics/cyber-pros-ai",
+      "summary": "There is nothing cybersecurity professionals are more excited about, and nothing they fear more, than AI."
     },
     {
       "source": "Dark Reading",
-      "title": "What Will Make AI BOMs Real?",
-      "link": "https://www.darkreading.com/cybersecurity-analytics/what-make-ai-bom-real",
-      "summary": "A brief overview of the forces at play that will get more organizations on board with creating and consuming AI bill of materials (BOMs)."
+      "title": "GitHub Confirms Breach, 4K Internal Repos Stolen",
+      "link": "https://www.darkreading.com/application-security/github-confirms-breach-4k-internal-repos-stolen",
+      "summary": "Open source software giant GitHub confirmed a data breach this week involving the theft of thousands of repos. One threat actor — TeamPCP — took credit."
     },
     {
       "source": "Dark Reading",
-      "title": "Verizon DBIR: Enterprises Face a Dangerous Vulnerability Glut",
-      "link": "https://www.darkreading.com/threat-intelligence/verizon-dbir-enterprises-vulnerability-glut",
-      "summary": "Verizon's &quot;2026 Data Breach Investigations Report&quot; (&quot;DBIR&quot;) finds that exploits are now involved in 31% of initial access for breaches, while patching lags too far behind the bad guys."
+      "title": "Fake Android Apps Commit Carrier Billing Fraud for Premium Svcs.",
+      "link": "https://www.darkreading.com/mobile-security/fake-android-apps-carrier-billing-fraud",
+      "summary": "The disguised apps use WebView automation, JavaScript injection, and OTP interception to avoid detection and complete fraudulent subscriptions."
     },
     {
       "source": "Dark Reading",
-      "title": "Windows Zero-Day Barrage Continues After Patch Tuesday",
-      "link": "https://www.darkreading.com/cyberattacks-data-breaches/windows-zero-day-barrage-continues-after-patch-tuesday",
-      "summary": "YellowKey, GreenPlasma, and MiniPlasma add to the growing list of vulnerabilities a security researcher disclosed over the past six weeks."
+      "title": "Processes and Culture Top Reasons Behind Data Breaches",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/processes-and-culture-top-reasons-behind-data-breaches",
+      "summary": "Government leaders revealed that, in spite of state laws meant to improve cyber hygiene, an analysis of incidents showed issues persist and visibility falls short."
     },
     {
       "source": "Dark Reading",
-      "title": "CISA Exposes Secrets, Credentials in 'Private' Repo",
-      "link": "https://www.darkreading.com/cybersecurity-operations/cisa-exposes-secrets-credentials-private-repo",
-      "summary": "The agency's GitHub repository, publicly available since November 2025, was ironically named &quot;Private-CISA.&quot;"
+      "title": "Patch Now: Critical Flaw in OT Robot OS Gives Attackers Control",
+      "link": "https://www.darkreading.com/ics-ot-security/patch-now-critical-flaw-ot-robot-os",
+      "summary": "An unauthenticated attacker can exploit the command injection vulnerability to gain remote access to robotic systems, causing significant disruption to the environment."
     },
     {
       "source": "Dark Reading",
-      "title": "Stealer Spoofs Google, Microsoft &amp; Apple, Then Backdoors macOS",
-      "link": "https://www.darkreading.com/threat-intelligence/stealer-spoofs-google-microsoft-apple-backdoors-macos",
-      "summary": "The SHub Reaper stealer, which hides behind fake WeChat and Miro installers, marks a shift from ClickFix social engineering to Apple script-based execution."
-    },
-    {
-      "source": "Dark Reading",
-      "title": "Looking Back, Looking Forward: Digesting a Dynamic Bouillabaisse of Cyber Evolution",
-      "link": "https://www.darkreading.com/cybersecurity-operations/looking-back-looking-forward-bouillabaisse-cyber-evolution",
-      "summary": "Dark Reading editors reflect on two decades of dramatic change — from perimeter defense to assume-breach strategies — and warn that while AI, cloud, and COVID-19 have transformed the threat landscape, organizations are still failing at fundamental security hygiene that could stop sophisticated attacks in their tracks."
+      "title": "Infosecurity Europe",
+      "link": "https://www.darkreading.com/events/infosecurity-europe",
+      "summary": ""
     },
     {
       "source": "SecurityWeek",
-      "title": "Over 320 NPM Packages Hit by Fresh Mini Shai-Hulud Supply Chain Attack",
-      "link": "https://www.securityweek.com/over-320-npm-packages-hit-by-fresh-mini-shai-hulud-supply-chain-attack/",
-      "summary": "A compromised maintainer account was used to publish malicious package versions across the @antv namespace.\nThe post Over 320 NPM Packages Hit by Fresh Mini Shai-Hulud Supply Chain Attack appeared first on SecurityWeek."
+      "title": "Cisco Patches Critical Vulnerability in Secure Workload",
+      "link": "https://www.securityweek.com/cisco-patches-critical-vulnerability-in-secure-workload/",
+      "summary": "Insufficient validation and authentication in the Secure Workload’s REST APIs provide remote attackers with Site Admin privileges.\nThe post Cisco Patches Critical Vulnerability in Secure Workload appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Caught Off Guard: Securing AI After It Hits Production",
-      "link": "https://www.securityweek.com/caught-off-guard-securing-ai-after-it-hits-production/",
-      "summary": "As enterprises rush AI projects into production, security teams are increasingly being forced into reactive mode.\nThe post Caught Off Guard: Securing AI After It Hits Production appeared first on SecurityWeek."
+      "title": "Ocean Emerges From Stealth With $28M for Agentic Email Security Platform",
+      "link": "https://www.securityweek.com/ocean-emerges-from-stealth-with-28m-for-agentic-email-security-platform/",
+      "summary": "The company has developed a platform that uses specialized AI agents to inspect every incoming message.\nThe post Ocean Emerges From Stealth With $28M for Agentic Email Security Platform appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Real-World ICS Security Tales From the Trenches",
-      "link": "https://www.securityweek.com/real-world-ics-security-tales-from-the-trenches/",
-      "summary": "SecurityWeek spoke with several ICS security experts and companies about their most memorable experiences in the field.\nThe post Real-World ICS Security Tales From the Trenches appeared first on SecurityWeek."
+      "title": "Apple Rejected 2 Million App Store Submissions in 2025 for Security and Fraud Prevention",
+      "link": "https://www.securityweek.com/apple-rejected-2-million-app-store-submissions-in-2025-for-security-and-fraud-prevention/",
+      "summary": "The company blocked over 1.1 billion accounts and $2.2 billion in potentially fraudulent transactions.\nThe post Apple Rejected 2 Million App Store Submissions in 2025 for Security and Fraud Prevention appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Virtual Event Today: Threat Detection & Incident Response Summit",
-      "link": "https://www.securityweek.com/virtual-event-today-threat-detection-incident-response-summit/",
-      "summary": "Don't miss this virtual event as we explore how to cut through alert fatigue, leverage AI and unified platforms to accelerate investigations, and apply actionable threat intelligence.\nThe post Virtual Event Today: Threat Detection &amp; Incident Response Summit appeared first on SecurityWeek."
+      "title": "Drupal Patches Highly Critical Vulnerability Exposing Websites to Hacking",
+      "link": "https://www.securityweek.com/drupal-patches-highly-critical-vulnerability-exposing-websites-to-hacking/",
+      "summary": "CVE-2026-9082 can be exploited without authentication for information disclosure, privilege escalation, and remote code execution.\nThe post Drupal Patches Highly Critical Vulnerability Exposing Websites to Hacking appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "GitHub Confirms Hack Impacting 3,800 Internal Repositories",
-      "link": "https://www.securityweek.com/github-confirms-hack-impacting-3800-internal-repositories/",
-      "summary": "The TeamPCP hacking group accessed the repositories after a GitHub employee installed a poisoned VS Code extension.\nThe post GitHub Confirms Hack Impacting 3,800 Internal Repositories appeared first on SecurityWeek."
+      "title": "Socket Raises $60 Million at $1 Billion Valuation",
+      "link": "https://www.securityweek.com/socket-raises-60-million-at-1-billion-valuation/",
+      "summary": "The company will invest in its firewall, certified patches, protection extensions, new products, and team expansion.\nThe post Socket Raises $60 Million at $1 Billion Valuation appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Verizon DBIR 2026: Vulnerability Exploitation Overtakes Credential Theft as Top Breach Vector",
-      "link": "https://www.securityweek.com/verizon-dbir-2026-vulnerability-exploitation-overtakes-credential-theft-as-top-breach-vector/",
-      "summary": "Verizon’s 2026 DBIR finds vulnerability exploitation has overtaken credential abuse as the leading breach vector, as AI accelerates attacks, patching delays worsen, and ransomware and third-party compromises continue to surge.\nThe post Verizon DBIR 2026: Vulnerability Exploitation Overtakes Credential Theft as Top Breach Vector appeared first on SecurityWeek."
+      "title": "Microsoft Patches Exploited UnDefend and RedSun Defender Zero-Days",
+      "link": "https://www.securityweek.com/microsoft-patches-exploited-undefend-and-redsun-defender-zero-days/",
+      "summary": "The bugs could be exploited to elevate privileges to System or create a denial-of-service (DoS) condition.\nThe post Microsoft Patches Exploited UnDefend and RedSun Defender Zero-Days appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Drupal to Patch Highly Critical Vulnerability at Risk of Quick Exploitation",
-      "link": "https://www.securityweek.com/drupal-to-patch-highly-critical-vulnerability-at-risk-of-quick-exploitation/",
-      "summary": "Drupal says attackers may develop an exploit for the vulnerability within hours or days.\nThe post Drupal to Patch Highly Critical Vulnerability at Risk of Quick Exploitation appeared first on SecurityWeek."
+      "title": "Google’s Surge in Chrome Vulnerability Discoveries Likely Driven by AI",
+      "link": "https://www.securityweek.com/googles-surge-in-chrome-vulnerability-discoveries-likely-driven-by-ai/",
+      "summary": "More than 200 vulnerabilities patched in recent Chrome releases are marked as ‘reported by Google’.\nThe post Google&#8217;s Surge in Chrome Vulnerability Discoveries Likely Driven by AI appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Microsoft Disrupts Malware-Signing Service Run by ‘Fox Tempest’",
-      "link": "https://www.securityweek.com/microsoft-disrupts-malware-signing-service-run-by-fox-tempest/",
-      "summary": " Fox Tempest provides a service that cybercriminals use to distribute ransomware and other malware disguised as legitimate software.\nThe post Microsoft Disrupts Malware-Signing Service Run by &#8216;Fox Tempest&#8217;  appeared first on SecurityWeek."
+      "title": "Supply Chain Security Crisis: Too Many Vulnerabilities, Too Little Visibility",
+      "link": "https://www.securityweek.com/supply-chain-security-crisis-too-many-vulnerabilities-too-little-visibility/",
+      "summary": "New vulnerabilities are being discovered too fast, the time-to-exploitation is too short, and our visibility into them is largely lacking.\nThe post Supply Chain Security Crisis: Too Many Vulnerabilities, Too Little Visibility appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Legacy Windows Tool MSHTA Fuels Surge in Silent Malware Attacks",
-      "link": "https://www.securityweek.com/legacy-windows-tool-mshta-fuels-surge-in-silent-malware-attacks/",
-      "summary": "Attackers are increasingly abusing Microsoft’s decades-old MSHTA utility to stealthily deliver stealers, loaders, and persistent malware through phishing, fake software downloads, and LOLBIN-based attack chains.\nThe post Legacy Windows Tool MSHTA Fuels Surge in Silent Malware Attacks appeared first on SecurityWeek."
+      "title": "Quantum Bridge Raises $8 Million for Quantum-Safe Key Distribution Solution",
+      "link": "https://www.securityweek.com/quantum-bridge-raises-8-million-for-quantum-safe-key-distribution-solution/",
+      "summary": "The new Series A funding round brings the total raised by Quantum Bridge to $16 million. \nThe post Quantum Bridge Raises $8 Million for Quantum-Safe Key Distribution Solution appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Unpatched ChromaDB Vulnerability Can Lead to Server Takeover",
-      "link": "https://www.securityweek.com/unpatched-chromadb-vulnerability-can-lead-to-server-takeover/",
-      "summary": "The security defect can be exploited remotely, without authentication, to execute arbitrary code and leak sensitive information.\nThe post Unpatched ChromaDB Vulnerability Can Lead to Server Takeover appeared first on SecurityWeek."
+      "title": "Microsoft Rolls Out Mitigations for ‘YellowKey’ BitLocker Bypass",
+      "link": "https://www.securityweek.com/microsoft-rolls-out-mitigations-for-yellowkey-bitlocker-bypass/",
+      "summary": "The exploitation is mitigated by preventing the FsTx Auto Recovery Utility from starting when the WinRE image launches.\nThe post Microsoft Rolls Out Mitigations for &#8216;YellowKey&#8217; BitLocker Bypass appeared first on SecurityWeek."
     }
   ],
   "blogs": [
     {
-      "source": "Krebs on Security",
-      "title": "CISA Admin Leaked AWS GovCloud Keys on Github",
-      "link": "https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/",
-      "summary": "Until this past weekend, a contractor for the Cybersecurity &#038; Infrastructure Security Agency (CISA) maintained a public GitHub repository that exposed credentials to several highly privileged AWS GovCloud accounts and a large number of internal CISA systems. Security experts said the public archive included files detailing how CISA builds, tests and deploys software internally, and that it re"
+      "source": "SANS ISC Diary",
+      "title": "ISC Stormcast For Thursday, May 21st, 2026 https://isc.sans.edu/podcastdetail/9940, (Thu, May 21st)",
+      "link": "https://isc.sans.edu/diary/rss/33000",
+      "summary": ""
     },
     {
       "source": "SANS ISC Diary",
@@ -722,22 +796,10 @@
       "summary": ""
     },
     {
-      "source": "SANS ISC Diary",
-      "title": "ISC Stormcast For Tuesday, May 19th, 2026 https://isc.sans.edu/podcastdetail/9936, (Tue, May 19th)",
-      "link": "https://isc.sans.edu/diary/rss/32996",
-      "summary": ""
-    },
-    {
-      "source": "SANS ISC Diary",
-      "title": "TeamPCP Supply Chain Campaign: Activity Through 2026-05-17, (Mon, May 18th)",
-      "link": "https://isc.sans.edu/diary/rss/32994",
-      "summary": "Since the last update, the TeamPCP supply chain campaign produced its loudest stretch since the March Trivy disclosure: an officially confirmed Checkmarx Jenkins plugin compromise and a new self-spreading Mini Shai-Hulud worm across npm and PyPI.&#xd;"
-    },
-    {
       "source": "Schneier on Security",
-      "title": "Laurie Anderson Is Quoting Me",
-      "link": "https://www.schneier.com/blog/archives/2026/05/laurie-anderson-is-quoting-me.html",
-      "summary": "Not by name, but Laurie Anderson quotes me in one of the tracks of her new album:\nMy favorite quote is from a cryptologist who said &#8220;If you think technology will solve your problems, you don&#8217;t understand technology and you don&#8217;t understand your problems.&#8221;\nAlso in interviews:\n&#8220;Of course, it&#8217;s ridiculous, outrageous, blah, blah, blah,&#8221; Anderson says about th"
+      "title": "On AI Security",
+      "link": "https://www.schneier.com/blog/archives/2026/05/on-ai-security.html",
+      "summary": "Good report:\nExecutive Summary: Let&#8217;s say you wanted to make sure that your AI is secure. Can you just maximize the security and privacy benchmark and call it a day? Nope, because benchmarks don&#8217;t actually work for measuring AI capabilities (even when they are NOT emergent systemic properties like security). So let&#8217;s take a step back: how do you measure security in the first plac"
     }
   ]
 }
