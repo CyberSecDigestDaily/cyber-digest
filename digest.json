@@ -1,414 +1,38 @@
 {
-  "generated": "2026-05-22T11:39:32.793601+00:00",
+  "generated": "2026-05-23T10:23:10.113288+00:00",
   "urgency": {
     "level": "🔴 HIGH PRIORITY",
     "colour": "#D94F4F",
-    "message": "Today's digest needs your attention. There are <strong>3 CRITICAL</strong> and <strong>15 HIGH</strong> severity CVEs, plus <strong>9</strong> actively exploited vulnerabilities on the CISA Known Exploited list."
+    "message": "Today's digest needs your attention. There are <strong>0 CRITICAL</strong> and <strong>0 HIGH</strong> severity CVEs, plus <strong>10</strong> actively exploited vulnerabilities on the CISA Known Exploited list."
   },
   "stats": {
-    "critical": 3,
-    "high": 15,
-    "medium": 1,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
     "low": 0,
-    "exploited": 1,
-    "kev": 9,
-    "threats": 15,
-    "news": 23,
-    "blogs": 7
+    "exploited": 0,
+    "kev": 10,
+    "threats": 10,
+    "news": 18,
+    "blogs": 9
   },
-  "cves": [
-    {
-      "id": "CVE-2026-34926",
-      "score": 6.7,
-      "severity": "MEDIUM",
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:L/A:L",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "A directory traversal vulnerability in the Apex One (on-premise) server could allow a pre-authenticated local attacker to modify a key table on the server to inject malicious code to deploy to agents on affected installations.\n\n\r\nThis vulnerability is only exploitable on the on-premise version of Apex One and a potential attacker must have access to the Apex One Server and already obtained administrative credentials to the server via some other method to exploit this vulnerability.",
-      "exploited": true,
-      "cisaDue": "2026-06-04",
-      "cisaName": "Trend Micro Apex One (On-Premise) Directory Traversal Vulnerability"
-    },
-    {
-      "id": "CVE-2026-5118",
-      "score": 9.8,
-      "severity": "CRITICAL",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2. This is due to the plugin accepting a user-controlled 'role' parameter from POST data during user registration without validating it against the form's configured default_user_role setting. This makes it possible for unauthenticated attackers to create administrator accounts by tampering with the role parameter during registration.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71210",
-      "score": 9.8,
-      "severity": "CRITICAL",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Trend Micro Apex One management console",
-      "type": "software",
-      "desc": "A vulnerability in the Trend Micro Apex One management console could allow a remote attacker to upload malicious code and execute commands on affected installations.\r\n\r\nPlease note: although this vulnerability carries a technical critical CVSS rating, this was reported via responsible disclosure via a researcher through the Zero Day Initiative. The SaaS versions of the product have already been mitigated and no customer action required.\r\n\r\nFor this particular vulnerability, an attacker must have access to the Trend Micro Apex One Management Console, so customers that have their console�s IP address exposed externally should consider mitigating factors such as source restrictions if not already applied.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71211",
-      "score": 9.8,
-      "severity": "CRITICAL",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Trend Micro Apex One management console",
-      "type": "software",
-      "desc": "A vulnerability in the Trend Micro Apex One management console could allow a remote attacker to upload malicious code and execute commands on affected installations. This vulnerability is similar in scope to CVE-2025-71210 but affects a different executable. \r\n\r\nPlease note: although this vulnerability carries a technical critical CVSS rating, this was reported via responsible disclosure via a researcher through the Zero Day Initiative. The SaaS versions of the product have already been mitigated and no customer action required.\r\n\r\nFor this particular vulnerability, an attacker must have access to the Trend Micro Apex One Management Console, so customers that have their console�s IP address exposed externally should consider mitigating factors such as source restrictions if not already applied.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-2740",
-      "score": 8.4,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:L",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Zohocorp ManageEngine ADSelfService Plus version before 6525, DataSecurity Plus before 6264 and RecoveryManager Plus before 6313 are vulnerable to Authenticated Remote code execution in the agent machines due to the bug in the 3rd party dependency.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71212",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Trend Micro Apex One scan engine",
-      "type": "software",
-      "desc": "A link following vulnerability in the Trend Micro Apex One scan engine could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71213",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Trend Micro Apex One",
-      "type": "software",
-      "desc": "An origin validation error vulnerability in Trend Micro Apex One could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71214",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "An origin validation error vulnerability in the Trend Micro Apex One (mac) agent iCore service could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71216",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "A time-of-check time-of-use vulnerability in the Trend Micro Apex One (mac) agent cache mechanism could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71217",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "An origin validation error vulnerability in the Trend Micro Apex One (mac) agent self-protection mechanism could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-34927",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Apex One/SEP agent",
-      "type": "software",
-      "desc": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-34928",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Apex One/SEP agent",
-      "type": "software",
-      "desc": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-34927 but exists in a different named pipe communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-34929",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Apex One/SEP agent",
-      "type": "software",
-      "desc": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-34927 but exists in a different inter-process communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-34930",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Apex One/SEP agent",
-      "type": "software",
-      "desc": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-34927 but exists in a different process protection mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-45206",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Apex One/SEP agent",
-      "type": "software",
-      "desc": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-45207 but exists in a different process protection communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-45207",
-      "score": 7.8,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Apex One/SEP agent",
-      "type": "software",
-      "desc": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-45206 but exists in a different process protection communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-13479",
-      "score": 7.5,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Authorization bypass through User-Controlled key vulnerability in PosCube Hardware Software and Consulting Ltd. QR Menu allows Exploitation of Trusted Identifiers.\n\nThis issue affects QR Menu: through 21052026. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-13477",
-      "score": 7.1,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
-      "vendor": "Unknown",
-      "product": "Digital Operations Services Inc",
-      "type": "software",
-      "desc": "Exposure of private personal information to an unauthorized actor, Insufficiently Protected Credentials vulnerability in Digital Operations Services Inc. WifiBurada allows Authentication Bypass.\n\nThis issue affects WifiBurada: through 21052026. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2025-71215",
-      "score": 7.0,
-      "severity": "HIGH",
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "A time-of-check time-of-use vulnerability in the Trend Micro Apex One (mac) agent iCore service signature verification could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-0393",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "The affected product may expose credentials remotely between low privileged visualization users during concurrent login operations due to insufficient isolation of authentication data. The vulnerability affects only login operations within an active visualization session.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43494",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/rds: reset op_nents when zerocopy page pin fails\n\nWhen iov_iter_get_pages2() fails in rds_message_zcopy_from_user(),\nthe pinned pages are released with put_page(), and\nrm->data.op_mmp_znotifier is cleared.  But we fail to properly\nclear rm->data.op_nents.\n\nLater when rds_message_purge() is called from rds_sendmsg() the\ncleanup loop iterates over the incorrectly non zero number of\nop_nents and frees them again.\n\nFix this by properly resetting op_nents when it should be in\nrds_message_zcopy_from_user().",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43495",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: wwan: t7xx: validate port_count against message length in t7xx_port_enum_msg_handler\n\nt7xx_port_enum_msg_handler() uses the modem-supplied port_count field as\na loop bound over port_msg->data[] without checking that the message buffer\ncontains sufficient data. A modem sending port_count=65535 in a 12-byte\nbuffer triggers a slab-out-of-bounds read of up to 262140 bytes.\n\nAdd a sizeof(*port_msg) check before accessing the port message header\nfields to guard against undersized messages.\n\nAdd a struct_size() check after extracting port_count and before the loop.\n\nIn t7xx_parse_host_rt_data(), guard the rt_feature header read with a\nremaining-buffer check before accessing data_len, validate feat_data_len\nagainst the actual remaining buffer to prevent OOB reads and signed\ninteger overflow on offset.\n\nPass msg_len from both call sites: skb->len at the DPMAIF path after\nskb_pull(), and the validated feat_data_len at the handshake path.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43496",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: sch_red: Replace direct dequeue call with peek and qdisc_dequeue_peeked\n\nWhen red qdisc has children (eg qfq qdisc) whose peek() callback is\nqdisc_peek_dequeued(), we could get a kernel panic. When the parent of such\nqdiscs (eg illustrated in patch #3 as tbf) wants to retrieve an skb from\nits child (red in this case), it will do the following:\n 1a. do a peek() - and when sensing there's an skb the child can offer, then\n     - the child in this case(red) calls its child's (qfq) peek.\n        qfq does the right thing and will return the gso_skb queue packet.\n        Note: if there wasnt a gso_skb entry then qfq will store it there.\n 1b. invoke a dequeue() on the child (red). And herein lies the problem.\n     - red will call the child's dequeue() which will essentially just\n       try to grab something of qfq's queue.\n\n[   78.667668][  T363] KASAN: null-ptr-deref in range [0x0000000000000048-0x000000000000004f]\n[   78.667927][  T363] CPU: 1 UID: 0 PID: 363 Comm: ping Not tainted 7.1.0-rc1-00033-g46f74a3f7d57-dirty #790 PREEMPT(full)\n[   78.668263][  T363] Hardware name: Bochs Bochs, BIOS Bochs 01/01/2011\n[   78.668486][  T363] RIP: 0010:qfq_dequeue+0x446/0xc90 [sch_qfq]\n[   78.668718][  T363] Code: 54 c0 e8 dd 90 00 f1 48 c7 c7 e0 03 54 c0 48 89 de e8 ce 90 00 f1 48 8d 7b 48 b8 ff ff 37 00 48 89 fa 48 c1 e0 2a 48 c1 ea 03 <80> 3c 02 00 74 05 e8 ef a1 e1 f1 48 8b 7b 48 48 8d 54 24 58 48 8d\n[   78.669312][  T363] RSP: 0018:ffff88810de573e0 EFLAGS: 00010216\n[   78.669533][  T363] RAX: dffffc0000000000 RBX: 0000000000000000 RCX: 0000000000000000\n[   78.669790][  T363] RDX: 0000000000000009 RSI: 0000000000000004 RDI: 0000000000000048\n[   78.670044][  T363] RBP: ffff888110dc4000 R08: ffffffffb1b0885a R09: fffffbfff6ba9078\n[   78.670297][  T363] R10: 0000000000000003 R11: ffff888110e31c80 R12: 0000001880000000\n[   78.670560][  T363] R13: ffff888110dc4150 R14: ffff888110dc42b8 R15: 0000000000000200\n[   78.670814][  T363] FS:  00007f66a8f09c40(0000) GS:ffff888163428000(0000) knlGS:0000000000000000\n[   78.671110][  T363] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[   78.671324][  T363] CR2: 000055db4c6a30a8 CR3: 000000010da67000 CR4: 0000000000750ef0\n[   78.671585][  T363] PKRU: 55555554\n[   78.671713][  T363] Call Trace:\n[   78.671843][  T363]  <TASK>\n[   78.671936][  T363]  ? __pfx_qfq_dequeue+0x10/0x10 [sch_qfq]\n[   78.672148][  T363]  ? __pfx__printk+0x10/0x10\n[   78.672322][  T363]  ? srso_alias_return_thunk+0x5/0xfbef5\n[   78.672496][  T363]  ? lockdep_hardirqs_on_prepare+0xa8/0x1a0\n[   78.672706][  T363]  ? srso_alias_return_thunk+0x5/0xfbef5\n[   78.672875][  T363]  ? trace_hardirqs_on+0x19/0x1a0\n[   78.673047][  T363]  red_dequeue+0x65/0x270 [sch_red]\n[   78.673217][  T363]  ? srso_alias_return_thunk+0x5/0xfbef5\n[   78.673385][  T363]  tbf_dequeue.cold+0xb0/0x70c [sch_tbf]\n[   78.673566][  T363]  __qdisc_run+0x169/0x1900\n\nThe right thing to do in #1b is to grab the skb off gso_skb queue.\nThis patchset fixes that issue by changing #1b to use qdisc_dequeue_peeked()\nmethod instead.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43497",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfbdev: udlfb: add vm_ops to dlfb_ops_mmap to prevent use-after-free\n\ndlfb_ops_mmap() uses remap_pfn_range() to map vmalloc framebuffer pages\nto userspace but sets no vm_ops on the VMA. This means the kernel cannot\ntrack active mmaps. When dlfb_realloc_framebuffer() replaces the backing\nbuffer via FBIOPUT_VSCREENINFO, existing mmap PTEs are not invalidated.\nOn USB disconnect, dlfb_ops_destroy() calls vfree() on the old pages\nwhile userspace PTEs still reference them, resulting in a use-after-free:\nthe process retains read/write access to freed kernel pages.\n\nAdd vm_operations_struct with open/close callbacks that maintain an\natomic mmap_count on struct dlfb_data. In dlfb_realloc_framebuffer(),\ncheck mmap_count and return -EBUSY if the buffer is currently mapped,\npreventing buffer replacement while userspace holds stale PTEs.\n\nTested with PoC using dummy_hcd + raw_gadget USB device emulation.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43498",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\naccel/ivpu: Disallow re-exporting imported GEM objects\n\nPrevent re-exporting of imported GEM buffers by adding a custom\nprime_handle_to_fd callback that checks if the object is imported\nand returns -EOPNOTSUPP if so.\n\nRe-exporting imported GEM buffers causes loss of buffer flags settings,\nleading to incorrect device access and data corruption.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43499",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nrtmutex: Use waiter::task instead of current in remove_waiter()\n\nremove_waiter() is used by the slowlock paths, but it is also used for\nproxy-lock rollback in rt_mutex_start_proxy_lock() when invoked from\nfutex_requeue().\n\nIn the latter case waiter::task is not current, but remove_waiter()\noperates on current for the dequeue operation. That results in several\nproblems:\n\n  1) the rbtree dequeue happens without waiter::task::pi_lock being held\n\n  2) the waiter task's pi_blocked_on state is not cleared, which leaves a\n     dangling pointer primed for UAF around.\n\n  3) rt_mutex_adjust_prio_chain() operates on the wrong top priority waiter\n     task\n\nUse waiter::task instead of current in all related operations in\nremove_waiter() to cure those problems.\n\n[ tglx: Fixup rt_mutex_adjust_prio_chain(), add a comment and amend the\n  \tchangelog ]",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43501",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv6: rpl: reserve mac_len headroom when recompressed SRH grows\n\nipv6_rpl_srh_rcv() decompresses an RFC 6554 Source Routing Header, swaps\nthe next segment into ipv6_hdr->daddr, recompresses, then pulls the old\nheader and pushes the new one plus the IPv6 header back.  The\nrecompressed header can be larger than the received one when the swap\nreduces the common-prefix length the segments share with daddr (CmprI=0,\nCmprE>0, seg[0][0] != daddr[0] gives the maximum +8 bytes).\n\npskb_expand_head() was gated on segments_left == 0, so on earlier\nsegments the push consumed unchecked headroom.  Once skb_push() leaves\nfewer than skb->mac_len bytes in front of data,\nskb_mac_header_rebuild()'s call to:\n\n\tskb_set_mac_header(skb, -skb->mac_len);\n\nwill store (data - head) - mac_len into the u16 mac_header field, which\nwraps to ~65530, and the following memmove() writes mac_len bytes ~64KiB\npast skb->head.\n\nA single AF_INET6/SOCK_RAW/IPV6_HDRINCL packet over lo with a two\nsegment type-3 SRH (CmprI=0, CmprE=15) reaches headroom 8 after one\npass; KASAN reports a 14-byte OOB write in ipv6_rthdr_rcv.\n\nFix this by expanding the head whenever the remaining room is less than\nthe push size plus mac_len, and request that much extra so the rebuilt\nMAC header fits afterwards.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-43502",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/rds: handle zerocopy send cleanup before the message is queued\n\nA zerocopy send can fail after user pages have been pinned but before\nthe message is attached to the sending socket.\n\nThe purge path currently infers zerocopy state from rm->m_rs, so an\nunqueued message can be cleaned up as if it owned normal payload pages.\nHowever, zerocopy ownership is really determined by the presence of\nop_mmp_znotifier, regardless of whether the message has reached the\nsocket queue.\n\nCapture op_mmp_znotifier up front in rds_message_purge() and use it as\nthe cleanup discriminator. If the message is already associated with a\nsocket, keep the existing completion path. Otherwise, drop the pinned\npage accounting directly and release the notifier before putting the\npayload pages.\n\nThis keeps early send failure cleanup consistent with the zerocopy\nlifetime rules without changing the normal queued completion path.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-45760",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Apache",
-      "product": "Apache",
-      "type": "software",
-      "desc": "(Externally Controlled Reference to a Resource in Another Sphere), (Authorization Bypass Through User-Controlled Key) vulnerability in Apache Camel K. Authorized users in a Kubernetes namespace can create a Build resource, controlling the Pod generation in a namespace of their choice, including the operator namespace.\n\nThis issue affects Apache Camel K: from 2.0.0 before 2.8.1, from 2.9.0 before 2.9.2, from 2.10.0 before 2.10.1.\n\nUsers are recommended to upgrade to version 2.10.1 (or 2.8.1 or 2.9.2), which fixes the issue.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    },
-    {
-      "id": "CVE-2026-6841",
-      "score": 0.0,
-      "severity": "NONE",
-      "vector": "",
-      "vendor": "Unknown",
-      "product": "Unknown",
-      "type": "software",
-      "desc": "Request Tracker is vulnerable to a reflected cross-site scripting (XSS) vulnerability via the \"Page\" parameter in GET requests. An attacker can craft a URL that, when opened, results in arbitrary JavaScript execution in the victim’s browser.\n\nThis vulnerability affects versions from 5.0.4 up to 5.0.9 and from 6.0.0 up to 6.0.2.",
-      "exploited": false,
-      "cisaDue": "",
-      "cisaName": ""
-    }
-  ],
+  "cves": [],
   "kev": [
+    {
+      "cveID": "CVE-2026-9082",
+      "vendorProject": "Drupal",
+      "product": "Core",
+      "vulnerabilityName": "Drupal Core SQL Injection Vulnerability",
+      "dateAdded": "2026-05-22",
+      "shortDescription": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.drupal.org/sa-core-2026-004 ; https://nvd.nist.gov/vuln/detail/CVE-2026-9082",
+      "cwes": [
+        "CWE-89"
+      ]
+    },
     {
       "cveID": "CVE-2025-34291",
       "vendorProject": "Langflow",
@@ -543,242 +167,194 @@
   ],
   "threats": [
     {
-      "source": "CISA ICS",
-      "title": "ABB B&R Automation Runtime",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-04",
-      "summary": "View CSAF\nSummary\nAn update is available that resolves a vulnerability identified by B&amp;Rs internal security analysis in the product versions listed as affected in this advisory. An attacker who successfully exploited these vulnerabilities could take over a remote session or execute code in the context of the user’s browser session.\nThe following versions of ABB B&amp;R Automation Runtime are a"
-    },
-    {
-      "source": "CISA ICS",
-      "title": "ABB Terra AC Wallbox",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-05",
-      "summary": "View CSAF\nSummary\nABB is aware of vulnerabilities in the product versions listed as affected in the advisory. An attacker who successfully exploited this vulnerability could cause the pollution of heap memory which potentially takes remote control of the product and performs a write operation to the flash memory to alter the firmware behavior.\nThe following versions of ABB Terra AC Wallbox are aff"
-    },
-    {
-      "source": "CISA ICS",
-      "title": "ABB B&R Automation Studio",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-03",
-      "summary": "View CSAF\nSummary\nABB became aware of vulnerability in the product versions listed as affected in the advisory. An update is available that replaces an outdated third-party component. Although no successful exploitation was observed during testing of the affected B&amp;R products, the identified vulnerabilities could present potential attack vectors that might enable unauthorized access, data expo"
-    },
-    {
-      "source": "CISA ICS",
-      "title": "ABB B&R PCs",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-02",
-      "summary": "View CSAF\nSummary\nABB became aware of vulnerability in the product versions listed as affected in the advisory. An update is now available that addresses and remediates the vulnerability. A network attacker could exploit the vulnerabilities to execute remote code, initiate DoS attacks, conduct DNS cache poisoning, or extract sensitive information.\nThe following versions of ABB B&amp;R PCs are affe"
-    },
-    {
-      "source": "CISA ICS",
-      "title": "Hitachi Energy GMS600",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-01",
-      "summary": "View CSAF\nSummary\nHitachi Energy is aware of the vulnerability, CVE-2022-4304 in the OSS component OpenSSL, that affects the GMS600 versions that are listed below. An attacker successfully exploiting this vulnerability could send trial messages to the server and record the time taken to process them. After a sufficiently large number of messages the attacker could recover the pre-master secret use"
-    },
-    {
       "source": "Microsoft Security",
-      "title": "CVE-2025-38660 [ceph] parse_longname(): strrchr() expects NUL-terminated string",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-38660",
+      "title": "CVE-2025-68768 inet: frags: flush pending skbs in fqdir_pre_exit()",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-68768",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2025-38636 rv: Use strings in da monitors tracepoints",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-38636",
+      "title": "CVE-2025-38096 wifi: iwlwifi: don't warn when if there is a FW error",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-38096",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2025-38591 bpf: Reject narrower access to pointer ctx fields",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-38591",
+      "title": "CVE-2025-51480 Path Traversal vulnerability in onnx.external_data_helper.save_external_data in ONNX 1.17.0 allows attackers to overwrite arbitrary files by supplying crafted external_data.location paths containing traversal sequences, bypassing intended directory restrictions.",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-51480",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2025-38585 staging: media: atomisp: Fix stack buffer overflow in gmin_get_var_int()",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-38585",
+      "title": "CVE-2025-38140 dm: limit swapping tables for devices with zone write plugs",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-38140",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2025-38584 padata: Fix pd UAF once and for all",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-38584",
+      "title": "CVE-2026-41035 In rsync 3.0.1 through 3.4.1, receive_xattr relies on an untrusted length value during a qsort call, leading to a receiver use-after-free. The victim must run rsync with -X (aka --xattrs). On Linux, many (but not all) common configurations are vulnerable. Non-Linux platforms are more widely vulnerable.",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41035",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2024-38595 net/mlx5: Fix peer devlink set for SF representor devlink port",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38595",
+      "title": "CVE-2026-7246 Pallets Click contains a command injection via Unsanitized Filename \"click.edit()\"",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-7246",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2024-44951 serial: sc16is7xx: fix TX fifo corruption",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-44951",
+      "title": "CVE-2026-44673 libyang: lyb_read_string() integer overflow → heap buffer overflow",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-44673",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2025-39932 smb: client: let smbd_destroy() call disable_work_sync(&info->post_send_credits_work)",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-39932",
+      "title": "CVE-2026-43619 Rsync < 3.4.3 Symlink Race Condition via Path-Based Syscalls",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43619",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2025-40064 smc: Fix use-after-free in __pnet_find_base_ndev().",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-40064",
+      "title": "CVE-2026-43618 Rsync < 3.4.3 Integer Overflow Information Disclosure",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43618",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2025-39927 ceph: fix race condition validating r_parent before applying state",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-39927",
+      "title": "CVE-2026-43620 Rsync < 3.4.3 Out-of-Bounds Array Read via recv_files()",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43620",
       "summary": "Information published."
     }
   ],
   "news": [
     {
       "source": "Bleeping Computer",
-      "title": "US and Canada arrest and charge suspected Kimwolf botnet admin",
-      "link": "https://www.bleepingcomputer.com/news/security/us-and-canada-arrest-and-charge-suspected-kimwolf-botnet-admin/",
-      "summary": "U.S. and Canadian authorities arrested and charged a Canadian man with operating the KimWolf distributed denial-of-service (DDoS) botnet, which infected nearly two million devices worldwide. [...]"
+      "title": "Netherlands seizes 800 servers of hosting firm enabling cyberattacks",
+      "link": "https://www.bleepingcomputer.com/news/security/netherlands-seizes-800-servers-of-hosting-firm-enabling-cyberattacks/",
+      "summary": "Financial crime investigators in the Netherlands (FIOD) arrested two men and seized 800 servers linked to a web hosting company that enabled cyberattacks, interference operations, and disinformation campaigns. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Google accidentally exposed details of unfixed Chromium flaw",
-      "link": "https://www.bleepingcomputer.com/news/security/google-accidentally-exposed-details-of-unfixed-chromium-flaw/",
-      "summary": "Google has accidentally leaked details about an unfixed issue in Chromium that keeps JavaScript running in the background even when the browser is closed, allowing remote code execution on the device. [...]"
+      "title": "Former US execs plead guilty to aiding tech support scammers",
+      "link": "https://www.bleepingcomputer.com/news/security/former-us-execs-plead-guilty-to-aiding-tech-support-scammers/",
+      "summary": "Two former executives of a call-tracking and analytics company pleaded guilty to concealing a years-long tech support fraud scheme that victimized individuals worldwide. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Apple blocked over $11 billion in App Store fraud in 6 years",
-      "link": "https://www.bleepingcomputer.com/news/apple/apple-blocked-22-billion-in-fraudulent-app-store-transactions-in-2025/",
-      "summary": "Apple revealed that it blocked over $11 billion in fraudulent App Store transactions over the last six years, more than $2.2 billion in potentially fraudulent App Store transactions in 2025 alone. [...]"
+      "title": "Trend Micro warns of Apex One zero-day exploited in the wild",
+      "link": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-apex-one-zero-day-exploited-in-attacks/",
+      "summary": "Japanese cybersecurity software company Trend Micro has addressed an Apex One zero-day vulnerability exploited in attacks targeting Windows systems. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Inside a Crypto Drainer: How to Spot it Before it Empties Your Wallet",
-      "link": "https://www.bleepingcomputer.com/news/security/inside-a-crypto-drainer-how-to-spot-it-before-it-empties-your-wallet/",
-      "summary": "Modern crypto drainers don't hack wallets. They trick users into approving malicious transactions.  Flare explores how the Lucifer DaaS platform scales wallet theft through phishing and automation. [...]"
+      "title": "Drupal: Critical SQL injection flaw now targeted in attacks",
+      "link": "https://www.bleepingcomputer.com/news/security/drupal-critical-sql-injection-flaw-now-targeted-in-attacks/",
+      "summary": "Drupal is warning that hackers are attempting to exploit a \"highly critical\" SQL injection vulnerability announced earlier this week. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Chinese hackers target telcos with new Linux, Windows malware",
-      "link": "https://www.bleepingcomputer.com/news/security/chinese-hackers-target-telcos-with-new-linux-windows-malware/",
-      "summary": "A Chinese cyber-espionage campaign has been targeting telecommunications providers with newly discovered Linux and Windows malware dubbed Showboat and JFMBackdoor, respectively. [...]"
+      "title": "Why Chargebacks are Just One Piece of the Fraud Puzzle",
+      "link": "https://www.bleepingcomputer.com/news/security/why-chargebacks-are-just-one-piece-of-the-fraud-puzzle/",
+      "summary": "Fraud losses don't stop at chargebacks. False declines, account takeovers, and abuse also damage revenue and trust. IPQS breaks down why fraud teams need broader visibility into risk and customer impact. [...]"
     },
     {
       "source": "Bleeping Computer",
-      "title": "Max severity Cisco Secure Workload flaw gives Site Admin privileges",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-max-severity-secure-workload-flaw-gives-hackers-site-admin-privileges/",
-      "summary": "Cisco has released security updates to address a maximum-severity vulnerability in Secure Workload that allows attackers to gain Site Admin privileges. [...]"
-    },
-    {
-      "source": "Bleeping Computer",
-      "title": "Police seize “First VPN” service used in ransomware, data theft attacks",
-      "link": "https://www.bleepingcomputer.com/news/security/police-seize-first-vpn-service-used-in-ransomware-data-theft-attacks/",
-      "summary": "A virtual private network service called 'First VPN,' used in ransomware and data theft attacks, has been taken offline in a joint international law enforcement operation. [...]"
+      "title": "Ubiquiti patches three max severity UniFi OS vulnerabilities",
+      "link": "https://www.bleepingcomputer.com/news/security/ubiquiti-patches-three-max-severity-unifi-os-vulnerabilities/",
+      "summary": "Ubiquiti has released security updates to patch three maximum severity vulnerabilities in UniFi OS that can be exploited by remote attackers without privileges. [...]"
     },
     {
       "source": "The Hacker News",
-      "title": "Kimwolf DDoS Botnet Operator Arrested in Canada Over DDoS-for-Hire Attacks",
-      "link": "https://thehackernews.com/2026/05/kimwolf-ddos-botnet-operator-arrested.html",
-      "summary": "The U.S. Department of Justice (DoJ) on Thursday announced the arrest of a Canadian man in connection with allegedly operating a distributed denial-of-service (DDoS) botnet known as Kimwolf.\n\nIn tandem, Jacob Butler (aka Dort), 23, Ottawa, Canada, has been charged with offenses related to the development and operation of the botnet. Kimwolf is assessed to be a variant of AISURU.\n\n\"Kimwolf"
+      "title": "Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer",
+      "link": "https://thehackernews.com/2026/05/laravel-lang-php-packages-compromised.html",
+      "summary": "Cybersecurity researchers have flagged a fresh software supply chain attack campaign that has targeted multiple PHP packages belonging to  Laravel-Lang to deliver a comprehensive credential-stealing framework.\n\nThe affected packages include -\n\n\n  laravel-lang/lang\n  laravel-lang/http-statuses\n  laravel-lang/attributes\n  laravel-lang/actions\n\n\"The timing and pattern of the newly published tags"
     },
     {
       "source": "The Hacker News",
-      "title": "CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV",
-      "link": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Langflow and Trend Micro Apex One to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities in question are listed below -\n\n\n  CVE-2025-34291 (CVSS score: 9.4) - An origin validation error vulnerability in Langflow that could"
+      "title": "LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root",
+      "link": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
+      "summary": "A maximum-severity security vulnerability impacting LiteSpeed User-End cPanel Plugin has come under active exploitation in the wild.\n\nThe flaw, tracked as CVE-2026-48172 (CVSS score: 10.0), relates to an instance of incorrect privilege assignment that an attacker could abuse to run arbitrary scripts with elevated permissions.\n\n\"Any cPanel user (including an attacker or a compromised account) may"
     },
     {
       "source": "The Hacker News",
-      "title": "Cisco Patches CVSS 10.0 Secure Workload REST API Flaw Enabling Data Access",
-      "link": "https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html",
-      "summary": "Cisco has rolled out updates for a maximum-severity security flaw impacting Secure Workload that could allow an unauthenticated, remote attacker to access sensitive data.\n\nTracked as CVE-2026-20223 (CVSS score: 10.0), the vulnerability arises from insufficient validation and authentication when accessing REST API endpoints.\n\n\"An attacker could exploit this vulnerability if they are able to send"
+      "title": "Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV",
+      "link": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added a recently patched critical security flaw impacting Drupal Core to its Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation.\n\nThe vulnerability in question is CVE-2026-9082 (CVSS score: 6.5), an SQL injection vulnerability affecting all supported versions of Drupal Core.\n\n\"Drupal Core"
     },
     {
       "source": "The Hacker News",
-      "title": "Showboat Linux Malware Hits Middle East Telecom with SOCKS5 Proxy Backdoor",
-      "link": "https://thehackernews.com/2026/05/showboat-linux-malware-hits-middle-east.html",
-      "summary": "Cybersecurity researchers have disclosed details of a new Linux malware dubbed Showboat that has been put to use in a campaign targeting a telecommunications provider in the Middle East since at least mid-2022.\n\n\"Showboat is a modular post-exploitation framework designed for Linux systems, capable of spawning a remote shell, transferring files, and functioning as a SOCKS5 proxy,\" Lumen"
+      "title": "First VPN Dismantled in Global Takedown Over Use by 25 Ransomware Groups",
+      "link": "https://thehackernews.com/2026/05/first-vpn-dismantled-in-global-takedown.html",
+      "summary": "Authorities in Europe and North America have announced the dismantling of a criminal virtual private network (VPN) service used by criminal actors to obscure the origins of ransomware attacks, data theft, scanning, and denial-of-service attacks.\n\nCodenamed Operation Saffron, the  disruption  of First VPN Service was led by France and the Netherlands, with several other nations supporting the"
     },
     {
       "source": "The Hacker News",
-      "title": "ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories",
-      "link": "https://thehackernews.com/2026/05/threatsday-bulletin-linux-rootkits.html",
-      "summary": "This week starts small.\n\nA token leaks. A bad package slips in. A login trick works. An old tool shows up again. At first, it feels like the usual mess. Then you see the pattern: attackers are not always breaking in. They are using the parts we already trust.\n\nThat is what makes it worrying. The danger is in normal things now - updates, apps, cloud buttons, support chats, trusted accounts. AI"
+      "title": "Ghostwriter Targets Ukraine Government Entities with Prometheus Phishing Malware",
+      "link": "https://thehackernews.com/2026/05/ghostwriter-targets-ukraine-government.html",
+      "summary": "The Belarus-aligned threat actor known as Ghostwriter (aka UAC-0057 and UNC1151) has been observed using lures related to Prometheus, a Ukrainian online learning platform, to target government organizations in the country.\n\nThe activity, per the Computer Emergency Response Team of Ukraine (CERT-UA), involves sending phishing emails to government entities using compromised accounts. It's been"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows",
+      "link": "https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html",
+      "summary": "Cybersecurity researchers have disclosed details of a new automated campaign called Megalodon that has pushed 5,718 malicious commits to 5,561 GitHub repositories within a six-hour window.\n\n\"Using throwaway accounts and forged author identities (build-bot, auto-ci, ci-bot, pipeline-bot), the attacker injected GitHub Actions workflows containing base64-encoded bash payloads that exfiltrate CI"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "Making Vulnerable Drivers Exploitable Without Hardware - The BYOVD Perspective",
+      "link": "https://thehackernews.com/2026/05/making-vulnerable-drivers-exploitable.html",
+      "summary": "1 Introduction\n\nThis article provides a technical analysis of how many Windows kernel mode drivers can be interacted with from user mode without the hardware they were developed for. This work was motivated by driver-oriented vulnerability research and the need to evaluate the exploitability of individual findings, which frequently affect code whose reachability is hardware-gated. The"
     },
     {
       "source": "Dark Reading",
-      "title": "China's Webworm Uses Discord, Microsoft Graphs to Hack EU Govts.",
-      "link": "https://www.darkreading.com/endpoint-security/chinas-webworm-discord-microsoft-graphs",
-      "summary": "The advanced persistent threat group also relied on SOCKS proxies like SoftEther VPN, tunneling tools that act as a middleman between victim and attacker."
+      "title": "Akamai Joins Growing Chorus of Vendors Betting Big on Secure Enterprise Browsers",
+      "link": "https://www.darkreading.com/remote-workforce/akamai-growing-chorus-betting-on-secure-enterprise-browsers",
+      "summary": "When Akamai announced its LayerX acquisition, the company joined a growing list of vendors adding secure enterprise browsers to their product portfolios."
     },
     {
       "source": "Dark Reading",
-      "title": "How CISOs Should Prep for Agentic-Ready AI BOMs",
-      "link": "https://www.darkreading.com/cyber-risk/how-cisos-should-prep-for-agentic-ready-ai-boms",
-      "summary": "Finding ways to document both component and execution attributes for AI bill of materials (AI BOM)."
-    },
-    {
-      "source": "Dark Reading",
-      "title": "Google API Keys Remain Active After Deletion",
-      "link": "https://www.darkreading.com/identity-access-management-security/google-api-keys-active-after-deletion",
-      "summary": "A security researcher discovered the API keys can still be used for up to 23 minutes after deletion, even though the cloud provider claims deletion is immediate."
-    },
-    {
-      "source": "Dark Reading",
-      "title": "AI Agents Are Shifting Identity Security Budget Dynamics",
-      "link": "https://www.darkreading.com/identity-access-management-security/shifting-budget-dynamics-identity-security-ai-agents",
-      "summary": "AI agent projects are proliferating throughout the enterprise, and those AI agent identities require management, security, and governance. New Omdia research shows the AI agent identity budget dynamics are very different than traditional IAM projects."
-    },
-    {
-      "source": "Dark Reading",
-      "title": "Chinese APTs Share Linux Backdoor in Central Asia Telco Attacks",
-      "link": "https://www.darkreading.com/threat-intelligence/chinese-apts-linux-backdoor-telco-attacks",
-      "summary": "&quot;Showboat&quot; doesn't show off, but clearly it doesn't need to, as it's long helped China spy on small market communications providers."
-    },
-    {
-      "source": "Dark Reading",
-      "title": "Content Delivery Exploit Opens Websites to Brand Hijacking",
-      "link": "https://www.darkreading.com/cyber-risk/content-delivery-exploit-websites-brand-hijacking",
-      "summary": "The Underminr domain-fronting attack allows threat actors to modify Web requests and leverage trusted websites to cloak malicious activity."
+      "title": "Verizon DBIR: Healthcare Fends Off Increased Social Engineering Attacks",
+      "link": "https://www.darkreading.com/cyber-risk/verizon-dbir-healthcare-fends-off-increased-social-engineering-attacks",
+      "summary": "Ransomware and vendor breaches persist. The &quot;2026 Data Breach Investigations Report&quot; (DBIR) highlights how evolving social engineering tactics make the sector more vulnerable."
     },
     {
       "source": "SecurityWeek",
-      "title": "‘First VPN’ Cybercrime Service Disrupted, Administrator Arrested",
-      "link": "https://www.securityweek.com/first-vpn-cybercrime-service-disrupted-administrator-arrested/",
-      "summary": "The FBI says First VPN has been used by dozens of ransomware groups for network reconnaissance and intrusions.\nThe post &#8216;First VPN&#8217; Cybercrime Service Disrupted, Administrator Arrested appeared first on SecurityWeek."
+      "title": "Drupal Vulnerability in Hacker Crosshairs Shortly After Disclosure",
+      "link": "https://www.securityweek.com/drupal-vulnerability-in-hacker-crosshairs-shortly-after-disclosure/",
+      "summary": "Drupal is warning users that it has already seen attempts to exploit CVE-2026-9082 and security firms are seeing attacks against thousands of websites.\nThe post Drupal Vulnerability in Hacker Crosshairs Shortly After Disclosure appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "TrendAI Patches Apex One Zero-Day Exploited in the Wild",
-      "link": "https://www.securityweek.com/trendai-patches-apex-one-zero-day-exploited-in-the-wild/",
-      "summary": "CVE-2026-34926 is a directory traversal flaw that can be exploited against the on-premise version of Apex One.\nThe post TrendAI Patches Apex One Zero-Day Exploited in the Wild appeared first on SecurityWeek."
+      "title": "In Other News: Industrial Router Exploitation, CISA KEV Nomination Form, Gas Station Hacking",
+      "link": "https://www.securityweek.com/in-other-news-industrial-router-exploitation-cisa-kev-nomination-form-gas-station-hacking/",
+      "summary": "Other noteworthy stories that might have slipped under the radar: CISA contractor exposes credentials, Mythos testing and new features, Huawei router flaw triggered telecom blackout.\nThe post In Other News: Industrial Router Exploitation, CISA KEV Nomination Form, Gas Station Hacking appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Grafana Says Codebase and Other Data Stolen via TanStack Supply Chain Attack",
-      "link": "https://www.securityweek.com/grafana-says-codebase-and-other-data-stolen-via-tanstack-supply-chain-attack/",
-      "summary": "Hackers accessed Grafana’s GitHub repositories after a token compromised in the TanStack attack was not rotated.\nThe post Grafana Says Codebase and Other Data Stolen via TanStack Supply Chain Attack appeared first on SecurityWeek."
-    },
-    {
-      "source": "SecurityWeek",
-      "title": "Cisco Patches Critical Vulnerability in Secure Workload",
-      "link": "https://www.securityweek.com/cisco-patches-critical-vulnerability-in-secure-workload/",
-      "summary": "Insufficient validation and authentication in the Secure Workload’s REST APIs provide remote attackers with Site Admin privileges.\nThe post Cisco Patches Critical Vulnerability in Secure Workload appeared first on SecurityWeek."
-    },
-    {
-      "source": "SecurityWeek",
-      "title": "Ocean Emerges From Stealth With $28M for Agentic Email Security Platform",
-      "link": "https://www.securityweek.com/ocean-emerges-from-stealth-with-28m-for-agentic-email-security-platform/",
-      "summary": "The company has developed a platform that uses specialized AI agents to inspect every incoming message.\nThe post Ocean Emerges From Stealth With $28M for Agentic Email Security Platform appeared first on SecurityWeek."
+      "title": "Canadian Man Arrested for Operating Kimwolf Botnet",
+      "link": "https://www.securityweek.com/canadian-man-arrested-for-operating-kimwolf-botnet/",
+      "summary": "Jacob Butler, 23, has been arrested in Canada and US authorities are seeking his extradition on computer hacking charges.\nThe post Canadian Man Arrested for Operating Kimwolf Botnet appeared first on SecurityWeek."
     }
   ],
   "blogs": [
     {
       "source": "Krebs on Security",
+      "title": "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
+      "link": "https://krebsonsecurity.com/2026/05/lawmakers-demand-answers-as-cisa-tries-to-contain-data-leak/",
+      "summary": "Lawmakers in both houses of Congress are demanding answers from the U.S. Cybersecurity &#038; Infrastructure Security Agency (CISA) after KrebsOnSecurity reported this week that a CISA contractor intentionally published AWS GovCloud keys and a vast trove of other agency secrets on a public GitHub account. The inquiry comes as CISA is still struggling to contain the breach and invalidate the leaked"
+    },
+    {
+      "source": "Krebs on Security",
       "title": "Alleged Kimwolf Botmaster ‘Dort’ Arrested, Charged in U.S. and Canada",
       "link": "https://krebsonsecurity.com/2026/05/alleged-kimwolf-botmaster-dort-arrested-charged-in-u-s-and-canada/",
       "summary": "Canadian authorities on Wednesday arrested a 23-year-old Ottawa man on suspicion of building and operating Kimwolf, a fast spreading Internet-of-Things botnet that enslaved millions of devices for use in a series of massive distributed denial-of-service (DDoS) attacks over the past six months. KrebsOnSecurity publicly named the suspect in February 2026 after the accused launched a volley of DDoS, "
+    },
+    {
+      "source": "SANS ISC Diary",
+      "title": "An Example of Stack String in High Level Language, (Sat, May 23rd)",
+      "link": "https://isc.sans.edu/diary/rss/33008",
+      "summary": "This week, I&#x27m attending the SEC670&#x5b;1&#x5d; training (&#xe2;&#x20ac;&#x153;Red Teaming Tools - Developing Windows Implants, Shellcode, Command and Control&#xe2;&#x20ac;&#x9d;). From my point of view, this training fits perfectly with FOR610 or FOR710 (malware analysis) because it addresses malware from the opposite: Instead of performing reverse engineering, you write malicious code&#x21;"
     },
     {
       "source": "SANS ISC Diary",
@@ -799,22 +375,22 @@
       "summary": "Recently, Rob wrote about a tool, Proxifier, that can intercept requests from specific processes. Proxifier is available for Windows, macOS, and Android. But I have not seen a generic Linux option yet. The advantage of a tool like Proxifier is the ability to target specific software. For debugging, reverse engineering, and similar tasks, selecting a specific process is quite useful, as it creates "
     },
     {
-      "source": "SANS ISC Diary",
-      "title": "ISC Stormcast For Thursday, May 21st, 2026 https://isc.sans.edu/podcastdetail/9940, (Thu, May 21st)",
-      "link": "https://isc.sans.edu/diary/rss/33000",
-      "summary": ""
+      "source": "Schneier on Security",
+      "title": "Friday Squid Blogging: Regulating Squid Fishing in the South Pacific",
+      "link": "https://www.schneier.com/blog/archives/2026/05/friday-squid-blogging-regulating-squid-fishing-in-the-south-pacific.html",
+      "summary": "The South Pacific Regional Fisheries Management Organization (SPRFMO) needs to regulate squid fishing in the South Pacific.\nAs usual, you can also use this squid post to talk about the security stories in the news that I haven&#8217;t covered.\nBlog moderation policy."
+    },
+    {
+      "source": "Schneier on Security",
+      "title": "CISA Security Leak",
+      "link": "https://www.schneier.com/blog/archives/2026/05/cisa-security-leak.html",
+      "summary": "Crazy story:\nUntil this past weekend, a contractor for the Cybersecurity &#038; Infrastructure Security Agency (CISA) maintained a public GitHub repository that exposed credentials to several highly privileged AWS GovCloud accounts and a large number of internal CISA systems. Security experts said the public archive included files detailing how CISA builds, tests and deploys software internally, a"
     },
     {
       "source": "Schneier on Security",
       "title": "macOS Kernel Memory Corruption Exploit",
       "link": "https://www.schneier.com/blog/archives/2026/05/macos-kernel-memory-corruption-exploit.html",
       "summary": "A group used Anthropic&#8217;s Mythos AI model to help find a kernel memory corruption vulnerability and exploit on Apple&#8217;s M5.\nNews article."
-    },
-    {
-      "source": "Schneier on Security",
-      "title": "On AI Security",
-      "link": "https://www.schneier.com/blog/archives/2026/05/on-ai-security.html",
-      "summary": "Good report:\nExecutive Summary: Let&#8217;s say you wanted to make sure that your AI is secure. Can you just maximize the security and privacy benchmark and call it a day? Nope, because benchmarks don&#8217;t actually work for measuring AI capabilities (even when they are NOT emergent systemic properties like security). So let&#8217;s take a step back: how do you measure security in the first plac"
     }
   ]
 }
