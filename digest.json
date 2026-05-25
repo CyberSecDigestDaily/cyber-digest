@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-24T10:27:40.887547+00:00",
+  "generated": "2026-05-25T12:21:49.394210+00:00",
   "urgency": {
     "level": "🔴 HIGH PRIORITY",
     "colour": "#D94F4F",
@@ -12,9 +12,9 @@
     "low": 0,
     "exploited": 0,
     "kev": 10,
-    "threats": 1,
-    "news": 6,
-    "blogs": 4
+    "threats": 2,
+    "news": 11,
+    "blogs": 1
   },
   "cves": [],
   "kev": [
@@ -168,73 +168,91 @@
   "threats": [
     {
       "source": "Microsoft Security",
-      "title": "CVE-2026-41054 Missing exit out of permission check in haveged could lead to root exploit",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41054",
+      "title": "CVE-2026-43029 mptcp: fix soft lockup in mptcp_recvmsg()",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43029",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-43414 scsi: qla2xxx: Completely fix fcport double free",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43414",
       "summary": "Information published."
     }
   ],
   "news": [
     {
       "source": "Bleeping Computer",
-      "title": "Laravel Lang packages hijacked to deploy credential-stealing malware",
-      "link": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware/",
-      "summary": "A supply chain attack targeting the Laravel Lang localization packages has exposed developers to a sophisticated credential-stealing malware campaign after attackers abused GitHub version tags to distribute malicious code through Composer packages. [...]"
-    },
-    {
-      "source": "Bleeping Computer",
-      "title": "Italy disrupts CINEMAGOAL piracy app that stole streaming auth codes",
-      "link": "https://www.bleepingcomputer.com/news/legal/italy-disrupts-cinemagoal-piracy-app-that-stole-streaming-auth-codes/",
-      "summary": "Italian authorities have dismantled a piracy ecosystem centered around the CINEMAGOAL app that provided access to various streaming platforms, including Netflix, Disney+, and Spotify. [...]"
+      "title": "Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign",
+      "link": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign/",
+      "summary": "A large-scale campaign is exploiting a critical SQL injection vulnerability (CVE-2026-26980) in Ghost CMS to inject malicious JavaScript code that triggers ClickFix attack flows. [...]"
     },
     {
       "source": "The Hacker News",
-      "title": "npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks",
-      "link": "https://thehackernews.com/2026/05/npm-adds-2fa-gated-publishing-and.html",
-      "summary": "GitHub has rolled out new controls for npm to improve the security of the software supply chain, giving maintainers the ability to explicitly approve a release prior to the packages becoming publicly available for installation.\n\nCalled staged publishing, the feature is now generally available on npm. It mandates that a human maintainer pass a two-factor authentication (2FA) challenge to approve"
+      "title": "Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks",
+      "link": "https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html",
+      "summary": "Threat actors are exploiting a recently disclosed critical security flaw in Ghost CMS to inject malicious JavaScript code with an aim to fuel ClickFix attacks.\n\nAccording to QiAnXin XLab, the activity involves the exploitation of CVE-2026-26980 (CVSS score: 9.4), an SQL injection vulnerability in Ghost's Content API that could allow an unauthenticated attacker to read arbitrary data from the"
     },
     {
       "source": "The Hacker News",
-      "title": "Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware",
-      "link": "https://thehackernews.com/2026/05/packagist-supply-chain-attack-infects-8.html",
-      "summary": "A new \"coordinated\" supply chain attack campaign has impacted eight packages on Packagist including malicious code designed to run a Linux binary retrieved from a GitHub Releases URL.\n\n\"Although the affected packages were all Composer packages, the malicious code was not added to composer.json,\" Socket said. \"Instead, it was inserted into package.json, targeting projects that ship JavaScript"
+      "title": "The Alert Firehose Finally Meets Its Match",
+      "link": "https://thehackernews.com/2026/05/the-alert-firehose-finally-meets-its.html",
+      "summary": "Ask a cybersecurity pro about Network Detection and Response (NDR) and you might still hear \"Noisy,\" \"Too much data.\" But ask the teams running NDR that includes agentic AI capabilities and you'll hear they're actually using it to catch threats earlier, triage faster, and chase fewer false positives. The old complaint lingers in part because reputations are sticky, and because NDR has evolved"
     },
     {
       "source": "The Hacker News",
-      "title": "Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software",
-      "link": "https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html",
-      "summary": "Anthropic on Friday disclosed that Project Glasswing has helped uncover more than 10,000 high- or critical-severity vulnerabilities across some of the most \"systemically\" important software across the world since the cybersecurity initiative went live last month.\n\n Project Glasswing  is a defensive effort launched by the artificial intelligence (AI) company to secure critical global software"
+      "title": "Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms",
+      "link": "https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html",
+      "summary": "Cybersecurity researchers have shed light on a cross-platform malware called RemotePE that has been put to use by the North Korea-linked Lazarus Group in attacks targeting financial and cryptocurrency organizations.\n\nRemotePE, per NCC Group subsidiary Fox-IT, is part of a multi-stage attack chain that involves two loaders tracked as DPAPILoader and RemotePELoader.\n\n\"DPAPILoader decrypts and"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO",
+      "link": "https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html",
+      "summary": "A new coordinated cross-ecosystem software supply chain attack campaign has targeted npm, PyPI, and Crates.io to distribute credential-stealing malware.\n\nThe campaign, codenamed TrapDoor, spans more than 34 malicious packages across over 384 versions. The earliest activity was recorded on May 22, 2026, at 8:20 p.m. UTC, with new packages published to the ecosystems in waves from a cluster of"
     },
     {
       "source": "SecurityWeek",
-      "title": "‘Underminr’ Vulnerability Lets Attackers Hide Malicious Connections Behind Trusted Domains",
-      "link": "https://www.securityweek.com/underminr-vulnerability-lets-attackers-hide-malicious-connections-behind-trusted-domains/",
-      "summary": "The stealthy vulnerability impacts roughly 88 million domains and can be exploited to bypass DNS filtering and hide command-and-control traffic.\nThe post ‘Underminr’ Vulnerability Lets Attackers Hide Malicious Connections Behind Trusted Domains appeared first on SecurityWeek."
+      "title": "Oncology Institute Discloses Data Breach",
+      "link": "https://www.securityweek.com/oncology-institute-discloses-third-party-data-breach/",
+      "summary": "The affected third-party vendor has not been named, but one possible candidate is TriZetto.\nThe post Oncology Institute Discloses Data Breach appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "266,000 Affected by Data Breach at Radiology Associates of Richmond",
+      "link": "https://www.securityweek.com/266000-affected-by-data-breach-at-radiology-associates-of-richmond/",
+      "summary": "Threat actors stole files containing names and protected health information from the healthcare organization’s systems.\nThe post 266,000 Affected by Data Breach at Radiology Associates of Richmond appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "Anthropic: Mythos Detected 23,000 Potential Vulnerabilities Across 1,000 OSS Projects",
+      "link": "https://www.securityweek.com/anthropic-mythos-detected-23000-potential-vulnerabilities-across-1000-oss-projects/",
+      "summary": "Many findings have been confirmed to be critical or high-severity vulnerabilities and the number will continue to increase. \nThe post Anthropic: Mythos Detected 23,000 Potential Vulnerabilities Across 1,000 OSS Projects appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "Laravel-Lang Packages Poisoned for Malware Delivery",
+      "link": "https://www.securityweek.com/laravel-lang-packages-poisoned-for-malware-delivery/",
+      "summary": "Published within a 15-minute window, the malicious tags introduced backdoors to exfiltrate CI secrets.\nThe post Laravel-Lang Packages Poisoned for Malware Delivery appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "DocketWise Data Breach Impacts 143,000",
+      "link": "https://www.securityweek.com/docketwise-data-breach-impacts-143000/",
+      "summary": "Hackers accessed names, addresses, Social Security numbers, financial information, and medical data from third-party partner repositories.\nThe post DocketWise Data Breach Impacts 143,000 appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "Over 5,500 GitHub Repositories Infected in ‘Megalodon’ Supply Chain Attack",
+      "link": "https://www.securityweek.com/over-5500-github-repositories-infected-in-megalodon-supply-chain-attack/",
+      "summary": "Fake automated commits injected GitHub Actions workflows containing payloads to steal credentials, CI secrets, keys, and tokens.\nThe post Over 5,500 GitHub Repositories Infected in &#8216;Megalodon&#8217; Supply Chain Attack appeared first on SecurityWeek."
     }
   ],
   "blogs": [
     {
-      "source": "Krebs on Security",
-      "title": "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
-      "link": "https://krebsonsecurity.com/2026/05/lawmakers-demand-answers-as-cisa-tries-to-contain-data-leak/",
-      "summary": "Lawmakers in both houses of Congress are demanding answers from the U.S. Cybersecurity &#038; Infrastructure Security Agency (CISA) after KrebsOnSecurity reported this week that a CISA contractor intentionally published AWS GovCloud keys and a vast trove of other agency secrets on a public GitHub account. The inquiry comes as CISA is still struggling to contain the breach and invalidate the leaked"
-    },
-    {
       "source": "SANS ISC Diary",
-      "title": "An Example of Stack String in High Level Language, (Sat, May 23rd)",
-      "link": "https://isc.sans.edu/diary/rss/33008",
-      "summary": "This week, I&#x27m attending the SEC670&#x5b;1&#x5d; training (&#xe2;&#x20ac;&#x153;Red Teaming Tools - Developing Windows Implants, Shellcode, Command and Control&#xe2;&#x20ac;&#x9d;). From my point of view, this training fits perfectly with FOR610 or FOR710 (malware analysis) because it addresses malware from the opposite: Instead of performing reverse engineering, you write malicious code&#x21;"
-    },
-    {
-      "source": "Schneier on Security",
-      "title": "Friday Squid Blogging: Regulating Squid Fishing in the South Pacific",
-      "link": "https://www.schneier.com/blog/archives/2026/05/friday-squid-blogging-regulating-squid-fishing-in-the-south-pacific.html",
-      "summary": "The South Pacific Regional Fisheries Management Organization (SPRFMO) needs to regulate squid fishing in the South Pacific.\nAs usual, you can also use this squid post to talk about the security stories in the news that I haven&#8217;t covered.\nBlog moderation policy."
-    },
-    {
-      "source": "Schneier on Security",
-      "title": "CISA Security Leak",
-      "link": "https://www.schneier.com/blog/archives/2026/05/cisa-security-leak.html",
-      "summary": "Crazy story:\nUntil this past weekend, a contractor for the Cybersecurity &#038; Infrastructure Security Agency (CISA) maintained a public GitHub repository that exposed credentials to several highly privileged AWS GovCloud accounts and a large number of internal CISA systems. Security experts said the public archive included files detailing how CISA builds, tests and deploys software internally, a"
+      "title": "Wireshark 4.6.6 Released, (Sun, May 24th)",
+      "link": "https://isc.sans.edu/diary/rss/33010",
+      "summary": "Wireshark release 4.6.6 fixes 1 vulnerability and 11 bugs.&#xd;"
     }
   ]
 }
