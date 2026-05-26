@@ -193,8 +193,13 @@
   async function fetchNVD(){
     const cached = getCached('cd_nvd_v3');
     if (cached) return cached;
+    // Filter to CVEs published in the last 90 days to avoid surfacing ancient entries
+    const now   = new Date();
+    const past  = new Date(now - 90 * 24 * 3600 * 1000);
+    const fmt   = d => d.toISOString().slice(0, 10) + 'T00:00:00.000';
     const r = await fetch(
-      'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=20&noRejected',
+      'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=20&noRejected' +
+      '&pubStartDate=' + fmt(past) + '&pubEndDate=' + fmt(now),
       {signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined}
     );
     if (!r.ok) throw new Error('NVD ' + r.status);

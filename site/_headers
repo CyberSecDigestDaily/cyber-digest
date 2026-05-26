@@ -5,7 +5,7 @@
   # Prevent MIME sniffing
   X-Content-Type-Options: nosniff
 
-  # No referrer leaked when clicking external links
+  # No referrer leaked to external sites
   Referrer-Policy: no-referrer
 
   # Disable browser features not needed
@@ -13,14 +13,24 @@
 
   # Prevent cross-origin data leaks
   Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-origin
 
-  # Content Security Policy — allows Google Fonts
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://services.nvd.nist.gov https://www.cisa.gov; img-src 'none'; font-src 'none' https://fonts.gstatic.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
+  # Content Security Policy
+  # script-src: inline scripts needed for theme init + app.js
+  # style-src: inline styles + Google Fonts CSS
+  # connect-src: CISA KEV + NVD API (live ticker data)
+  # font-src: Google Fonts files
+  # img-src: data URIs only (no remote images used)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://services.nvd.nist.gov https://www.cisa.gov; img-src 'self' data:; font-src https://fonts.gstatic.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
 
-  # Cache HTML for 1 hour (digest.json updates daily)
+  # Cache HTML for 1 hour
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /digest.json
-  # Cache digest.json for 30 min — short enough to pick up same-day re-runs
-  Cache-Control: 
+  # Cache digest.json for 30 min
+  Cache-Control: public, max-age=1800, stale-while-revalidate=3600
+
+/site.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/app.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
