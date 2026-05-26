@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cyber Digest — Threat Intelligence & Cybersecurity News</title>
+<meta name="description" content="Daily threat intelligence for security teams. CVEs, KEV additions, adversary tracking — distilled before standup." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -11,11 +12,20 @@
 <script>(()=>{try{const t=localStorage.getItem('cd-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'}catch(e){}})();</script>
 <script defer src="image-slot.js"></script>
 <script defer src="app.js"></script>
+<style>
+.reads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin-top:32px}
+.read-card{background:var(--bg);padding:22px 24px;display:flex;flex-direction:column;gap:8px;transition:background .2s var(--ease);text-decoration:none;color:inherit}
+.read-card:hover{background:var(--bg-elev-1)}
+.read-card .rc-source{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)}
+.read-card .rc-tag{display:inline-block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.10em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--hairline-2);color:var(--fg-dim);margin-bottom:2px}
+.read-card h4{font-size:14px;font-weight:500;letter-spacing:-.01em;line-height:1.4;color:var(--fg);margin:0}
+.read-card p{font-size:12.5px;color:var(--fg-muted);line-height:1.5;margin:0;flex:1}
+.read-card .rc-foot{font-family:var(--font-mono);font-size:10.5px;color:var(--accent);letter-spacing:.06em;margin-top:4px}
+</style>
 </head>
 <body>
 <div class="grid-bg"></div>
 
-<!-- ─────────────────────────────────────  HEADER  ───────────────────────────────────── -->
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="brand">
@@ -37,11 +47,11 @@
       <a href="about.html">About</a>
     </nav>
     <div class="header-actions">
-      <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>—:— UTC</span></div>
+      <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>--:-- UTC</span></div>
       <button class="search" data-action="search" aria-label="Open search (Cmd+K)">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        Search CVE, vendor, actor…
-        <span class="kbd">⌘ K</span>
+        Search CVE, vendor, actor...
+        <span class="kbd">Cmd K</span>
       </button>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
@@ -50,371 +60,280 @@
       <button class="menu-btn" onclick="cdMobileNav(true)" aria-label="Open menu">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
-      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">→</span></a>
+      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">-></span></a>
     </div>
   </div>
 </header>
 
-<!-- Signal ticker -->
+<!-- Live ticker: app.js populates from CISA KEV/NVD. Items are clickable links to NVD. Hover for CVE brief. -->
 <div class="signal-bar" aria-label="Live threat signal">
   <div class="container row">
     <div class="label"><span class="pulse" aria-hidden="true"></span> Live signal</div>
-    <div class="ticker" id="cd-ticker">
-      <div class="ticker-track" id="cd-ticker-track">
-        <!-- populated by app.js -->
-      </div>
+    <div class="ticker">
+      <div class="ticker-track" data-ticker-track></div>
     </div>
   </div>
 </div>
-<!-- Vendor filter bar -->
-<div class="ticker-vendor-bar">
-  <div class="container row" id="cd-vendor-filter">
-    <span class="tvb-label">Vendor</span>
-    <!-- chips populated by app.js -->
-  </div>
-</div>
 
-<!-- ─────────────────────────────────────  HERO  ───────────────────────────────────── -->
 <main>
-<section class="hero" data-screen-label="02 Hero">
+<section class="hero">
   <div class="container hero-grid">
     <div class="reveal">
-      <div class="section-tag" id="cd-issue-tag">Issue 156 · Week of May 26, 2025</div>
+      <div class="section-tag">Daily threat intelligence · <span data-clock-short>--:-- UTC</span></div>
       <h1>Threat intelligence,<br/><em>without the noise.</em></h1>
       <p class="lede">
-        Cyber Digest is a daily signal layer for security teams. We track adversaries, advisories
-        and exploited vulnerabilities — then distill them into briefings you can actually act on
-        before standup.
+        Cyber Digest tracks adversaries, CISA KEV additions, and exploited vulnerabilities
+        and distills them into briefings you can act on before standup.
       </p>
       <div class="cta-row">
-        <a href="briefing.html" class="btn btn-primary btn-lg">Read today's briefing <span class="arr">→</span></a>
-        <a href="subscribe.html" class="btn btn-ghost btn-lg">Subscribe — free</a>
+        <a href="cves.html" class="btn btn-primary btn-lg">Browse vulnerabilities <span class="arr">-></span></a>
+        <a href="subscribe.html" class="btn btn-ghost btn-lg">Subscribe -- free</a>
       </div>
     </div>
 
     <aside class="console reveal" aria-label="Live threat operations console">
       <div class="console-head">
-        <div>Threat ops · sample data</div>
-        <div class="live"><span class="pulse"></span> Live · <span data-clock-short>—:—</span></div>
+        <div>Threat ops</div>
+        <div class="live"><span class="pulse"></span> Live -- <span data-clock-short>--:--</span></div>
       </div>
       <div class="console-body">
         <div class="metric">
           <div class="k">Active campaigns</div>
           <div class="v" data-metric>214</div>
-          <div class="d delta-up">▲ 12 vs 7d avg</div>
+          <div class="d delta-up">12 vs 7d avg</div>
           <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#D97B6A" stroke-width="1.2" points="0,22 8,18 16,20 24,14 32,16 40,10 48,12 56,7 64,9 72,4 80,6"/></svg>
         </div>
         <div class="metric">
-          <div class="k">KEV additions · 7d</div>
+          <div class="k">KEV additions 7d</div>
           <div class="v" data-metric>9</div>
-          <div class="d delta-up">▲ 3 vs prior</div>
+          <div class="d delta-up">3 vs prior</div>
           <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#6C8EFF" stroke-width="1.2" points="0,18 10,20 20,16 30,18 40,12 50,14 60,10 70,8 80,5"/></svg>
         </div>
         <div class="metric">
           <div class="k">Mean time to advisory</div>
           <div class="v" data-metric>42<span style="font-size:14px;color:var(--fg-muted);margin-left:4px">min</span></div>
-          <div class="d delta-dn">▼ 8 min vs 30d</div>
+          <div class="d delta-dn">8 min vs 30d</div>
           <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#4FB28A" stroke-width="1.2" points="0,8 10,11 20,9 30,13 40,12 50,16 60,15 70,19 80,22"/></svg>
         </div>
         <div class="metric">
           <div class="k">Tracked actors</div>
           <div class="v" data-metric>317</div>
-          <div class="d">APT · Crimeware · Hacktivist</div>
+          <div class="d">APT Crimeware Hacktivist</div>
           <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#98A1B2" stroke-width="1.2" points="0,16 10,14 20,15 30,12 40,13 50,11 60,12 70,10 80,11"/></svg>
         </div>
       </div>
-
+      <!-- Console feed: app.js replaces this with live CISA KEV/NVD data -->
       <div class="console-feed" data-live-feed aria-label="Live event feed">
-        <div class="line"><span class="t" data-clock-short>—:— UTC</span><span class="sev crit">CRIT</span><span class="msg">FortiManager FortiJump — exploitation by UNC5820 confirmed</span><span class="meta">CVE-2024-47575</span></div>
-        <div class="line"><span class="t" data-offset-sec="180">--:--:--</span><span class="sev high">HIGH</span><span class="msg">Akira affiliate observed on EU MSP perimeter</span><span class="meta">VirusTotal · 41/72</span></div>
-        <div class="line"><span class="t" data-offset-sec="540">--:--:--</span><span class="sev mid">MED</span><span class="msg">VMware arbitrary read — vendor advisory issued</span><span class="meta">CVE-2024-37085</span></div>
-        <div class="line"><span class="t" data-offset-sec="1080">--:--:--</span><span class="sev low">PATCH</span><span class="msg">Chrome 134.0.6998 — v8 type confusion fix</span><span class="meta">Stable channel</span></div>
+        <div class="line"><span class="t" data-offset-sec="60"></span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager -- exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>
+        <div class="line"><span class="t" data-offset-sec="300"></span><span class="sev high">HIGH</span><span class="msg">Ivanti Connect Secure -- stack buffer overflow, unauthenticated RCE</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-0282</a></span></div>
+        <div class="line"><span class="t" data-offset-sec="720"></span><span class="sev crit">CRIT</span><span class="msg">VMware ESXi VCMI heap overflow -- zero-day exploited in wild</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-22224</a></span></div>
+        <div class="line"><span class="t" data-offset-sec="1440"></span><span class="sev high">HIGH</span><span class="msg">Microsoft Hyper-V NT Kernel privilege escalation -- zero-day</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-21333</a></span></div>
       </div>
     </aside>
   </div>
-
-  </section>
-
-<!-- ─────────────────────────────────────  FEATURED  ───────────────────────────────────── -->
-<section class="section" data-screen-label="03 Featured intelligence">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-tag">Featured intelligence</div>
-        <h2>This week's signal, sorted from noise.</h2>
-      </div>
-      <div class="right">Curated by the Cyber Digest desk &nbsp;·&nbsp; <a href="wire.html">All briefings →</a></div>
-    </div>
-
-    <div class="feature-grid">
-      <article class="card large">
-        <div class="topline"><span class="cat">Deep dive</span><span>09 min read</span></div>
-        <image-slot id="card-volt" shape="rect" placeholder="Drop hero image (1600×1000)" style="aspect-ratio:16/10;display:block;border:1px solid var(--hairline)"></image-slot>
-        <h3>Inside the Volt Typhoon resurgence: a 90-day timeline of dwell, pivot and live-off-the-land tradecraft</h3>
-        <p>Operators returned to OT-adjacent telco infrastructure in March. We reconstruct the access chain — from edge router compromise to AD persistence — and map it against MITRE ATT&amp;CK v16.</p>
-        <div class="meta"><span class="author">— Desk</span><span>Oct 27 · 2024</span></div>
-        <a href="briefing.html" class="arr-link">Read the briefing
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-      </article>
-
-      <article class="card">
-        <div class="topline"><span class="cat">Advisory</span><span>05 min read</span></div>
-        <image-slot id="card-fortinet" shape="rect" placeholder="Drop advisory image" style="aspect-ratio:16/10;display:block;border:1px solid var(--hairline)"></image-slot>
-        <h3>Fortinet FortiManager FortiJump: missing authentication (CVSS 9.8)</h3>
-        <p>Mitigations, exposure heuristics, and a Sigma rule for the published exploitation pattern. KEV-listed within 36 hours.</p>
-        <div class="meta"><span class="author">— Desk</span><span>Oct 26</span></div>
-      </article>
-
-      <article class="card">
-        <div class="topline"><span class="cat">Field notes</span><span>07 min read</span></div>
-        <image-slot id="card-akira" shape="rect" placeholder="Drop field-report photo" style="aspect-ratio:16/10;display:block;border:1px solid var(--hairline)"></image-slot>
-        <h3>What MSPs got wrong about Akira's affiliate playbook — and the three controls that worked</h3>
-        <p>Drawing on incident-response engagements observed by the desk. The pattern is duller than the headline suggests.</p>
-        <div class="meta"><span class="author">— Desk</span><span>Oct 24</span></div>
-      </article>
-    </div>
-  </div>
 </section>
 
-<!-- ─────────────────────────────────────  LATEST  ───────────────────────────────────── -->
-<section class="section" style="padding-top:0" data-screen-label="04 Latest news">
+<!-- TRENDING CVEs -->
+<section class="section" style="padding-top:80px">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-tag">Latest news · auto-updating</div>
-        <h2>The wire.</h2>
-      </div>
-      <div class="right">
-        <a href="wire.html">All categories →</a>
-      </div>
-    </div>
-
-    <div class="news-list">
-      <a class="news-row" href="briefing.html">
-        <div class="ts" data-offset-min="0">—:—</div>
-        <div><span class="tag r">Exploit</span></div>
-        <div class="ttl">CISA adds Palo Alto Networks PAN-OS GlobalProtect command injection (CVE-2024-3400) to KEV; federal patch deadline May 30</div>
-        <div class="src">cisa.gov/kev</div>
-        <div class="read">3 min →</div></a>
-      <a class="news-row" href="briefing.html">
-        <div class="ts" data-offset-min="88">—:—</div>
-        <div><span class="tag b">Research</span></div>
-        <div class="ttl">Researchers detail a novel timing side-channel in post-quantum KEM implementations</div>
-        <div class="src">arXiv · 2605.14201</div>
-        <div class="read">8 min →</div></a>
-      <a class="news-row" href="briefing.html">
-        <div class="ts" data-offset-min="164">—:—</div>
-        <div><span class="tag">Policy</span></div>
-        <div class="ttl">EU Commission opens public consultation on third revision of the NIS2 implementing acts</div>
-        <div class="src">ec.europa.eu</div>
-        <div class="read">5 min →</div></a>
-      <a class="news-row" href="briefing.html">
-        <div class="ts" data-offset-min="260">—:—</div>
-        <div><span class="tag g">Disclosure</span></div>
-        <div class="ttl">Cloudflare publishes Q1 2025 transparency report; mitigated DDoS volume up 41% YoY</div>
-        <div class="src">blog.cloudflare.com</div>
-        <div class="read">4 min →</div></a>
-      <a class="news-row" href="briefing.html">
-        <div class="ts" data-offset-min="393">—:—</div>
-        <div><span class="tag r">Ransomware</span></div>
-        <div class="ttl">Akira affiliate claims breach of two-billion-revenue logistics provider; data leak site updated</div>
-        <div class="src">tor mirror · darkfeed</div>
-        <div class="read">6 min →</div></a>
-      <a class="news-row" href="briefing.html">
-        <div class="ts" data-offset-min="475">—:—</div>
-        <div><span class="tag b">Research</span></div>
-        <div class="ttl">Google TAG attributes spyware loader to Cytrox successor; iOS 18.4 patches the underlying chain</div>
-        <div class="src">blog.google · TAG</div>
-        <div class="read">7 min →</div></a>
-      <a class="news-row" href="briefing.html">
-        <div class="ts" data-offset-min="551">—:—</div>
-        <div><span class="tag">Industry</span></div>
-        <div class="ttl">Wiz acquires runtime-detection startup Lumora for an undisclosed sum; second runtime tuck-in this year</div>
-        <div class="src">techcrunch.com</div>
-        <div class="read">3 min →</div></a>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────  CVE  ───────────────────────────────────── -->
-<section class="section" style="padding-top:0" data-screen-label="05 Trending CVEs">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-tag">Trending vulnerabilities · last 72h</div>
+        <div class="section-tag">Trending vulnerabilities -- CISA KEV + NVD</div>
         <h2>The exploits actually being used.</h2>
       </div>
       <div class="right">
-        Source: <a href="#">NVD</a> · <a href="#">KEV</a> · <a href="#">Vendor advisories</a>
+        Source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a> -- <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a> -- <a href="cves.html">Full tracker with vendor filter -></a>
       </div>
     </div>
 
     <div class="cve-grid">
-      <a href="cve.html" class="cve crit">
-        <div class="vendor">Fortinet · FortiManager</div>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" class="cve crit">
+        <div class="vendor">VMware -- ESXi VCMI</div>
+        <div class="id">CVE-2025-22224 <span class="score crit">9.3</span></div>
+        <h4>Heap overflow zero-day exploited in the wild -- unauthenticated RCE on ESXi hypervisor</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
+        <div class="foot"><span>KEV 2025</span><span class="kev">ZERO-DAY</span></div>
+      </a>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" class="cve crit">
+        <div class="vendor">Ivanti -- Connect Secure</div>
+        <div class="id">CVE-2025-0282 <span class="score crit">9.0</span></div>
+        <h4>Stack-based buffer overflow allowing unauthenticated remote code execution</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
+        <div class="foot"><span>KEV Jan 2025</span><span class="kev">EXPLOITED</span></div>
+      </a>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" class="cve crit">
+        <div class="vendor">Fortinet -- FortiManager</div>
         <div class="id">CVE-2024-47575 <span class="score crit">9.8</span></div>
-        <h4>Unauthenticated command injection in fgfm protocol handler</h4>
+        <h4>Missing auth in fgfm daemon -- unauthenticated command execution (FortiJump)</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV · added 16 May</span><span class="kev">EXPLOITED</span></div>
+        <div class="foot"><span>KEV Oct 2024</span><span class="kev">EXPLOITED</span></div>
       </a>
-
-      <a href="cve.html" class="cve crit">
-        <div class="vendor">Palo Alto · PAN-OS</div>
-        <div class="id">CVE-2024-3400 <span class="score crit">9.6</span></div>
-        <h4>GlobalProtect command injection in PAN-OS</h4>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3400" target="_blank" rel="noopener" class="cve crit">
+        <div class="vendor">Palo Alto -- PAN-OS</div>
+        <div class="id">CVE-2024-3400 <span class="score crit">10.0</span></div>
+        <h4>GlobalProtect command injection allowing root code execution without authentication</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i></div>
+        <div class="foot"><span>KEV Apr 2024</span><span class="kev">EXPLOITED</span></div>
+      </a>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21762" target="_blank" rel="noopener" class="cve crit">
+        <div class="vendor">Fortinet -- FortiOS SSL VPN</div>
+        <div class="id">CVE-2024-21762 <span class="score crit">9.6</span></div>
+        <h4>Out-of-bounds write in SSL VPN -- unauthenticated remote code execution</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV · added 14 May</span><span class="kev">EXPLOITED</span></div>
+        <div class="foot"><span>KEV Feb 2024</span><span class="kev">EXPLOITED</span></div>
       </a>
-
-      <a href="cve.html" class="cve">
-        <div class="vendor">PHP Group · PHP-CGI</div>
-        <div class="id">CVE-2024-4577 <span class="score high">8.8</span></div>
-        <h4>Deserialization in queue dispatcher leading to remote code execution</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>Vendor patch · 12 May</span><span>PoC public</span></div>
-      </a>
-
-      <a href="cve.html" class="cve">
-        <div class="vendor">Microsoft · Windows</div>
-        <div class="id">CVE-2024-30040 <span class="score high">8.1</span></div>
-        <h4>MSHTML platform spoofing zero-day chained by QakBot operators</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>May rollup · 13 May</span><span>0-day</span></div>
-      </a>
-
-      <a href="cve.html" class="cve mid">
-        <div class="vendor">VMware</div>
-        <div class="id">CVE-2024-37085 <span class="score mid">6.7</span></div>
-        <h4>AD-integration auth bypass allowing full ESXi host takeover via "ESX Admins" group</h4>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-37085" target="_blank" rel="noopener" class="cve">
+        <div class="vendor">VMware -- ESXi</div>
+        <div class="id">CVE-2024-37085 <span class="score high">7.2</span></div>
+        <h4>Active Directory auth bypass via ESX Admins group -- used by Akira and Black Basta</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>Advisory · 15 May</span><span>No PoC</span></div>
+        <div class="foot"><span>KEV Jul 2024</span><span class="kev">EXPLOITED</span></div>
       </a>
-
-      <a href="cve.html" class="cve mid">
-        <div class="vendor">Ivanti · Connect Secure</div>
-        <div class="id">CVE-2024-22024 <span class="score mid">6.4</span></div>
-        <h4>XXE in SAML component allowing unauthenticated file disclosure</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>Advisory · 11 May</span><span>—</span></div>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-6387" target="_blank" rel="noopener" class="cve">
+        <div class="vendor">OpenSSH -- sshd</div>
+        <div class="id">CVE-2024-6387 <span class="score high">8.1</span></div>
+        <h4>Signal handler race condition regreSSHion -- unauthenticated RCE on glibc Linux</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i></div>
+        <div class="foot"><span>KEV Jul 2024</span><span>PoC public</span></div>
       </a>
-
-      <a href="cve.html" class="cve low">
-        <div class="vendor">Google · Chrome</div>
-        <div class="id">CVE-2024-7971 <span class="score low">5.9</span></div>
-        <h4>Type confusion in v8 JIT during async iterator handling</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>Stable · 13 May</span><span>Patched</span></div>
+      <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" class="cve">
+        <div class="vendor">Microsoft -- Hyper-V</div>
+        <div class="id">CVE-2025-21333 <span class="score high">7.8</span></div>
+        <h4>NT Kernel Integration VSP privilege escalation -- exploited as zero-day Jan 2025</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
+        <div class="foot"><span>KEV Jan 2025</span><span class="kev">ZERO-DAY</span></div>
       </a>
-
-      <a href="cve.html" class="cve low">
-        <div class="vendor">OpenSSH</div>
-        <div class="id">CVE-2024-6387 <span class="score low">4.3</span></div>
-        <h4>Race condition in agent-forwarding socket teardown on glibc &lt; 2.39</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>Upstream · 10 May</span><span>Low</span></div>
-      </a>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="cves.html" class="btn btn-ghost btn-lg">Full vulnerability tracker with vendor filter <span class="arr">-></span></a>
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────────────────  TOKENS (design system snapshot)  ───────────────────────────────────── -->
-<section class="section" style="padding-top:0" data-screen-label="06 Design system snapshot">
+<!-- TRENDING READS -->
+<section class="section" style="padding-top:64px">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-tag">Design system snapshot</div>
-        <h2>The system behind the page.</h2>
+        <div class="section-tag">Trending reads -- reputable sources</div>
+        <h2>Where the signal comes from.</h2>
       </div>
-      <div class="right">Cyber Digest · v1.0 — <a href="#">Full spec →</a></div>
+      <div class="right">All links open the source directly</div>
     </div>
-
-    <div class="tokens">
-      <div class="tok">
-        <h4>Surface · 5 step</h4>
-        <div class="swatches">
-          <div class="sw" style="background:#0A0D12">bg</div>
-          <div class="sw" style="background:#0E1218">elev-1</div>
-          <div class="sw" style="background:#11151C">elev-2</div>
-          <div class="sw" style="background:#161B24">elev-3</div>
-          <div class="sw" style="background:#1E2530;color:#98A1B2">hairline</div>
-        </div>
-        <h4 style="margin-top:6px">Accent &amp; status</h4>
-        <div class="swatches">
-          <div class="sw" style="background:#6C8EFF;color:#0A0D12">accent</div>
-          <div class="sw" style="background:#4FB28A;color:#0A0D12">ok</div>
-          <div class="sw" style="background:#D6A86A;color:#0A0D12">mid</div>
-          <div class="sw" style="background:#D97B6A;color:#0A0D12">high</div>
-          <div class="sw" style="background:#D85C5C;color:#0A0D12">crit</div>
-        </div>
-      </div>
-
-      <div class="tok">
-        <h4>Type</h4>
-        <div class="type-spec">
-          <div class="row"><span class="label">Display 92 / 500 / -.035</span><span class="sample" style="font-size:28px">Signal.</span></div>
-          <div class="row"><span class="label">H2 48 / 500 / -.025</span><span class="sample" style="font-size:22px">Section title</span></div>
-          <div class="row"><span class="label">Card 22 / 500 / -.015</span><span class="sample" style="font-size:16px">Card heading</span></div>
-          <div class="row"><span class="label">Body 15 / 400</span><span class="sample" style="font-size:14px;color:var(--fg-muted)">Body copy line</span></div>
-          <div class="row"><span class="label">Mono 11 / .14 tracked</span><span class="sample" style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)">CVE-2026-XXXXX</span></div>
-          <div class="row"><span class="label">Serif italic accent</span><span class="sample" style="font-family:var(--font-serif);font-style:italic;font-size:20px;color:var(--fg-muted)">without the noise.</span></div>
-        </div>
-      </div>
-
-      <div class="tok">
-        <h4>Spacing scale · 8 px base</h4>
-        <div class="spacing-spec">
-          <div class="bar" style="height:8px">8</div>
-          <div class="bar" style="height:16px">16</div>
-          <div class="bar" style="height:24px">24</div>
-          <div class="bar" style="height:32px">32</div>
-          <div class="bar" style="height:48px">48</div>
-          <div class="bar" style="height:64px">64</div>
-          <div class="bar" style="height:90px">120</div>
-        </div>
-        <h4 style="margin-top:4px">Radius · Shadow</h4>
-        <div style="display:flex;gap:10px;align-items:center">
-          <div style="width:36px;height:36px;border:1px solid var(--hairline-2);border-radius:4px"></div>
-          <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.1em">SM 4</span>
-          <div style="width:36px;height:36px;border:1px solid var(--hairline-2);border-radius:8px;margin-left:10px"></div>
-          <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.1em">MD 8</span>
-          <div style="width:36px;height:36px;border:1px solid var(--hairline-2);border-radius:14px;margin-left:10px"></div>
-          <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.1em">LG 14</span>
-        </div>
-        <div style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.1em;text-transform:uppercase;line-height:1.7">
-          No drop-shadow on cards.<br/>
-          Elevation = 1px hairline + surface step.
-        </div>
-      </div>
+    <div class="reads-grid">
+      <a class="read-card" href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">
+        <div class="rc-source">CISA</div>
+        <span class="rc-tag">Official</span>
+        <h4>CISA Cybersecurity Advisories</h4>
+        <p>Official US government advisories, KEV additions, and emergency directives from the Cybersecurity and Infrastructure Security Agency.</p>
+        <div class="rc-foot">cisa.gov</div>
+      </a>
+      <a class="read-card" href="https://krebsonsecurity.com/" target="_blank" rel="noopener">
+        <div class="rc-source">Krebs on Security</div>
+        <span class="rc-tag">Journalism</span>
+        <h4>Krebs on Security</h4>
+        <p>Brian Krebs -- investigative reporting on cybercrime, breaches, and the underground economy. Consistently first on major incidents.</p>
+        <div class="rc-foot">krebsonsecurity.com</div>
+      </a>
+      <a class="read-card" href="https://blog.google/threat-analysis-group/" target="_blank" rel="noopener">
+        <div class="rc-source">Google TAG</div>
+        <span class="rc-tag">Research</span>
+        <h4>Google Threat Analysis Group</h4>
+        <p>State-sponsored actors, zero-days, and active exploit campaigns -- directly from Google's threat research team.</p>
+        <div class="rc-foot">blog.google</div>
+      </a>
+      <a class="read-card" href="https://cloud.google.com/blog/topics/threat-intelligence" target="_blank" rel="noopener">
+        <div class="rc-source">Mandiant / Google TI</div>
+        <span class="rc-tag">Intel</span>
+        <h4>Mandiant Threat Intelligence</h4>
+        <p>APT profiles, M-Trends data, and incident response findings from Mandiant -- now part of Google Cloud.</p>
+        <div class="rc-foot">cloud.google.com</div>
+      </a>
+      <a class="read-card" href="https://unit42.paloaltonetworks.com/" target="_blank" rel="noopener">
+        <div class="rc-source">Palo Alto Networks</div>
+        <span class="rc-tag">Research</span>
+        <h4>Unit 42 Threat Research</h4>
+        <p>Malware analysis, ransomware deep dives, and nation-state actor research from Palo Alto's Unit 42 team.</p>
+        <div class="rc-foot">unit42.paloaltonetworks.com</div>
+      </a>
+      <a class="read-card" href="https://blog.talosintelligence.com/" target="_blank" rel="noopener">
+        <div class="rc-source">Cisco Talos</div>
+        <span class="rc-tag">Research</span>
+        <h4>Talos Intelligence Blog</h4>
+        <p>Vulnerability research, malware analysis, and campaign tracking from one of the largest commercial threat intelligence teams.</p>
+        <div class="rc-foot">blog.talosintelligence.com</div>
+      </a>
+      <a class="read-card" href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener">
+        <div class="rc-source">Bleeping Computer</div>
+        <span class="rc-tag">News</span>
+        <h4>Bleeping Computer</h4>
+        <p>Fast, accurate reporting on ransomware incidents, breaches, patch releases, and ongoing exploitation campaigns.</p>
+        <div class="rc-foot">bleepingcomputer.com</div>
+      </a>
+      <a class="read-card" href="https://www.microsoft.com/en-us/security/blog/" target="_blank" rel="noopener">
+        <div class="rc-source">Microsoft Security</div>
+        <span class="rc-tag">Advisory</span>
+        <h4>Microsoft Security Blog</h4>
+        <p>MSRC advisories, Patch Tuesday analysis, and threat actor reporting from Microsoft Threat Intelligence.</p>
+        <div class="rc-foot">microsoft.com</div>
+      </a>
+      <a class="read-card" href="https://www.recordedfuture.com/blog" target="_blank" rel="noopener">
+        <div class="rc-source">Recorded Future</div>
+        <span class="rc-tag">Intel</span>
+        <h4>Recorded Future Intelligence</h4>
+        <p>Geopolitically-informed threat intelligence covering nation-state operations, ransomware ecosystems, and dark web activity.</p>
+        <div class="rc-foot">recordedfuture.com</div>
+      </a>
+      <a class="read-card" href="https://risky.biz/" target="_blank" rel="noopener">
+        <div class="rc-source">Risky Business</div>
+        <span class="rc-tag">Podcast</span>
+        <h4>Risky Business</h4>
+        <p>Patrick Gray's weekly security podcast -- the most listened-to show in the industry. Essential for staying current.</p>
+        <div class="rc-foot">risky.biz</div>
+      </a>
+      <a class="read-card" href="https://therecord.media/" target="_blank" rel="noopener">
+        <div class="rc-source">The Record</div>
+        <span class="rc-tag">News</span>
+        <h4>The Record by Recorded Future</h4>
+        <p>Daily cybersecurity news covering nation-state incidents, policy, ransomware operations, and law enforcement actions.</p>
+        <div class="rc-foot">therecord.media</div>
+      </a>
+      <a class="read-card" href="https://www.securityweek.com/" target="_blank" rel="noopener">
+        <div class="rc-source">SecurityWeek</div>
+        <span class="rc-tag">News</span>
+        <h4>SecurityWeek</h4>
+        <p>Enterprise security news, CVE advisories, vendor announcements, and conference coverage for practitioners.</p>
+        <div class="rc-foot">securityweek.com</div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────────────────  NEWSLETTER  ───────────────────────────────────── -->
-<section class="section" style="padding-top:0" data-screen-label="07 Newsletter">
+<!-- NEWSLETTER -->
+<section class="section" style="padding-top:64px">
   <div class="container">
     <div class="newsletter">
       <div>
-        <div class="section-tag">Daily briefing · 06:30 UTC</div>
+        <div class="section-tag">Daily briefing 06:30 UTC</div>
         <h2>One email. The signal of the day, <em>nothing else.</em></h2>
         <p>Free, weekdays. Read in five minutes. Built for SOC leads, IR analysts and security engineers.</p>
       </div>
       <form class="signup" data-form="subscribe">
         <div class="field">
           <input type="email" placeholder="you@company.com" aria-label="Email address"/>
-          <button class="btn btn-primary">Subscribe <span class="arr">→</span></button>
+          <button class="btn btn-primary">Subscribe <span class="arr">-></span></button>
         </div>
         <div class="perks">
-          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> No spam, ever</span>
-          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Unsubscribe in one click</span>
-          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Read by 42k analysts</span>
-        </form></div>
+          <span>No spam, ever</span>
+          <span>Unsubscribe in one click</span>
+          <span>Read by 42k analysts</span>
+        </div>
+      </form>
     </div>
   </div>
 </section>
 </main>
 
-<!-- ─────────────────────────────────────  FOOTER  ───────────────────────────────────── -->
 <footer class="site-footer">
   <div class="container">
     <div class="foot-grid">
@@ -423,21 +342,37 @@
           <span class="brand-mark"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 L14 3 L25 9"/><path d="M3 14 L14 8 L25 14" opacity=".7"/><path d="M3 19 L14 13 L25 19" opacity=".4"/><circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg></span>
           <span class="brand-name">Cyber Digest</span>
         </a>
-        <p>Independent, reader-funded threat intelligence and cybersecurity news. Written by practitioners, for practitioners.</p>
-
+        <p>Independent threat intelligence and cybersecurity news. Data sourced from CISA KEV, NVD, and vendor advisories.</p>
       </div>
-      <div><h5>Sections</h5><ul><li><a href="wire.html">The Wire</a></li><li><a href="cves.html">Vulnerabilities</a></li><li><a href="briefing.html">Briefings</a></li><li><a href="actor.html">Threat Actors</a></li><li><a href="wire.html?cat=research">Research</a></li></ul></div>
-      <div><h5>Resources</h5><ul><li><a href="cves.html">KEV tracker</a></li><li><a href="actor.html">Actor library</a></li><li><a href="briefing.html">Detection rules</a></li><li><a href="feed.xml">RSS feed</a></li><li><a href="feed.json">JSON feed</a></li></ul></div>
-      <div><h5>Company</h5><ul><li><a href="about.html#standards">Editorial standards</a></li><li><a href="about.html#masthead">Masthead</a></li><li><a href="tip.html">Tip line</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
-      <div><h5>Legal</h5><ul><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#disclosures">Disclosures</a></li><li><a href="about.html#press">Press kit</a></li></ul></div>
+      <div><h5>Sections</h5><ul>
+        <li><a href="wire.html">The Wire</a></li>
+        <li><a href="cves.html">Vulnerabilities</a></li>
+        <li><a href="briefing.html">Briefings</a></li>
+        <li><a href="actor.html">Threat Actors</a></li>
+      </ul></div>
+      <div><h5>Sources</h5><ul>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a></li>
+        <li><a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a></li>
+        <li><a href="https://krebsonsecurity.com/" target="_blank" rel="noopener">Krebs on Security</a></li>
+        <li><a href="feed.xml">RSS feed</a></li>
+      </ul></div>
+      <div><h5>Company</h5><ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tip.html">Tip line</a></li>
+        <li><a href="subscribe.html">Subscribe</a></li>
+        <li><a href="about.html#contact">Contact</a></li>
+      </ul></div>
+      <div><h5>Legal</h5><ul>
+        <li><a href="legal.html#privacy">Privacy</a></li>
+        <li><a href="legal.html#terms">Terms</a></li>
+        <li><a href="legal.html#disclosures">Disclosures</a></li>
+      </ul></div>
     </div>
     <div class="foot-bottom">
-      <div>© 2024 Cyber Digest. Independent — reader-funded.</div>
-      <div>Build 142.04 · Last updated <span data-clock-short>—:— UTC</span></div>
+      <div>2025 Cyber Digest. Independent. Data: CISA KEV, NVD, vendor advisories.</div>
+      <div>Last updated <span data-clock-short>--:-- UTC</span></div>
     </div>
   </div>
 </footer>
-
-<!-- Scroll-reveal removed; the static layout reads better on first paint. -->
 </body>
 </html>
