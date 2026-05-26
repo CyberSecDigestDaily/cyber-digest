@@ -160,8 +160,24 @@ img,svg{display:block;max-width:100%}
   animation: scroll 60s linear infinite;
   white-space:nowrap;
 }
-.ticker-track span{ display:inline-flex;align-items:center;gap:10px }
+.ticker-track span,
+.ticker-track a.ticker-item{
+  display:inline-flex;align-items:center;gap:10px;
+}
+.ticker-track a.ticker-item{
+  color:var(--fg-muted);
+  text-decoration:none;
+  transition:color .18s var(--ease);
+  cursor:pointer;
+  padding:2px 0;
+  border-bottom:1px solid transparent;
+}
+.ticker-track a.ticker-item:hover{
+  color:var(--fg);
+  border-bottom-color:var(--hairline-2);
+}
 .ticker-track .sev{
+  flex:0 0 auto;
   font-size:10px;padding:2px 6px;border:1px solid var(--hairline-2);
   letter-spacing:.1em;text-transform:uppercase;
 }
@@ -172,6 +188,49 @@ img,svg{display:block;max-width:100%}
 @keyframes scroll{
   from{ transform:translateX(0) }
   to  { transform:translateX(-50%) }
+}
+
+/* ── Vendor filter bar ── */
+.ticker-vendor-bar{
+  border-bottom:1px solid var(--hairline);
+  background:var(--bg);
+  position:relative;z-index:2;
+}
+.ticker-vendor-bar .row{
+  display:flex;align-items:center;
+  gap:6px;
+  padding:9px 0;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  mask-image:linear-gradient(to right,#000 80%,transparent 100%);
+}
+.ticker-vendor-bar .row::-webkit-scrollbar{ display:none }
+.tvb-label{
+  flex:0 0 auto;
+  font-family:var(--font-mono);font-size:10px;
+  color:var(--fg-dim);letter-spacing:.14em;text-transform:uppercase;
+  padding-right:10px;margin-right:4px;
+  border-right:1px solid var(--hairline);
+  white-space:nowrap;
+}
+.ticker-vchip{
+  flex:0 0 auto;
+  font-family:var(--font-mono);font-size:10px;
+  padding:4px 10px;
+  border:1px solid var(--hairline-2);
+  color:var(--fg-muted);letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;
+  transition:color .15s var(--ease),border-color .15s var(--ease),background .15s var(--ease);
+  background:transparent;
+  white-space:nowrap;
+  border-radius:2px;
+}
+.ticker-vchip:hover{ color:var(--fg);border-color:var(--fg-muted) }
+.ticker-vchip.on{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:var(--accent-soft);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -928,60 +987,4 @@ img,svg{display:block;max-width:100%}
   color:var(--fg-muted);font-size:10px;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   TOAST
-   ───────────────────────────────────────────────────────────── */
-.toast{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(40px);
-  z-index:200;
-  display:flex;align-items:center;gap:12px;
-  padding:14px 20px;
-  background:var(--bg-elev-1);
-  border:1px solid var(--hairline-2);
-  border-radius:var(--radius);
-  color:var(--fg);font-size:14px;
-  box-shadow: 0 16px 48px rgba(0,0,0,.4);
-  opacity:0;pointer-events:none;
-  transition: opacity .25s var(--ease), transform .25s var(--ease);
-}
-.toast.show{ opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto }
-.toast .ok{ color:var(--status-ok) }
-
-/* ─────────────────────────────────────────────────────────────
-   MOBILE NAV (drawer)
-   ───────────────────────────────────────────────────────────── */
-.menu-btn{
-  display:none;
-  width:36px;height:36px;
-  align-items:center;justify-content:center;
-  background:var(--bg-elev-2);border:1px solid var(--hairline);
-  border-radius:var(--radius);color:var(--fg-muted);cursor:pointer;
-}
-.menu-btn:hover{ color:var(--fg) }
-.mobile-nav{
-  position:fixed;inset:0;z-index:90;
-  background:var(--bg);
-  padding:80px 32px 32px;
-  display:none;
-  flex-direction:column;gap:8px;
-  overflow:auto;
-}
-.mobile-nav.open{ display:flex }
-.mobile-nav a{
-  padding:14px 16px;border:1px solid var(--hairline);
-  font-size:16px;color:var(--fg);
-  display:flex;justify-content:space-between;align-items:center;
-}
-.mobile-nav a:hover{ background:var(--bg-elev-2) }
-.mobile-nav a .arr{ color:var(--fg-dim);font-family:var(--font-mono);font-size:12px }
-.mobile-nav .close{
-  position:absolute;top:18px;right:24px;
-  width:40px;height:40px;
-  background:var(--bg-elev-2);border:1px solid var(--hairline);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--fg);cursor:pointer;border-radius:var(--radius);
-}
-@media (max-width: 1100px){ .menu-btn{ display:flex } .nav{ display:none } }
-
-/* Active nav link (highlight current page) */
-.nav a[aria-current="page"]{ color:var(--fg); background:var(--bg-elev-2) }
+/* ───�
