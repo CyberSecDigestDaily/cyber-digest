@@ -74,6 +74,13 @@
 .cve-table td.refs a{ color:var(--fg-muted);margin-right:6px;border-bottom:1px solid var(--hairline-2) }
 .cve-table td.refs a:hover{ color:var(--fg);border-color:var(--fg) }
 
+/* Vendor chip active state — distinct teal colour to differentiate from severity filter */
+[data-vendor-filter].on {
+  color: var(--status-ok);
+  background: rgba(79,178,138,.12);
+  border-color: rgba(79,178,138,.5);
+}
+
 @media (max-width: 1100px){
   .cves-stats{ grid-template-columns:1fr 1fr }
   .cve-table thead th.title-h, .cve-table td.title{ max-width:280px }
@@ -144,8 +151,9 @@
   </header>
 
   <div class="cve-table-wrap">
+    <!-- Severity filter (single-select) -->
     <div class="cve-toolbar" data-filter-group>
-      <span class="label">Filter</span>
+      <span class="label">Severity</span>
       <div class="chips">
         <button class="chip on" data-filter="all">All</button>
         <button class="chip" data-filter="crit">Critical</button>
@@ -154,9 +162,26 @@
         <button class="chip" data-filter="zero-day">0-day</button>
       </div>
       <div class="right">
-        <span>Sorted by KEV-add date · descending</span>
+        <span data-result-count></span>
         <a href="feed.json" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">JSON feed ↗</a>
       </div>
+    </div>
+    <!-- Vendor filter (multi-select — click to toggle, multiple active at once) -->
+    <div class="cve-toolbar" style="border-top:none;padding-top:10px;padding-bottom:10px;gap:10px;flex-wrap:wrap">
+      <span class="label">Vendor</span>
+      <div class="chips" style="flex:1">
+        <button class="chip" data-vendor-filter="fortinet">Fortinet</button>
+        <button class="chip" data-vendor-filter="paloalto">Palo Alto</button>
+        <button class="chip" data-vendor-filter="ivanti">Ivanti</button>
+        <button class="chip" data-vendor-filter="microsoft">Microsoft</button>
+        <button class="chip" data-vendor-filter="vmware">VMware</button>
+        <button class="chip" data-vendor-filter="google">Google</button>
+        <button class="chip" data-vendor-filter="citrix">Citrix</button>
+        <button class="chip" data-vendor-filter="connectwise">ConnectWise</button>
+        <button class="chip" data-vendor-filter="openssh">OpenSSH</button>
+        <button class="chip" data-vendor-filter="php">PHP Group</button>
+      </div>
+      <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.08em">Multi-select</span>
     </div>
 
     <table class="cve-table" role="table">
@@ -172,8 +197,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-cats="crit kev" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-47575</a></td>
+        <tr data-cats="crit kev" data-vendor="fortinet" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-47575'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener">CVE-2024-47575</a></td>
           <td class="vendor">Fortinet · FortiManager</td>
           <td class="title">Missing authentication in <code>fgfm</code> daemon allows unauthenticated command execution (FortiJump)</td>
           <td class="score"><span class="pill crit">9.8</span></td>
@@ -181,8 +206,8 @@
           <td class="added">Oct 23, 2024</td>
           <td class="refs"><a href="https://www.fortiguard.com/psirt/FG-IR-24-423" target="_blank" rel="noopener">PSIRT</a><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="crit kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-3400</a></td>
+        <tr data-cats="crit kev zero-day" data-vendor="paloalto" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-3400'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3400" target="_blank" rel="noopener">CVE-2024-3400</a></td>
           <td class="vendor">Palo Alto · PAN-OS</td>
           <td class="title">Command injection in GlobalProtect VPN gateway allowing root code execution without authentication</td>
           <td class="score"><span class="pill crit">10.0</span></td>
@@ -190,8 +215,8 @@
           <td class="added">Apr 12, 2024</td>
           <td class="refs"><a href="https://security.paloaltonetworks.com/CVE-2024-3400" target="_blank" rel="noopener">PSIRT</a><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3400" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="crit kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-21762</a></td>
+        <tr data-cats="crit kev zero-day" data-vendor="fortinet" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-21762'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21762" target="_blank" rel="noopener">CVE-2024-21762</a></td>
           <td class="vendor">Fortinet · FortiOS</td>
           <td class="title">Out-of-bounds write in SSL VPN allowing unauthenticated remote code execution</td>
           <td class="score"><span class="pill crit">9.6</span></td>
@@ -199,8 +224,8 @@
           <td class="added">Feb 09, 2024</td>
           <td class="refs"><a href="https://www.fortiguard.com/psirt/FG-IR-24-015" target="_blank" rel="noopener">PSIRT</a><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21762" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="crit kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-21887</a></td>
+        <tr data-cats="crit kev zero-day" data-vendor="ivanti" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-21887'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21887" target="_blank" rel="noopener">CVE-2024-21887</a></td>
           <td class="vendor">Ivanti · Connect Secure</td>
           <td class="title">Command injection in web component, chained with auth bypass (CVE-2023-46805) for unauthenticated RCE</td>
           <td class="score"><span class="pill crit">9.1</span></td>
@@ -208,8 +233,8 @@
           <td class="added">Jan 10, 2024</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21887" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="high kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-37085</a></td>
+        <tr data-cats="high kev zero-day" data-vendor="vmware" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-37085'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-37085" target="_blank" rel="noopener">CVE-2024-37085</a></td>
           <td class="vendor">VMware · ESXi</td>
           <td class="title">Authentication bypass via "ESX Admins" Active Directory group abuse — used by Akira/Black Basta affiliates</td>
           <td class="score"><span class="pill high">7.2</span></td>
@@ -217,8 +242,8 @@
           <td class="added">Jul 30, 2024</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-37085" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="high kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-30040</a></td>
+        <tr data-cats="high kev zero-day" data-vendor="microsoft" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-30040'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-30040" target="_blank" rel="noopener">CVE-2024-30040</a></td>
           <td class="vendor">Microsoft · Windows</td>
           <td class="title">MSHTML platform spoofing zero-day — bypasses OLE mitigations, chained by financially motivated operators</td>
           <td class="score"><span class="pill high">8.8</span></td>
@@ -226,8 +251,8 @@
           <td class="added">May 14, 2024</td>
           <td class="refs"><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-30040" target="_blank" rel="noopener">MSRC</a></td>
         </tr>
-        <tr data-cats="crit kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-1709</a></td>
+        <tr data-cats="crit kev zero-day" data-vendor="connectwise" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-1709'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-1709" target="_blank" rel="noopener">CVE-2024-1709</a></td>
           <td class="vendor">ConnectWise · ScreenConnect</td>
           <td class="title">Authentication bypass via path-traversal-style setup wizard re-entry — root-on-server in &lt; 5 min</td>
           <td class="score"><span class="pill crit">10.0</span></td>
@@ -235,8 +260,8 @@
           <td class="added">Feb 22, 2024</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-1709" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="crit kev" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-4577</a></td>
+        <tr data-cats="crit kev" data-vendor="php" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-4577'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-4577" target="_blank" rel="noopener">CVE-2024-4577</a></td>
           <td class="vendor">PHP Group · PHP-CGI</td>
           <td class="title">Argument injection on Windows-locale builds, allowing unauthenticated remote code execution</td>
           <td class="score"><span class="pill crit">9.8</span></td>
@@ -244,8 +269,8 @@
           <td class="added">Jun 12, 2024</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-4577" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="crit kev" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-6387</a></td>
+        <tr data-cats="crit kev" data-vendor="openssh" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-6387'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-6387" target="_blank" rel="noopener">CVE-2024-6387</a></td>
           <td class="vendor">OpenSSH</td>
           <td class="title">Signal handler race condition ("regreSSHion") — unauthenticated RCE on glibc-based Linux</td>
           <td class="score"><span class="pill crit">8.1</span></td>
@@ -253,8 +278,8 @@
           <td class="added">Jul 02, 2024</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-6387" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="high kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-7971</a></td>
+        <tr data-cats="high kev zero-day" data-vendor="google" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-7971'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-7971" target="_blank" rel="noopener">CVE-2024-7971</a></td>
           <td class="vendor">Google · Chromium V8</td>
           <td class="title">Type confusion in V8 JavaScript engine — exploited by DPRK actor (Citrine Sleet) for remote code execution</td>
           <td class="score"><span class="pill high">8.8</span></td>
@@ -262,8 +287,8 @@
           <td class="added">Aug 26, 2024</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-7971" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="high kev zero-day" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-38063</a></td>
+        <tr data-cats="high kev zero-day" data-vendor="microsoft" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-38063'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-38063" target="_blank" rel="noopener">CVE-2024-38063</a></td>
           <td class="vendor">Microsoft · Windows</td>
           <td class="title">Windows TCP/IP integer underflow via crafted IPv6 packet — remote unauthenticated kernel code execution</td>
           <td class="score"><span class="pill crit">9.8</span></td>
@@ -271,8 +296,8 @@
           <td class="added">Aug 13, 2024</td>
           <td class="refs"><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38063" target="_blank" rel="noopener">MSRC</a></td>
         </tr>
-        <tr data-cats="high kev" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-9379</a></td>
+        <tr data-cats="high kev" data-vendor="ivanti" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-9379'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-9379" target="_blank" rel="noopener">CVE-2024-9379</a></td>
           <td class="vendor">Ivanti · CSA</td>
           <td class="title">SQL injection in Cloud Service Appliance, chained with command injection for unauthenticated RCE</td>
           <td class="score"><span class="pill high">8.3</span></td>
@@ -280,8 +305,8 @@
           <td class="added">Oct 08, 2024</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-9379" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="crit kev" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2023-3519</a></td>
+        <tr data-cats="crit kev" data-vendor="citrix" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2023-3519'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-3519" target="_blank" rel="noopener">CVE-2023-3519</a></td>
           <td class="vendor">Citrix · NetScaler ADC</td>
           <td class="title">Stack-based buffer overflow allowing unauthenticated remote code execution — ongoing campaign exploitation</td>
           <td class="score"><span class="pill crit">9.8</span></td>
@@ -289,8 +314,8 @@
           <td class="added">Jul 19, 2023</td>
           <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-3519" target="_blank" rel="noopener">NVD</a></td>
         </tr>
-        <tr data-cats="high" onclick="location='cve.html'">
-          <td class="id"><a href="cve.html">CVE-2024-22024</a></td>
+        <tr data-cats="high" data-vendor="ivanti" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-22024'">
+          <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-22024" target="_blank" rel="noopener">CVE-2024-22024</a></td>
           <td class="vendor">Ivanti · Connect Secure</td>
           <td class="title">XML external entity (XXE) in SAML component allowing unauthenticated file disclosure</td>
           <td class="score"><span class="pill high">8.3</span></td>

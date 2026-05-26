@@ -16,7 +16,7 @@
   Cross-Origin-Resource-Policy: same-origin
 
   # Content Security Policy — allows Google Fonts
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'none'; font-src 'none' https://fonts.gstatic.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://services.nvd.nist.gov https://www.cisa.gov; img-src 'none'; font-src 'none' https://fonts.gstatic.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
 
   # Cache HTML for 1 hour (digest.json updates daily)
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
