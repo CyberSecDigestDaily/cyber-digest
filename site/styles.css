@@ -160,8 +160,24 @@ img,svg{display:block;max-width:100%}
   animation: scroll 60s linear infinite;
   white-space:nowrap;
 }
-.ticker-track span{ display:inline-flex;align-items:center;gap:10px }
+.ticker-track span,
+.ticker-track a.ticker-item{
+  display:inline-flex;align-items:center;gap:10px;
+}
+.ticker-track a.ticker-item{
+  color:var(--fg-muted);
+  text-decoration:none;
+  transition:color .18s var(--ease);
+  cursor:pointer;
+  padding:2px 0;
+  border-bottom:1px solid transparent;
+}
+.ticker-track a.ticker-item:hover{
+  color:var(--fg);
+  border-bottom-color:var(--hairline-2);
+}
 .ticker-track .sev{
+  flex:0 0 auto;
   font-size:10px;padding:2px 6px;border:1px solid var(--hairline-2);
   letter-spacing:.1em;text-transform:uppercase;
 }
@@ -172,6 +188,49 @@ img,svg{display:block;max-width:100%}
 @keyframes scroll{
   from{ transform:translateX(0) }
   to  { transform:translateX(-50%) }
+}
+
+/* ── Vendor filter bar ── */
+.ticker-vendor-bar{
+  border-bottom:1px solid var(--hairline);
+  background:var(--bg);
+  position:relative;z-index:2;
+}
+.ticker-vendor-bar .row{
+  display:flex;align-items:center;
+  gap:6px;
+  padding:9px 0;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  mask-image:linear-gradient(to right,#000 80%,transparent 100%);
+}
+.ticker-vendor-bar .row::-webkit-scrollbar{ display:none }
+.tvb-label{
+  flex:0 0 auto;
+  font-family:var(--font-mono);font-size:10px;
+  color:var(--fg-dim);letter-spacing:.14em;text-transform:uppercase;
+  padding-right:10px;margin-right:4px;
+  border-right:1px solid var(--hairline);
+  white-space:nowrap;
+}
+.ticker-vchip{
+  flex:0 0 auto;
+  font-family:var(--font-mono);font-size:10px;
+  padding:4px 10px;
+  border:1px solid var(--hairline-2);
+  color:var(--fg-muted);letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;
+  transition:color .15s var(--ease),border-color .15s var(--ease),background .15s var(--ease);
+  background:transparent;
+  white-space:nowrap;
+  border-radius:2px;
+}
+.ticker-vchip:hover{ color:var(--fg);border-color:var(--fg-muted) }
+.ticker-vchip.on{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:var(--accent-soft);
 }
 
 /* ─────────────────────────────────────────────────────────────

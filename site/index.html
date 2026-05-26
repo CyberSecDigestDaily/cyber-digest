@@ -59,23 +59,18 @@
 <div class="signal-bar" aria-label="Live threat signal">
   <div class="container row">
     <div class="label"><span class="pulse" aria-hidden="true"></span> Live signal</div>
-    <div class="ticker">
-      <div class="ticker-track">
-        <span><span class="sev crit">Critical</span> CVE-2024-4577 — PHP-CGI RCE actively exploited in the wild</span>
-        <span><span class="sev high">High</span> Palo Alto PAN-OS GlobalProtect command injection added to CISA KEV (CVE-2024-3400)</span>
-        <span><span class="sev mid">Medium</span> Akira ransomware affiliate observed targeting MSP supply chains</span>
-        <span><span class="sev low">Patched</span> Microsoft May rollup ships 14 fixes — 3 zero-day</span>
-        <span><span class="sev crit">Critical</span> Fortinet FortiManager — unauthenticated command injection (CVSS 9.8)</span>
-        <span><span class="sev high">High</span> Lazarus campaign targets EU defense contractors via signed installers</span>
-        <!-- duplicate set for seamless scroll -->
-        <span><span class="sev crit">Critical</span> CVE-2024-4577 — PHP-CGI RCE actively exploited in the wild</span>
-        <span><span class="sev high">High</span> Palo Alto PAN-OS GlobalProtect command injection added to CISA KEV (CVE-2024-3400)</span>
-        <span><span class="sev mid">Medium</span> Akira ransomware affiliate observed targeting MSP supply chains</span>
-        <span><span class="sev low">Patched</span> Microsoft May rollup ships 14 fixes — 3 zero-day</span>
-        <span><span class="sev crit">Critical</span> Fortinet FortiManager — unauthenticated command injection (CVSS 9.8)</span>
-        <span><span class="sev high">High</span> Lazarus campaign targets EU defense contractors via signed installers</span>
+    <div class="ticker" id="cd-ticker">
+      <div class="ticker-track" id="cd-ticker-track">
+        <!-- populated by app.js -->
       </div>
     </div>
+  </div>
+</div>
+<!-- Vendor filter bar -->
+<div class="ticker-vendor-bar">
+  <div class="container row" id="cd-vendor-filter">
+    <span class="tvb-label">Vendor</span>
+    <!-- chips populated by app.js -->
   </div>
 </div>
 
@@ -84,7 +79,7 @@
 <section class="hero" data-screen-label="02 Hero">
   <div class="container hero-grid">
     <div class="reveal">
-      <div class="section-tag">Issue 142 · Week of October 28, 2024</div>
+      <div class="section-tag" id="cd-issue-tag">Issue 156 · Week of May 26, 2025</div>
       <h1>Threat intelligence,<br/><em>without the noise.</em></h1>
       <p class="lede">
         Cyber Digest is a daily signal layer for security teams. We track adversaries, advisories
@@ -93,7 +88,7 @@
       </p>
       <div class="cta-row">
         <a href="briefing.html" class="btn btn-primary btn-lg">Read today's briefing <span class="arr">→</span></a>
-        <a href="#" class="btn btn-ghost btn-lg">Subscribe — free</a>
+        <a href="subscribe.html" class="btn btn-ghost btn-lg">Subscribe — free</a>
       </div>
     </div>
 
