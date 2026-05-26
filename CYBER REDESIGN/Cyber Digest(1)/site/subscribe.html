@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Subscribe — Cyber Digest</title>
+<meta name="description" content="Cyber Digest — independent threat intelligence and cybersecurity news, written for practitioners." />
+<meta property="og:title" content="__TITLE__" />
+<meta property="og:site_name" content="Cyber Digest" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>(()=>{try{const t=localStorage.getItem('cd-theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'}catch(e){}})();</script>
+<script defer src="app.js"></script>
+<style>
+.sub-mast{ padding:80px 0 32px;text-align:center }
+.sub-mast h1{
+  font-size:clamp(48px, 6.4vw, 92px);
+  letter-spacing:-.035em;line-height:1.0;
+  font-weight:500;margin:18px 0 0;text-wrap:balance;
+}
+.sub-mast h1 em{ font-family:var(--font-serif);font-style:italic;color:var(--fg-muted);font-weight:400 }
+.sub-mast .lede{
+  color:var(--fg-muted);max-width:64ch;margin:32px auto 0;font-size:19px;line-height:1.5;
+}
+
+.plans{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--hairline);border:1px solid var(--hairline);
+  margin:64px 0 32px;
+}
+.plan{ background:var(--bg);padding:36px;display:flex;flex-direction:column;gap:24px;position:relative }
+.plan.featured{ background:var(--bg-elev-1) }
+.plan.featured::before{
+  content:"Most popular";
+  position:absolute;top:0;right:24px;transform:translateY(-50%);
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 10px;background:var(--accent);color:var(--accent-ink);
+}
+.plan .name{
+  font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.plan h3{
+  font-size:36px;font-weight:500;letter-spacing:-.025em;margin:0;color:var(--fg);
+  display:flex;align-items:baseline;gap:8px;
+}
+.plan h3 .per{
+  font-size:14px;color:var(--fg-dim);font-family:var(--font-mono);font-weight:400;letter-spacing:0;
+}
+.plan .pitch{ color:var(--fg-muted);font-size:15px;line-height:1.55;margin:0;max-width:34ch }
+.plan ul{ list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;flex:1 }
+.plan li{
+  display:flex;gap:10px;align-items:flex-start;
+  font-size:14px;color:var(--fg);line-height:1.4;
+}
+.plan li svg{ flex:0 0 auto;margin-top:2px;color:var(--status-ok) }
+.plan li.dim{ color:var(--fg-dim) }
+.plan li.dim svg{ color:var(--fg-faint) }
+.plan .cta{ margin-top:auto }
+.plan .cta .btn{ width:100% }
+
+.compare{
+  border:1px solid var(--hairline);
+  margin-top:80px;overflow:hidden;
+}
+.compare h2{
+  font-size:28px;font-weight:500;letter-spacing:-.02em;margin:0;
+  padding:24px 28px;border-bottom:1px solid var(--hairline);
+}
+.compare table{ width:100%;border-collapse:collapse;font-size:14px }
+.compare th, .compare td{ text-align:left;padding:14px 20px;border-bottom:1px solid var(--hairline) }
+.compare thead th{
+  background:var(--bg-elev-1);
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+}
+.compare tbody td:first-child{ color:var(--fg-muted) }
+.compare .y{ color:var(--status-ok) }
+.compare .n{ color:var(--fg-faint) }
+
+.faqs{ padding:96px 0;border-top:1px solid var(--hairline);margin-top:80px }
+.faq-grid{ display:grid;grid-template-columns:280px 1fr;gap:64px }
+.faq-grid h2{ font-size:32px;letter-spacing:-.02em;line-height:1.1;font-weight:500;margin:0;position:sticky;top:96px }
+.faq-grid h2 em{ font-family:var(--font-serif);font-style:italic;color:var(--fg-muted);font-weight:400 }
+.faq-list{ display:flex;flex-direction:column }
+.faq{ border-bottom:1px solid var(--hairline);padding:20px 0 }
+.faq summary{
+  cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--fg);
+}
+.faq summary::-webkit-details-marker{ display:none }
+.faq summary::after{ content:"+";color:var(--fg-dim);font-family:var(--font-mono);font-size:22px;transition:transform .2s var(--ease) }
+.faq[open] summary::after{ content:"–" }
+.faq p{ color:var(--fg-muted);margin:14px 0 0;line-height:1.6;max-width:64ch }
+
+@media (max-width:1100px){
+  .plans{ grid-template-columns:1fr }
+  .faq-grid{ grid-template-columns:1fr;gap:32px }
+  .faq-grid h2{ position:static }
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 9 L14 3 L25 9" />
+          <path d="M3 14 L14 8 L25 14" opacity=".7"/>
+          <path d="M3 19 L14 13 L25 19" opacity=".4"/>
+          <circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand-name">Cyber Digest<span>/ Intelligence</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="wire.html">The Wire</a>
+      <a href="cves.html">Vulnerabilities</a>
+      <a href="briefing.html">Briefings</a>
+      <a href="actor.html">Actors</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>—:— UTC</span></div>
+      <button class="search" data-action="search" aria-label="Open search (Cmd+K)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search CVE, vendor, actor…
+        <span class="kbd">⌘ K</span>
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="menu-btn" onclick="cdMobileNav(true)" aria-label="Open menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+  <header class="sub-mast">
+    <div class="section-tag" style="justify-content:center">Subscribe · daily 06:30 UTC</div>
+    <h1><em>Free, weekdays, five minutes.</em></h1>
+    <p class="lede">A daily briefing that triages every advisory, exploit report and credible attribution so you don't have to. Paid tiers add the vulnerability tracker, IOC feeds and the operational briefings you've seen on this site.</p>
+  </header>
+
+  <div class="plans">
+    <div class="plan">
+      <div>
+        <div class="name">Free</div>
+        <h3>£0 <span class="per">forever</span></h3>
+      </div>
+      <p class="pitch">The daily wrap. Everything an individual practitioner needs to stay current.</p>
+      <ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Daily email at 06:30 UTC</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Full public archive</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Public CVE tracker (delayed 24h)</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> RSS &amp; JSON feeds</li>
+        <li class="dim"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 12l12 0"/></svg> Live KEV alert pings</li>
+        <li class="dim"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 12l12 0"/></svg> IOC &amp; STIX feed</li>
+      </ul>
+      <form class="cta" data-form="subscribe">
+        <div class="signup">
+          <div class="field" style="border-radius:var(--radius)">
+            <input type="email" placeholder="you@company.com" required />
+            <button class="btn btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="plan featured">
+      <div>
+        <div class="name">Practitioner</div>
+        <h3>£12 <span class="per">/ month · billed annually</span></h3>
+      </div>
+      <p class="pitch">For analysts, IR responders and security engineers who need the operational layer.</p>
+      <ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Everything in Free</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Real-time KEV alerts (push + email)</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Full vulnerability tracker (real-time)</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> IOC + STIX 2.1 feed</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Sigma rule library access</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Operational briefings (8–12/yr)</li>
+        
+      </ul>
+      <div class="cta">
+        <a href="#" onclick="cdToast('Stripe checkout would open here in production.');return false;" class="btn btn-primary">Start 30-day free trial <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div>
+        <div class="name">Team &amp; Enterprise</div>
+        <h3>From £8 <span class="per">/ seat / month</span></h3>
+      </div>
+      <p class="pitch">Volume licensing for SOC teams, MSSPs and national CERTs. Centralised billing and SSO.</p>
+      <ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Everything in Practitioner</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> SAML / OIDC SSO</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> SCIM provisioning</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> API access · 60 rpm</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Slack &amp; Teams integrations</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Quarterly editorial Q&amp;A</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Disclosed under <a href="legal.html#disclosures" style="color:inherit;border-bottom:1px solid var(--hairline-2)">legal.html#disclosures</a></li>
+      </ul>
+      <div class="cta">
+        <a href="mailto:sales@cyberdigest.io" class="btn btn-ghost">Talk to us <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em">Prices in GBP, exclusive of VAT. Annual billing saves 20%. Currency converted at checkout.</p>
+
+  <div class="compare">
+    <h2>Side-by-side <em style="font-family:var(--font-serif);font-style:italic;color:var(--fg-muted);font-weight:400">— for the spreadsheet readers.</em></h2>
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>Free</th><th>Practitioner</th><th>Enterprise</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Daily briefing email</td><td class="y">●</td><td class="y">●</td><td class="y">●</td></tr>
+        <tr><td>Public archive</td><td class="y">●</td><td class="y">●</td><td class="y">●</td></tr>
+        <tr><td>CVE tracker</td><td>24h delayed</td><td>Real-time</td><td>Real-time</td></tr>
+        <tr><td>KEV push alerts</td><td class="n">—</td><td class="y">●</td><td class="y">●</td></tr>
+        <tr><td>IOC / STIX 2.1 feed</td><td class="n">—</td><td class="y">●</td><td class="y">●</td></tr>
+        <tr><td>Sigma rule library</td><td class="n">—</td><td class="y">●</td><td class="y">●</td></tr>
+        <tr><td>Operational briefings</td><td class="n">—</td><td class="y">●</td><td class="y">●</td></tr>
+        <tr><td>API access</td><td class="n">—</td><td class="n">—</td><td>60 rpm</td></tr>
+        <tr><td>SAML / OIDC SSO</td><td class="n">—</td><td class="n">—</td><td class="y">●</td></tr>
+        <tr><td>SCIM provisioning</td><td class="n">—</td><td class="n">—</td><td class="y">●</td></tr>
+        <tr><td>Slack / Teams integrations</td><td class="n">—</td><td class="n">—</td><td class="y">●</td></tr>
+        <tr><td>Volume pricing &amp; PO billing</td><td class="n">—</td><td class="n">—</td><td class="y">●</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FAQs -->
+<section class="faqs">
+  <div class="container faq-grid">
+    <h2>Frequently <em>asked.</em></h2>
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>Why is the Free tier so generous?</summary>
+        <p>Because the daily wrap is the product, and an undefended internet is bad for our paying customers too. We monetise the operational layer — alerts, feeds, briefings — rather than the news itself.</p>
+      </details>
+      <details class="faq">
+        <summary>Do you accept advertising or sponsored placement?</summary>
+        <p>No. Our editorial policy at <a href="about.html#standards">about.html#standards</a> documents the firewall. We disclose every enterprise contract above £25,000/yr at <a href="legal.html#disclosures">legal.html#disclosures</a>.</p>
+      </details>
+      <details class="faq">
+        <summary>How is the IOC feed delivered?</summary>
+        <p>STIX 2.1 over TAXII 2.1, with JSON and CSV mirrors for teams that prefer them. Authentication via API key on Practitioner, mTLS on Enterprise. Documented at <a href="#" onclick="cdToast('Developer docs would live at docs.cyberdigest.io in production.');return false">docs.cyberdigest.io</a>.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I expense this?</summary>
+        <p>Yes. Invoices are emailed on day-of-charge with VAT-registered (number published at launch). PO billing and net-30 terms are available on the Enterprise plan.</p>
+      </details>
+      <details class="faq">
+        <summary>What's your data-retention &amp; privacy posture?</summary>
+        <p>We store the minimum required to deliver the product. Cookies are functional only — no third-party analytics ad-tech, no behavioural retargeting. Detail at <a href="legal.html#privacy">legal.html#privacy</a>.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I cancel anytime?</summary>
+        <p>Yes. Self-serve in the billing portal. Annual subscribers receive a pro-rata refund within 30 days of renewal.</p>
+      </details>
+      <details class="faq">
+        <summary>Do you offer student / non-profit pricing?</summary>
+        <p>Yes — free Practitioner access for accredited students and 70% off for registered non-profits. Mail <a href="mailto:billing@cyberdigest.io">billing@cyberdigest.io</a> with a letterheaded request.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 L14 3 L25 9"/><path d="M3 14 L14 8 L25 14" opacity=".7"/><path d="M3 19 L14 13 L25 19" opacity=".4"/><circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+          <span class="brand-name">Cyber Digest</span>
+        </a>
+        <p>Independent, reader-funded threat intelligence and cybersecurity news. Written by practitioners, for practitioners.</p>
+        
+      </div>
+      <div><h5>Sections</h5><ul><li><a href="wire.html">The Wire</a></li><li><a href="cves.html">Vulnerabilities</a></li><li><a href="briefing.html">Briefings</a></li><li><a href="actor.html">Threat Actors</a></li><li><a href="wire.html?cat=research">Research</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="cves.html">KEV tracker</a></li><li><a href="actor.html">Actor library</a></li><li><a href="briefing.html">Detection rules</a></li><li><a href="feed.xml">RSS feed</a></li><li><a href="feed.json">JSON feed</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="about.html#standards">Editorial standards</a></li><li><a href="about.html#masthead">Masthead</a></li><li><a href="tip.html">Tip line</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+      <div><h5>Legal</h5><ul><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#disclosures">Disclosures</a></li><li><a href="about.html#press">Press kit</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2024 Cyber Digest. Independent — reader-funded.</div>
+      <div>Build 142.04 · Last updated <span data-clock-short>—:— UTC</span></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
