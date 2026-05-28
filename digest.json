@@ -1,23 +1,472 @@
 {
-  "generated": "2026-05-25T12:21:49.394210+00:00",
+  "generated": "2026-05-28T12:21:04.740383+00:00",
   "urgency": {
     "level": "🔴 HIGH PRIORITY",
     "colour": "#D94F4F",
-    "message": "Today's digest needs your attention. There are <strong>0 CRITICAL</strong> and <strong>0 HIGH</strong> severity CVEs, plus <strong>10</strong> actively exploited vulnerabilities on the CISA Known Exploited list."
+    "message": "Today's digest needs your attention. There are <strong>0 CRITICAL</strong> and <strong>7 HIGH</strong> severity CVEs, plus <strong>5</strong> actively exploited vulnerabilities on the CISA Known Exploited list."
   },
   "stats": {
     "critical": 0,
-    "high": 0,
-    "medium": 0,
+    "high": 7,
+    "medium": 6,
     "low": 0,
     "exploited": 0,
-    "kev": 10,
-    "threats": 2,
-    "news": 11,
-    "blogs": 1
+    "kev": 5,
+    "threats": 10,
+    "news": 21,
+    "blogs": 5
   },
-  "cves": [],
+  "cves": [
+    {
+      "id": "CVE-2026-36044",
+      "score": 8.8,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "@pensar/apex <= 0.0.58 is vulnerable to OS command injection via the smart_enumerate tool. The createSmartEnumerateTool() function in src/core/agent/tools.ts constructs a shell command by concatenating unsanitized values from the extensions array and url parameter into a string passed to Node.js child_process.exec(). Because exec() spawns a shell, shell metacharacters in those values are interpreted by the host shell, resulting in arbitrary OS command execution with the privileges of the running process.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-3366",
+      "score": 7.5,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "vendor": "IBM",
+      "product": "IBM",
+      "type": "software",
+      "desc": "IBM InfoSphere Optim Test Data Fabrication 1.0.0, 1.0.0.1, 1.0.0.2, 1.0.2, 1.0.2.2, 1.0.2.3, 1.0.2.4, 1.0.2.5, 1.0.2.6, 1.0.2.7 could allow a remote attacker to traverse directories on the system. An attacker could send a specially crafted URL request containing \"dot dot\" sequences (/../) to view arbitrary files on the system",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-38426",
+      "score": 7.3,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Buffer Overflow vulnerability in arendst Tasmota v.15.3.0.3 and before allows a remote attacker to execute arbitrary code via the xdrv_10_scripter.ino, fetch_jpg(), jpg_task.boundary[40], strcpy() function.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-38427",
+      "score": 7.3,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "vendor": "Unknown",
+      "product": "Tasmota",
+      "type": "software",
+      "desc": "An issue in fetch_jpg() in xdrv_10_scripter.ino in Tasmota through 15.3.0.3 allows a remote attacker to cause heap buffer overflow. The Content-Length from a JPEG stream is stored in a uint16_t variable; values above 65535 wrap around, causing allocation of a smaller buffer than the data actually read.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2024-56462",
+      "score": 7.2,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "vendor": "IBM",
+      "product": "IBM",
+      "type": "software",
+      "desc": "IBM QRadar 7.5.0 through 7.5.0 UP15 Interim Fix 002 could allow a privileged user to upload a malicious backup archive that could be restored and used to gain access to the underlying operating system.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-1718",
+      "score": 7.1,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H",
+      "vendor": "IBM",
+      "product": "IBM",
+      "type": "software",
+      "desc": "IBM Db2 11.5.0 through 11.5.9, and 12.1.0 through 12.1.4 is vulnerable to a denial of service with a specially crafted query when autonomous transactions are enabled.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-1933",
+      "score": 7.1,
+      "severity": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
+      "vendor": "Red Hat",
+      "product": "Red Hat",
+      "type": "software",
+      "desc": "A flaw was found in Samba’s handling of NTFS-style reparse points on shares configured with read only = yes. Due to missing SMB-layer access checks, authenticated users with underlying filesystem write permissions may create or delete reparse point metadata through SMB operations even on read-only exports. This could allow modification of SMB-visible file behavior, including converting files into symbolic links or other reparse point types.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-2340",
+      "score": 6.5,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "vendor": "Red Hat",
+      "product": "Red Hat",
+      "type": "software",
+      "desc": "A flaw was found in Samba’s vfs_worm module. The module is intended to provide write-once, read-many (WORM) protections by preventing modification of files after a configurable grace period. Due to insufficient validation during rename operations, an authenticated user with write access to a share could overwrite a protected file by renaming a newly created file over the existing WORM-protected file.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-23679",
+      "score": 6.2,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "libusb before version 1.0.30 contains a NULL pointer dereference vulnerability that allows attackers to crash applications by supplying a malformed USB configuration descriptor where an interface claims bNumEndpoints greater than zero but is followed by a class-specific descriptor whose bLength exceeds the remaining buffer size, causing parse_interface() to return early without allocating the endpoint array. Attackers can exploit this flaw through libusb_get_active_config_descriptor or libusb_get_config_descriptor by providing crafted descriptors via virtualized USB passthrough, file-based descriptor parsing, or network sources, causing any application iterating over endpoints to dereference a NULL endpoint pointer and crash.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2024-40684",
+      "score": 5.9,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "vendor": "IBM",
+      "product": "IBM",
+      "type": "software",
+      "desc": "IBM Operations Analytics - Log Analysis 1.3.5.0, 1.3.5.1, 1.3.5.2, 1.3.5.3, 1.3.6.0, 1.3.6.1, 1.3.7.0, 1.3.7.1, 1.3.7.2, and 1.3.8.0, 1.3.8.1, 1.3.8.2, 1.3.8.3, 1.3.8.4 IBM SmartCloud Analytics - Log Analysis does not require that users should have strong passwords by default, which makes it easier for attackers to compromise user accounts.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-3633",
+      "score": 5.4,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "vendor": "IBM",
+      "product": "IBM",
+      "type": "software",
+      "desc": "IBM Cognos Analytics 11.2.0, 11.2.4, 12.0, and 12.1.0 and IBM Cognos Transformer 11.2.4, 12.0, and 12.1.0 are vulnerable to cross-site scripting (XSS). This vulnerability allows a remote attacker to inject arbitrary JavaScript code into the web user interface, which may alter the intended functionality and could lead to the disclosure of credentials within a trusted session.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2024-28765",
+      "score": 5.3,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "vendor": "IBM",
+      "product": "IBM",
+      "type": "software",
+      "desc": "IBM SDI 7.2.0.0 through 7.2.0.14 and IBM Security Directory Integrator 10.0.0.0 through 10.0.0.2 could allow a remote attacker to obtain sensitive information when a detailed technical error message is returned in the browser.  This information could be used in further attacks against the system.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-2607",
+      "score": 5.1,
+      "severity": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "vendor": "IBM",
+      "product": "IBM",
+      "type": "software",
+      "desc": "IBM MQ Operator SC2: v3.2.0 through 3.2.23CD:  v3.3.0, v3.4.0, v3.4.1, v3.5.0, v3.5.1 - v3.5.3, v3.6.0 - v3.6.4, v3.7.0 - v3.7.2, v3.8.0, v3.8.1, v3.9.0, v3.9.1LTS: v2.0.0 - 2.0.29 and IBM supplied MQ Advanced container images SC2: 9.4.0.6 through r1, 9.4.0.6-r2, 9.4.0.7-r1, 9.4.0.10-r1, 9.4.0.10-r2, 9.4.0.11-r1, 9.4.0.11-r2, 9.4.0.11-r3, 9.4.0.12-r1, 9.4.0.15-r1 - 9.4.0.15-r4, 9.4.0.16-r1, 9.4.0.16-r2, 9.4.0.17-r1, 9.4.0.17-r2, 9.4.0.20-r1CD: 9.4.1.0-r1, 9.4.1.0-r2, 9.4.1.1-r1, 9.4.2.0-r1, 9.4.2.0-r2, 9.4.2.1-r1, 9.4.2.1-r2, 9.4.3.0-r1, 9.4.3.0-r2, 9.4.3.1-r1 - 9.4.3.1-r3, 9.4.4.0-r1 - 9.4.4.0-r4, 9.4.4.1-r1, 9.4.5.0-r1, 9.4.5.0-r2LTS: 9.3.0.0-r1, 9.3.0.0-r2, 9.3.0.0-r3, 9.3.0.1-r1, 9.3.0.1-r2, 9.3.0.1-r3, 9.3.0.1-r4, 9.3.0.3-r1, 9.3.0.4-r1, 9.3.0.4-r2, 9.3.0.5-r1, 9.3.0.5-r2, 9.3.0.5-r3, 9.3.0.6-r1, 9.3.0.10-r1, 9.3.0.10-r2, 9.3.0.11-r1,9.3.0.11-r2, 9.3.0.15-r1, 9.3.0.16-r1, 9.3.0.16-r2, 9.3.0.17-r1, 9.3.0.17-r2, 9.3.0.17-r3, 9.3.0.20-r1, 9.3.0.20-r2, 9.3.0.21-r1, 9.3.0.21-r2, 9.3.0.21-r3, 9.3.0.25-r1, 9.4.0.0-r1, 9.4.0.0-r2, 9.4.0.0-r3, 9.4.0.5-r1, 9.4.0.5-r2 IBM MQ stores potentially sensitive information in log files that could be read by a local user.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71303",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\naccel/amdxdna: Fix race condition when checking rpm_on\n\nWhen autosuspend is triggered, driver rpm_on flag is set to indicate that\na suspend/resume is already in progress. However, when a userspace\napplication submits a command during this narrow window,\namdxdna_pm_resume_get() may incorrectly skip the resume operation because\nthe rpm_on flag is still set. This results in commands being submitted\nwhile the device has not actually resumed, causing unexpected behavior.\n\nThe set_dpm() is called by suspend/resume, it relied on rpm_on flag to\navoid calling into rpm suspend/resume recursivly. So to fix this, remove\nthe use of the rpm_on flag entirely. Instead, introduce aie2_pm_set_dpm()\nwhich explicitly resumes the device before invoking set_dpm(). With this\nchange, set_dpm() is called directly inside the suspend or resume execution\npath. Otherwise, aie2_pm_set_dpm() is called.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71304",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmack: /smack/doi: accept previously used values\n\nWriting to /smack/doi a value that has ever been\nwritten there in the past disables networking for\nnon-ambient labels.\nE.g.\n\n    # cat /smack/doi\n    3\n    # netlabelctl -p cipso list\n    Configured CIPSO mappings (1)\n     DOI value : 3\n       mapping type : PASS_THROUGH\n    # netlabelctl -p map list\n    Configured NetLabel domain mappings (3)\n     domain: \"_\" (IPv4)\n       protocol: UNLABELED\n     domain: DEFAULT (IPv4)\n       protocol: CIPSO, DOI = 3\n     domain: DEFAULT (IPv6)\n       protocol: UNLABELED\n\n    # cat /smack/ambient\n    _\n    # cat /proc/$$/attr/smack/current\n    _\n    # ping -c1 10.1.95.12\n    64 bytes from 10.1.95.12: icmp_seq=1 ttl=64 time=0.964 ms\n    # echo foo >/proc/$$/attr/smack/current\n    # ping -c1 10.1.95.12\n    64 bytes from 10.1.95.12: icmp_seq=1 ttl=64 time=0.956 ms\n    unknown option 86\n\n    # echo 4 >/smack/doi\n    # echo 3 >/smack/doi\n!>  [  214.050395] smk_cipso_doi:691 cipso add rc = -17\n    # echo 3 >/smack/doi\n!>  [  249.402261] smk_cipso_doi:678 remove rc = -2\n!>  [  249.402261] smk_cipso_doi:691 cipso add rc = -17\n\n    # ping -c1 10.1.95.12\n!!> ping: 10.1.95.12: Address family for hostname not supported\n\n    # echo _ >/proc/$$/attr/smack/current\n    # ping -c1 10.1.95.12\n    64 bytes from 10.1.95.12: icmp_seq=1 ttl=64 time=0.617 ms\n\nThis happens because Smack keeps decommissioned DOIs,\nfails to re-add them, and consequently refuses to add\nthe “default” domain map:\n\n    # netlabelctl -p cipso list\n    Configured CIPSO mappings (2)\n     DOI value : 3\n       mapping type : PASS_THROUGH\n     DOI value : 4\n       mapping type : PASS_THROUGH\n    # netlabelctl -p map list\n    Configured NetLabel domain mappings (2)\n     domain: \"_\" (IPv4)\n       protocol: UNLABELED\n!>  (no ipv4 map for default domain here)\n     domain: DEFAULT (IPv6)\n       protocol: UNLABELED\n\nFix by clearing decommissioned DOI definitions and\nserializing concurrent DOI updates with a new lock.\n\nAlso:\n- allow /smack/doi to live unconfigured, since\n  adding a map (netlbl_cfg_cipsov4_map_add) may fail.\n  CIPSO_V4_DOI_UNKNOWN(0) indicates the unconfigured DOI\n- add new DOI before removing the old default map,\n  so the old map remains if the add fails\n\n(2008-02-04, Casey Schaufler)",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71305",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/display/dp_mst: Add protection against 0 vcpi\n\nWhen releasing a timeslot there is a slight chance we may end up\nwith the wrong payload mask due to overflow if the delayed_destroy_work\nends up coming into play after a DP 2.1 monitor gets disconnected\nwhich causes vcpi to become 0 then we try to make the payload =\n~BIT(vcpi - 1) which is a negative shift. VCPI id should never\nreally be 0 hence skip changing the payload mask if VCPI is 0.\n\nOtherwise it leads to\n<7> [515.287237] xe 0000:03:00.0: [drm:drm_dp_mst_get_port_malloc\n[drm_display_helper]] port ffff888126ce9000 (3)\n<4> [515.287267] -----------[ cut here ]-----------\n<3> [515.287268] UBSAN: shift-out-of-bounds in\n../drivers/gpu/drm/display/drm_dp_mst_topology.c:4575:36\n<3> [515.287271] shift exponent -1 is negative\n<4> [515.287275] CPU: 7 UID: 0 PID: 3108 Comm: kworker/u64:33 Tainted: G\nS U 6.17.0-rc6-lgci-xe-xe-3795-3e79699fa1b216e92+ #1 PREEMPT(voluntary)\n<4> [515.287279] Tainted: [S]=CPU_OUT_OF_SPEC, [U]=USER\n<4> [515.287279] Hardware name: ASUS System Product Name/PRIME Z790-P\nWIFI, BIOS 1645 03/15/2024\n<4> [515.287281] Workqueue: drm_dp_mst_wq drm_dp_delayed_destroy_work\n[drm_display_helper]\n<4> [515.287303] Call Trace:\n<4> [515.287304] <TASK>\n<4> [515.287306] dump_stack_lvl+0xc1/0xf0\n<4> [515.287313] dump_stack+0x10/0x20\n<4> [515.287316] __ubsan_handle_shift_out_of_bounds+0x133/0x2e0\n<4> [515.287324] ? drm_atomic_get_private_obj_state+0x186/0x1d0\n<4> [515.287333] drm_dp_atomic_release_time_slots.cold+0x17/0x3d\n[drm_display_helper]\n<4> [515.287355] mst_connector_atomic_check+0x159/0x180 [xe]\n<4> [515.287546] drm_atomic_helper_check_modeset+0x4d9/0xfa0\n<4> [515.287550] ? __ww_mutex_lock.constprop.0+0x6f/0x1a60\n<4> [515.287562] intel_atomic_check+0x119/0x2b80 [xe]\n<4> [515.287740] ? find_held_lock+0x31/0x90\n<4> [515.287747] ? lock_release+0xce/0x2a0\n<4> [515.287754] drm_atomic_check_only+0x6a2/0xb40\n<4> [515.287758] ? drm_atomic_add_affected_connectors+0x12b/0x140\n<4> [515.287765] drm_atomic_commit+0x6e/0xf0\n<4> [515.287766] ? _pfx__drm_printfn_info+0x10/0x10\n<4> [515.287774] drm_client_modeset_commit_atomic+0x25c/0x2b0\n<4> [515.287794] drm_client_modeset_commit_locked+0x60/0x1b0\n<4> [515.287795] ? mutex_lock_nested+0x1b/0x30\n<4> [515.287801] drm_client_modeset_commit+0x26/0x50\n<4> [515.287804] __drm_fb_helper_restore_fbdev_mode_unlocked+0xdc/0x110\n<4> [515.287810] drm_fb_helper_hotplug_event+0x120/0x140\n<4> [515.287814] drm_fbdev_client_hotplug+0x28/0xd0\n<4> [515.287819] drm_client_hotplug+0x6c/0xf0\n<4> [515.287824] drm_client_dev_hotplug+0x9e/0xd0\n<4> [515.287829] drm_kms_helper_hotplug_event+0x1a/0x30\n<4> [515.287834] drm_dp_delayed_destroy_work+0x3df/0x410\n[drm_display_helper]\n<4> [515.287861] process_one_work+0x22b/0x6f0\n<4> [515.287874] worker_thread+0x1e8/0x3d0\n<4> [515.287879] ? __pfx_worker_thread+0x10/0x10\n<4> [515.287882] kthread+0x11c/0x250\n<4> [515.287886] ? __pfx_kthread+0x10/0x10\n<4> [515.287890] ret_from_fork+0x2d7/0x310\n<4> [515.287894] ? __pfx_kthread+0x10/0x10\n<4> [515.287897] ret_from_fork_asm+0x1a/0x30",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71306",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nima: Fix stack-out-of-bounds in is_bprm_creds_for_exec()\n\nKASAN reported a stack-out-of-bounds access in ima_appraise_measurement\nfrom is_bprm_creds_for_exec:\n\nBUG: KASAN: stack-out-of-bounds in ima_appraise_measurement+0x12dc/0x16a0\n Read of size 1 at addr ffffc9000160f940 by task sudo/550\nThe buggy address belongs to stack of task sudo/550\nand is located at offset 24 in frame:\n  ima_appraise_measurement+0x0/0x16a0\nThis frame has 2 objects:\n  [48, 56) 'file'\n  [80, 148) 'hash'\n\nThis is caused by using container_of on the *file pointer. This offset\ncalculation is what triggers the stack-out-of-bounds error.\n\nIn order to fix this, pass in a bprm_is_check boolean which can be set\ndepending on how process_measurement is called. If the caller has a\nlinux_binprm pointer and the function is BPRM_CHECK we can determine\nis_check and set it then. Otherwise set it to false.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71307",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/panthor: Fix NULL pointer dereference on panthor_fw_unplug\n\nThis patch removes the MCU halt and wait for halt procedures during\npanthor_fw_unplug() as the MCU can be in a variety of states or the FW\nmay not even be loaded/initialized at all, the latter of which can lead\nto a NULL pointer dereference.\n\nIt should be safe on unplug to just disable the MCU without waiting for\nit to halt as it may not be able to.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71308",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\naccel/amdxdna: Fix potential NULL pointer dereference in context cleanup\n\naie_destroy_context() is invoked during error handling in\naie2_create_context(). However, aie_destroy_context() assumes that the\ncontext's mailbox channel pointer is non-NULL. If mailbox channel\ncreation fails, the pointer remains NULL and calling aie_destroy_context()\ncan lead to a NULL pointer dereference.\n\nIn aie2_create_context(), replace aie_destroy_context() with a function\nwhich request firmware to remove the context created previously.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71309",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: fix deadlock in ni_read_folio_cmpr\n\nSyzbot reported a task hung in ni_readpage_cmpr (now ni_read_folio_cmpr).\nThis is caused by a lock inversion deadlock involving the inode mutex\n(ni_lock) and page locks.\n\nScenario:\n1. Task A enters ntfs_read_folio() for page X. It acquires ni_lock.\n2. Task A calls ni_read_folio_cmpr(), which attempts to lock all pages in\n   the compressed frame (including page Y).\n3. Concurrently, Task B (e.g., via readahead) has locked page Y and\n   calls ntfs_read_folio().\n4. Task B waits for ni_lock (held by A).\n5. Task A waits for page Y lock (held by B).\n   -> DEADLOCK.\n\nThe fix is to restructure locking: do not take ni_lock in ntfs_read_folio().\nInstead, acquire ni_lock inside ni_read_folio_cmpr() ONLY AFTER all required\npage locks for the frame have been successfully acquired. This restores the\ncorrect lock ordering (Page Lock -> ni_lock) consistent with VFS.\n\n[almaz.alexandrovich@paragon-software.com: ni_readpage_cmpr was renamed to ni_read_folio_cmpr]",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71311",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: Initialize new folios before use\n\nKMSAN reports an uninitialized value in longest_match_std(), invoked\nfrom ntfs_compress_write(). When new folios are allocated without being\nmarked uptodate and ni_read_frame() is skipped because the caller expects\nthe frame to be completely overwritten, some reserved folios may remain\nonly partially filled, leaving the rest memory uninitialized.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2025-71312",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: fix ntfs_mount_options leak in ntfs_fill_super()\n\nIn ntfs_fill_super(), the fc->fs_private pointer is set to NULL without\nfirst freeing the memory it points to. This causes the subsequent call to\nntfs_fs_free() to skip freeing the ntfs_mount_options structure.\n\nThis results in a kmemleak report:\n\n  unreferenced object 0xff1100015378b800 (size 32):\n    comm \"mount\", pid 582, jiffies 4294890685\n    hex dump (first 32 bytes):\n      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................\n      00 00 00 00 00 00 00 00 ed ff ed ff 00 04 00 00  ................\n    backtrace (crc ed541d8c):\n      __kmalloc_cache_noprof+0x424/0x5a0\n      __ntfs_init_fs_context+0x47/0x590\n      alloc_fs_context+0x5d8/0x960\n      __x64_sys_fsopen+0xb1/0x190\n      do_syscall_64+0x50/0x1f0\n      entry_SYSCALL_64_after_hwframe+0x76/0x7e\n\nThis issue can be reproduced using the following commands:\n        fallocate -l 100M test.file\n        mount test.file /tmp/test\n\nSince sbi->options is duplicated from fc->fs_private and does not\ndirectly use the memory allocated for fs_private, it is unnecessary to\nset fc->fs_private to NULL.\n\nAdditionally, this patch simplifies the code by utilizing the helper\nfunction put_mount_options() instead of open-coding the cleanup logic.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-35087",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Slican telephone exchanges allow administrative protocol authentication bypass. An attacker can bypass the need to enter login credentials by executing the appropriate command.\n\n\nThis issue was fixed in versions below:\n- NCP: version 1.24.0250\n- IPx series: version 6.61.0040\n- CCT-1668: version 6.56.0430\n- MAC-6400: version 6.56.0430\n- CXS-0424: version 6.30.0510\n\nThe issue STILL EXISTS in End-Of-Life telephone exchanges in versions 4.xx and below:\n- CCT-1668 (CCT1CPU)\n- MAC-6400\n- CXS-0424\nThese products were discontinued in 2011 and 2012 and and will not receive updates. These products require a hardware update in order to receive a software update. The vendor recommends that users of these devices contact the their service department directly to determine the options for upgrading.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-35089",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In Slican telephone exchanges secure key is generated in a predictable manner using properties of the telephone exchange which can be obtained without authentication. An unauthenticated attacker can deduce the secure key and obtain admin credentials.\n\nThis issue was fixed in versions below:\n- IPx series: version 6.61.0040\n- CCT-1668: version 6.56.0430\n- MAC-6400: version 6.56.0430\n- CXS-0424: version 6.30.0510\n\nThe issue STILL EXISTS in End-Of-Life telephone exchanges in versions 4.xx and below:\n- CCT-1668 (CCT1CPU)\n- MAC-6400\n- CXS-0424\nThese products were discontinued in 2011 and 2012 and and will not receive updates. These products require a hardware update in order to receive a software update. The vendor recommends that users of these devices contact the their service department directly to determine the options for upgrading.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-35090",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "In Slican telephone exchanges it is possible to manage the control panel remotely. An unauthenticated attacker can connect to the modem via a telephone with a specific caller ID. This allows them to bypass admin authentication and gain full access to the service protocol and configuration panel. This vulnerability is independent of the telephone exchanges configuration. If remote access is disabled, calling with this caller ID will temporarily enable it.\n\nThis issue was fixed in versions below:\n- IPL-256: version 6.61.0040\n- IPM-032: version 6.61.0040\n- CCT-1668: version 6.56.0430\n- MAC-6400: version 6.56.0430\n- CXS-0424: version 6.30.0510\n\nThe issue STILL EXISTS in End-Of-Life telephone exchanges in versions 4.xx and below:\n- CCT-1668 (CCT1CPU)\n- MAC-6400\n- CXS-0424\nThese products were discontinued in 2011 and 2012 and and will not receive updates. These products require a hardware update in order to receive a software update. The vendor recommends that users of these devices contact the their service department directly to determine the options for upgrading.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-36045",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "picoclaw <=v0.1.2 and earlier is vulnerable to OS command injection via the ExecTool component (pkg/tools/shell.go). The guardCommand() function attempts to restrict shell command execution using a denylist of 8 regular expressions, but the denylist is incomplete.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-36538",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Netis AC1200 Router NC21 V4.0.1.4296 contains a hard-coded root credential stored in /etc/shadow.sample. The password for the root account is set to the trivially weak value root, allowing an attacker with access to the device to authenticate as root and gain full control of the underlying operating system.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-36539",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Netis AC1200 Router NC21 V4.0.1.4296 exposes a CGI endpoint /cgi-bin/skk_get.cgi that returns the entire router configuration as a JSON response with no authentication required. Any attacker on the LAN can send a single HTTP GET request and instantly retrieve administrator credentials, WiFi passwords, PPPoE credentials, DDNS credentials, and a full map of all connected devices.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-36540",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Netis AC1200 Router NC21 V4.0.1.4296 is vulnerable to unauthenticated command injection via the /cgi-bin/skk_set.cgi endpoint. The password and new_pwd_confirm POST parameters are passed directly to the underlying OS shell without sanitization. An attacker can inject arbitrary shell commands by wrapping them in backticks (`) and encoding them in base64. Because the endpoint requires no authentication, any device on the LAN can achieve full Remote Code Execution on the router's operating system with a single HTTP POST request.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    },
+    {
+      "id": "CVE-2026-38422",
+      "score": 0.0,
+      "severity": "NONE",
+      "vector": "",
+      "vendor": "Unknown",
+      "product": "Unknown",
+      "type": "software",
+      "desc": "Buffer Overflow vulnerability in arendst Tasmota v.15.3.0.3 and before allows a remote attacker to execute arbitrary code via the tasmota/tasmota_xdrv_driver/xdrv_10_scripter.ino, fetch_jpg() function.",
+      "exploited": false,
+      "cisaDue": "",
+      "cisaName": ""
+    }
+  ],
   "kev": [
+    {
+      "cveID": "CVE-2026-48027",
+      "vendorProject": "Nx",
+      "product": "Nx Console",
+      "vulnerabilityName": "Nx Console Embedded Malicious Code Vulnerability",
+      "dateAdded": "2026-05-27",
+      "shortDescription": "Nx Console contains an embedded malicious code vulnerability that allowed a malicious version of Nx Console to be published. The compromised extension fetched an obfuscated payload that could harvested credentials from multiple sources on disk and in memory.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w ; https://nvd.nist.gov/vuln/detail/CVE-2026-48027",
+      "cwes": [
+        "CWE-506"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-45321",
+      "vendorProject": "TanStack",
+      "product": "TanStack",
+      "vulnerabilityName": "TanStack Unspecified Vulnerability",
+      "dateAdded": "2026-05-27",
+      "shortDescription": "TanStack contains an unspecified vulnerability that allowed malicious versions of the product to be published to the npm registry to publish credential-stealing malware under a trusted identity.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx ; https://nvd.nist.gov/vuln/detail/CVE-2026-45321",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2026-8398",
+      "vendorProject": "Daemon",
+      "product": "Daemon Tools Lite",
+      "vulnerabilityName": "Daemon Tools Lite Embedded Malicious Code Vulnerability",
+      "dateAdded": "2026-05-27",
+      "shortDescription": "Daemon Tools contains an unspecified vulnerability that has a high impact on confidentiality, integrity, and availability.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-30",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://blog.daemon-tools.cc/post/security-incident ; https://nvd.nist.gov/vuln/detail/CVE-2026-8398",
+      "cwes": [
+        "CWE-506"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-48172",
+      "vendorProject": "LiteSpeed",
+      "product": "cPanel Plugin",
+      "vulnerabilityName": "LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
+      "dateAdded": "2026-05-26",
+      "shortDescription": "LiteSpeed cPanel Plugin contains privilege escalation vulnerability that is exposed via the user-end cPanel plugin, which can be abused by any cPanel user account to execute arbitrary scripts with root privileges.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-29",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/ ; https://nvd.nist.gov/vuln/detail/CVE-2026-48172",
+      "cwes": [
+        "CWE-266"
+      ]
+    },
     {
       "cveID": "CVE-2026-9082",
       "vendorProject": "Drupal",
@@ -32,227 +481,228 @@
       "cwes": [
         "CWE-89"
       ]
-    },
-    {
-      "cveID": "CVE-2025-34291",
-      "vendorProject": "Langflow",
-      "product": "Langflow",
-      "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
-      "dateAdded": "2026-05-21",
-      "shortDescription": "Langflow contains an origin validation error vulnerability in which an overly permissive CORS configuration combined with a refresh token cookie configured as SameSite=None allows a malicious webpage to perform cross-origin requests that include credentials and successfully call the refresh endpoint. This could allow the attacker to execute arbitrary code and achieve full system compromise via obtained tokens that permit access to authenticated endpoints.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-04",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/langflow-ai/langflow ; https://github.com/langflow-ai/langflow/releases/tag/v1.9.3; https://github.com/langflow-ai/langflow/issues/11465#event-25774545848 ; https://nvd.nist.gov/vuln/detail/CVE-2025-34291",
-      "cwes": [
-        "CWE-346"
-      ]
-    },
-    {
-      "cveID": "CVE-2026-34926",
-      "vendorProject": "Trend Micro",
-      "product": "Apex One",
-      "vulnerabilityName": "Trend Micro Apex One (On-Premise) Directory Traversal Vulnerability",
-      "dateAdded": "2026-05-21",
-      "shortDescription": "Trend Micro Apex One (on-premise) contains a directory traversal vulnerability that could allow a pre-authenticated local attacker to modify a key table on the server to inject malicious code to deploy to agents on affected installations.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-04",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://success.trendmicro.com/en-US/solution/KA-0023430 ; https://nvd.nist.gov/vuln/detail/CVE-2026-34926",
-      "cwes": [
-        "CWE-23"
-      ]
-    },
-    {
-      "cveID": "CVE-2008-4250",
-      "vendorProject": "Microsoft",
-      "product": "Windows",
-      "vulnerabilityName": "Microsoft Windows Buffer Overflow Vulnerability",
-      "dateAdded": "2026-05-20",
-      "shortDescription": "Microsoft Windows contains a buffer overflow vulnerability in the Windows Server Service that allows remote attackers to execute arbitrary code via a crafted RPC request that triggers an overflow during path canonicalization.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-03",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067 ; https://nvd.nist.gov/vuln/detail/CVE-2008-4250",
-      "cwes": [
-        "CWE-94"
-      ]
-    },
-    {
-      "cveID": "CVE-2009-1537",
-      "vendorProject": "Microsoft",
-      "product": "DirectX",
-      "vulnerabilityName": "Microsoft DirectX NULL Byte Overwrite Vulnerability",
-      "dateAdded": "2026-05-20",
-      "shortDescription": "Microsoft DirectX contains a NULL byte overwrite vulnerability in the QuickTime Movie Parser Filter in quartz.dll in DirectShow which could allow remote attackers to execute arbitrary code via a crafted QuickTime media file.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-03",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028 ; https://nvd.nist.gov/vuln/detail/CVE-2009-1537",
-      "cwes": []
-    },
-    {
-      "cveID": "CVE-2009-3459",
-      "vendorProject": "Adobe",
-      "product": "Acrobat and Reader",
-      "vulnerabilityName": "Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability",
-      "dateAdded": "2026-05-20",
-      "shortDescription": "Adobe Acrobat and Reader contain a heap-based buffer overflow vulnerability which could allow remote attackers to execute arbitrary code via a crafted PDF file that triggers memory corruption.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-03",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://www.cisa.gov/news-events/alerts/2009/10/13/adobe-reader-and-acrobat-vulnerabilities ; https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html#:~:text=CVE%2D2009%2D3459).-,NOTE%3A,-There%20are%20reports ; https://nvd.nist.gov/vuln/detail/CVE-2009-3459",
-      "cwes": [
-        "CWE-119"
-      ]
-    },
-    {
-      "cveID": "CVE-2010-0249",
-      "vendorProject": "Microsoft",
-      "product": "Internet Explorer",
-      "vulnerabilityName": "Microsoft Internet Explorer Use-After-Free Vulnerability",
-      "dateAdded": "2026-05-20",
-      "shortDescription": "Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code by accessing a pointer associated with a deleted object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-03",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://learn.microsoft.com/en-us/security-updates/SecurityAdvisories/2010/979352 ; https://nvd.nist.gov/vuln/detail/CVE-2010-0249",
-      "cwes": [
-        "CWE-416"
-      ]
-    },
-    {
-      "cveID": "CVE-2010-0806",
-      "vendorProject": "Microsoft",
-      "product": "Internet Explorer",
-      "vulnerabilityName": "Microsoft Internet Explorer Use-After-Free Vulnerability",
-      "dateAdded": "2026-05-20",
-      "shortDescription": "Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code via vectors involving access to an invalid pointer after the deletion of an object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-03",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://learn.microsoft.com/en-us/security-updates/securityadvisories/2010/981374 ; https://nvd.nist.gov/vuln/detail/CVE-2010-0806",
-      "cwes": [
-        "CWE-399"
-      ]
-    },
-    {
-      "cveID": "CVE-2026-41091",
-      "vendorProject": "Microsoft",
-      "product": "Defender",
-      "vulnerabilityName": "Microsoft Defender Link Following Vulnerability",
-      "dateAdded": "2026-05-20",
-      "shortDescription": "Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-03",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-41091 ; https://nvd.nist.gov/vuln/detail/CVE-2026-41091",
-      "cwes": [
-        "CWE-59"
-      ]
-    },
-    {
-      "cveID": "CVE-2026-45498",
-      "vendorProject": "Microsoft",
-      "product": "Defender",
-      "vulnerabilityName": "Microsoft Defender Denial of Service Vulnerability",
-      "dateAdded": "2026-05-20",
-      "shortDescription": "Microsoft Defender contains an unspecified vulnerability that allows for denial of service.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-03",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-45498 ; https://nvd.nist.gov/vuln/detail/CVE-2026-45498",
-      "cwes": []
     }
   ],
   "threats": [
     {
       "source": "Microsoft Security",
-      "title": "CVE-2026-43029 mptcp: fix soft lockup in mptcp_recvmsg()",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43029",
+      "title": "CVE-2026-42502 Invoking  incorrect handling of HTML elements in foreign content in golang.org/x/net/html",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42502",
       "summary": "Information published."
     },
     {
       "source": "Microsoft Security",
-      "title": "CVE-2026-43414 scsi: qla2xxx: Completely fix fcport double free",
-      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43414",
+      "title": "CVE-2026-27136 Invoking  duplicate attributes can cause XSS in golang.org/x/net/html",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-27136",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-25681 Invoking  incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-25681",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-46597 Invoking  byte arithmetic causes underflow and panic in golang.org/x/crypto/ssh",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-46597",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-39827 Invoking  memory leak when rejecting channels can lead to DoS in golang.org/x/crypto/ssh",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39827",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-39835 Invoking  server panic during CheckHostKey/Authenticate in golang.org/x/crypto/ssh",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39835",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-39828 Invoking  bypass of certificate restrictions in golang.org/x/crypto/ssh",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39828",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-46598 Invoking  pathological inputs can lead to client panic in golang.org/x/crypto/ssh/agent",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-46598",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-9150 Libsolv: stack-based buffer overflow in libsolv's debian metadata parser when handling sha384/sha512 checksums",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-9150",
+      "summary": "Information published."
+    },
+    {
+      "source": "Microsoft Security",
+      "title": "CVE-2026-9149 Libsolv: heap buffer overflow in libsolv repo_add_solv via negative maxsize from crafted .solv file",
+      "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-9149",
       "summary": "Information published."
     }
   ],
   "news": [
     {
       "source": "Bleeping Computer",
-      "title": "Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign",
-      "link": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign/",
-      "summary": "A large-scale campaign is exploiting a critical SQL injection vulnerability (CVE-2026-26980) in Ghost CMS to inject malicious JavaScript code that triggers ClickFix attack flows. [...]"
+      "title": "Carnival Cruise confirms data breach affecting nearly 6 million people",
+      "link": "https://www.bleepingcomputer.com/news/security/carnival-cruise-confirms-data-breach-affecting-nearly-6-million-people/",
+      "summary": "Carnival Corporation, the world's largest cruise line operator, has confirmed a data breach affecting nearly 6 million people claimed by the ShinyHunters extortion gang in April 2026. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "Sextortionist sentenced to 33 years for targeting 145 children",
+      "link": "https://www.bleepingcomputer.com/news/security/sextortionist-sentenced-to-33-years-for-targeting-145-children/",
+      "summary": "A Canadian man was sentenced to 33 years in prison after pleading guilty to targeting more than 145 children across the United States, some as young as 6 years old, in an eight-year-long sextortion scheme. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "GPU mining malware spreads via SEO poisoning, AI chatbots",
+      "link": "https://www.bleepingcomputer.com/news/security/gpu-mining-malware-spreads-via-seo-poisoning-ai-chatbots/",
+      "summary": "Threat actors are targeting systems with high-performance computers in an ongoing cryptojacking campaign spread through a coordinated SEO poisoning operation that also manipulated AI chatbot recommendations. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "Can you enforce strong Active Directory password rules without frustrating users?",
+      "link": "https://www.bleepingcomputer.com/news/security/can-you-enforce-strong-active-directory-password-rules-without-frustrating-users/",
+      "summary": "Strong Active Directory passwords don't have to come at the expense of usability. Specops Software explains how passphrases, breached password protection, and self-service resets can improve security without frustrating users. [...]"
+    },
+    {
+      "source": "Bleeping Computer",
+      "title": "Glassworm botnet disrupted after resilient C2 infrastructure takedown",
+      "link": "https://www.bleepingcomputer.com/news/security/glassworm-botnet-disrupted-after-resilient-c2-infrastructure-takedown/",
+      "summary": "The Glassworm botnet targeting developers in software supply-chain attacks has been disrupted after researchers took down its resilient command-and-control infrastructure relying on Solana blockchain transactions and the BitTorrent DHT network. [...]"
     },
     {
       "source": "The Hacker News",
-      "title": "Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks",
-      "link": "https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html",
-      "summary": "Threat actors are exploiting a recently disclosed critical security flaw in Ghost CMS to inject malicious JavaScript code with an aim to fuel ClickFix attacks.\n\nAccording to QiAnXin XLab, the activity involves the exploitation of CVE-2026-26980 (CVSS score: 9.4), an SQL injection vulnerability in Ghost's Content API that could allow an unauthenticated attacker to read arbitrary data from the"
+      "title": "New AI Usage Report: Enterprise AI Risk Is Heavily Concentrated Among a Small Group of AI \"Power users\"",
+      "link": "https://thehackernews.com/2026/05/new-ai-usage-report-enterprise-ai-risk.html",
+      "summary": "State of AI Usage Report 2026 (full report here) by LayerX Security reveals the extent of the enterprise AI visibility gap and why most organizations still don't understand where their AI exposure is actually coming from. The research shows that enterprise AI risk is not distributed evenly across users or platforms. Instead, it is heavily concentrated among a small group of AI power users and a"
     },
     {
       "source": "The Hacker News",
-      "title": "The Alert Firehose Finally Meets Its Match",
-      "link": "https://thehackernews.com/2026/05/the-alert-firehose-finally-meets-its.html",
-      "summary": "Ask a cybersecurity pro about Network Detection and Response (NDR) and you might still hear \"Noisy,\" \"Too much data.\" But ask the teams running NDR that includes agentic AI capabilities and you'll hear they're actually using it to catch threats earlier, triage faster, and chase fewer false positives. The old complaint lingers in part because reputations are sticky, and because NDR has evolved"
+      "title": "JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware",
+      "link": "https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html",
+      "summary": "A new campaign orchestrated by a previously undocumented threat actor has targeted cryptocurrency organizations with an aim to facilitate digital asset theft using recruitment-themed social engineering and bespoke macOS malware.\n\n\"These campaigns leveraged sophisticated social engineering techniques, custom macOS malware, and deep targeting of CI/CD infrastructure,\" Wiz researchers Shira Ayal,"
     },
     {
       "source": "The Hacker News",
-      "title": "Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms",
-      "link": "https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html",
-      "summary": "Cybersecurity researchers have shed light on a cross-platform malware called RemotePE that has been put to use by the North Korea-linked Lazarus Group in attacks targeting financial and cryptocurrency organizations.\n\nRemotePE, per NCC Group subsidiary Fox-IT, is part of a multi-stage attack chain that involves two loaders tracked as DPAPILoader and RemotePELoader.\n\n\"DPAPILoader decrypts and"
+      "title": "Grandoreiro Malware and BTMOB RAT Campaigns Target Windows and Android Users",
+      "link": "https://thehackernews.com/2026/05/grandoreiro-malware-and-btmob-rat.html",
+      "summary": "Latin America and Europe become the target of two banking trojan campaigns that are designed to infect Windows and Android devices with Grandoreiro and BTMOB malware, respectively.\n\nThat's according to new findings from WatchGuard and ESET, which have observed the two malware families being used to single out companies in Spain, Portugal, and Mexico, as well as mobile users in Brazil.\n\nThe"
     },
     {
       "source": "The Hacker News",
-      "title": "TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO",
-      "link": "https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html",
-      "summary": "A new coordinated cross-ecosystem software supply chain attack campaign has targeted npm, PyPI, and Crates.io to distribute credential-stealing malware.\n\nThe campaign, codenamed TrapDoor, spans more than 34 malicious packages across over 384 versions. The earliest activity was recorded on May 22, 2026, at 8:20 p.m. UTC, with new packages published to the ecosystems in waves from a cluster of"
+      "title": "Malicious npm Package Stole Files From Claude AI User Directory via GitHub",
+      "link": "https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html",
+      "summary": "Cybersecurity researchers have discovered a new malicious package on the npm registry that comes with information stealing capabilities.\n\nAccording to OX Security, the package, named \"mouse5212-super-formatter,\" is designed to upload files from \"/mnt/user-data,\" a dedicated directory used by Anthropic's Claude artificial intelligence (AI) tool to handle uploads and outputs in the background. The"
+    },
+    {
+      "source": "The Hacker News",
+      "title": "5 Steps to Managing Shadow AI Tools Without Slowing Down Employees",
+      "link": "https://thehackernews.com/2026/05/5-steps-to-managing-shadow-ai-tools.html",
+      "summary": "When an employee installs an AI writing assistant, connects a coding copilot to their IDE, or starts summarizing meetings with a new browser tool, they are doing exactly what a productive employee should do: finding faster ways to work.\n\nAcross most organizations today, employees are running three to five AI tools on any given day. Most were never reviewed by IT. A significant portion connects"
+    },
+    {
+      "source": "Dark Reading",
+      "title": "Nordic CISOs Handle Rising Cyber Threats Remarkably Well",
+      "link": "https://www.darkreading.com/cybersecurity-analytics/nordic-cisos-rising-cyber-threats",
+      "summary": "Artificial intelligence notwithstanding, the vast majority of CISOs in northern Europe say they're facing no more serious cyberattacks than they did two years ago."
+    },
+    {
+      "source": "Dark Reading",
+      "title": "Ransomware Actors Show Up In Person to Steal Law Firm Data",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/ransomware-actors-steal-law-firm-data",
+      "summary": "The FBI warned that the extortion gang Silent Ransom Group is targeting law firms and socially engineering its way into servers and databases."
+    },
+    {
+      "source": "Dark Reading",
+      "title": "Latin American Cybercriminals Hoover Up Government Data",
+      "link": "https://www.darkreading.com/cyberattacks-data-breaches/latin-american-cybercriminals-government-data",
+      "summary": "A  purported leak exposing 5.8 million records of Uruguayan citizens is the latest incident where cybercriminals targeted government agencies to monetize citizen data."
+    },
+    {
+      "source": "Dark Reading",
+      "title": "AI-Assisted Exploit Development Outpaces Scanner Detection",
+      "link": "https://www.darkreading.com/threat-intelligence/ai-assisted-exploit-development-scanner-detection",
+      "summary": "Attackers are using AI to dramatically reduce the time they need to develop a working exploit for a CVE, according to new research."
     },
     {
       "source": "SecurityWeek",
-      "title": "Oncology Institute Discloses Data Breach",
-      "link": "https://www.securityweek.com/oncology-institute-discloses-third-party-data-breach/",
-      "summary": "The affected third-party vendor has not been named, but one possible candidate is TriZetto.\nThe post Oncology Institute Discloses Data Breach appeared first on SecurityWeek."
+      "title": "New Edamame Platform Aims to Catch AI Coding Agents Going Off the Rails",
+      "link": "https://www.securityweek.com/new-edamame-platform-aims-to-catch-ai-coding-agents-going-off-the-rails/",
+      "summary": "France-based startup Edamame says its runtime verification platform uses host telemetry and AI analysis to detect coding-agent “intent drift,” secret theft and supply-chain attacks in real time.\nThe post New Edamame Platform Aims to Catch AI Coding Agents Going Off the Rails appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "266,000 Affected by Data Breach at Radiology Associates of Richmond",
-      "link": "https://www.securityweek.com/266000-affected-by-data-breach-at-radiology-associates-of-richmond/",
-      "summary": "Threat actors stole files containing names and protected health information from the healthcare organization’s systems.\nThe post 266,000 Affected by Data Breach at Radiology Associates of Richmond appeared first on SecurityWeek."
+      "title": "Gitea Vulnerability Exposed 30,000 Deployments to Attacks",
+      "link": "https://www.securityweek.com/gitea-vulnerability-exposed-30000-deployments-to-attacks/",
+      "summary": "The security flaw allowed attackers to pull private container images, exposing source code, credentials, and infrastructure.\nThe post Gitea Vulnerability Exposed 30,000 Deployments to Attacks appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Anthropic: Mythos Detected 23,000 Potential Vulnerabilities Across 1,000 OSS Projects",
-      "link": "https://www.securityweek.com/anthropic-mythos-detected-23000-potential-vulnerabilities-across-1000-oss-projects/",
-      "summary": "Many findings have been confirmed to be critical or high-severity vulnerabilities and the number will continue to increase. \nThe post Anthropic: Mythos Detected 23,000 Potential Vulnerabilities Across 1,000 OSS Projects appeared first on SecurityWeek."
+      "title": "Raising the Cybersecurity Stakes: Ante up for the Agentic Era",
+      "link": "https://www.securityweek.com/raising-the-cybersecurity-stakes-ante-up-for-the-agentic-era/",
+      "summary": "CISOs are now facing machine-speed attacks and asking, “How do I agent?” The industry must provide remediation at scale.\nThe post Raising the Cybersecurity Stakes: Ante up for the Agentic Era appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Laravel-Lang Packages Poisoned for Malware Delivery",
-      "link": "https://www.securityweek.com/laravel-lang-packages-poisoned-for-malware-delivery/",
-      "summary": "Published within a 15-minute window, the malicious tags introduced backdoors to exfiltrate CI secrets.\nThe post Laravel-Lang Packages Poisoned for Malware Delivery appeared first on SecurityWeek."
+      "title": "Google Unveils AI Threat Defense Platform to Fight AI-Powered Cyberattacks",
+      "link": "https://www.securityweek.com/google-unveils-ai-threat-defense-platform-to-fight-ai-powered-cyberattacks/",
+      "summary": "New AI Threat Defense platform combines capabilities from Mandiant, Wiz and Gemini to help customers fight AI with AI.\nThe post Google Unveils AI Threat Defense Platform to Fight AI-Powered Cyberattacks appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "DocketWise Data Breach Impacts 143,000",
-      "link": "https://www.securityweek.com/docketwise-data-breach-impacts-143000/",
-      "summary": "Hackers accessed names, addresses, Social Security numbers, financial information, and medical data from third-party partner repositories.\nThe post DocketWise Data Breach Impacts 143,000 appeared first on SecurityWeek."
+      "title": "UK Cyberspying Chief Calls AI ‘an Unstoppable Force’ and Warns About Russia",
+      "link": "https://www.securityweek.com/uk-cyberspying-chief-calls-ai-an-unstoppable-force-and-warns-about-russia/",
+      "summary": "The speech is the latest in a string of warnings from intelligence experts that Russia is stepping up hostile activity in a “gray zone” that falls just below the threshold of war.\nThe post UK Cyberspying Chief Calls AI ‘an Unstoppable Force’ and Warns About Russia appeared first on SecurityWeek."
     },
     {
       "source": "SecurityWeek",
-      "title": "Over 5,500 GitHub Repositories Infected in ‘Megalodon’ Supply Chain Attack",
-      "link": "https://www.securityweek.com/over-5500-github-repositories-infected-in-megalodon-supply-chain-attack/",
-      "summary": "Fake automated commits injected GitHub Actions workflows containing payloads to steal credentials, CI secrets, keys, and tokens.\nThe post Over 5,500 GitHub Repositories Infected in &#8216;Megalodon&#8217; Supply Chain Attack appeared first on SecurityWeek."
+      "title": "Vulnerability in Popular Conference Software Granted Attackers a 100% Talk Acceptance Rate",
+      "link": "https://www.securityweek.com/vulnerability-in-popular-conference-software-granted-attackers-a-100-talk-acceptance-rate/",
+      "summary": "Novee researchers discovered an account takeover vulnerability in the open source CFP management tool Pretalx.\nThe post Vulnerability in Popular Conference Software Granted Attackers a 100% Talk Acceptance Rate appeared first on SecurityWeek."
+    },
+    {
+      "source": "SecurityWeek",
+      "title": "SecurityWeek to Host AI Risk Summit August 11-12 at the Ritz-Carlton, Half Moon Bay",
+      "link": "https://www.securityweek.com/securityweek-to-host-ai-risk-summit-august-11-12-at-the-ritz-carlton-half-moon-bay/",
+      "summary": "Now in its third year, the AI Risk Summit is the leading conference that brings together CISOs, security leaders, AI researchers, developers, policymakers, and enterprise risk professionals.\nThe post SecurityWeek to Host AI Risk Summit August 11-12 at the Ritz-Carlton, Half Moon Bay appeared first on SecurityWeek."
     }
   ],
   "blogs": [
     {
       "source": "SANS ISC Diary",
-      "title": "Wireshark 4.6.6 Released, (Sun, May 24th)",
-      "link": "https://isc.sans.edu/diary/rss/33010",
-      "summary": "Wireshark release 4.6.6 fixes 1 vulnerability and 11 bugs.&#xd;"
+      "title": "ISC Stormcast For Thursday, May 28th, 2026 https://isc.sans.edu/podcastdetail/9948, (Thu, May 28th)",
+      "link": "https://isc.sans.edu/diary/rss/33028",
+      "summary": ""
+    },
+    {
+      "source": "SANS ISC Diary",
+      "title": "Reconstructing an Akira Ransomware Kill Chain from Perimeter and Endpoint Logs, (Wed, May 27th)",
+      "link": "https://isc.sans.edu/diary/rss/33024",
+      "summary": "Most Akira write-ups focus on the ransom note or the encryption routine. By the time those show up the interesting forensic work is over. The questions that matter to defenders sit earlier. How did they get in. When did they get domain admin. What did they touch before the binary fired. Those answers live in the days before impact. They sit in two log sources that almost never get joined. The peri"
+    },
+    {
+      "source": "SANS ISC Diary",
+      "title": "ISC Stormcast For Wednesday, May 27th, 2026 https://isc.sans.edu/podcastdetail/9946, (Wed, May 27th)",
+      "link": "https://isc.sans.edu/diary/rss/33022",
+      "summary": ""
+    },
+    {
+      "source": "Schneier on Security",
+      "title": "FBI’s 2025 Internet Crime Report",
+      "link": "https://www.schneier.com/blog/archives/2026/05/fbis-2025-internet-crime-report.html",
+      "summary": "The 2025 Internet Crime Report was published a few weeks ago, but I only just saw it.\nLots of interesting statistics.\nPress release. News articles."
+    },
+    {
+      "source": "Schneier on Security",
+      "title": "Identifying People Using Wi-Fi Routers",
+      "link": "https://www.schneier.com/blog/archives/2026/05/identifying-people-using-wi-fi-routers.html",
+      "summary": "Not identifying people based on their use of Wi-Fi routers, but identifying people using Wi-Fi signals.\nThis is accomplished through what is known as WiFi sensing, or the use of WiFi signals to infer information about a physical environment. When radio signals like WiFi travel through a space, they interact with the objects and people around them. Those signals can be reflected, scattered, or abso"
     }
   ]
 }
