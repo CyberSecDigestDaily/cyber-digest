@@ -103,31 +103,26 @@
       </div>
       <div class="console-body">
         <div class="metric">
-          <div class="k">Active campaigns</div>
-          <div class="v" data-metric>214</div>
-          <div class="d delta-up">12 vs 7d avg</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#D97B6A" stroke-width="1.4" stroke-linecap="round" d="M0,24 C16,22 24,18 40,13 C56,8 64,5 80,4"/></svg>
+          <div class="k">New CVEs (7d)</div>
+          <div class="v" id="console-cve7d">—</div>
+          <div class="d" id="console-cve7d-sub">loading&hellip;</div>
         </div>
         <div class="metric">
-          <div class="k">KEV additions 7d</div>
-          <div class="v" data-metric>9</div>
-          <div class="d delta-up">3 vs prior</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#6C8EFF" stroke-width="1.4" stroke-linecap="round" d="M0,22 C16,21 24,18 40,15 C56,12 64,8 80,5"/></svg>
-        </div>
-        <div class="metric">
-          <div class="k">Mean time to advisory</div>
-          <div class="v" data-metric>42<span style="font-size:14px;color:var(--fg-muted);margin-left:4px">min</span></div>
-          <div class="d delta-dn">8 min vs 30d</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#4FB28A" stroke-width="1.4" stroke-linecap="round" d="M0,6 C16,9 24,13 40,15 C56,18 64,20 80,24"/></svg>
-        </div>
-        <div class="metric">
-          <div class="k">Tracked actors</div>
-          <div class="v" data-metric>317</div>
-          <div class="d">APT Crimeware Hacktivist</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#98A1B2" stroke-width="1.4" stroke-linecap="round" d="M0,18 C16,16 24,15 40,13 C56,11 64,11 80,10"/></svg>
+          <div class="k">KEV additions (7d)</div>
+          <div class="v" id="console-kev7d">—</div>
+          <div class="d" id="console-kev7d-sub">loading&hellip;</div>
         </div>
       </div>
-      <!-- Console filters -->
+      <!-- Tracked actors -->
+      <div class="console-actors">
+        <div class="ca-hdr">Top tracked threat actors</div>
+        <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a" target="_blank" rel="noopener noreferrer">Volt Typhoon<span class="ca-tag">China &middot; Critical infrastructure</span></a>
+        <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-249a" target="_blank" rel="noopener noreferrer">APT28 / Fancy Bear<span class="ca-tag">Russia (GRU) &middot; Espionage</span></a>
+        <a class="ca-item" href="https://attack.mitre.org/groups/G0032/" target="_blank" rel="noopener noreferrer">Lazarus Group<span class="ca-tag">North Korea &middot; Financial / espionage</span></a>
+        <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-338a" target="_blank" rel="noopener noreferrer">Salt Typhoon<span class="ca-tag">China &middot; Telecom / ISP</span></a>
+        <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a" target="_blank" rel="noopener noreferrer">RansomHub<span class="ca-tag">Crimeware &middot; Ransomware-as-a-service</span></a>
+      </div>
+      <!-- Console filters — vendor only, wired to live KEV feed -->
       <div class="console-filters" aria-label="Filter feed">
         <div class="cf-group">
           <span class="cf-label">Vendor</span>
@@ -136,31 +131,16 @@
           <button class="cf-chip" data-cf-vendor="ivanti">Ivanti</button>
           <button class="cf-chip" data-cf-vendor="vmware">VMware</button>
           <button class="cf-chip" data-cf-vendor="microsoft">Microsoft</button>
-        </div>
-        <div class="cf-group">
-          <span class="cf-label">Kit</span>
-          <button class="cf-chip on" data-cf-kit="all">All</button>
-          <button class="cf-chip" data-cf-kit="ransomware">Ransomware</button>
-          <button class="cf-chip" data-cf-kit="rat">RAT</button>
-          <button class="cf-chip" data-cf-kit="loader">Loader</button>
-          <button class="cf-chip" data-cf-kit="rootkit">Rootkit</button>
-        </div>
-        <div class="cf-group">
-          <span class="cf-label">Tech</span>
-          <button class="cf-chip on" data-cf-tech="all">All</button>
-          <button class="cf-chip" data-cf-tech="vpn">VPN/Gateway</button>
-          <button class="cf-chip" data-cf-tech="hypervisor">Hypervisor</button>
-          <button class="cf-chip" data-cf-tech="os">OS/Kernel</button>
-          <button class="cf-chip" data-cf-tech="network">Network</button>
+          <button class="cf-chip" data-cf-vendor="cisco">Cisco</button>
+          <button class="cf-chip" data-cf-vendor="palo alto">Palo Alto</button>
         </div>
       </div>
-
-      <!-- Console feed: app.js replaces this with live CISA KEV/NVD data -->
+      <!-- Console feed: app.js populates from CISA KEV. Fallback uses real KEV dates. -->
       <div class="console-feed" data-live-feed aria-label="Live event feed">
-        <div class="line" data-feed-vendor="fortinet" data-feed-tech="network" data-feed-kit=""><span class="t" data-offset-sec="60"></span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager &mdash; exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>
-        <div class="line" data-feed-vendor="ivanti" data-feed-tech="vpn" data-feed-kit=""><span class="t" data-offset-sec="300"></span><span class="sev high">HIGH</span><span class="msg">Ivanti Connect Secure &mdash; stack buffer overflow, unauthenticated RCE</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-0282</a></span></div>
-        <div class="line" data-feed-vendor="vmware" data-feed-tech="hypervisor" data-feed-kit=""><span class="t" data-offset-sec="720"></span><span class="sev crit">CRIT</span><span class="msg">VMware ESXi VCMI heap overflow &mdash; zero-day exploited in wild</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-22224</a></span></div>
-        <div class="line" data-feed-vendor="microsoft" data-feed-tech="os" data-feed-kit=""><span class="t" data-offset-sec="1440"></span><span class="sev high">HIGH</span><span class="msg">Microsoft Hyper-V NT Kernel privilege escalation &mdash; zero-day</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-21333</a></span></div>
+        <div class="line" data-feed-vendor="fortinet"><span class="t">2024-10-23</span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager &mdash; exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>
+        <div class="line" data-feed-vendor="ivanti"><span class="t">2025-01-15</span><span class="sev crit">CRIT</span><span class="msg">Ivanti Connect Secure &mdash; stack buffer overflow, unauthenticated RCE</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-0282</a></span></div>
+        <div class="line" data-feed-vendor="vmware"><span class="t">2025-03-04</span><span class="sev crit">CRIT</span><span class="msg">VMware ESXi VCMI heap overflow &mdash; zero-day exploited in wild</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-22224</a></span></div>
+        <div class="line" data-feed-vendor="microsoft"><span class="t">2025-01-14</span><span class="sev high">HIGH</span><span class="msg">Microsoft Hyper-V NT Kernel privilege escalation &mdash; zero-day</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-21333</a></span></div>
       </div>
     </aside>
   </div>

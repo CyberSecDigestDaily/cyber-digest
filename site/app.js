@@ -55,28 +55,8 @@
   tickRel();
 
   /* ═══════════════════════════════════════════════════════════
-     4. BACKFILL OFFSET TIMESTAMPS
+     4. (offset timestamps removed — feed now uses real KEV dates)
   ═══════════════════════════════════════════════════════════ */
-  function fillOffsets(){
-    const now = Date.now();
-    document.querySelectorAll('[data-offset-sec]').forEach(el => {
-      const sec = parseInt(el.dataset.offsetSec, 10);
-      if (isNaN(sec)) return;
-      const t = new Date(now - sec * 1000);
-      el.textContent = String(t.getUTCHours()).padStart(2,'0') + ':' +
-                       String(t.getUTCMinutes()).padStart(2,'0') + ':' +
-                       String(t.getUTCSeconds()).padStart(2,'0');
-    });
-    document.querySelectorAll('[data-offset-min]').forEach(el => {
-      const min = parseInt(el.dataset.offsetMin, 10);
-      if (isNaN(min)) return;
-      const t = new Date(now - min * 60 * 1000);
-      el.textContent = String(t.getUTCHours()).padStart(2,'0') + ':' +
-                       String(t.getUTCMinutes()).padStart(2,'0') + ' UTC';
-    });
-  }
-  setInterval(fillOffsets, 5000);
-  fillOffsets();
 
   /* ═══════════════════════════════════════════════════════════
      5. CVE HOVER TOOLTIP (follows mouse, works over animated ticker)
@@ -169,7 +149,7 @@
   }
 
   async function fetchKEV(){
-    const cached = getCached('cd_kev_v3');
+    const cached = getCached('cd_kev_v4');
     if (cached) return cached;
     const r = await fetch(
       'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json',
@@ -177,7 +157,10 @@
     );
     if (!r.ok) throw new Error('KEV ' + r.status);
     const json = await r.json();
-    const items = (json.vulnerabilities || [])
+    const all = json.vulnerabilities || [];
+    const cutoff7d = new Date() - 7 * 864e5;
+    const kev7d = all.filter(v => new Date(v.dateAdded) >= cutoff7d).length;
+    const items = all
       .sort((a, b) => b.dateAdded.localeCompare(a.dateAdded))
       .slice(0, 25)
       .map(v => ({
@@ -191,8 +174,20 @@
         nvdUrl:    'https://nvd.nist.gov/vuln/detail/' + v.cveID,
         isKEV:     true
       }));
-    setCache('cd_kev_v3', items);
-    return items;
+    const result = { items, kev7d };
+    setCache('cd_kev_v4', result);
+    return result;
+  }
+
+  function updateConsoleMetrics(kev7d, nvd7d){
+    const cveEl  = document.getElementById('console-cve7d');
+    const cveSub = document.getElementById('console-cve7d-sub');
+    const kevEl  = document.getElementById('console-kev7d');
+    const kevSub = document.getElementById('console-kev7d-sub');
+    if (cveEl  && nvd7d != null) cveEl.textContent  = nvd7d.toLocaleString();
+    if (cveSub && nvd7d != null) cveSub.textContent = 'via NVD \xb7 7-day window';
+    if (kevEl  && kev7d != null) kevEl.textContent  = kev7d;
+    if (kevSub && kev7d != null) kevSub.textContent = 'CISA known exploited';
   }
 
   async function fetchNVD(){
@@ -370,15 +365,29 @@
 
   async function loadTickerData(forceFresh){
     if (forceFresh){
-      try { sessionStorage.removeItem('cd_kev_v3'); } catch {}
+      try { sessionStorage.removeItem('cd_kev_v4'); } catch {}
     }
     try {
-      const kev = await fetchKEV();
+      const kevData = await fetchKEV();
+      const kev = kevData.items;
       if (kev && kev.length){
         tickerAllItems = kev;
         applyTickerFilter();
         if (!forceFresh) { consoleFeedAllItems = kev; populateConsoleFeed(kev); }
         buildTickerVendorBar(kev);
+        // Fetch NVD 7d count then update both metrics
+        try {
+          const now = new Date(), ago = new Date(now - 7 * 864e5);
+          const fmt = d => d.toISOString().slice(0, 19) + '.000';
+          const nr  = await fetch(
+            'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1' +
+            '&pubStartDate=' + fmt(ago) + '&pubEndDate=' + fmt(now)
+          );
+          const nj = await nr.json();
+          updateConsoleMetrics(kevData.kev7d, nj.totalResults);
+        } catch {
+          updateConsoleMetrics(kevData.kev7d, null);
+        }
       }
     } catch {
       try {
@@ -483,23 +492,8 @@
   });
 
   /* ═══════════════════════════════════════════════════════════
-     10. METRIC DRIFT (homepage console stats)
+     10. (metric drift removed — metrics now come from real API data)
   ═══════════════════════════════════════════════════════════ */
-  const driftTargets = document.querySelectorAll('[data-metric]');
-  if (driftTargets.length){
-    const base = new Map();
-    driftTargets.forEach(el => base.set(el, parseFloat(el.textContent.replace(/[^\d.]/g, ''))));
-    setInterval(()=>{
-      driftTargets.forEach(el => {
-        const b = base.get(el);
-        if (isNaN(b)) return;
-        const next = Math.max(0, Math.round(b + (Math.random() - 0.5) * Math.max(1, b * 0.03)));
-        const unit = el.querySelector('span');
-        if (el.firstChild && el.firstChild.nodeType === 3) el.firstChild.nodeValue = next.toString();
-        if (unit) el.appendChild(unit);
-      });
-    }, 10000);
-  }
 
   /* ═══════════════════════════════════════════════════════════
      11. SEARCH MODAL (⌘K / Ctrl+K)
