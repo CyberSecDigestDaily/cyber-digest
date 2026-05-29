@@ -148,7 +148,12 @@
   /* ═══════════════════════════════════════════════════════════
      6. DATA LAYER — NVD + CISA KEV
   ═══════════════════════════════════════════════════════════ */
-  const CACHE_TTL = 3600 * 1000; // 1 hour
+  const CACHE_TTL     = 5 * 60 * 1000; // 5 minutes (live ticker)
+  const TICKER_REFRESH = 5 * 60 * 1000; // re-fetch every 5 min
+
+  // Ticker state
+  let tickerAllItems      = [];
+  let tickerActiveVendors = new Set();
 
   function getCached(key){
     try {
@@ -264,7 +269,7 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
-     8. LIVE TICKER — real CVE data with click + hover
+     8. LIVE TICKER — real CVE data with click + hover + vendor filter
   ═══════════════════════════════════════════════════════════ */
   const TICKER_FALLBACK = [
     {id:'CVE-2025-22224', vendor:'VMware',    product:'ESXi VCMI',      desc:'Heap overflow zero-day exploited in wild',              severity:'critical', nvdUrl:'https://nvd.nist.gov/vuln/detail/CVE-2025-22224', isKEV:true},
@@ -291,30 +296,106 @@
   function populateTicker(items){
     const track = document.querySelector('[data-ticker-track]');
     if (!track || !items.length) return;
-    const half = items.slice(0, 10).map(buildTickerItem).join('');
+    const set  = items.slice(0, 12);
+    // Need enough items to fill viewport for seamless loop; pad if few items
+    const fill = set.length < 4 ? set.concat(set).concat(set) : set;
+    const half = fill.map(buildTickerItem).join('');
     track.innerHTML = half + half; // duplicate for seamless loop
+    // Adjust animation speed based on item count
+    const dur = Math.max(30, fill.length * 6) + 's';
+    track.style.animationDuration = dur;
+  }
+
+  // Apply active vendor filter to the full items array and re-render ticker
+  function applyTickerFilter(){
+    if (!tickerAllItems.length) return;
+    const filtered = tickerActiveVendors.size === 0
+      ? tickerAllItems
+      : tickerAllItems.filter(i => tickerActiveVendors.has((i.vendor || '').toLowerCase()));
+    populateTicker(filtered.length ? filtered : tickerAllItems);
+  }
+
+  // Build vendor filter chips from live data
+  function buildTickerVendorBar(items){
+    const bar = document.querySelector('[data-ticker-vendor-row]');
+    if (!bar) return;
+    const wrap = bar.closest('.ticker-vendor-bar');
+
+    // Extract unique vendors, sorted by frequency in KEV data
+    const vendorCount = {};
+    items.forEach(i => { if (i.vendor) vendorCount[i.vendor] = (vendorCount[i.vendor] || 0) + 1; });
+    const vendors = Object.entries(vendorCount)
+      .sort((a, b) => b[1] - a[1])
+      .map(([v]) => v)
+      .slice(0, 10);
+
+    if (!vendors.length){ if (wrap) wrap.style.display = 'none'; return; }
+
+    bar.innerHTML = '<span class="tvb-label">Vendor</span>' +
+      vendors.map(v =>
+        '<button class="ticker-vchip" data-ticker-vendor="' + v.toLowerCase().replace(/"/g, '') + '">' + v + '</button>'
+      ).join('') +
+      '<button class="ticker-vchip" id="ticker-vchip-all" style="margin-left:auto">All</button>';
+
+    if (wrap) wrap.style.display = '';
+
+    bar.addEventListener('click', function(e){
+      const chip = e.target.closest('[data-ticker-vendor]');
+      const allBtn = e.target.closest('#ticker-vchip-all');
+      if (allBtn){
+        tickerActiveVendors.clear();
+        bar.querySelectorAll('.ticker-vchip').forEach(c => c.classList.remove('on'));
+        applyTickerFilter();
+        return;
+      }
+      if (!chip) return;
+      const v = chip.dataset.tickerVendor;
+      if (tickerActiveVendors.has(v)){
+        tickerActiveVendors.delete(v);
+        chip.classList.remove('on');
+      } else {
+        tickerActiveVendors.add(v);
+        chip.classList.add('on');
+      }
+      // Update All button state
+      const allChip = bar.querySelector('#ticker-vchip-all');
+      if (allChip) allChip.classList.toggle('on', tickerActiveVendors.size === 0);
+      applyTickerFilter();
+    });
   }
 
   // Render fallback immediately, swap in live data async
+  tickerAllItems = TICKER_FALLBACK;
   populateTicker(TICKER_FALLBACK);
 
-  (async function loadLiveData(){
+  async function loadTickerData(forceFresh){
+    if (forceFresh){
+      try { sessionStorage.removeItem('cd_kev_v3'); } catch {}
+    }
     try {
       const kev = await fetchKEV();
       if (kev && kev.length){
-        populateTicker(kev);
-        populateConsoleFeed(kev);
+        tickerAllItems = kev;
+        applyTickerFilter();
+        if (!forceFresh) populateConsoleFeed(kev);
+        buildTickerVendorBar(kev);
       }
     } catch {
       try {
         const nvd = await fetchNVD();
         if (nvd && nvd.length){
-          populateTicker(nvd);
-          populateConsoleFeed(nvd);
+          tickerAllItems = nvd;
+          applyTickerFilter();
+          buildTickerVendorBar(nvd);
         }
       } catch {}
     }
-  })();
+  }
+
+  // Initial load
+  loadTickerData(false);
+  // Live refresh every 5 minutes
+  setInterval(function(){ loadTickerData(true); }, TICKER_REFRESH);
 
   /* ═══════════════════════════════════════════════════════════
      9. CONSOLE FEED — live log on homepage

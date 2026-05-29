@@ -64,7 +64,7 @@
   </div>
 </header>
 
-<!-- Live ticker: app.js populates from CISA KEV/NVD. Items are clickable links to NVD. Hover for CVE brief. -->
+<!-- Live ticker: app.js populates from CISA KEV/NVD every 5 min. Items are clickable links to NVD. Hover for CVE brief. -->
 <div class="signal-bar" aria-label="Live threat signal">
   <div class="container row">
     <div class="label"><span class="pulse" aria-hidden="true"></span> Live signal</div>
@@ -73,12 +73,18 @@
     </div>
   </div>
 </div>
+<!-- Vendor filter chips: populated by app.js from live KEV data -->
+<div class="ticker-vendor-bar" style="display:none" aria-label="Filter ticker by vendor">
+  <div class="container">
+    <div class="row" data-ticker-vendor-row></div>
+  </div>
+</div>
 
 <main>
 <section class="hero">
   <div class="container hero-grid">
     <div class="reveal">
-      <div class="section-tag">Daily threat intelligence · <span data-clock-short>--:-- UTC</span></div>
+      <div class="section-tag">Daily threat intelligence &middot; <span data-clock-short>--:-- UTC</span></div>
       <h1>Threat intelligence,<br/><em>without the noise.</em></h1>
       <p class="lede">
         Cyber Digest tracks adversaries, CISA KEV additions, and exploited vulnerabilities
@@ -86,14 +92,14 @@
       </p>
       <div class="cta-row">
         <a href="cves.html" class="btn btn-primary btn-lg">Browse vulnerabilities <span class="arr">-></span></a>
-        <a href="subscribe.html" class="btn btn-ghost btn-lg">Subscribe -- free</a>
+        <a href="subscribe.html" class="btn btn-ghost btn-lg">Subscribe &mdash; free</a>
       </div>
     </div>
 
     <aside class="console reveal" aria-label="Live threat operations console">
       <div class="console-head">
         <div>Threat ops</div>
-        <div class="live"><span class="pulse"></span> Live -- <span data-clock-short>--:--</span></div>
+        <div class="live"><span class="pulse"></span> Live &mdash; <span data-clock-short>--:--</span></div>
       </div>
       <div class="console-body">
         <div class="metric">
@@ -123,10 +129,10 @@
       </div>
       <!-- Console feed: app.js replaces this with live CISA KEV/NVD data -->
       <div class="console-feed" data-live-feed aria-label="Live event feed">
-        <div class="line"><span class="t" data-offset-sec="60"></span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager -- exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>
-        <div class="line"><span class="t" data-offset-sec="300"></span><span class="sev high">HIGH</span><span class="msg">Ivanti Connect Secure -- stack buffer overflow, unauthenticated RCE</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-0282</a></span></div>
-        <div class="line"><span class="t" data-offset-sec="720"></span><span class="sev crit">CRIT</span><span class="msg">VMware ESXi VCMI heap overflow -- zero-day exploited in wild</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-22224</a></span></div>
-        <div class="line"><span class="t" data-offset-sec="1440"></span><span class="sev high">HIGH</span><span class="msg">Microsoft Hyper-V NT Kernel privilege escalation -- zero-day</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-21333</a></span></div>
+        <div class="line"><span class="t" data-offset-sec="60"></span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager &mdash; exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>
+        <div class="line"><span class="t" data-offset-sec="300"></span><span class="sev high">HIGH</span><span class="msg">Ivanti Connect Secure &mdash; stack buffer overflow, unauthenticated RCE</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-0282</a></span></div>
+        <div class="line"><span class="t" data-offset-sec="720"></span><span class="sev crit">CRIT</span><span class="msg">VMware ESXi VCMI heap overflow &mdash; zero-day exploited in wild</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-22224</a></span></div>
+        <div class="line"><span class="t" data-offset-sec="1440"></span><span class="sev high">HIGH</span><span class="msg">Microsoft Hyper-V NT Kernel privilege escalation &mdash; zero-day</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-21333</a></span></div>
       </div>
     </aside>
   </div>
@@ -137,66 +143,66 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-tag">Trending vulnerabilities -- CISA KEV + NVD</div>
+        <div class="section-tag">Trending vulnerabilities &middot; CISA KEV + NVD</div>
         <h2>The exploits actually being used.</h2>
       </div>
       <div class="right">
-        Source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a> -- <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a> -- <a href="cves.html">Full tracker with vendor filter -></a>
+        Source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a> &middot; <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a> &middot; <a href="cves.html">Full tracker with vendor filter &rarr;</a>
       </div>
     </div>
 
     <div class="cve-grid">
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">VMware -- ESXi VCMI</div>
+        <div class="vendor">VMware &middot; ESXi VCMI</div>
         <div class="id">CVE-2025-22224 <span class="score crit">9.3</span></div>
         <h4>Heap overflow zero-day exploited in the wild -- unauthenticated RCE on ESXi hypervisor</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
         <div class="foot"><span>KEV 2025</span><span class="kev">ZERO-DAY</span></div>
       </a>
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Ivanti -- Connect Secure</div>
+        <div class="vendor">Ivanti &middot; Connect Secure</div>
         <div class="id">CVE-2025-0282 <span class="score crit">9.0</span></div>
         <h4>Stack-based buffer overflow allowing unauthenticated remote code execution</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
         <div class="foot"><span>KEV Jan 2025</span><span class="kev">EXPLOITED</span></div>
       </a>
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Fortinet -- FortiManager</div>
+        <div class="vendor">Fortinet &middot; FortiManager</div>
         <div class="id">CVE-2024-47575 <span class="score crit">9.8</span></div>
         <h4>Missing auth in fgfm daemon -- unauthenticated command execution (FortiJump)</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
         <div class="foot"><span>KEV Oct 2024</span><span class="kev">EXPLOITED</span></div>
       </a>
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3400" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Palo Alto -- PAN-OS</div>
+        <div class="vendor">Palo Alto &middot; PAN-OS</div>
         <div class="id">CVE-2024-3400 <span class="score crit">10.0</span></div>
         <h4>GlobalProtect command injection allowing root code execution without authentication</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i></div>
         <div class="foot"><span>KEV Apr 2024</span><span class="kev">EXPLOITED</span></div>
       </a>
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21762" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Fortinet -- FortiOS SSL VPN</div>
+        <div class="vendor">Fortinet &middot; FortiOS SSL VPN</div>
         <div class="id">CVE-2024-21762 <span class="score crit">9.6</span></div>
         <h4>Out-of-bounds write in SSL VPN -- unauthenticated remote code execution</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
         <div class="foot"><span>KEV Feb 2024</span><span class="kev">EXPLOITED</span></div>
       </a>
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-37085" target="_blank" rel="noopener" class="cve">
-        <div class="vendor">VMware -- ESXi</div>
+        <div class="vendor">VMware &middot; ESXi</div>
         <div class="id">CVE-2024-37085 <span class="score high">7.2</span></div>
         <h4>Active Directory auth bypass via ESX Admins group -- used by Akira and Black Basta</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
         <div class="foot"><span>KEV Jul 2024</span><span class="kev">EXPLOITED</span></div>
       </a>
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-6387" target="_blank" rel="noopener" class="cve">
-        <div class="vendor">OpenSSH -- sshd</div>
+        <div class="vendor">OpenSSH &middot; sshd</div>
         <div class="id">CVE-2024-6387 <span class="score high">8.1</span></div>
         <h4>Signal handler race condition regreSSHion -- unauthenticated RCE on glibc Linux</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i></div>
         <div class="foot"><span>KEV Jul 2024</span><span>PoC public</span></div>
       </a>
       <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" class="cve">
-        <div class="vendor">Microsoft -- Hyper-V</div>
+        <div class="vendor">Microsoft &middot; Hyper-V</div>
         <div class="id">CVE-2025-21333 <span class="score high">7.8</span></div>
         <h4>NT Kernel Integration VSP privilege escalation -- exploited as zero-day Jan 2025</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
@@ -204,7 +210,7 @@
       </a>
     </div>
     <div style="text-align:center;margin-top:32px">
-      <a href="cves.html" class="btn btn-ghost btn-lg">Full vulnerability tracker with vendor filter <span class="arr">-></span></a>
+      <a href="cves.html" class="btn btn-ghost btn-lg">Full vulnerability tracker with vendor filter <span class="arr">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -214,7 +220,7 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-tag">Trending reads -- reputable sources</div>
+        <div class="section-tag">Trusted sources &middot; Vetted signal</div>
         <h2>Where the signal comes from.</h2>
       </div>
       <div class="right">All links open the source directly</div>
@@ -309,11 +315,11 @@
 </section>
 
 <!-- NEWSLETTER -->
-<section class="section" style="padding-top:64px">
+<section class="section" style="padding-top:64px;padding-bottom:80px">
   <div class="container">
     <div class="newsletter">
       <div>
-        <div class="section-tag">Daily briefing 06:30 UTC</div>
+        <div class="section-tag">Daily briefing &middot; 06:30 UTC</div>
         <h2>One email. The signal of the day, <em>nothing else.</em></h2>
         <p>Free, weekdays. Read in five minutes. Built for SOC leads, IR analysts and security engineers.</p>
       </div>
@@ -368,7 +374,7 @@
       </ul></div>
     </div>
     <div class="foot-bottom">
-      <div>2026 Cyber Digest. Independent. Data: CISA KEV, NVD, vendor advisories.</div>
+      <div>2026 Cyber Digest &middot; Independent &middot; Data: CISA KEV, NVD, vendor advisories.</div>
       <div>Last updated <span data-clock-short>--:-- UTC</span></div>
     </div>
   </div>

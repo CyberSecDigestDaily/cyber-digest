@@ -156,7 +156,7 @@ img,svg{display:block;max-width:100%}
   flex:1; overflow:hidden; mask-image:linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
 .ticker-track{
-  display:flex; gap:48px; padding-left:48px;
+  display:flex; gap:0; padding-left:32px;
   animation: scroll 60s linear infinite;
   white-space:nowrap;
 }
@@ -175,6 +175,17 @@ img,svg{display:block;max-width:100%}
 .ticker-track a.ticker-item:hover{
   color:var(--fg);
   border-bottom-color:var(--hairline-2);
+}
+/* Squiggle separator between ticker items */
+.ticker-track a.ticker-item::after{
+  content:"∿";
+  padding:0 28px;
+  color:var(--hairline-2);
+  font-size:15px;
+  line-height:1;
+  pointer-events:none;
+  transition:none;
+  border:none;
 }
 .ticker-track .sev{
   flex:0 0 auto;
