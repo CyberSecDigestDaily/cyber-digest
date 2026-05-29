@@ -377,7 +377,7 @@
       if (kev && kev.length){
         tickerAllItems = kev;
         applyTickerFilter();
-        if (!forceFresh) populateConsoleFeed(kev);
+        if (!forceFresh) { consoleFeedAllItems = kev; populateConsoleFeed(kev); }
         buildTickerVendorBar(kev);
       }
     } catch {
@@ -423,6 +423,57 @@
       feedEl.appendChild(line);
     });
   }
+
+  /* ═══════════════════════════════════════════════════════════
+     9b. CONSOLE FEED FILTERS (vendor / kit / tech)
+  ═══════════════════════════════════════════════════════════ */
+  let consoleFeedAllItems = [];
+
+  const TECH_MAP = {
+    vpn:        ['vpn','ssl vpn','connect secure','fortios','pan-os','globalprotect','pulse','access server'],
+    hypervisor: ['esxi','vcenter','vcmi','hyper-v','vmware','vsphere','xen','kvm'],
+    os:         ['windows','linux','macos','kernel','nt kernel','android','ios','ubuntu'],
+    network:    ['fortimanager','fortigate','fortiswitch','router','switch','firewall','junos','ios xe','nexus'],
+  };
+  const KIT_MAP = {
+    ransomware: ['ransomware','lockbit','akira','blackcat','alphv','clop','play','black basta','rhysida'],
+    rat:        ['rat','remote access','cobalt strike','meterpreter','async','quasar'],
+    loader:     ['loader','dropper','stager','downloader','bumblebee','gootloader'],
+    rootkit:    ['rootkit','bootkit','uefi','kernel implant'],
+  };
+
+  function matchesTag(item, map, key){
+    if (key === 'all') return true;
+    const haystack = ((item.name || '') + ' ' + (item.desc || '') + ' ' + (item.product || '')).toLowerCase();
+    return (map[key] || []).some(kw => haystack.includes(kw));
+  }
+
+  function applyConsoleFilters(){
+    const vendorChip = document.querySelector('.cf-chip[data-cf-vendor].on');
+    const kitChip    = document.querySelector('.cf-chip[data-cf-kit].on');
+    const techChip   = document.querySelector('.cf-chip[data-cf-tech].on');
+    const vendor = vendorChip ? vendorChip.dataset.cfVendor : 'all';
+    const kit    = kitChip    ? kitChip.dataset.cfKit       : 'all';
+    const tech   = techChip   ? techChip.dataset.cfTech     : 'all';
+
+    const filtered = consoleFeedAllItems.filter(item => {
+      const v = (item.vendor || '').toLowerCase();
+      const vendorOk = vendor === 'all' || v.includes(vendor);
+      const kitOk    = matchesTag(item, KIT_MAP, kit);
+      const techOk   = matchesTag(item, TECH_MAP, tech);
+      return vendorOk && kitOk && techOk;
+    });
+    populateConsoleFeed(filtered.length ? filtered : consoleFeedAllItems);
+  }
+
+  document.querySelectorAll('.cf-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const group = chip.parentElement;
+      group.querySelectorAll('.cf-chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      applyConsoleFilters();
+    });
+  });
 
   /* ═══════════════════════════════════════════════════════════
      10. METRIC DRIFT (homepage console stats)

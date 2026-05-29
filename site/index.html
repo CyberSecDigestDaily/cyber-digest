@@ -106,27 +106,55 @@
           <div class="k">Active campaigns</div>
           <div class="v" data-metric>214</div>
           <div class="d delta-up">12 vs 7d avg</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#D97B6A" stroke-width="1.2" points="0,22 8,18 16,20 24,14 32,16 40,10 48,12 56,7 64,9 72,4 80,6"/></svg>
+          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#D97B6A" stroke-width="1.4" stroke-linecap="round" d="M0,24 C16,22 24,18 40,13 C56,8 64,5 80,4"/></svg>
         </div>
         <div class="metric">
           <div class="k">KEV additions 7d</div>
           <div class="v" data-metric>9</div>
           <div class="d delta-up">3 vs prior</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#6C8EFF" stroke-width="1.2" points="0,18 10,20 20,16 30,18 40,12 50,14 60,10 70,8 80,5"/></svg>
+          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#6C8EFF" stroke-width="1.4" stroke-linecap="round" d="M0,22 C16,21 24,18 40,15 C56,12 64,8 80,5"/></svg>
         </div>
         <div class="metric">
           <div class="k">Mean time to advisory</div>
           <div class="v" data-metric>42<span style="font-size:14px;color:var(--fg-muted);margin-left:4px">min</span></div>
           <div class="d delta-dn">8 min vs 30d</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#4FB28A" stroke-width="1.2" points="0,8 10,11 20,9 30,13 40,12 50,16 60,15 70,19 80,22"/></svg>
+          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#4FB28A" stroke-width="1.4" stroke-linecap="round" d="M0,6 C16,9 24,13 40,15 C56,18 64,20 80,24"/></svg>
         </div>
         <div class="metric">
           <div class="k">Tracked actors</div>
           <div class="v" data-metric>317</div>
           <div class="d">APT Crimeware Hacktivist</div>
-          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><polyline fill="none" stroke="#98A1B2" stroke-width="1.2" points="0,16 10,14 20,15 30,12 40,13 50,11 60,12 70,10 80,11"/></svg>
+          <svg class="spark" viewBox="0 0 80 30" preserveAspectRatio="none"><path fill="none" stroke="#98A1B2" stroke-width="1.4" stroke-linecap="round" d="M0,18 C16,16 24,15 40,13 C56,11 64,11 80,10"/></svg>
         </div>
       </div>
+      <!-- Console filters -->
+      <div class="console-filters" aria-label="Filter feed">
+        <div class="cf-group">
+          <span class="cf-label">Vendor</span>
+          <button class="cf-chip on" data-cf-vendor="all">All</button>
+          <button class="cf-chip" data-cf-vendor="fortinet">Fortinet</button>
+          <button class="cf-chip" data-cf-vendor="ivanti">Ivanti</button>
+          <button class="cf-chip" data-cf-vendor="vmware">VMware</button>
+          <button class="cf-chip" data-cf-vendor="microsoft">Microsoft</button>
+        </div>
+        <div class="cf-group">
+          <span class="cf-label">Kit</span>
+          <button class="cf-chip on" data-cf-kit="all">All</button>
+          <button class="cf-chip" data-cf-kit="ransomware">Ransomware</button>
+          <button class="cf-chip" data-cf-kit="rat">RAT</button>
+          <button class="cf-chip" data-cf-kit="loader">Loader</button>
+          <button class="cf-chip" data-cf-kit="rootkit">Rootkit</button>
+        </div>
+        <div class="cf-group">
+          <span class="cf-label">Tech</span>
+          <button class="cf-chip on" data-cf-tech="all">All</button>
+          <button class="cf-chip" data-cf-tech="vpn">VPN/Gateway</button>
+          <button class="cf-chip" data-cf-tech="hypervisor">Hypervisor</button>
+          <button class="cf-chip" data-cf-tech="os">OS/Kernel</button>
+          <button class="cf-chip" data-cf-tech="network">Network</button>
+        </div>
+      </div>
+
       <!-- Console feed: app.js replaces this with live CISA KEV/NVD data -->
       <div class="console-feed" data-live-feed aria-label="Live event feed">
         <div class="line"><span class="t" data-offset-sec="60"></span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager &mdash; exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>

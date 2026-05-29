@@ -423,6 +423,29 @@ img,svg{display:block;max-width:100%}
   position:absolute;right:14px;bottom:14px;width:80px;height:30px;opacity:.5;pointer-events:none;
 }
 
+/* ── Console filters ── */
+.console-filters{
+  margin-top:14px;
+  display:flex;flex-direction:column;gap:6px;
+  padding:10px 12px;
+  background:var(--bg);
+  border:1px solid var(--hairline);
+}
+.cf-group{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.cf-label{
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg-dim);min-width:32px;
+}
+.cf-chip{
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 8px;border:1px solid var(--hairline-2);background:transparent;
+  color:var(--fg-muted);cursor:pointer;transition:all .15s var(--ease);
+}
+.cf-chip:hover{ color:var(--fg);border-color:var(--fg-muted) }
+.cf-chip.on{ color:var(--accent-ink);background:var(--accent);border-color:var(--accent) }
+
 .console-feed{
   margin-top:14px;
   border:1px solid var(--hairline);
