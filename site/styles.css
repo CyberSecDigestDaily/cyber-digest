@@ -426,24 +426,25 @@ img,svg{display:block;max-width:100%}
 /* ── Console filters ── */
 .console-filters{
   margin-top:14px;
-  display:flex;flex-direction:column;gap:6px;
-  padding:10px 12px;
-  background:var(--bg);
-  border:1px solid var(--hairline);
+  display:flex;flex-direction:column;gap:8px;
+  padding:12px 14px;
+  background:var(--bg-elev-1);
+  border:1px solid var(--hairline-2);
 }
 .cf-group{
   display:flex;align-items:center;gap:6px;flex-wrap:wrap;
 }
 .cf-label{
   font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--fg-dim);min-width:32px;
+  color:var(--fg-dim);min-width:36px;flex-shrink:0;
 }
 .cf-chip{
   font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
-  padding:3px 8px;border:1px solid var(--hairline-2);background:transparent;
-  color:var(--fg-muted);cursor:pointer;transition:all .15s var(--ease);
+  padding:4px 10px;border:1px solid var(--hairline-2);
+  background:var(--bg-elev-2);color:var(--fg-muted);
+  cursor:pointer;transition:all .15s var(--ease);line-height:1;
 }
-.cf-chip:hover{ color:var(--fg);border-color:var(--fg-muted) }
+.cf-chip:hover{ color:var(--fg);border-color:var(--fg-muted);background:var(--bg-elev-3) }
 .cf-chip.on{ color:var(--accent-ink);background:var(--accent);border-color:var(--accent) }
 
 .console-feed{

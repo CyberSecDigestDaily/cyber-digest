@@ -412,8 +412,17 @@
       const msg    = (item.name || item.desc || '').slice(0, 62);
       const date   = (item.dateAdded || item.published || '').slice(0, 10);
       const tip    = buildTip(item).replace(/"/g, '&quot;');
+      const TECH_KW2 = { vpn:['vpn','connect secure','fortios','globalprotect','pulse'], hypervisor:['esxi','vcenter','vcmi','hyper-v','vsphere'], os:['windows','linux','kernel','nt kernel','android'], network:['fortimanager','fortigate','firewall','junos','nexus','router'] };
+      const KIT_KW2  = { ransomware:['ransomware','lockbit','akira','blackcat','alphv','clop'], rat:['cobalt strike','remote access trojan'], loader:['loader','dropper','bumblebee'], rootkit:['rootkit','bootkit','uefi'] };
+      const hay2 = ((item.name || '') + ' ' + (item.desc || '') + ' ' + (item.product || '')).toLowerCase();
+      const feedTech   = Object.keys(TECH_KW2).find(k => TECH_KW2[k].some(kw => hay2.includes(kw))) || '';
+      const feedKit    = Object.keys(KIT_KW2).find(k  => KIT_KW2[k].some(kw  => hay2.includes(kw)))  || '';
+      const feedVendor = (item.vendor || '').toLowerCase().split(' ')[0];
       const line   = document.createElement('div');
       line.className = 'line';
+      line.dataset.feedVendor = feedVendor;
+      line.dataset.feedTech   = feedTech;
+      line.dataset.feedKit    = feedKit;
       line.innerHTML =
         '<span class="t">' + (date || '') + '</span>' +
         '<span class="sev ' + cls + '">' + lbl + '</span>' +
@@ -429,46 +438,44 @@
   ═══════════════════════════════════════════════════════════ */
   let consoleFeedAllItems = [];
 
-  const TECH_MAP = {
-    vpn:        ['vpn','ssl vpn','connect secure','fortios','pan-os','globalprotect','pulse','access server'],
-    hypervisor: ['esxi','vcenter','vcmi','hyper-v','vmware','vsphere','xen','kvm'],
-    os:         ['windows','linux','macos','kernel','nt kernel','android','ios','ubuntu'],
-    network:    ['fortimanager','fortigate','fortiswitch','router','switch','firewall','junos','ios xe','nexus'],
-  };
-  const KIT_MAP = {
-    ransomware: ['ransomware','lockbit','akira','blackcat','alphv','clop','play','black basta','rhysida'],
-    rat:        ['rat','remote access','cobalt strike','meterpreter','async','quasar'],
-    loader:     ['loader','dropper','stager','downloader','bumblebee','gootloader'],
-    rootkit:    ['rootkit','bootkit','uefi','kernel implant'],
-  };
-
-  function matchesTag(item, map, key){
-    if (key === 'all') return true;
-    const haystack = ((item.name || '') + ' ' + (item.desc || '') + ' ' + (item.product || '')).toLowerCase();
-    return (map[key] || []).some(kw => haystack.includes(kw));
-  }
-
   function applyConsoleFilters(){
-    const vendorChip = document.querySelector('.cf-chip[data-cf-vendor].on');
-    const kitChip    = document.querySelector('.cf-chip[data-cf-kit].on');
-    const techChip   = document.querySelector('.cf-chip[data-cf-tech].on');
-    const vendor = vendorChip ? vendorChip.dataset.cfVendor : 'all';
-    const kit    = kitChip    ? kitChip.dataset.cfKit       : 'all';
-    const tech   = techChip   ? techChip.dataset.cfTech     : 'all';
+    const vendor = (document.querySelector('.cf-chip[data-cf-vendor].on') || {}).dataset?.cfVendor || 'all';
+    const kit    = (document.querySelector('.cf-chip[data-cf-kit].on')    || {}).dataset?.cfKit    || 'all';
+    const tech   = (document.querySelector('.cf-chip[data-cf-tech].on')   || {}).dataset?.cfTech   || 'all';
 
-    const filtered = consoleFeedAllItems.filter(item => {
-      const v = (item.vendor || '').toLowerCase();
-      const vendorOk = vendor === 'all' || v.includes(vendor);
-      const kitOk    = matchesTag(item, KIT_MAP, kit);
-      const techOk   = matchesTag(item, TECH_MAP, tech);
-      return vendorOk && kitOk && techOk;
+    // If live data is loaded, re-run populateConsoleFeed with matching items
+    if (consoleFeedAllItems.length) {
+      const KIT_KW  = { ransomware:['ransomware','lockbit','akira','blackcat','alphv','clop','black basta'], rat:['cobalt strike','metasploit','remote access trojan'], loader:['loader','dropper','bumblebee','gootloader'], rootkit:['rootkit','bootkit','uefi'] };
+      const TECH_KW = { vpn:['vpn','connect secure','fortios','globalprotect','pulse'], hypervisor:['esxi','vcenter','vcmi','hyper-v','vsphere'], os:['windows','linux','kernel','nt kernel','android'], network:['fortimanager','fortigate','firewall','junos','nexus','router'] };
+      const filtered = consoleFeedAllItems.filter(item => {
+        const v   = (item.vendor || '').toLowerCase();
+        const hay = ((item.name || '') + ' ' + (item.desc || '') + ' ' + (item.product || '')).toLowerCase();
+        const vendorOk = vendor === 'all' || v.includes(vendor);
+        const kitOk    = kit  === 'all' || (KIT_KW[kit]  || []).some(kw => hay.includes(kw));
+        const techOk   = tech === 'all' || (TECH_KW[tech] || []).some(kw => hay.includes(kw));
+        return vendorOk && kitOk && techOk;
+      });
+      populateConsoleFeed(filtered.length ? filtered : consoleFeedAllItems);
+      // Re-stamp data attributes on newly rendered lines
+      // data attributes already stamped during populateConsoleFeed render
+      return;
+    }
+
+    // Fallback: filter the static HTML .line elements by data attributes
+    document.querySelectorAll('[data-live-feed] .line').forEach(line => {
+      const lv = line.dataset.feedVendor || '';
+      const lt = line.dataset.feedTech   || '';
+      const lk = line.dataset.feedKit    || '';
+      const vendorOk = vendor === 'all' || lv === vendor;
+      const techOk   = tech   === 'all' || lt === tech;
+      const kitOk    = kit    === 'all' || lk === kit;
+      line.style.display = (vendorOk && techOk && kitOk) ? '' : 'none';
     });
-    populateConsoleFeed(filtered.length ? filtered : consoleFeedAllItems);
   }
 
   document.querySelectorAll('.cf-chip').forEach(chip => {
     chip.addEventListener('click', () => {
-      const group = chip.parentElement;
+      const group = chip.closest('.cf-group');
       group.querySelectorAll('.cf-chip').forEach(c => c.classList.remove('on'));
       chip.classList.add('on');
       applyConsoleFilters();
