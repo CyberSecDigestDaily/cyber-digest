@@ -113,16 +113,16 @@
           <div class="d" id="console-kev7d-sub">loading&hellip;</div>
         </div>
       </div>
-      <!-- Tracked actors -->
+      <!-- Tracked actors — links to primary threat intelligence blog posts -->
       <div class="console-actors">
         <div class="ca-hdr">Top tracked threat actors</div>
-        <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a" target="_blank" rel="noopener noreferrer">Volt Typhoon<span class="ca-tag">China &middot; Critical infrastructure</span></a>
-        <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-249a" target="_blank" rel="noopener noreferrer">APT28 / Fancy Bear<span class="ca-tag">Russia (GRU) &middot; Espionage</span></a>
-        <a class="ca-item" href="https://attack.mitre.org/groups/G0032/" target="_blank" rel="noopener noreferrer">Lazarus Group<span class="ca-tag">North Korea &middot; Financial / espionage</span></a>
-        <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-338a" target="_blank" rel="noopener noreferrer">Salt Typhoon<span class="ca-tag">China &middot; Telecom / ISP</span></a>
+        <a class="ca-item" href="https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/" target="_blank" rel="noopener noreferrer">Volt Typhoon<span class="ca-tag">China &middot; Critical infrastructure</span></a>
+        <a class="ca-item" href="https://cloud.google.com/blog/topics/threat-intelligence/apt28-targets-europe-energy-transportation-environment" target="_blank" rel="noopener noreferrer">APT28 / Fancy Bear<span class="ca-tag">Russia (GRU) &middot; Espionage</span></a>
+        <a class="ca-item" href="https://cloud.google.com/blog/topics/threat-intelligence/north-korea-cyber-theft-swift-financial" target="_blank" rel="noopener noreferrer">Lazarus Group<span class="ca-tag">North Korea &middot; Financial / espionage</span></a>
+        <a class="ca-item" href="https://www.microsoft.com/en-us/security/blog/2024/10/16/new-ttps-observed-in-mint-sandstorm-campaign-targeting-high-profile-individuals-at-universities-and-research-orgs/" target="_blank" rel="noopener noreferrer">Salt Typhoon<span class="ca-tag">China &middot; Telecom / ISP</span></a>
         <a class="ca-item" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a" target="_blank" rel="noopener noreferrer">RansomHub<span class="ca-tag">Crimeware &middot; Ransomware-as-a-service</span></a>
       </div>
-      <!-- Console filters — vendor only, wired to live KEV feed -->
+      <!-- Console filters — multi-select vendor filter, wired to live KEV feed -->
       <div class="console-filters" aria-label="Filter feed">
         <div class="cf-group">
           <span class="cf-label">Vendor</span>
@@ -133,6 +133,13 @@
           <button class="cf-chip" data-cf-vendor="microsoft">Microsoft</button>
           <button class="cf-chip" data-cf-vendor="cisco">Cisco</button>
           <button class="cf-chip" data-cf-vendor="palo alto">Palo Alto</button>
+          <button class="cf-chip" data-cf-vendor="apple">Apple</button>
+          <button class="cf-chip" data-cf-vendor="citrix">Citrix</button>
+          <button class="cf-chip" data-cf-vendor="sonicwall">SonicWall</button>
+          <button class="cf-chip" data-cf-vendor="apache">Apache</button>
+          <button class="cf-chip" data-cf-vendor="f5">F5</button>
+          <button class="cf-chip" data-cf-vendor="juniper">Juniper</button>
+          <button class="cf-chip" data-cf-vendor="google">Google</button>
         </div>
       </div>
       <!-- Console feed: app.js populates from CISA KEV. Fallback uses real KEV dates. -->
@@ -159,63 +166,15 @@
       </div>
     </div>
 
-    <div class="cve-grid">
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">VMware &middot; ESXi VCMI</div>
-        <div class="id">CVE-2025-22224 <span class="score crit">9.3</span></div>
-        <h4>Heap overflow zero-day exploited in the wild -- unauthenticated RCE on ESXi hypervisor</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV 2025</span><span class="kev">ZERO-DAY</span></div>
-      </a>
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Ivanti &middot; Connect Secure</div>
-        <div class="id">CVE-2025-0282 <span class="score crit">9.0</span></div>
-        <h4>Stack-based buffer overflow allowing unauthenticated remote code execution</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV Jan 2025</span><span class="kev">EXPLOITED</span></div>
-      </a>
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Fortinet &middot; FortiManager</div>
-        <div class="id">CVE-2024-47575 <span class="score crit">9.8</span></div>
-        <h4>Missing auth in fgfm daemon -- unauthenticated command execution (FortiJump)</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV Oct 2024</span><span class="kev">EXPLOITED</span></div>
-      </a>
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3400" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Palo Alto &middot; PAN-OS</div>
-        <div class="id">CVE-2024-3400 <span class="score crit">10.0</span></div>
-        <h4>GlobalProtect command injection allowing root code execution without authentication</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i></div>
-        <div class="foot"><span>KEV Apr 2024</span><span class="kev">EXPLOITED</span></div>
-      </a>
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21762" target="_blank" rel="noopener" class="cve crit">
-        <div class="vendor">Fortinet &middot; FortiOS SSL VPN</div>
-        <div class="id">CVE-2024-21762 <span class="score crit">9.6</span></div>
-        <h4>Out-of-bounds write in SSL VPN -- unauthenticated remote code execution</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV Feb 2024</span><span class="kev">EXPLOITED</span></div>
-      </a>
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-37085" target="_blank" rel="noopener" class="cve">
-        <div class="vendor">VMware &middot; ESXi</div>
-        <div class="id">CVE-2024-37085 <span class="score high">7.2</span></div>
-        <h4>Active Directory auth bypass via ESX Admins group -- used by Akira and Black Basta</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV Jul 2024</span><span class="kev">EXPLOITED</span></div>
-      </a>
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-6387" target="_blank" rel="noopener" class="cve">
-        <div class="vendor">OpenSSH &middot; sshd</div>
-        <div class="id">CVE-2024-6387 <span class="score high">8.1</span></div>
-        <h4>Signal handler race condition regreSSHion -- unauthenticated RCE on glibc Linux</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV Jul 2024</span><span>PoC public</span></div>
-      </a>
-      <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" class="cve">
-        <div class="vendor">Microsoft &middot; Hyper-V</div>
-        <div class="id">CVE-2025-21333 <span class="score high">7.8</span></div>
-        <h4>NT Kernel Integration VSP privilege escalation -- exploited as zero-day Jan 2025</h4>
-        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
-        <div class="foot"><span>KEV Jan 2025</span><span class="kev">ZERO-DAY</span></div>
-      </a>
+    <!-- app.js populates this from live CISA KEV data on page load -->
+    <div class="cve-grid" data-cve-grid>
+      <div class="cve crit" style="opacity:.4;pointer-events:none">
+        <div class="vendor">Loading&hellip;</div>
+        <div class="id">Fetching CISA KEV</div>
+        <h4>Live vulnerability data loading from CISA Known Exploited Vulnerabilities catalog</h4>
+        <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
+        <div class="foot"><span>CISA KEV</span><span class="kev">LIVE</span></div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:32px">
       <a href="cves.html" class="btn btn-ghost btn-lg">Full vulnerability tracker with vendor filter <span class="arr">&rarr;</span></a>

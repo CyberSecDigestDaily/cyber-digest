@@ -179,6 +179,33 @@
     return result;
   }
 
+  /* ═══════════════════════════════════════════════════════════
+     6b. DYNAMIC CVE GRID — live from CISA KEV
+  ═══════════════════════════════════════════════════════════ */
+  function populateCVEGrid(items){
+    const grid = document.querySelector('[data-cve-grid]');
+    if (!grid || !items.length) return;
+    // Take top 6 most-recently-added KEV entries
+    const top = items.slice(0, 6);
+    grid.innerHTML = top.map(item => {
+      const vendor  = item.vendor  || '';
+      const product = item.product || '';
+      const title   = vendor + (product ? ' \xb7 ' + product : '');
+      const desc    = (item.name || item.desc || '').slice(0, 120);
+      const added   = (item.dateAdded || '').slice(0, 7); // YYYY-MM
+      const label   = added ? 'KEV ' + added : 'KEV';
+      // 8 filled bars — all KEV entries are actively exploited
+      const bars    = '<i class="bar on"></i>'.repeat(8) + '<i class="bar"></i><i class="bar"></i>';
+      return '<a href="' + item.nvdUrl + '" target="_blank" rel="noopener" class="cve crit">' +
+        '<div class="vendor">' + title + '</div>' +
+        '<div class="id">' + item.id + ' <span class="kev" style="font-size:10px;padding:2px 5px;vertical-align:middle">KEV</span></div>' +
+        '<h4>' + desc + (desc.length >= 120 ? '…' : '') + '</h4>' +
+        '<div class="bars">' + bars + '</div>' +
+        '<div class="foot"><span>' + label + '</span><span class="kev">EXPLOITED</span></div>' +
+        '</a>';
+    }).join('');
+  }
+
   function updateConsoleMetrics(kev7d, nvd7d){
     const cveEl  = document.getElementById('console-cve7d');
     const cveSub = document.getElementById('console-cve7d-sub');
@@ -375,19 +402,20 @@
         applyTickerFilter();
         if (!forceFresh) { consoleFeedAllItems = kev; populateConsoleFeed(kev); }
         buildTickerVendorBar(kev);
-        // Fetch NVD 7d count then update both metrics
+        populateCVEGrid(kev);
+        // Show KEV count immediately; then try to get NVD 7d count
+        updateConsoleMetrics(kevData.kev7d, null);
         try {
           const now = new Date(), ago = new Date(now - 7 * 864e5);
           const fmt = d => d.toISOString().slice(0, 19) + '.000';
           const nr  = await fetch(
             'https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1' +
-            '&pubStartDate=' + fmt(ago) + '&pubEndDate=' + fmt(now)
+            '&pubStartDate=' + fmt(ago) + '&pubEndDate=' + fmt(now),
+            {signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined}
           );
           const nj = await nr.json();
           updateConsoleMetrics(kevData.kev7d, nj.totalResults);
-        } catch {
-          updateConsoleMetrics(kevData.kev7d, null);
-        }
+        } catch { /* KEV count already shown; NVD count stays blank */ }
       }
     } catch {
       try {
@@ -396,6 +424,8 @@
           tickerAllItems = nvd;
           applyTickerFilter();
           buildTickerVendorBar(nvd);
+          // Show fallback metric: NVD count as CVE count, no KEV count
+          updateConsoleMetrics(null, nvd.length);
         }
       } catch {}
     }
@@ -445,48 +475,49 @@
   /* ═══════════════════════════════════════════════════════════
      9b. CONSOLE FEED FILTERS (vendor / kit / tech)
   ═══════════════════════════════════════════════════════════ */
-  let consoleFeedAllItems = [];
+  let consoleFeedAllItems  = [];
+  let consoleFeedActiveVendors = new Set(); // empty = show all
 
   function applyConsoleFilters(){
-    const vendor = (document.querySelector('.cf-chip[data-cf-vendor].on') || {}).dataset?.cfVendor || 'all';
-    const kit    = (document.querySelector('.cf-chip[data-cf-kit].on')    || {}).dataset?.cfKit    || 'all';
-    const tech   = (document.querySelector('.cf-chip[data-cf-tech].on')   || {}).dataset?.cfTech   || 'all';
-
-    // If live data is loaded, re-run populateConsoleFeed with matching items
     if (consoleFeedAllItems.length) {
-      const KIT_KW  = { ransomware:['ransomware','lockbit','akira','blackcat','alphv','clop','black basta'], rat:['cobalt strike','metasploit','remote access trojan'], loader:['loader','dropper','bumblebee','gootloader'], rootkit:['rootkit','bootkit','uefi'] };
-      const TECH_KW = { vpn:['vpn','connect secure','fortios','globalprotect','pulse'], hypervisor:['esxi','vcenter','vcmi','hyper-v','vsphere'], os:['windows','linux','kernel','nt kernel','android'], network:['fortimanager','fortigate','firewall','junos','nexus','router'] };
       const filtered = consoleFeedAllItems.filter(item => {
-        const v   = (item.vendor || '').toLowerCase();
-        const hay = ((item.name || '') + ' ' + (item.desc || '') + ' ' + (item.product || '')).toLowerCase();
-        const vendorOk = vendor === 'all' || v.includes(vendor);
-        const kitOk    = kit  === 'all' || (KIT_KW[kit]  || []).some(kw => hay.includes(kw));
-        const techOk   = tech === 'all' || (TECH_KW[tech] || []).some(kw => hay.includes(kw));
-        return vendorOk && kitOk && techOk;
+        const v = (item.vendor || '').toLowerCase();
+        return consoleFeedActiveVendors.size === 0 ||
+          [...consoleFeedActiveVendors].some(sel => v.includes(sel));
       });
       populateConsoleFeed(filtered.length ? filtered : consoleFeedAllItems);
-      // Re-stamp data attributes on newly rendered lines
-      // data attributes already stamped during populateConsoleFeed render
       return;
     }
-
-    // Fallback: filter the static HTML .line elements by data attributes
+    // Fallback: filter static HTML .line elements
     document.querySelectorAll('[data-live-feed] .line').forEach(line => {
-      const lv = line.dataset.feedVendor || '';
-      const lt = line.dataset.feedTech   || '';
-      const lk = line.dataset.feedKit    || '';
-      const vendorOk = vendor === 'all' || lv === vendor;
-      const techOk   = tech   === 'all' || lt === tech;
-      const kitOk    = kit    === 'all' || lk === kit;
-      line.style.display = (vendorOk && techOk && kitOk) ? '' : 'none';
+      const lv = (line.dataset.feedVendor || '').toLowerCase();
+      const ok = consoleFeedActiveVendors.size === 0 ||
+        [...consoleFeedActiveVendors].some(sel => lv.includes(sel));
+      line.style.display = ok ? '' : 'none';
     });
   }
 
-  document.querySelectorAll('.cf-chip').forEach(chip => {
+  // Multi-select vendor chips — "All" clears selection; individual chips toggle
+  document.querySelectorAll('.cf-chip[data-cf-vendor]').forEach(chip => {
     chip.addEventListener('click', () => {
-      const group = chip.closest('.cf-group');
-      group.querySelectorAll('.cf-chip').forEach(c => c.classList.remove('on'));
-      chip.classList.add('on');
+      const v = chip.dataset.cfVendor;
+      if (v === 'all'){
+        consoleFeedActiveVendors.clear();
+        document.querySelectorAll('.cf-chip[data-cf-vendor]').forEach(c => c.classList.remove('on'));
+        chip.classList.add('on');
+      } else {
+        if (consoleFeedActiveVendors.has(v)){
+          consoleFeedActiveVendors.delete(v);
+          chip.classList.remove('on');
+        } else {
+          consoleFeedActiveVendors.add(v);
+          chip.classList.add('on');
+        }
+        // If nothing selected, default back to All
+        const allBtn = document.querySelector('.cf-chip[data-cf-vendor="all"]');
+        if (consoleFeedActiveVendors.size === 0 && allBtn) allBtn.classList.add('on');
+        else if (allBtn) allBtn.classList.remove('on');
+      }
       applyConsoleFilters();
     });
   });
@@ -599,7 +630,6 @@
     clearTimeout(t._timer);
     t._timer = setTimeout(() => t.classList.remove('show'), 3200);
   }
-  window.cdToast = toast;
 
   /* ═══════════════════════════════════════════════════════════
      13. FORM HANDLERS
