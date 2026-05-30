@@ -92,6 +92,10 @@
         transition:color .2s;
       }
       .ticker-item:hover { color:var(--fg) }
+      .ticker-id  { color:var(--fg);font-family:var(--font-mono);font-size:11.5px }
+      .ticker-sep { color:var(--fg-dim);opacity:.4;margin:0 2px;user-select:none }
+      .ticker-desc { color:var(--fg-muted) }
+      .ticker-item:hover .ticker-desc { color:var(--fg) }
     `;
     document.head.appendChild(s);
 
@@ -116,10 +120,10 @@
     });
     document.addEventListener('mousemove', e => {
       if (!active) return;
-      let x = e.clientX + 20;
-      let y = e.clientY - 14;
+      let x = e.clientX + 16;
+      let y = e.clientY + 20; // below cursor by default
       if (x + 340 > window.innerWidth) x = e.clientX - 350;
-      if (y + tip.offsetHeight > window.innerHeight) y = e.clientY - tip.offsetHeight - 10;
+      if (y + tip.offsetHeight > window.innerHeight) y = e.clientY - tip.offsetHeight - 10; // flip above if near bottom
       tip.style.left = x + 'px';
       tip.style.top  = y + 'px';
     });
@@ -148,15 +152,7 @@
     try { sessionStorage.setItem(key, JSON.stringify({ts: Date.now(), data})); } catch {}
   }
 
-  async function fetchKEV(){
-    const cached = getCached('cd_kev_v4');
-    if (cached) return cached;
-    const r = await fetch(
-      'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json',
-      {signal: AbortSignal.timeout ? AbortSignal.timeout(12000) : undefined}
-    );
-    if (!r.ok) throw new Error('KEV ' + r.status);
-    const json = await r.json();
+  function parseKEVJson(json){
     const all = json.vulnerabilities || [];
     const cutoff7d = new Date() - 7 * 864e5;
     const kev7d = all.filter(v => new Date(v.dateAdded) >= cutoff7d).length;
@@ -174,7 +170,30 @@
         nvdUrl:    'https://nvd.nist.gov/vuln/detail/' + v.cveID,
         isKEV:     true
       }));
-    const result = { items, kev7d };
+    return { items, kev7d };
+  }
+
+  async function fetchKEV(){
+    const cached = getCached('cd_kev_v4');
+    if (cached) return cached;
+
+    // Try local snapshot first (committed daily by GitHub Action — same origin, no CORS)
+    try {
+      const lr = await fetch('/kev.json', {signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined});
+      if (lr.ok){
+        const result = parseKEVJson(await lr.json());
+        setCache('cd_kev_v4', result);
+        return result;
+      }
+    } catch {}
+
+    // Fall back to CISA direct
+    const r = await fetch(
+      'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json',
+      {signal: AbortSignal.timeout ? AbortSignal.timeout(12000) : undefined}
+    );
+    if (!r.ok) throw new Error('KEV ' + r.status);
+    const result = parseKEVJson(await r.json());
     setCache('cd_kev_v4', result);
     return result;
   }
@@ -311,7 +330,9 @@
     const tip  = buildTip(item).replace(/"/g, '&quot;');
     return '<a class="ticker-item" href="' + item.nvdUrl + '" target="_blank" rel="noopener" data-cve-tip="' + tip + '">' +
       '<span class="sev ' + cls + '">' + lbl + '</span>' +
-      item.id + ' — ' + text + (text.length >= 80 ? '…' : '') +
+      '<span class="ticker-id">' + item.id + '</span>' +
+      '<span class="ticker-sep">—</span>' +
+      '<span class="ticker-desc">' + text + (text.length >= 80 ? '…' : '') + '</span>' +
       '</a>';
   }
 
@@ -424,7 +445,8 @@
           tickerAllItems = nvd;
           applyTickerFilter();
           buildTickerVendorBar(nvd);
-          // Show fallback metric: NVD count as CVE count, no KEV count
+          populateCVEGrid(nvd);
+          if (!forceFresh) { consoleFeedAllItems = nvd; populateConsoleFeed(nvd); }
           updateConsoleMetrics(null, nvd.length);
         }
       } catch {}
@@ -710,18 +732,63 @@
       n.innerHTML =
         '<button class="close" onclick="cdMobileNav(false)" aria-label="Close menu">&times;</button>' +
         '<a href="index.html">Home <span class="arr">&rarr;</span></a>' +
-        '<a href="wire.html">The Wire <span class="arr">&rarr;</span></a>' +
-        '<a href="cves.html">Vulnerabilities <span class="arr">&rarr;</span></a>' +
-        '<a href="briefing.html">Briefings <span class="arr">&rarr;</span></a>' +
-        '<a href="actor.html">Threat Actors <span class="arr">&rarr;</span></a>' +
-        '<a href="subscribe.html">Subscribe <span class="arr">&rarr;</span></a>' +
-        '<a href="about.html">About <span class="arr">&rarr;</span></a>' +
-        '<a href="tip.html">Tip line <span class="arr">&rarr;</span></a>';
+        '<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV <span class="arr">&rarr;</span></a>' +
+        '<a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD <span class="arr">&rarr;</span></a>';
       document.body.appendChild(n);
     } else if (n){
       n.classList.toggle('open', !!open);
     }
   };
+
+  /* ═══════════════════════════════════════════════════════════
+     17. THREAT ACTORS CONFIG
+     Update this array to change tracked actors — renders dynamically.
+     Sourced from MITRE ATT&CK / CISA advisories.
+  ═══════════════════════════════════════════════════════════ */
+  const ACTORS = [
+    {
+      name:   'Volt Typhoon',
+      nation: 'China',
+      sector: 'Critical infrastructure',
+      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a'
+    },
+    {
+      name:   'APT28 / Fancy Bear',
+      nation: 'Russia (GRU)',
+      sector: 'Espionage',
+      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108a'
+    },
+    {
+      name:   'Lazarus Group',
+      nation: 'North Korea',
+      sector: 'Financial / espionage',
+      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-241a'
+    },
+    {
+      name:   'Salt Typhoon',
+      nation: 'China',
+      sector: 'Telecom / ISP',
+      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-338a'
+    },
+    {
+      name:   'RansomHub',
+      nation: 'Crimeware',
+      sector: 'Ransomware-as-a-service',
+      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a'
+    },
+  ];
+
+  (function renderActors(){
+    const el = document.querySelector('[data-actors-list]');
+    if (!el) return;
+    el.innerHTML = '<div class="ca-hdr">Top tracked threat actors</div>' +
+      ACTORS.map(a =>
+        '<a class="ca-item" href="' + a.url + '" target="_blank" rel="noopener noreferrer">' +
+          a.name +
+          '<span class="ca-tag">' + a.nation + ' &middot; ' + a.sector + '</span>' +
+        '</a>'
+      ).join('');
+  })();
 
   /* ═══════════════════════════════════════════════════════════
      16. HIGHLIGHT CURRENT PAGE IN NAV
