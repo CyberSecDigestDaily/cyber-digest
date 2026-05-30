@@ -38,28 +38,12 @@
       </span>
       <span class="brand-name">Cyber Digest<span>/ Intelligence</span></span>
     </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="wire.html">The Wire</a>
-      <a href="cves.html">Vulnerabilities</a>
-      <a href="briefing.html">Briefings</a>
-      <a href="actor.html">Actors</a>
-      <a href="about.html">About</a>
-    </nav>
     <div class="header-actions">
       <div class="clock" aria-label="Live UTC clock"><span class="pulse"></span><span data-clock-short>--:-- UTC</span></div>
-      <button class="search" data-action="search" aria-label="Open search (Cmd+K)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        Search CVE, vendor, actor...
-        <span class="kbd">Cmd K</span>
-      </button>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
         <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
-      <button class="menu-btn" onclick="cdMobileNav(true)" aria-label="Open menu">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-      <a href="subscribe.html" class="btn btn-primary btn-sm">Subscribe <span class="arr">-></span></a>
     </div>
   </div>
 </header>
@@ -91,8 +75,8 @@
         and distills them into briefings you can act on before standup.
       </p>
       <div class="cta-row">
-        <a href="cves.html" class="btn btn-primary btn-lg">Browse vulnerabilities <span class="arr">-></span></a>
-        <a href="subscribe.html" class="btn btn-ghost btn-lg">Subscribe &mdash; free</a>
+        <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener" class="btn btn-primary btn-lg">CISA KEV catalog <span class="arr">-></span></a>
+        <a href="https://nvd.nist.gov/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">NVD database</a>
       </div>
     </div>
 
@@ -162,7 +146,7 @@
         <h2>The exploits actually being used.</h2>
       </div>
       <div class="right">
-        Source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a> &middot; <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a> &middot; <a href="cves.html">Full tracker with vendor filter &rarr;</a>
+        Source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a> &middot; <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a>
       </div>
     </div>
 
@@ -175,9 +159,6 @@
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
         <div class="foot"><span>CISA KEV</span><span class="kev">LIVE</span></div>
       </div>
-    </div>
-    <div style="text-align:center;margin-top:32px">
-      <a href="cves.html" class="btn btn-ghost btn-lg">Full vulnerability tracker with vendor filter <span class="arr">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -281,29 +262,6 @@
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="section" style="padding-top:64px;padding-bottom:80px">
-  <div class="container">
-    <div class="newsletter">
-      <div>
-        <div class="section-tag">Daily briefing &middot; 06:30 UTC</div>
-        <h2>One email. The signal of the day, <em>nothing else.</em></h2>
-        <p>Free, weekdays. Read in five minutes. Built for SOC leads, IR analysts and security engineers.</p>
-      </div>
-      <form class="signup" data-form="subscribe">
-        <div class="field">
-          <input type="email" placeholder="you@company.com" aria-label="Email address"/>
-          <button class="btn btn-primary">Subscribe <span class="arr">-></span></button>
-        </div>
-        <div class="perks">
-          <span>No spam, ever</span>
-          <span>Unsubscribe in one click</span>
-          <span>Read by 42k analysts</span>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer class="site-footer">
@@ -314,30 +272,19 @@
           <span class="brand-mark"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 L14 3 L25 9"/><path d="M3 14 L14 8 L25 14" opacity=".7"/><path d="M3 19 L14 13 L25 19" opacity=".4"/><circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/></svg></span>
           <span class="brand-name">Cyber Digest</span>
         </a>
-        <p>Independent threat intelligence and cybersecurity news. Data sourced from CISA KEV, NVD, and vendor advisories.</p>
+        <p>Independent threat intelligence. Data sourced from CISA KEV, NVD, and vendor advisories.</p>
       </div>
-      <div><h5>Sections</h5><ul>
-        <li><a href="wire.html">The Wire</a></li>
-        <li><a href="cves.html">Vulnerabilities</a></li>
-        <li><a href="briefing.html">Briefings</a></li>
-        <li><a href="actor.html">Threat Actors</a></li>
-      </ul></div>
       <div><h5>Sources</h5><ul>
         <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a></li>
         <li><a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a></li>
         <li><a href="https://krebsonsecurity.com/" target="_blank" rel="noopener">Krebs on Security</a></li>
-        <li><a href="feed.xml">RSS feed</a></li>
+        <li><a href="https://therecord.media/" target="_blank" rel="noopener">The Record</a></li>
       </ul></div>
-      <div><h5>Company</h5><ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tip.html">Tip line</a></li>
-        <li><a href="subscribe.html">Subscribe</a></li>
-        <li><a href="about.html#contact">Contact</a></li>
-      </ul></div>
-      <div><h5>Legal</h5><ul>
-        <li><a href="legal.html#privacy">Privacy</a></li>
-        <li><a href="legal.html#terms">Terms</a></li>
-        <li><a href="legal.html#disclosures">Disclosures</a></li>
+      <div><h5>More sources</h5><ul>
+        <li><a href="https://unit42.paloaltonetworks.com/" target="_blank" rel="noopener">Unit 42</a></li>
+        <li><a href="https://blog.google/threat-analysis-group/" target="_blank" rel="noopener">Google TAG</a></li>
+        <li><a href="https://blog.talosintelligence.com/" target="_blank" rel="noopener">Cisco Talos</a></li>
+        <li><a href="https://www.microsoft.com/en-us/security/blog/" target="_blank" rel="noopener">Microsoft Security</a></li>
       </ul></div>
     </div>
     <div class="foot-bottom">
