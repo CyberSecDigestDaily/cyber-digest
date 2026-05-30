@@ -1,35 +1,25 @@
 /*
-  # Prevent clickjacking
   X-Frame-Options: DENY
-
-  # Prevent MIME sniffing
   X-Content-Type-Options: nosniff
-
-  # No referrer leaked to external sites
   Referrer-Policy: no-referrer
-
-  # Disable browser features not needed
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
-
-  # Prevent cross-origin data leaks
   Cross-Origin-Opener-Policy: same-origin
-
   # Content Security Policy
-  # script-src: inline scripts needed for theme init + app.js
-  # style-src: inline styles + Google Fonts CSS
-  # connect-src: CISA KEV + NVD API (live ticker data)
-  # font-src: Google Fonts files
-  # img-src: data URIs only (no remote images used)
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://services.nvd.nist.gov https://www.cisa.gov; img-src 'self' data:; font-src https://fonts.gstatic.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
-
-  # Cache HTML for 1 hour
+  # connect-src covers: CISA KEV, NVD, GitHub Advisory API, EPSS (FIRST.org),
+  #   CIRCL CVE, OSV.dev, ThreatFox, MalwareBazaar, Feodo Tracker
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://services.nvd.nist.gov https://www.cisa.gov https://api.github.com https://api.first.org https://cve.circl.lu https://api.osv.dev https://threatfox-api.abuse.ch https://mb-api.abuse.ch https://feodotracker.abuse.ch https://urlhaus-api.abuse.ch; img-src 'self' data:; font-src https://fonts.gstatic.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /digest.json
-  # Cache digest.json for 30 min
   Cache-Control: public, max-age=1800, stale-while-revalidate=3600
 
-/site.css
+/feed.json
+  Cache-Control: public, max-age=1800, stale-while-revalidate=3600
+
+/kev.json
+  Cache-Control: public, max-age=3600, stale-while-revalidate=21600
+
+/styles.css
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /app.js

@@ -132,12 +132,14 @@
   /* ═══════════════════════════════════════════════════════════
      6. DATA LAYER — NVD + CISA KEV
   ═══════════════════════════════════════════════════════════ */
-  const CACHE_TTL     = 5 * 60 * 1000; // 5 minutes (live ticker)
+  const CACHE_TTL      = 5 * 60 * 1000; // 5 minutes (live ticker)
   const TICKER_REFRESH = 5 * 60 * 1000; // re-fetch every 5 min
+  const KEV_STALE_DAYS = 3;             // treat kev.json as stale if newest entry > 3 days old
 
   // Ticker state
   let tickerAllItems      = [];
   let tickerActiveVendors = new Set();
+  let lastKev7d           = null;       // persist last known kev7d across fetch paths
 
   function getCached(key){
     try {
@@ -177,25 +179,47 @@
     const cached = getCached('cd_kev_v4');
     if (cached) return cached;
 
+    let staleResult = null;
+
     // Try local snapshot first (committed daily by GitHub Action — same origin, no CORS)
     try {
       const lr = await fetch('/kev.json', {signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined});
       if (lr.ok){
-        const result = parseKEVJson(await lr.json());
+        const json = await lr.json();
+        const all  = json.vulnerabilities || [];
+        // Staleness check: find most recently added entry
+        const newest = all.reduce((m, v) => v.dateAdded > m ? v.dateAdded : m, '');
+        const ageDays = newest ? (Date.now() - new Date(newest).getTime()) / 864e5 : 999;
+        const result  = parseKEVJson(json);
+        if (ageDays <= KEV_STALE_DAYS) {
+          setCache('cd_kev_v4', result);
+          return result;
+        }
+        // Data is stale — keep as fallback, try CISA direct below
+        staleResult = result;
+      }
+    } catch {}
+
+    // Try CISA direct (may be blocked by CORS in some browsers — if so we fall back to stale)
+    try {
+      const r = await fetch(
+        'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json',
+        {signal: AbortSignal.timeout ? AbortSignal.timeout(12000) : undefined}
+      );
+      if (r.ok) {
+        const result = parseKEVJson(await r.json());
         setCache('cd_kev_v4', result);
         return result;
       }
     } catch {}
 
-    // Fall back to CISA direct
-    const r = await fetch(
-      'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json',
-      {signal: AbortSignal.timeout ? AbortSignal.timeout(12000) : undefined}
-    );
-    if (!r.ok) throw new Error('KEV ' + r.status);
-    const result = parseKEVJson(await r.json());
-    setCache('cd_kev_v4', result);
-    return result;
+    // If CISA direct failed but we have a stale local snapshot, use it
+    if (staleResult) {
+      // Don't cache stale result — allow retry on next tick
+      return staleResult;
+    }
+
+    throw new Error('KEV fetch failed — no local snapshot available');
   }
 
   /* ═══════════════════════════════════════════════════════════
@@ -419,13 +443,15 @@
       const kevData = await fetchKEV();
       const kev = kevData.items;
       if (kev && kev.length){
+        // Persist kev7d for use in fallback paths
+        if (kevData.kev7d != null) lastKev7d = kevData.kev7d;
         tickerAllItems = kev;
         applyTickerFilter();
         if (!forceFresh) { consoleFeedAllItems = kev; populateConsoleFeed(kev); }
         buildTickerVendorBar(kev);
         populateCVEGrid(kev);
         // Show KEV count immediately; then try to get NVD 7d count
-        updateConsoleMetrics(kevData.kev7d, null);
+        updateConsoleMetrics(lastKev7d, null);
         try {
           const now = new Date(), ago = new Date(now - 7 * 864e5);
           const fmt = d => d.toISOString().slice(0, 19) + '.000';
@@ -435,8 +461,8 @@
             {signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined}
           );
           const nj = await nr.json();
-          updateConsoleMetrics(kevData.kev7d, nj.totalResults);
-        } catch { /* KEV count already shown; NVD count stays blank */ }
+          updateConsoleMetrics(lastKev7d, nj.totalResults);
+        } catch { /* KEV count already shown; NVD count stays as-is */ }
       }
     } catch {
       try {
@@ -447,7 +473,8 @@
           buildTickerVendorBar(nvd);
           populateCVEGrid(nvd);
           if (!forceFresh) { consoleFeedAllItems = nvd; populateConsoleFeed(nvd); }
-          updateConsoleMetrics(null, nvd.length);
+          // Use lastKev7d if we have it from a previous KEV fetch; otherwise show NVD count
+          updateConsoleMetrics(lastKev7d, nvd.length);
         }
       } catch {}
     }
@@ -750,31 +777,31 @@
       name:   'Volt Typhoon',
       nation: 'China',
       sector: 'Critical infrastructure',
-      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a'
+      url:    'https://attack.mitre.org/groups/G1017/'
     },
     {
       name:   'APT28 / Fancy Bear',
       nation: 'Russia (GRU)',
       sector: 'Espionage',
-      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108a'
+      url:    'https://attack.mitre.org/groups/G0007/'
     },
     {
       name:   'Lazarus Group',
       nation: 'North Korea',
       sector: 'Financial / espionage',
-      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-241a'
+      url:    'https://attack.mitre.org/groups/G0032/'
     },
     {
       name:   'Salt Typhoon',
       nation: 'China',
       sector: 'Telecom / ISP',
-      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-338a'
+      url:    'https://attack.mitre.org/groups/G1045/'
     },
     {
       name:   'RansomHub',
       nation: 'Crimeware',
       sector: 'Ransomware-as-a-service',
-      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a'
+      url:    'https://attack.mitre.org/groups/G1075/'
     },
   ];
 
@@ -799,6 +826,322 @@
       const href = (a.getAttribute('href') || '').split('?')[0];
       if (href === path) a.setAttribute('aria-current', 'page');
     });
+  })();
+
+  /* ═══════════════════════════════════════════════════════════
+     18. EPSS — Exploit Prediction Scoring System (FIRST.org)
+         Top CVEs by exploitability probability
+  ═══════════════════════════════════════════════════════════ */
+  async function fetchEPSS(){
+    const cached = getCached('cd_epss_v2');
+    if (cached) return cached;
+    try {
+      const r = await fetch(
+        'https://api.first.org/data/v1/epss?order=!epss&limit=20',
+        {signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined}
+      );
+      if (!r.ok) throw new Error('EPSS ' + r.status);
+      const json = await r.json();
+      const data = (json.data || []).map(e => ({
+        cve:        e.cve,
+        epss:       parseFloat(e.epss),
+        percentile: parseFloat(e.percentile),
+        date:       e.date
+      }));
+      setCache('cd_epss_v2', data);
+      return data;
+    } catch { return []; }
+  }
+
+  // Enrich CVE grid items with EPSS scores
+  function applyEPSSToGrid(epssData){
+    if (!epssData.length) return;
+    const map = {};
+    epssData.forEach(e => { map[e.cve] = e; });
+    document.querySelectorAll('[data-cve-id]').forEach(el => {
+      const e = map[el.dataset.cveId];
+      if (!e) return;
+      const pct = Math.round(e.percentile * 100);
+      const existing = el.querySelector('.epss-badge');
+      if (existing) return;
+      const badge = document.createElement('span');
+      badge.className = 'epss-badge';
+      badge.title = 'EPSS: ' + (e.epss * 100).toFixed(2) + '% probability of exploitation (' + pct + 'th percentile)';
+      badge.textContent = 'EPSS ' + (e.epss * 100).toFixed(1) + '%';
+      el.appendChild(badge);
+    });
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     19. GITHUB SECURITY ADVISORY DATABASE
+  ═══════════════════════════════════════════════════════════ */
+  async function fetchGHAdvisories(){
+    const cached = getCached('cd_gh_adv_v2');
+    if (cached) return cached;
+    try {
+      const r = await fetch(
+        'https://api.github.com/advisories?per_page=20&type=reviewed',
+        {
+          headers: {
+            'Accept':             'application/vnd.github+json',
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined
+        }
+      );
+      if (!r.ok) throw new Error('GH advisory ' + r.status);
+      const json = await r.json();
+      const data = json.map(a => {
+        const vuln = a.vulnerabilities && a.vulnerabilities[0];
+        return {
+          id:          a.ghsa_id,
+          cve:         a.cve_id || '',
+          severity:    (a.severity || 'unknown').toLowerCase(),
+          summary:     a.summary || '',
+          url:         a.html_url,
+          published:   a.published_at || '',
+          ecosystem:   vuln ? (vuln.package || {}).ecosystem || '' : '',
+          pkg:         vuln ? (vuln.package || {}).name || '' : '',
+          cvss:        a.cvss ? a.cvss.score : null
+        };
+      });
+      setCache('cd_gh_adv_v2', data);
+      return data;
+    } catch { return []; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     20. CIRCL CVE API — additional CVE source
+  ═══════════════════════════════════════════════════════════ */
+  async function fetchCIRCL(){
+    const cached = getCached('cd_circl_v2');
+    if (cached) return cached;
+    try {
+      const r = await fetch(
+        'https://cve.circl.lu/api/last/30',
+        {signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined}
+      );
+      if (!r.ok) throw new Error('CIRCL ' + r.status);
+      const json = await r.json();
+      const data = (json || []).map(v => ({
+        id:        v.id || v.cveMetadata?.cveId || '',
+        desc:      (v.containers?.cna?.descriptions || []).find(d => d.lang === 'en')?.value
+                   || (v.cve_description || v.summary || ''),
+        cvss:      v.cvss || null,
+        published: v.Published || v.cveMetadata?.datePublished || '',
+        nvdUrl:    'https://nvd.nist.gov/vuln/detail/' + (v.id || v.cveMetadata?.cveId || ''),
+        severity:  v.cvss >= 9 ? 'critical' : v.cvss >= 7 ? 'high' : v.cvss >= 4 ? 'medium' : 'low'
+      })).filter(v => v.id);
+      setCache('cd_circl_v2', data);
+      return data;
+    } catch { return []; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     21. DIGEST.JSON — daily aggregated news feed from GitHub Action
+  ═══════════════════════════════════════════════════════════ */
+  async function fetchDigestFeed(){
+    const cached = getCached('cd_digest_v2');
+    if (cached) return cached;
+    try {
+      const r = await fetch('/digest.json', {signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined});
+      if (!r.ok) throw new Error('digest.json ' + r.status);
+      const json = await r.json();
+      setCache('cd_digest_v2', json);
+      return json;
+    } catch { return null; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     22. THREAT FEED SECTION — renders digest news + advisories
+  ═══════════════════════════════════════════════════════════ */
+  function renderThreatFeed(digest){
+    const el = document.querySelector('[data-threat-feed]');
+    if (!el || !digest) return;
+    const items = [...(digest.threats || []), ...(digest.news || [])]
+      .sort((a, b) => (b.published || '').localeCompare(a.published || ''))
+      .slice(0, 12);
+    if (!items.length) { el.closest('[data-threat-feed-section]').style.display = 'none'; return; }
+    el.innerHTML = items.map(item => {
+      const age    = item.published ? fmtRel((Date.now() - new Date(item.published).getTime()) / 1000) : '';
+      const catCls = item.category === 'threat' ? 'tag-threat' : 'tag-news';
+      const catLbl = item.category === 'threat' ? 'Advisory' : 'News';
+      return '<a class="tf-item" href="' + item.url + '" target="_blank" rel="noopener">' +
+        '<div class="tf-meta">' +
+          '<span class="tf-cat ' + catCls + '">' + catLbl + '</span>' +
+          '<span class="tf-source">' + (item.source || '') + '</span>' +
+          (age ? '<time class="tf-age" data-rel="' + item.published + '">' + age + '</time>' : '') +
+        '</div>' +
+        '<div class="tf-title">' + (item.title || '').slice(0, 120) + '</div>' +
+        '</a>';
+    }).join('');
+    // Update section heading if digest has generated timestamp
+    if (digest.generated) {
+      const ts = document.querySelector('[data-digest-ts]');
+      if (ts) ts.textContent = 'Updated ' + fmtRel((Date.now() - new Date(digest.generated).getTime()) / 1000);
+    }
+  }
+
+  function renderGHAdvisories(advisories){
+    const el = document.querySelector('[data-gh-feed]');
+    if (!el || !advisories.length) return;
+    el.innerHTML = advisories.slice(0, 8).map(a => {
+      const cls   = sevClass(a.severity);
+      const lbl   = sevLabel(a.severity);
+      const score = a.cvss ? ' · ' + a.cvss : '';
+      const pkg   = a.pkg ? a.ecosystem + '/' + a.pkg : a.ecosystem;
+      return '<a class="gh-adv-item" href="' + a.url + '" target="_blank" rel="noopener">' +
+        '<span class="sev ' + cls + '">' + lbl + '</span>' +
+        '<span class="gh-adv-id">' + (a.cve || a.id) + '</span>' +
+        (pkg ? '<span class="gh-adv-pkg">' + pkg + score + '</span>' : '') +
+        '<span class="gh-adv-summary">' + (a.summary || '').slice(0, 80) + '</span>' +
+        '</a>';
+    }).join('');
+  }
+
+  function renderEPSSPanel(epssData){
+    const el = document.querySelector('[data-epss-feed]');
+    if (!el || !epssData.length) return;
+    el.innerHTML = epssData.slice(0, 8).map(e => {
+      const pct  = (e.epss * 100).toFixed(1);
+      const bar  = Math.round(e.epss * 100);
+      const risk = e.epss >= 0.7 ? 'crit' : e.epss >= 0.4 ? 'high' : e.epss >= 0.1 ? 'mid' : 'low';
+      return '<a class="epss-item" href="https://nvd.nist.gov/vuln/detail/' + e.cve + '" target="_blank" rel="noopener">' +
+        '<span class="epss-cve">' + e.cve + '</span>' +
+        '<span class="epss-bar-wrap"><span class="epss-bar-fill ' + risk + '" style="width:' + Math.min(bar, 100) + '%"></span></span>' +
+        '<span class="epss-pct sev ' + risk + '">' + pct + '%</span>' +
+        '</a>';
+    }).join('');
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     23. SECONDARY DATA LOAD — runs after main KEV/NVD load
+  ═══════════════════════════════════════════════════════════ */
+  async function loadSecondaryData(){
+    // Run all secondary fetches concurrently
+    const [epss, ghAdv, digest] = await Promise.allSettled([
+      fetchEPSS(),
+      fetchGHAdvisories(),
+      fetchDigestFeed()
+    ]);
+
+    if (epss.status === 'fulfilled' && epss.value.length){
+      renderEPSSPanel(epss.value);
+      applyEPSSToGrid(epss.value);
+      // Update console metric if element exists
+      const el = document.getElementById('console-epss-count');
+      if (el) {
+        const highRisk = epss.value.filter(e => e.epss >= 0.1).length;
+        el.textContent = highRisk;
+        const sub = document.getElementById('console-epss-sub');
+        if (sub) sub.textContent = 'EPSS ≥ 10% exploit prob';
+      }
+    }
+
+    if (ghAdv.status === 'fulfilled' && ghAdv.value.length){
+      renderGHAdvisories(ghAdv.value);
+      const el = document.getElementById('console-gh-count');
+      if (el) {
+        el.textContent = ghAdv.value.length;
+        const sub = document.getElementById('console-gh-sub');
+        if (sub) sub.textContent = 'GitHub GHSA advisories';
+      }
+    }
+
+    if (digest.status === 'fulfilled' && digest.value){
+      renderThreatFeed(digest.value);
+      // Supplement urgency metric
+      const urgEl = document.getElementById('console-urgency');
+      if (urgEl && digest.value.urgency) {
+        urgEl.textContent = digest.value.urgency.level;
+        urgEl.style.color = digest.value.urgency.colour || '';
+      }
+    }
+  }
+
+  // Kick off secondary data load after a short delay (let primary KEV/NVD finish first)
+  setTimeout(loadSecondaryData, 1500);
+
+  // Inject CSS for new panels
+  (function injectPanelStyles(){
+    const s = document.createElement('style');
+    s.textContent = `
+      /* ── EPSS badge on CVE cards ── */
+      .epss-badge {
+        display:inline-block;margin-left:8px;
+        font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;
+        padding:2px 6px;border:1px solid rgba(214,168,106,.5);
+        color:var(--status-mid);background:rgba(214,168,106,.07);
+        vertical-align:middle;
+      }
+      /* ── EPSS panel ── */
+      .epss-item {
+        display:grid;grid-template-columns:1fr 60px 52px;align-items:center;gap:10px;
+        padding:8px 14px;border-bottom:1px solid var(--hairline);
+        font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);
+        text-decoration:none;transition:background .12s;
+      }
+      .epss-item:last-child{ border-bottom:0 }
+      .epss-item:hover{ background:var(--bg-elev-2) }
+      .epss-cve{ color:var(--fg);font-size:11.5px }
+      .epss-bar-wrap{ height:4px;background:var(--bg-elev-3);border-radius:2px;overflow:hidden }
+      .epss-bar-fill{ height:100%;border-radius:2px;transition:width .4s var(--ease) }
+      .epss-bar-fill.crit{ background:var(--status-crit) }
+      .epss-bar-fill.high{ background:var(--status-high) }
+      .epss-bar-fill.mid { background:var(--status-mid) }
+      .epss-bar-fill.low { background:var(--status-ok) }
+      .epss-pct{ font-size:10px;text-align:right }
+      /* ── GitHub Advisory feed ── */
+      .gh-adv-item {
+        display:grid;grid-template-columns:50px 1fr 1fr;align-items:center;gap:10px;
+        padding:8px 14px;border-bottom:1px solid var(--hairline);
+        font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);
+        text-decoration:none;transition:background .12s;
+      }
+      .gh-adv-item:last-child{ border-bottom:0 }
+      .gh-adv-item:hover{ background:var(--bg-elev-2) }
+      .gh-adv-id{ color:var(--fg);font-size:11px }
+      .gh-adv-pkg{ color:var(--accent);font-size:10.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap }
+      .gh-adv-summary{ color:var(--fg-muted);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:none }
+      /* ── Threat feed ── */
+      .tf-item {
+        display:flex;flex-direction:column;gap:5px;
+        padding:12px 14px;border-bottom:1px solid var(--hairline);
+        text-decoration:none;color:inherit;transition:background .12s;
+      }
+      .tf-item:last-child{ border-bottom:0 }
+      .tf-item:hover{ background:var(--bg-elev-1) }
+      .tf-meta{ display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10px }
+      .tf-cat{ padding:1px 6px;letter-spacing:.1em;text-transform:uppercase }
+      .tf-cat.tag-threat{ color:var(--status-crit);border:1px solid rgba(216,92,92,.3) }
+      .tf-cat.tag-news{ color:var(--accent);border:1px solid rgba(108,142,255,.3) }
+      .tf-source{ color:var(--fg-dim) }
+      .tf-age{ color:var(--fg-faint);margin-left:auto }
+      .tf-title{ font-size:13.5px;color:var(--fg);line-height:1.4;letter-spacing:-.005em }
+      .tf-item:hover .tf-title{ color:#fff }
+      /* ── Multi-source section wrapper ── */
+      .intel-panels {
+        display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
+        background:var(--hairline);border:1px solid var(--hairline);
+        margin-top:40px;
+      }
+      .intel-panel {
+        background:var(--bg);overflow:hidden;
+      }
+      .intel-panel-head {
+        display:flex;align-items:center;justify-content:space-between;
+        padding:12px 14px 10px;border-bottom:1px solid var(--hairline);
+        font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;
+        text-transform:uppercase;color:var(--fg-dim);
+      }
+      .intel-panel-head a {
+        color:var(--accent);font-size:9.5px;letter-spacing:.1em;
+        border-bottom:1px solid rgba(108,142,255,.3);
+      }
+      .intel-panel-head a:hover{ border-bottom-color:var(--accent) }
+      @media (max-width:1100px){ .intel-panels{ grid-template-columns:1fr } }
+    `;
+    document.head.appendChild(s);
   })();
 
 })();

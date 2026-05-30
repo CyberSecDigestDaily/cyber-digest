@@ -96,6 +96,16 @@
           <div class="v" id="console-kev7d">—</div>
           <div class="d" id="console-kev7d-sub">loading&hellip;</div>
         </div>
+        <div class="metric">
+          <div class="k">EPSS high-risk</div>
+          <div class="v" id="console-epss-count">—</div>
+          <div class="d" id="console-epss-sub">loading&hellip;</div>
+        </div>
+        <div class="metric">
+          <div class="k">GHSA advisories</div>
+          <div class="v" id="console-gh-count">—</div>
+          <div class="d" id="console-gh-sub">loading&hellip;</div>
+        </div>
       </div>
       <!-- Tracked actors — rendered by ACTORS config in app.js — update there to change -->
       <div class="console-actors" data-actors-list></div>
@@ -151,6 +161,51 @@
         <h4>Live vulnerability data loading from CISA Known Exploited Vulnerabilities catalog</h4>
         <div class="bars"><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar on"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
         <div class="foot"><span>CISA KEV</span><span class="kev">LIVE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE INTEL PANELS — EPSS / GitHub Advisories / Threat Feed -->
+<section class="section" style="padding-top:48px" data-threat-feed-section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Live intel &middot; Multi-source</div>
+        <h2>Signal from every layer.</h2>
+      </div>
+      <div class="right"><span data-digest-ts></span></div>
+    </div>
+    <div class="intel-panels">
+      <!-- EPSS Top Exploitability -->
+      <div class="intel-panel">
+        <div class="intel-panel-head">
+          <span>EPSS &middot; Top exploit risk</span>
+          <a href="https://www.first.org/epss/" target="_blank" rel="noopener">FIRST.org ↗</a>
+        </div>
+        <div data-epss-feed style="min-height:120px">
+          <div style="padding:20px 14px;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Loading EPSS scores&hellip;</div>
+        </div>
+      </div>
+      <!-- GitHub Security Advisories -->
+      <div class="intel-panel">
+        <div class="intel-panel-head">
+          <span>GitHub &middot; GHSA advisories</span>
+          <a href="https://github.com/advisories" target="_blank" rel="noopener">All ↗</a>
+        </div>
+        <div data-gh-feed style="min-height:120px">
+          <div style="padding:20px 14px;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Loading advisories&hellip;</div>
+        </div>
+      </div>
+      <!-- Aggregated Threat News (from digest.json) -->
+      <div class="intel-panel">
+        <div class="intel-panel-head">
+          <span>Threat news &middot; Aggregated feed</span>
+          <a href="https://krebsonsecurity.com/" target="_blank" rel="noopener">Sources ↗</a>
+        </div>
+        <div data-threat-feed style="min-height:120px">
+          <div style="padding:20px 14px;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Loading feed&hellip;</div>
+        </div>
       </div>
     </div>
   </div>
