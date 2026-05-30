@@ -1,26 +1,6 @@
 /*
-  # Prevent clickjacking
   X-Frame-Options: DENY
-
-  # Prevent MIME sniffing
   X-Content-Type-Options: nosniff
-
-  # No referrer leaked when clicking external links
   Referrer-Policy: no-referrer
-
-  # Disable browser features not needed
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
-
-  # Prevent cross-origin data leaks
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-origin
-
-  # Content Security Policy — strict, no external requests
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'none'; font-src 'none'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'none'
-
-  # Cache HTML for 1 hour (digest.json updates daily)
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
-
-/digest.json
-  # Cache digest.json for 30 min — short enough to pick up same-day re-runs
-  Cache-Control: public, max-age=1800, stale-while-revalidate=3600
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'none'; font-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'

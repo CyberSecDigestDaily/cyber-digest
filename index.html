@@ -3,1420 +3,392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy"
-  content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'none'; font-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self';">
-<title>Cyber Digest</title>
+<meta name="description" content="Daily threat intelligence for security teams. CVEs, CISA KEV additions, and adversary tracking — distilled before standup.">
+<title>Cyber Digest — Threat Intelligence</title>
 <style>
-/* ─────────────────────────────────────────────────────────
-   DESIGN TOKENS — dark (default) + light override
-───────────────────────────────────────────────────────── */
+/* ── TOKENS ─────────────────────────────────────────────── */
 :root {
-  --bg:           #111317;
-  --surface:      #181C22;
-  --card:         #1D2229;
-  --border:       #252C38;
-  --border-soft:  #1E2530;
-  --text:         #E0E3E9;
-  --text-dim:     #8A95A6;
-  --text-muted:   #57616F;
-  --accent:       #5B9BD5;
-  --accent-dim:   rgba(91,155,213,0.10);
-  --accent-glow:  rgba(91,155,213,0.18);
-  --crit:         #D94F4F;
-  --high:         #D07A25;
-  --med:          #C4A820;
-  --low:          #3DA57D;
-  --kev:          #D48A1A;
-  --blog:         #8B7FD4;
-  --shadow:       0 2px 8px rgba(0,0,0,0.45);
-  --r:            6px;
-  --r-sm:         4px;
+  --bg:#0D0F14;--surface:#13161D;--card:#181C24;--border:#232836;
+  --text:#D8DCE8;--dim:#7A8499;--muted:#484F62;
+  --accent:#4A90D9;--accent-bg:rgba(74,144,217,.08);
+  --crit:#D94F4F;--high:#D07A25;--med:#C4A820;--low:#3DA57D;--kev:#D48A1A;
+  --r:5px;--max:1180px;
 }
-[data-theme="light"] {
-  --bg:           #F4F5F7;
-  --surface:      #FFFFFF;
-  --card:         #FFFFFF;
-  --border:       #DDE1E9;
-  --border-soft:  #EBEDF1;
-  --text:         #18191F;
-  --text-dim:     #6B7483;
-  --text-muted:   #9AA2B0;
-  --accent:       #2563EB;
-  --accent-dim:   rgba(37,99,235,0.07);
-  --accent-glow:  rgba(37,99,235,0.14);
-  --crit:         #C53030;
-  --high:         #B45309;
-  --med:          #92750B;
-  --low:          #276749;
-  --kev:          #B45309;
-  --blog:         #5B4EAA;
-  --shadow:       0 1px 4px rgba(0,0,0,0.10);
+[data-theme="light"]{
+  --bg:#F2F4F8;--surface:#FFF;--card:#FFF;--border:#DDE2ED;
+  --text:#141820;--dim:#5C6478;--muted:#9AA2B4;
+  --accent:#2563EB;--accent-bg:rgba(37,99,235,.06);
+  --crit:#C53030;--high:#B45309;--med:#92750B;--low:#276749;--kev:#B45309;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Helvetica Neue',Arial,system-ui,sans-serif;font-size:13.5px;line-height:1.55}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
 
-/* ─────────────────────────────────────────────────────────
-   RESET + BASE
-───────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, 'Helvetica Neue', Arial, system-ui, sans-serif;
-  font-size: 14px;
-  line-height: 1.55;
-  min-height: 100vh;
-  transition: background 0.2s, color 0.2s;
-}
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* HEADER */
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.hdr{max-width:var(--max);margin:0 auto;display:flex;align-items:center;height:52px;padding:0 24px;gap:10px}
+.brand{font-size:13px;font-weight:700;color:var(--text);white-space:nowrap}
+.brand span{color:var(--dim);font-weight:400}
+nav{display:flex;gap:2px;margin-left:20px}
+nav a{color:var(--dim);font-size:12.5px;padding:5px 9px;border-radius:var(--r);transition:color .15s,background .15s}
+nav a:hover{color:var(--text);background:var(--card);text-decoration:none}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.utc{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.btn-sm{background:none;border:1px solid var(--border);color:var(--dim);padding:4px 10px;border-radius:var(--r);cursor:pointer;font-size:12px;font-family:inherit;transition:border-color .15s,color .15s}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent)}
 
-/* ─────────────────────────────────────────────────────────
-   HEADER
-───────────────────────────────────────────────────────── */
-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 0 28px;
-  position: sticky;
-  top: 0;
-  z-index: 300;
-}
-.header-inner {
-  max-width: 1240px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  height: 54px;
-  gap: 14px;
-}
-.brand { flex: 0 0 auto; }
-.brand-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.2px;
-}
-.brand-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
-.header-actions {
-  display: flex;
-  gap: 7px;
-  align-items: center;
-  margin-left: auto;
-}
-.hbtn {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-dim);
-  height: 32px;
-  padding: 0 11px;
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  font-family: inherit;
-  white-space: nowrap;
-  transition: border-color 0.15s, color 0.15s;
-}
-.hbtn:hover { border-color: var(--accent); color: var(--accent); }
-.hbtn-icon {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  justify-content: center;
-  font-size: 14px;
-}
-.hbtn-share { border-color: var(--border); }
+/* TICKER */
+#ticker{background:var(--surface);border-bottom:1px solid var(--border);padding:7px 24px;font-size:11.5px;color:var(--dim);overflow:hidden;white-space:nowrap}
+.t-pill{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;margin-right:5px;vertical-align:middle}
+.t-crit{background:rgba(217,79,79,.15);color:var(--crit)}
+.t-kev{background:rgba(212,138,26,.15);color:var(--kev)}
+.t-high{background:rgba(208,122,37,.12);color:var(--high)}
 
-/* ─────────────────────────────────────────────────────────
-   MAIN LAYOUT
-───────────────────────────────────────────────────────── */
-.main { max-width: 1240px; margin: 0 auto; padding: 24px 28px; }
+/* MAIN */
+.main{max-width:var(--max);margin:0 auto;padding:32px 24px 64px}
 
-/* ─────────────────────────────────────────────────────────
-   URGENCY BANNER
-───────────────────────────────────────────────────────── */
-.urgency-banner {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 11px 16px;
-  border-left: 3px solid;
-  border-radius: 0 var(--r) var(--r) 0;
-  margin-bottom: 22px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.urgency-level {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  white-space: nowrap;
-  flex: 0 0 auto;
-}
-.urgency-text { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
-.urgency-text strong { color: var(--text); }
+/* SECTION LABEL */
+.slabel{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.slabel::after{content:'';flex:1;height:1px;background:var(--border)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--low);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-/* ─────────────────────────────────────────────────────────
-   STATS GRID (clickable)
-───────────────────────────────────────────────────────── */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 7px;
-  margin-bottom: 22px;
-}
-@media (max-width: 900px) { .stats { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 520px) { .stats { grid-template-columns: repeat(3, 1fr); } }
-.stat {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 14px 8px;
-  text-align: center;
-  cursor: pointer;
-  user-select: none;
-  transition: border-color 0.15s, background 0.15s, transform 0.1s;
-  position: relative;
-}
-.stat:hover { border-color: var(--text-dim); }
-.stat.active {
-  border-color: var(--accent);
-  background: var(--accent-dim);
-}
-.stat.active .stat-num { opacity: 1; }
-.stat-num {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -1px;
-  transition: color 0.15s;
-}
-.stat-label {
-  font-size: 9px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  margin-top: 5px;
-  font-weight: 500;
-}
-.stat-sub { font-size: 9px; color: var(--text-muted); margin-top: 1px; }
+/* HERO */
+.hero{padding:48px 0 40px;max-width:680px}
+.hero h1{font-size:42px;font-weight:700;line-height:1.1;letter-spacing:-1px;margin-bottom:16px}
+.hero h1 em{color:var(--dim);font-style:italic}
+.hero p{font-size:15px;color:var(--dim);line-height:1.65;max-width:520px}
+.stat-bar{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.spill{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:12px;display:flex;align-items:center;gap:6px}
+.spill .n{font-weight:700;font-size:14px}
+.spill .l{color:var(--dim)}
+.spill.c .n{color:var(--crit)}
+.spill.k .n{color:var(--kev)}
+.spill.h .n{color:var(--high)}
+.spill.t .n{color:var(--dim);font-size:12px}
 
-/* ─────────────────────────────────────────────────────────
-   FILTER SECTION
-───────────────────────────────────────────────────────── */
-.filter-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 13px 15px;
-  margin-bottom: 18px;
-}
-.filter-row {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.filter-input {
-  flex: 1;
-  min-width: 200px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 7px 11px;
-  border-radius: var(--r-sm);
-  font-size: 13px;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.15s;
-}
-.filter-input:focus { border-color: var(--accent); }
-.filter-input::placeholder { color: var(--text-muted); }
-.filter-controls { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; }
-.filter-select {
-  background: var(--bg);
-  color: var(--text);
-  border: 1px solid var(--border);
-  padding: 7px 10px;
-  border-radius: var(--r-sm);
-  font-size: 12px;
-  font-family: inherit;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.15s;
-}
-.filter-select:focus { border-color: var(--accent); }
-.cvss-wrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.cvss-wrap input[type=range] { width: 78px; accent-color: var(--accent); cursor: pointer; }
-.cvss-val { min-width: 26px; font-weight: 600; color: var(--text); font-size: 12px; }
-.clear-btn {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  padding: 7px 11px;
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  font-size: 12px;
-  font-family: inherit;
-  transition: border-color 0.15s, color 0.15s;
-}
-.clear-btn:hover { border-color: var(--crit); color: var(--crit); }
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px}
+@media(max-width:760px){.two-col{grid-template-columns:1fr}}
 
-/* Preset vendor buttons */
-.presets { display: flex; gap: 5px; flex-wrap: wrap; }
-.preset-btn {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  padding: 5px 11px;
-  border-radius: var(--r-sm);
-  cursor: pointer;
-  font-size: 11px;
-  font-family: inherit;
-  font-weight: 500;
-  transition: all 0.15s;
-  user-select: none;
-}
-.preset-btn:hover { border-color: var(--text-dim); color: var(--text); }
-.preset-btn.active {
-  background: var(--accent-dim);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.filter-note { font-size: 11px; color: var(--text-muted); margin-top: 9px; }
-.filter-active-note { color: var(--accent); display: none; }
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px}
+.ctitle{font-size:12px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
 
-/* ─────────────────────────────────────────────────────────
-   TABS
-───────────────────────────────────────────────────────── */
-.tabs {
-  display: flex;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 18px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.tabs::-webkit-scrollbar { display: none; }
-.tab {
-  padding: 10px 18px;
-  cursor: pointer;
-  color: var(--text-muted);
-  border-bottom: 2px solid transparent;
-  font-size: 13px;
-  font-weight: 500;
-  transition: color 0.15s, border-color 0.15s;
-  user-select: none;
-  white-space: nowrap;
-  margin-bottom: -1px;
-}
-.tab:hover { color: var(--text-dim); }
-.tab.active { color: var(--text); border-bottom-color: var(--text); }
-.tab-badge {
-  display: inline-block;
-  background: var(--border);
-  color: var(--text-muted);
-  border-radius: 10px;
-  padding: 1px 6px;
-  font-size: 10px;
-  margin-left: 4px;
-  font-weight: 400;
-}
-.tab.active .tab-badge { background: var(--accent-dim); color: var(--accent); }
+/* ACTOR ROW */
+.arow{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+.arow:last-child{border-bottom:none}
+.aname{font-weight:600;font-size:13px}
+.ameta{font-size:11.5px;color:var(--dim);margin-left:auto;text-align:right}
 
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
+/* CVE ROW */
+.crow{padding:10px 0;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:4px}
+.crow:last-child{border-bottom:none}
+.cidl{display:flex;align-items:center;gap:7px}
+.sev{font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:2px 6px;border-radius:3px}
+.sC{background:rgba(217,79,79,.15);color:var(--crit)}
+.sH{background:rgba(208,122,37,.12);color:var(--high)}
+.sM{background:rgba(196,168,32,.12);color:var(--med)}
+.sL{background:rgba(61,165,125,.12);color:var(--low)}
+.sK{background:rgba(212,138,26,.15);color:var(--kev)}
+.cid{font-size:12px;font-weight:600;font-family:monospace;color:var(--text)}
+.cvss{font-size:11px;color:var(--dim);margin-left:auto}
+.cdesc{font-size:12px;color:var(--dim);line-height:1.45}
 
-/* ─────────────────────────────────────────────────────────
-   CVE TABLE
-───────────────────────────────────────────────────────── */
-.table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  background: var(--surface);
-}
-table { width: 100%; border-collapse: collapse; }
-thead { border-bottom: 1px solid var(--border); }
-th {
-  padding: 9px 12px;
-  text-align: left;
-  color: var(--text-muted);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-  white-space: nowrap;
-  background: var(--surface);
-}
-td {
-  padding: 9px 12px;
-  border-bottom: 1px solid var(--border-soft);
-  vertical-align: middle;
-}
-tr:last-child td { border-bottom: none; }
-tr.cve-row { cursor: default; transition: background 0.1s; }
-tr.cve-row:hover td { background: var(--accent-dim); }
-.mono {
-  font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
-  font-size: 12px;
-}
-.badge {
-  display: inline-block;
-  padding: 2px 7px;
-  border-radius: 3px;
-  font-size: 10px;
-  font-weight: 700;
-  color: #fff;
-  white-space: nowrap;
-}
-.score { font-weight: 700; text-align: center; font-size: 13px; }
-.cve-vendor { font-size: 12px; color: var(--text); max-width: 120px; }
-.cve-desc { font-size: 12px; color: var(--text-dim); line-height: 1.4; max-width: 360px; }
-.type-chip {
-  font-size: 10px;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 1px 5px;
-  white-space: nowrap;
-}
-mark.hl {
-  background: rgba(196,168,32,0.18);
-  color: var(--med);
-  border-radius: 2px;
-  padding: 0 2px;
-}
-.exploit-icon { font-size: 11px; vertical-align: middle; }
+/* KEV GRID */
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;margin-bottom:40px}
+.kcard{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--kev);border-radius:var(--r);padding:14px 16px}
+.khead{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.kcve{font-family:monospace;font-size:12.5px;font-weight:700;color:var(--text)}
+.kdate{font-size:11px;color:var(--muted);margin-left:auto}
+.kname{font-size:12px;font-weight:600;margin-bottom:4px}
+.kvendor{font-size:11.5px;color:var(--dim);margin-bottom:6px}
+.kdesc{font-size:11.5px;color:var(--dim);line-height:1.45}
 
-/* ─────────────────────────────────────────────────────────
-   CVE HOVER TOOLTIP
-───────────────────────────────────────────────────────── */
-#cve-tooltip {
-  position: fixed;
-  z-index: 999;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 13px 15px;
-  max-width: 400px;
-  width: max-content;
-  box-shadow: var(--shadow), 0 4px 20px rgba(0,0,0,0.35);
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.12s, transform 0.12s;
-  font-size: 12px;
-  line-height: 1.5;
-}
-#cve-tooltip.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.tt-id   { font-family: monospace; font-weight: 700; color: var(--accent); font-size: 13px; margin-bottom: 3px; }
-.tt-meta { color: var(--text-muted); font-size: 11px; margin-bottom: 8px; }
-.tt-sev  { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 700; color: #fff; margin-left: 6px; }
-.tt-desc { color: var(--text-dim); }
-.tt-vector { font-family: monospace; font-size: 10px; color: var(--text-muted); margin-top: 8px; word-break: break-all; }
-.tt-kev  { font-size: 11px; color: var(--kev); margin-top: 7px; font-weight: 600; }
+/* NEWS GRID */
+.ngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:40px}
+.ncard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.nsrc{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.ntitle{font-size:13px;font-weight:600;color:var(--text);line-height:1.35}
+.ntitle a{color:var(--text)}
+.ntitle a:hover{color:var(--accent);text-decoration:none}
+.ndate{font-size:11px;color:var(--muted);margin-top:auto}
 
-/* ─────────────────────────────────────────────────────────
-   KEV CARDS
-───────────────────────────────────────────────────────── */
-.kev-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--crit);
-  border-radius: 0 var(--r) var(--r) 0;
-  padding: 13px 16px;
-  margin-bottom: 8px;
-}
-.kev-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
-.kev-id { font-family: monospace; font-weight: 700; color: var(--accent); font-size: 13px; }
-.kev-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
-.kev-meta strong { color: var(--text-dim); }
-.kev-name { font-weight: 600; color: var(--text); margin-bottom: 5px; font-size: 13px; }
-.kev-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
-.kev-action { font-size: 11px; color: var(--text-muted); margin-top: 7px; }
-.kev-action strong { color: var(--text-dim); }
-.due-date { color: var(--kev); font-weight: 700; }
+/* SOURCES */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:48px}
+.scard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:5px}
+.shead{display:flex;align-items:baseline;gap:8px}
+.sname{font-size:13px;font-weight:600}
+.stag{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;padding:1px 5px;border-radius:3px}
+.to{background:rgba(74,144,217,.12);color:var(--accent)}
+.tr{background:rgba(212,138,26,.12);color:var(--kev)}
+.tn{background:rgba(61,165,125,.12);color:var(--low)}
+.ti{background:rgba(139,127,212,.12);color:#8B7FD4}
+.sdesc{font-size:12px;color:var(--dim);line-height:1.45}
+.surl{font-size:11.5px;color:var(--muted)}
 
-/* ─────────────────────────────────────────────────────────
-   FEED ITEMS (threats / news / blogs)
-───────────────────────────────────────────────────────── */
-.feed-grid {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  overflow: hidden;
-  background: var(--surface);
-}
-.feed-item {
-  padding: 11px 16px;
-  border-bottom: 1px solid var(--border-soft);
-  transition: background 0.1s;
-}
-.feed-item:last-child { border-bottom: none; }
-.feed-item:hover { background: var(--accent-dim); }
-.feed-source {
-  font-size: 10px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 3px;
-  font-weight: 500;
-}
-.feed-title { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
-.feed-summary { font-size: 12px; color: var(--text-dim); line-height: 1.4; }
+/* FOOTER */
+footer{border-top:1px solid var(--border);background:var(--surface)}
+.ftr{max-width:var(--max);margin:0 auto;padding:28px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fbrand{font-size:13px;font-weight:700}
+.fnote{font-size:12px;color:var(--muted)}
+.flinks{display:flex;gap:16px}
+.flinks a{font-size:12px;color:var(--dim)}
 
-/* ─────────────────────────────────────────────────────────
-   EMPTY / LOADING / ERROR
-───────────────────────────────────────────────────────── */
-.empty {
-  color: var(--text-muted);
-  font-style: italic;
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 13px;
-}
-#loading, #error-msg {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  color: var(--text-muted);
-  gap: 14px;
-  font-size: 13px;
-}
-#error-msg { color: var(--crit); display: none; }
-.spinner {
-  width: 26px; height: 26px;
-  border: 2px solid var(--border);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
+/* STATUS */
+.smsg{text-align:center;padding:28px 0;color:var(--muted);font-size:12px}
 
-/* ─────────────────────────────────────────────────────────
-   THREAT OPS PANEL
-───────────────────────────────────────────────────────── */
-.to-panel {
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  overflow: hidden;
-  margin-bottom: 22px;
-  background: var(--surface);
-  font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+/* MOBILE */
+@media(max-width:600px){
+  .hero h1{font-size:28px}
+  nav{display:none}
+  .hdr{padding:0 16px}
+  .main{padding:24px 16px 48px}
 }
-.to-hdr {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 9px 15px;
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-}
-.to-brand {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--text-muted);
-}
-.to-live {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  color: var(--text-muted);
-}
-.to-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #22c55e;
-  flex-shrink: 0;
-}
-.to-metrics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--border);
-}
-.to-met { padding: 14px 16px; }
-.to-met:first-child { border-right: 1px solid var(--border); }
-.to-met-lbl {
-  font-size: 9px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 5px;
-}
-.to-met-val {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--text);
-  letter-spacing: -1px;
-}
-.to-met-sub { font-size: 10px; color: var(--text-muted); margin-top: 5px; }
-.to-actors { padding: 11px 15px; border-bottom: 1px solid var(--border); }
-.to-actors-hdr {
-  font-size: 9px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 9px;
-}
-.to-actor-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 0;
-  border-bottom: 1px solid var(--border-soft);
-}
-.to-actor-row:last-child { border-bottom: none; }
-.to-actor-name {
-  font-size: 12px;
-  color: var(--text);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.15s;
-}
-.to-actor-name:hover { color: var(--accent); text-decoration: underline; }
-.to-actor-tag { font-size: 10px; color: var(--text-muted); font-family: inherit; }
-.to-vfilters {
-  padding: 8px 15px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.to-filter-lbl {
-  font-size: 9px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-right: 4px;
-}
-.to-vbtn {
-  font-size: 11px;
-  padding: 3px 10px;
-  border-radius: var(--r-sm);
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-dim);
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.12s;
-  user-select: none;
-}
-.to-vbtn:hover { border-color: var(--text-dim); color: var(--text); background: var(--card); }
-.to-vbtn.vactive { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
-.to-feed-row {
-  display: grid;
-  grid-template-columns: 50px 110px 1fr 130px;
-  gap: 10px;
-  align-items: center;
-  padding: 7px 15px;
-  border-bottom: 1px solid var(--border-soft);
-  transition: background 0.1s;
-}
-.to-feed-row:last-child { border-bottom: none; }
-.to-feed-row:hover { background: var(--accent-dim); }
-.to-feed-sev {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 2px 5px;
-  border-radius: 3px;
-  text-align: center;
-  white-space: nowrap;
-  color: #fff;
-}
-.to-feed-vendor {
-  font-size: 11px;
-  color: var(--text-dim);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.to-feed-desc {
-  font-size: 11px;
-  color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: -apple-system, 'Helvetica Neue', Arial, system-ui, sans-serif;
-}
-.to-feed-id { font-size: 10px; text-align: right; }
-.to-feed-id a { color: var(--text-muted); }
-.to-feed-id a:hover { color: var(--accent); }
-.to-empty { padding: 16px; text-align: center; font-size: 11px; color: var(--text-muted); font-family: -apple-system, 'Helvetica Neue', Arial, system-ui, sans-serif; }
-
-/* ─────────────────────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────────────────────── */
-footer {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 11px;
-  padding: 32px 28px;
-  border-top: 1px solid var(--border);
-  margin-top: 40px;
-  line-height: 1.9;
-}
-footer a { color: var(--text-muted); }
-footer a:hover { color: var(--text-dim); }
 </style>
 </head>
 <body>
 
-<!-- Tooltip (global) -->
-<div id="cve-tooltip" role="tooltip" aria-hidden="true"></div>
-
-<div id="loading"><div class="spinner"></div>Loading digest…</div>
-<div id="error-msg">Failed to load digest.json — run the GitHub Action first to generate data.</div>
-
-<div id="app" style="display:none">
-
-  <header>
-    <div class="header-inner">
-      <div class="brand">
-        <div class="brand-title">Cyber Digest</div>
-        <div class="brand-sub" id="generated-ts">Loading…</div>
-      </div>
-      <div class="header-actions">
-        <button class="hbtn hbtn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle theme">☀</button>
-        <button class="hbtn hbtn-share" onclick="shareURL()">
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4-6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 10a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM4 7.5l4-3M4 8.5l4 3"/></svg>
-          <span id="share-label">Share view</span>
-        </button>
-      </div>
+<header>
+  <div class="hdr">
+    <div class="brand">Cyber Digest <span>/ Intelligence</span></div>
+    <nav>
+      <a href="#threat-ops">Threat Ops</a>
+      <a href="#trending">Vulnerabilities</a>
+      <a href="#news">News</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <div class="hdr-right">
+      <span class="utc" id="utc-clock">--:-- UTC</span>
+      <button class="btn-sm" onclick="toggleTheme()" id="theme-btn" title="Toggle theme">☀</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <div class="main">
+<div id="ticker"><span id="ticker-inner" style="color:var(--muted)">Loading intelligence feed…</span></div>
 
-    <!-- Urgency banner -->
-    <div class="urgency-banner" id="urgency-banner">
-      <div class="urgency-level" id="urgency-level"></div>
-      <div class="urgency-text" id="urgency-text"></div>
+<div class="main">
+
+  <section class="hero">
+    <div class="slabel"><span class="dot"></span>Daily threat intelligence · <span id="last-updated">loading…</span></div>
+    <h1>Threat intelligence,<br><em>without the noise.</em></h1>
+    <p>Cyber Digest tracks adversaries, CISA KEV additions, and exploited vulnerabilities — distilled from authoritative sources before standup.</p>
+    <div class="stat-bar">
+      <div class="spill t"><span class="n" id="stat-ts">--</span><span class="l">last run</span></div>
+      <div class="spill c"><span class="n" id="stat-crit">--</span><span class="l">critical CVEs</span></div>
+      <div class="spill h"><span class="n" id="stat-high">--</span><span class="l">high CVEs</span></div>
+      <div class="spill k"><span class="n" id="stat-kev">--</span><span class="l">KEV additions (7d)</span></div>
     </div>
+  </section>
 
-    <!-- THREAT OPS -->
-    <div class="to-panel">
-      <div class="to-hdr">
-        <span class="to-brand">THREAT OPS</span>
-        <div class="to-live"><span class="to-dot"></span><span id="to-clock">-- UTC</span></div>
-      </div>
-      <div class="to-metrics">
-        <div class="to-met">
-          <div class="to-met-lbl">CVEs in digest</div>
-          <div class="to-met-val" id="to-cve-count">—</div>
-          <div class="to-met-sub" id="to-cve-sub"></div>
-        </div>
-        <div class="to-met">
-          <div class="to-met-lbl">KEV entries</div>
-          <div class="to-met-val" id="to-kev-count">—</div>
-          <div class="to-met-sub" id="to-kev-sub"></div>
+  <section id="threat-ops" style="margin-bottom:40px">
+    <div class="slabel">Threat ops — tracked adversaries & critical CVEs</div>
+    <div class="two-col">
+
+      <div class="card">
+        <div class="ctitle">Top tracked threat actors</div>
+        <div id="actors-list">
+          <div class="arow"><div><div class="aname">Volt Typhoon</div><div style="font-size:11px;color:var(--muted)">China · Critical infrastructure</div></div><div class="ameta"><a href="https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/" target="_blank" rel="noopener">MSFT →</a></div></div>
+          <div class="arow"><div><div class="aname">APT28 / Fancy Bear</div><div style="font-size:11px;color:var(--muted)">Russia (GRU) · Espionage</div></div><div class="ameta"><a href="https://cloud.google.com/blog/topics/threat-intelligence/apt28-targets-europe-energy-transportation-environment" target="_blank" rel="noopener">Google TI →</a></div></div>
+          <div class="arow"><div><div class="aname">Lazarus Group</div><div style="font-size:11px;color:var(--muted)">North Korea · Financial / espionage</div></div><div class="ameta"><a href="https://cloud.google.com/blog/topics/threat-intelligence/north-korea-cyber-theft-swift-financial" target="_blank" rel="noopener">Google TI →</a></div></div>
+          <div class="arow"><div><div class="aname">Salt Typhoon</div><div style="font-size:11px;color:var(--muted)">China · Telecom / ISP</div></div><div class="ameta"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">CISA →</a></div></div>
+          <div class="arow"><div><div class="aname">RansomHub</div><div style="font-size:11px;color:var(--muted)">Crimeware · RaaS</div></div><div class="ameta"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a" target="_blank" rel="noopener">CISA →</a></div></div>
         </div>
       </div>
-      <div class="to-actors">
-        <div class="to-actors-hdr">Top tracked threat actors</div>
-        <div class="to-actor-row">
-          <a class="to-actor-name" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a" target="_blank" rel="noopener noreferrer">Volt Typhoon</a>
-          <span class="to-actor-tag">China · Critical infrastructure</span>
-        </div>
-        <div class="to-actor-row">
-          <a class="to-actor-name" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-249a" target="_blank" rel="noopener noreferrer">APT28 / Fancy Bear</a>
-          <span class="to-actor-tag">Russia (GRU) · Espionage</span>
-        </div>
-        <div class="to-actor-row">
-          <a class="to-actor-name" href="https://attack.mitre.org/groups/G0032/" target="_blank" rel="noopener noreferrer">Lazarus Group</a>
-          <span class="to-actor-tag">North Korea · Financial / espionage</span>
-        </div>
-        <div class="to-actor-row">
-          <a class="to-actor-name" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-338a" target="_blank" rel="noopener noreferrer">Salt Typhoon</a>
-          <span class="to-actor-tag">China · Telecom / ISP</span>
-        </div>
-        <div class="to-actor-row">
-          <a class="to-actor-name" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a" target="_blank" rel="noopener noreferrer">RansomHub</a>
-          <span class="to-actor-tag">Crimeware · Ransomware-as-a-service</span>
-        </div>
+
+      <div class="card">
+        <div class="ctitle">Recent critical CVEs</div>
+        <div id="crit-cves"><div class="smsg">Loading…</div></div>
       </div>
-      <div class="to-vfilters">
-        <span class="to-filter-lbl">Vendor</span>
-        <button class="to-vbtn vactive" data-v="all"       onclick="toSetVendor(this)">All</button>
-        <button class="to-vbtn"         data-v="fortinet"  onclick="toSetVendor(this)">Fortinet</button>
-        <button class="to-vbtn"         data-v="ivanti"    onclick="toSetVendor(this)">Ivanti</button>
-        <button class="to-vbtn"         data-v="vmware"    onclick="toSetVendor(this)">VMware</button>
-        <button class="to-vbtn"         data-v="microsoft" onclick="toSetVendor(this)">Microsoft</button>
-        <button class="to-vbtn"         data-v="cisco"     onclick="toSetVendor(this)">Cisco</button>
-        <button class="to-vbtn"         data-v="paloalto"  onclick="toSetVendor(this)">Palo Alto</button>
-        <button class="to-vbtn"         data-v="apache"    onclick="toSetVendor(this)">Apache</button>
-      </div>
-      <div id="to-feed"></div>
+
     </div>
+  </section>
 
-    <!-- Stats (clickable) -->
-    <div class="stats" id="stats-row"></div>
+  <section id="trending" style="margin-bottom:40px">
+    <div class="slabel"><span class="dot"></span>Trending vulnerabilities · CISA KEV</div>
+    <div id="kev-grid" class="kgrid"><div class="smsg" style="grid-column:1/-1">Loading CISA KEV data…</div></div>
+    <p style="font-size:11.5px;color:var(--muted);margin-top:-4px">Source: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Known Exploited Vulnerabilities</a> — vulnerabilities confirmed exploited in the wild.</p>
+  </section>
 
-    <!-- Filter -->
-    <div class="filter-section">
-      <div class="filter-row">
-        <input type="text" class="filter-input" id="vendor-input"
-          placeholder="Filter by vendor, product, keyword… comma-separate multiple"
-          oninput="onVendorInput()">
-        <div class="filter-controls">
-          <select class="filter-select" id="type-select" onchange="render()" title="CVE type">
-            <option value="">All types</option>
-            <option value="software">Software</option>
-            <option value="os">OS</option>
-            <option value="hardware">Hardware</option>
-          </select>
-          <div class="cvss-wrap">
-            <span>CVSS ≥</span>
-            <input type="range" id="cvss-slider" min="0" max="10" step="0.5" value="0" oninput="onCvssInput()">
-            <span class="cvss-val" id="cvss-val">0</span>
-          </div>
-          <button class="clear-btn" onclick="clearAll()">Clear</button>
-        </div>
-      </div>
-      <div class="presets" id="presets"></div>
-      <div class="filter-note">
-        <span class="filter-active-note" id="filter-active-note"></span>
-        <span id="filter-hint">Click a vendor to filter. Select multiple. Click stat cards to filter by severity.</span>
-      </div>
+  <section id="news" style="margin-bottom:40px">
+    <div class="slabel">Latest security news</div>
+    <div id="news-grid" class="ngrid"><div class="smsg" style="grid-column:1/-1">Loading news feed…</div></div>
+  </section>
+
+  <section id="sources">
+    <div class="slabel">Trusted sources — vetted signal</div>
+    <div class="sgrid">
+      <div class="scard"><div class="shead"><span class="sname">CISA</span><span class="stag to">Official</span></div><div class="sdesc">US government advisories, KEV additions, and emergency directives from the Cybersecurity and Infrastructure Security Agency.</div><a class="surl" href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">cisa.gov →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Krebs on Security</span><span class="stag tn">News</span></div><div class="sdesc">Investigative reporting on cybercrime, breaches, and the underground economy. Consistently first on major incidents.</div><a class="surl" href="https://krebsonsecurity.com/" target="_blank" rel="noopener">krebsonsecurity.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Google TAG</span><span class="stag tr">Research</span></div><div class="sdesc">State-sponsored actors, zero-days, and active exploit campaigns — directly from Google's Threat Analysis Group.</div><a class="surl" href="https://blog.google/threat-analysis-group/" target="_blank" rel="noopener">blog.google →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Mandiant / Google TI</span><span class="stag ti">Intel</span></div><div class="sdesc">APT profiles, M-Trends data, and incident response findings from one of the most respected threat intelligence teams.</div><a class="surl" href="https://cloud.google.com/blog/topics/threat-intelligence" target="_blank" rel="noopener">cloud.google.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Palo Alto Unit 42</span><span class="stag tr">Research</span></div><div class="sdesc">Malware analysis, ransomware deep dives, and nation-state actor research from Palo Alto's threat research team.</div><a class="surl" href="https://unit42.paloaltonetworks.com/" target="_blank" rel="noopener">unit42.paloaltonetworks.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Cisco Talos</span><span class="stag tr">Research</span></div><div class="sdesc">Vulnerability research, malware analysis, and campaign tracking from one of the largest commercial threat intelligence teams.</div><a class="surl" href="https://blog.talosintelligence.com/" target="_blank" rel="noopener">blog.talosintelligence.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Bleeping Computer</span><span class="stag tn">News</span></div><div class="sdesc">Fast, accurate reporting on ransomware incidents, breaches, patch releases, and ongoing exploitation campaigns.</div><a class="surl" href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener">bleepingcomputer.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Microsoft Security</span><span class="stag to">Official</span></div><div class="sdesc">MSRC advisories, Patch Tuesday analysis, and threat actor reporting from Microsoft Threat Intelligence.</div><a class="surl" href="https://www.microsoft.com/en-us/security/blog/" target="_blank" rel="noopener">microsoft.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">The Record</span><span class="stag tn">News</span></div><div class="sdesc">Daily cybersecurity news covering nation-state incidents, policy, ransomware operations, and law enforcement actions.</div><a class="surl" href="https://therecord.media/" target="_blank" rel="noopener">therecord.media →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">SecurityWeek</span><span class="stag tn">News</span></div><div class="sdesc">Enterprise security news, CVE advisories, vendor announcements, and conference coverage for practitioners.</div><a class="surl" href="https://www.securityweek.com/" target="_blank" rel="noopener">securityweek.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Recorded Future</span><span class="stag ti">Intel</span></div><div class="sdesc">Geopolitically-informed threat intelligence covering nation-state operations, ransomware ecosystems, and dark web activity.</div><a class="surl" href="https://www.recordedfuture.com/blog" target="_blank" rel="noopener">recordedfuture.com →</a></div>
+      <div class="scard"><div class="shead"><span class="sname">Risky Business</span><span class="stag tn">Podcast</span></div><div class="sdesc">Patrick Gray's weekly security podcast — the most listened-to show in the industry. Essential for staying current.</div><a class="surl" href="https://risky.biz/" target="_blank" rel="noopener">risky.biz →</a></div>
     </div>
+  </section>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <div class="tab active" data-tab="cves"    onclick="switchTab('cves',this)">CVEs    <span class="tab-badge" id="badge-cves">0</span></div>
-      <div class="tab"        data-tab="threats" onclick="switchTab('threats',this)">Advisories <span class="tab-badge" id="badge-threats">0</span></div>
-      <div class="tab"        data-tab="kev"     onclick="switchTab('kev',this)">CISA KEV <span class="tab-badge" id="badge-kev">0</span></div>
-      <div class="tab"        data-tab="news"    onclick="switchTab('news',this)">News    <span class="tab-badge" id="badge-news">0</span></div>
-      <div class="tab"        data-tab="blogs"   onclick="switchTab('blogs',this)">Blogs   <span class="tab-badge" id="badge-blogs">0</span></div>
+</div>
+
+<footer>
+  <div class="ftr">
+    <div>
+      <div class="fbrand">Cyber Digest</div>
+      <div class="fnote">Independent threat intelligence. Data: CISA KEV, NVD, vendor advisories.</div>
     </div>
-
-    <!-- CVEs -->
-    <div class="tab-panel active" id="panel-cves">
-      <div class="table-wrap">
-        <table>
-          <thead><tr>
-            <th>CVE ID</th>
-            <th style="text-align:center">CVSS</th>
-            <th style="text-align:center">Severity</th>
-            <th>Vendor</th>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr></thead>
-          <tbody id="cve-tbody"></tbody>
-        </table>
-      </div>
+    <div class="flinks">
+      <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV</a>
+      <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">NVD</a>
+      <a href="https://github.com/CyberSecDigestDaily/cyber-digest" target="_blank" rel="noopener">GitHub</a>
     </div>
-
-    <!-- Advisories / Threats -->
-    <div class="tab-panel" id="panel-threats">
-      <div class="feed-grid" id="threats-list"></div>
-    </div>
-
-    <!-- CISA KEV -->
-    <div class="tab-panel" id="panel-kev">
-      <div id="kev-list"></div>
-    </div>
-
-    <!-- News -->
-    <div class="tab-panel" id="panel-news">
-      <div class="feed-grid" id="news-list"></div>
-    </div>
-
-    <!-- Blogs -->
-    <div class="tab-panel" id="panel-blogs">
-      <div class="feed-grid" id="blogs-list"></div>
-    </div>
-
-  </div><!-- /main -->
-
-  <footer>
-    <div>Sources: NVD · CISA KEV · MSRC · Cisco PSIRT · Red Hat Security · CISA ICS ·
-    Bleeping Computer · The Hacker News · Dark Reading · SecurityWeek ·
-    Krebs on Security · SANS ISC Diary · Schneier on Security</div>
-    <div style="margin-top:6px">Updated daily at 09:00 UTC via GitHub Actions &nbsp;·&nbsp; All data loaded client-side &nbsp;·&nbsp; No tracking</div>
-  </footer>
-</div><!-- /app -->
+  </div>
+</footer>
 
 <script>
 'use strict';
-
-// ─────────────────────────────────────────────────────────
-// STACK PRESETS — multi-select vendor filter buttons
-// ─────────────────────────────────────────────────────────
-const STACK_PRESETS = [
-  { label: 'Microsoft', terms: ['microsoft','windows','azure','office','sharepoint','exchange','teams','iis','msrc'] },
-  { label: 'Linux',     terms: ['linux','kernel','ubuntu','debian','redhat','centos','rhel','fedora'] },
-  { label: 'Cisco',     terms: ['cisco','ios xe','meraki','webex','asa','firepower','sd-wan'] },
-  { label: 'VMware',    terms: ['vmware','vsphere','esxi','vcenter','workstation','horizon','broadcom'] },
-  { label: 'Fortinet',  terms: ['fortinet','fortigate','fortios','fortimanager','fortiweb'] },
-  { label: 'Ivanti',    terms: ['ivanti','pulse','mobileiron','connect secure'] },
-  { label: 'Palo Alto', terms: ['palo alto','panos','globalprotect','cortex','prisma'] },
-  { label: 'Apache',    terms: ['apache','tomcat','struts','log4j','httpd'] },
-  { label: 'Oracle',    terms: ['oracle','java','jdk','jre','weblogic'] },
-  { label: 'Cloud',     terms: ['aws','amazon','s3','lambda','ec2','cloudfront','gcp','google cloud','cloudflare'] },
-];
-
-const SEV_COLOUR = {
-  CRITICAL: '#D94F4F',
-  HIGH:     '#D07A25',
-  MEDIUM:   '#C4A820',
-  LOW:      '#3DA57D',
-  NONE:     '#57616F',
-};
-
-// ── State ─────────────────────────────────────────────────
-let data         = null;
-let activeTab    = 'cves';
-let activePresets= new Set();   // multi-select preset labels
-let activeFilters= new Set();   // severity/flag filters from stat cards
-let cveDataMap   = {};          // id → cve object for tooltip
-
-// ── Theme ─────────────────────────────────────────────────
-(function initTheme() {
-  const saved = localStorage.getItem('cyberDigestTheme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = saved || (prefersDark ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', theme);
-  updateThemeIcon(theme);
+// ── THEME
+(function(){
+  const s=localStorage.getItem('cd-theme');
+  const dark=s?s==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+  const b=document.getElementById('theme-btn');
+  if(b)b.textContent=dark?'☀':'☾';
 })();
-
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('cyberDigestTheme', next);
-  updateThemeIcon(next);
-}
-function updateThemeIcon(theme) {
-  const btn = document.getElementById('theme-toggle');
-  if (btn) btn.textContent = theme === 'dark' ? '☀' : '☾';
+function toggleTheme(){
+  const c=document.documentElement.getAttribute('data-theme');
+  const n=c==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('cd-theme',n);
+  document.getElementById('theme-btn').textContent=n==='dark'?'☀':'☾';
 }
 
-// ── Boot ─────────────────────────────────────────────────
+// ── UTC CLOCK
+function tick(){
+  const d=new Date();
+  document.getElementById('utc-clock').textContent=
+    String(d.getUTCHours()).padStart(2,'0')+':'+String(d.getUTCMinutes()).padStart(2,'0')+' UTC';
+}
+tick();setInterval(tick,30000);
+
+// ── HELPERS
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function sevCls(s){return({CRITICAL:'sC',HIGH:'sH',MEDIUM:'sM',LOW:'sL'})[s]||'sM'}
+function relDate(iso){
+  if(!iso)return'';
+  const h=Math.floor((Date.now()-new Date(iso).getTime())/3600000);
+  if(h<1)return'just now';
+  if(h<24)return h+'h ago';
+  const d=Math.floor(h/24);
+  if(d<7)return d+'d ago';
+  return new Date(iso).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+}
+
+// ── LOAD
 fetch('digest.json')
-  .then(r => { if (!r.ok) throw r; return r.json(); })
-  .then(d => {
-    data = d;
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    initUI();
-    loadURLParams();
-  })
-  .catch(() => {
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('error-msg').style.display = 'flex';
+  .then(r=>{if(!r.ok)throw r;return r.json()})
+  .then(d=>render(d))
+  .catch(()=>{
+    document.getElementById('ticker-inner').innerHTML=
+      '<span style="color:var(--muted)">Intelligence feed offline — data will appear after the next scheduled workflow run (06:00 UTC daily).</span>';
+    document.getElementById('last-updated').textContent='no data yet';
+    // Show no-data messages
+    ['crit-cves','kev-grid','news-grid'].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el)el.innerHTML='<div class="smsg" style="grid-column:1/-1">Data not yet available. The GitHub Actions workflow runs at 06:00 UTC and commits <code>digest.json</code> to the repository. Cloudflare Pages then auto-deploys.</div>';
+    });
   });
 
-function initUI() {
-  // Timestamp
-  const ts = new Date(data.generated);
-  document.getElementById('generated-ts').textContent =
-    'Updated ' + ts.toLocaleString('en-GB', {
-      weekday: 'short', day: 'numeric', month: 'short',
-      hour: '2-digit', minute: '2-digit', timeZone: 'UTC'
-    }) + ' UTC';
+function render(d){
+  renderTicker(d);
+  renderStats(d);
+  renderCritCVEs(d);
+  renderKEV(d);
+  renderNews(d);
+  // last updated
+  const ts=d.generated?new Date(d.generated):null;
+  document.getElementById('last-updated').textContent=ts&&!isNaN(ts)?
+    ts.toLocaleString('en-GB',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'UTC'})+' UTC':
+    'no timestamp';
+  document.getElementById('stat-ts').textContent=ts&&!isNaN(ts)?relDate(d.generated):'--';
+}
 
-  // Urgency banner
-  const u = data.urgency;
-  const banner = document.getElementById('urgency-banner');
-  banner.style.borderLeftColor = u.colour;
-  const lvl = document.getElementById('urgency-level');
-  lvl.style.color = u.colour;
-  lvl.textContent = u.level;
-  document.getElementById('urgency-text').innerHTML = u.message;
+function renderStats(d){
+  const cves=d.cves||[];
+  document.getElementById('stat-crit').textContent=cves.filter(c=>c.severity==='CRITICAL').length||'0';
+  document.getElementById('stat-high').textContent=cves.filter(c=>c.severity==='HIGH').length||'0';
+  const kev=d.kev||[];
+  const kevNew=kev.filter(k=>k.dateAdded&&(Date.now()-new Date(k.dateAdded).getTime())<7*86400000);
+  document.getElementById('stat-kev').textContent=kevNew.length||kev.length||'0';
+}
 
-  // Threat Ops panel
-  initThreatOps();
-
-  // Preset buttons (multi-select)
-  const presetsEl = document.getElementById('presets');
-  STACK_PRESETS.forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'preset-btn';
-    btn.textContent = p.label;
-    btn.dataset.preset = p.label;
-    btn.addEventListener('click', () => togglePreset(p, btn));
-    presetsEl.appendChild(btn);
+function renderTicker(d){
+  const items=[];
+  (d.kev||[]).slice(0,4).forEach(k=>{
+    items.push('<span class="t-pill t-kev">KEV</span>'+esc(k.cveID||k.id)+' — '+esc(k.vulnerabilityName||k.product||''));
   });
-
-  render();
-}
-
-function loadURLParams() {
-  const params = new URLSearchParams(location.search);
-  if (params.has('stack')) {
-    document.getElementById('vendor-input').value = params.get('stack');
-  }
-  if (params.has('cvss')) {
-    const v = parseFloat(params.get('cvss'));
-    if (!isNaN(v)) {
-      document.getElementById('cvss-slider').value = v;
-      document.getElementById('cvss-val').textContent = v.toFixed(1);
-    }
-  }
-  if (params.has('type')) {
-    document.getElementById('type-select').value = params.get('type');
-  }
-  if (params.has('tab')) {
-    const tabEl = document.querySelector(`[data-tab="${params.get('tab')}"]`);
-    if (tabEl) switchTab(params.get('tab'), tabEl);
-  }
-  if (params.has('sev')) {
-    params.get('sev').split(',').forEach(s => activeFilters.add(s));
-  }
-  render();
-}
-
-// ── Filter helpers ─────────────────────────────────────────
-function getTerms() {
-  return document.getElementById('vendor-input').value
-    .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
-}
-function getCvssMin() {
-  return parseFloat(document.getElementById('cvss-slider').value) || 0;
-}
-function getTypeFilter() {
-  return document.getElementById('type-select').value;
-}
-
-function matchesTerms(item, terms) {
-  if (!terms.length) return true;
-  const hay = [
-    item.id, item.vendor, item.product, item.desc, item.type,
-    item.cveID, item.vendorProject, item.vulnerabilityName,
-    item.shortDescription, item.source, item.title, item.summary,
-  ].filter(Boolean).join(' ').toLowerCase();
-  return terms.some(t => hay.includes(t));
-}
-
-function matchesSeverityFilter(c) {
-  if (activeFilters.size === 0) return true;
-  if (activeFilters.has('CRITICAL')  && c.severity === 'CRITICAL')  return true;
-  if (activeFilters.has('HIGH')      && c.severity === 'HIGH')       return true;
-  if (activeFilters.has('MEDIUM')    && c.severity === 'MEDIUM')     return true;
-  if (activeFilters.has('LOW')       && c.severity === 'LOW')        return true;
-  if (activeFilters.has('EXPLOITED') && c.exploited)                 return true;
-  return false;
-}
-
-function hl(text, terms) {
-  if (!text || !terms.length) return text || '';
-  let out = String(text);
-  terms.forEach(t => {
-    const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
-    out = out.replace(re, '<mark class="hl">$1</mark>');
+  (d.cves||[]).filter(c=>c.severity==='CRITICAL').slice(0,3).forEach(c=>{
+    items.push('<span class="t-pill t-crit">CRIT</span>'+esc(c.id)+' '+esc(c.vendor||'')+' CVSS '+(c.cvss||''));
   });
-  return out;
+  document.getElementById('ticker-inner').innerHTML=items.length?
+    items.join('&nbsp;&nbsp;·&nbsp;&nbsp;'):
+    '<span style="color:var(--muted)">No new critical items in this run.</span>';
 }
 
-// ── Stat card click ──────────────────────────────────────
-const STAT_DEFS = [
-  { key: 'CRITICAL',  label: 'Critical',   colourVar: 'crit',   action: 'sev',  dataKey: c => c.severity === 'CRITICAL' },
-  { key: 'HIGH',      label: 'High',       colourVar: 'high',   action: 'sev',  dataKey: c => c.severity === 'HIGH' },
-  { key: 'MEDIUM',    label: 'Medium',     colourVar: 'med',    action: 'sev',  dataKey: c => c.severity === 'MEDIUM' },
-  { key: 'EXPLOITED', label: 'Exploited',  colourVar: 'crit',   action: 'sev',  dataKey: c => c.exploited },
-  { key: 'KEV',       label: 'CISA KEV',   colourVar: 'kev',    action: 'tab',  tab: 'kev' },
-  { key: 'THREATS',   label: 'Advisories', colourVar: 'kev',    action: 'tab',  tab: 'threats' },
-  { key: 'NEWS',      label: 'News',       colourVar: 'accent', action: 'tab',  tab: 'news' },
-];
+function renderCritCVEs(d){
+  const cves=(d.cves||[]).filter(c=>c.severity==='CRITICAL'||c.severity==='HIGH'||c.exploited||c.kev).slice(0,6);
+  const el=document.getElementById('crit-cves');
+  if(!cves.length){el.innerHTML='<div class="smsg">No data.</div>';return}
+  el.innerHTML=cves.map(c=>`
+    <div class="crow">
+      <div class="cidl">
+        <span class="sev ${sevCls(c.severity)}">${esc(c.severity||'?')}</span>
+        ${c.kev||c.exploited?'<span class="sev sK">KEV</span>':''}
+        <a class="cid" href="https://nvd.nist.gov/vuln/detail/${esc(c.id)}" target="_blank" rel="noopener">${esc(c.id)}</a>
+        <span class="cvss">${c.cvss?'CVSS '+c.cvss:''}</span>
+      </div>
+      <div class="cdesc">${esc((c.desc||c.description||'').slice(0,130))}${(c.desc||c.description||'').length>130?'…':''}</div>
+    </div>`).join('');
+}
 
-function onStatClick(key, action, tab) {
-  if (action === 'tab') {
-    const tabEl = document.querySelector(`[data-tab="${tab}"]`);
-    if (tabEl) switchTab(tab, tabEl);
+function renderKEV(d){
+  const kev=(d.kev||[]).slice(0,12);
+  const el=document.getElementById('kev-grid');
+  if(!kev.length){
+    el.innerHTML='<div class="smsg" style="grid-column:1/-1">No KEV data yet. Runs daily at 06:00 UTC.</div>';
     return;
   }
-  // Toggle severity filter
-  if (activeFilters.has(key)) {
-    activeFilters.delete(key);
-  } else {
-    activeFilters.add(key);
-  }
-  // Switch to CVEs if not already there
-  if (activeTab !== 'cves') {
-    const tabEl = document.querySelector('[data-tab="cves"]');
-    if (tabEl) switchTab('cves', tabEl);
-  }
-  render();
+  el.innerHTML=kev.map(k=>`
+    <div class="kcard">
+      <div class="khead">
+        <a class="kcve" href="https://nvd.nist.gov/vuln/detail/${esc(k.cveID||k.id)}" target="_blank" rel="noopener">${esc(k.cveID||k.id)}</a>
+        <span class="kdate">${esc(k.dateAdded||k.date||'')}</span>
+      </div>
+      <div class="kname">${esc(k.vulnerabilityName||k.name||'')}</div>
+      <div class="kvendor">${esc(k.vendorProject||k.vendor||'')}${k.product?' · '+esc(k.product):''}</div>
+      <div class="kdesc">${esc((k.shortDescription||k.desc||'').slice(0,150))}${(k.shortDescription||k.desc||'').length>150?'…':''}</div>
+    </div>`).join('');
 }
 
-// ── Main render ────────────────────────────────────────────
-function render() {
-  if (!data) return;
-  const terms      = getTerms();
-  const cvssMin    = getCvssMin();
-  const typeFilter = getTypeFilter();
-  const hasTextFilter = terms.length > 0 || cvssMin > 0 || typeFilter !== '';
-  const hasSevFilter  = activeFilters.size > 0;
-  const isFiltered    = hasTextFilter || hasSevFilter;
-
-  // Filter datasets
-  const cves = data.cves.filter(c =>
-    matchesSeverityFilter(c) &&
-    matchesTerms(c, terms) &&
-    c.score >= cvssMin &&
-    (typeFilter === '' || c.type === typeFilter)
-  );
-  const kev     = data.kev.filter(k    => matchesTerms(k, terms));
-  const threats = (data.threats || []).filter(t => matchesTerms(t, terms));
-  const news    = data.news.filter(n   => matchesTerms(n, terms));
-  const blogs   = (data.blogs || []).filter(b => matchesTerms(b, terms));
-
-  // Build tooltip data map
-  cveDataMap = {};
-  data.cves.forEach(c => { cveDataMap[c.id] = c; });
-
-  // Count subsets for stats display
-  const statsData = {
-    CRITICAL:  cves.filter(c => c.severity === 'CRITICAL').length,
-    HIGH:      cves.filter(c => c.severity === 'HIGH').length,
-    MEDIUM:    cves.filter(c => c.severity === 'MEDIUM').length,
-    EXPLOITED: cves.filter(c => c.exploited).length,
-    KEV:       kev.length,
-    THREATS:   threats.length,
-    NEWS:      news.length,
-  };
-  const totalData = {
-    CRITICAL:  data.stats.critical,
-    HIGH:      data.stats.high,
-    MEDIUM:    data.stats.medium,
-    EXPLOITED: data.stats.exploited,
-    KEV:       data.stats.kev,
-    THREATS:   data.stats.threats,
-    NEWS:      data.stats.news,
-  };
-
-  // Render stats
-  const statsRow = document.getElementById('stats-row');
-  statsRow.innerHTML = STAT_DEFS.map(def => {
-    const num   = statsData[def.key];
-    const total = totalData[def.key];
-    const isActive = activeFilters.has(def.key);
-    const col = `var(--${def.colourVar})`;
-    return `<div class="stat${isActive ? ' active' : ''}"
-      onclick="onStatClick('${def.key}','${def.action}','${def.tab||''}')"
-      title="${def.action === 'tab' ? 'Switch to ' + def.label + ' tab' : (isActive ? 'Remove ' : 'Filter by ') + def.label}">
-      <div class="stat-num" style="color:${col}">${num}</div>
-      <div class="stat-label">${def.label}</div>
-      ${isFiltered && total != null ? `<div class="stat-sub">of ${total}</div>` : ''}
-    </div>`;
-  }).join('');
-
-  // Tab badges
-  document.getElementById('badge-cves').textContent    = cves.length;
-  document.getElementById('badge-threats').textContent = threats.length;
-  document.getElementById('badge-kev').textContent     = kev.length;
-  document.getElementById('badge-news').textContent    = news.length;
-  document.getElementById('badge-blogs').textContent   = blogs.length;
-
-  // Filter note
-  const noteEl = document.getElementById('filter-active-note');
-  const hintEl = document.getElementById('filter-hint');
-  if (isFiltered) {
-    const parts = [];
-    if (hasSevFilter)        parts.push([...activeFilters].join(', '));
-    if (terms.length)        parts.push(terms.join(', '));
-    if (cvssMin > 0)         parts.push(`CVSS ≥ ${cvssMin}`);
-    if (typeFilter)          parts.push(`type: ${typeFilter}`);
-    noteEl.style.display = 'inline';
-    noteEl.textContent   = `Filtering: ${parts.join(' · ')} — ${cves.length} CVEs, ${kev.length} KEV, ${threats.length} advisories. `;
-    hintEl.style.display = 'none';
-  } else {
-    noteEl.style.display = 'none';
-    hintEl.style.display = 'inline';
-  }
-
-  // ── CVE table ──────────────────────────────────────────
-  const tbody = document.getElementById('cve-tbody');
-  if (!cves.length) {
-    tbody.innerHTML = `<tr><td colspan="7" class="empty">No CVEs match current filters.</td></tr>`;
-  } else {
-    tbody.innerHTML = cves.map(c => {
-      const col  = SEV_COLOUR[c.severity] || '#57616F';
-      const desc = c.desc.length > 180 ? c.desc.slice(0, 180) + '…' : c.desc;
-      const flag = c.exploited ? '<span class="exploit-icon" title="Actively exploited (CISA KEV)">🔥</span> ' : '';
-      return `<tr class="cve-row"
-          onmouseenter="showTooltip(event,'${escAttr(c.id)}')"
-          onmouseleave="hideTooltip()"
-          onmousemove="moveTooltip(event)">
-        <td class="mono">${flag}<a href="https://nvd.nist.gov/vuln/detail/${escAttr(c.id)}" target="_blank" rel="noopener noreferrer">${escHTML(c.id)}</a></td>
-        <td class="score" style="color:${col}">${c.score.toFixed(1)}</td>
-        <td style="text-align:center"><span class="badge" style="background:${col}">${c.severity}</span></td>
-        <td class="cve-vendor">${hl(escHTML(c.vendor || ''), terms)}</td>
-        <td class="cve-vendor">${hl(escHTML(c.product || ''), terms)}</td>
-        <td><span class="type-chip">${c.type || 'software'}</span></td>
-        <td class="cve-desc">${hl(escHTML(desc), terms)}</td>
-      </tr>`;
-    }).join('');
-  }
-
-  // ── Threats ────────────────────────────────────────────
-  const threatsEl = document.getElementById('threats-list');
-  threatsEl.innerHTML = !threats.length
-    ? `<div class="empty">No advisories match current filters.</div>`
-    : threats.map(t => `
-      <div class="feed-item">
-        <div class="feed-source">${escHTML(t.source)}</div>
-        <div class="feed-title"><a href="${escAttr(t.link)}" target="_blank" rel="noopener noreferrer" style="color:var(--kev)">${hl(escHTML(t.title), terms)}</a></div>
-        ${t.summary ? `<div class="feed-summary">${hl(escHTML(t.summary.slice(0,300)), terms)}</div>` : ''}
-      </div>`).join('');
-
-  // ── KEV ────────────────────────────────────────────────
-  const kevEl = document.getElementById('kev-list');
-  kevEl.innerHTML = !kev.length
-    ? `<div class="empty">No CISA KEV entries match current filters.</div>`
-    : kev.map(v => `
-      <div class="kev-card">
-        <div class="kev-header">
-          <span class="kev-id">${escHTML(v.cveID || 'N/A')}</span>
-          <span class="badge" style="background:var(--crit)">Actively exploited</span>
-          ${v.knownRansomwareCampaignUse === 'Known' ? '<span class="badge" style="background:#6B4EAA">Ransomware</span>' : ''}
-        </div>
-        <div class="kev-meta">
-          <strong>Vendor:</strong> ${hl(escHTML(v.vendorProject || ''), terms)} &nbsp;·&nbsp;
-          <strong>Added:</strong> ${escHTML(v.dateAdded || '')} &nbsp;·&nbsp;
-          <strong>Due:</strong> <span class="due-date">${escHTML(v.dueDate || 'N/A')}</span>
-        </div>
-        <div class="kev-name">${hl(escHTML(v.vulnerabilityName || ''), terms)}</div>
-        <div class="kev-desc">${hl(escHTML((v.shortDescription || '').slice(0, 440)), terms)}</div>
-        ${v.requiredAction ? `<div class="kev-action"><strong>Required action:</strong> ${escHTML(v.requiredAction.slice(0, 280))}</div>` : ''}
-      </div>`).join('');
-
-  // ── News ───────────────────────────────────────────────
-  document.getElementById('news-list').innerHTML = !news.length
-    ? `<div class="empty">No news items match current filters.</div>`
-    : news.map(n => `
-      <div class="feed-item">
-        <div class="feed-source">${escHTML(n.source)}</div>
-        <div class="feed-title"><a href="${escAttr(n.link)}" target="_blank" rel="noopener noreferrer">${hl(escHTML(n.title), terms)}</a></div>
-        ${n.summary ? `<div class="feed-summary">${hl(escHTML(n.summary.slice(0,280)), terms)}</div>` : ''}
-      </div>`).join('');
-
-  // ── Blogs ──────────────────────────────────────────────
-  document.getElementById('blogs-list').innerHTML = !blogs.length
-    ? `<div class="empty">No blog posts match current filters.</div>`
-    : blogs.map(b => `
-      <div class="feed-item">
-        <div class="feed-source">${escHTML(b.source)}</div>
-        <div class="feed-title"><a href="${escAttr(b.link)}" target="_blank" rel="noopener noreferrer" style="color:var(--blog)">${hl(escHTML(b.title), terms)}</a></div>
-        ${b.summary ? `<div class="feed-summary">${hl(escHTML(b.summary.slice(0,300)), terms)}</div>` : ''}
-      </div>`).join('');
-}
-
-// ── CVE Tooltip ────────────────────────────────────────────
-const tooltip = document.getElementById('cve-tooltip');
-
-function showTooltip(e, cveId) {
-  const c = cveDataMap[cveId];
-  if (!c) return;
-  const col = SEV_COLOUR[c.severity] || '#57616F';
-  tooltip.innerHTML = `
-    <div class="tt-id">${escHTML(c.id)}
-      <span class="tt-sev" style="background:${col}">${c.severity}</span>
-      <span style="font-family:monospace;font-weight:700;color:${col};font-size:12px;margin-left:4px">${c.score.toFixed(1)}</span>
-    </div>
-    <div class="tt-meta">${escHTML(c.vendor || '')}${c.product ? ' · ' + escHTML(c.product) : ''}${c.type ? ' · ' + c.type : ''}</div>
-    <div class="tt-desc">${escHTML(c.desc)}</div>
-    ${c.vector ? `<div class="tt-vector">${escHTML(c.vector)}</div>` : ''}
-    ${c.exploited ? `<div class="tt-kev">🔥 Actively exploited${c.cisaDue ? ' · CISA due: ' + escHTML(c.cisaDue) : ''}</div>` : ''}
-  `;
-  tooltip.classList.add('visible');
-  positionTooltip(e);
-}
-
-function hideTooltip() {
-  tooltip.classList.remove('visible');
-}
-
-function moveTooltip(e) {
-  positionTooltip(e);
-}
-
-function positionTooltip(e) {
-  const TW = 400, TH = 200;
-  let x = e.clientX + 16;
-  let y = e.clientY + 16;
-  if (x + TW > window.innerWidth  - 8) x = e.clientX - TW - 8;
-  if (y + TH > window.innerHeight - 8) y = e.clientY - TH - 8;
-  tooltip.style.left = Math.max(8, x) + 'px';
-  tooltip.style.top  = Math.max(8, y) + 'px';
-}
-
-// ── Interactions ───────────────────────────────────────────
-function onVendorInput() {
-  // Typing manually clears preset state
-  activePresets.clear();
-  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-  render();
-}
-
-function onCvssInput() {
-  const v = parseFloat(document.getElementById('cvss-slider').value);
-  document.getElementById('cvss-val').textContent = v.toFixed(1);
-  render();
-}
-
-function togglePreset(preset, btn) {
-  if (activePresets.has(preset.label)) {
-    activePresets.delete(preset.label);
-    btn.classList.remove('active');
-  } else {
-    activePresets.add(preset.label);
-    btn.classList.add('active');
-  }
-  // Build combined terms from all active presets
-  const allTerms = new Set();
-  activePresets.forEach(label => {
-    const p = STACK_PRESETS.find(p => p.label === label);
-    if (p) p.terms.forEach(t => allTerms.add(t));
-  });
-  document.getElementById('vendor-input').value = [...allTerms].join(', ');
-  render();
-}
-
-function clearAll() {
-  document.getElementById('vendor-input').value = '';
-  document.getElementById('cvss-slider').value  = 0;
-  document.getElementById('cvss-val').textContent = '0';
-  document.getElementById('type-select').value   = '';
-  document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-  activePresets.clear();
-  activeFilters.clear();
-  render();
-  history.replaceState({}, '', location.pathname);
-}
-
-function switchTab(tab, el) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('panel-' + tab).classList.add('active');
-  activeTab = tab;
-  hideTooltip();
-}
-
-function shareURL() {
-  const terms = getTerms();
-  const cvss  = getCvssMin();
-  const type  = getTypeFilter();
-  const params = new URLSearchParams();
-  if (terms.length)        params.set('stack', terms.join(','));
-  if (cvss > 0)            params.set('cvss', cvss);
-  if (type)                params.set('type', type);
-  if (activeTab !== 'cves') params.set('tab', activeTab);
-  if (activeFilters.size)  params.set('sev', [...activeFilters].join(','));
-  const url = location.origin + location.pathname + (params.toString() ? '?' + params : '');
-  navigator.clipboard.writeText(url).then(() => {
-    const lbl = document.getElementById('share-label');
-    lbl.textContent = 'Copied!';
-    setTimeout(() => { lbl.textContent = 'Share view'; }, 2200);
-  });
-}
-
-// ── THREAT OPS ─────────────────────────────────────────────
-const TO_KW = {
-  fortinet:  ['fortinet','fortigate','fortios','fortimanager','fortiweb'],
-  ivanti:    ['ivanti','pulse','mobileiron','connect secure'],
-  vmware:    ['vmware','vsphere','esxi','vcenter','workstation','horizon'],
-  microsoft: ['microsoft','windows','azure','office','sharepoint','exchange','teams','hyper-v'],
-  cisco:     ['cisco','ios xe','meraki','webex','asa','firepower','sd-wan'],
-  paloalto:  ['palo alto','panos','globalprotect','cortex','prisma'],
-  apache:    ['apache','tomcat','struts','log4j','httpd'],
-};
-
-let toActiveVendor = 'all';
-
-(function toClock() {
-  const tick = () => {
-    const n = new Date(), p = x => String(x).padStart(2, '0');
-    const el = document.getElementById('to-clock');
-    if (el) el.textContent = `${p(n.getUTCHours())}:${p(n.getUTCMinutes())}:${p(n.getUTCSeconds())} UTC`;
-  };
-  tick();
-  setInterval(tick, 1000);
-})();
-
-function toMatchVendor(cve, v) {
-  if (v === 'all') return true;
-  const txt = ((cve.vendor || '') + ' ' + (cve.product || '') + ' ' + (cve.desc || '')).toLowerCase();
-  return (TO_KW[v] || []).some(k => txt.includes(k));
-}
-
-function toRenderFeed() {
-  if (!data) return;
-  const feed = document.getElementById('to-feed');
-  const visible = data.cves.filter(c => toMatchVendor(c, toActiveVendor));
-  if (!visible.length) {
-    feed.innerHTML = '<div class="to-empty">No CVEs for this vendor in today\'s digest.</div>';
+function renderNews(d){
+  const news=(d.news||[]).slice(0,9);
+  const el=document.getElementById('news-grid');
+  if(!news.length){
+    el.innerHTML='<div class="smsg" style="grid-column:1/-1">No news data yet. Runs daily at 06:00 UTC.</div>';
     return;
   }
-  feed.innerHTML = visible.slice(0, 20).map(c => {
-    const col = SEV_COLOUR[c.severity] || '#57616F';
-    const sevLabel = c.severity === 'CRITICAL' ? 'CRIT' : c.severity;
-    const desc = c.desc.length > 90 ? c.desc.slice(0, 90) + '…' : c.desc;
-    return `<div class="to-feed-row">
-      <span class="to-feed-sev" style="background:${col}">${escHTML(sevLabel)}</span>
-      <span class="to-feed-vendor">${escHTML(c.vendor && c.vendor !== 'Unknown' ? c.vendor : (c.product || 'Unknown'))}</span>
-      <span class="to-feed-desc">${escHTML(desc)}</span>
-      <span class="to-feed-id"><a href="https://nvd.nist.gov/vuln/detail/${escAttr(c.id)}" target="_blank" rel="noopener noreferrer">${escHTML(c.id)}</a></span>
-    </div>`;
-  }).join('');
-}
-
-function toSetVendor(btn) {
-  document.querySelectorAll('.to-vbtn').forEach(b => b.classList.remove('vactive'));
-  btn.classList.add('vactive');
-  toActiveVendor = btn.dataset.v;
-  toRenderFeed();
-}
-
-function initThreatOps() {
-  document.getElementById('to-cve-count').textContent = data.cves.length;
-  document.getElementById('to-cve-sub').textContent =
-    `${data.stats.critical} critical · ${data.stats.high} high · ${data.stats.medium} medium`;
-  document.getElementById('to-kev-count').textContent = data.kev.length;
-  document.getElementById('to-kev-sub').textContent = 'CISA known exploited vulnerabilities';
-  toRenderFeed();
-}
-
-// ── Security helpers — prevent XSS ────────────────────────
-function escHTML(str) {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-function escAttr(str) {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+  el.innerHTML=news.map(n=>`
+    <div class="ncard">
+      <div class="nsrc">${esc(n.source||n.feed||'')}</div>
+      <div class="ntitle"><a href="${esc(n.url||n.link||'#')}" target="_blank" rel="noopener">${esc(n.title||'')}</a></div>
+      <div class="ndate">${relDate(n.published||n.date||'')}</div>
+    </div>`).join('');
 }
 </script>
 </body>
