@@ -19,7 +19,7 @@
 .cves-mast h1{ font-size:clamp(40px,5vw,64px);letter-spacing:-.028em;line-height:1.04;font-weight:500;margin:14px 0 0;text-wrap:balance }
 .cves-mast h1 em{ font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--fg-muted) }
 .cves-mast p{ color:var(--fg-muted);max-width:60ch;margin-top:18px;font-size:16px }
-.cves-stats{ display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin-top:40px }
+.cves-stats{ display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin-top:40px }
 .cves-stat{ background:var(--bg);padding:22px;display:flex;flex-direction:column;gap:6px }
 .cves-stat .k{ font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim) }
 .cves-stat .v{ font-size:32px;font-weight:500;letter-spacing:-.025em;color:var(--fg);font-feature-settings:"tnum";line-height:1 }
@@ -82,7 +82,7 @@
 }
 
 @media (max-width: 1100px){
-  .cves-stats{ grid-template-columns:1fr 1fr }
+  .cves-stats{ grid-template-columns:repeat(2,1fr) }
   .cve-table thead th.title-h, .cve-table td.title{ max-width:280px }
   .cve-table thead th.refs-h, .cve-table td.refs{ display:none }
   .cve-table thead th.kev-h, .cve-table td.kev{ display:none }
@@ -141,12 +141,16 @@
     <h1>Every vulnerability worth your attention, <em>continuously triaged.</em></h1>
     <p>A live index of vulnerabilities we are tracking — sorted by relevance to enterprise defenders. Sources: NVD, CISA KEV, MITRE, Watchtowr, Mandiant, Cisco Talos, Microsoft MSRC, Google TAG, Fortinet PSIRT, Apple Security.</p>
 
+    <!-- Stats grid — first 4 values are overwritten live from digest.json via populateDigestStats() -->
     <div class="cves-stats">
-      <div class="cves-stat"><div class="k">CVEs tracked</div><div class="v" data-metric>3,184</div><div class="d">Past 12 months</div></div>
-      <div class="cves-stat"><div class="k">Critical · CVSS ≥ 9</div><div class="v crit" data-metric>412</div><div class="d">Past 12 months</div></div>
-      <div class="cves-stat"><div class="k">In CISA KEV</div><div class="v high" data-metric>118</div><div class="d">Added past 12 months</div></div>
-      <div class="cves-stat"><div class="k">Zero-days · exploited</div><div class="v crit" data-metric>61</div><div class="d">Past 12 months</div></div>
-      <div class="cves-stat"><div class="k">Median patch lag</div><div class="v ok">24<span style="font-size:14px;color:var(--fg-muted);margin-left:4px">days</span></div><div class="d">Enterprise · 2024</div></div>
+      <div class="cves-stat"><div class="k">CVEs (24h)</div><div class="v" data-metric>—</div><div class="d">Loading…</div></div>
+      <div class="cves-stat"><div class="k">Critical · CVSS ≥ 9</div><div class="v crit" data-metric>—</div><div class="d">Last 24 hours</div></div>
+      <div class="cves-stat"><div class="k">In CISA KEV</div><div class="v high" data-metric>—</div><div class="d">Added last 7 days</div></div>
+      <div class="cves-stat"><div class="k">Actively exploited</div><div class="v crit" data-metric>—</div><div class="d">Last 24 hours</div></div>
+      <div class="cves-stat"><div class="k">EPSS ≥ 10%</div><div class="v high" data-digest-epss-high>—</div><div class="d">High exploit probability</div></div>
+      <div class="cves-stat"><div class="k">Exploit-DB PoCs</div><div class="v" data-digest-exploitdb>—</div><div class="d">Public PoC code available</div></div>
+      <div class="cves-stat"><div class="k">Nuclei templates</div><div class="v" data-digest-nuclei>—</div><div class="d">Scanner templates exist</div></div>
+      <div class="cves-stat"><div class="k">IOCs (24h)</div><div class="v" style="color:var(--status-mid)" data-digest-ioc-count>—</div><div class="d">ThreatFox indicators</div></div>
     </div>
   </header>
 
@@ -319,4 +323,54 @@
           <td class="vendor">Ivanti · Connect Secure</td>
           <td class="title">XML external entity (XXE) in SAML component allowing unauthenticated file disclosure</td>
           <td class="score"><span class="pill high">8.3</span></td>
-          <td class="kev"><span class="badge" style="color:var(--fg-muted);border-color:var(--hairline-2);background:transparent">Patched</span></td>
+          <td class="kev"><span class="badge" style="color:var(--fg-muted);border-color:var(--hairline-2);background:transparent">Patched</span></td>
+          <td class="added">Feb 13, 2024</td>
+          <td class="refs"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-22024" target="_blank" rel="noopener">NVD</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.cve-table-wrap -->
+
+  <!-- Live IOC Feed panel -->
+  <section style="margin:48px 0 80px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:20px;border-bottom:1px solid var(--hairline);padding-bottom:16px">
+      <h2 style="font-size:22px;font-weight:500;letter-spacing:-.02em;margin:0">Live threat indicators</h2>
+      <span style="font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--fg-dim)">Abuse.ch ThreatFox &amp; URLhaus · updated daily</span>
+    </div>
+    <div data-ioc-panel>
+      <p style="color:var(--fg-dim);font-size:13px">Loading IOC data…</p>
+    </div>
+  </section>
+
+</div><!-- /.container -->
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="brand" style="opacity:.6">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M3 9 L14 3 L25 9" />
+            <path d="M3 14 L14 8 L25 14" opacity=".7"/>
+            <path d="M3 19 L14 13 L25 19" opacity=".4"/>
+            <circle cx="14" cy="23" r="1.6" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <span class="brand-name">Cyber Digest</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="wire.html">The Wire</a>
+        <a href="cves.html">Vulnerabilities</a>
+        <a href="briefing.html">Briefings</a>
+        <a href="actor.html">Actors</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+      </nav>
+      <p class="footer-copy">Sources: NVD · CISA KEV · MSRC · Talos · Unit 42 · Abuse.ch · FIRST.org EPSS · ProjectDiscovery Nuclei</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

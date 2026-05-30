@@ -42,6 +42,7 @@ jobs:
           NVD_API_KEY:         ${{ secrets.NVD_API_KEY }}
           DISCORD_RELAY_URL:   ${{ secrets.DISCORD_RELAY_URL }}
           DISCORD_AUTH_TOKEN:  ${{ secrets.DISCORD_AUTH_TOKEN }}
+          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
         run: python digest.py
 
       - name: Commit and push digest.json
