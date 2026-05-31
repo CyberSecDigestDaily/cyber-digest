@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-31T08:34:42.757437+00:00",
+  "generated": "2026-05-31T08:53:13.450369+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
@@ -1847,6 +1847,14 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "CVE-2024-36137 A vulnerability has been identified in Node.js, affecting users of the experimental permission model when the --allow-fs-write flag is used.\r\n\r\nNode.js Permission Model do not operate on file descriptors, however, operations such as fs.fchown or fs.fchmod can use a \"read-only\" file descriptor to change the owner and permissions of a file.",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-36137",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-05-31T08:40:05+00:00",
+      "summary": "Information published."
+    },
+    {
       "title": "CVE-2024-22018 A vulnerability has been identified in Node.js, affecting users of the experimental permission model when the --allow-fs-read flag is used.\nThis flaw arises from an inadequate permission model that fails to restrict file stats through the fs.lstat API. As a result, malicious actors can retrieve stats from files that they do not have explicit read access to.\nThis vulnerability affects all users using the experimental permission model in Node.js 20 and Node.js 21.\nPlease note that at the time this CVE was issued, the permission model is an experimental feature of Node.js.",
       "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-22018",
       "source": "Microsoft Security",
@@ -1871,19 +1879,11 @@
       "summary": "Information published."
     },
     {
-      "title": "CVE-2026-34875 An issue was discovered in Mbed TLS through 3.6.5 and TF-PSA-Crypto 1.0.0. A buffer overflow can occur in public key export for FFDH keys.",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-34875",
+      "title": "CVE-2025-15504 lief-project LIEF ELF Binary Parser.tcc parse_binary null pointer dereference",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-15504",
       "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-05-31T08:03:44+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-28390 Possible NULL Dereference When Processing CMS KeyTransportRecipientInfo",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-28390",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:03:34+00:00",
+      "published": "2026-05-31T08:03:56+00:00",
       "summary": "Information published."
     },
     {
