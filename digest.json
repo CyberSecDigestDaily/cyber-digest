@@ -1,53 +1,11 @@
 {
-  "generated": "2026-06-01T17:17:00.581722+00:00",
+  "generated": "2026-06-01T21:21:53.123067+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>1 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>1 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-10126",
-      "desc": "A security flaw has been discovered in Edimax BR-6478AC 1.23. Affected by this issue is the function formQoS of the file /goform/formQoS of the component POST Request Handler. The manipulation of the argument selSSID results in buffer overflow. The attack can be launched remotely. The exploit has been released to the public and may be used for attacks.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T17:16:21.060",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10126"
-    },
-    {
-      "id": "CVE-2026-10127",
-      "desc": "A weakness has been identified in Edimax BR-6478AC 1.23. This affects the function formStaDrvSetup of the file /goform/formStaDrvSetup of the component POST Request Handler. This manipulation of the argument rootAPmac causes command injection. The attack may be initiated remotely. The exploit has been made available to the public and could be used for attacks.",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T17:16:22.013",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10127"
-    },
-    {
-      "id": "CVE-2026-10152",
-      "desc": "A vulnerability was detected in TaleLin lin-cms-spring-boot up to 0.2.1. This issue affects some unknown processing of the file src/main/java/io/github/talelin/latticy/controller/v1/BookController.java of the component book Endpoint. The manipulation results in improper access controls. The attack may be launched remotely. The exploit is now public and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T20:16:22.570",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10152"
-    },
     {
       "id": "CVE-2026-10153",
       "desc": "A flaw has been found in westboy CicadasCMS up to 2431154dac8d0735e04f1fd2a3c3556668fc8dab. Impacted is the function Search of the file org/springframework/cache/support/AbstractCacheManager.java. This manipulation of the argument s causes cross site scripting. Remote exploitation of the attack is possible. The exploit has been published and may be used. This product follows a rolling release approach for continuous delivery, so version details for affected or updated releases are not provided. The project was informed of the problem early through an issue report but has not responded yet.",
@@ -422,10 +380,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00033,
-        "percentile": 0.10217
-      },
+      "epss": null,
       "published": "2026-05-31T11:16:47.583",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10178"
     },
@@ -467,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00043,
+        "percentile": 0.13606
+      },
       "published": "2026-05-31T13:16:48.407",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10181"
     },
@@ -684,9 +642,9 @@
     {
       "id": "CVE-2026-8796",
       "desc": "Sereal::Decoder versions before 5.005 for Perl allow heap out-of-bounds read via crafted input.\n\nIn Perl/Decoder/srl_decoder.c, srl_read_object() and srl_read_hash() process a COPY tag, a back-reference whose target byte the decoder re-decodes as a fresh tag. When that target byte matches the SHORT_BINARY pattern (an inline string whose length is encoded in the low bits of the tag), the resulting read is not bounded to precede the COPY tag's own offset and can run past the end of the input buffer. An attacker controlled COPY offset can land inside a previously decoded value rather than on a tag boundary, planting a byte that the decoder reads as a SHORT_BINARY tag and consuming up to 31 following bytes from the heap as a class name (OBJECT path) or hash key (HASH path).",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+      "severity": "HIGH",
       "vendor": "",
       "product": "",
       "exploited": false,
@@ -705,15 +663,70 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00013,
-        "percentile": 0.02155
-      },
+      "epss": null,
       "published": "2026-05-31T22:16:54.150",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10197"
+    },
+    {
+      "id": "CVE-2026-48210",
+      "desc": "An improper default configuration in OTRS 2026.3.1 causes ticket article forwarding actions to enforce the \u201cIs visible for customer\u201d flag by default and prevent users from disabling it via the UI. This leads to unintended exposure of internal ticket information to the External Frontend\n\nThis issue affects OTRS 2026.3.1",
+      "cvss": 5.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-05-31T22:16:55.133",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48210"
+    },
+    {
+      "id": "CVE-2026-10198",
+      "desc": "A flaw has been found in Assimp up to 6.0.4. Affected by this vulnerability is the function Assimp::glTFImporter::ImportMeshes of the file glTFImporter.cpp of the component glTFImporter. This manipulation causes null pointer dereference. The attack is restricted to local execution. The exploit has been published and may be used. The project tagged the reported issue as bug.",
+      "cvss": 3.3,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-05-31T23:16:41.760",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10198"
+    },
+    {
+      "id": "CVE-2026-10199",
+      "desc": "A vulnerability has been found in Assimp up to 6.0.4. Affected by this issue is the function glTF2::LazyDict in the library glTF2Asset.h. Such manipulation of the argument operator[] leads to null pointer dereference. The attack must be carried out locally. The exploit has been disclosed to the public and may be used. The name of the patch is d24b85319bd70c65883a2b96613e07e23fb95981. It is best practice to apply a patch to resolve this issue.",
+      "cvss": 3.3,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00012,
+        "percentile": 0.01925
+      },
+      "published": "2026-05-31T23:16:42.413",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10199"
     }
   ],
   "kev": [
+    {
+      "cveID": "CVE-2024-21182",
+      "vendorProject": "Oracle",
+      "product": "WebLogic Server",
+      "vulnerabilityName": "Oracle WebLogic Server Unspecified Vulnerability",
+      "dateAdded": "2026-06-01",
+      "shortDescription": "Oracle WebLogic contains an unspecified vulnerability that could allow an unauthenticated attacker with network access via T3, IIOP to compromise Oracle WebLogic Server. Successful attacks of this vulnerability can result in unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.oracle.com/security-alerts/cpujul2024.html ; https://nvd.nist.gov/vuln/detail/CVE-2024-21182",
+      "cwes": []
+    },
     {
       "cveID": "CVE-2026-0257",
       "vendorProject": "Palo Alto Networks",
@@ -1445,24 +1458,9 @@
       "cwes": [
         "CWE-94"
       ]
-    },
-    {
-      "cveID": "CVE-2026-35616",
-      "vendorProject": "Fortinet",
-      "product": "FortiClient EMS",
-      "vulnerabilityName": "Fortinet FortiClient EMS Improper Access Control Vulnerability",
-      "dateAdded": "2026-04-06",
-      "shortDescription": "Fortinet FortiClient EMS contains an improper access control vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-04-09",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "Please adhere to Fortinet's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible Fortinet products affected by this vulnerability. Apply any final mitigations provided by the vendor as soon as they become available. For more information please see: https://fortiguard.fortinet.com/psirt/FG-IR-26-099 ; https://nvd.nist.gov/vuln/detail/CVE-2026-35616",
-      "cwes": [
-        "CWE-284"
-      ]
     }
   ],
-  "kev_7d": 5,
+  "kev_7d": 6,
   "gh_advisories": [
     {
       "id": "GHSA-qjwp-hrq6-r26r",
@@ -1855,6 +1853,30 @@
       "summary": "For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Carnival Corporation, a global cruise line operator, has\u00a0confirmed a data breach affecting nearly 6 million people after attackers used social engineering"
     },
     {
+      "title": "CVE-2026-45495 Microsoft Edge (Chromium-based) Remote Code Execution Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45495",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-01T14:00:00+00:00",
+      "summary": "Acknowledgement added. This is an informational change only."
+    },
+    {
+      "title": "CVE-2026-45494 Microsoft Edge (Chromium-based) Spoofing Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45494",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-01T14:00:00+00:00",
+      "summary": "Acknowledgement added. This is an informational change only."
+    },
+    {
+      "title": "CVE-2025-6965 Integer Truncation on SQLite",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-6965",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-01T14:00:00+00:00",
+      "summary": "Added Visual Studio software to the Security Updates table.  Customers that are running supported version of Visual Studio are encouraged to update to the indicated version to be protected from this vulnerability."
+    },
+    {
       "title": "CVE-2026-39829 Invoking  pathological RSA/DSA parameters may cause DoS in golang.org/x/crypto/ssh",
       "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39829",
       "source": "Microsoft Security",
@@ -1893,38 +1915,6 @@
       "category": "threat",
       "published": "2026-05-31T08:41:02+00:00",
       "summary": "Information published."
-    },
-    {
-      "title": "Type Confusion in V8 in Google Chrome prior to 142.0.7444.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-13227",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:40:55+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2024-36137 A vulnerability has been identified in Node.js, affecting users of the experimental permission model when the --allow-fs-write flag is used.\r\n\r\nNode.js Permission Model do not operate on file descriptors, however, operations such as fs.fchown or fs.fchmod can use a \"read-only\" file descriptor to change the owner and permissions of a file.",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-36137",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:40:05+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2025-15504 lief-project LIEF ELF Binary Parser.tcc parse_binary null pointer dereference",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-15504",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:03:56+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "The Good, the Bad and the Ugly in Cybersecurity \u2013 Week 22",
-      "url": "https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-22-7/",
-      "source": "SentinelOne Blog",
-      "category": "threat",
-      "published": "2026-05-29T14:38:21+00:00",
-      "summary": "Authorities dismantle Russian-aligned hosting firm, FBI warns of in-person data thefts, and TrapDoor steals credentials via software supply chain attack."
     },
     {
       "title": "Oracle May 2026 Critical Security Patch Update Addresses 35 CVEs",
@@ -1975,7 +1965,7 @@
       "summary": "View CSAF\nSummary\nSuccessful exploitation of these vulnerabilities could result in an attacker gaining administrator access to the device.\nThe following versions of MacGregor Voyage Data Recorder (VDR) G4e are affected:\n\nMacGregor Voyage Data Recorder (VDR) G4e &lt;V5.250\n\n\n\n\n\nCVSS\nVendor\nEquipment\n"
     },
     {
-      "title": "Schnieider Electric EcoStruxure Machine Expert HVAC",
+      "title": "Schneider Electric EcoStruxure Machine Expert HVAC",
       "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-148-07",
       "source": "CISA ICS",
       "category": "threat",
@@ -2535,6 +2525,14 @@
       "summary": "Learn how SentinelOne has stopped three recent zero-day supply chain attacks with AI-driven defense built for machine-speed threats."
     },
     {
+      "title": "Automation at Machine Speed: Rethinking Execution in Modern Cybersecurity",
+      "url": "https://www.sentinelone.com/blog/automation-at-machine-speed-rethinking-execution-in-modern-cybersecurity/",
+      "source": "SentinelOne Blog",
+      "category": "threat",
+      "published": "2026-04-20T18:43:49+00:00",
+      "summary": "Machine-speed threats demand machine-speed defense\u2014see how AI and automation cut dwell time and outpace attackers."
+    },
+    {
       "title": "Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities/",
       "source": "Mandiant Blog",
@@ -2631,6 +2629,14 @@
       "summary": ""
     },
     {
+      "title": "Secure Shadow AI at the Control Plane with Falcon for IT",
+      "url": "https://www.crowdstrike.com/en-us/blog/secure-shadow-ai-at-the-control-plane-with-falcon-for-it/",
+      "source": "CrowdStrike Blog",
+      "category": "threat",
+      "published": "",
+      "summary": ""
+    },
+    {
       "title": "CrowdStrike Named a Leader in 2026 Gartner&reg; Magic Quadrant&trade; for Endpoint Protection for Seventh Consecutive Time",
       "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-leader-in-2026-gartner-magic-quadrant-for-endpoint-protection/",
       "source": "CrowdStrike Blog",
@@ -2669,14 +2675,6 @@
       "category": "threat",
       "published": "",
       "summary": ""
-    },
-    {
-      "title": "New Claude Integration Brings Audit Data into the Falcon Platform",
-      "url": "https://www.crowdstrike.com/en-us/blog/new-claude-integration-brings-audit-data-into-the-falcon-platform/",
-      "source": "CrowdStrike Blog",
-      "category": "threat",
-      "published": "",
-      "summary": ""
     }
   ],
   "news": [
@@ -2687,6 +2685,62 @@
       "category": "news",
       "published": "2026-06-26T11:00:00+00:00",
       "summary": ""
+    },
+    {
+      "title": "Inspector general finds NIST mistakes have made vulnerability database ineffective",
+      "url": "https://therecord.media/nist-mistakes-vulnerability-database-inspector-general",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-01T20:28:00+00:00",
+      "summary": "NIST\u2019s National Vulnerability Database (NVD) backlog mushroomed from 13,000 unprocessed security vulnerabilities in February 2024 to more than 27,000 by the end of 2025, \u201cundermining the NVD\u2019s utility and public trust,\" according to an inspector general report."
+    },
+    {
+      "title": "NSA selects new leads for key cybersecurity posts",
+      "url": "https://therecord.media/nsa-selects-new-leads-for-cyber-posts",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-01T18:30:00+00:00",
+      "summary": "David Imbordino, an NSA senior executive who most recently led its cybersecurity directorate in an acting capacity, has been named as its new chief. Bruce Jones, a career NSA technical and operational leader, as the new head of its Cybersecurity Collaboration Center."
+    },
+    {
+      "title": "WP Maps Pro Vulnerability Exploited to Take Over WordPress Sites",
+      "url": "https://www.securityweek.com/wp-maps-pro-vulnerability-exploited-to-take-over-wordpress-sites/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-01T18:19:23+00:00",
+      "summary": "The security defect (CVE-2026-8732) allows unauthenticated attackers to create administrative accounts on the affected installations.\nThe post WP Maps Pro Vulnerability Exploited to Take Over WordPress Sites appeared first on SecurityWeek."
+    },
+    {
+      "title": "Dashlane password manager users locked out by brute force attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/dashlane-password-manager-users-locked-out-by-brute-force-attacks/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-01T18:17:13+00:00",
+      "summary": "Multiple Dashlane users have been locked out of their accounts following brute-force attacks that attempted logins from distant locations and unknown devices. [...]"
+    },
+    {
+      "title": "Dutch Police Dismantle Massive 17-Million-Device Botnet",
+      "url": "https://www.securityweek.com/dutch-police-dismantle-massive-17-million-device-botnet/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-01T17:55:26+00:00",
+      "summary": "Dutch authorities seized command-and-control servers tied to a botnet of infected computers, smartphones, and tablets that was allegedly used to power a residential proxy network and facilitate cybercrime.\nThe post Dutch Police Dismantle Massive 17-Million-Device Botnet appeared first on SecurityWee"
+    },
+    {
+      "title": "Miasma Supply Chain Attack Compromises Red Hat npm Packages with Credential-Stealing Worm",
+      "url": "https://thehackernews.com/2026/06/miasma-supply-chain-attack-compromises.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-01T17:40:28+00:00",
+      "summary": "A new Mini Shai-Hulud supply chain attack campaign, codenamed Miasma, has compromised @redhat-cloud-services packages to steal credentials and secrets from developer machines and deliver a self-propagating worm.\n\n\"This is effectively a Mini Shai-Hulud campaign: it uses the same core tactics of insta"
+    },
+    {
+      "title": "Hackers Used Meta\u2019s AI Support Bot to Seize Instagram Accounts",
+      "url": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/",
+      "source": "Krebs on Security",
+      "category": "news",
+      "published": "2026-06-01T17:32:50+00:00",
+      "summary": "The Instagram accounts for the Obama White House and the Chief Master Sergeant of the U.S. Space Force were briefly defaced with pro-Iranian images and messages over the weekend, after instructions began circulating on Telegram showing how to trick Meta's \"AI support assistant\" bot into resetting ac"
     },
     {
       "title": "WordPress malware campaign hides payloads in Steam profiles",
@@ -2953,14 +3007,6 @@
       "summary": "YARA-X&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;s 1.17.0 release brings 5 improvements (several performance improvements) and 1 bugfix.&#xd;"
     },
     {
-      "title": "WP Maps Pro bug exploited to create admin accounts on WordPress sites",
-      "url": "https://www.bleepingcomputer.com/news/security/wp-maps-pro-bug-exploited-to-create-admin-accounts-on-wordpress-sites/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-05-31T14:06:42+00:00",
-      "summary": "Hackers are targeting WordPress websites running a vulnerable version of the WP Maps Pro plugin, which allows creating rogue administrator accounts without authentication. [...]"
-    },
-    {
       "title": "Dutch Authorities Dismantle Botnet Linked to 17 Million Infected Devices",
       "url": "https://thehackernews.com/2026/05/dutch-authorities-dismantle-botnet.html",
       "source": "The Hacker News",
@@ -2975,14 +3021,6 @@
       "category": "news",
       "published": "2026-05-30T16:00:49+00:00",
       "summary": "Moscow\u2019s agents are building fake companies, recruiting middlemen and deploying cyber spies and hackers who gather information that could be used to attack key infrastructure.\nThe post Russian Spies Are Aggressively Seeking Western Technology as Sanctions Bite, Officials Say appeared first on Securi"
-    },
-    {
-      "title": "Exploit Code Published for Critical Flowise RCE Vulnerability",
-      "url": "https://www.securityweek.com/exploit-code-published-for-critical-flowise-rce-vulnerability/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-05-30T15:55:59+00:00",
-      "summary": "The one-click vulnerability allows attackers to execute arbitrary code on self-hosted Flowise servers by tricking users into importing a malicious chatflow.\nThe post Exploit Code Published for Critical Flowise RCE Vulnerability appeared first on SecurityWeek."
     },
     {
       "title": "Cybercrime Crew Claims It Hacked Mike Lindell\u2019s MyPillow",
@@ -3017,22 +3055,6 @@
       "summary": "As part of Dark Reading's 20th anniversary package, we asked readers for a cybersecurity-related caption that captures their thoughts about the industry's last two decades."
     },
     {
-      "title": "ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface",
-      "url": "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-05-29T18:07:12+00:00",
-      "summary": "Cybersecurity researchers have disclosed details of a vulnerability in OpenAI ChatGPT that leverages the artificial intelligence (AI) assistant's implicit trust in Markdown links and images to trigger prompt injections and open the door to phishing attacks.\n\nThe technique has been codenamed ChatGPhi"
-    },
-    {
-      "title": "In Other News: Trump Mobile Data Breach, FIFA World Cup Phishing, CISA Responds to Supply Chain Attacks",
-      "url": "https://www.securityweek.com/in-other-news-trump-mobile-data-breach-fifa-world-cup-phishing-cisa-responds-to-supply-chain-attacks/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-05-29T16:20:49+00:00",
-      "summary": "Noteworthy stories that might have slipped under the radar: Trump Mobile exposes customer data, phishers target the 2026 FIFA World Cup, CISA responds to recent supply chain attacks. \nThe post In Other News: Trump Mobile Data Breach, FIFA World Cup Phishing, CISA Responds to Supply Chain Attacks app"
-    },
-    {
       "title": "As Global Powers Explore Humanoid Robots, Cyber-Risk Looms",
       "url": "https://www.darkreading.com/cyber-risk/global-powers-explore-humanoids-cyber-risk",
       "source": "Dark Reading",
@@ -3047,14 +3069,6 @@
       "category": "news",
       "published": "2026-05-29T14:35:33+00:00",
       "summary": "The cyber insurance industry has made relatively weak inroads into Asia due to a variety of factors, but that could be changing."
-    },
-    {
-      "title": "Microsoft calls zero-day releases \u2018never justifiable\u2019 as researcher threatens to drop more",
-      "url": "https://therecord.media/microsoft-calls-zero-day-releases-never-justifiable-as-researcher-threatens-more",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-05-29T13:33:00+00:00",
-      "summary": "Each vulnerability was published with working proof-of-concept code to the Microsoft-owned code repository GitHub, making them immediately available to both attackers and security professionals."
     },
     {
       "title": "With Complex Cloud Integrations, Small Errors Lead to Major Compromises",
@@ -3111,14 +3125,6 @@
       "category": "news",
       "published": "2026-05-28T16:59:33+00:00",
       "summary": "The US military has long known that cheap fixes could stop location data from exposing its troops. It adopted almost none\u2014and now says adversaries are using the data to target soldiers during a war."
-    },
-    {
-      "title": "Cruise giant Carnival confirms data breach affecting nearly 6 million people",
-      "url": "https://therecord.media/cruise-giant-carnival-confirms-data-breach-affecting-6-million",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-05-28T14:01:00+00:00",
-      "summary": "The company said the threat actor gained access to a limited portion of its IT environment last month after compromising an employee account. By the end of April, Carnival determined that the attacker had copied personal information from its systems."
     },
     {
       "title": "Scammers Are Using Your Real Hotel Reservations to Trick You With Spear-Phishing Attacks",
@@ -3351,14 +3357,6 @@
       "category": "news",
       "published": "2026-04-22T09:11:43+00:00",
       "summary": "On this week\u2019s show, Patrick Gray and James Wilson are joined by special guest The Grugq. They discuss the week\u2019s cybersecurity news, including:\n\n\n  Vercel got owned, and there\u2019s a few infostealer and compromised employee dots to connect\n  Mozilla used Mythos to find 271 bugs, which feels like a sig"
-    },
-    {
-      "title": "\u2018Scattered Spider\u2019 Member \u2018Tylerb\u2019 Pleads Guilty",
-      "url": "https://krebsonsecurity.com/2026/04/scattered-spider-member-tylerb-pleads-guilty/",
-      "source": "Krebs on Security",
-      "category": "news",
-      "published": "2026-04-21T14:53:59+00:00",
-      "summary": "A 24-year-old British national and senior member of the cybercrime group \"Scattered Spider\" has pleaded guilty to wire fraud conspiracy and aggravated identity theft. Tyler Robert Buchanan admitted his role in a series of text-message phishing attacks in the summer of 2022 that allowed the group to "
     }
   ],
   "stats": {
@@ -3367,7 +3365,7 @@
     "high": 24,
     "exploited": 1,
     "kev_total": 50,
-    "kev_7d": 5,
+    "kev_7d": 6,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
     "epss_enriched": 2
