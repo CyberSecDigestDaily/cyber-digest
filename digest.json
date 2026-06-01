@@ -1,81 +1,11 @@
 {
-  "generated": "2026-06-01T11:45:19.518363+00:00",
+  "generated": "2026-06-01T15:30:38.828292+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>1 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-10116",
-      "desc": "A security flaw has been discovered in Open5GS up to 2.7.7. This vulnerability affects the function ogs_sbi_xact_add in the library /lib/core/ogs-timer.c of the component ue-authentications Endpoint. Performing a manipulation results in denial of service. The attack may be initiated remotely. The exploit has been released to the public and may be used for attacks. Applying a patch is the recommended action to fix this issue.",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T12:16:23.080",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10116"
-    },
-    {
-      "id": "CVE-2026-10117",
-      "desc": "A weakness has been identified in Open5GS up to 2.7.7. This issue affects the function ogs_pool_id_calloc in the library /lib/sbi/nghttp2-server.c. Executing a manipulation can lead to denial of service. The attack may be launched remotely. The exploit has been made available to the public and could be used for attacks. It is best practice to apply a patch to resolve this issue.",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T13:16:20.870",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10117"
-    },
-    {
-      "id": "CVE-2026-46242",
-      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\neventpoll: fix ep_remove struct eventpoll / struct file UAF\n\nep_remove() (via ep_remove_file()) cleared file->f_ep under\nfile->f_lock but then kept using @file inside the critical section\n(is_file_epoll(), hlist_del_rcu() through the head, spin_unlock).\nA concurrent __fput() taking the eventpoll_release() fastpath in\nthat window observed the transient NULL, skipped\neventpoll_release_file() and ran to f_op->release / file_free().\n\nFor the epoll-watches-epoll case, f_op->release is\nep_eventpoll_release() -> ep_clear_and_put() -> ep_free(), which\nkfree()s the watched struct eventpoll. Its embedded ->refs\nhlist_head is exactly where epi->fllink.pprev points, so the\nsubsequent hlist_del_rcu()'s \"*pprev = next\" scribbles into freed\nkmalloc-192 memory.\n\nIn addition, struct file is SLAB_TYPESAFE_BY_RCU, so the slot\nbacking @file could be recycled by alloc_empty_file() --\nreinitializing f_lock and f_ep -- while ep_remove() is still\nnominally inside that lock. The upshot is an attacker-controllable\nkmem_cache_free() against the wrong slab cache.\n\nPin @file via epi_fget() at the top of ep_remove() and gate the\ncritical section on the pin succeeding. With the pin held @file\ncannot reach refcount zero, which holds __fput() off and\ntransitively keeps the watched struct eventpoll alive across the\nhlist_del_rcu() and the f_lock use, closing both UAFs.\n\nIf the pin fails @file has already reached refcount zero and its\n__fput() is in flight. Because we bailed before clearing f_ep,\nthat path takes the eventpoll_release() slow path into\neventpoll_release_file() and blocks on ep->mtx until the waiter\nside's ep_clear_and_put() drops it. The bailed epi's share of\nep->refcount stays intact, so the trailing ep_refcount_dec_and_test()\nin ep_clear_and_put() cannot free the eventpoll out from under\neventpoll_release_file(); the orphaned epi is then cleaned up\nthere.\n\nA successful pin also proves we are not racing\neventpoll_release_file() on this epi, so drop the now-redundant\nre-check of epi->dying under f_lock. The cheap lockless\nREAD_ONCE(epi->dying) fast-path bailout stays.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T13:16:21.980",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46242"
-    },
-    {
-      "id": "CVE-2026-10119",
-      "desc": "A security vulnerability has been detected in TRENDnet TEW-432BRP 3.10B20. Impacted is the function formSetMACFilter of the file /goform/formSetMACFilter. The manipulation of the argument filter_name leads to stack-based buffer overflow. Remote exploitation of the attack is possible. The exploit has been disclosed publicly and may be used. The vendor explains: \"This product has been EOL for 15 years (since 2009). As the item has been EOL for such a long time, we are not able to replicate or fix any vulnerabilities.\" This vulnerability only affects products that are no longer supported by the maintainer.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T14:16:24.513",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10119"
-    },
-    {
-      "id": "CVE-2026-10120",
-      "desc": "A vulnerability was detected in TRENDnet TEW-432BRP 3.10B20. The affected element is the function formSetFirewallRule of the file /goform/formSetFirewallRule. The manipulation of the argument firewall_name results in stack-based buffer overflow. The attack can be executed remotely. The exploit is now public and may be used. The vendor explains: \"This product has been EOL for 15 years (since 2009). As the item has been EOL for such a long time, we are not able to replicate or fix any vulnerabilities.\" This vulnerability only affects products that are no longer supported by the maintainer.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-30T15:16:15.173",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10120"
-    },
     {
       "id": "CVE-2018-25405",
       "desc": "eNdonesia Portal 8.7 contains multiple SQL injection vulnerabilities that allow unauthenticated attackers to execute arbitrary SQL queries by injecting malicious code through parameters in mod.php. Attackers can inject SQL through the artid, cid, did, contid, and aboutid parameters to extract sensitive database information including usernames, database names, and version details.",
@@ -422,10 +352,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00041,
-        "percentile": 0.1283
-      },
+      "epss": null,
       "published": "2026-05-30T16:17:04.580",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10123"
     },
@@ -495,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00841,
+        "percentile": 0.75044
+      },
       "published": "2026-05-30T17:16:22.013",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10127"
     },
@@ -705,12 +635,82 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00841,
-        "percentile": 0.75042
-      },
+      "epss": null,
       "published": "2026-05-31T04:16:19.683",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10166"
+    },
+    {
+      "id": "CVE-2026-8382",
+      "desc": "The Advanced Custom Fields (ACF\u00ae) plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 6.8.1. This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for unauthenticated attackers to overwrite the post_title and post_content of any post bound to a publicly accessible acf_form() instance by injecting values into the _post_title and _post_content parameters of a form submission request.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "WordPress",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-05-31T04:16:19.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8382"
+    },
+    {
+      "id": "CVE-2026-10167",
+      "desc": "A weakness has been identified in OUSL-GROUP-BrinaryBrains School Student Management System up to 1e70e5ad1125b86dca4ee086eb6bb121f17708b6. This impacts the function sign_auth_cookie of the file application/controllers/Login.php of the component MY_Controller. Executing a manipulation of the argument role can lead to improper authentication. It is possible to launch the attack remotely. The exploit has been made available to the public and could be used for attacks. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "cvss": 7.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-05-31T05:16:23.807",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10167"
+    },
+    {
+      "id": "CVE-2026-10168",
+      "desc": "A security vulnerability has been detected in OUSL-GROUP-BrinaryBrains School Student Management System up to 1e70e5ad1125b86dca4ee086eb6bb121f17708b6. Affected is the function marks of the file application/controllers/Parents.php. The manipulation of the argument param1 leads to improper control of resource identifiers. The attack can be initiated remotely. The exploit has been disclosed publicly and may be used. Continious delivery with rolling releases is used by this product. Therefore, no version details of affected nor updated releases are available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "cvss": 6.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-05-31T05:16:24.033",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10168"
+    },
+    {
+      "id": "CVE-2026-10169",
+      "desc": "A vulnerability was detected in OUSL-GROUP-BrinaryBrains School Student Management System up to 1e70e5ad1125b86dca4ee086eb6bb121f17708b6. Affected by this vulnerability is the function ajax_forgot_password of the file application/controllers/Login.php of the component Forgot Password Endpoint. The manipulation of the argument email results in weak password recovery. The attack can be launched remotely. This attack is characterized by high complexity. The exploitation appears to be difficult. The exploit is now public and may be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The project was informed of the problem early through an issue report but has not responded yet.",
+      "cvss": 3.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-05-31T05:16:24.190",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10169"
+    },
+    {
+      "id": "CVE-2026-10170",
+      "desc": "A flaw has been found in code-projects Visitor Management System 1.0. Affected by this issue is some unknown functionality of the file /vms/php/phone_0.php. This manipulation of the argument phone causes sql injection. The attack may be initiated remotely. The exploit has been published and may be used.",
+      "cvss": 6.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00028,
+        "percentile": 0.08541
+      },
+      "published": "2026-05-31T07:16:17.300",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10170"
     }
   ],
   "kev": [
@@ -1465,6 +1465,149 @@
   "kev_7d": 5,
   "gh_advisories": [
     {
+      "id": "GHSA-qjwp-hrq6-r26r",
+      "cve": "CVE-2026-47191",
+      "severity": "low",
+      "summary": "kas checks out SHA-like git branches as valid commits",
+      "url": "https://github.com/advisories/GHSA-qjwp-hrq6-r26r",
+      "published": "2026-06-01T14:26:36Z",
+      "ecosystem": "pip",
+      "pkg": "kas",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-g8rr-7rj2-f627",
+      "cve": "CVE-2026-47412",
+      "severity": "high",
+      "summary": "praisonai-platform: Any workspace member can delete the entire workspace via DELETE /workspaces/{id}",
+      "url": "https://github.com/advisories/GHSA-g8rr-7rj2-f627",
+      "published": "2026-06-01T14:24:39Z",
+      "ecosystem": "pip",
+      "pkg": "praisonai-platform",
+      "cvss_score": 8.1
+    },
+    {
+      "id": "GHSA-xwq8-frcg-77q8",
+      "cve": "CVE-2026-47415",
+      "severity": "high",
+      "summary": "praisonai-platform: Issue endpoints accept any issue_id without workspace ownership check, cross-workspace read/update/delete IDOR",
+      "url": "https://github.com/advisories/GHSA-xwq8-frcg-77q8",
+      "published": "2026-06-01T14:24:12Z",
+      "ecosystem": "pip",
+      "pkg": "praisonai-platform",
+      "cvss_score": 8.3
+    },
+    {
+      "id": "GHSA-8g2p-pqm3-fcfh",
+      "cve": "CVE-2026-47413",
+      "severity": "critical",
+      "summary": "praisonai-platform: Any workspace member can add arbitrary user as owner via POST /workspaces/{id}/members",
+      "url": "https://github.com/advisories/GHSA-8g2p-pqm3-fcfh",
+      "published": "2026-06-01T14:23:39Z",
+      "ecosystem": "pip",
+      "pkg": "praisonai-platform",
+      "cvss_score": 9.6
+    },
+    {
+      "id": "GHSA-rcmc-q9rj-4wmq",
+      "cve": "CVE-2026-47411",
+      "severity": "medium",
+      "summary": "praisonai-platform: Any workspace member can rewrite workspace name, description, and settings via PATCH /workspaces/{id}",
+      "url": "https://github.com/advisories/GHSA-rcmc-q9rj-4wmq",
+      "published": "2026-06-01T14:23:08Z",
+      "ecosystem": "pip",
+      "pkg": "praisonai-platform",
+      "cvss_score": 6.5
+    },
+    {
+      "id": "GHSA-cp4f-5m9r-5jc2",
+      "cve": "CVE-2026-47417",
+      "severity": "high",
+      "summary": "praisonai-platform: Comment endpoints accept any issue_id without workspace ownership check, cross-workspace comment read and post IDOR",
+      "url": "https://github.com/advisories/GHSA-cp4f-5m9r-5jc2",
+      "published": "2026-06-01T14:19:33Z",
+      "ecosystem": "pip",
+      "pkg": "praisonai-platform",
+      "cvss_score": 8.1
+    },
+    {
+      "id": "GHSA-943m-6wx2-rc2j",
+      "cve": "CVE-2026-47418",
+      "severity": "high",
+      "summary": "praisonai-platform: Project endpoints accept any project_id without workspace ownership check, cross-workspace read/update/delete IDOR",
+      "url": "https://github.com/advisories/GHSA-943m-6wx2-rc2j",
+      "published": "2026-06-01T14:17:04Z",
+      "ecosystem": "pip",
+      "pkg": "praisonai-platform",
+      "cvss_score": 8.1
+    },
+    {
+      "id": "GHSA-q53q-5r4j-5729",
+      "cve": "CVE-2026-47425",
+      "severity": "medium",
+      "summary": "rattler has an entry-point path traversal in noarch:python install (arbitrary file write)",
+      "url": "https://github.com/advisories/GHSA-q53q-5r4j-5729",
+      "published": "2026-06-01T14:15:31Z",
+      "ecosystem": "rust",
+      "pkg": "rattler",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-2h32-95rg-cppp",
+      "cve": "CVE-2026-47428",
+      "severity": "critical",
+      "summary": "Vitest browser mode serves unsanitized otelCarrier query parameter as inline script",
+      "url": "https://github.com/advisories/GHSA-2h32-95rg-cppp",
+      "published": "2026-06-01T14:12:18Z",
+      "ecosystem": "npm",
+      "pkg": "@vitest/browser",
+      "cvss_score": 9.6
+    },
+    {
+      "id": "GHSA-5xrq-8626-4rwp",
+      "cve": "CVE-2026-47429",
+      "severity": "critical",
+      "summary": "When Vitest UI server is listening, arbitrary file can be read and executed",
+      "url": "https://github.com/advisories/GHSA-5xrq-8626-4rwp",
+      "published": "2026-06-01T14:09:53Z",
+      "ecosystem": "npm",
+      "pkg": "vitest",
+      "cvss_score": 9.8
+    },
+    {
+      "id": "GHSA-87xg-pxx2-7hvx",
+      "cve": "CVE-2026-47423",
+      "severity": "high",
+      "summary": "DOMPurify XSS via selectedcontent re-clone",
+      "url": "https://github.com/advisories/GHSA-87xg-pxx2-7hvx",
+      "published": "2026-06-01T14:07:29Z",
+      "ecosystem": "npm",
+      "pkg": "dompurify",
+      "cvss_score": 8.2
+    },
+    {
+      "id": "GHSA-4g6j-g789-rghm",
+      "cve": "CVE-2026-48119",
+      "severity": "high",
+      "summary": "Nezha's authenticated agents can forge service-monitor results for other users' services",
+      "url": "https://github.com/advisories/GHSA-4g6j-g789-rghm",
+      "published": "2026-06-01T14:05:06Z",
+      "ecosystem": "go",
+      "pkg": "github.com/nezhahq/nezha",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-63gr-g7jc-v8rg",
+      "cve": null,
+      "severity": "high",
+      "summary": "@agenticmail/mcp Missing Authentication for Critical Function",
+      "url": "https://github.com/advisories/GHSA-63gr-g7jc-v8rg",
+      "published": "2026-06-01T13:58:33Z",
+      "ecosystem": "npm",
+      "pkg": "@agenticmail/mcp",
+      "cvss_score": null
+    },
+    {
       "id": "GHSA-c2m8-4gcg-v22g",
       "cve": "CVE-2026-47416",
       "severity": "critical",
@@ -1650,149 +1793,6 @@
       "ecosystem": "pip",
       "pkg": "PraisonAI",
       "cvss_score": 9.8
-    },
-    {
-      "id": "GHSA-5c6w-wwfq-7qqm",
-      "cve": "CVE-2026-47390",
-      "severity": "medium",
-      "summary": "PraisonAI spider_tools SSRF protection bypass via alternate loopback host encodings",
-      "url": "https://github.com/advisories/GHSA-5c6w-wwfq-7qqm",
-      "published": "2026-05-29T22:27:09Z",
-      "ecosystem": "pip",
-      "pkg": "praisonaiagents",
-      "cvss_score": 5.5
-    },
-    {
-      "id": "GHSA-78r8-wwqv-r299",
-      "cve": "CVE-2026-47398",
-      "severity": "high",
-      "summary": "PraisonAI: Arbitrary code execution via unguarded `spec.loader.exec_module` in `agents_generator.py` - sibling of CVE-2026-44334",
-      "url": "https://github.com/advisories/GHSA-78r8-wwqv-r299",
-      "published": "2026-05-29T22:26:31Z",
-      "ecosystem": "pip",
-      "pkg": "PraisonAI",
-      "cvss_score": 8.1
-    },
-    {
-      "id": "GHSA-pgxq-p76c-x9cg",
-      "cve": "CVE-2026-47266",
-      "severity": "high",
-      "summary": "formie's unauthenticated front-end submission editing can overwrite existing submissions",
-      "url": "https://github.com/advisories/GHSA-pgxq-p76c-x9cg",
-      "published": "2026-05-29T22:19:19Z",
-      "ecosystem": "composer",
-      "pkg": "verbb/formie",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-9vp8-3hmv-8fgh",
-      "cve": null,
-      "severity": "critical",
-      "summary": "stigmem-node's federation peer registration lacked explicit out-of-band approval",
-      "url": "https://github.com/advisories/GHSA-9vp8-3hmv-8fgh",
-      "published": "2026-05-29T22:18:19Z",
-      "ecosystem": "pip",
-      "pkg": "stigmem-node",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-w7pm-9g55-mxfm",
-      "cve": null,
-      "severity": "high",
-      "summary": "stigmem-node's unsigned plugin override could be enabled without a second explicit acknowledgment",
-      "url": "https://github.com/advisories/GHSA-w7pm-9g55-mxfm",
-      "published": "2026-05-29T22:17:21Z",
-      "ecosystem": "pip",
-      "pkg": "stigmem-node",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-jmfc-hfjq-pxcp",
-      "cve": null,
-      "severity": "critical",
-      "summary": "stigmem-node's federation insecure transport settings may allow non-loopback cleartext federation",
-      "url": "https://github.com/advisories/GHSA-jmfc-hfjq-pxcp",
-      "published": "2026-05-29T22:16:27Z",
-      "ecosystem": "pip",
-      "pkg": "stigmem-node",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-9pc9-4crj-mhpj",
-      "cve": null,
-      "severity": "high",
-      "summary": "stigmem-node's Postgres schema identifier handling required defensive quoting",
-      "url": "https://github.com/advisories/GHSA-9pc9-4crj-mhpj",
-      "published": "2026-05-29T22:15:40Z",
-      "ecosystem": "pip",
-      "pkg": "stigmem-node",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-xh5j-xjfq-qvvx",
-      "cve": null,
-      "severity": "high",
-      "summary": "stigmem-node's federation peer token timestamp validation may reject valid peer tokens",
-      "url": "https://github.com/advisories/GHSA-xh5j-xjfq-qvvx",
-      "published": "2026-05-29T22:14:34Z",
-      "ecosystem": "pip",
-      "pkg": "stigmem-node",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-fp6w-8wpg-74g5",
-      "cve": null,
-      "severity": "critical",
-      "summary": "stigmem-node: Auth-disabled deployments may grant broad anonymous access outside loopback",
-      "url": "https://github.com/advisories/GHSA-fp6w-8wpg-74g5",
-      "published": "2026-05-29T22:13:47Z",
-      "ecosystem": "pip",
-      "pkg": "stigmem-node",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-6x26-5727-rrm9",
-      "cve": "CVE-2026-47268",
-      "severity": "medium",
-      "summary": "Nezha's authenticated DDNS webhook configuration allows blind SSRF from the dashboard host",
-      "url": "https://github.com/advisories/GHSA-6x26-5727-rrm9",
-      "published": "2026-05-29T22:10:12Z",
-      "ecosystem": "go",
-      "pkg": "github.com/nezhahq/nezha",
-      "cvss_score": 6.4
-    },
-    {
-      "id": "GHSA-xw54-c3mx-9pm3",
-      "cve": "CVE-2026-47233",
-      "severity": "medium",
-      "summary": "Admidio: Any logged-in user can delete inventory fields via `mode=field_delete` \u2014 incomplete fix of #2024",
-      "url": "https://github.com/advisories/GHSA-xw54-c3mx-9pm3",
-      "published": "2026-05-29T22:09:38Z",
-      "ecosystem": "composer",
-      "pkg": "admidio/admidio",
-      "cvss_score": 6.5
-    },
-    {
-      "id": "GHSA-mch8-wf3h-6x88",
-      "cve": "CVE-2026-47234",
-      "severity": "medium",
-      "summary": "Admidio writes session IDs and auto-login cookie values to application logs",
-      "url": "https://github.com/advisories/GHSA-mch8-wf3h-6x88",
-      "published": "2026-05-29T22:07:52Z",
-      "ecosystem": "composer",
-      "pkg": "admidio/admidio",
-      "cvss_score": 4.4
-    },
-    {
-      "id": "GHSA-4rgq-38mh-9xqg",
-      "cve": "CVE-2026-47232",
-      "severity": "medium",
-      "summary": "Admidio PKCS#12 private key export action lacks CSRF protection",
-      "url": "https://github.com/advisories/GHSA-4rgq-38mh-9xqg",
-      "published": "2026-05-29T22:07:24Z",
-      "ecosystem": "composer",
-      "pkg": "admidio/admidio",
-      "cvss_score": 4.3
     }
   ],
   "threatfox": [],
@@ -1847,68 +1847,12 @@
   "osv_vulns": [],
   "threats": [
     {
-      "title": "CVE-2026-39829 Invoking  pathological RSA/DSA parameters may cause DoS in golang.org/x/crypto/ssh",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39829",
-      "source": "Microsoft Security",
+      "title": "1st June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/1st-june-threat-intelligence-report/",
+      "source": "Checkpoint Research",
       "category": "threat",
-      "published": "2026-06-01T08:42:15+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-39821 Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39821",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-01T08:42:03+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-39835 Invoking  server panic during CheckHostKey/Authenticate in golang.org/x/crypto/ssh",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39835",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-01T08:41:51+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "Type Confusion in V8 in Google Chrome prior to 142.0.7444.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-13230",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:41:09+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "Type Confusion in V8 in Google Chrome prior to 142.0.7444.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-13226",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:41:02+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "Type Confusion in V8 in Google Chrome prior to 142.0.7444.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-13227",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:40:55+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2024-36137 A vulnerability has been identified in Node.js, affecting users of the experimental permission model when the --allow-fs-write flag is used.\r\n\r\nNode.js Permission Model do not operate on file descriptors, however, operations such as fs.fchown or fs.fchmod can use a \"read-only\" file descriptor to change the owner and permissions of a file.",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-36137",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:40:05+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2025-15504 lief-project LIEF ELF Binary Parser.tcc parse_binary null pointer dereference",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-15504",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-05-31T08:03:56+00:00",
-      "summary": "Information published."
+      "published": "2026-06-01T14:43:11+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Carnival Corporation, a global cruise line operator, has\u00a0confirmed a data breach affecting nearly 6 million people after attackers used social engineering"
     },
     {
       "title": "The Good, the Bad and the Ugly in Cybersecurity \u2013 Week 22",
@@ -2133,6 +2077,14 @@
       "category": "threat",
       "published": "2026-05-22T10:00:24+00:00",
       "summary": "Open-source framework ROADtools is being misused by threat actors for cloud intrusions. Learn how to identify its malicious use.\nThe post Paved With Intent: ROADtools and Nation-State Tactics in the Cloud appeared first on Unit 42."
+    },
+    {
+      "title": "PHANTOMPULSE: anatomy of a hijackable blockchain-C2 RAT",
+      "url": "https://www.elastic.co/security-labs/blockchain-c2-phantompulse-rat-sinkhole",
+      "source": "Elastic Security",
+      "category": "threat",
+      "published": "2026-05-22T00:00:00+00:00",
+      "summary": "Elastic Security Labs presents a detailed reverse-engineering analysis of PHANTOMPULSE, the long-lived RAT delivered to crypto-sector victims through the REF6598 intrusion set."
     },
     {
       "title": "The art of being ungovernable",
@@ -2503,22 +2455,6 @@
       "summary": "Elastic Security v9.4 introduces Entity Analytics Watchlists, a way to codify what your team already knows about high-risk entities and feed that context directly into risk scoring, without custom pipelines or detection engineering overhead"
     },
     {
-      "title": "AI-generated hunting leads: The hunt starts before you ask the question",
-      "url": "https://www.elastic.co/security-labs/proactive-threat-hunting-ai-generated-leads",
-      "source": "Elastic Security",
-      "category": "threat",
-      "published": "2026-05-05T00:00:00+00:00",
-      "summary": "Introducing AI-generated hunting leads, proactive, environment-aware threat hypotheses powered by Elastic Entity analytics and integrated AI reasoning."
-    },
-    {
-      "title": "4th May \u2013 Threat Intelligence Report",
-      "url": "https://research.checkpoint.com/2026/4th-may-threat-intelligence-report/",
-      "source": "Checkpoint Research",
-      "category": "threat",
-      "published": "2026-05-04T13:49:31+00:00",
-      "summary": "For the latest discoveries in cyber research for the week of 4th May, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Medtronic, a global medical device maker, has\u00a0disclosed a cyberattack on its corporate IT systems. An unauthorized party accessed data, while the company r"
-    },
-    {
       "title": "Snow Flurries: How UNC6692 Employed Social Engineering to Deploy a Custom Malware Suite",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc6692-social-engineering-custom-malware/",
       "source": "Mandiant Blog",
@@ -2689,6 +2625,110 @@
       "summary": ""
     },
     {
+      "title": "Critical Windows Netlogon Vulnerability in Attackers\u2019 Crosshairs",
+      "url": "https://www.securityweek.com/critical-windows-netlogon-vulnerability-in-attackers-crosshairs/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-01T15:02:17+00:00",
+      "summary": "Organizations are advised to patch CVE-2026-41089 as soon as possible, given its severity, the potential ongoing exploitation.\nThe post Critical Windows Netlogon Vulnerability in Attackers\u2019 Crosshairs appeared first on SecurityWeek."
+    },
+    {
+      "title": "Microsoft investigates Office Apps, Teams file access issues",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-investigates-office-apps-teams-file-access-issues/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-01T14:36:46+00:00",
+      "summary": "Microsoft says an ongoing incident is preventing users of its Teams collaboration platform and Office for the web cloud-based productivity suite from opening files. [...]"
+    },
+    {
+      "title": "Patch Now: Another Palo Alto Auth Bypass Bug Under Active Exploit",
+      "url": "https://www.darkreading.com/threat-intelligence/patch-palo-alto-auth-bypass-bug-exploit",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-01T14:35:51+00:00",
+      "summary": "Exploiting the PAN-OS GlobalProtect VPN vulnerability requires certain conditions, but adversaries have done so in two attack waves that started in mid-May."
+    },
+    {
+      "title": "Race Against Time: Why Faster Vulnerability Alerts Matter",
+      "url": "https://www.bleepingcomputer.com/news/security/race-against-time-why-faster-vulnerability-alerts-matter/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-01T14:00:10+00:00",
+      "summary": "Attackers are exploiting vulnerabilities faster than many organizations can identify and patch them. SecAlerts explains why faster vulnerability alerts can help reduce exposure and improve response times. [...]"
+    },
+    {
+      "title": "Critical Flowise Flaw Gives Attackers Full Server Control",
+      "url": "https://www.infosecurity-magazine.com/news/flowise-mcp-rce-poc/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-01T14:00:00+00:00",
+      "summary": "Obsidian publishes PoC for a 1-click Flowise RCE that can fully compromise self-hosted servers"
+    },
+    {
+      "title": "\u26a1 Weekly Recap: New Linux Flaw, PAN-OS Exploit, AI-Powered Attacks, OAuth Phishing and More",
+      "url": "https://thehackernews.com/2026/06/weekly-recap-new-linux-flaw-pan-os.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-01T13:59:54+00:00",
+      "summary": "Monday hit like a cron job with anger issues.\n\nA busted auth path here, a repo-side faceplant there, some \"patched-ish\" thing already getting chewed on in the wild, and then the usual bonus round: poisoned dev tools, sketchy forum chatter, phishing kits pretending to be productivity, and AI lowering"
+    },
+    {
+      "title": "Infosecurity Europe: Tabletop Exercise to Test How CISOs Respond to Major Supermarket Cyber-Attack",
+      "url": "https://www.infosecurity-magazine.com/news/infosecurity-europe-semperis/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-01T13:00:00+00:00",
+      "summary": "Semperis is set to bring \u2018Enter the War Room: A Tabletop Experience\u2019 to Infosecurity Europe to help cybersecurity leaders prepare to face real incidents"
+    },
+    {
+      "title": "Dragos Acquires xIoT Security Firm Phosphorus",
+      "url": "https://www.securityweek.com/dragos-acquires-xiot-security-firm-phosphorus/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-01T12:46:58+00:00",
+      "summary": "Dragos said customers will soon gain expanded asset visibility and integrated device intelligence, with automated remediation workflows and a unified platform experience to follow.\nThe post Dragos Acquires xIoT Security Firm Phosphorus appeared first on SecurityWeek."
+    },
+    {
+      "title": "Critical Windows Netlogon RCE flaw now exploited in attacks",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/critical-windows-netlogon-remote-code-execution-flaw-now-exploited-in-attacks/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-01T12:30:27+00:00",
+      "summary": "The Centre for Cybersecurity Belgium (CCB), the country's national authority for cybersecurity, warned on Friday that threat actors are now exploiting a recently patched critical Windows Netlogon vulnerability in attacks. [...]"
+    },
+    {
+      "title": "Microsoft says it will not pursue security researchers after zero-day backlash",
+      "url": "https://therecord.media/microsoft-says-it-will-not-pursue-security-researchers-disclosure",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-01T12:11:00+00:00",
+      "summary": "Microsoft said it is taking the feedback seriously, adding: \u201cTo be clear about our approach to legal matters, we have no intention to pursue action against individuals conducting or publishing their security research.\u201d"
+    },
+    {
+      "title": "Webinar tomorrow: From alert to resolution in network incident response",
+      "url": "https://www.bleepingcomputer.com/news/security/webinar-tomorrow-from-alert-to-resolution-in-network-incident-response/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-01T12:01:09+00:00",
+      "summary": "Network incidents are often detected quickly, but investigations and coordination can delay resolution. Join our webinar tomorrow to learn how automation and AI-assisted workflows can help IT teams accelerate incident response. [...]"
+    },
+    {
+      "title": "China-Aligned Groups Ramp Up Attacks: Dragon Weave Hits Czech Republic & Taiwan",
+      "url": "https://thehackernews.com/2026/06/china-aligned-groups-ramp-up-attacks.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-01T11:54:24+00:00",
+      "summary": "A new cyber espionage campaign codenamed Operation Dragon Weave has been observed targeting officials and citizens in the Czech Republic and Taiwan to deliver an AdaptixC2 agent.\n\nAccording to Seqrite Labs, targets of the campaign include government, research, academic, technology, and financial ser"
+    },
+    {
+      "title": "As the Pentagon Pushes for Battlefield AI, Some Military Leaders Urge Caution",
+      "url": "https://www.securityweek.com/as-the-pentagon-pushes-for-battlefield-ai-some-military-leaders-urge-caution/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-01T11:48:59+00:00",
+      "summary": "AI\u2019s use in the military is part of the administration\u2019s larger push to grow the capability it sees as a unique American advantage.\nThe post As the Pentagon Pushes for Battlefield AI, Some Military Leaders Urge Caution appeared first on SecurityWeek."
+    },
+    {
       "title": "Infosecurity Europe: AI SOCs Will Still Need SOC Analysts, Security Vendors Say",
       "url": "https://www.infosecurity-magazine.com/news/ai-soc-still-need-analysts/",
       "source": "Infosecurity Magazine",
@@ -2697,12 +2737,20 @@
       "summary": "Top cybersecurity vendors said AI won't replace entry-level \u2013 only routine ticket-taking and triage"
     },
     {
-      "title": "Microsoft confirms outage affecting MFA, My Sign-Ins platform",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-outage-affecting-mfa-my-sign-ins-platform/",
+      "title": "Microsoft fixes outage affecting MFA setup, MySignIn service",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-outage-affecting-mfa-setup-mysignin-service/",
       "source": "Bleeping Computer",
       "category": "news",
       "published": "2026-06-01T11:40:16+00:00",
       "summary": "Microsoft is working to address an ongoing incident preventing customers from setting up multi-factor authentication (MFA) or accessing the My Sign-Ins platform. [...]"
+    },
+    {
+      "title": "The Security Growth Platform: Why MSPs Are Moving Beyond vCISO Tools",
+      "url": "https://thehackernews.com/2026/06/the-security-growth-platform-why-msps.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-01T11:30:00+00:00",
+      "summary": "Three years ago, the practical question for an MSP building a cybersecurity practice was which \"vCISO platform\" to buy. The term was good shorthand for the work at the time: assessments, advisory, reporting, maybe a compliance module bolted on the side. The work has since outgrown the descriptor.\n\nA"
     },
     {
       "title": "19-Year-Old Linux Kernel Vulnerability Exposes Systems to Root Access",
@@ -2710,7 +2758,7 @@
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-06-01T11:19:31+00:00",
-      "summary": "proof-of-concept (PoC) exploit code has been released for the CIFSwitch flaw, which allows low-privileged users to escalate to root on vulnerable Linux systems.\nThe post 19-Year-Old Linux Kernel Vulnerability Exposes Systems to Root Access appeared first on SecurityWeek."
+      "summary": "Proof-of-concept (PoC) exploit code has been released for the CIFSwitch flaw, which allows low-privileged users to escalate to root on vulnerable Linux systems.\nThe post 19-Year-Old Linux Kernel Vulnerability Exposes Systems to Root Access appeared first on SecurityWeek."
     },
     {
       "title": "FSB Group Gamaredon Hides Worm in Windows Data Streams",
@@ -2809,6 +2857,22 @@
       "summary": "Introduction&#xd;"
     },
     {
+      "title": "Afghan finance officials targeted by suspected Pakistani cyberespionage campaign",
+      "url": "https://therecord.media/afghan-officials-targeted-by-sidecopy",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-05-31T23:00:00+00:00",
+      "summary": "A suspected Pakistan-linked hacking group has targeted Afghanistan's Ministry of Finance and provincial government officials in a new cyberespionage campaign, researchers have found."
+    },
+    {
+      "title": "Unknown hacker group targeted Russian maritime universities, diplomats for nearly two years",
+      "url": "https://therecord.media/unknown-hacking-group-targeting-russia-for-nearly-two-years",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-05-31T23:00:00+00:00",
+      "summary": "More than half of the attacks observed over the past year targeted educational institutions, particularly maritime universities and schools that train personnel for Russia's shipping, inland waterway and fishing industries."
+    },
+    {
       "title": "YARA-X 1.17.0 Release, (Sun, May 31st)",
       "url": "https://isc.sans.edu/diary/rss/33032",
       "source": "SANS ISC Diary",
@@ -2857,14 +2921,6 @@
       "summary": "The one-click vulnerability allows attackers to execute arbitrary code on self-hosted Flowise servers by tricking users into importing a malicious chatflow.\nThe post Exploit Code Published for Critical Flowise RCE Vulnerability appeared first on SecurityWeek."
     },
     {
-      "title": "New CIFSwitch Linux flaw gives root on multiple distributions",
-      "url": "https://www.bleepingcomputer.com/news/security/new-cifswitch-linux-flaw-gives-root-on-multiple-distributions/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-05-30T14:16:08+00:00",
-      "summary": "A newly discovered local privilege escalation vulnerability dubbed 'CIFSwitch' in the Linux kernel could allow attackers to forge CIFS authentication key descriptions, abuse the kernel's key request mechanism, and gain root privileges. [...]"
-    },
-    {
       "title": "Cybercrime Crew Claims It Hacked Mike Lindell\u2019s MyPillow",
       "url": "https://www.wired.com/story/security-news-this-week-cybercrime-crew-claims-it-hacked-mike-lindells-mypillow/",
       "source": "Wired Security",
@@ -2897,22 +2953,6 @@
       "summary": "As part of Dark Reading's 20th anniversary package, we asked readers for a cybersecurity-related caption that captures their thoughts about the industry's last two decades."
     },
     {
-      "title": "ChatGPT share links abused to host fake outage pages to deliver malware",
-      "url": "https://www.bleepingcomputer.com/news/security/chatgpt-share-links-abused-to-host-fake-outage-pages-to-deliver-malware/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-05-29T18:21:36+00:00",
-      "summary": "Threat actors are abusing ChatGPT's content-sharing feature to display fake OpenAI outage pages that direct users to download malware disguised as the ChatGPT desktop application. [...]"
-    },
-    {
-      "title": "California AG sues 23andMe over 2023 breach exposing health data",
-      "url": "https://www.bleepingcomputer.com/news/security/california-ag-sues-23andme-over-2023-breach-exposing-health-data/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-05-29T18:08:47+00:00",
-      "summary": "California Attorney General Rob Bonta filed a lawsuit against 23andMe, now Chrome Holding Co., over the company's failure to protect sensitive customer genetic and personal information. [...]"
-    },
-    {
       "title": "ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface",
       "url": "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
       "source": "The Hacker News",
@@ -2934,23 +2974,7 @@
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-05-29T15:56:23+00:00",
-      "summary": "The future of cybersecurity is germinating, as nation states vie for dominance in the embodied AI market and its supply chain."
-    },
-    {
-      "title": "Charter Communications Data Breach Could Impact Nearly 5 Million",
-      "url": "https://www.securityweek.com/charter-communications-data-breach-could-impact-nearly-5-million/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-05-29T14:49:58+00:00",
-      "summary": "The notorious ShinyHunters extortion group leaked over 42 million records allegedly stolen from Charter in April.\nThe post Charter Communications Data Breach Could Impact Nearly 5 Million appeared first on SecurityWeek."
-    },
-    {
-      "title": "Attackers Use LLM Agent for Post-Exploitation After Marimo CVE-2026-39987 Exploit",
-      "url": "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-05-29T14:39:56+00:00",
-      "summary": "An unknown threat actor has been observed using a large language model (LLM) agent to conduct post-compromise actions after obtaining initial access following the exploitation of a publicly-accessible Marimo network using a recently disclosed vulnerability.\n\n\"The attacker compromised an internet-rea"
+      "summary": "The future of cybersecurity is germinating, as nation-states vie for dominance in the embodied AI market and its supply chain."
     },
     {
       "title": "Asia's Cyber Insurance Market Shows Signs of Life",
@@ -2958,23 +2982,7 @@
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-05-29T14:35:33+00:00",
-      "summary": "The cyber insurance industry has made relatively weak inroads into Asia due to a a variety of factors, but that could be changing."
-    },
-    {
-      "title": "MokN Raises $15 Million for Phish-Back Platform",
-      "url": "https://www.securityweek.com/mokn-raises-15-million-for-phish-back-platform/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-05-29T14:34:15+00:00",
-      "summary": "MokN's platform deploys realistic decoy access points to lure attackers into revealing compromised credentials, enabling organizations to respond before abuse occurs.\nThe post MokN Raises $15 Million for Phish-Back Platform appeared first on SecurityWeek."
-    },
-    {
-      "title": "From $5 Attacks to Botnet-Powered Platforms: Inside the DDoS-as-a- Service Market",
-      "url": "https://www.bleepingcomputer.com/news/security/from-5-attacks-to-botnet-powered-platforms-inside-the-ddos-as-a-service-market/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-05-29T14:32:02+00:00",
-      "summary": "DDoS attacks are increasingly being sold like subscription services, complete with pricing tiers, support, and reseller programs. Flare explores how the DDoS-as-a-Service market has evolved from scattered tools into polished attack platforms. [...]"
+      "summary": "The cyber insurance industry has made relatively weak inroads into Asia due to a variety of factors, but that could be changing."
     },
     {
       "title": "Microsoft calls zero-day releases \u2018never justifiable\u2019 as researcher threatens to drop more",
@@ -3001,52 +3009,12 @@
       "summary": "Threat actors from the Silent Ransom Group, aka Luna Moth, are escalating attacks by impersonating IT staff in phone calls and even showing up in person to gain direct access to victim systems"
     },
     {
-      "title": "Gogs Zero-Day Exposes Servers to Remote Code Execution",
-      "url": "https://www.securityweek.com/gogs-zero-day-exposes-servers-to-remote-code-execution/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-05-29T12:59:37+00:00",
-      "summary": "The critical-severity issue, assigned a CVSS score of 9.4, is an argument injection flaw that can be exploited by authenticated attackers via pull requests with malicious branch names.\nThe post Gogs Zero-Day Exposes Servers to Remote Code Execution appeared first on SecurityWeek."
-    },
-    {
       "title": "'The Com' Cyberattacks Support Violence &amp; Sexploitation",
       "url": "https://www.darkreading.com/threat-intelligence/the-com-cyberattacks-violence-sexploitation",
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-05-29T12:00:00+00:00",
-      "summary": "Your organization's security failures have consequences for everyone else too, since this neo-Nazi-infested criminal gang uses its cyber winnings to support more violent and widespread crimes."
-    },
-    {
-      "title": "New Russia-Linked GREYVIBE Targets Ukraine with AI-Powered Cyberattacks",
-      "url": "https://thehackernews.com/2026/05/new-russian-linked-greyvibe-targets.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-05-29T11:31:59+00:00",
-      "summary": "A previously undocumented threat actor dubbed GREYVIBE has been attributed to ongoing and persistent attacks targeting Ukraine and Ukraine-related entities since at least August 2025.\n\nGREYVIBE, per WithSecure, is assessed to be a Russian-speaking group operating broadly in the Russian time zone, wi"
-    },
-    {
-      "title": "What 2,000 Exposed Vibe-Coded Apps Reveal About the Limits of Most Security Stacks",
-      "url": "https://thehackernews.com/2026/05/what-2000-exposed-vibe-coded-apps.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-05-29T10:30:00+00:00",
-      "summary": "Shadow AI used to mean employees pasting things they shouldn't into ChatGPT. It now means something bigger: employees building full applications with AI, wiring them into production systems, and publishing them on the open internet. Without Security or IT in the loop.\n\nThe artifact moved from a prom"
-    },
-    {
-      "title": "Infosecurity Europe: CyCOS Project Expands to Support UK SMEs as CIISec Takes Over",
-      "url": "https://www.infosecurity-magazine.com/news/cycos-expands-uk-smes-ciisec/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-05-29T10:00:00+00:00",
-      "summary": "From a research-driven pilot, the Cybersecurity Communities of Support (CyCOS) is about to be handed over to CIISec"
-    },
-    {
-      "title": "Chinese Hackers Exploit Iran War to Target Maritime and Energy Companies",
-      "url": "https://www.infosecurity-magazine.com/news/chinese-hackers-exploit-iran-war/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-05-29T09:00:00+00:00",
-      "summary": "ESET\u2019s 2026 APT Activity Report suggests China-backed APTs are using instability in the region to target victims, as well as continuing activity against organizations around the globe"
+      "summary": "Your organization's security failures have consequences for everyone else\u00a0as well since this criminal gang uses its cyber winnings to support more violent and widespread crimes."
     },
     {
       "title": "ISC Stormcast For Friday, May 29th, 2026 https://isc.sans.edu/podcastdetail/9950, (Fri, May 29th)",
@@ -3081,44 +3049,12 @@
       "summary": "The US military has long known that cheap fixes could stop location data from exposing its troops. It adopted almost none\u2014and now says adversaries are using the data to target soldiers during a war."
     },
     {
-      "title": "Agentic AI Isn't Risky; the Way Orgs Deploy It Is",
-      "url": "https://www.darkreading.com/application-security/agentic-ai-risky",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-05-28T15:36:25+00:00",
-      "summary": "AI agents aren't black boxes \u2014 they're models interacting with software tools. The risk lies in their overlap."
-    },
-    {
       "title": "Cruise giant Carnival confirms data breach affecting nearly 6 million people",
       "url": "https://therecord.media/cruise-giant-carnival-confirms-data-breach-affecting-6-million",
       "source": "The Record",
       "category": "news",
       "published": "2026-05-28T14:01:00+00:00",
       "summary": "The company said the threat actor gained access to a limited portion of its IT environment last month after compromising an employee account. By the end of April, Carnival determined that the attacker had copied personal information from its systems."
-    },
-    {
-      "title": "Canadian man gets 33 years for using social media to coerce US children into sending sexual content",
-      "url": "https://therecord.media/canadian-man-gets-33-years-social-media-luring-kids",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-05-28T13:42:00+00:00",
-      "summary": "Prosecutors said the man spent years using fake online identities to contact children and manipulate them into sending sexually explicit images and videos."
-    },
-    {
-      "title": "Chinese-speaking fraud gang could be stealing millions from 2026 World Cup fans",
-      "url": "https://therecord.media/chinese-speaking-fraud-gang-fifa-world-cup-scam",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-05-28T13:26:00+00:00",
-      "summary": "Cybercriminals have registered more than 4,300 fraudulent domains impersonating FIFA's official web presence since August 2025."
-    },
-    {
-      "title": "Russia conducting daily attacks on UK 'from seabed to cyberspace,' spy chief warns",
-      "url": "https://therecord.media/russia-conducting-attacks-on-uk-gchq-briefing",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-05-28T13:20:00+00:00",
-      "summary": "Anne Keast-Butler, director of GCHQ, said Russia's actions have prompted the agency to defend subsea cables and energy pipelines in British waters, disrupt Russian networks smuggling sanctioned technology and countering \u201creckless sabotage and assassination attempts.\u201d"
     },
     {
       "title": "Scammers Are Using Your Real Hotel Reservations to Trick You With Spear-Phishing Attacks",
@@ -3321,28 +3257,28 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
-      "title": "Executive Summary: Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/executive-summary-defending-against-china-nexus-covert-networks-of-compromised-devices",
-      "source": "NCSC UK",
-      "category": "news",
-      "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Organisations should map and baseline their edge device traffic, especially VPN and remote access connections, and adopt dynamic threat feed filtering that includes known covert network indicators."
-    },
-    {
-      "title": "Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
-      "source": "NCSC UK",
-      "category": "news",
-      "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
-    },
-    {
       "title": "Passkeys are more secure than traditional ways to log in",
       "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
       "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
+    },
+    {
+      "title": "NCSC: Leave passwords in the past - passkeys are the future",
+      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
+      "source": "NCSC UK",
+      "category": "news",
+      "published": "2026-04-23T12:00:00+00:00",
+      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
+    },
+    {
+      "title": "International cyber agencies share fresh advice to defend against China-linked covert networks",
+      "url": "https://www.ncsc.gov.uk/news/international-cyber-agencies-fresh-advice-defend-against-china-linked-covert-networks",
+      "source": "NCSC UK",
+      "category": "news",
+      "published": "2026-04-23T12:00:00+00:00",
+      "summary": "New advisory highlights how to defend against attacker tactics believed to be used by China-linked actors to hide malicious cyber activity."
     },
     {
       "title": "Risky Business #834 -- Vercel gets owned, Mozilla dumps hundreds of Mythos bugs",
@@ -3364,7 +3300,7 @@
   "stats": {
     "total_cves": 50,
     "critical": 1,
-    "high": 36,
+    "high": 35,
     "exploited": 22,
     "kev_total": 50,
     "kev_7d": 5,
