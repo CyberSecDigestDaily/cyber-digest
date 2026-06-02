@@ -1,25 +1,11 @@
 {
-  "generated": "2026-06-02T10:03:19.841877+00:00",
+  "generated": "2026-06-02T10:45:21.704845+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>1 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-10176",
-      "desc": "A weakness has been identified in Aider-AI Aider 0.86.3. Affected by this issue is some unknown functionality of the component Code Generation Workflow. Executing a manipulation can lead to sql injection. The attack can be executed remotely. The exploit has been made available to the public and could be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-05-31T10:16:17.103",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10176"
-    },
     {
       "id": "CVE-2026-10177",
       "desc": "A security vulnerability has been detected in Aider-AI Aider 0.86.3. This affects the function requests.get of the file api_docs.py of the component AWS EC2 Metadata Endpoint. The manipulation leads to server-side request forgery. The attack is possible to be carried out remotely. The exploit has been disclosed publicly and may be used. It is suggested to install a patch to address this issue. The pull request to fix this issue awaits acceptance.",
@@ -422,10 +408,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00028,
-        "percentile": 0.08541
-      },
+      "epss": null,
       "published": "2026-06-01T00:16:42.257",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10203"
     },
@@ -439,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00028,
+        "percentile": 0.08541
+      },
       "published": "2026-06-01T00:16:42.427",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10204"
     },
@@ -705,12 +691,26 @@
       "product": "Mt6739, Mt6739 Firmware, Mt6761",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00017,
-        "percentile": 0.04248
-      },
+      "epss": null,
       "published": "2026-06-01T04:16:22.033",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20454"
+    },
+    {
+      "id": "CVE-2026-20455",
+      "desc": "In geniezone, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege if a malicious actor has already obtained the System privilege. User interaction is not needed for exploitation. Patch ID: ALPS10873936; Issue ID: MSV-6784.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Mediatek",
+      "product": "Mt6739, Mt6739 Firmware, Mt6761",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00018,
+        "percentile": 0.05252
+      },
+      "published": "2026-06-01T04:16:22.163",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20455"
     }
   ],
   "kev": [
@@ -1845,6 +1845,14 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor",
+      "url": "https://unit42.paloaltonetworks.com/flutterbridge-new-fluttershell-backdoor/",
+      "source": "Unit 42",
+      "category": "threat",
+      "published": "2026-06-02T10:00:31+00:00",
+      "summary": "Operation FlutterBridge is a malvertising campaign targeting macOS users. It distributed the new backdoor FlutterShell, built using the Flutter framework.\nThe post Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor appeared first on Unit 42."
+    },
+    {
       "title": "CVE-2026-28387 Potential Use-after-free in DANE Client Code",
       "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-28387",
       "source": "Microsoft Security",
@@ -2437,14 +2445,6 @@
       "summary": "Elastic Security is the first security vendor to ship an interactive UI in AI tools. Triage alerts, hunt threats, correlate attack chains, and open cases, all from inside your AI conversation."
     },
     {
-      "title": "Inside AD CS Escalation: Unpacking Advanced Misuse Techniques and Tools",
-      "url": "https://unit42.paloaltonetworks.com/active-directory-certificate-services-exploitation/",
-      "source": "Unit 42",
-      "category": "threat",
-      "published": "2026-05-11T22:00:43+00:00",
-      "summary": "Unit 42 analyzes AD CS exploitation through template misconfigurations and shadow credential misuse while offering behavioral detection for defenders.\nThe post Inside AD CS Escalation: Unpacking Advanced Misuse Techniques and Tools appeared first on Unit 42."
-    },
-    {
       "title": "GTIG AI Threat Tracker: Adversaries Leverage AI for Vulnerability Exploitation, Augmented Operations, and Initial Access",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access/",
       "source": "Mandiant Blog",
@@ -2791,12 +2791,28 @@
       "summary": "The Spanish National Police has arrested an individual for leaking sensitive information related to members of various key state organizations, including the National Cybersecurity Institute (INCIBE). [...]"
     },
     {
+      "title": "Anthropic to Open Mythos AI to EU's ENISA",
+      "url": "https://www.darkreading.com/cyber-risk/anthropic-mythos-ai-eu-enisa",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-01T21:07:48+00:00",
+      "summary": "The European security agency's entry to Project Glasswing is the result of &quot;strong bilateral cooperation&quot; between the European Commission and Anthropic."
+    },
+    {
       "title": "Inspector general finds NIST mistakes have made vulnerability database ineffective",
       "url": "https://therecord.media/nist-mistakes-vulnerability-database-inspector-general",
       "source": "The Record",
       "category": "news",
       "published": "2026-06-01T20:28:00+00:00",
       "summary": "NIST\u2019s National Vulnerability Database (NVD) backlog mushroomed from 13,000 unprocessed security vulnerabilities in February 2024 to more than 27,000 by the end of 2025, \u201cundermining the NVD\u2019s utility and public trust,\" according to an inspector general report."
+    },
+    {
+      "title": "Microsoft's Zero-Day Legal Threats Spark Backlash",
+      "url": "https://www.darkreading.com/application-security/microsoft-zero-day-legal-threats-backlash",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-01T18:52:26+00:00",
+      "summary": "After a disgruntled security researcher published several zero-day exploits in recent weeks, Microsoft seemingly indicated criminal charges were in order."
     },
     {
       "title": "NSA selects new leads for key cybersecurity posts",
@@ -2869,6 +2885,14 @@
       "category": "news",
       "published": "2026-06-01T14:36:46+00:00",
       "summary": "Microsoft says an ongoing incident is preventing users of its Teams collaboration platform and Office for the web cloud-based productivity suite from opening files. [...]"
+    },
+    {
+      "title": "Patch Now: Another Palo Alto Auth Bypass Bug Under Active Exploit",
+      "url": "https://www.darkreading.com/threat-intelligence/patch-palo-alto-auth-bypass-bug-exploit",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-01T14:35:51+00:00",
+      "summary": "Exploiting the PAN-OS GlobalProtect VPN vulnerability requires certain conditions, but adversaries have done so in two attack waves that started in mid-May."
     },
     {
       "title": "Race Against Time: Why Faster Vulnerability Alerts Matter",
@@ -3061,6 +3085,46 @@
       "category": "news",
       "published": "2026-05-29T20:53:09+00:00",
       "summary": "The website, which compares human beings to extraterrestrials, touts arrest numbers from the Trump administration\u2019s sweeping immigration crackdown. But some of its details are really out there."
+    },
+    {
+      "title": "Name That Toon: Mark of (Cybersecurity) Progress",
+      "url": "https://www.darkreading.com/cloud-security/name-that-toon-mark-of-cybersecurity-progress",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-05-29T20:22:04+00:00",
+      "summary": "As part of Dark Reading's 20th anniversary package, we asked readers for a cybersecurity-related caption that captures their thoughts about the industry's last two decades."
+    },
+    {
+      "title": "As Global Powers Explore Humanoid Robots, Cyber-Risk Looms",
+      "url": "https://www.darkreading.com/cyber-risk/global-powers-explore-humanoids-cyber-risk",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-05-29T15:56:23+00:00",
+      "summary": "The future of cybersecurity is germinating, as nation-states vie for dominance in the embodied AI market and its supply chain."
+    },
+    {
+      "title": "Asia's Cyber Insurance Market Shows Signs of Life",
+      "url": "https://www.darkreading.com/cybersecurity-operations/asias-cyber-insurance-market-signs-of-life",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-05-29T14:35:33+00:00",
+      "summary": "The cyber insurance industry has made relatively weak inroads into Asia due to a variety of factors, but that could be changing."
+    },
+    {
+      "title": "With Complex Cloud Integrations, Small Errors Lead to Major Compromises",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/complex-cloud-integrations-small-errors-compromises",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-05-29T13:00:01+00:00",
+      "summary": "Researchers discover an exploit chain combining over-permissioned roles, secrets discovery, and non-human identities that could have compromised a popular automation service."
+    },
+    {
+      "title": "'The Com' Cyberattacks Support Violence &amp; Sexploitation",
+      "url": "https://www.darkreading.com/threat-intelligence/the-com-cyberattacks-violence-sexploitation",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-05-29T12:00:00+00:00",
+      "summary": "Your organization's security failures have consequences for everyone else\u00a0as well since this criminal gang uses its cyber winnings to support more violent and widespread crimes."
     },
     {
       "title": "ISC Stormcast For Friday, May 29th, 2026 https://isc.sans.edu/podcastdetail/9950, (Fri, May 29th)",
@@ -3298,7 +3362,7 @@
   "stats": {
     "total_cves": 50,
     "critical": 1,
-    "high": 21,
+    "high": 22,
     "exploited": 1,
     "kev_total": 50,
     "kev_7d": 6,
