@@ -1,123 +1,11 @@
 {
-  "generated": "2026-06-05T02:15:52.075248+00:00",
+  "generated": "2026-06-05T09:32:42.262501+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>4 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>6 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-10703",
-      "desc": "A security vulnerability has been detected in EIPStackGroup OpENer up to 2.3.0. Affected is the function CreateMessageRouterRequestStructure of the file cipmessagerouter.c of the component SendRRData Handler. The manipulation leads to use after free. Remote exploitation of the attack is possible. The exploit has been disclosed publicly and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T02:16:15.660",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10703"
-    },
-    {
-      "id": "CVE-2026-10704",
-      "desc": "A vulnerability was detected in SourceCodester Pizzafy E-Commerce System 1.0. Affected by this vulnerability is the function Login of the file /admin/admin_class_novo.php of the component Administrative Control Panel. The manipulation of the argument Username results in sql injection. The attack can be executed remotely. The exploit is now public and may be used.",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T02:16:17.200",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10704"
-    },
-    {
-      "id": "CVE-2026-10705",
-      "desc": "A flaw has been found in dask up to 3.0. Affected by this issue is the function nunique_approx of the file dask/dataframe/hyperloglog.py of the component HLL Handler. This manipulation causes resource consumption. The attack is possible to be carried out remotely. A high degree of complexity is needed for the attack. The exploitation is known to be difficult. The pull request to fix this issue awaits acceptance.",
-      "cvss": 3.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T02:16:17.397",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10705"
-    },
-    {
-      "id": "CVE-2026-50031",
-      "desc": "ipmi-oem in FreeIPMI before 1.6.18 has exploitable buffer overflows on response messages. The Intelligent Platform Management Interface (IPMI) specification defines a set of interfaces for platform management. It is implemented by a large number of hardware manufacturers to support system management. It is most commonly used for sensor reading (e.g., CPU temperatures through the ipmi-sensors command within FreeIPMI) and remote power control (the ipmipower command). The ipmi-oem client command implements a set of a IPMI OEM commands for specific hardware vendors. If a user has supported hardware, they may wish to use the ipmi-oem command to send a request to a server to retrieve specific information. Two subcommands \"ipmi-oem dell get-active-directory-config\" and \"ipmi-oem fujitsu get-sel-entry-long-text\" were found to have exploitable buffer overflows on response messages.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T04:17:07.330",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50031"
-    },
-    {
-      "id": "CVE-2026-50052",
-      "desc": "In Vinyl Cache before 9.0.1 and Varnish Cache before 9.0.3, a deficiency in HTTP/2 request parsing can be exploited to launch a backend request desync\nattack (request smuggling), which in turn can be used for cache poisoning,\nauthentication bypass, or possibly even information disclosure and manipulation. The attack vector only exists if HTTP/2 support is enabled by setting the\nfeature parameter to contain +http2. HTTP/2 support is disabled by\ndefault.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T06:16:35.390",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50052"
-    },
-    {
-      "id": "CVE-2026-5078",
-      "desc": "Impact: The morgan logging middleware's :remote-user token extracts the Basic auth username from the Authorization request header and writes it to the log stream without neutralizing control characters. An unauthenticated attacker can send a crafted Authorization Basic header containing CR or LF bytes to inject forged log lines, breaking the one-request-per-line structure of access logs and enabling log forgery against downstream log consumers. The built-in combined, common, default, and short formats are affected, as well as any custom format that references :remote-user. Affected versions: morgan 1.2.0 through 1.10.1. Patches: upgrade to morgan 1.11.0, which neutralizes control characters in the :remote-user token output. Workarounds: use a custom format string that does not include :remote-user.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Morgan Project",
-      "product": "Morgan",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T08:16:19.743",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5078"
-    },
-    {
-      "id": "CVE-2025-15654",
-      "desc": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Fox-themes Prague allows Reflected XSS.\n\nThis issue affects Prague: from n/a through 2.2.8.",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T09:16:12.863",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-15654"
-    },
-    {
-      "id": "CVE-2026-4035",
-      "desc": "A vulnerability in mlflow/mlflow versions prior to 3.11.0 allows for the resolution of environment variables in AI Gateway secrets, which can be exploited to exfiltrate sensitive server-side environment credentials to an attacker-controlled endpoint. This issue arises because the `api_key` field in gateway secrets can accept `$ENV_VAR` references, which are resolved against the MLflow server's environment during runtime. The resolved secrets are then sent in provider authentication headers to the configured upstream `api_base`. This vulnerability can be exploited by low-privileged authenticated users in basic-auth deployments or by unauthenticated users in default deployments without `basic-auth`. The impact includes potential leakage of sensitive credentials such as cloud artifact credentials (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`), which could lead to artifact poisoning and cross-boundary code execution in downstream environments. The issue is fixed in version 3.11.0.",
-      "cvss": 7.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "Lfprojects",
-      "product": "Mlflow",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T09:16:13.083",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4035"
-    },
     {
       "id": "CVE-2025-14771",
       "desc": "Files or directories accessible to external parties vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
@@ -422,10 +310,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00014,
-        "percentile": 0.02551
-      },
+      "epss": null,
       "published": "2026-06-03T14:16:24.997",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-49036"
     },
@@ -537,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00047,
+        "percentile": 0.14957
+      },
       "published": "2026-06-03T14:16:35.533",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10729"
     },
@@ -705,12 +593,124 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00047,
-        "percentile": 0.14957
-      },
+      "epss": null,
       "published": "2026-06-03T16:16:18.597",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-31114"
+    },
+    {
+      "id": "CVE-2026-36574",
+      "desc": "A DLL hijacking vulnerability in Wassimulator (GitHub) CactusViewer v2.3.0 allows attackers to escalate privileges and execute arbitrary code via a crafted DLL.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:28.740",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-36574"
+    },
+    {
+      "id": "CVE-2026-36576",
+      "desc": "An OS command injection vulnerability in the app.py component of openlabs docker-wkhtmltopdf-aas up to commit 9f50579 allows attackers to execute arbitrary commands via a crafted POST request.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:28.877",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-36576"
+    },
+    {
+      "id": "CVE-2026-36748",
+      "desc": "RockRMS v16.13 and before v.17.7.0 is vulnerable to Cross Site Scripting (XSS) via Social Media links in user profile.",
+      "cvss": 9.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:29.000",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-36748"
+    },
+    {
+      "id": "CVE-2026-37462",
+      "desc": "An integer underflow in the BGPUpdate.DecodeFromBytes function (/bgp/bgp.go) of gobgp v4.3.0 allows attackers to cause a Denial of Service (DoS) via supplying a crafted BGP UPDATE message.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:29.120",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-37462"
+    },
+    {
+      "id": "CVE-2026-3276",
+      "desc": "unicodedata.normalize() can take excessive CPU time when processing\nspecially crafted Unicode input containing long runs of combining characters\nwith alternating Canonical Combining Class values.\nThis affects all normalization forms.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:29.253",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3276"
+    },
+    {
+      "id": "CVE-2026-42317",
+      "desc": "GLPI is a free asset and IT management software package. Starting in version 0.78 and prior to versions 10.0.25 and 11.0.7, a technician can delete arbitrary files from the filesystem as long as the webserver has write rights on them. Upgrade to 10.0.25 or 11.0.7 to receive a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:29.530",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-42317"
+    },
+    {
+      "id": "CVE-2026-42318",
+      "desc": "GLPI is a free asset and IT management software package. Starting in version 9.5.0 and prior to versions 10.0.25 and 11.0.7, low privilege users with access to planning can delete any object in GLPI. Upgrade to 11.0.7 or 10.0.25 to receive a patch. As a workaround, disable delete rights for User's planning.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:29.690",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-42318"
+    },
+    {
+      "id": "CVE-2026-42320",
+      "desc": "GLPI is a free asset and IT management software package. Starting in version 0.50 and prior to versions 10.0.25 and 11.0.7, a technician can read arbitrary files inside the GLPI_DOC_DIR. Upgrade to 10.0.25 or 11.0.7 to receive a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00036,
+        "percentile": 0.10909
+      },
+      "published": "2026-06-03T16:16:29.843",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-42320"
     }
   ],
   "kev": [
@@ -1878,54 +1878,6 @@
       "summary": "Joe\u2019s on-the-ground report from Cisco Live U.S. is here, complete with therapy dog pictures and tips on handling conference overstimulation."
     },
     {
-      "title": "CVE-2026-48567 Azure HorizonDB  Elevation of Privilege Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48567",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T14:00:00+00:00",
-      "summary": "Authentication bypass by spoofing in Azure HorizonDB allows an unauthorized attacker to elevate privileges over a network."
-    },
-    {
-      "title": "CVE-2026-42824 M365 Copilot Information Disclosure Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42824",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T14:00:00+00:00",
-      "summary": "Improper neutralization of special elements used in a command ('command injection') in M365 Copilot allows an unauthorized attacker to disclose information over a network."
-    },
-    {
-      "title": "CVE-2026-45497 Microsoft M365 Copilot Remote Code Execution Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45497",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T14:00:00+00:00",
-      "summary": "Improper neutralization of special elements used in a command ('command injection') in Microsoft Copilot allows an authorized attacker to execute code over a network."
-    },
-    {
-      "title": "CVE-2026-47644 Copilot Chat (Microsoft Edge) Information Disclosure Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47644",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T14:00:00+00:00",
-      "summary": "Improper neutralization of special elements in output used by a downstream component ('injection') in Copilot Chat (Microsoft Edge) allows an unauthorized attacker to disclose information over a network."
-    },
-    {
-      "title": "CVE-2026-47655 Microsoft Graph Information Disclosure Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47655",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T14:00:00+00:00",
-      "summary": "Exposure of sensitive information to an unauthorized actor in Microsoft Graph allows an authorized attacker to disclose information over a network."
-    },
-    {
-      "title": "CVE-2026-48579 Microsoft Exchange Online Information Disclosure Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48579",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T14:00:00+00:00",
-      "summary": "Improper authorization in Microsoft Exchange Online allows an unauthorized attacker to disclose information over a network."
-    },
-    {
       "title": "Winning the cyber marathon with Tony Giandomenico",
       "url": "https://blog.talosintelligence.com/winning-the-cyber-marathon-with-tony-giandomenico/",
       "source": "Talos Intelligence",
@@ -1980,22 +1932,6 @@
       "category": "threat",
       "published": "2026-06-04T12:00:00+00:00",
       "summary": "View CSAF\nSummary\nB&amp;R is aware of a vulnerability in the product versions listed as affected in the advisory. An attacker who successfully exploits this vulnerability could make the OPC-UA server of the product inaccessible.\nThe following versions of B&amp;R PPT30 Operating System are affected:\n"
-    },
-    {
-      "title": "CVE-2026-35414 OpenSSH before 10.3 mishandles the authorized_keys principals option in uncommon scenarios involving a principals list in conjunction with a Certificate Authority that makes certain use of comma characters.",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-35414",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T08:40:55+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2025-1149 GNU Binutils ld xmalloc.c xstrdup memory leak",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-1149",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-04T08:39:23+00:00",
-      "summary": "Information published."
     },
     {
       "title": "Stop Patching at Human Speed: Peer-to-Peer (P2P) Distribution Closes the Remediation Gap Before Attackers Strike",
@@ -2614,6 +2550,14 @@
       "summary": "With the advent of a potential Dolby Unified Decoder RCE exploit, it seemed prudent to see what kind of Linux kernel drivers might be accessible from the resulting userland context, the mediacodec context. As per the AOSP documentation, the mediacodec SELinux context is intended to be a constrained "
     },
     {
+      "title": "ISO 42001:2023 and the New Reality of Cloud AI Data Risk",
+      "url": "https://www.crowdstrike.com/en-us/blog/iso-42001-2023-and-new-reality-of-cloud-ai-data-risk/",
+      "source": "CrowdStrike Blog",
+      "category": "threat",
+      "published": "",
+      "summary": ""
+    },
+    {
       "title": "How to Stop AI-Driven Data Loss",
       "url": "https://www.crowdstrike.com/en-us/blog/how-to-stop-ai-driven-data-loss/",
       "source": "CrowdStrike Blog",
@@ -2668,17 +2612,97 @@
       "category": "threat",
       "published": "",
       "summary": ""
-    },
-    {
-      "title": "Disrupting Glassworm: Inside CrowdStrike&rsquo;s Takedown of a Developer-Targeting Botnet",
-      "url": "https://www.crowdstrike.com/en-us/blog/inside-crowdstrike-takedown-of-a-developer-targeting-botnet/",
-      "source": "CrowdStrike Blog",
-      "category": "threat",
-      "published": "",
-      "summary": ""
     }
   ],
   "news": [
+    {
+      "title": "Infosecurity Europe: AI Coding Tools Need Built-In Security for Agentic Development Era",
+      "url": "https://www.infosecurity-magazine.com/news/ai-coding-tools-security-agentic/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T09:00:00+00:00",
+      "summary": "Ox Security field CTO, Boaz Barzel, makes the case for vibe security to tackle AI agent coding risks"
+    },
+    {
+      "title": "Five Eyes: Chinese Spies Target Government, Military Staff With Fake Job Opportunities",
+      "url": "https://www.securityweek.com/five-eyes-chinese-spies-target-government-military-staff-with-fake-job-opportunities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-05T08:46:44+00:00",
+      "summary": "Posing as recruiters on online platforms, Chinese intelligence officers target personnel with access to classified or privileged information.\nThe post Five Eyes: Chinese Spies Target Government, Military Staff With Fake Job Opportunities appeared first on SecurityWeek."
+    },
+    {
+      "title": "Hackers Exploit Critical Everest Forms Pro WordPress Plugin Flaw to Take Over Sites",
+      "url": "https://thehackernews.com/2026/06/hackers-exploit-critical-everest-forms.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-05T08:38:59+00:00",
+      "summary": "Threat actors are actively exploiting a critical security flaw in Everest Forms Pro, a WordPress plugin with about 4,000 active installations, to execute arbitrary code, leading to a complete site compromise.\n\nThe vulnerability in question is CVE-2026-3300 (CVSS score: 9.8), a remote code execution "
+    },
+    {
+      "title": "Infosecurity Europe: Reactive Security Is Failing Healthcare Organizations, Experts Warn",
+      "url": "https://www.infosecurity-magazine.com/news/reactive-security-failing/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T08:00:00+00:00",
+      "summary": "A perfect storm of legacy devices, hyper connectivity and human fatigue is bad news for the healthcare sector, warns Cyber Salus"
+    },
+    {
+      "title": "Nightclub Giant RCI Says Data Breach Affects 40,000 Individuals",
+      "url": "https://www.securityweek.com/nightclub-giant-rci-says-data-breach-affects-40000-individuals/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-05T07:24:08+00:00",
+      "summary": "The company detected a network intrusion in March and an investigation showed that some files were stolen during the attack.\nThe post Nightclub Giant RCI Says Data Breach Affects 40,000 Individuals appeared first on SecurityWeek."
+    },
+    {
+      "title": "FIFA World Cup 2026 Scams Are Already Live: Fake Sites, Banking Malware, and Stolen Logins",
+      "url": "https://thehackernews.com/2026/06/fifa-world-cup-2026-scams-are-already.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-05T07:01:41+00:00",
+      "summary": "Security researchers and the FBI are warning that a wave of FIFA-themed fraud is already hitting World Cup 2026 fans, days before the June 11 kickoff.\n\nRecent reports describe thousands of lookalike FIFA domains, banking malware hidden inside pirate streaming apps, and at least one operation that co"
+    },
+    {
+      "title": "The Evil MSI Background is Back&#x21;, (Fri, Jun 5th)",
+      "url": "https://isc.sans.edu/diary/rss/33054",
+      "source": "SANS ISC Diary",
+      "category": "news",
+      "published": "2026-06-05T06:47:26+00:00",
+      "summary": "A few months ago, I wrote a diary about a payload that was embedded into a JPEG picture. It was a MSI-branded background&#x5b;1&#x5d;. Yesterday, I spotted another one&#x21; It seems that the technic is getting more and more popular. This time, it started with a mail containing a WeTransfer link.&#x"
+    },
+    {
+      "title": "Cisco warns of unpatched SD-WAN zero-day exploited in attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/new-cisco-sd-wan-flaw-exploited-in-zero-day-attacks-to-gain-root/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-05T06:24:20+00:00",
+      "summary": "On Thursday, Cisco warned of a high-severity, unpatched zero-day in the Cisco Catalyst SD-WAN Manager (tracked as CVE-2026-20245) actively\u00a0exploited in attacks enabling root privilege escalation. [...]"
+    },
+    {
+      "title": "Cisco Warns of 7th SD-WAN Zero-Day Exploited in 2026",
+      "url": "https://www.securityweek.com/cisco-warns-of-7th-sd-wan-zero-day-exploited-in-2026/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-05T05:47:09+00:00",
+      "summary": "The vulnerability is tracked as CVE-2026-20245 and it can allow arbitrary command execution as root, but no patch yet.\nThe post Cisco Warns of 7th SD-WAN Zero-Day Exploited in 2026 appeared first on SecurityWeek."
+    },
+    {
+      "title": "PCPJack Hijacks 230 AWS, Google Cloud, and Azure Servers for Covert SMTP Relay Network",
+      "url": "https://thehackernews.com/2026/06/pcpjack-hijacks-230-aws-google-cloud.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-05T05:34:19+00:00",
+      "summary": "The threat actor known as PCPJack has hijacked cloud servers associated with Amazon Web Services (AWS), Google Cloud, and Microsoft Azure to create a covert SMTP email relay network.\n\n\"Compromised business servers across the U.S., Europe, and Asia were quietly converted into SMTP proxies, verified f"
+    },
+    {
+      "title": "Soap Box: Detection and response in the AI age",
+      "url": "https://risky.biz/SOAPBOX108/",
+      "source": "Risky Business",
+      "category": "news",
+      "published": "2026-06-05T04:41:44+00:00",
+      "summary": "In this sponsored Soap Box edition of the Risky Business podcast Patrick Gray chats with Edward Wu, founder of Dropzone, about what AI is doing to detection, response and the SOC more generally.\n\nDropzone makes AI agents that conduct alert investigations in your SOC, but will the SOC as we know it e"
+    },
     {
       "title": "ISC Stormcast For Friday, June 5th, 2026 https://isc.sans.edu/podcastdetail/9960, (Fri, Jun 5th)",
       "url": "https://isc.sans.edu/diary/rss/33050",
@@ -2904,14 +2928,6 @@
       "summary": "Microsoft Detection and Response Team (DART) details how it has uncovered malicious AI applications as cyber criminals manipulate organizations adopting AI tools"
     },
     {
-      "title": "Microsoft blames unexpected Windows driver updates on caching issue",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-blames-unexpected-windows-driver-updates-on-caching-issue/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-04T13:41:42+00:00",
-      "summary": "On Wednesday, Microsoft fixed an issue that caused some Windows devices to install driver updates without notice despite policies configured to prevent auto-updates. [...]"
-    },
-    {
       "title": "Infosecurity Europe: Mythos Outperforms GPT5.5 on Google Chrome Vulnerability Exploits, Says New Benchmark",
       "url": "https://www.infosecurity-magazine.com/news/mythos-gpt-chrome-exploits/",
       "source": "Infosecurity Magazine",
@@ -2960,76 +2976,12 @@
       "summary": "Attackers are compromising open-source packages to spread malware. Cyber defenders are asked to review dependencies to reduce risks"
     },
     {
-      "title": "Chinese Cybercrime Group in Spotlight for Record Campaign Pace",
-      "url": "https://www.securityweek.com/chinese-cybercrime-group-ta4922-in-spotlight-for-record-campaign-pace/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-04T11:29:28+00:00",
-      "summary": "Relying on social engineering, the hacking group engages in credential phishing, malware distribution, and fraud activities.\nThe post Chinese Cybercrime Group in Spotlight for Record Campaign Pace appeared first on SecurityWeek."
-    },
-    {
-      "title": "FlutterShell Backdoor Spreads to macOS via Malicious Google and YouTube Ads",
-      "url": "https://thehackernews.com/2026/06/fluttershell-backdoor-spreads-to-macos.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-04T11:19:53+00:00",
-      "summary": "Cybersecurity researchers have shed light on a macOS malvertising campaign codenamed Operation FlutterBridge that spreads a new backdoor called FlutterShell.\n\nAccording to Palo Alto Networks Unit 42, the campaign is said to be the next stage of a previously reported activity cluster dubbed JSCoreRun"
-    },
-    {
-      "title": "Over 1.4 Million Accounts Disrupted in Cybercrime Crackdown",
-      "url": "https://www.securityweek.com/over-1-4-million-accounts-disrupted-in-cybercrime-crackdown/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-04T10:44:41+00:00",
-      "summary": "Law enforcement and tech companies disrupted infrastructure linked to scammers operating across Southeast Asia.\nThe post Over 1.4 Million Accounts Disrupted in Cybercrime Crackdown appeared first on SecurityWeek."
-    },
-    {
-      "title": "Fake Sites Mimicking Open-Source Tools Rank High on Google to Deliver Malware via TDS",
-      "url": "https://thehackernews.com/2026/06/fake-sites-mimicking-open-source-tools.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-04T09:51:28+00:00",
-      "summary": "Cybersecurity researchers have flagged a large-scale operation that impersonates open-source and freeware projects to funnel unsuspecting users through a Traffic Distribution System (TDS) and deliver malware families like Remus Stealer, AnimateClipper, and the SessionGate framework.\n\n\"The sites are "
-    },
-    {
-      "title": "Hackers Spied on a Stock Exchange Executive's Outlook Mailbox for Five Months",
-      "url": "https://thehackernews.com/2026/06/hackers-spied-on-stock-exchange.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-04T09:33:57+00:00",
-      "summary": "Unknown attackers spent at least five months inside the Outlook mailbox of a senior executive at a major global stock exchange, copying the inbox out in small, repeated batches and routing it through Dropbox and OneDrive so the traffic blended into normal cloud activity.\n\nSymantec and Carbon Black's"
-    },
-    {
       "title": "Infosecurity Europe: How Businesses Can Prepare for a Cybersecurity Crisis with Effective Plans",
       "url": "https://www.infosecurity-magazine.com/news/infosecurity-europe-cybersecurity/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-06-04T09:30:00+00:00",
       "summary": "Cybersecurity and business leaders with experience of dealing with major incidents from within the NCSC and at JLR detail what you need to prioritize if your organization is hit by a cyber-attack"
-    },
-    {
-      "title": "Infosecurity Europe: Ukraine\u2019s Experience Highlights the Need for Preparation and Resilience in Cybersecurity",
-      "url": "https://www.infosecurity-magazine.com/news/resilience-perseverance-ukraine/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-04T09:00:00+00:00",
-      "summary": "Former Ukrainian foreign minister, Dmytro Kuleba, urges Infosecurity Europe attendees to fight the good fight"
-    },
-    {
-      "title": "Cisco Warns of Available PoC for Critical Unified CM Vulnerability",
-      "url": "https://www.securityweek.com/cisco-warns-of-available-poc-for-critical-unified-cm-vulnerability/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-04T08:44:08+00:00",
-      "summary": "The high-severity flaw can be exploited remotely, without authentication, in server-side request forgery (SSRF) attacks.\nThe post Cisco Warns of Available PoC for Critical Unified CM Vulnerability appeared first on SecurityWeek."
-    },
-    {
-      "title": "Infosecurity Europe: Raise Security Concerns with Procurement Now, Because Quantum Can\u2019t Wait",
-      "url": "https://www.infosecurity-magazine.com/news/raise-security-procurement-quantum/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-04T07:45:00+00:00",
-      "summary": "Forescout VP of security intelligence, Rik Ferguson, warns that Q-day is fast approaching"
     },
     {
       "title": "Microsoft's Coreutils for Windows, (Thu, Jun 4th)",
@@ -3166,14 +3118,6 @@
       "category": "news",
       "published": "2026-06-01T09:30:00+00:00",
       "summary": "Thanks to the newly detailed FROST technique, telltale SSD activity can be measured in the browser using simple JavaScript."
-    },
-    {
-      "title": "ISC Stormcast For Monday, June 1st, 2026 https://isc.sans.edu/podcastdetail/9952, (Mon, Jun 1st)",
-      "url": "https://isc.sans.edu/diary/rss/33036",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-06-01T02:00:02+00:00",
-      "summary": ""
     },
     {
       "title": "Cybercrime Crew Claims It Hacked Mike Lindell\u2019s MyPillow",
@@ -3328,14 +3272,6 @@
       "summary": "A Brazilian tech firm that specializes in protecting networks from distributed denial-of-service (DDoS) attacks has been enabling a botnet responsible for an extended campaign of massive DDoS attacks against other network operators in Brazil, KrebsOnSecurity has learned. The firm's chief executive s"
     },
     {
-      "title": "Risky Business #835 -- Why the Fast16 malware is badass",
-      "url": "https://risky.biz/RB835/",
-      "source": "Risky Business",
-      "category": "news",
-      "published": "2026-04-29T04:43:51+00:00",
-      "summary": "On this week\u2019s show, Patrick Gray and James Wilson are joined by special guest-host Dmitri Alperovitch. They discuss the week\u2019s cybersecurity news, including:\n\n\n  The US government is mad as hell about Chinese firms stealing American AI technology\n  Dmitri has an opinion or two about the US selling "
-    },
-    {
       "title": "Could your choice of metrics be harming your SOC?",
       "url": "https://www.ncsc.gov.uk/blogs/could-your-choice-of-metrics-be-harming-your-soc",
       "source": "NCSC UK",
@@ -3344,26 +3280,26 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
+      "title": "Defending against China-nexus covert networks of compromised devices",
+      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "source": "NCSC UK",
+      "category": "news",
+      "published": "2026-04-23T12:00:00+00:00",
+      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+    },
+    {
       "title": "Passkeys are more secure than traditional ways to log in",
       "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
       "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
-    },
-    {
-      "title": "NCSC: Leave passwords in the past - passkeys are the future",
-      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
-      "source": "NCSC UK",
-      "category": "news",
-      "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     }
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 4,
-    "high": 22,
+    "critical": 6,
+    "high": 19,
     "exploited": 0,
     "kev_total": 50,
     "kev_7d": 5,
