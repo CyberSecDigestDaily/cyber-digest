@@ -1,123 +1,11 @@
 {
-  "generated": "2026-06-05T10:00:57.977805+00:00",
+  "generated": "2026-06-05T12:16:23.140025+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>6 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>4 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2025-14771",
-      "desc": "Files or directories accessible to external parties vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Abb",
-      "product": "T-Mac Plus",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:17.190",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-14771"
-    },
-    {
-      "id": "CVE-2025-14772",
-      "desc": "Authorization bypass through User-Controlled key vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Abb",
-      "product": "T-Mac Plus",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:18.810",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-14772"
-    },
-    {
-      "id": "CVE-2025-14773",
-      "desc": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
-      "cvss": 8.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Abb",
-      "product": "T-Mac Plus",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:18.940",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-14773"
-    },
-    {
-      "id": "CVE-2025-14774",
-      "desc": "Incorrect Authorization vulnerability in ABB T-MAC Plus.\n\nThis issue affects T-MAC Plus: 4.0-24.",
-      "cvss": 7.4,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Abb",
-      "product": "T-Mac Plus",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:19.090",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-14774"
-    },
-    {
-      "id": "CVE-2025-15655",
-      "desc": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Mojoomla School Management allows SQL Injection.\n\nThis issue affects School Management: from n/a through 93.2.0.",
-      "cvss": 7.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:19.250",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-15655"
-    },
-    {
-      "id": "CVE-2025-15656",
-      "desc": "Incorrect Privilege Assignment vulnerability in Mojoomla School Management allows Privilege Escalation.\n\nThis issue affects School Management: from n/a through 93.2.0.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:19.390",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-15656"
-    },
-    {
-      "id": "CVE-2026-41032",
-      "desc": "It is possible for an unauthenticated adjacent attacker to download log files of the controller, which may disclose some restricted information.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:19.540",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41032"
-    },
-    {
-      "id": "CVE-2026-47065",
-      "desc": "ZDRES-232: resolveProxyClass Not Overridden - acceptMatchers Filter Bypass via java.lang.reflect.Proxy\n\n\nAssessment: Fully addressed.\n\n\nWhen the serialised stream contains a TC_PROXYCLASSDESC (the marker \nfor a java.lang.reflect.Proxy ), JDK\u2019s ObjectInputStream.readProxyDesc()\n is\ndispatched. JDK then calls the default \nObjectInputStream.resolveProxyClass(interfaces) implementation, which \nperforms Class.forName(intf, false, latestUserDefinedLoader()) for EACH \ninterface name and constructs the proxy class \u00e2\u20ac\u201d bypassing the accepted\n classes list .\n\n\nZDRES-233: Class.forName(name, initialize=true, classLoader) in \nreadClassDescriptor Triggers Static Initialiser of Allow-Listed Classes\n\n\nAssessment: Fully addressed.\n\n\nFor ANY class on the allow-list, deserialising a stream that names it triggers the class\u2019s \n (static initialiser) BEFORE any instance is constructed. This means an \nattacker who supplies a class name on the allow-list (e.g., the \ndeveloper wrote accept(\u201ccom.myapp.*\") , attacker supplies \ncom.myapp.SomeClass ) causes <clinit> of SomeClass \u00e2\u20ac\u201d and many \nreal-world classes have side-effecting static initialisers\n\n\nBoth issues have been fixed.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Apache",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-03T11:16:19.800",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47065"
-    },
     {
       "id": "CVE-2025-41259",
       "desc": "SWUpdate before 2026.05 is affected by a time-of-check time-of-use (TOCTOU) race condition that allows local unprivileged attackers to escalate privileges to root or install untrusted contents using a signed update.",
@@ -422,10 +310,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00047,
-        "percentile": 0.14957
-      },
+      "epss": null,
       "published": "2026-06-03T14:16:35.533",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10729"
     },
@@ -537,7 +422,10 @@
       "product": "Transformers",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0007,
+        "percentile": 0.217
+      },
       "published": "2026-06-03T14:16:46.337",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5241"
     },
@@ -705,12 +593,124 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00036,
-        "percentile": 0.10909
-      },
+      "epss": null,
       "published": "2026-06-03T16:16:29.843",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-42320"
+    },
+    {
+      "id": "CVE-2026-42321",
+      "desc": "GLPI is a free asset and IT management software package. Starting in version 10.0.4 and prior to version 10.0.25, a technician can store an XSS payload in the asset locked tab. Upgrade to 10.0.25 or 11.0.7 to receive a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:30.003",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-42321"
+    },
+    {
+      "id": "CVE-2026-44281",
+      "desc": "GLPI is a free asset and IT management software package. Starting in version 0.78 and prior to versions 10.0.25 and 11.0.7, an authenticated user with config READ permission can read a specific asset object. Upgrade to 11.0.7 or 10.0.25 to receive a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:30.350",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44281"
+    },
+    {
+      "id": "CVE-2026-6657",
+      "desc": "A vulnerability in jupyter-server versions 1.12.0 through 2.17.0 allows an attacker to bypass CORS origin validation when the `allow_origin_pat` configuration is used. The issue arises from the use of `re.match()` for validating the `Origin` header, which only anchors at the start of the string. This allows attacker-controlled domains such as `trusted.example.com.evil.com` to pass validation against patterns intended to match `trusted.example.com`. The vulnerability affects multiple locations in the codebase, including CORS headers, WebSocket connections, referer validation, and login redirects, potentially enabling phishing attacks, arbitrary code execution, and unauthorized access to sensitive API responses.",
+      "cvss": 6.1,
+      "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T16:16:31.710",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6657"
+    },
+    {
+      "id": "CVE-2019-25720",
+      "desc": "Dr\u00e4ger SC Monitoring devices (SC 6002XL, SC 6802XL, SC 7000, SC 8000, SC 9000 XL) contain a denial-of-service vulnerability in all software versions that allows unauthenticated attackers to reboot the monitor by sending a malformed network packet. Attackers can repeatedly send such malformed packets to disrupt patient monitoring until the device falls back to default configuration and loses network connectivity.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T18:16:15.910",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25720"
+    },
+    {
+      "id": "CVE-2025-71313",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI: endpoint: Add missing NULL check for alloc_workqueue()\n\nalloc_workqueue() can return NULL on memory allocation failure. Without\nproper error checking, this may lead to a NULL pointer dereference when\nqueue_work() is later called with the NULL workqueue pointer in\nepf_ntb_epc_init().\n\nAdd a NULL check immediately after alloc_workqueue() and return -ENOMEM on\nfailure to prevent the driver from loading with an invalid workqueue\npointer.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T18:16:19.130",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71313"
+    },
+    {
+      "id": "CVE-2025-71314",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/panthor: Recover from panthor_gpu_flush_caches() failures\n\nWe have seen a few cases where the whole memory subsystem is blocked\nand flush operations never complete. When that happens, we want to:\n\n- schedule a reset, so we can recover from this situation\n- in the reset path, we need to reset the pending_reqs so we can send\n  new commands after the reset\n- if more panthor_gpu_flush_caches() operations are queued after\n  the timeout, we skip them and return -EIO directly to avoid needless\n  waits (the memory block won't miraculously work again)\n\nNote that we drop the WARN_ON()s because these hangs can be triggered\nwith buggy GPU jobs created by the UMD, and there's no way we can\nprevent it. We do keep the error messages though.\n\nv2:\n- New patch\n\nv3:\n- Collect R-b\n- Explicitly mention the fact we dropped the WARN_ON()s in the commit\n  message\n\nv4:\n- No changes",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T18:16:19.270",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71314"
+    },
+    {
+      "id": "CVE-2026-20175",
+      "desc": "A vulnerability in Cisco Finesse could allow an unauthenticated, remote attacker to load arbitrary files from remote locations into an active user session on an affected device, possibly leading to browser-based attacks.\r\n\r\nThis vulnerability is due to insufficient validation of user-supplied input for HTTP requests that are sent to an affected device. An attacker who has knowledge of the address of the affected device could exploit this vulnerability by persuading a user to click a crafted link that contains the affected device address. A successful exploit could allow the attacker to conduct browser-based attacks and execute arbitrary script code in the context of the affected interface or access sensitive information on the affected device.",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Cisco",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-03T18:16:19.960",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20175"
+    },
+    {
+      "id": "CVE-2026-20230",
+      "desc": "A vulnerability in Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) could allow an unauthenticated, remote attacker to conduct server-side request forgery (SSRF) attacks through an affected device.\r\n\r This vulnerability is due to improper input validation for specific HTTP requests. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to write files to the underlying operating system that could be used later to elevate to root.\r\n\r Note: Cisco has assigned this security advisory a Security Impact Rating (SIR) of Critical rather than High as the score indicates. The reason is that exploitation of this vulnerability could result in an attacker elevating privileges to root.\r\n\r Note: To exploit this vulnerability, the WebDialer service must be enabled. WebDialer is disabled by default.",
+      "cvss": 8.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Cisco",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00018,
+        "percentile": 0.04962
+      },
+      "published": "2026-06-03T18:16:20.160",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
     }
   ],
   "kev": [
@@ -2680,6 +2680,46 @@
   ],
   "news": [
     {
+      "title": "Hackers Leak DentaQuest Information Impacting 2.6 Million",
+      "url": "https://www.securityweek.com/hackers-leak-dentaquest-information-impacting-2-6-million/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-05T11:33:27+00:00",
+      "summary": "The ShinyHunters extortion group leaked roughly 234 GB of data allegedly stolen from the dental benefits administrator.\nThe post Hackers Leak DentaQuest Information Impacting 2.6 Million appeared first on SecurityWeek."
+    },
+    {
+      "title": "Infosecurity Europe: Practical Lessons From Lloyds' Agentic AI Security Playbook",
+      "url": "https://www.infosecurity-magazine.com/news/lloyds-agentic-ai-security-playbook/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T11:30:00+00:00",
+      "summary": "Lloyds Banking Group shared its approach for securing agentic AI workflows, with a mix of hands on experimentation and cross functional governance"
+    },
+    {
+      "title": "Chrome 149 Patches 429 Vulnerabilities",
+      "url": "https://www.securityweek.com/chrome-149-patches-429-vulnerabilities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-05T11:13:57+00:00",
+      "summary": "Over 100 bugs are critical or high-severity, mainly use-after-free and insufficient validation of untrusted input flaws.\nThe post Chrome 149 Patches 429 Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
+      "title": "Infosecurity Europe: OWASP Introduces Agentic AI Security Maturity Framework",
+      "url": "https://www.infosecurity-magazine.com/news/owasp-agentic-ai-security-maturity/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T10:45:00+00:00",
+      "summary": "The OWASP agentic AI security framework helps organizations assess governance maturity vs adoption and adjust governance as needed"
+    },
+    {
+      "title": "Industry Reactions to New Trump AI Cybersecurity Executive Order: Feedback Friday",
+      "url": "https://www.securityweek.com/industry-reactions-to-new-trump-ai-cybersecurity-executive-order-feedback-friday/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-05T10:24:56+00:00",
+      "summary": "Experts commented on the EO\u2019s voluntary nature, the balance between innovation and security, and potential implementation gaps.\nThe post Industry Reactions to New Trump AI Cybersecurity Executive Order: Feedback Friday appeared first on SecurityWeek."
+    },
+    {
       "title": "Infosecurity Europe: AI Coding Tools Need Built-In Security for Agentic Development Era",
       "url": "https://www.infosecurity-magazine.com/news/ai-coding-tools-security-agentic/",
       "source": "Infosecurity Magazine",
@@ -2944,14 +2984,6 @@
       "summary": "Join this live webinar as we examine the gap between how organizations think their third-party risk programs are performing and what\u2019s actually happening in practice. \nThe post Webinar Today: Third-Party Risk in Practice &#8211; Where Programs Break Down and How to Respond appeared first on Security"
     },
     {
-      "title": "Willow Raises $7 Million for Securing Autonomous AI Agents",
-      "url": "https://www.securityweek.com/willow-raises-7-million-for-securing-autonomous-ai-agents/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-04T14:22:43+00:00",
-      "summary": "Willow (formerly Webrix) emerged from stealth mode with an access platform designed to secure enterprise AI agents.\nThe post Willow Raises $7 Million for Securing Autonomous AI Agents appeared first on SecurityWeek."
-    },
-    {
       "title": "Bugcrowd Launches EU Data Residency Option For Evolving Data Sovereignty Needs",
       "url": "https://www.darkreading.com/cyber-risk/bugcrowd-launches-eu-data-residency-option-for-evolving-data-sovereignty-needs",
       "source": "Dark Reading",
@@ -3000,22 +3032,6 @@
       "summary": "A Bugcrowd researcher has unveiled ExploitBench, an independent benchmark of AI models for vulnerability exploitation"
     },
     {
-      "title": "Gemini Voice Assistant Hijacked via Messaging Notifications",
-      "url": "https://www.securityweek.com/gemini-voice-assistant-hijacked-via-messaging-notifications/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-04T12:57:37+00:00",
-      "summary": "Attackers could have triggered dangerous actions, including controlling smart home devices via Google Home and starting Zoom video calls.\nThe post Gemini Voice Assistant Hijacked via Messaging Notifications appeared first on SecurityWeek."
-    },
-    {
-      "title": "Infosecurity Europe: How Proton Fights Against Cybercriminals Using Its Services",
-      "url": "https://www.infosecurity-magazine.com/news/how-proton-fights-against/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-04T12:30:00+00:00",
-      "summary": "Proton uses machine learning models to detect abuse of its services \u2013 especially email addresses used by cybercriminals"
-    },
-    {
       "title": "China-Linked TA4922 Expands Phishing Attacks to U.K., Germany, Italy, and South Africa",
       "url": "https://thehackernews.com/2026/06/china-linked-ta4922-expands-phishing.html",
       "source": "The Hacker News",
@@ -3024,28 +3040,12 @@
       "summary": "A new China-linked cybercrime group known as TA4922 has expanded its targeting focus to target European organizations in the U.K., Germany, Italy, and South Africa.\n\nThese efforts have been complemented by a \"rapid operational tempo\" and a continually evolving malware arsenal comprising known famili"
     },
     {
-      "title": "Mirasvit Vulnerability Exploited to Execute Code on Magento Servers",
-      "url": "https://www.securityweek.com/mirasvit-vulnerability-exploited-to-execute-code-on-magento-servers/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-04T12:10:02+00:00",
-      "summary": "A flaw in the Full Page Cache Warmer extension can be exploited without authentication via serialized PHP object payloads.\nThe post Mirasvit Vulnerability Exploited to Execute Code on Magento Servers appeared first on SecurityWeek."
-    },
-    {
       "title": "Software supply chain attacks: check your dependencies",
       "url": "https://www.ncsc.gov.uk/blogs/software-supply-chain-attacks-check-your-dependencies",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-06-04T12:00:00+00:00",
       "summary": "Attackers are compromising open-source packages to spread malware. Cyber defenders are asked to review dependencies to reduce risks"
-    },
-    {
-      "title": "Infosecurity Europe: How Businesses Can Prepare for a Cybersecurity Crisis with Effective Plans",
-      "url": "https://www.infosecurity-magazine.com/news/infosecurity-europe-cybersecurity/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-04T09:30:00+00:00",
-      "summary": "Cybersecurity and business leaders with experience of dealing with major incidents from within the NCSC and at JLR detail what you need to prioritize if your organization is hit by a cyber-attack"
     },
     {
       "title": "Microsoft's Coreutils for Windows, (Thu, Jun 4th)",
@@ -3362,8 +3362,8 @@
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 6,
-    "high": 19,
+    "critical": 4,
+    "high": 14,
     "exploited": 0,
     "kev_total": 50,
     "kev_7d": 5,
