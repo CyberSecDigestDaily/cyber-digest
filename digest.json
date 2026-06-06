@@ -1,434 +1,11 @@
 {
-  "generated": "2026-06-06T02:07:12.440045+00:00",
+  "generated": "2026-06-06T08:24:04.675819+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>7 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>6 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-10737",
-      "desc": "The SP Project & Document Manager plugin for WordPress is vulnerable to unauthorized access due to a missing capability check on the view_file function in all versions up to, and including, 4.71. This makes it possible for unauthenticated attackers to read file metadata and obtain download links for arbitrary files stored inside project folders on the server, which can contain sensitive information. The authorization gate uses a negated nonce check OR-chained with permission checks, meaning a missing or invalid nonce causes the entire condition to evaluate to true and bypass all preceding capability and ownership checks. The secondary fallback check only denies access for root-level files (pid == 0), leaving all files stored inside project folders fully exposed to unauthenticated users who supply only a valid file ID in a POST request to admin-ajax.php.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T02:16:17.503",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10737"
-    },
-    {
-      "id": "CVE-2026-7764",
-      "desc": "An out-of-bounds read vulnerability in the morse.ko HaLow Wi-Fi kernel driver in Morse Micro HaLowLink 2 software versions prior to 2.11.12 allows an unauthenticated attacker within radio range to disclose a small amount of kernel heap memory or cause a Denial of Service (kernel oops/panic) via a crafted 802.11ah beacon or probe response frame containing a malformed Vendor Information Element. The function morse_vendor_find_vendor_ie() does not validate the IE length against the expected structure size before its result is passed to morse_vendor_rx_caps_ops_ie() and morse_vendor_fill_sta_vendor_info(), which read at fixed offsets into the IE data. Because the length check only requires the IE to be longer than 3 bytes, an attacker can supply an undersized IE, causing a heap out-of-bounds read of up to 9 bytes. No authentication, association, or user interaction is required.",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T02:16:17.700",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7764"
-    },
-    {
-      "id": "CVE-2026-8653",
-      "desc": "The MasterStudy LMS Pro Plus plugin for WordPress is vulnerable to generic SQL Injection via the 'columns' parameter in all versions up to, and including, 4.8.20 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with instructor-level access or above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T02:16:17.840",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8653"
-    },
-    {
-      "id": "CVE-2026-10597",
-      "desc": "OMICARD EDM developed by ITPison has a Insecure Direct Object Reference vulnerability, allowing unauthenticated remote attackers to modify a specific parameter to obtain user's email address.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T03:16:19.443",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10597"
-    },
-    {
-      "id": "CVE-2026-41011",
-      "desc": "PackagePersister.validate_tgz builds \"tar -tf #{tgz} 2>&1\" where tgz = File.join(release_dir, 'packages', \"#{name}.tgz\") and name = package_meta['name'] comes directly from release.MF inside the uploaded tarball. The string is passed to Bosh::Common::Exec.sh, which executes via %x{} \u2014 i.e., /bin/sh -c. No Shellwords.escape is applied. The Models::Package Sequel validation (VALID_ID = /^[-0-9A-Za-z_+.]+$/i) would reject the name, but in create_package (lines 74\u201379) the shell-out in save_package_source_blob runs before package.save, so validation fires too late.\n\nAffected versions:\n- BOSH: all versions prior to v282.1.12 (inclusive); fixed in v282.1.12 or later",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T03:16:19.633",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41011"
-    },
-    {
-      "id": "CVE-2026-41858",
-      "desc": "Weak Randomness / Insecure Cryptographic Primitive (CWE-338) in Get-RandomPassword in BOSH-Ecosystem / windows-utilities-release allows a network attacker to estimate VM boot time and reconstruct a small candidate list to recover the Administrator password. The randomize_password job exists solely to lock the local Administrator account behind an unguessable password as a hardening control. Because the password is derived from a predictable, clock-seeded PRNG, a network attacker who can estimate VM boot time can reconstruct a small candidate list and recover the Administrator password, defeating the hardening control.\n\nAffected versions:\n- windows-utilities-release: all versions prior to v0.23.0 (inclusive); fixed in v0.23.0 or later",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T03:16:19.790",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41858"
-    },
-    {
-      "id": "CVE-2026-41859",
-      "desc": "A network man-in-the-middle between nats-sync and the BOSH director can steal the director credentials (Basic auth header or UAA client secret) and can tamper with the VM list that is written into the NATS authorization file. Stolen credentials grant administrative director access. UsersSync#bosh_api_response_body builds a Net::HTTP client with verify_mode = OpenSSL::SSL::VERIFY_NONE for every director call (/info, /deployments, /deployments/<name>/vms).\n\nAffected versions:\n- BOSH: all versions prior to v282.1.9 (inclusive); fixed in v282.1.9 or later",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T03:16:19.947",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41859"
-    },
-    {
-      "id": "CVE-2026-41860",
-      "desc": "CWE-326 in BOSH allows a local attacker to steal Basic-auth credentials or redirect UAA token requests via MITM. HttpRequestHelper#create_async_endpoint and #send_http_get_request_synchronous hard-code OpenSSL::SSL::VERIFY_NONE, enabling an attacker to intercept traffic between bosh-monitor and the BOSH director or UAA and steal credentials.\n\nAffected versions:\n- BOSH: all versions prior to v282.1.9 (inclusive); fixed in v282.1.9 or later",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T03:16:20.107",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41860"
-    },
-    {
-      "id": "CVE-2026-8829",
-      "desc": "HTML::Entities versions before 3.84 for Perl read freed heap memory in _decode_entities.\n\nThe XS routine backing HTML::Entities::_decode_entities cached a pointer (repl) into the entity-value SV returned by hv_fetch on the entity2char hash. When the input SV was identical to a value SV in that hash, and that value contained its own key as an entity reference, a later call to grow_gap() reallocated the SV's PV buffer and freed the backing allocation that repl still pointed into. The subsequent copy loop read repl_len bytes from the freed allocation.\n\nThe read may disclose adjacent heap contents into the destination SV.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T03:16:20.260",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8829"
-    },
-    {
-      "id": "CVE-2026-41010",
-      "desc": "ReleaseJob#unpack builds job_dir = File.join(@release_dir, 'jobs', name) and job_tgz = File.join(@release_dir, 'jobs', \"#{name}.tgz\") where name returns @job_meta['name'], a value taken verbatim from the jobs: array of the attacker-supplied release.MF inside the uploaded tarball. These paths are then interpolated into a shell string: Bosh::Common::Exec.sh(\"tar -C #{job_dir} -xf #{job_tgz} 2>&1\", :on_error => :return). Bosh::Common::Exec.sh executes via %x{#{command}} (bosh-common/lib/bosh/common/exec.rb:53), i.e. /bin/sh -c, so any shell metacharacters in name are interpreted. FileUtils.mkdir_p(job_dir) on line 49 creates the literal directory (no shell) and succeeds even when the name contains $()/;, so execution reaches the sh call.\n\nAffected versions:\n- BOSH Director: all versions prior to v282.1.12 (inclusive); fixed in v282.1.12 or later",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T04:17:10.037",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41010"
-    },
-    {
-      "id": "CVE-2026-41283",
-      "desc": "OpenStack Mistral through 22.0.0 allows Arbitrary Remote Code Execution when the API is exposed. There are endpoints that allow code execution, which can lead to exfiltration of service credentials.",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T04:17:12.700",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41283"
-    },
-    {
-      "id": "CVE-2026-44917",
-      "desc": "OpenStack Ironic before 35.0.2 allows a malicious authenticated project admin or manager to read local files on the Ironic conductor via a pxe_template.",
-      "cvss": 4.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Openstack",
-      "product": "Ironic",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T04:17:14.853",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44917"
-    },
-    {
-      "id": "CVE-2026-48681",
-      "desc": "OpenStack Ironic through before 35.0.2 allows file overwrite via directory traversal during deployment with a crafted ISO image.",
-      "cvss": 5.9,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Openstack",
-      "product": "Ironic",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T04:17:15.220",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48681"
-    },
-    {
-      "id": "CVE-2026-49185",
-      "desc": "The FieldX MDM adb messaging topic passes unverified payloads directly into\u00a0Runtime.exec(), allowing command/instruction injection.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T04:17:15.387",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49185"
-    },
-    {
-      "id": "CVE-2026-49186",
-      "desc": "The local MQTT broker does not enforce topic-level Access Control Lists (ACLs). This allows any client to subscribe using wildcard characters (#\u00a0or\u00a0+) to enumerate hidden network devices or publish rogue control commands.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T04:17:15.550",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49186"
-    },
-    {
-      "id": "CVE-2026-10805",
-      "desc": "A flaw was found in NetworkManager. This local privilege escalation vulnerability exists in NetworkManager's dhclient backend when processing malformed Manufacturer Usage Description (MUD) URLs. A local user can exploit this flaw to escalate privileges by triggering a script via a crafted MUD URL, provided an administrator has explicitly configured NetworkManager to use dhclient. This issue does not affect default configurations of NetworkManager.",
-      "cvss": 6.7,
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T06:16:21.780",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10805"
-    },
-    {
-      "id": "CVE-2026-49187",
-      "desc": "The hard-coded APK resource files never expire, and the shared scepter leads to information leaks and potential misuse.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T06:16:24.290",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49187"
-    },
-    {
-      "id": "CVE-2026-49188",
-      "desc": "The\u00a0ai_cmd\u00a0utility executes with full root permissions. It pipes socket inputs directly to\u00a0popen(), paving the way for unauthenticated users to execute arbitrary root commands.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T06:16:24.583",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49188"
-    },
-    {
-      "id": "CVE-2026-49189",
-      "desc": "Unchecked public access permissions on a core Broadcast Receiver allow unauthorized local software components to invoke administrative operations.",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T06:16:24.837",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49189"
-    },
-    {
-      "id": "CVE-2026-50219",
-      "desc": "libexpat before 2.8.2 lacks handler call depth tracking for calls to XML_GetBuffer, XML_Parse, XML_ParseBuffer, XML_ParserFree, or XML_ParserReset from within handlers in cases of a policy violation. Thus, a use-after-free can occur,",
-      "cvss": 4.9,
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "Libexpat Project",
-      "product": "Libexpat",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T06:16:25.050",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50219"
-    },
-    {
-      "id": "CVE-2026-49190",
-      "desc": "The system fails to evaluate instructional permissions over multiple internal operation codes (opcodes), permitting unauthorized application installations or command executions.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:26.860",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49190"
-    },
-    {
-      "id": "CVE-2026-49191",
-      "desc": "The production build of the M3WebServer hard-codes its backend API keys, which can be easily intercepted through verbose error handling pages.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:27.013",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49191"
-    },
-    {
-      "id": "CVE-2026-49192",
-      "desc": "The summary service endpoint suffers from an IDOR vulnerability where it fails to verify user ownership of hardware serial numbers, exposing device data to scraping.",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:27.153",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49192"
-    },
-    {
-      "id": "CVE-2026-49193",
-      "desc": "Overly permissive configuration settings on cloud storage containers expose active telemetry information publicly to the internet.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:27.297",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49193"
-    },
-    {
-      "id": "CVE-2026-49194",
-      "desc": "The debugging routine\u00a0SCREEN_CLICK(5053)\u00a0enables a connection to skip the standard device login prompt entirely and directly enter an interactive shell interface.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:27.437",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49194"
-    },
-    {
-      "id": "CVE-2026-49202",
-      "desc": "Internal multimedia session archives are accessible without authentication, exacerbated by loose Cross-Origin Resource Sharing (CORS) rules that allow cross-site theft.",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:27.580",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49202"
-    },
-    {
-      "id": "CVE-2026-49203",
-      "desc": "Crucial management API endpoints for cellular eSIM allocation do not validate caller authorization, allowing remote profiles to be rewritten or deleted.",
-      "cvss": 8.3,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:27.723",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49203"
-    },
-    {
-      "id": "CVE-2026-49204",
-      "desc": "Leftover debug modules contain fixed credentials for internal AWS Cognito test sandboxes, risking asset exploitation.",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:27.873",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49204"
-    },
-    {
-      "id": "CVE-2026-50205",
-      "desc": "System log files output unencrypted SMTP server authentication passwords alongside sensitive employee corporate identification data.",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-04T07:16:28.023",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50205"
-    },
-    {
-      "id": "CVE-2026-50206",
-      "desc": "Incoming VPN network profile settings fail to process special characters safely, enabling command injection via malicious config files.",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Acer",
-      "product": "Connect M6E 5G, Connect M6E 5G Firmware",
-      "exploited": false,
-      "kev": false,
-      "epss": {
-        "epss": 0.00113,
-        "percentile": 0.29585
-      },
-      "published": "2026-06-04T07:16:28.177",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50206"
-    },
     {
       "id": "CVE-2026-3820",
       "desc": "There is a vulnerability in the Supermicro BMC  SMTP service at Supermicro AS-2115HS-TNR.\u00a0\nAn attacker may obtain administrator privileges and inject specially crafted characters into the SMTP service configuration. This may cause the underlying system to execute unintended commands during process invocation.\n\nPotential impact includes denial-of-service attacks, arbitrary code execution, or permanent compromise of the controller.",
@@ -705,12 +282,435 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00041,
-        "percentile": 0.12798
-      },
+      "epss": null,
       "published": "2026-06-04T10:16:40.123",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50225"
+    },
+    {
+      "id": "CVE-2026-50226",
+      "desc": "Fixed AES-128-CBC keys inside the AcerConnect OTA application let attackers forge authorization credentials for arbitrary IMEI numbers. This allows unauthorized actors to list catalog items and extract protected binaries from pre-signed cloud links.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T10:16:40.247",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50226"
+    },
+    {
+      "id": "CVE-2026-8916",
+      "desc": "Out-of-bounds write vulnerability in Samsung Open Source rlottie allows Overflow Buffers.\n\nThis issue affects rlottie: before\u00a0dcfde72eae1b0464dc0dd760aec00ada6a148635.",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T10:16:40.363",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8916"
+    },
+    {
+      "id": "CVE-2026-10801",
+      "desc": "A security vulnerability has been detected in modelscope ms-swift up to 4.2.0. This affects the function Template._save_pil_image of the file swift/template/base.py of the component PIL Image Cache Key Handler. The manipulation leads to use of weak hash. An attack has to be approached locally. A high degree of complexity is needed for the attack. It is indicated that the exploitability is difficult. The exploit has been disclosed publicly and may be used. The pull request to fix this issue awaits acceptance.",
+      "cvss": 3.6,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T11:16:25.800",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10801"
+    },
+    {
+      "id": "CVE-2026-49077",
+      "desc": "Exposure of Sensitive System Information to an Unauthorized Control Sphere vulnerability in Tips and Tricks HQ WP eMember allows Retrieve Embedded Sensitive Data.\n\nThis issue affects WP eMember: from n/a through v10.2.2.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T11:16:27.457",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49077"
+    },
+    {
+      "id": "CVE-2025-12694",
+      "desc": "A local privilege escalation vulnerability exists in Forcepoint VPN Client that allows a local non-administrative user to escalate privileges to SYSTEM. This issue affects VPN Client for Windows: versions 6.11.3 and prior.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:23.420",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-12694"
+    },
+    {
+      "id": "CVE-2025-52606",
+      "desc": "HCL iControl was affected by Weak Input Validation vulnerability. This weakness is caused during implementation of an architectural security tactic. Received input that is expected to be of a certain type, but it does not validate or incorrectly validates that the input is actually of the expected type.",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Hcltech",
+      "product": "Icontrol",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:23.580",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-52606"
+    },
+    {
+      "id": "CVE-2025-52608",
+      "desc": "HCL  iControl was affected by Missing Cookie Attributes vulnerability. It was observed that the application is missing several critical cookie attributes, including Secure and SameSite. And also path is set to root.",
+      "cvss": 3.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "Hcltech",
+      "product": "Icontrol",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:23.710",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-52608"
+    },
+    {
+      "id": "CVE-2025-52609",
+      "desc": "HCL iControl was affected by Missing Security Headers vulnerability. which lead to cross-site scripting (XSS) attacks by enabling the built-in XSS filtering mechanisms of modern web browsers.",
+      "cvss": 3.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "Hcltech",
+      "product": "Icontrol",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:23.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-52609"
+    },
+    {
+      "id": "CVE-2025-52611",
+      "desc": "HCL iControl v4.0.0 was affected by Unhandled Exception - Stack Trace Disclosure vulnerability. The error occurs due to an undefined property being accessed in the application's JavaScript code. Specifically, the code attempts to read the property dashboard key from an object that is undefined. This issue likely stems from one of the following: A missing or improperly initialized object.",
+      "cvss": 3.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "Hcltech",
+      "product": "Icontrol",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:24.013",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-52611"
+    },
+    {
+      "id": "CVE-2025-52612",
+      "desc": "HCL iControl was affected by Export CSV - CSV Injection vulnerability. It is vulnerable to a reflected cross-site scripting vulnerability. This was caused by an insufficient sanitation of input parameters. .",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Hcltech",
+      "product": "Icontrol",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00042,
+        "percentile": 0.13341
+      },
+      "published": "2026-06-04T12:16:24.137",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-52612"
+    },
+    {
+      "id": "CVE-2026-10802",
+      "desc": "A vulnerability was detected in keystonejs keystone up to 20260319. This vulnerability affects unknown code in the library packages/core/src/lib/core/queries/output-field.ts of the component GraphQL API Endpoint. The manipulation results in resource consumption. It is possible to launch the attack remotely. The exploit is now public and may be used. The pull request to fix this issue awaits acceptance.",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:24.267",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10802"
+    },
+    {
+      "id": "CVE-2026-10803",
+      "desc": "A flaw has been found in MLflow up to 3.10.0. This issue affects the function mlflow.data.digest_utils of the file mlflow/data/digest_utils.py of the component Dataset Digest Computation. This manipulation causes use of weak hash. It is possible to launch the attack on the local host. The attack is considered to have high complexity. The exploitability is assessed as difficult. The exploit has been published and may be used. The project was informed of the problem early through a pull request but has not reacted yet.",
+      "cvss": 3.6,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "LOW",
+      "vendor": "Lfprojects",
+      "product": "Mlflow",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:24.440",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10803"
+    },
+    {
+      "id": "CVE-2026-10804",
+      "desc": "A vulnerability has been found in Streamlit up to 1.53.0. Impacted is an unknown function in the library lib/streamlit/runtime/caching/hashing.py of the component Palette Handler. Such manipulation leads to use of weak hash. Local access is required to approach this attack. The attack requires a high level of complexity. The exploitability is considered difficult. The exploit has been disclosed to the public and may be used. The pull request to fix this issue awaits acceptance.",
+      "cvss": 3.6,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:24.620",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10804"
+    },
+    {
+      "id": "CVE-2026-10840",
+      "desc": "A flaw was found in the OpenShift Pipelines operator. The tekton-scheduler-rolebinding ClusterRoleBinding grants the system:authenticated group write access to Kueue and cert-manager custom resources via the tekton-scheduler-role ClusterRole. When Kueue or cert-manager CRDs are present on the cluster, any authenticated user can disrupt workload scheduling, tamper with scheduling priorities, delete other tenants' Workload objects, or induce cert-manager to overwrite TLS Secrets including the default ingress controller certificate.",
+      "cvss": 9.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:24.813",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10840"
+    },
+    {
+      "id": "CVE-2026-10843",
+      "desc": "A flaw was found in the OpenShift Cloud Credential Operator Mint-mode IAM policies for AWS. Operator credentials are provisioned with account-wide scope for destructive actions rather than being restricted to cluster-owned resources, enabling cross-scope impact after credential compromise.",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:24.970",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10843"
+    },
+    {
+      "id": "CVE-2026-45431",
+      "desc": "This vulnerability exists in GX Earth ONT models due to improper handling of user-supplied input in multiple diagnostic functions in its web management interface. An authenticated remote attacker could exploit this vulnerability by injecting arbitrary and executing OS commands on the targeted device.\n\n\t\n\nSuccessful exploitation of this vulnerability could allow the attacker to perform remote code execution with root privileges on the targeted device.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:26.110",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45431"
+    },
+    {
+      "id": "CVE-2026-45432",
+      "desc": "This vulnerability exists in GX Earth ONT models due to the transmission of user credentials in plaintext over HTTP in its web management interface. A remote attacker could exploit this vulnerability by intercepting network traffic to obtain sensitive authentication information, which could lead to unauthorized access to the targeted device.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:26.270",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45432"
+    },
+    {
+      "id": "CVE-2026-4104",
+      "desc": "Authorization bypass through User-Controlled SQL primary key vulnerability in Akmer Informatics Automation Industry and Trade Ltd. Co. TeknoPass allows SQL Injection.\n\nThis issue affects TeknoPass: from 20210501 through 20260429.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T12:16:26.417",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4104"
+    },
+    {
+      "id": "CVE-2019-25726",
+      "desc": "All in One Video Downloader 1.2 contains an SQL injection vulnerability that allows unauthenticated attackers to execute arbitrary SQL queries by injecting malicious code through the id parameter. Attackers can send requests to the admin interface with UNION-based SQL injection payloads in the id parameter to extract sensitive database information including usernames, databases, and version details.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:27.463",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25726"
+    },
+    {
+      "id": "CVE-2019-25727",
+      "desc": "WordPress Plugin ad manager wd 1.0.11 contains an arbitrary file download vulnerability that allows unauthenticated attackers to download sensitive files by manipulating the path parameter. Attackers can send GET requests to the edit.php endpoint with export=export_csv and a malicious path parameter to read arbitrary files like wp-config.php accessible to the web server.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:30.190",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25727"
+    },
+    {
+      "id": "CVE-2019-25728",
+      "desc": "Care2x 2.7 contains multiple SQL injection vulnerabilities that allow unauthenticated attackers to execute arbitrary SQL commands by manipulating the ck_config cookie parameter. Attackers can inject malicious SQL through the ck_config cookie in multiple endpoints including login.php, indexframe.php, and various module files to extract sensitive database information without authentication.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:30.413",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25728"
+    },
+    {
+      "id": "CVE-2019-25729",
+      "desc": "PDF Signer 3.0 contains a server-side template injection vulnerability that allows unauthenticated attackers to execute arbitrary code by injecting PHP commands through the CSRF-TOKEN cookie parameter. Attackers can craft malicious cookie values containing template injection payloads like shell_exec() to execute system commands and retrieve sensitive information from the server.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:30.630",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25729"
+    },
+    {
+      "id": "CVE-2019-25730",
+      "desc": "Listing Hub CMS 1.0 contains a SQL injection vulnerability that allows unauthenticated attackers to execute arbitrary SQL queries by injecting malicious code through the id parameter. Attackers can send GET requests to pages.php with crafted id values using error-based SQL injection techniques to extract database credentials, usernames, and version information.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:30.830",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25730"
+    },
+    {
+      "id": "CVE-2019-25731",
+      "desc": "Zuz Music 2.1 contains a persistent cross-site scripting vulnerability that allows unauthenticated attackers to inject malicious JavaScript by submitting crafted contact form data. Attackers can inject script code through the name, subject, and message parameters in POST requests to /gmusic/zuzconsole/___contact, which executes when administrators view messages in the inbox interface.",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:31.003",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25731"
+    },
+    {
+      "id": "CVE-2019-25732",
+      "desc": "PHP EI-Tube Script 3 contains an SQL injection vulnerability that allows unauthenticated attackers to execute arbitrary SQL queries by injecting malicious code through the search parameter. Attackers can send GET requests to the search endpoint with crafted SQL payloads in the query parameter to extract sensitive database information including usernames, passwords, and version details.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:31.160",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25732"
+    },
+    {
+      "id": "CVE-2019-25733",
+      "desc": "NetShareWatcher 1.5.8.0 contains a structured exception handler buffer overflow vulnerability that allows local attackers to execute arbitrary code by supplying malicious input. Attackers can craft a payload with overwritten SEH and NSEH pointers through the Restrictions custom filter field to trigger code execution when the Find function is invoked.",
+      "cvss": 8.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:31.320",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25733"
+    },
+    {
+      "id": "CVE-2019-25734",
+      "desc": "Contact Form by WD 1.13.1 contains a cross-site request forgery vulnerability combined with local file inclusion that allows unauthenticated attackers to include arbitrary files by exploiting unsanitized action parameters. Attackers can craft malicious forms targeting the admin-ajax.php endpoint with directory traversal sequences in the GET action parameter to load files via CSRF, bypassing authentication on vulnerable AJAX actions.",
+      "cvss": 4.0,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "WordPress",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:31.487",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25734"
+    },
+    {
+      "id": "CVE-2019-25735",
+      "desc": "AllPlayer 7.4 contains a local buffer overflow vulnerability in URL handling that allows attackers to overwrite structured exception handling pointers by supplying an excessively long URL string. Attackers can craft a malicious URL, paste it into the Open URL dialog, and trigger SEH-based code execution to run arbitrary commands with user privileges.",
+      "cvss": 8.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:31.653",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25735"
+    },
+    {
+      "id": "CVE-2019-25736",
+      "desc": "LabF nfsAxe 3.7 Ping Client contains a buffer overflow vulnerability that allows local attackers to execute arbitrary code by supplying a malicious payload in the Host IP field. Attackers can craft a specially formatted input file with shellcode and overwrite the return address to execute calc.exe or other arbitrary commands.",
+      "cvss": 8.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-04T14:16:31.817",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25736"
+    },
+    {
+      "id": "CVE-2019-25737",
+      "desc": "Live Chat Unlimited 2.8.3 contains a stored cross-site scripting vulnerability that allows unauthenticated attackers to inject malicious scripts through the chat input field. Attackers can submit payloads containing script tags and event handlers that execute in the admin area, enabling cookie theft or forced redirects to malicious websites.",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": {
+        "epss": 0.00087,
+        "percentile": 0.25116
+      },
+      "published": "2026-06-04T14:16:32.007",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25737"
     }
   ],
   "kev": [
@@ -2038,6 +2038,14 @@
       "summary": "Executive Summary Knowing what\u2019s exploitable is only half the battle. P2P patch distribution turns your endpoints into a delivery network, cutting patch propagation by up to 92%, reducing WAN bandwidth by 99%+, and helping close critical vulnerabilities before attackers can move. Available now in Qu"
     },
     {
+      "title": "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem",
+      "url": "https://research.checkpoint.com/2026/impersonation-click-hijacking-and-tds-inside-a-malware-distribution-ecosystem/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-03T13:21:44+00:00",
+      "summary": "Research by:&#160;Alexey Bukhteyev Key Takeaways Introduction When we search Google for a popular piece of software, we usually click the first result, sometimes without even looking at the rest, because official project sites tend to rank highest and appear near the top of the results. After landin"
+    },
+    {
       "title": "Tenable CTO Q&A: C-suite views AI as massive threat, as cyber teams adopt exposure management to counter AI attacks",
       "url": "https://www.tenable.com/blog/tenable-cto-ai-security-threats-exposure-management",
       "source": "Tenable Blog",
@@ -2084,6 +2092,14 @@
       "category": "threat",
       "published": "2026-06-02T00:00:00+00:00",
       "summary": "Find out how Elastic Security ingests Google Threat Intelligence for continuous detection and uses AI-driven workflows to enrich alerts in real time, from API key to live detections in minutes."
+    },
+    {
+      "title": "1st June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/1st-june-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-01T14:43:11+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Carnival Corporation, a global cruise line operator, has\u00a0confirmed a data breach affecting nearly 6 million people after attackers used social engineering"
     },
     {
       "title": "Oracle May 2026 Critical Security Patch Update Addresses 35 CVEs",
@@ -2198,12 +2214,28 @@
       "summary": "Cybersecurity leaders and practitioners brought their burning AI cybersecurity questions to EXPOSURE 2026. They left with clear answers and a blueprint for building an exposure management program. Get a recap and see highlights from the event in words and pictures.&nbsp;Key takeawaysAs frontier AI m"
     },
     {
+      "title": "AI Threat Landscape Digest March-April 2026",
+      "url": "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-05-26T10:09:59+00:00",
+      "summary": "Executive Summary During the March\u2013April 2026 reporting period, AI use in offensive operations advanced from development and planning to real-time operational deployment. Multiple independent cases, involving individual criminal actors, mass exploitation platforms, ransomware groups, and state-spons"
+    },
+    {
       "title": "Detecting Tycoon 2FA AiTM attacks across Entra ID and Google Workspace",
       "url": "https://www.elastic.co/security-labs/tycoon-2fa-aitm-detection-engineering",
       "source": "Elastic Security",
       "category": "threat",
       "published": "2026-05-26T00:00:00+00:00",
       "summary": "Tycoon 2FA bypasses MFA on Entra ID and Google Workspace. We map telemetry fingerprints across both platforms, ship detection rules for both tiers, and contain incidents in under 10 seconds with Elastic Workflows."
+    },
+    {
+      "title": "25th May \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/25th-may-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-05-25T15:08:40+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 25th May, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES 7-Eleven, the global convenience store chain,\u00a0confirmed a breach after an unauthorized access to systems used for franchisee documents. ShinyHunters claim"
     },
     {
       "title": "Exploitation of KnowledgeDeliver via ViewState Deserialization Vulnerability",
@@ -2220,6 +2252,14 @@
       "category": "threat",
       "published": "2026-05-25T14:00:00+00:00",
       "summary": "While Russian-speaking threat actors have historically dominated the phishing-as-a-service (PhaaS) landscape, a rival ecosystem is rapidly growing within the Chinese-language underground. Google Threat Intelligence Group (GTIG) analyzed a dozen current PhaaS offerings in the Chinese underground, all"
+    },
+    {
+      "title": "Fast and Furious \u2013 Nimbus Manticore Operations During the Iranian Conflict",
+      "url": "https://research.checkpoint.com/2026/fast-and-furious-nimbus-manticore-operations-during-the-iranian-conflict/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-05-22T15:09:29+00:00",
+      "summary": "Key Findings Introduction During the recent geopolitical tensions in the Middle East, we&#160;reported&#160;on multiple Iran-nexus threat actors advancing Iran\u2019s strategic objectives through cyber operations. These activities included&#160;targeting internet-connected cameras, conducting&#160;destru"
     },
     {
       "title": "Tracking Iranian APT Screening Serpens\u2019 2026 Espionage Campaigns",
@@ -2302,6 +2342,14 @@
       "summary": "Prompt for Agentic AI Security empowers organizations with proactive governance, meaning security teams can deploy agents with confidence."
     },
     {
+      "title": "18th May \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/18th-may-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-05-18T14:58:29+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 18th May, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Vodafone, a major international telecom, has\u00a0sustained a source code leak claimed by the Lapsus$ extortion group. The company confirmed limited access to "
+    },
+    {
       "title": "SHub Reaper | macOS Stealer Spoofs Apple, Google, and Microsoft in a Single Attack Chain",
       "url": "https://www.sentinelone.com/blog/shub-reaper-macos-stealer-spoofs-apple-google-and-microsoft-in-a-single-attack-chain/",
       "source": "SentinelOne Blog",
@@ -2348,6 +2396,14 @@
       "category": "threat",
       "published": "2026-05-13T18:11:51+00:00",
       "summary": "SentinelOne\u2019s latest report examines the evolving 'secrets' threatscape, showing how modern cloud and AI infrastructures are being exploited."
+    },
+    {
+      "title": "Thus Spoke\u2026The Gentlemen",
+      "url": "https://research.checkpoint.com/2026/thus-spoke-the-gentlemen/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-05-13T13:01:01+00:00",
+      "summary": "Key Points Introduction The Gentlemen ransomware\u2011as\u2011a\u2011service (RaaS) operation is a relatively new group that emerged around mid\u20112025. Its operators advertise the service across multiple underground forums, promoting their ransomware platform and inviting penetration testers and other technically sk"
     },
     {
       "title": "Linux Kernel Vulnerability copy.fail - CVE-2026-31431",
@@ -2428,6 +2484,14 @@
       "category": "threat",
       "published": "2026-05-11T14:00:00+00:00",
       "summary": "Executive Summary\nSince our February 2026 report on AI-related threat activity, Google Threat Intelligence Group (GTIG) has continued to track a maturing transition from nascent AI-enabled operations to the industrial-scale application of generative models within adversarial workflows. This report, "
+    },
+    {
+      "title": "11th May \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/11th-may-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-05-11T12:49:37+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 11th May, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Instructure, the US education technology company behind the Canvas learning platform, has\u00a0confirmed a major data breach affecting its cloud-hosted environ"
     },
     {
       "title": "Copy Fail and DirtyFrag: Linux Page Cache Bugs in the Wild",
@@ -2616,6 +2680,30 @@
   ],
   "news": [
     {
+      "title": "AI Agent Uncovers 21 Zero-Days in FFmpeg; Chrome Patches Record 429 Bugs",
+      "url": "https://thehackernews.com/2026/06/ai-agent-uncovers-21-zero-days-in.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-06T07:28:30+00:00",
+      "summary": "Two things landed within days of each other this week. A security startup reported 21 previously unknown vulnerabilities in FFmpeg, the media library inside almost everything that touches video, all of them found by an autonomous AI agent.\n\nThe same week, Google shipped Chrome 149 with patches for 4"
+    },
+    {
+      "title": "Miasma Worm Hits 73 Microsoft GitHub Repositories in Major Supply Chain Attack",
+      "url": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-06T06:58:04+00:00",
+      "summary": "Microsoft's GitHub repositories have become the latest to fall victim to the ongoing Miasma self-replicating supply chain attack campaign.\n\nThe incident impacted 73 Microsoft repositories across four of its GitHub organizations, including Azure, Azure-Samples, Microsoft, and MicrosoftDocs, per OpenS"
+    },
+    {
+      "title": "Cisco Catalyst SD-WAN Manager CVE-2026-20245 Flaw Actively Exploited \u2013 No Patch Available",
+      "url": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-06T04:19:28+00:00",
+      "summary": "Cisco has warned that a high-severity security flaw impacting Catalyst SD-WAN Manager has come under active exploitation.\n\nThe vulnerability, tracked as CVE-2026-20245, carries a CVSS score of 7.8 out of a maximum of 10.0. It affects the following deployment types -\n\n\n  On-Prem Deployment\n  Cisco SD"
+    },
+    {
       "title": "Suspicious Polyfill login prompts pop up on Toshiba, Muji websites",
       "url": "https://www.bleepingcomputer.com/news/security/suspicious-polyfill-login-prompts-pop-up-on-toshiba-muji-websites/",
       "source": "Bleeping Computer",
@@ -2704,6 +2792,14 @@
       "summary": "Phishing, shadow AI, malicious extensions, and credential theft increasingly happen inside the browser. Keep Aware explains what the 2026 Verizon DBIR reveals about browser-layer security gaps and modern attacks. [...]"
     },
     {
+      "title": "EU unveils tech sovereignty package to cut reliance on US, Chinese suppliers",
+      "url": "https://therecord.media/eu-unveils-tech-sovereignty-package-cut-reliance-us-china",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-05T13:38:00+00:00",
+      "summary": "The package bundles two draft laws \u2014 a Chips Act 2.0 and a Cloud and AI Development Act (CADA) \u2014 alongside an Open Source Strategy and a roadmap for digitalizing the energy system."
+    },
+    {
       "title": "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA",
       "url": "https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/",
       "source": "SecurityWeek",
@@ -2736,6 +2832,14 @@
       "summary": "The ShinyHunters extortion group leaked roughly 234 GB of data allegedly stolen from the dental benefits administrator.\nThe post Hackers Leak DentaQuest Information Impacting 2.6 Million appeared first on SecurityWeek."
     },
     {
+      "title": "Infosecurity Europe: Practical Lessons From Lloyds' Agentic AI Security Playbook",
+      "url": "https://www.infosecurity-magazine.com/news/lloyds-agentic-ai-security-playbook/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T11:30:00+00:00",
+      "summary": "Lloyds Banking Group shared its approach for securing agentic AI workflows, with a mix of hands on experimentation and cross functional governance"
+    },
+    {
       "title": "Only 10% of SOCs Say They\u2019re Getting Excellent Value From AI. Here\u2019s What the Second Wave Has to Deliver",
       "url": "https://thehackernews.com/2026/06/only-10-of-socs-say-theyre-getting.html",
       "source": "The Hacker News",
@@ -2752,12 +2856,28 @@
       "summary": "Over 100 bugs are critical or high-severity, mainly use-after-free and insufficient validation of untrusted input flaws.\nThe post Chrome 149 Patches 429 Vulnerabilities appeared first on SecurityWeek."
     },
     {
+      "title": "Infosecurity Europe: OWASP Introduces Agentic AI Security Maturity Framework",
+      "url": "https://www.infosecurity-magazine.com/news/owasp-agentic-ai-security-maturity/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T10:45:00+00:00",
+      "summary": "The OWASP agentic AI security framework helps organizations assess governance maturity vs adoption and adjust governance as needed"
+    },
+    {
       "title": "Industry Reactions to New Trump AI Cybersecurity Executive Order: Feedback Friday",
       "url": "https://www.securityweek.com/industry-reactions-to-new-trump-ai-cybersecurity-executive-order-feedback-friday/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-06-05T10:24:56+00:00",
       "summary": "Experts commented on the EO\u2019s voluntary nature, the balance between innovation and security, and potential implementation gaps.\nThe post Industry Reactions to New Trump AI Cybersecurity Executive Order: Feedback Friday appeared first on SecurityWeek."
+    },
+    {
+      "title": "Infosecurity Europe: AI Coding Tools Need Built-In Security for Agentic Development Era",
+      "url": "https://www.infosecurity-magazine.com/news/ai-coding-tools-security-agentic/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T09:00:00+00:00",
+      "summary": "Ox Security field CTO, Boaz Barzel, makes the case for vibe security to tackle AI agent coding risks"
     },
     {
       "title": "Five Eyes: Chinese Spies Target Government, Military Staff With Fake Job Opportunities",
@@ -2776,20 +2896,20 @@
       "summary": "Threat actors are actively exploiting a critical security flaw in Everest Forms Pro, a WordPress plugin with about 4,000 active installations, to execute arbitrary code, leading to a complete site compromise.\n\nThe vulnerability in question is CVE-2026-3300 (CVSS score: 9.8), a remote code execution "
     },
     {
+      "title": "Infosecurity Europe: Reactive Security Is Failing Healthcare Organizations, Experts Warn",
+      "url": "https://www.infosecurity-magazine.com/news/reactive-security-failing/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-05T08:00:00+00:00",
+      "summary": "A perfect storm of legacy devices, hyper connectivity and human fatigue is bad news for the healthcare sector, warns Cyber Salus"
+    },
+    {
       "title": "Nightclub Giant RCI Says Data Breach Affects 40,000 Individuals",
       "url": "https://www.securityweek.com/nightclub-giant-rci-says-data-breach-affects-40000-individuals/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-06-05T07:24:08+00:00",
       "summary": "The company detected a network intrusion in March and an investigation showed that some files were stolen during the attack.\nThe post Nightclub Giant RCI Says Data Breach Affects 40,000 Individuals appeared first on SecurityWeek."
-    },
-    {
-      "title": "FIFA World Cup 2026 Scams Are Already Live: Fake Sites, Banking Malware, and Stolen Logins",
-      "url": "https://thehackernews.com/2026/06/fifa-world-cup-2026-scams-are-already.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-05T07:01:41+00:00",
-      "summary": "Security researchers and the FBI are warning that a wave of FIFA-themed fraud is already hitting World Cup 2026 fans, days before the June 11 kickoff.\n\nRecent reports describe thousands of lookalike FIFA domains, banking malware hidden inside pirate streaming apps, and at least one operation that co"
     },
     {
       "title": "The Evil MSI Background is Back&#x21;, (Fri, Jun 5th)",
@@ -2816,14 +2936,6 @@
       "summary": "The vulnerability is tracked as CVE-2026-20245 and it can allow arbitrary command execution as root, but no patch yet.\nThe post Cisco Warns of 7th SD-WAN Zero-Day Exploited in 2026 appeared first on SecurityWeek."
     },
     {
-      "title": "PCPJack Hijacks 230 AWS, Google Cloud, and Azure Servers for Covert SMTP Relay Network",
-      "url": "https://thehackernews.com/2026/06/pcpjack-hijacks-230-aws-google-cloud.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-05T05:34:19+00:00",
-      "summary": "The threat actor known as PCPJack has hijacked cloud servers associated with Amazon Web Services (AWS), Google Cloud, and Microsoft Azure to create a covert SMTP email relay network.\n\n\"Compromised business servers across the U.S., Europe, and Asia were quietly converted into SMTP proxies, verified f"
-    },
-    {
       "title": "Soap Box: Detection and response in the AI age",
       "url": "https://risky.biz/SOAPBOX108/",
       "source": "Risky Business",
@@ -2838,6 +2950,14 @@
       "category": "news",
       "published": "2026-06-05T02:00:02+00:00",
       "summary": ""
+    },
+    {
+      "title": "Apple removes Russia\u2019s state-backed messaging app Max from its store",
+      "url": "https://therecord.media/apple-removes-russian-app-max-from-app-store",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-04T23:00:00+00:00",
+      "summary": "Russian authorities have promoted Max as a domestic alternative to foreign messaging platforms such as Telegram and WhatsApp."
     },
     {
       "title": "Rust-Written IronWorm Hits NPM Supply Chain",
@@ -2872,6 +2992,30 @@
       "summary": "Gartner analysts issued a call to action to bolster defenses against several emerging critical threats, such as deepfakes and prompt injections."
     },
     {
+      "title": "Trump considers Palantir exec to lead CISA",
+      "url": "https://therecord.media/trump-considers-palantir-exec-to-lead-cisa",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-04T20:40:00+00:00",
+      "summary": "Shyam Sankar, the chief technology officer at Palantir Technologies, has emerged as a lead contender for the long vacant Cybersecurity and Infrastructure Security Agency (CISA) director role, according to the sources, who requested anonymity to discuss the administration\u2019s search."
+    },
+    {
+      "title": "FTC considers setting aside or modifying $150 million privacy penalty against X",
+      "url": "https://therecord.media/ftc-considers-modifying-150-million-twitter-privacy-fine",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-04T19:42:00+00:00",
+      "summary": "Twitter, renamed X in 2023, filed a petition saying that the settlement terms are unfair because the order was issued against a company that \u201cno longer exists,\u201d the workers responsible for the scheme no longer work for X and the firm has since established a \u201cworld class\u201d privacy and data protection "
+    },
+    {
+      "title": "Russia seeks to label two anti-Kremlin hacker groups as \u2018extremist\u2019",
+      "url": "https://therecord.media/russia-seeks-extremist-label-for-hacker-groups",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-04T18:04:00+00:00",
+      "summary": "The groups have previously claimed responsibility for cyberattacks targeting critical infrastructure and government institutions in Russia and Belarus."
+    },
+    {
       "title": "Meta Silently Added Face-Recognition Code for Its Smart Glasses to Millions of Phones",
       "url": "https://www.wired.com/story/meta-smart-glasses-face-recognition-nametag-connections/",
       "source": "Wired Security",
@@ -2880,12 +3024,12 @@
       "summary": "Code reviewed by WIRED uncovered an unreleased face-recognition system embedded in Meta\u2019s smart glasses platform. It\u2019s designed to identify people via biometric data stored on users\u2019 phones."
     },
     {
-      "title": "Cisco Patches CVE-2026-20230 in Unified CM as Exploit Code Goes Public",
-      "url": "https://thehackernews.com/2026/06/cisco-patches-cve-2026-20230-in-unified.html",
-      "source": "The Hacker News",
+      "title": "Everest Forms Pro Vulnerability Allows Remote Code Execution on WordPress Sites",
+      "url": "https://www.infosecurity-magazine.com/news/everest-forms-pro-rce-actively/",
+      "source": "Infosecurity Magazine",
       "category": "news",
-      "published": "2026-06-04T16:55:51+00:00",
-      "summary": "Cisco has patched a bug in Unified Communications Manager that lets an unauthenticated attacker on the network write files to the box and, from there, climb to root.\n\nIt is tracked as CVE-2026-20230, and proof-of-concept exploit code is already public. Cisco's PSIRT says it has not seen the flaw use"
+      "published": "2026-06-04T16:15:00+00:00",
+      "summary": "Critical Everest Forms Pro RCE flaw exploited to create rogue WordPress admin accounts"
     },
     {
       "title": "Bugcrowd Launches EU Data Residency Option For Evolving Data Sovereignty Needs",
@@ -2894,6 +3038,30 @@
       "category": "news",
       "published": "2026-06-04T14:22:20+00:00",
       "summary": "Organizations are growing serious about what nation\u2019s rules apply to their data. Experts point to geopolitical tensions as a main contributing factor."
+    },
+    {
+      "title": "Chinese-Speaking Actor TA4922 Widens Its Global Reach",
+      "url": "https://www.infosecurity-magazine.com/news/ta4922-global-expansion/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-04T14:00:00+00:00",
+      "summary": "Newly named Chinese-speaking actor TA4922 expands from East Asia into Europe and Africa"
+    },
+    {
+      "title": "Infosecurity Europe: AI Adoption Creates New Opportunities for Attackers to Distribute Malware, Microsoft Warns",
+      "url": "https://www.infosecurity-magazine.com/news/attackers-ai-adoption-malware/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-04T14:00:00+00:00",
+      "summary": "Microsoft Detection and Response Team (DART) details how it has uncovered malicious AI applications as cyber criminals manipulate organizations adopting AI tools"
+    },
+    {
+      "title": "Infosecurity Europe: Mythos Outperforms GPT5.5 on Google Chrome Vulnerability Exploits, Says New Benchmark",
+      "url": "https://www.infosecurity-magazine.com/news/mythos-gpt-chrome-exploits/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-04T13:00:00+00:00",
+      "summary": "A Bugcrowd researcher has unveiled ExploitBench, an independent benchmark of AI models for vulnerability exploitation"
     },
     {
       "title": "Software supply chain attacks: check your dependencies",
@@ -3194,9 +3362,9 @@
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 7,
-    "high": 21,
-    "exploited": 0,
+    "critical": 6,
+    "high": 17,
+    "exploited": 12,
     "kev_total": 50,
     "kev_7d": 5,
     "gh_advisories": 30,
