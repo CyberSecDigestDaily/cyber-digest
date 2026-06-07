@@ -1,53 +1,11 @@
 {
-  "generated": "2026-06-07T08:44:44.096729+00:00",
+  "generated": "2026-06-07T09:22:14.066775+00:00",
   "urgency": {
-    "level": "CRITICAL",
-    "colour": "#D94F4F",
-    "message": "<strong>2 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "level": "ELEVATED",
+    "colour": "#C4A820",
+    "message": "<strong>5 new CISA KEV addition(s)</strong> this week. Patch validation recommended."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11332",
-      "desc": "A flaw was found in ansible-core. The ansible-galaxy role install command processes dependency specifications from a role's meta/requirements.yml file. Due to improper neutralization of argument delimiters, a malicious role author can inject arbitrary git configuration flags through the src field. This allows arbitrary code execution on the machine of a user who installs the role via ansible-galaxy role install.",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-05T09:16:26.070",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11332"
-    },
-    {
-      "id": "CVE-2026-49777",
-      "desc": "Improper Validation of Specified Quantity in Input vulnerability in ShapedPlugin, LLC Product Slider Pro for WooCommerce allows Malicious Software Implanted.\n\nThis issue affects Product Slider Pro for WooCommerce: from n/a before 3.5.3.\n\nNo patched version is available - the vendor has applied a fix to an existing release without publishing a new version. While the patch provided by the vendor is valid, releasing it under the existing version number leaves users unable to reliably determine whether they are running a patched or vulnerable installation. As a result, we treat this as an unpatched version.",
-      "cvss": 10.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-05T09:16:26.220",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49777"
-    },
-    {
-      "id": "CVE-2026-6274",
-      "desc": "Improper Authentication, Missing authentication for critical function, Weak Authentication vulnerability in DTS Electronics Industry and Trade Ltd. Co. Redline WR3200 allows Accessing Functionality Not Properly Constrained by ACLs.\n\nThis issue affects Redline WR3200: from 7.1.3 before 7.1.8.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-05T09:16:26.373",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6274"
-    },
     {
       "id": "CVE-2026-11347",
       "desc": "The linqi application contains hardcoded cryptographic keys. Additionally, the application uses a weak algorithm with a limited ASCII charset to dynamically generate Initialization Vectors (IVs) for AES/CBC encryption, making known-plaintext attacks feasible. An attacker with local access can leverage these vulnerabilities to decrypt sensitive obfuscated strings, including ConnectionString values containing database credentials from appsettings.json.",
@@ -422,10 +380,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00012,
-        "percentile": 0.01795
-      },
+      "epss": null,
       "published": "2026-06-05T12:16:39.240",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50259"
     },
@@ -467,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00012,
+        "percentile": 0.01911
+      },
       "published": "2026-06-05T12:16:39.770",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50262"
     },
@@ -705,12 +663,54 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00033,
-        "percentile": 0.10262
-      },
+      "epss": null,
       "published": "2026-06-05T15:16:51.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11334"
+    },
+    {
+      "id": "CVE-2026-11335",
+      "desc": "A flaw has been found in tittuvarghese CollegeManagementSystem 3e476335cfbfb9a049e09f474c7ec885f69a9df3/a38852979f7e27ae67b610dce5979500ef8ebe01. This impacts the function session_start of the file /login-form.php. Executing a manipulation of the argument UserAuthData can lead to session fixiation. The attack can be launched remotely. The exploit has been published and may be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The project was informed of the problem early through an issue report but has not responded yet.",
+      "cvss": 6.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-05T15:16:51.540",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11335"
+    },
+    {
+      "id": "CVE-2026-37737",
+      "desc": "sanic-cors version 2.2.0 and prior contains an improper regular expression in the try_match() function in sanic_cors/core.py that uses re.match without end-anchoring. This allows an attacker to bypass CORS origin allowlists by registering a domain that begins with a trusted origin string, to gain unauthorized access to cross-origin requests for authenticated resources.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-05T15:16:51.720",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-37737"
+    },
+    {
+      "id": "CVE-2026-38579",
+      "desc": "Multiple reflected Cross-Site Scripting (XSS) vulnerabilities in damasac thaipalliative_lte through version 3.0 allow remote attackers to inject arbitrary web script or HTML via the idFormMain parameter (line 24), the id parameter (lines 25, 75), and the ptid_key parameter (lines 26, 42) in /substudy/ezform.php. User input is echoed into HTML attributes and JavaScript contexts without encoding.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00077,
+        "percentile": 0.23178
+      },
+      "published": "2026-06-05T15:16:52.850",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-38579"
     }
   ],
   "kev": [
@@ -3362,8 +3362,8 @@
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 2,
-    "high": 16,
+    "critical": 0,
+    "high": 15,
     "exploited": 0,
     "kev_total": 50,
     "kev_7d": 5,
