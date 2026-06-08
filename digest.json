@@ -1,39 +1,11 @@
 {
-  "generated": "2026-06-08T13:13:43.018777+00:00",
+  "generated": "2026-06-08T15:27:30.438764+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>3 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11413",
-      "desc": "A security vulnerability has been detected in JingDong JD Cloud Box AX6600 4.5.3.r4546. The impacted element is the function set_macfilter of the file /sbin/jdcweb_rpc. The manipulation leads to stack-based buffer overflow. It is possible to initiate the attack remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-06T14:16:20.060",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11413"
-    },
-    {
-      "id": "CVE-2026-11434",
-      "desc": "A weakness has been identified in FluentCMS 0.0.5. The impacted element is an unknown function of the file /admin/blocks of the component Blocks Plugin. This manipulation causes cross site scripting. The attack may be initiated remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "cvss": 2.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:N/I:L/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-06T15:16:27.713",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11434"
-    },
     {
       "id": "CVE-2026-11435",
       "desc": "A security vulnerability has been detected in Jinher OA 1.0. This affects an unknown function of the file nextselectplan.aspx. Such manipulation of the argument httpOID leads to sql injection. The attack may be launched remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
@@ -450,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00051,
+        "percentile": 0.16225
+      },
       "published": "2026-06-08T00:16:42.230",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11467"
     },
@@ -705,6 +680,37 @@
       "epss": null,
       "published": "2026-06-08T02:16:23.747",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11476"
+    },
+    {
+      "id": "CVE-2026-11477",
+      "desc": "A vulnerability was detected in hs-web hsweb-framework up to 5.0.1. This affects the function OAuth2Client of the file hsweb-authorization/hsweb-authorization-oauth2/src/main/java/org/hswebframework/web/oauth2/server/OAuth2Client.java of the component OAuth2 Client. The manipulation results in open redirect. The attack can be executed remotely. The exploit is now public and may be used. The patch is identified as c2882679a9125cea52678151af5ae213cbd52579. Applying a patch is advised to resolve this issue.",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T02:16:23.903",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11477"
+    },
+    {
+      "id": "CVE-2026-11478",
+      "desc": "A flaw has been found in kokke tiny-regex-c up to f2632c6d9ed25272987471cdb8b70395c2460bdb. This vulnerability affects the function matchstar of the file re.c of the component Pattern Handler. This manipulation causes inefficient regular expression complexity. The attack is restricted to local execution. The exploit has been published and may be used. This product adopts a rolling release strategy to maintain continuous delivery. Therefore, version details for affected or updated releases cannot be specified. The project was informed of the problem early through an issue report but has not responded yet.",
+      "cvss": 3.3,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00013,
+        "percentile": 0.02218
+      },
+      "published": "2026-06-08T03:16:19.997",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11478"
     }
   ],
   "kev": [
@@ -1840,6 +1846,14 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "8th June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/8th-june-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-08T14:47:59+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES DentaQuest, a U.S. dental benefits administrator owned by Sun Life, has\u00a0suffered a data breach after threat group ShinyHunters leaked exfiltrated data. An"
+    },
+    {
       "title": "CVE-2026-8643 pip can extract console_scripts and gui_scripts outside installation directory",
       "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-8643",
       "source": "Microsoft Security",
@@ -1918,14 +1932,6 @@
       "category": "threat",
       "published": "2026-06-05T14:00:00+00:00",
       "summary": "Written by: Chad Reams, Tufail Ahmed, Keith Knapp, Ashley Frazer, Tyler McLellan\n\nIntroduction\u00a0\nFrom January through May 2026, Mandiant identified a financially motivated data theft extortion campaign executed by the threat cluster UNC3753 (also tracked as \"Luna Moth,\" \u201cChatty Spider,\u201d and \"Silent R"
-    },
-    {
-      "title": "The Good, the Bad and the Ugly in Cybersecurity \u2013 Week 23",
-      "url": "https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-23-7/",
-      "source": "SentinelOne Blog",
-      "category": "threat",
-      "published": "2026-06-05T13:00:17+00:00",
-      "summary": "US Treasury sanctions Iran's largest crypto exchange, PRC-linked TA4922 expands phishing to Europe and Africa, attackers exploit Palo Alto VPN bypass."
     },
     {
       "title": "Advancing Cybersecurity in the Age of Frontier AI:\u00a0Qualys Steps into Project Glasswing",
@@ -2480,14 +2486,6 @@
       "summary": "Executive Summary\nSince our February 2026 report on AI-related threat activity, Google Threat Intelligence Group (GTIG) has continued to track a maturing transition from nascent AI-enabled operations to the industrial-scale application of generative models within adversarial workflows. This report, "
     },
     {
-      "title": "11th May \u2013 Threat Intelligence Report",
-      "url": "https://research.checkpoint.com/2026/11th-may-threat-intelligence-report/",
-      "source": "Checkpoint Research",
-      "category": "threat",
-      "published": "2026-05-11T12:49:37+00:00",
-      "summary": "For the latest discoveries in cyber research for the week of 11th May, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Instructure, the US education technology company behind the Canvas learning platform, has\u00a0confirmed a major data breach affecting its cloud-hosted environ"
-    },
-    {
       "title": "Copy Fail and DirtyFrag: Linux Page Cache Bugs in the Wild",
       "url": "https://www.elastic.co/security-labs/copy-fail-dirtyfrag-linux-page-bugs-in-the-wild",
       "source": "Elastic Security",
@@ -2534,6 +2532,14 @@
       "category": "threat",
       "published": "2026-04-22T16:44:53+00:00",
       "summary": "Learn how SentinelOne has stopped three recent zero-day supply chain attacks with AI-driven defense built for machine-speed threats."
+    },
+    {
+      "title": "Automation at Machine Speed: Rethinking Execution in Modern Cybersecurity",
+      "url": "https://www.sentinelone.com/blog/automation-at-machine-speed-rethinking-execution-in-modern-cybersecurity/",
+      "source": "SentinelOne Blog",
+      "category": "threat",
+      "published": "2026-04-20T18:43:49+00:00",
+      "summary": "Machine-speed threats demand machine-speed defense\u2014see how AI and automation cut dwell time and outpace attackers."
     },
     {
       "title": "Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever",
@@ -2674,20 +2680,68 @@
   ],
   "news": [
     {
-      "title": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
-      "url": "https://www.bleepingcomputer.com/news/security/check-point-links-vpn-zero-day-attacks-to-qilin-ransomware-gang/",
+      "title": "North Korean Hackers Use Fake Coding Tasks to Steal Crypto",
+      "url": "https://www.infosecurity-magazine.com/news/north-korean-hackers-developers/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-08T15:00:00+00:00",
+      "summary": "North Korean actor UNK_DeadDrop targeted developers with fake coding tasks to steal crypto"
+    },
+    {
+      "title": "Critical Check Point VPN Flaw Exploited to Bypass Passwords in IKEv1 Setups",
+      "url": "https://thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-08T14:17:39+00:00",
+      "summary": "Check Point has warned of active exploitation of a critical vulnerability impacting Remote Access VPN and Mobile Access deployments that are configured to use the deprecated IKEv1 key exchange protocol.\n\nThe vulnerability, tracked as CVE-2026-50751 (CVSS score: 9.3), is a case of a logic flow weakne"
+    },
+    {
+      "title": "Reducing security operations complexity with Wazuh Cloud",
+      "url": "https://www.bleepingcomputer.com/news/security/reducing-security-operations-complexity-with-wazuh-cloud/",
       "source": "Bleeping Computer",
       "category": "news",
-      "published": "2026-06-08T13:05:16+00:00",
-      "summary": "Israeli cybersecurity company Check Point has released security updates to patch a critical flaw affecting Remote Access VPN and Mobile Access deployments, which was exploited in zero-day attacks. [...]"
+      "published": "2026-06-08T14:01:11+00:00",
+      "summary": "Security teams are increasingly overwhelmed by alert fatigue, infrastructure maintenance, and complex hybrid environments. This article explores how Wazuh Cloud helps simplify SIEM/XDR operations through managed infrastructure, automated scaling, and AI-driven security analysis. [...]"
+    },
+    {
+      "title": "OpenAI Unveils ChatGPT Account Security Controls",
+      "url": "https://www.infosecurity-magazine.com/news/chatgpt-lockdown-mode-active/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-08T14:00:00+00:00",
+      "summary": "OpenAI brings Lockdown Mode and Active Sessions to ChatGPT to curb prompt injection data theft"
+    },
+    {
+      "title": "WhatsApp Catches Spyware Firm NSO Defying No-Hacking Court Order",
+      "url": "https://www.securityweek.com/whatsapp-catches-spyware-firm-nso-defying-no-hacking-court-order/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-08T13:23:03+00:00",
+      "summary": "The Meta-owned communications app is filing a federal court contempt order against NSO.\nThe post WhatsApp Catches Spyware Firm NSO Defying No-Hacking Court Order appeared first on SecurityWeek."
     },
     {
       "title": "AI Phishing Is Crushing SOCs with Alert Volume: How to Reduce Tier 1 Overload",
       "url": "https://thehackernews.com/2026/06/ai-phishing-is-crushing-socs-with-alert.html",
       "source": "The Hacker News",
       "category": "news",
-      "published": "2026-06-08T13:00:00+00:00",
+      "published": "2026-06-08T13:19:13+00:00",
       "summary": "Phishing has always been a numbers game. AI has turned it into a volume machine.\n\nAttackers can now create convincing emails, fake login pages, and tailored lures in minutes. Every polished message adds another case for Tier 1 to review, another link to inspect, and another alert that cannot be dism"
+    },
+    {
+      "title": "\u26a1 Weekly Recap: Instagram Account Hacks, Android Zero-Day, GitHub Worm and More",
+      "url": "https://thehackernews.com/2026/06/weekly-recap-instagram-account-hacks.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-08T13:18:57+00:00",
+      "summary": "Monday again. The weekend was meant to be quiet. It wasn't. Last week had poisoned packages, a broken AI helper, and a worm tearing through repos. The ugly part: basic tricks still worked.\n\nA chatbot got fooled. A bot token got leaked inside the malware. The same old mistakes showed up again. And wh"
+    },
+    {
+      "title": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
+      "url": "https://www.bleepingcomputer.com/news/security/check-point-links-vpn-zero-day-attacks-to-qilin-ransomware-gang/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-08T13:05:16+00:00",
+      "summary": "Israeli cybersecurity company Check Point has released security updates to patch a critical flaw affecting Remote Access VPN and Mobile Access deployments, which was exploited in zero-day attacks. [...]"
     },
     {
       "title": "Cybersecurity M&A Roundup: 26 Deals Announced in May 2026",
@@ -2810,14 +2864,6 @@
       "summary": "Cybersecurity researchers have disclosed details of a financially motivated data theft extortion campaign that has targeted dozens of organizations across professional, legal, and financial services in the U.S. between January and May 2026.\n\nThe activity has been attributed by Google Mandiant and Go"
     },
     {
-      "title": "Meta Says 20,000 Instagram Accounts Hacked via AI Tool Abuse",
-      "url": "https://www.securityweek.com/meta-says-20000-instagram-accounts-hacked-via-ai-tool-abuse/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-08T06:41:47+00:00",
-      "summary": "The social media giant has informed authorities about the impact of the recent attack involving an account recovery support tool.\nThe post Meta Says 20,000 Instagram Accounts Hacked via AI Tool Abuse appeared first on SecurityWeek."
-    },
-    {
       "title": "VS Code Adds 2-Hour Extension Auto-Update Delay to Limit Supply Chain Attacks",
       "url": "https://thehackernews.com/2026/06/vs-code-adds-2-hour-extension-auto.html",
       "source": "The Hacker News",
@@ -2898,30 +2944,6 @@
       "summary": "Plus: Hackers use Meta\u2019s AI bots to hack Instagram accounts, Anthropic helps NSA hackers, a decades-long GPS satellite mystery may have been solved, and more."
     },
     {
-      "title": "Free Apps Are Quietly Turning Smart TVs Into Web-Scraping Proxies for AI",
-      "url": "https://thehackernews.com/2026/06/free-apps-are-quietly-turning-smart-tvs.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-06T08:29:05+00:00",
-      "summary": "A researcher has reverse-engineered the iOS SDK that Bright Data embeds in consumer apps and documented how it turns devices, including always-on smart TVs, into exit nodes that relay web-scraping traffic for a data business Bright Data markets heavily to the AI industry.\n\nThe company, the successor"
-    },
-    {
-      "title": "CISA Adds Actively Exploited SolarWinds Serv-U DoS Flaw to KEV Catalog",
-      "url": "https://thehackernews.com/2026/06/cisa-adds-actively-exploited-solarwinds.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-06T08:14:31+00:00",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added a high-severity security flaw impacting SolarWinds Serv-U  multi-protocol file server software to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2"
-    },
-    {
-      "title": "Suspicious Polyfill login prompts pop up on Toshiba, Muji websites",
-      "url": "https://www.bleepingcomputer.com/news/security/suspicious-polyfill-login-prompts-pop-up-on-toshiba-muji-websites/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-05T21:54:42+00:00",
-      "summary": "Tech giant Toshiba and mega-retailer Muji warned visitors that suspicious sign-in screens popping up on their websites could collect credentials. [...]"
-    },
-    {
       "title": "Exposed Fuel Tank Gauges Under Attack in the US",
       "url": "https://www.darkreading.com/cyberattacks-data-breaches/exposed-fuel-tank-gauges-attack-us",
       "source": "Dark Reading",
@@ -2936,14 +2958,6 @@
       "category": "news",
       "published": "2026-06-05T14:40:11+00:00",
       "summary": "AI worms, or &quot;viruses with wings and brains,&quot; adapt to new environments, seek out vulnerabilities, and will likely strike within a year, researchers say."
-    },
-    {
-      "title": "EU unveils tech sovereignty package to cut reliance on US, Chinese suppliers",
-      "url": "https://therecord.media/eu-unveils-tech-sovereignty-package-cut-reliance-us-china",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-05T13:38:00+00:00",
-      "summary": "The package bundles two draft laws \u2014 a Chips Act 2.0 and a Cloud and AI Development Act (CADA) \u2014 alongside an Open Source Strategy and a roadmap for digitalizing the energy system."
     },
     {
       "title": "Trump AI Order Seeks Voluntary Frontier Model Testing",
@@ -2970,22 +2984,6 @@
       "summary": "The OWASP agentic AI security framework helps organizations assess governance maturity vs adoption and adjust governance as needed"
     },
     {
-      "title": "Infosecurity Europe: AI Coding Tools Need Built-In Security for Agentic Development Era",
-      "url": "https://www.infosecurity-magazine.com/news/ai-coding-tools-security-agentic/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-05T09:00:00+00:00",
-      "summary": "Ox Security field CTO, Boaz Barzel, makes the case for vibe security to tackle AI agent coding risks"
-    },
-    {
-      "title": "Infosecurity Europe: Reactive Security Is Failing Healthcare Organizations, Experts Warn",
-      "url": "https://www.infosecurity-magazine.com/news/reactive-security-failing/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-05T08:00:00+00:00",
-      "summary": "A perfect storm of legacy devices, hyper connectivity and human fatigue is bad news for the healthcare sector, warns Cyber Salus"
-    },
-    {
       "title": "The Evil MSI Background is Back&#x21;, (Fri, Jun 5th)",
       "url": "https://isc.sans.edu/diary/rss/33054",
       "source": "SANS ISC Diary",
@@ -3010,14 +3008,6 @@
       "summary": ""
     },
     {
-      "title": "Apple removes Russia\u2019s state-backed messaging app Max from its store",
-      "url": "https://therecord.media/apple-removes-russian-app-max-from-app-store",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-04T23:00:00+00:00",
-      "summary": "Russian authorities have promoted Max as a domestic alternative to foreign messaging platforms such as Telegram and WhatsApp."
-    },
-    {
       "title": "Rust-Written IronWorm Hits NPM Supply Chain",
       "url": "https://www.darkreading.com/cyberattacks-data-breaches/rust-written-ironworm-npm-supply-chain",
       "source": "Dark Reading",
@@ -3040,30 +3030,6 @@
       "category": "news",
       "published": "2026-06-04T21:08:16+00:00",
       "summary": "Gartner analysts issued a call to action to bolster defenses against several emerging critical threats, such as deepfakes and prompt injections."
-    },
-    {
-      "title": "Trump considers Palantir exec to lead CISA",
-      "url": "https://therecord.media/trump-considers-palantir-exec-to-lead-cisa",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-04T20:40:00+00:00",
-      "summary": "Shyam Sankar, the chief technology officer at Palantir Technologies, has emerged as a lead contender for the long vacant Cybersecurity and Infrastructure Security Agency (CISA) director role, according to the sources, who requested anonymity to discuss the administration\u2019s search."
-    },
-    {
-      "title": "FTC considers setting aside or modifying $150 million privacy penalty against X",
-      "url": "https://therecord.media/ftc-considers-modifying-150-million-twitter-privacy-fine",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-04T19:42:00+00:00",
-      "summary": "Twitter, renamed X in 2023, filed a petition saying that the settlement terms are unfair because the order was issued against a company that \u201cno longer exists,\u201d the workers responsible for the scheme no longer work for X and the firm has since established a \u201cworld class\u201d privacy and data protection "
-    },
-    {
-      "title": "Russia seeks to label two anti-Kremlin hacker groups as \u2018extremist\u2019",
-      "url": "https://therecord.media/russia-seeks-extremist-label-for-hacker-groups",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-04T18:04:00+00:00",
-      "summary": "The groups have previously claimed responsibility for cyberattacks targeting critical infrastructure and government institutions in Russia and Belarus."
     },
     {
       "title": "Meta Silently Added Face-Recognition Code for Its Smart Glasses to Millions of Phones",
@@ -3338,31 +3304,31 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
+      "title": "Defending against China-nexus covert networks of compromised devices",
+      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "source": "NCSC UK",
+      "category": "news",
+      "published": "2026-04-23T12:00:00+00:00",
+      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+    },
+    {
       "title": "Passkeys are more secure than traditional ways to log in",
       "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
       "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
-    },
-    {
-      "title": "NCSC: Leave passwords in the past - passkeys are the future",
-      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
-      "source": "NCSC UK",
-      "category": "news",
-      "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     }
   ],
   "stats": {
     "total_cves": 50,
     "critical": 3,
-    "high": 18,
+    "high": 17,
     "exploited": 9,
     "kev_total": 50,
     "kev_7d": 5,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
-    "epss_enriched": 0
+    "epss_enriched": 2
   }
 }
