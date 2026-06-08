@@ -1,39 +1,11 @@
 {
-  "generated": "2026-06-08T10:17:02.006396+00:00",
+  "generated": "2026-06-08T11:06:11.949189+00:00",
   "urgency": {
-    "level": "ELEVATED",
-    "colour": "#C4A820",
-    "message": "<strong>5 new CISA KEV addition(s)</strong> this week. Patch validation recommended."
+    "level": "CRITICAL",
+    "colour": "#D94F4F",
+    "message": "<strong>2 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-10725",
-      "desc": "Protocol::HTTP2 versions through 1.12 for Perl is vulnerable to a HTTP/2 Bomb.\n\nProtocol::HTTP2's inbound HPACK path has no header-list size limit, so a small HTTP/2 request can expand into large server memory (the \"HTTP/2 bomb\").\n\nThe headers_decode method materialises a full key+value copy per indexed reference with no running size check, and the stream_header_block_add method appends (since version 1.12) every CONTINUATION frame to the per-stream buffer unbounded.\n\nMAX_HEADER_LIST_SIZE (default 65536) is advertised in SETTINGS but never consulted on decode.  It is absent from the decoder and from the :limits export tag.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-06T10:16:25.790",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10725"
-    },
-    {
-      "id": "CVE-2026-11406",
-      "desc": "A vulnerability was determined in GL.iNet MT3000 up to 4.4.5. This vulnerability affects unknown code of the file ovpnclient.sh of the component OpenVPN Client Import Workflow. This manipulation causes command injection. Remote exploitation of the attack is possible. The exploit has been publicly disclosed and may be utilized. Upgrading to version 4.9.0_beta3-1012-0513-1778656146 is able to resolve this issue. You should upgrade the affected component. The vendor confirms: \"This issue has been addressed by implementing malicious checks on OpenVPN configuration files to prevent command injection attacks carried through malicious configuration files.\"",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-06T10:16:27.017",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11406"
-    },
     {
       "id": "CVE-2026-11408",
       "desc": "A vulnerability was identified in vertex-app vertex up to 2026.02.12. This issue affects some unknown processing of the file app/model/LogMod.js of the component Log Viewer Endpoint. Such manipulation of the argument req.query leads to os command injection. The attack can be executed remotely. The exploit is publicly available and might be used. The name of the patch is 805d82e7100d49b79b3beb1b9420e8e458987198. It is best practice to apply a patch to resolve this issue.",
@@ -705,6 +677,34 @@
       "epss": null,
       "published": "2026-06-08T02:16:22.950",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-54351"
+    },
+    {
+      "id": "CVE-2023-54352",
+      "desc": "WordPress Seotheme contains a remote code execution vulnerability that allows unauthenticated attackers to execute arbitrary PHP code by uploading malicious files to the theme directory. Attackers can access the uploaded PHP shell at /wp-content/themes/seotheme/mar.php to execute system commands and upload additional files for persistent access.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T02:16:23.107",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-54352"
+    },
+    {
+      "id": "CVE-2024-58348",
+      "desc": "WordPress Background Image Cropper version 1.2 contains a remote code execution vulnerability that allows unauthenticated attackers to upload arbitrary files by accessing the ups.php endpoint. Attackers can upload PHP files through the file upload form in the plugin directory to execute arbitrary code on the server.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "WordPress",
+      "product": "",
+      "exploited": true,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T02:16:23.267",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-58348"
     }
   ],
   "kev": [
@@ -2674,6 +2674,30 @@
   ],
   "news": [
     {
+      "title": "Silent Ransom Group Uses DNS Fast Flux in Attacks",
+      "url": "https://www.securityweek.com/silent-ransom-group-uses-dns-fast-flux-in-attacks/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-08T10:31:39+00:00",
+      "summary": "Focusing on hacking law firms in the US, the ransomware group relies on fast flux to hide its C&#038;C infrastructure.\nThe post Silent Ransom Group Uses DNS Fast Flux in Attacks appeared first on SecurityWeek."
+    },
+    {
+      "title": "Infosecurity Europe: Prompt Injection Remains Unsolved, OWASP Researcher Warns",
+      "url": "https://www.infosecurity-magazine.com/news/infosec-europe-prompt-injection/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-08T10:30:00+00:00",
+      "summary": "At Infosecurity Europe 2026, OWASP\u2019s Ariel Fogel warned that prompt injection remains an \u201cunresolved problem\u201d within generative AI architecture"
+    },
+    {
+      "title": "VerdantBamboo Deploys BSD Variant of BRICKSTORM on Linux Appliances",
+      "url": "https://thehackernews.com/2026/06/verdantbamboo-deploys-bsd-variant-of.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-08T10:27:32+00:00",
+      "summary": "A China-nexus cyber espionage group has been observed deploying a BSD variant of a known backdoor called BRICKSTORM, as well as two other malware families codenamed PLENET (aka GRIMBOLT) and AGENTPSD to target Linux systems.\n\nThe activity has been attributed by Volexity to a threat cluster it tracks"
+    },
+    {
       "title": "Two-Thirds of Open Source Community Unaware of Cyber Resilience Act",
       "url": "https://www.infosecurity-magazine.com/news/open-source-unaware-cyber/",
       "source": "Infosecurity Magazine",
@@ -2858,14 +2882,6 @@
       "summary": "Microsoft's GitHub repositories have become the latest to fall victim to the ongoing Miasma self-replicating supply chain attack campaign.\n\nThe incident impacted 73 Microsoft repositories across four of its GitHub organizations, including Azure, Azure-Samples, Microsoft, and MicrosoftDocs, per OpenS"
     },
     {
-      "title": "Cisco Catalyst SD-WAN Manager CVE-2026-20245 Flaw Actively Exploited \u2013 No Patch Available",
-      "url": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-06T04:19:28+00:00",
-      "summary": "Cisco has warned that a high-severity security flaw impacting Catalyst SD-WAN Manager has come under active exploitation.\n\nThe vulnerability, tracked as CVE-2026-20245, carries a CVSS score of 7.8 out of a maximum of 10.0. It affects the following deployment types -\n\n\n  On-Prem Deployment\n  Cisco SD"
-    },
-    {
       "title": "Suspicious Polyfill login prompts pop up on Toshiba, Muji websites",
       "url": "https://www.bleepingcomputer.com/news/security/suspicious-polyfill-login-prompts-pop-up-on-toshiba-muji-websites/",
       "source": "Bleeping Computer",
@@ -2880,6 +2896,14 @@
       "category": "news",
       "published": "2026-06-05T19:15:30+00:00",
       "summary": "CISA warned today that hackers are now actively exploiting a recently patched high-severity SolarWinds Serv-U flaw to crash servers. [...]"
+    },
+    {
+      "title": "Exposed Fuel Tank Gauges Under Attack in the US",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/exposed-fuel-tank-gauges-attack-us",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-05T19:04:36+00:00",
+      "summary": "Threat actors are taking advantage of Internet-exposed tank gauges by breaching gas stations, opening the door to disruption."
     },
     {
       "title": "Chinese APT deploys new malware to keep access to hacked networks",
@@ -2898,6 +2922,14 @@
       "summary": "CVE Lite CLI is a free, open-source command line tool that scans your projects in seconds and tells you exactly which included packages contain a vulnerability.\nThe post OWASP Incubator Project Helps Developers Find and Fix Vulnerable Dependencies in Seconds appeared first on SecurityWeek."
     },
     {
+      "title": "Adaptive, Agentic AI Worms Loom as Next Enterprise Threat",
+      "url": "https://www.darkreading.com/cyber-risk/adaptive-agentic-ai-worms-enterprise-cyber-threat",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-05T14:40:11+00:00",
+      "summary": "AI worms, or &quot;viruses with wings and brains,&quot; adapt to new environments, seek out vulnerabilities, and will likely strike within a year, researchers say."
+    },
+    {
       "title": "EU unveils tech sovereignty package to cut reliance on US, Chinese suppliers",
       "url": "https://therecord.media/eu-unveils-tech-sovereignty-package-cut-reliance-us-china",
       "source": "The Record",
@@ -2914,12 +2946,12 @@
       "summary": "Other noteworthy stories that might have slipped under the radar: Ultrahuman data leak, The Gentlemen ransomware analysis, Hola Browser bundles miner.\nThe post In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA appeared first on SecurityWeek."
     },
     {
-      "title": "Hackers Leak DentaQuest Information Impacting 2.6 Million",
-      "url": "https://www.securityweek.com/hackers-leak-dentaquest-information-impacting-2-6-million/",
-      "source": "SecurityWeek",
+      "title": "Trump AI Order Seeks Voluntary Frontier Model Testing",
+      "url": "https://www.darkreading.com/cybersecurity-operations/trump-ai-order-seeks-voluntary-frontier-model-testing",
+      "source": "Dark Reading",
       "category": "news",
-      "published": "2026-06-05T11:33:27+00:00",
-      "summary": "The ShinyHunters extortion group leaked roughly 234 GB of data allegedly stolen from the dental benefits administrator.\nThe post Hackers Leak DentaQuest Information Impacting 2.6 Million appeared first on SecurityWeek."
+      "published": "2026-06-05T13:00:00+00:00",
+      "summary": "The White House's executive order establishes voluntary framework for early government access to frontier models while investing in federal security."
     },
     {
       "title": "Infosecurity Europe: Practical Lessons From Lloyds' Agentic AI Security Playbook",
@@ -2986,6 +3018,30 @@
       "summary": "Russian authorities have promoted Max as a domestic alternative to foreign messaging platforms such as Telegram and WhatsApp."
     },
     {
+      "title": "Rust-Written IronWorm Hits NPM Supply Chain",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/rust-written-ironworm-npm-supply-chain",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-04T21:47:06+00:00",
+      "summary": "Like Shai-Hulud, the campaign targets developers to steal credentials and reuses them to propagate across the software supply channel."
+    },
+    {
+      "title": "China's TA4922 Expands Cybercrime Attacks Globally",
+      "url": "https://www.darkreading.com/threat-intelligence/china-ta4922-cybercrime-attacks-globally",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-04T21:23:59+00:00",
+      "summary": "One of the world's most diverse, least-focused cybercrime groups is enlarging its footprint beyond East Asia."
+    },
+    {
+      "title": "4 Critical Threats Where Attackers Have the Advantage",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/4-critical-threats-attackers-advantage",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-04T21:08:16+00:00",
+      "summary": "Gartner analysts issued a call to action to bolster defenses against several emerging critical threats, such as deepfakes and prompt injections."
+    },
+    {
       "title": "Trump considers Palantir exec to lead CISA",
       "url": "https://therecord.media/trump-considers-palantir-exec-to-lead-cisa",
       "source": "The Record",
@@ -3018,12 +3074,12 @@
       "summary": "Code reviewed by WIRED uncovered an unreleased face-recognition system embedded in Meta\u2019s smart glasses platform. It\u2019s designed to identify people via biometric data stored on users\u2019 phones."
     },
     {
-      "title": "Everest Forms Pro Vulnerability Allows Remote Code Execution on WordPress Sites",
-      "url": "https://www.infosecurity-magazine.com/news/everest-forms-pro-rce-actively/",
-      "source": "Infosecurity Magazine",
+      "title": "Bugcrowd Launches EU Data Residency Option For Evolving Data Sovereignty Needs",
+      "url": "https://www.darkreading.com/cyber-risk/bugcrowd-launches-eu-data-residency-option-for-evolving-data-sovereignty-needs",
+      "source": "Dark Reading",
       "category": "news",
-      "published": "2026-06-04T16:15:00+00:00",
-      "summary": "Critical Everest Forms Pro RCE flaw exploited to create rogue WordPress admin accounts"
+      "published": "2026-06-04T14:22:20+00:00",
+      "summary": "Organizations are growing serious about what nation\u2019s rules apply to their data. Experts point to geopolitical tensions as a main contributing factor."
     },
     {
       "title": "Software supply chain attacks: check your dependencies",
@@ -3040,6 +3096,14 @@
       "category": "news",
       "published": "2026-06-04T06:10:44+00:00",
       "summary": "I&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;ve been using the GnuWin32 CoreUtils for Windows for many years now (it gives you many &#x2a;nix core commands on Windows).&#xd;"
+    },
+    {
+      "title": "Pakistan Spies on Afghan Finance Ministry With Xeno RAT",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/pakistan-spies-afghan-finance-ministry-xeno-rat",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-04T04:01:00+00:00",
+      "summary": "Despite broadly connected digital infrastructure, standard fare TTPs are enough to cause trouble for Afghanistan's porous cybersecurity."
     },
     {
       "title": "ISC Stormcast For Thursday, June 4th, 2026 https://isc.sans.edu/podcastdetail/9958, (Thu, Jun 4th)",
@@ -3292,9 +3356,9 @@
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 0,
+    "critical": 2,
     "high": 18,
-    "exploited": 6,
+    "exploited": 8,
     "kev_total": 50,
     "kev_7d": 5,
     "gh_advisories": 30,
