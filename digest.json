@@ -1,109 +1,11 @@
 {
-  "generated": "2026-06-09T02:03:40.686041+00:00",
+  "generated": "2026-06-09T08:59:59.129143+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>3 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11447",
-      "desc": "A security flaw has been discovered in GL.iNet GL-MT3000 up to 4.4.5. Impacted is the function iwinfo_backend of the file iwinfo.so of the component MTK Backend. The manipulation of the argument device results in command injection. The attack can be executed remotely. The exploit has been released to the public and may be used for attacks. Upgrading to version 4.7 is recommended to address this issue. Upgrading the affected component is recommended. The vendor confirms: \"Starting from version 4.7, SDK has added global protection to intercept malicious injection\".",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T02:16:23.313",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11447"
-    },
-    {
-      "id": "CVE-2026-11448",
-      "desc": "A weakness has been identified in GL.iNet GL-MT3000 up to 4.4.5. The affected element is the function realpath of the file /rpc of the component Minidlna Service. This manipulation of the argument kube. set causes command injection. The attack is possible to be carried out remotely. Upgrading to version 4.7 is sufficient to fix this issue. It is recommended to upgrade the affected component. The vendor confirms: \"Starting from version 4.7, SDK has added global protection to intercept malicious injection\".",
-      "cvss": 4.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T03:16:26.233",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11448"
-    },
-    {
-      "id": "CVE-2026-11449",
-      "desc": "A security vulnerability has been detected in GL.iNet GL-MT3000 4.4.5. The impacted element is the function rpc_sys of the file /cgi-bin/luci/rpc of the component LuCI JSON-RPC Interface. Such manipulation leads to command injection. The attack may be performed from remote. Upgrading to version 4.8.1 is sufficient to resolve this issue. Upgrading the affected component is advised. The vendor confirms: \"The issue discovered by the vulnerability researcher on older firmware versions(4.4.5) has actually been fixed and mitigated in the new version. According to the latest firmware fixes, by default, firmware versions after 4.7.13 do not install LuCI, so this vulnerability cannot be exploited.\"",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T03:16:27.077",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11449"
-    },
-    {
-      "id": "CVE-2026-11450",
-      "desc": "A vulnerability was detected in GL.iNet GL-MT3000 4.4.5. This affects the function dlopen in the library /usr/lib/oui-httpd/rpc/ of the component Path Normalization Handler. Performing a manipulation of the argument dev_name results in command injection. It is possible to initiate the attack remotely. Upgrading to version 4.7 mitigates this issue. It is advisable to upgrade the affected component. The vendor confirms: \" From version 4.7 onward, we have enabled method\u2011level validation at the HTTP /rpc layer. nas\u2011web.eject_disk is no longer in the whitelist of allowed methods. Consequently, directly calling eject_disk through the default /rpc endpoint returns Invalid params, preventing entry into subsequent dangerous functions and blocking the remote exploit chain described in the report.\"",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T03:16:27.247",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11450"
-    },
-    {
-      "id": "CVE-2026-11451",
-      "desc": "A flaw has been found in GL.iNet GL-MT3000 4.4.5. This impacts the function snprintf of the file /cgi-bin/glc of the component FTP Protocol Handler. Executing a manipulation of the argument media_dir can lead to command injection. It is possible to launch the attack remotely. Upgrading to version 4.8.1 will fix this issue. You should upgrade the affected component. The vendor explains: \"In version 4.8.1, before writing media_dir to the FTP configuration command, the code escapes single quotes using escape_single_quote(). The payloads in the report\u2014which rely on closing a single quote, appending commands with a semicolon, and commenting out the tail with #\u2014cannot escape execution under the current code path. We also verified this on a GL\u2011MT3000 device running firmware version 4.8.1 using similar payloads calling the /NAS_API_SET_PROTO_CONFIG interface. Although the interface returned success, the marker file intended to prove command execution was not created; the payload was written into /etc/vsftpd.conf only as ordinary configuration content and did not trigger any shell command execution. Therefore, with the current firmware version and default runtime environment, we could not reproduce the claimed \u201cunauthorized command injection in set_proto_config\u201d.\"",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T04:16:29.570",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11451"
-    },
-    {
-      "id": "CVE-2026-11452",
-      "desc": "A vulnerability has been found in GL.iNet GL-MT3000 up to 4.4.5. Affected is the function FUN_0042e200 of the file /cgi-bin/glc of the component SET_USER_PWD Handler. The manipulation of the argument Password leads to command injection. The attack can be initiated remotely. Upgrading to version 4.8.1 is able to address this issue. The affected component should be upgraded. The vendor explains: \" The current code escapes single quotes in the password parameter and handles it inside a shell single\u2011quote context. The payloads in the report, which rely on $() or backticks to trigger command substitution, are not executed under the current code path. We tested on a GL\u2011MT3000 device running firmware 4.8.1 using similar payloads, and no command\u2011execution marker file was created.\"",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T04:16:29.960",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11452"
-    },
-    {
-      "id": "CVE-2026-11453",
-      "desc": "A vulnerability was found in Tiobon Employee Self-Service System up to 7.2. Affected by this vulnerability is an unknown functionality of the file /Blog/BlogSearch.aspx of the component Login Endpoint. The manipulation of the argument Keyword results in sql injection. The attack can be launched remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "Google",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T04:16:30.147",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11453"
-    },
     {
       "id": "CVE-2026-11455",
       "desc": "A vulnerability was determined in FoundationAgents MetaGPT up to 0.8.2. Affected by this issue is the function check_cmd_exists of the file metagpt/utils/common.py. This manipulation of the argument mermaid.path causes command injection. The attack may be initiated remotely. A high degree of complexity is needed for the attack. The exploitation is known to be difficult. The exploit has been publicly disclosed and may be utilized. The project was informed of the problem early through an issue report but has not responded yet.",
@@ -422,10 +324,7 @@
       "product": "",
       "exploited": true,
       "kev": false,
-      "epss": {
-        "epss": 0.00029,
-        "percentile": 0.08571
-      },
+      "epss": null,
       "published": "2026-06-08T02:16:22.363",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2021-47983"
     },
@@ -523,7 +422,10 @@
       "product": "",
       "exploited": true,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0015,
+        "percentile": 0.35219
+      },
       "published": "2026-06-08T02:16:23.403",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-58349"
     },
@@ -705,12 +607,110 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00178,
-        "percentile": 0.39065
-      },
+      "epss": null,
       "published": "2026-06-08T05:16:29.847",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11487"
+    },
+    {
+      "id": "CVE-2026-11488",
+      "desc": "A vulnerability has been found in code-projects Simple Flight Ticket Booking System 1.0. This affects an unknown part of the file checkUser.php of the component POST Parameter Handler. The manipulation of the argument Username leads to sql injection. The attack is possible to be carried out remotely. The exploit has been disclosed to the public and may be used.",
+      "cvss": 7.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T05:16:30.020",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11488"
+    },
+    {
+      "id": "CVE-2026-11489",
+      "desc": "A vulnerability was found in code-projects Online Music Site 1.0. This vulnerability affects unknown code of the file /Administrator/PHP/AdminDeleteAlbum.php. The manipulation of the argument ID results in sql injection. The attack may be performed from remote. The exploit has been made public and could be used.",
+      "cvss": 7.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T05:16:30.200",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11489"
+    },
+    {
+      "id": "CVE-2026-11490",
+      "desc": "A vulnerability was determined in code-projects Online Music Site 1.0. This issue affects some unknown processing of the file /Frontend/Search.php. This manipulation of the argument Category causes sql injection. It is possible to initiate the attack remotely. The exploit has been publicly disclosed and may be utilized.",
+      "cvss": 7.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T07:16:25.167",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11490"
+    },
+    {
+      "id": "CVE-2026-11491",
+      "desc": "A vulnerability was identified in CodeAstro Human Resource Management System 1.0. Impacted is an unknown function of the file /notice/All_notice of the component Notice Board Management. Such manipulation of the argument Notice Title with the input <svg onload=\"alert('Stored XSS Triggered by Ashik Mohamed')\"> as part of POST leads to cross site scripting. It is possible to launch the attack remotely. The exploit is publicly available and might be used.",
+      "cvss": 2.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T07:16:26.663",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11491"
+    },
+    {
+      "id": "CVE-2026-11492",
+      "desc": "A security flaw has been discovered in D-Link DIR-823G 1.0.2B05. The affected element is an unknown function of the file /etc/vsftpd.conf of the component vsftpd. Performing a manipulation results in least privilege violation. The attack can be initiated remotely. The exploit has been released to the public and may be used for attacks.",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T07:16:26.850",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11492"
+    },
+    {
+      "id": "CVE-2026-11493",
+      "desc": "A weakness has been identified in Tenda AC15 15.03.05.19. The impacted element is an unknown function of the file /etc_ro/smb.conf of the component Samba. Executing a manipulation can lead to weak password requirements. The attack is only possible within the local network. A high complexity level is associated with this attack. The exploitability is regarded as difficult. The exploit has been made available to the public and could be used for attacks.",
+      "cvss": 5.0,
+      "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-08T07:16:27.030",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11493"
+    },
+    {
+      "id": "CVE-2026-11494",
+      "desc": "A security vulnerability has been detected in TOTOLINK AC1200 T8 4.1.5cu.8611. This affects an unknown function of the file /etc/vsftpd.conf of the component vsftpd. The manipulation leads to least privilege violation. The attack may be initiated remotely. The exploit has been disclosed publicly and may be used.",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.0005,
+        "percentile": 0.15732
+      },
+      "published": "2026-06-08T07:16:27.210",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11494"
     }
   ],
   "kev": [
@@ -1847,6 +1847,70 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "CVE-2026-42502 Invoking  incorrect handling of HTML elements in foreign content in golang.org/x/net/html",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42502",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:43:49+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-39827 Invoking  memory leak when rejecting channels can lead to DoS in golang.org/x/crypto/ssh",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39827",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:43:19+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-25681 Invoking  incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-25681",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:43:01+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-27144 Miscompilation allows memory corruption via CONVNOP-wrapped array copy in cmd/compile",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-27144",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:41:13+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-27143 Missing bound checks can lead to memory corruption in safe Go in cmd/compile",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-27143",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:41:06+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-27140 Code execution vulnerability in SWIG code generation in cmd/go",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-27140",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:40:58+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-32280 Unexpected work during chain building in crypto/x509",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32280",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:40:50+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-27142 URLs in meta content attribute actions are not escaped in html/template",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-27142",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-09T08:40:34+00:00",
+      "summary": "Information published."
+    },
+    {
       "title": "When \u201cHi, This Is IT\u201d Comes Through Microsoft Teams",
       "url": "https://unit42.paloaltonetworks.com/microsoft-teams-phishing/",
       "source": "Unit 42",
@@ -1861,70 +1925,6 @@
       "category": "threat",
       "published": "2026-06-08T14:47:59+00:00",
       "summary": "For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES DentaQuest, a U.S. dental benefits administrator owned by Sun Life, has\u00a0suffered a data breach after threat group ShinyHunters leaked exfiltrated data. An"
-    },
-    {
-      "title": "CVE-2026-35429 Microsoft Edge (Chromium-based) for Android Spoofing Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-35429",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-08T14:00:00+00:00",
-      "summary": "Updated an acknowledgement. This is an informational change only."
-    },
-    {
-      "title": "CVE-2026-33118 Microsoft Edge (Chromium-based) Spoofing Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33118",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-08T14:00:00+00:00",
-      "summary": "Updated an acknowledgement. This is an informational change only."
-    },
-    {
-      "title": "CVE-2026-8643 pip can extract console_scripts and gui_scripts outside installation directory",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-8643",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-07T08:03:04+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-43958 Rrdtool: rrdtool: stack buffer overflow allows local code execution or denial of service",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43958",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-07T08:02:47+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-42507 Arbitrary inputs are included in errors without any escaping in net/textproto",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42507",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-07T08:02:22+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-42504 Quadratic complexity in WordDecoder.DecodeHeader in mime",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42504",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-07T08:02:12+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-10722 cilium ebpf LoadCollectionSpec/LoadCollectionSpecFromReader btf.go loadRawSpec integer overflow",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-10722",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-07T08:01:56+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-50219 libexpat before 2.8.2 lacks handler call depth tracking for calls to XML_GetBuffer, XML_Parse, XML_ParseBuffer, XML_ParserFree, or XML_ParserReset from within handlers in cases of a policy violation. Thus, a use-after-free can occur,",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50219",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-07T08:01:28+00:00",
-      "summary": "Information published."
     },
     {
       "title": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257",
@@ -2681,6 +2681,46 @@
   ],
   "news": [
     {
+      "title": "CISA gives feds 3 days to patch Check Point VPN bug exploited as zero-day",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-check-point-flaw-exploited-by-ransomware-gangs/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-09T08:18:39+00:00",
+      "summary": "CISA has ordered U.S. government agencies to secure their Check Point Remote Access VPN and Mobile Access deployments against a critical vulnerability exploited in zero-day attacks by Qilin ransomware affiliates. [...]"
+    },
+    {
+      "title": "WhatsApp Discovers NSO Group-Linked Spearphishing Attempts",
+      "url": "https://www.infosecurity-magazine.com/news/whatsapp-nso-group-spearphishing/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-09T08:15:00+00:00",
+      "summary": "Meta\u2019s WhatsApp demands contempt ruling after users report NSO Group-linked phishing"
+    },
+    {
+      "title": "Google patches new Chrome zero-day flaw exploited in the wild",
+      "url": "https://www.bleepingcomputer.com/news/security/google-patches-fifth-chrome-zero-day-bug-exploited-in-attacks-this-year/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-09T06:56:27+00:00",
+      "summary": "Google has released emergency updates to patch another Chrome zero-day vulnerability that has been exploited in the wild, the fifth such flaw patched since the start of the year. [...]"
+    },
+    {
+      "title": "LiteLLM Flaw CVE-2026-42271 Exploited in the Wild, Chains to Unauthenticated RCE",
+      "url": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-09T06:26:14+00:00",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a high-severity flaw impacting BerriAI LiteLLM to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-42271 (CVSS score: 8.7), is a command "
+    },
+    {
+      "title": "Google Patches 5th Chrome Zero-Day Exploited in 2026",
+      "url": "https://www.securityweek.com/google-patches-5th-chrome-zero-day-exploited-in-2026/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-09T05:57:40+00:00",
+      "summary": "The vulnerability is tracked as CVE-2026-11645 and it was reported in late April by an anonymous researcher.\nThe post Google Patches 5th Chrome Zero-Day Exploited in 2026 appeared first on SecurityWeek."
+    },
+    {
       "title": "ISC Stormcast For Tuesday, June 9th, 2026 https://isc.sans.edu/podcastdetail/9964, (Tue, Jun 9th)",
       "url": "https://isc.sans.edu/diary/rss/33062",
       "source": "SANS ISC Diary",
@@ -2833,14 +2873,6 @@
       "summary": "The latest attacks, which hit 37 PyPI wheels and 19 code packages, show a continued evolution of the persistent software supply chain threat."
     },
     {
-      "title": "Critical UniFi OS bug lets hackers gain root without authentication",
-      "url": "https://www.bleepingcomputer.com/news/security/critical-unifi-os-bug-lets-hackers-gain-root-without-authentication/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-08T15:51:19+00:00",
-      "summary": "Attackers can chain three already fixed vulnerabilities in the Ubiquiti UniFi OS server to execute remote code with root privileges and without authentication. [...]"
-    },
-    {
       "title": "Everybody Is Vibe Coding But Nobody Told the Security Team",
       "url": "https://www.securityweek.com/everybody-is-vibe-coding-but-nobody-told-the-security-team/",
       "source": "SecurityWeek",
@@ -2871,14 +2903,6 @@
       "category": "news",
       "published": "2026-06-08T14:04:00+00:00",
       "summary": "New regulations published by Russia's Ministry of Digital Development at the end of May updated the technical standards governing SORM, formally known as the System for Operative Investigative Activities."
-    },
-    {
-      "title": "Reducing security operations complexity with Wazuh Cloud",
-      "url": "https://www.bleepingcomputer.com/news/security/reducing-security-operations-complexity-with-wazuh-cloud/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-08T14:01:11+00:00",
-      "summary": "Security teams are increasingly overwhelmed by alert fatigue, infrastructure maintenance, and complex hybrid environments. This article explores how Wazuh Cloud helps simplify SIEM/XDR operations through managed infrastructure, automated scaling, and AI-driven security analysis. [...]"
     },
     {
       "title": "OpenAI Unveils ChatGPT Account Security Controls",
@@ -2977,14 +3001,6 @@
       "summary": ""
     },
     {
-      "title": "OpenAI Rolling Out ChatGPT Account Security Controls",
-      "url": "https://www.securityweek.com/openai-rolling-out-chatgpt-account-security-controls/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-08T08:32:49+00:00",
-      "summary": "The Active Sessions and Lockdown Mode features are being made more broadly available by the AI giant.\nThe post OpenAI Rolling Out ChatGPT Account Security Controls appeared first on SecurityWeek."
-    },
-    {
       "title": "Infosecurity Europe: How DSIT Protects Thousands of UK Orgs from Cyber Vulnerabilities",
       "url": "https://www.infosecurity-magazine.com/news/infosecurity-europe-dsit-cyber/",
       "source": "Infosecurity Magazine",
@@ -2999,14 +3015,6 @@
       "category": "news",
       "published": "2026-06-08T08:00:00+00:00",
       "summary": "Meta confirms an AI tool vulnerability led to unauthorized access to Instagram accounts after a failure in email verification during password reset"
-    },
-    {
-      "title": "UNC3753 Used Vishing and Physical Intrusions in U.S. Data Theft Extortion Campaign",
-      "url": "https://thehackernews.com/2026/06/unc3753-used-vishing-and-physical.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-08T07:39:28+00:00",
-      "summary": "Cybersecurity researchers have disclosed details of a financially motivated data theft extortion campaign that has targeted dozens of organizations across professional, legal, and financial services in the U.S. between January and May 2026.\n\nThe activity has been attributed by Google Mandiant and Go"
     },
     {
       "title": "All the Ways Europe Is Ditching American Technology",
@@ -3071,14 +3079,6 @@
       "category": "news",
       "published": "2026-06-05T11:30:00+00:00",
       "summary": "Lloyds Banking Group shared its approach for securing agentic AI workflows, with a mix of hands on experimentation and cross functional governance"
-    },
-    {
-      "title": "Infosecurity Europe: OWASP Introduces Agentic AI Security Maturity Framework",
-      "url": "https://www.infosecurity-magazine.com/news/owasp-agentic-ai-security-maturity/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-05T10:45:00+00:00",
-      "summary": "The OWASP agentic AI security framework helps organizations assess governance maturity vs adoption and adjust governance as needed"
     },
     {
       "title": "The Evil MSI Background is Back&#x21;, (Fri, Jun 5th)",
@@ -3345,20 +3345,20 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
+      "title": "Executive Summary: Defending against China-nexus covert networks of compromised devices",
+      "url": "https://www.ncsc.gov.uk/news/executive-summary-defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "source": "NCSC UK",
+      "category": "news",
+      "published": "2026-04-23T12:00:00+00:00",
+      "summary": "Organisations should map and baseline their edge device traffic, especially VPN and remote access connections, and adopt dynamic threat feed filtering that includes known covert network indicators."
+    },
+    {
       "title": "Defending against China-nexus covert networks of compromised devices",
       "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
       "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
-    },
-    {
-      "title": "Passkeys are more secure than traditional ways to log in",
-      "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
-      "source": "NCSC UK",
-      "category": "news",
-      "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
     }
   ],
   "stats": {
