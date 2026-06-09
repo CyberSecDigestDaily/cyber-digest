@@ -1,25 +1,11 @@
 {
-  "generated": "2026-06-09T09:54:40.107012+00:00",
+  "generated": "2026-06-09T12:12:00.206909+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>4 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11459",
-      "desc": "A security vulnerability has been detected in SecureAge CatchPulse up to 10.9.3. Impacted is an unknown function in the library saappctl.sys of the component IOCTL Handler. The manipulation leads to information disclosure. Local access is required to approach this attack. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
-      "cvss": 3.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T10:16:21.863",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11459"
-    },
     {
       "id": "CVE-2026-49494",
       "desc": "Comodo Internet Security's firewall driver Inspect.sys contains an integer underflow in its IPv6 packet parser. The parser decrements an unsigned 64-bit payload-length value (taken from the IPv6 fixed header's payload length field) by the size of each IPv6 extension header without validating it, so a packet whose declared payload length is smaller than the sum of its extension-header lengths underflows the value to a near-maximal 64-bit integer. Because IPv6 parsing occurs before firewall rule enforcement, a remote, unauthenticated attacker can send a single crafted IPv6 packet - even to a host with all ports blocked - to trigger an out-of-bounds read (and, on a separate code path, an oversized memcpy) in the Windows kernel at DISPATCH_LEVEL, crashing the system (BSOD).",
@@ -422,10 +408,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00013,
-        "percentile": 0.02218
-      },
+      "epss": null,
       "published": "2026-06-08T03:16:19.997",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11478"
     },
@@ -439,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00031,
+        "percentile": 0.09474
+      },
       "published": "2026-06-08T03:16:20.190",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11479"
     },
@@ -705,12 +691,26 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00088,
-        "percentile": 0.252
-      },
+      "epss": null,
       "published": "2026-06-08T09:16:29.957",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11499"
+    },
+    {
+      "id": "CVE-2026-3238",
+      "desc": "A flaw was found in Samba\u2019s WINS server component when running as an Active Directory Domain Controller. The WINS protocol handlers for certain request types did not properly validate incoming packets, allowing an unauthenticated remote attacker to trigger a NULL pointer dereference and crash the WINS service using specially crafted UDP packets.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00075,
+        "percentile": 0.22736
+      },
+      "published": "2026-06-08T09:16:30.160",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3238"
     }
   ],
   "kev": [
@@ -2681,6 +2681,54 @@
   ],
   "news": [
     {
+      "title": "Over 100 NPM, PyPI Packages Hit in New Shai-Hulud Supply Chain Attacks",
+      "url": "https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-09T11:37:11+00:00",
+      "summary": "The most recent variants of the self-propagating attacks are named Miasma and Hades.\nThe post Over 100 NPM, PyPI Packages Hit in New Shai-Hulud Supply Chain Attacks appeared first on SecurityWeek."
+    },
+    {
+      "title": "The Hidden Security Risk in Modern Networks: The Work Between Tools",
+      "url": "https://thehackernews.com/2026/06/the-hidden-security-risk-in-modern.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-09T11:30:00+00:00",
+      "summary": "Organizations have more visibility than ever. Growing tech stacks provide greater coverage, and network security teams are increasingly adopting AI and automation to help with routine tasks and reduce manual effort.\n\nBut the same challenges persist. Outages still last hours, causing significant fina"
+    },
+    {
+      "title": "Will AI Kill the Bug Bounty Industry?",
+      "url": "https://www.securityweek.com/will-ai-kill-the-bug-bounty-industry/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-09T11:00:00+00:00",
+      "summary": "Anthropic's Mythos is accelerating vulnerability discovery to machine speed, forcing the bug bounty industry and offensive security teams to adapt to a future where finding flaws is no longer the hard part.\nThe post Will AI Kill the Bug Bounty Industry? appeared first on SecurityWeek."
+    },
+    {
+      "title": "French govt messaging service breached in account hijacking attack",
+      "url": "https://www.bleepingcomputer.com/news/security/french-govt-messaging-service-breached-in-account-hijacking-attack/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-09T10:53:00+00:00",
+      "summary": "DINUM, the digital affairs directorate of the French government, warned that hackers used a hijacked user account to breach Tchap, the French government's encrypted messaging platform. [...]"
+    },
+    {
+      "title": "Google Releases Patch for Chrome Vulnerability Exploited in the Wild",
+      "url": "https://www.infosecurity-magazine.com/news/google-patch-chrome-vulnerability/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-09T10:15:00+00:00",
+      "summary": "The flaw, CVE-2026-11645, can allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page"
+    },
+    {
+      "title": "New FROST Attack Lets Websites Track What Sites and Apps You Open via SSD Timing",
+      "url": "https://thehackernews.com/2026/06/new-frost-attack-lets-websites-track.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-09T09:50:41+00:00",
+      "summary": "A malicious website can work out which sites you visit and which apps you open, using nothing but JavaScript and the timing of your SSD. The attack, called FROST, needs no native code, no extension, and no permission prompt.\n\nYou open the page, leave the tab sitting there, and it watches the drive f"
+    },
+    {
       "title": "Check Point VPN Zero-Day Exploited in Qilin Ransomware Attacks",
       "url": "https://www.securityweek.com/check-point-vpn-zero-day-exploited-in-qilin-ransomware-attacks/",
       "source": "SecurityWeek",
@@ -2695,6 +2743,14 @@
       "category": "news",
       "published": "2026-06-09T09:30:00+00:00",
       "summary": "Check Point says a critical vulnerability in its Remote Access VPN and Mobile Access solutions has been exploited by Qilin"
+    },
+    {
+      "title": "Hades PyPI Attack: 19 Packages Poisoned to Auto-Run Bun Credential Stealer",
+      "url": "https://thehackernews.com/2026/06/hades-pypi-attack-19-packages-poisoned.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-09T09:13:32+00:00",
+      "summary": "The Miasma supply chain campaign has sparked a fresh attack wave called Hades, this time involving 37 malicious wheel artifacts across 19 packages in the Python Package Index (PyPI) registry, as the Mini Shai-Hulud-style attacks continue to be refined and splintered to target specific ecosystems.\n\n\""
     },
     {
       "title": "Infosecurity Europe: Why JLR\u2019s CISO Enforced In-Person Password Resets Following Cyber-Attack",
@@ -2881,14 +2937,6 @@
       "summary": "WhatsApp said it is filing a federal court contempt order against NSO for violating a permanent injunction that bars it from mounting attacks against its users."
     },
     {
-      "title": "Gogs patches critical zero-day enabling remote code execution",
-      "url": "https://www.bleepingcomputer.com/news/security/gogs-patches-critical-zero-day-enabling-remote-code-execution/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-08T16:18:40+00:00",
-      "summary": "Gogs has patched a critical security zero-day flaw that can allow attackers to compromise Internet-facing instances and access any repositories (including private ones). [...]"
-    },
-    {
       "title": "'Hades' Campaign Against PyPI Puts New Spin on Shai-Hulud",
       "url": "https://www.darkreading.com/application-security/hades-campaign-pypi-shai-hulud",
       "source": "Dark Reading",
@@ -2953,44 +3001,12 @@
       "summary": "Phishing has always been a numbers game. AI has turned it into a volume machine.\n\nAttackers can now create convincing emails, fake login pages, and tailored lures in minutes. Every polished message adds another case for Tier 1 to review, another link to inspect, and another alert that cannot be dism"
     },
     {
-      "title": "\u26a1 Weekly Recap: Instagram Account Hacks, Android Zero-Day, GitHub Worm and More",
-      "url": "https://thehackernews.com/2026/06/weekly-recap-instagram-account-hacks.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-08T13:18:57+00:00",
-      "summary": "Monday again. The weekend was meant to be quiet. It wasn't. Last week had poisoned packages, a broken AI helper, and a worm tearing through repos. The ugly part: basic tricks still worked.\n\nA chatbot got fooled. A bot token got leaked inside the malware. The same old mistakes showed up again. And wh"
-    },
-    {
       "title": "Cybersecurity M&A Roundup: 26 Deals Announced in May 2026",
       "url": "https://www.securityweek.com/cybersecurity-ma-roundup-26-deals-announced-in-may-2026/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-06-08T12:38:45+00:00",
       "summary": "Significant cybersecurity M&#038;A deals announced by Akamai, Check Point, Cisco, Cyera, Dragos, WatchGuard and Zscaler.\nThe post Cybersecurity M&#038;A Roundup: 26 Deals Announced in May 2026 appeared first on SecurityWeek."
-    },
-    {
-      "title": "Everest Forms Vulnerability Exploited to Hack WordPress Sites",
-      "url": "https://www.securityweek.com/everest-forms-vulnerability-exploited-to-hack-wordpress-sites/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-08T12:16:09+00:00",
-      "summary": "The flaw allows attackers to execute arbitrary code remotely and has been exploited in the wild for two months.\nThe post Everest Forms Vulnerability Exploited to Hack WordPress Sites appeared first on SecurityWeek."
-    },
-    {
-      "title": "The Hardest Fork",
-      "url": "https://thehackernews.com/2026/06/the-hardest-fork.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-08T11:53:00+00:00",
-      "summary": "Mythos is real. I know a big chunk of the industry thinks it's a marketing stunt, and I get why. I get it. But I've seen the findings, and they're bad. These aren't \"whoops, this line right here is wrong, and that's RCE.\" They're novel combinations of a few dozen issues out of thousands of things ev"
-    },
-    {
-      "title": "174,000 Impacted by Lansing Community College Data Breach",
-      "url": "https://www.securityweek.com/174000-impacted-by-lansing-community-college-data-breach/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-08T11:27:00+00:00",
-      "summary": "Hackers accessed personal information stored on certain Lansing Community College systems in February 2025.\nThe post 174,000 Impacted by Lansing Community College Data Breach appeared first on SecurityWeek."
     },
     {
       "title": "Infosecurity Europe: Prompt Injection Remains Unsolved, OWASP Researcher Warns",
@@ -3001,28 +3017,12 @@
       "summary": "At Infosecurity Europe 2026, OWASP\u2019s Ariel Fogel warned that prompt injection remains an \u201cunresolved problem\u201d within generative AI architecture"
     },
     {
-      "title": "VerdantBamboo Deploys BSD Variant of BRICKSTORM on Linux Appliances",
-      "url": "https://thehackernews.com/2026/06/verdantbamboo-deploys-bsd-variant-of.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-08T10:27:32+00:00",
-      "summary": "A China-nexus cyber espionage group has been observed deploying a BSD variant of a known backdoor called BRICKSTORM, as well as two other malware families codenamed PLENET (aka GRIMBOLT) and AGENTPSD to target Linux systems.\n\nThe activity has been attributed by Volexity to a threat cluster it tracks"
-    },
-    {
       "title": "Two-Thirds of Open Source Community Unaware of Cyber Resilience Act",
       "url": "https://www.infosecurity-magazine.com/news/open-source-unaware-cyber/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-06-08T09:00:00+00:00",
       "summary": ""
-    },
-    {
-      "title": "Infosecurity Europe: How DSIT Protects Thousands of UK Orgs from Cyber Vulnerabilities",
-      "url": "https://www.infosecurity-magazine.com/news/infosecurity-europe-dsit-cyber/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-08T08:15:00+00:00",
-      "summary": "The Department of Science, Innovation and Technology details how a combination of hands-on human advice and technology systems keeps government agencies safe"
     },
     {
       "title": "All the Ways Europe Is Ditching American Technology",
@@ -3364,7 +3364,7 @@
   "stats": {
     "total_cves": 50,
     "critical": 4,
-    "high": 18,
+    "high": 19,
     "exploited": 9,
     "kev_total": 50,
     "kev_7d": 6,
