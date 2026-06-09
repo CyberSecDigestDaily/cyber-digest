@@ -1,25 +1,11 @@
 {
-  "generated": "2026-06-09T12:12:00.206909+00:00",
+  "generated": "2026-06-09T14:24:40.078230+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>4 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-49494",
-      "desc": "Comodo Internet Security's firewall driver Inspect.sys contains an integer underflow in its IPv6 packet parser. The parser decrements an unsigned 64-bit payload-length value (taken from the IPv6 fixed header's payload length field) by the size of each IPv6 extension header without validating it, so a packet whose declared payload length is smaller than the sum of its extension-header lengths underflows the value to a near-maximal 64-bit integer. Because IPv6 parsing occurs before firewall rule enforcement, a remote, unauthenticated attacker can send a single crafted IPv6 packet - even to a host with all ports blocked - to trigger an out-of-bounds read (and, on a separate code path, an oversized memcpy) in the Windows kernel at DISPATCH_LEVEL, crashing the system (BSOD).",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-07T13:16:20.927",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49494"
-    },
     {
       "id": "CVE-2026-11460",
       "desc": "A flaw has been found in Boost Serialization up to 1.91. The impacted element is an unknown function. This manipulation causes improper validation of specified type of input. It is possible to initiate the attack remotely. The exploit has been published and may be used. The maintainer was notified on Aug 2025 and a disclosure deadline was set for 90 days. The maintainer acknowledged but postponed indefinitely citing time concerns. No patch is currently available and the disclosure deadline has expired.",
@@ -422,10 +408,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00031,
-        "percentile": 0.09474
-      },
+      "epss": null,
       "published": "2026-06-08T03:16:20.190",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11479"
     },
@@ -439,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00041,
+        "percentile": 0.12779
+      },
       "published": "2026-06-08T03:16:20.363",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11480"
     },
@@ -705,12 +691,26 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00075,
-        "percentile": 0.22736
-      },
+      "epss": null,
       "published": "2026-06-08T09:16:30.160",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3238"
+    },
+    {
+      "id": "CVE-2026-41722",
+      "desc": "VMware Cloud Foundation Operations contains multiple stored cross-site scripting vulnerabilities.A malicious actor with privileges to create policies, views or text-widgets may be able to inject scripts to perform administrative actions in VMware Cloud Foundation Operations.",
+      "cvss": 8.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Broadcom",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00072,
+        "percentile": 0.21922
+      },
+      "published": "2026-06-08T09:16:30.363",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41722"
     }
   ],
   "kev": [
@@ -1463,338 +1463,7 @@
     }
   ],
   "kev_7d": 6,
-  "gh_advisories": [
-    {
-      "id": "GHSA-2vqw-3mp8-cgmx",
-      "cve": "CVE-2026-47737",
-      "severity": "high",
-      "summary": "Puma PROXY Protocol v1 Accepts Repeated Protocol Headers on Persistent Connections",
-      "url": "https://github.com/advisories/GHSA-2vqw-3mp8-cgmx",
-      "published": "2026-06-09T00:09:44Z",
-      "ecosystem": "rubygems",
-      "pkg": "puma",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-qpgp-93vx-g8v8",
-      "cve": "CVE-2026-47736",
-      "severity": "high",
-      "summary": "Puma PROXY Protocol v1 Parser Allows Remote Memory Exhaustion ",
-      "url": "https://github.com/advisories/GHSA-qpgp-93vx-g8v8",
-      "published": "2026-06-08T23:55:44Z",
-      "ecosystem": "rubygems",
-      "pkg": "puma",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-p2j4-c4g6-rpf5",
-      "cve": "CVE-2026-47735",
-      "severity": "high",
-      "summary": "Arc has an authenticated arbitrary local-file read via DuckDB I/O functions that bypasses RBAC table-level checks",
-      "url": "https://github.com/advisories/GHSA-p2j4-c4g6-rpf5",
-      "published": "2026-06-08T23:51:19Z",
-      "ecosystem": "go",
-      "pkg": "github.com/basekick-labs/arc",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-xrvj-v92f-53gj",
-      "cve": "CVE-2026-47734",
-      "severity": "medium",
-      "summary": "Dulwich has unbounded memory allocation in receive-pack from crafted thin packs",
-      "url": "https://github.com/advisories/GHSA-xrvj-v92f-53gj",
-      "published": "2026-06-08T23:43:42Z",
-      "ecosystem": "pip",
-      "pkg": "dulwich",
-      "cvss_score": 5.7
-    },
-    {
-      "id": "GHSA-qm33-p5p9-f8vg",
-      "cve": "CVE-2026-47726",
-      "severity": "high",
-      "summary": "nebula-mesh: GET /api/v1/audit-log discloses all entries to any operator",
-      "url": "https://github.com/advisories/GHSA-qm33-p5p9-f8vg",
-      "published": "2026-06-08T23:35:55Z",
-      "ecosystem": "go",
-      "pkg": "github.com/juev/nebula-mesh",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-273q-qgh5-wrj6",
-      "cve": "CVE-2026-47725",
-      "severity": "high",
-      "summary": "nebula-mesh's web UI lacks CSRF tokens on /ui/* mutating endpoints",
-      "url": "https://github.com/advisories/GHSA-273q-qgh5-wrj6",
-      "published": "2026-06-08T23:09:21Z",
-      "ecosystem": "go",
-      "pkg": "github.com/juev/nebula-mesh",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-598g-h2vc-h5vg",
-      "cve": "CVE-2026-47724",
-      "severity": "critical",
-      "summary": "nebula-mesh: API endpoints lack ownership checks, enabling cross-operator privilege escalation",
-      "url": "https://github.com/advisories/GHSA-598g-h2vc-h5vg",
-      "published": "2026-06-08T23:09:02Z",
-      "ecosystem": "go",
-      "pkg": "github.com/juev/nebula-mesh",
-      "cvss_score": 9.9
-    },
-    {
-      "id": "GHSA-w7w5-5gcp-38rw",
-      "cve": "CVE-2026-47723",
-      "severity": "high",
-      "summary": "nebula-mesh: Web UI and API responses lack security headers (CSP, X-Frame-Options, HSTS, etc.)",
-      "url": "https://github.com/advisories/GHSA-w7w5-5gcp-38rw",
-      "published": "2026-06-08T23:08:54Z",
-      "ecosystem": "go",
-      "pkg": "github.com/juev/nebula-mesh",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-7hp6-g3pq-3pc3",
-      "cve": "CVE-2026-47722",
-      "severity": "high",
-      "summary": "nebula-mesh: Host advanced overrides allow YAML injection into agent config.yml",
-      "url": "https://github.com/advisories/GHSA-7hp6-g3pq-3pc3",
-      "published": "2026-06-08T23:08:15Z",
-      "ecosystem": "go",
-      "pkg": "github.com/juev/nebula-mesh",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-8ghr-w65f-j3qr",
-      "cve": "CVE-2026-47721",
-      "severity": "medium",
-      "summary": "FUXA's scheduler API missing admin check enables operator-to-admin escalation via scheduled device actions",
-      "url": "https://github.com/advisories/GHSA-8ghr-w65f-j3qr",
-      "published": "2026-06-08T23:07:02Z",
-      "ecosystem": "npm",
-      "pkg": "fuxa-server",
-      "cvss_score": 6.3
-    },
-    {
-      "id": "GHSA-h9fj-c2qr-76g2",
-      "cve": "CVE-2026-47720",
-      "severity": "medium",
-      "summary": "FUXA has SQL Injection in its TDengine DAQ connector via backslash bypass of escapeTdString",
-      "url": "https://github.com/advisories/GHSA-h9fj-c2qr-76g2",
-      "published": "2026-06-08T23:06:43Z",
-      "ecosystem": "npm",
-      "pkg": "fuxa-server",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-w86f-rf9w-h3x6",
-      "cve": "CVE-2026-47719",
-      "severity": "high",
-      "summary": "FUXA: Unauthenticated SSRF via Socket.IO DEVICE_WEBAPI_REQUEST and DEVICE_PROPERTY with response reading",
-      "url": "https://github.com/advisories/GHSA-w86f-rf9w-h3x6",
-      "published": "2026-06-08T23:06:40Z",
-      "ecosystem": "npm",
-      "pkg": "fuxa-server",
-      "cvss_score": 8.2
-    },
-    {
-      "id": "GHSA-555p-6grf-mh7f",
-      "cve": "CVE-2026-47712",
-      "severity": "low",
-      "summary": "Dulwich doesn't sanitize commit subjects in `porcelain.format_patch`",
-      "url": "https://github.com/advisories/GHSA-555p-6grf-mh7f",
-      "published": "2026-06-08T23:04:48Z",
-      "ecosystem": "pip",
-      "pkg": "dulwich",
-      "cvss_score": 3.3
-    },
-    {
-      "id": "GHSA-3h6h-67x3-cv5x",
-      "cve": "CVE-2026-47693",
-      "severity": "medium",
-      "summary": "Poweradmin: CSV Injection in log export endpoints allows formula execution in spreadsheet applications",
-      "url": "https://github.com/advisories/GHSA-3h6h-67x3-cv5x",
-      "published": "2026-06-08T23:04:25Z",
-      "ecosystem": "composer",
-      "pkg": "poweradmin/poweradmin",
-      "cvss_score": 6.9
-    },
-    {
-      "id": "GHSA-hrj8-hjv8-mgwc",
-      "cve": "CVE-2026-47252",
-      "severity": "critical",
-      "summary": "Anyquery: AppleScript/JXA Code Injection via Unescaped URL in macOS Chrome Plugin",
-      "url": "https://github.com/advisories/GHSA-hrj8-hjv8-mgwc",
-      "published": "2026-06-08T23:04:00Z",
-      "ecosystem": "go",
-      "pkg": "github.com/julien040/anyquery/plugins/chrome",
-      "cvss_score": 9.0
-    },
-    {
-      "id": "GHSA-5pvg-856g-cp85",
-      "cve": "CVE-2026-47691",
-      "severity": "high",
-      "summary": "Netty has Insufficient Bailiwick Validation for NS Records",
-      "url": "https://github.com/advisories/GHSA-5pvg-856g-cp85",
-      "published": "2026-06-08T23:02:48Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-resolver-dns",
-      "cvss_score": 8.7
-    },
-    {
-      "id": "GHSA-5x3r-wrvg-rp6q",
-      "cve": "CVE-2026-47244",
-      "severity": "medium",
-      "summary": "Netty HTTP/2: Advertised MAX_CONCURRENT_STREAMS are not enforced",
-      "url": "https://github.com/advisories/GHSA-5x3r-wrvg-rp6q",
-      "published": "2026-06-08T23:02:40Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-codec-http2",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-5xrh-qmmq-w6ch",
-      "cve": "CVE-2026-46340",
-      "severity": "high",
-      "summary": "Netty: SCTP reassembly nests buffers without bound",
-      "url": "https://github.com/advisories/GHSA-5xrh-qmmq-w6ch",
-      "published": "2026-06-08T23:02:33Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-transport-sctp",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-676x-f7gg-47vc",
-      "cve": "CVE-2026-45674",
-      "severity": "high",
-      "summary": "Netty Vulnerable to DNS Cache Poisoning via Missing Bailiwick Checks in CNAME Records",
-      "url": "https://github.com/advisories/GHSA-676x-f7gg-47vc",
-      "published": "2026-06-08T23:02:26Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-resolver-dns",
-      "cvss_score": 8.7
-    },
-    {
-      "id": "GHSA-xmv7-r254-6q78",
-      "cve": "CVE-2026-45673",
-      "severity": "medium",
-      "summary": "Netty: DNS Cache Poisoning due to Predictable PRNG and Default Static Source Port",
-      "url": "https://github.com/advisories/GHSA-xmv7-r254-6q78",
-      "published": "2026-06-08T23:02:05Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-resolver-dns",
-      "cvss_score": 6.8
-    },
-    {
-      "id": "GHSA-w573-9ffj-6ff9",
-      "cve": "CVE-2026-45536",
-      "severity": "medium",
-      "summary": "Netty: Unix-socket fd receive leaks descriptors when peer sends two at once",
-      "url": "https://github.com/advisories/GHSA-w573-9ffj-6ff9",
-      "published": "2026-06-08T23:01:33Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-transport-native-epoll",
-      "cvss_score": 4.0
-    },
-    {
-      "id": "GHSA-x4gw-5cx5-pgmh",
-      "cve": "CVE-2026-45416",
-      "severity": "high",
-      "summary": "Netty: SNI handler pre-allocates up to 16 MiB from nine attacker bytes",
-      "url": "https://github.com/advisories/GHSA-x4gw-5cx5-pgmh",
-      "published": "2026-06-08T23:01:04Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-handler",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-87m4-826x-3crx",
-      "cve": "CVE-2026-45034",
-      "severity": "critical",
-      "summary": "PHPSpreadsheet has a patch bypass for CVE-2026-34084 ",
-      "url": "https://github.com/advisories/GHSA-87m4-826x-3crx",
-      "published": "2026-06-08T23:00:14Z",
-      "ecosystem": "composer",
-      "pkg": "phpoffice/phpspreadsheet",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-cmm3-54f8-px4j",
-      "cve": "CVE-2026-44894",
-      "severity": "high",
-      "summary": "Netty's Default QUIC token handler accepts any client-supplied token",
-      "url": "https://github.com/advisories/GHSA-cmm3-54f8-px4j",
-      "published": "2026-06-08T22:59:43Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-codec-classes-quic",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-cc37-9q2j-3hfv",
-      "cve": "CVE-2026-44893",
-      "severity": "high",
-      "summary": "Netty: HAProxy SSL TLV parsing leaks retained slice on invalid TLV length",
-      "url": "https://github.com/advisories/GHSA-cc37-9q2j-3hfv",
-      "published": "2026-06-08T19:02:21Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-codec-haproxy",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-c2rx-5r8w-8xr2",
-      "cve": "CVE-2026-44892",
-      "severity": "high",
-      "summary": "Netty has a Vulnerable Default Configuration Which Leads to Denial of Service via Unbounded HTTP/3 Header Size",
-      "url": "https://github.com/advisories/GHSA-c2rx-5r8w-8xr2",
-      "published": "2026-06-08T19:02:16Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-codec-http3",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-6ghj-frrj-jjj3",
-      "cve": "CVE-2026-44890",
-      "severity": "high",
-      "summary": "Netty has Unbounded Direct Memory Consumption in its RedisDecoder",
-      "url": "https://github.com/advisories/GHSA-6ghj-frrj-jjj3",
-      "published": "2026-06-08T19:02:09Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-codec-redis",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-3244-j874-rhc2",
-      "cve": "CVE-2026-44250",
-      "severity": "high",
-      "summary": "Netty: Memory Exhaustion in RedisArrayAggregator due to Deeply Nested Arrays",
-      "url": "https://github.com/advisories/GHSA-3244-j874-rhc2",
-      "published": "2026-06-08T19:01:52Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-codec-redis",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-3qp7-7mw8-wx86",
-      "cve": "CVE-2026-44249",
-      "severity": "high",
-      "summary": "Netty has an IPv6 Subnet Filter Bypass via Incorrect Comparator Masking",
-      "url": "https://github.com/advisories/GHSA-3qp7-7mw8-wx86",
-      "published": "2026-06-08T19:00:33Z",
-      "ecosystem": "maven",
-      "pkg": "io.netty:netty-handler",
-      "cvss_score": 8.1
-    },
-    {
-      "id": "GHSA-7rvm-xjpp-63r9",
-      "cve": "CVE-2026-42890",
-      "severity": "medium",
-      "summary": "actual Allows Electron to Run As Node",
-      "url": "https://github.com/advisories/GHSA-7rvm-xjpp-63r9",
-      "published": "2026-06-08T18:21:26Z",
-      "ecosystem": "npm",
-      "pkg": "actual",
-      "cvss_score": null
-    }
-  ],
+  "gh_advisories": [],
   "threatfox": [],
   "malwarebazaar": [],
   "feodo_c2": [
@@ -2681,6 +2350,54 @@
   ],
   "news": [
     {
+      "title": "Critical phpBB Flaw Lets Attackers Hijack Any Account with One Request",
+      "url": "https://www.infosecurity-magazine.com/news/phpbb-authentication-bypass/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-09T14:00:00+00:00",
+      "summary": "Critical phpBB authentication bypass lets attackers hijack any account with one request"
+    },
+    {
+      "title": "New Platform Uses Cryptographic Invisibility to Protect AI-Built Applications",
+      "url": "https://www.securityweek.com/new-platform-uses-cryptographic-invisibility-to-protect-ai-built-applications/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-09T13:00:00+00:00",
+      "summary": "Atsign\u2019s AI Architect applies cryptographic protections to agentic software development, aiming to prevent attackers from exploiting vulnerabilities by making application identities effectively invisible.\nThe post New Platform Uses Cryptographic Invisibility to Protect AI-Built Applications appeared"
+    },
+    {
+      "title": "WinRAR Flaw Exploited by Russia-Aligned Groups to Deploy Stealers in Ukraine",
+      "url": "https://thehackernews.com/2026/06/winrar-flaw-exploited-by-russia-aligned.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-09T12:26:10+00:00",
+      "summary": "Two Russia-aligned cyber attack campaigns have continued to exploit a security flaw in WinRAR to target Ukrainian organisations, almost a year after patches for the vulnerability were released.\n\nThe activity has been attributed by Trend Micro to Earth Dahu (aka Gamaredon) and SHADOW-EARTH-066 (aka U"
+    },
+    {
+      "title": "SAP Patches Critical NetWeaver, Commerce Vulnerabilities",
+      "url": "https://www.securityweek.com/sap-patches-critical-netweaver-commerce-vulnerabilities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-09T12:15:30+00:00",
+      "summary": "The flaws could lead to the disclosure of sensitive information, memory corruption, and disruption of normal system usage.\nThe post SAP Patches Critical NetWeaver, Commerce Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
+      "title": "Researchers Build Self-Replicating AI Worm That Operates Entirely on Local, Open-Weight Models",
+      "url": "https://thehackernews.com/2026/06/researchers-build-self-replicating-ai.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-09T11:59:03+00:00",
+      "summary": "University of Toronto researchers have built and tested a proof-of-concept AI-driven computer worm that uses a locally hosted open-weight large language model to reason its way through a network, generate tailored attack strategies for each target it encounters, and replicate itself, all without hum"
+    },
+    {
+      "title": "Chrome V8 Zero-Day CVE-2026-11645 Exploited in the Wild - Patch Now",
+      "url": "https://thehackernews.com/2026/06/chrome-v8-zero-day-cve-2026-11645.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-09T11:58:49+00:00",
+      "summary": "Google has released security updates to address 74 vulnerabilities, including one that has come under active exploitation in the wild.\n\nThe high-severity vulnerability, tracked as CVE-2026-11645 (CVSS score: 8.8), has been described as an out-of-bounds memory access in V8, Chrome's JavaScript and We"
+    },
+    {
       "title": "Over 100 NPM, PyPI Packages Hit in New Shai-Hulud Supply Chain Attacks",
       "url": "https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/",
       "source": "SecurityWeek",
@@ -2857,14 +2574,6 @@
       "summary": "A newly discovered, critical zero-day vulnerability is under attack; a Qilin ransomware affiliate has been blamed for at least one incident."
     },
     {
-      "title": "UK gives big tech 3 months to create device controls to block nude images of kids",
-      "url": "https://therecord.media/uk-gives-big-tech-3-months-to-create-device-controls-kid-images",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-08T20:24:00+00:00",
-      "summary": "The companies \u201cmust activate built-in features or implement technical solutions on smartphones and tablets to detect and block nude images for children,\u201d according to a press release from the Home Office. Prime Minister Keir Starmer announced the measure in a speech at London Tech Week Monday."
-    },
-    {
       "title": "One-Character Linux Kernel Flaw Enables Local Root Access, Exploits Now Public",
       "url": "https://thehackernews.com/2026/06/one-character-linux-kernel-flaw-enables.html",
       "source": "The Hacker News",
@@ -2905,36 +2614,12 @@
       "summary": "The company founded by Yossi Torati, Omer Gull, and Yuval Itzchakov has emerged from stealth mode.\nThe post A Security Raises $37 Million for Autonomous Offensive Security Platform appeared first on SecurityWeek."
     },
     {
-      "title": "Armenia\u2019s pro-Europe party wins election despite Russia-linked disinformation",
-      "url": "https://therecord.media/armenia-pro-europe-party-wins-election-despite-russia-disinformation",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-08T17:10:00+00:00",
-      "summary": "Pashinyan's Civil Contract party won nearly 50% of Sunday's vote, defeating the pro-Russian Strong Armenia party led by Russian-Armenian billionaire Samvel Karapetyan, which received around 23% of the vote."
-    },
-    {
-      "title": "Meta Blocks NSO Group's New WhatsApp Phishing Attack, Files Contempt Order",
-      "url": "https://thehackernews.com/2026/06/meta-blocks-nso-groups-new-whatsapp.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-08T17:08:44+00:00",
-      "summary": "Meta on Monday said it detected and blocked spear-phishing attempts linked to Israeli spyware vendor NSO Group.\n\nIn addition, the tech giant said it's filing a federal court contempt order against the company for violating a permanent injunction that barred it from targeting WhatsApp and its users.\n"
-    },
-    {
       "title": "TeamPCP Supply Chain Campaign: Activity Through 2026-06-07, (Mon, Jun 8th)",
       "url": "https://isc.sans.edu/diary/rss/33060",
       "source": "SANS ISC Diary",
       "category": "news",
       "published": "2026-06-08T17:07:37+00:00",
       "summary": "This diary continues the Internet Storm Center&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;s tracking of the TeamPCP supply chain campaign, first documented in the SANS white paper When the Security Scanner Became the Weapon and most recently in the handler diary Activity Through 2026-05-24. Since that u"
-    },
-    {
-      "title": "WhatsApp says NSO targeted users with spearfishing attacks in violation of court order",
-      "url": "https://therecord.media/whatsapp-says-nso-targeted-users-with-attacks-against-court-order",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-08T16:51:00+00:00",
-      "summary": "WhatsApp said it is filing a federal court contempt order against NSO for violating a permanent injunction that bars it from mounting attacks against its users."
     },
     {
       "title": "'Hades' Campaign Against PyPI Puts New Spin on Shai-Hulud",
@@ -2961,22 +2646,6 @@
       "summary": "North Korean actor UNK_DeadDrop targeted developers with fake coding tasks to steal crypto"
     },
     {
-      "title": "Critical Check Point VPN Flaw Exploited to Bypass Passwords in IKEv1 Setups",
-      "url": "https://thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-08T14:17:39+00:00",
-      "summary": "Check Point has warned of active exploitation of a critical vulnerability impacting Remote Access VPN and Mobile Access deployments that are configured to use the deprecated IKEv1 key exchange protocol.\n\nThe vulnerability, tracked as CVE-2026-50751 (CVSS score: 9.3), is a case of a logic flow weakne"
-    },
-    {
-      "title": "Russia upgrades rules for its digital spy system to better track citizens online",
-      "url": "https://therecord.media/russia-upgrades-rules-for-digital-spy-system-sorm",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-08T14:04:00+00:00",
-      "summary": "New regulations published by Russia's Ministry of Digital Development at the end of May updated the technical standards governing SORM, formally known as the System for Operative Investigative Activities."
-    },
-    {
       "title": "OpenAI Unveils ChatGPT Account Security Controls",
       "url": "https://www.infosecurity-magazine.com/news/chatgpt-lockdown-mode-active/",
       "source": "Infosecurity Magazine",
@@ -2985,44 +2654,12 @@
       "summary": "OpenAI brings Lockdown Mode and Active Sessions to ChatGPT to curb prompt injection data theft"
     },
     {
-      "title": "WhatsApp Catches Spyware Firm NSO Defying No-Hacking Court Order",
-      "url": "https://www.securityweek.com/whatsapp-catches-spyware-firm-nso-defying-no-hacking-court-order/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-08T13:23:03+00:00",
-      "summary": "The Meta-owned communications app is filing a federal court contempt order against NSO.\nThe post WhatsApp Catches Spyware Firm NSO Defying No-Hacking Court Order appeared first on SecurityWeek."
-    },
-    {
-      "title": "AI Phishing Is Crushing SOCs with Alert Volume: How to Reduce Tier 1 Overload",
-      "url": "https://thehackernews.com/2026/06/ai-phishing-is-crushing-socs-with-alert.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-08T13:19:13+00:00",
-      "summary": "Phishing has always been a numbers game. AI has turned it into a volume machine.\n\nAttackers can now create convincing emails, fake login pages, and tailored lures in minutes. Every polished message adds another case for Tier 1 to review, another link to inspect, and another alert that cannot be dism"
-    },
-    {
-      "title": "Cybersecurity M&A Roundup: 26 Deals Announced in May 2026",
-      "url": "https://www.securityweek.com/cybersecurity-ma-roundup-26-deals-announced-in-may-2026/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-08T12:38:45+00:00",
-      "summary": "Significant cybersecurity M&#038;A deals announced by Akamai, Check Point, Cisco, Cyera, Dragos, WatchGuard and Zscaler.\nThe post Cybersecurity M&#038;A Roundup: 26 Deals Announced in May 2026 appeared first on SecurityWeek."
-    },
-    {
       "title": "Infosecurity Europe: Prompt Injection Remains Unsolved, OWASP Researcher Warns",
       "url": "https://www.infosecurity-magazine.com/news/infosec-europe-prompt-injection/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-06-08T10:30:00+00:00",
       "summary": "At Infosecurity Europe 2026, OWASP\u2019s Ariel Fogel warned that prompt injection remains an \u201cunresolved problem\u201d within generative AI architecture"
-    },
-    {
-      "title": "Two-Thirds of Open Source Community Unaware of Cyber Resilience Act",
-      "url": "https://www.infosecurity-magazine.com/news/open-source-unaware-cyber/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-08T09:00:00+00:00",
-      "summary": ""
     },
     {
       "title": "All the Ways Europe Is Ditching American Technology",
@@ -3063,14 +2700,6 @@
       "category": "news",
       "published": "2026-06-05T14:40:11+00:00",
       "summary": "AI worms, or &quot;viruses with wings and brains,&quot; adapt to new environments, seek out vulnerabilities, and will likely strike within a year, researchers say."
-    },
-    {
-      "title": "EU unveils tech sovereignty package to cut reliance on US, Chinese suppliers",
-      "url": "https://therecord.media/eu-unveils-tech-sovereignty-package-cut-reliance-us-china",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-05T13:38:00+00:00",
-      "summary": "The package bundles two draft laws \u2014 a Chips Act 2.0 and a Cloud and AI Development Act (CADA) \u2014 alongside an Open Source Strategy and a roadmap for digitalizing the energy system."
     },
     {
       "title": "Trump AI Order Seeks Voluntary Frontier Model Testing",
@@ -3345,20 +2974,20 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
-      "title": "Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "title": "NCSC: Leave passwords in the past - passkeys are the future",
+      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     },
     {
-      "title": "Passkeys are more secure than traditional ways to log in",
-      "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
+      "title": "International cyber agencies share fresh advice to defend against China-linked covert networks",
+      "url": "https://www.ncsc.gov.uk/news/international-cyber-agencies-fresh-advice-defend-against-china-linked-covert-networks",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
+      "summary": "New advisory highlights how to defend against attacker tactics believed to be used by China-linked actors to hide malicious cyber activity."
     }
   ],
   "stats": {
@@ -3368,7 +2997,7 @@
     "exploited": 9,
     "kev_total": 50,
     "kev_7d": 6,
-    "gh_advisories": 30,
+    "gh_advisories": 0,
     "threatfox_iocs": 0,
     "epss_enriched": 2
   }
