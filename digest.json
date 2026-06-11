@@ -1,193 +1,11 @@
 {
-  "generated": "2026-06-11T10:45:22.710794+00:00",
+  "generated": "2026-06-11T12:51:53.498272+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>1 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>2 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11607",
-      "desc": "Backend users with access to the Form Framework were able to use files not ending in .form.yaml as form definitions, which were processed without denying the incorrect file extension. Maliciously crafted form definition files can be used to execute arbitrary SQL statements, allowing attackers to escalate privileges by creating administrative backend user accounts. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0-11.5.51, 12.0.0-12.4.46, 13.0.0-13.4.31 and 14.0.0-14.3.3.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:47.027",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11607"
-    },
-    {
-      "id": "CVE-2026-47343",
-      "desc": "Non-privileged backend users with file mount access were able to perform write operations (move, delete, rename) on folders representing the root of an active file mount due to missing authorization restrictions. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0 through 11.5.50, 12.0.0 through 12.4.45, 13.0.0 through 13.4.30, and 14.0.0 through 14.3.2.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:52.193",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47343"
-    },
-    {
-      "id": "CVE-2026-47346",
-      "desc": "Backend users with file write permissions were able to upload form definition files with mixed-case extensions (e.g., .FORM.YAML) to bypass the Form Framework's upload restriction. Maliciously crafted form definition files can be used to execute arbitrary SQL statements, allowing attackers to escalate privileges by creating administrative backend user accounts. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0-11.5.50, 12.0.0-12.4.45, 13.0.0-13.4.30 and 14.0.0-14.3.2.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:52.320",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47346"
-    },
-    {
-      "id": "CVE-2026-47347",
-      "desc": "Applications that use GeneralUtility::sanitizeLocalUrl to allow only local URLs are vulnerable to open redirect attacks if the URL is used after it has passed the aforementioned sanitization checks. This enables attackers to redirect users to external content and carry out phishing attacks. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0-11.5.50, 12.0.0-12.4.45, 13.0.0-13.4.30 and 14.0.0-14.3.2.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:52.457",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47347"
-    },
-    {
-      "id": "CVE-2026-47348",
-      "desc": "Editors with access to create or modify page content were able to include HTML markup in page titles that were stored in the search index without sanitization. When displayed in frontend search results via the Indexed Search plugin, these titles were rendered without proper output encoding, resulting in a Cross-Site Scripting vulnerability. This issue affects TYPO3 CMS versions 13.0.0-13.4.30 and 14.0.0-14.3.2.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:52.583",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47348"
-    },
-    {
-      "id": "CVE-2026-47349",
-      "desc": "Backend users with access to the Recycler module were able to restore soft-deleted records on pages or for tables they were not authorized to modify. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0-11.5.51, 12.0.0-12.4.46, 13.0.0-13.4.31 and 14.0.0-14.3.3.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:52.720",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47349"
-    },
-    {
-      "id": "CVE-2026-47350",
-      "desc": "Backend users were able to move records to a different page without having edit permissions on the source page. This issue affects TYPO3 CMS versions 13.0.0-13.4.31 and 14.0.0-14.3.3.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:52.860",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47350"
-    },
-    {
-      "id": "CVE-2026-47351",
-      "desc": "Backend users were able to insert arbitrary records and files into the TYPO3 clipboard without proper read permission checks, which allowed users to gather information about records and files they were not authorized to view. This issue affects TYPO3 CMS versions 10.4.0-13.4.30 and 14.0.0-14.3.2.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:52.993",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47351"
-    },
-    {
-      "id": "CVE-2026-47352",
-      "desc": "Authenticated backend users were able to retrieve file metadata via several Backend API routes without proper permission checks, allowing access to files outside their permitted file mounts or storages. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0-11.5.51, 12.0.0-12.4.46, 13.0.0-13.4.31 and 14.0.0-14.3.3.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:53.120",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47352"
-    },
-    {
-      "id": "CVE-2026-49738",
-      "desc": "The path allowance check in GeneralUtility::isAllowedAbsPath() performed a plain string prefix comparison without requiring a directory separator boundary, causing a path like /var/www/html-other/secret.yaml to be incorrectly accepted as valid when the project root was /var/www/html. Administrator users with access to the File Abstraction Layer were able to create new file storage definitions pointing to directories outside the project root, bypassing this path check. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0-11.5.51, 12.0.0-12.4.46, 13.0.0-13.4.31 and 14.0.0-14.3.3.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:53.247",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49738"
-    },
-    {
-      "id": "CVE-2026-49740",
-      "desc": "TYPO3's cache frontend (VariableFrontend) and persistent key-value store (Registry) deserialized PHP payloads without integrity validation or class restrictions. An attacker with write access to the underlying storage backend (cache store or sys_registry database table) could inject a crafted serialized payload to trigger PHP Object Injection, potentially exploiting a gadget chain to achieve Remote Code Execution or other high-impact effects. Exploiting this vulnerability requires direct local write access to the storage, such as the SQL database or file system. This issue affects TYPO3 CMS versions before 10.4.57, 11.0.0-11.5.51, 12.0.0-12.4.46, 13.0.0-13.4.31 and 14.0.0-14.3.3.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:53.380",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49740"
-    },
-    {
-      "id": "CVE-2026-49741",
-      "desc": "Backend users with write access to the form_definition database table were able to directly create, update, or delete form definition records via DataHandler, bypassing the Form Framework's persistence validation and permission checks. This allowed injecting arbitrary form configurations, re-enabling attack vectors originally addressed in TYPO3-CORE-SA-2018-003, including SQL injection and privilege escalation. This issue affects TYPO3 CMS versions 14.0.0-14.3.3.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:53.520",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49741"
-    },
-    {
-      "id": "CVE-2026-49742",
-      "desc": "Backend users with file download permissions were able to download files from the fallback storage of the file abstraction layer (FAL) via the Media Module. Since the fallback storage resolves paths relative to the server's document root, this could expose sensitive files such as log files. This issue affects TYPO3 CMS versions 11.0.0-11.5.50, 12.0.0-12.4.45, 13.0.0-13.4.30 and 14.0.0-14.3.2.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-09T11:16:53.650",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49742"
-    },
     {
       "id": "CVE-2016-20062",
       "desc": "Simply Poll 1.4.1 plugin for WordPress contains an SQL injection vulnerability that allows unauthenticated attackers to extract database information by injecting SQL code through the 'pollid' POST parameter. Attackers can send requests to the admin-ajax.php endpoint with the 'spAjaxResults' action and malicious 'pollid' values to execute arbitrary SQL queries and read sensitive data from the WordPress database.",
@@ -422,10 +240,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00017,
-        "percentile": 0.04236
-      },
+      "epss": null,
       "published": "2026-06-09T13:16:37.000",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46317"
     },
@@ -607,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00073,
+        "percentile": 0.22153
+      },
       "published": "2026-06-09T14:16:37.197",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11790"
     },
@@ -705,12 +523,194 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00018,
-        "percentile": 0.0478
-      },
+      "epss": null,
       "published": "2026-06-09T14:16:42.620",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46329"
+    },
+    {
+      "id": "CVE-2026-46330",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nRevert \"net/smc: Introduce TCP ULP support\"\n\nThis reverts commit d7cd421da9da2cc7b4d25b8537f66db5c8331c40.\n\nAs reported by Al Viro, the TCP ULP support for SMC is fundamentally\nbroken. The implementation attempts to convert an active TCP socket\ninto an SMC socket by modifying the underlying `struct file`, dentry,\nand inode in-place, which violates core VFS invariants that assume\nthese structures are immutable for an open file, creating a risk of\nuse after free errors and general system instability.\n\nGiven the severity of this design flaw and the fact that cleaner\nalternatives (e.g., LD_PRELOAD, BPF) exist for legacy application\ntransparency, the correct course of action is to remove this feature\nentirely.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:42.723",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46330"
+    },
+    {
+      "id": "CVE-2026-46332",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ngreybus: gb-beagleplay: bound bootloader receive buffering\n\ncc1352_bootloader_rx() appends each serdev chunk into the fixed\nrx_buffer before parsing bootloader packets. The helper can keep\nleftover bytes between callbacks and may receive multiple packets in one\ncallback, so a single count value is not constrained by one packet\nlength.\n\nCheck that the incoming chunk fits in the remaining receive buffer space\nbefore memcpy(). If it does not, drop the staged data and consume the\nbytes instead of overflowing rx_buffer.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:42.817",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46332"
+    },
+    {
+      "id": "CVE-2026-47899",
+      "desc": "The Electron preload script in Logseq exposes an API method that allows the renderer process to invoke IPC handlers without proper path validation. An attacker with JavaScript execution in the renderer (e.g. via XSS or a malicious plugin), can read, write, or delete arbitrary files on the user's system.\nWhile only version v0.10.15\u00a0was tested and confirmed as vulnerable, status of other versions is unknown since this issue was not addressed by a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:43.550",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47899"
+    },
+    {
+      "id": "CVE-2026-47900",
+      "desc": "Logseq is vulnerable to a stored cross-site scripting (XSS). A malicious plugin can include a JavaScript payload in the \"name\" field of its \"package.json\" file, which is rendered using \"innerHTML\" without proper sanitization, allowing the execution of arbitrary code in the privileged host context.\nWhile only version v0.10.15 was tested and confirmed as vulnerable, status of other versions is unknown since this issue was not addressed by a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:43.700",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47900"
+    },
+    {
+      "id": "CVE-2026-47901",
+      "desc": "Logseq is vulnerable to a sandbox escape flaw where plugins running in sandboxed iframes can inject arbitrary HTML attributes, such as event handlers, into their container element in the host DOM. Due to a disabled Content Security Policy (CSP), this allows a malicious plugin to execute arbitrary JavaScript in the privileged host context, potentially gaining unauthorized access to filesystem APIs.\nWhile only version v0.10.15 was tested and confirmed as vulnerable, status of other versions is unknown since this issue was not addressed by a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:43.823",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47901"
+    },
+    {
+      "id": "CVE-2026-49762",
+      "desc": "Uncontrolled Resource Consumption vulnerability in the Elixir standard library's Version module allows an attacker who controls a version string to cause a denial of service through CPU and memory exhaustion.\n\nThe version parser converts numeric version components (major, minor, patch and numeric pre-release/build identifiers) to integers without bounding their length. A single large all-digit component therefore forces a super-linear, non-yielding base-10 to arbitrary-precision integer conversion (String.to_integer/1, i.e. :erlang.binary_to_integer/1) that pins a BEAM scheduler, and a larger component raises an uncaught SystemLimitError that crashes the calling process. A single moderately sized string (around one megabyte) is enough; no authentication is required.\n\nThis is reachable from the public entry points Version.parse/1, Version.parse!/1, Version.match?/3, Version.compare/2, and Version.parse_requirement/1, which applications routinely call on untrusted input such as HTTP parameters, dependency-manifest fields, and package metadata.\n\nThis vulnerability is associated with program files lib/version.ex and program routines 'Elixir.Version.Parser':parse_digits/2.\n\nThis issue affects Elixir: from 1.5.0 before 1.20.1.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:44.317",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49762"
+    },
+    {
+      "id": "CVE-2026-52904",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/nouveau: fix nvkm_device leak on aperture removal failure\n\nWhen aperture_remove_conflicting_pci_devices() fails during probe, the\nerror path returns directly without unwinding the nvkm_device that was\njust allocated by nvkm_device_pci_new(). This leaks both the device\nwrapper and the pci_enable_device() reference taken inside it.\n\nJump to the existing fail_nvkm label so nvkm_device_del() runs and\nbalances both. The leak was introduced when the intermediate\nnvkm_device_del() between detection and aperture removal was dropped\nin favor of creating the pci device once.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:44.830",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52904"
+    },
+    {
+      "id": "CVE-2026-52905",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nmm/damon/core: disallow non-power of two min_region_sz on damon_start()\n\nCommit d8f867fa0825 (\"mm/damon: add damon_ctx->min_sz_region\") introduced\na bug that allows unaligned DAMON region address ranges.  Commit\nc80f46ac228b (\"mm/damon/core: disallow non-power of two min_region_sz\")\nfixed it, but only for damon_commit_ctx() use case.  Still, DAMON sysfs\ninterface can emit non-power of two min_region_sz via damon_start().  Fix\nthe path by adding the is_power_of_2() check on damon_start().\n\nThe issue was discovered by sashiko [1].",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:44.950",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52905"
+    },
+    {
+      "id": "CVE-2026-52906",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\n9p: fix access mode flags being ORed instead of replaced\n\nSince commit 1f3e4142c0eb (\"9p: convert to the new mount API\"),\nv9fs_apply_options() applies parsed mount flags with |= onto flags\nalready set by v9fs_session_init(). For 9P2000.L, session_init sets\nV9FS_ACCESS_CLIENT as the default, so when the user mounts with\n\"access=user\", both bits end up set. Access mode checks compare\nagainst exact values, so having both bits set matches neither mode.\n\nThis causes v9fs_fid_lookup() to fall through to the default switch\ncase, using INVALID_UID (nobody/65534) instead of current_fsuid()\nfor all fid lookups. Root is then unable to chown or perform other\nprivileged operations.\n\nFix by clearing the access mask before applying the user's choice.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:45.047",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52906"
+    },
+    {
+      "id": "CVE-2026-52907",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: rockchip: rkcif: fix off by one bugs\n\nChange these comparisons from > vs >= to avoid accessing one element\nbeyond the end of the arrays.\nWhile at it, use ARRAY_SIZE instead of the _MAX enum values.\n\n[fix cosmetic issues]",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:45.147",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52907"
+    },
+    {
+      "id": "CVE-2026-7486",
+      "desc": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Netcad Software Inc. E-\u0130mar allows SQL Injection.\n\nThis issue affects E-\u0130mar: from 2.10.1.0 before 3.0.2.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:45.407",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7486"
+    },
+    {
+      "id": "CVE-2026-9279",
+      "desc": "Logseq exposes an IPC handler that allows the renderer process to execute shell commands. While an allowlist restricts the command name (e.g. `git`, `pandoc`, `grep`), the argument string is concatenated with the command and passed to `child_process.spawn` with the `shell: true` option, allowing shell metacharacters in the arguments to bypass the allowlist. An attacker with JavaScript execution in the renderer (e.g. via XSS or a malicious plugin) can execute arbitrary shell commands with the privileges of the Logseq process, leading to remote code execution on the host.\nWhile only version v0.10.15 was tested and confirmed as vulnerable, status of other versions is unknown since this issue was not addressed by a patch.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-09T14:16:45.773",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9279"
+    },
+    {
+      "id": "CVE-2025-67862",
+      "desc": "An Internal Asset Exposed to Unsafe Debug Access Level or State vulnerability [CWE-1244] vulnerability in Fortinet FortiOS 7.6.0 through 7.6.2, FortiOS 7.4.0 through 7.4.7, FortiOS 7.2.0 through 7.2.10, FortiOS 7.0.0 through 7.0.16, FortiOS 6.4 all versions, FortiProxy 7.6.0 through 7.6.3, FortiProxy 7.4.0 through 7.4.10, FortiProxy 7.2.0 through 7.2.14, FortiProxy 7.0 all versions may allow an authenticated admin to execute lua scripts via crafted CLI commands.",
+      "cvss": 6.7,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Fortinet",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00012,
+        "percentile": 0.01727
+      },
+      "published": "2026-06-09T16:16:35.500",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-67862"
     }
   ],
   "kev": [
@@ -2682,6 +2682,78 @@
   ],
   "news": [
     {
+      "title": "CISA tells govt agencies to patch critical exploited flaws in 3 days",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-tells-govt-agencies-to-patch-critical-exploited-flaws-in-3-days/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-11T12:46:44+00:00",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) announced a new Binding Operational Directive, 26-04, that prioritizes security updates for Federal Civilian Executive Branch (FCEB) agencies. [...]"
+    },
+    {
+      "title": "Most Cybersecurity Teams Struggle to Find Time for Training on New Cyber Threats",
+      "url": "https://www.infosecurity-magazine.com/news/cybersecurity-training-time/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-11T12:30:00+00:00",
+      "summary": "Organizations are aware of the challenges that new technologies like AI bring: but cybersecurity staff struggle to make time for the required training during working hours"
+    },
+    {
+      "title": "Signal Alums Reveal \u2018Encrypted Spaces,\u2019 a System for Making Private Collaboration Apps",
+      "url": "https://www.wired.com/story/signal-alums-release-encrypted-spaces-a-new-system-for-building-private-collaboration-apps/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-06-11T12:00:00+00:00",
+      "summary": "The new open-source project could serve as the basis for a future of apps with features as complex as Slack, Discord, or Google Docs\u2014but with added protection against surveillance."
+    },
+    {
+      "title": "Hackers Exploit Langflow Vulnerability for Remote Code Execution",
+      "url": "https://www.securityweek.com/hackers-exploit-langflow-vulnerability-for-remote-code-execution/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-11T11:52:59+00:00",
+      "summary": "Disclosed in March, the security defect enables unauthenticated attackers to write files to arbitrary locations on the system.\nThe post Hackers Exploit Langflow Vulnerability for Remote Code Execution appeared first on SecurityWeek."
+    },
+    {
+      "title": "Siemens Says Desigo CC Files Flagged as Malware by Security Engines",
+      "url": "https://www.securityweek.com/siemens-says-desigo-cc-files-flagged-as-malware-by-security-engines/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-11T11:40:27+00:00",
+      "summary": "A PowerShell script included in patch files appears to be triggering false positives by multiple security engines.\nThe post Siemens Says Desigo CC Files Flagged as Malware by Security Engines appeared first on SecurityWeek."
+    },
+    {
+      "title": "AI Broke Vulnerability Management. That's Why CISOs Are Moving Budget to BAS.",
+      "url": "https://thehackernews.com/2026/06/ai-broke-vulnerability-management-thats.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-11T11:30:00+00:00",
+      "summary": "For thirty years, vulnerability management ran on a buffer: the months between when a vulnerability was found and when someone could figure out how to weaponize it. The solution was straightforward enough; triage by severity, schedule the fix, validate, and move on. The buffer was what made that wor"
+    },
+    {
+      "title": "Interpol Dismantles SniperDz Phishing-as-a-Service Platform",
+      "url": "https://www.infosecurity-magazine.com/news/interpol-dismantles-sniperdz/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-11T11:30:00+00:00",
+      "summary": "New revelations by Group-IB expose the full scale of the decade-old SniperDz phishing operation"
+    },
+    {
+      "title": "FBI Seizes 13 Websites That Officials Say Were Used by China to Target and Recruit US Workers",
+      "url": "https://www.securityweek.com/fbi-seizes-13-websites-that-officials-say-were-used-by-china-to-target-and-recruit-us-workers/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-11T11:06:22+00:00",
+      "summary": "The 13 websites purported to be affiliated with consulting companies that advertised job openings for current and former holders of security clearances\nThe post FBI Seizes 13 Websites That Officials Say Were Used by China to Target and Recruit US Workers appeared first on SecurityWeek."
+    },
+    {
+      "title": "Splunk, Palo Alto Networks Patch Severe Vulnerabilities",
+      "url": "https://www.securityweek.com/splunk-palo-alto-networks-patch-severe-vulnerabilities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-11T10:47:48+00:00",
+      "summary": "The security defects could allow attackers to create or modify arbitrary files and access and modify protected resources.\nThe post Splunk, Palo Alto Networks Patch Severe Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
       "title": "Extortion-Only Attacks Increase, With Data Theft Dominating Ransomware Claims",
       "url": "https://www.infosecurity-magazine.com/news/extortion-only-attacks-surge/",
       "source": "Infosecurity Magazine",
@@ -2826,6 +2898,14 @@
       "summary": "Bug bounty research inadvertently led organizations to believe they were being breached through their ServiceNow instances."
     },
     {
+      "title": "CISA to require federal agencies to patch some cyber vulnerabilities within 3 days",
+      "url": "https://therecord.media/cisa-to-require-federal-agencies-to-patch-3-days",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-10T19:53:00+00:00",
+      "summary": "CISA is giving agencies 180 days to adopt the new patching time frame, according to a directive released Wednesday."
+    },
+    {
       "title": "GitHub announces npm security changes to tackle supply-chain attacks",
       "url": "https://www.bleepingcomputer.com/news/security/github-announces-npm-security-changes-to-tackle-supply-chain-attacks/",
       "source": "Bleeping Computer",
@@ -2890,6 +2970,14 @@
       "summary": "Menlo Security research warns that as enterprise applications become increasingly browser based, traditional cybersecurity tools leave them vulnerable to cyber threats"
     },
     {
+      "title": "Cyberattack shuts down major Australian sugar mills, disrupting harvest",
+      "url": "https://therecord.media/cyberattack-shuts-down-major-australian-sugar-producer",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-10T15:18:00+00:00",
+      "summary": "Australia's second-largest sugar producer said on Wednesday that it was responding to a cybersecurity incident affecting parts of its operations and had engaged cybersecurity experts and local authorities to investigate the attack and restore its systems safely."
+    },
+    {
       "title": "Ivanti, Fortinet, and SAP Release Patches for Multiple Critical Vulnerabilities",
       "url": "https://thehackernews.com/2026/06/ivanti-fortinet-and-sap-release-patches.html",
       "source": "The Hacker News",
@@ -2904,14 +2992,6 @@
       "category": "news",
       "published": "2026-06-10T15:00:59+00:00",
       "summary": "A high-severity unpatched security flaw in Langflow, an open-source low-code platform to build artificial intelligence (AI) applications, has come under active exploitation in the wild, according to findings from VulnCheck.\n\nThe vulnerability in question is CVE-2026-5027 (CVSS score: 8.8), a case of"
-    },
-    {
-      "title": "China-linked JDY botnet expands targeting of U.S. military networks",
-      "url": "https://www.bleepingcomputer.com/news/security/china-linked-jdy-botnet-expands-targeting-of-us-military-networks/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-10T15:00:00+00:00",
-      "summary": "The JDY botnet, a malware network previously associated with Chinese threat actors like Volt Typhoon, has significantly expanded its targeting scope and reconnaissance efforts. [...]"
     },
     {
       "title": "CISA Adds Cisco, Chrome, and Arista Flaws to KEV Catalog Amid Active Exploitation",
@@ -2946,36 +3026,12 @@
       "summary": "The ACLU is suing two Florida police departments over the arrest of a Fort Myers man in a child-abduction case, saying officers treated a flawed face-recognition match as a near-certain ID."
     },
     {
-      "title": "Cyera Raises $600 Million at $12 Billion Valuation",
-      "url": "https://www.securityweek.com/cyera-raises-600-million-at-12-billion-valuation/",
-      "source": "SecurityWeek",
+      "title": "Microsoft ships largest Patch Tuesday on record, with one bug under active attack",
+      "url": "https://therecord.media/microsoft-ships-largest-patch-tuesday-on-record",
+      "source": "The Record",
       "category": "news",
-      "published": "2026-06-10T13:48:36+00:00",
-      "summary": "Cyera is positioned as one of the most valuable privately held cybersecurity firms in the world with total funding topping $2 billion.\nThe post Cyera Raises $600 Million at $12 Billion Valuation appeared first on SecurityWeek."
-    },
-    {
-      "title": "Aryon Security Raises $29 Million in Series A Funding",
-      "url": "https://www.securityweek.com/aryon-security-raises-29-million-in-series-a-funding/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-10T12:24:20+00:00",
-      "summary": "In the post-Mythos era, the company\u2019s platform helps organizations enforce security controls across environments.\nThe post Aryon Security Raises $29 Million in Series A Funding appeared first on SecurityWeek."
-    },
-    {
-      "title": "Critical HVAC and UPS Vulnerabilities Could Let Hackers Disrupt Data Centers",
-      "url": "https://www.securityweek.com/critical-hvac-and-ups-vulnerabilities-could-let-hackers-disrupt-data-centers/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-10T12:07:58+00:00",
-      "summary": "Claroty researchers have analyzed the security of Vertiv UPS network cards and the Trane Tracer SC+ HVAC controller.\nThe post Critical HVAC and UPS Vulnerabilities Could Let Hackers Disrupt Data Centers appeared first on SecurityWeek."
-    },
-    {
-      "title": "CISO Forum Webinar Today: 2026 Mid-Year Review",
-      "url": "https://www.securityweek.com/ciso-forum-webinar-today-2026-mid-year-review/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-10T12:00:00+00:00",
-      "summary": "Learn more about protecting against unmonitored use of generative AI (Shadow AI) in business units and building and enforcing AI governance frameworks.\nThe post CISO Forum Webinar Today: 2026 Mid-Year Review appeared first on SecurityWeek."
+      "published": "2026-06-10T13:00:00+00:00",
+      "summary": "The release comes after Microsoft\u2019s security leadership acknowledged last month that AI tools are driving a surge in vulnerability discovery across the industry."
     },
     {
       "title": "New Fable 5 Is a \"Mythos-Class\" LLM Available to All, Anthropic Announces",
@@ -2992,14 +3048,6 @@
       "category": "news",
       "published": "2026-06-10T10:27:49+00:00",
       "summary": "Your pentest report looks clean. That might be the problem.\n\nRun automated pentesting long enough, and the new findings start to dry up. By the third or fourth run, fewer issues appear. The report looks stable. Leadership reads \"stable\" as \"secure.\" It usually isn't. The work slows down. The risk do"
-    },
-    {
-      "title": "Over a Quarter of Identity Crime Victims Hit by Multiple Incidents, ITRC Data Shows",
-      "url": "https://www.infosecurity-magazine.com/news/quarter-identity-crime-victims/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-10T10:15:00+00:00",
-      "summary": "Nearly 26% of identity crime victims faced multiple incidents in the past year, as ITRC warns of a growing \"multi-layered crisis\""
     },
     {
       "title": "Soccer Fans, You\u2019re Being Watched",
@@ -3026,28 +3074,12 @@
       "summary": "The organization claims that the FIFA tournament could have impacts on the rights of local people and visiting soccer fans in all three host countries."
     },
     {
-      "title": "Microsoft Patches Record 206 Flaws, Including Three Zero-Days and Critical RCE Bugs",
-      "url": "https://thehackernews.com/2026/06/microsoft-patches-record-206-flaws.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-10T09:38:13+00:00",
-      "summary": "Microsoft on Tuesday released fixes for a record 206 security vulnerabilities impacting its software portfolio, including three flaws that have been publicly disclosed at the time of release.\n\nOf the 206 flaws, 39 are rated Critical, and 167 are rated Important in severity. This includes 63 privileg"
-    },
-    {
       "title": "How has use of framing protection security headers changed in the past 3 years&#x3f;, (Wed, Jun 10th)",
       "url": "https://isc.sans.edu/diary/rss/33068",
       "source": "SANS ISC Diary",
       "category": "news",
       "published": "2026-06-10T08:29:21+00:00",
       "summary": "Back in 2023, I wrote a diary&#x5b;1&#x5d; discussing how commonly X-Frame-Options and CSP headers containing the frame-ancestors directive were used on 1 million most popular domains on the internet (based on the Tranco list&#x5b;2&#x5d;), and how they were set. Given that three years have passed s"
-    },
-    {
-      "title": "Microsoft Fixes 200 CVEs in June Patch Tuesday",
-      "url": "https://www.infosecurity-magazine.com/news/microsoft-fixes-200-cves-in-june/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-10T08:00:00+00:00",
-      "summary": "Microsoft has patched 200 vulnerabilities including three zero-days"
     },
     {
       "title": "Risky Business #841 -- Microsoft gets owned and 0day'd",
@@ -3064,6 +3096,14 @@
       "category": "news",
       "published": "2026-06-10T02:00:02+00:00",
       "summary": ""
+    },
+    {
+      "title": "UK weakens proposed telecoms defenses against Chinese hackers after industry pushback",
+      "url": "https://therecord.media/uk-weakens-telecoms-defenses-after-industry-lobbying",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-09T23:00:00+00:00",
+      "summary": "Britain has weakened proposed cybersecurity protections for its telecoms networks that were developed in response to the Salt Typhoon espionage campaign, after the companies responsible for implementing the measures lobbied against them."
     },
     {
       "title": "A Record-Breaking Patch Tuesday for June 2026",
@@ -3098,6 +3138,14 @@
       "summary": "\u201cGhost-Sender&quot; is the result of a widespread misconfiguration, according to researchers, and evidence indicates it's being actively abused in the wild."
     },
     {
+      "title": "CISA to transform how it assesses cyber vulnerabilities and risks, Andersen says",
+      "url": "https://therecord.media/cisa-to-transform-how-it-assesses-cyber-vulns-risks",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-09T18:50:00+00:00",
+      "summary": "A binding operational directive being released Wednesday will direct federal agencies to change the way they address vulnerabilities by elevating some while putting others to the side."
+    },
+    {
       "title": "Microsoft June 2026 Patch Tuesday, (Tue, Jun 9th)",
       "url": "https://isc.sans.edu/diary/rss/33064",
       "source": "SANS ISC Diary",
@@ -3120,14 +3168,6 @@
       "category": "news",
       "published": "2026-06-09T02:00:03+00:00",
       "summary": ""
-    },
-    {
-      "title": "Meta Deletes Face-Recognition System From Its Smart Glasses App After WIRED Report",
-      "url": "https://www.wired.com/story/meta-removes-face-recognition-code-meta-ai-app-smart-glasses/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-06-08T17:31:11+00:00",
-      "summary": "The code WIRED identified is gone from the latest version of Meta AI, the companion app for the company\u2019s smart glasses. Meta won\u2019t say why or whether it\u2019s coming back."
     },
     {
       "title": "TeamPCP Supply Chain Campaign: Activity Through 2026-06-07, (Mon, Jun 8th)",
@@ -3306,25 +3346,25 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
+      "title": "Defending against China-nexus covert networks of compromised devices",
+      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "source": "NCSC UK",
+      "category": "news",
+      "published": "2026-04-23T12:00:00+00:00",
+      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+    },
+    {
       "title": "Passkeys are more secure than traditional ways to log in",
       "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
       "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
-    },
-    {
-      "title": "NCSC: Leave passwords in the past - passkeys are the future",
-      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
-      "source": "NCSC UK",
-      "category": "news",
-      "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     }
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 1,
+    "critical": 2,
     "high": 11,
     "exploited": 13,
     "kev_total": 50,
