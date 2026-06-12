@@ -1,67 +1,11 @@
 {
-  "generated": "2026-06-12T09:56:37.909654+00:00",
+  "generated": "2026-06-12T10:21:40.772147+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>8 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>10 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2025-6254",
-      "desc": "The Doctreat Core plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.6.8. This is due to the doctreat_process_registration() function not properly restricting the roles that a user can register with. This makes it possible for unauthenticated attackers to register as an administrator user.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-10T10:16:29.827",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-6254"
-    },
-    {
-      "id": "CVE-2026-11852",
-      "desc": "Debusine is an integrated solution to build, distribute and maintain a Debian-based distribution. Files managed by debusine are organized into artifacts. The endpoints that create and delete relationships between artifacts enforced no permissions checks beyond being able to see the artifacts in question.",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-10T10:16:31.350",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11852"
-    },
-    {
-      "id": "CVE-2026-11853",
-      "desc": "Debusine is an integrated solution to build, distribute and maintain a Debian-based distribution. Debian source packages (.dsc) and upload artifacts (.changes) are manifest files that name the files that make up the artifact. The parser used to read these files in Debusine accepted arbitrary fully user-controlled paths. The mergeuploads task could be abused to create arbitrary symbolic links on a worker, overwriting any file that the worker user has access to.",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-10T10:16:31.467",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11853"
-    },
-    {
-      "id": "CVE-2026-3018",
-      "desc": "The Newsletters plugin for WordPress is vulnerable to time-based SQL Injection via the \u2018wpmlsubscriber_id\u2019 parameter in all versions up to, and including, 4.13 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-10T10:16:31.713",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3018"
-    },
     {
       "id": "CVE-2026-11859",
       "desc": "An HTML injection vulnerability in the \"fetch links\" email sent by Thinkst Applied Research Canarytokens, enabling Interface Manipulation, Cross-Site Scripting (XSS) in emails clients that render HTML emails.\n\n\nThis issue affects Canarytokens: from Docker tag sha-c0f3cf142 before sha-08c3f93d, from Git commit c0f3cf142 before 08c3f93d.",
@@ -422,10 +366,7 @@
       "product": "Jenkins",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00025,
-        "percentile": 0.07509
-      },
+      "epss": null,
       "published": "2026-06-10T14:16:36.893",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53439"
     },
@@ -481,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00021,
+        "percentile": 0.05966
+      },
       "published": "2026-06-10T14:16:37.767",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9758"
     },
@@ -705,12 +649,68 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00046,
-        "percentile": 0.14474
-      },
+      "epss": null,
       "published": "2026-06-10T15:16:41.703",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53471"
+    },
+    {
+      "id": "CVE-2026-53473",
+      "desc": "A flaw was found in migration-planner-ui-app. An attacker can register a malicious discovery agent with a specially crafted credentialUrl containing JavaScript code. When an organizational user clicks this link in the user interface, the embedded malicious code executes within the user's browser session. This cross-site scripting (XSS) vulnerability allows the attacker to compromise the victim's Red Hat Single Sign-On (SSO) session, potentially leading to unauthorized cross-tenant data access and API actions.",
+      "cvss": 7.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-10T15:16:41.820",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53473"
+    },
+    {
+      "id": "CVE-2026-53474",
+      "desc": "A flaw was found in migration-planner. A remote authenticated attacker could exploit this vulnerability by uploading a specially crafted RVTools .xlsx file. Due to improper input sanitization, malicious SQL embedded within a spreadsheet cell is executed when cluster names are processed. This SQL Injection allows for arbitrary file reading on the system, potentially exposing sensitive information such as Kubernetes service account tokens and other credentials, which could lead to a full compromise of the SaaS environment.",
+      "cvss": 9.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "CRITICAL",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-10T15:16:41.943",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53474"
+    },
+    {
+      "id": "CVE-2026-53475",
+      "desc": "A flaw was found in assisted-migration-agent. The application hardcodes insecure Transport Layer Security (TLS) connections when communicating with vCenter. This vulnerability allows a Man-in-the-Middle (MITM) attacker to intercept and harvest vCenter administrator credentials. This can lead to unauthorized access to vCenter.",
+      "cvss": 9.3,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "CRITICAL",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-10T15:16:42.090",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53475"
+    },
+    {
+      "id": "CVE-2026-53476",
+      "desc": "A flaw was found in assisted-migration-agent. An unauthenticated attacker, located on the same local area network (LAN), can exploit a path traversal vulnerability. By crafting a specially designed gzipped tarball, the attacker can bypass security checks and write arbitrary files to the system. This could ultimately lead to the execution of unauthorized code on the appliance.",
+      "cvss": 9.6,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00053,
+        "percentile": 0.16899
+      },
+      "published": "2026-06-10T15:16:42.220",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53476"
     }
   ],
   "kev": [
@@ -2682,6 +2682,22 @@
   ],
   "news": [
     {
+      "title": "Pharma giant Novo Nordisk discloses breach of clinical trials data",
+      "url": "https://www.bleepingcomputer.com/news/security/pharmaceutical-giant-novo-nordisk-discloses-security-breach/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-12T10:13:19+00:00",
+      "summary": "Danish pharmaceutical giant Novo Nordisk, the world's largest producer of insulin, disclosed a data breach affecting patient information from some clinical trials. [...]"
+    },
+    {
+      "title": "LangGraph Flaw Chain Exposes Self-Hosted AI Agents to Remote Code Execution",
+      "url": "https://thehackernews.com/2026/06/langgraph-flaw-chain-exposes-self.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-12T09:50:36+00:00",
+      "summary": "Cybersecurity researchers have disclosed details of three now-patched security flaws impacting LangGraph, including a critical vulnerability chain that could result in remote code execution.\n\nLangGraph is an open-source framework created by LangChain to build complex, stateful, and multi-agent artif"
+    },
+    {
       "title": "Ivanti Sentry Exploitation Attempts Hitting Honeypots",
       "url": "https://www.securityweek.com/ivanti-sentry-exploitation-attempts-hitting-honeypots/",
       "source": "SecurityWeek",
@@ -2696,6 +2712,14 @@
       "category": "news",
       "published": "2026-06-12T09:27:08+00:00",
       "summary": "The browser refresh resolved critical and high-severity security defects, including a dozen use-after-free bugs.\nThe post Chrome 149 Update Patches 28 Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
+      "title": "INTERPOL Operation Takes Down Sniper Dz Phishing Platform, Arrests Administrator",
+      "url": "https://thehackernews.com/2026/06/interpol-takes-down-sniper-dz-phishing.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-12T08:52:55+00:00",
+      "summary": "An INTERPOL-led operation last month resulted in the disruption of Sniper Dz, a decade-long phishing-as-a-service (PhaaS) platform, Group-IB said Thursday.\n\nThe effort, codenamed Operation Ramz, took place between October 2025 and February 2026, and saw authorities from 13 countries in the Middle Ea"
     },
     {
       "title": "Anthropic Disputes Fable 5 AI Jailbreak",
@@ -2818,6 +2842,14 @@
       "summary": "A new analysis of The Gentlemen operation has revealed that the financially motivated threat group initially operated as an affiliate responsible for conducting double extortion attacks, while leveraging resources from various ransomware-as-a-service (RaaS) schemes like LockBit (aka Tenacious Mantis"
     },
     {
+      "title": "Cyber Force not included in Senate defense policy roadmap",
+      "url": "https://therecord.media/cyber-force-not-included-senate-defense-roadmap",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-11T16:47:00+00:00",
+      "summary": "An amendment by Sen. Kirsten Gillibrand (D-NY) to the chamber\u2019s fiscal 2027 national defense authorization bill that would have created the digital-focused service was defeated 14-13 when the Senate Armed Services Committee took up the nearly $1.2 trillion legislation behind closed doors this week."
+    },
+    {
       "title": "Drug Sites Hijacked Spotify\u2019s Search Ranking Through Fake Podcasts",
       "url": "https://www.wired.com/story/drug-sites-hijacked-spotifys-search-ranking-through-fake-podcasts-report-finds/",
       "source": "Wired Security",
@@ -2832,6 +2864,22 @@
       "category": "news",
       "published": "2026-06-11T15:55:41+00:00",
       "summary": "Law enforcement has dismantled the &ldquo;AudiA6&rdquo; cryptocurrency service&nbsp;allegedly used by ransomware actors and other cybercriminals to launder more than $380 million. [...]"
+    },
+    {
+      "title": "British high school sends students home following cyberattack",
+      "url": "https://therecord.media/british-school-sends-students-home-cyberattack",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-11T15:25:00+00:00",
+      "summary": "Great Marlow School, which has 1,428 pupils according to the Department for Education (DfE), said it was set to remain closed while it works with specialist IT and cybersecurity professionals to resolve the issue."
+    },
+    {
+      "title": "Hacker linked to Void Blizzard faces charges over cyberespionage campaign",
+      "url": "https://therecord.media/hacker-linked-to-void-blizzard-faces-charges",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-11T15:17:00+00:00",
+      "summary": "Denis Obrezko, 36, made his initial appearance in federal court in Boston on Tuesday after being transferred to U.S. custody from Thailand, where he was arrested last November."
     },
     {
       "title": "CISA Orders Agencies to Patch by Risk, Not Severity",
@@ -2874,6 +2922,14 @@
       "summary": "Oracle has released mitigations for CVE-2026-35273, but it has not said whether it\u2019s a zero-day exploited in ShinyHunters attacks.\nThe post Oracle Addresses PeopleSoft Vulnerability Amid Reports of Zero-Day Attacks appeared first on SecurityWeek."
     },
     {
+      "title": "University of Nottingham confirms cyber incident as Shiny Hunters group claims data theft",
+      "url": "https://therecord.media/university-of-nottingham-cyber-incident-shiny-hunters",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-11T13:53:00+00:00",
+      "summary": "According to the university\u2019s statement, it is still working to understand what data has been accessed and said it had already directly contacted affected students and alumni, potentially including those in its foreign campuses in Malaysia and China as well as in Nottingham."
+    },
+    {
       "title": "Alert Fatigue Is Becoming a Security Threat of Its Own",
       "url": "https://www.securityweek.com/alert-fatigue-is-becoming-a-security-threat-of-its-own/",
       "source": "SecurityWeek",
@@ -2888,14 +2944,6 @@
       "category": "news",
       "published": "2026-06-11T13:26:13+00:00",
       "summary": "Most good security work is invisible by design. Today is the exception.\n\nThe 2026 Cybersecurity Stars Awards winners are announced across 95 subcategories in four main award categories.\n\nThe reason is simple. Cybersecurity is full of work that deserves recognition and rarely gets it. Products that q"
-    },
-    {
-      "title": "ThreatsDay Bulletin: Worm Code Leaked, AI Agent Phished, Claude Code Patch + 28 New Stories",
-      "url": "https://thehackernews.com/2026/06/threatsday-bulletin-worm-code-leaked-ai.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-11T13:20:41+00:00",
-      "summary": "It's been one of those weeks. You expect the usual noise: recycled malware, sloppy attacks, another easy target getting hit. Instead, there's a supply chain attack kit in a public repo, a $5,000-a-month RAT that clones browsers, and research showing AI agents can be tricked into leaking real credent"
     },
     {
       "title": "CISA Directs Federal Agencies to Prioritize Security Patches Based on Risk",
@@ -2914,14 +2962,6 @@
       "summary": "Researchers say the OnyxC2 malware targets more than 200 applications and extensions while evading detection through encrypted payloads, DLL sideloading, and in-memory execution techniques.\nThe post OnyxC2 Stealer Offers Cybercriminals Enterprise-Grade Theft for $250 a Month appeared first on Securi"
     },
     {
-      "title": "Coupang hit with record $409 million data breach fine in Korea",
-      "url": "https://www.bleepingcomputer.com/news/security/south-korea-hits-coupang-with-record-409-million-fine-over-data-breach/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-11T12:52:41+00:00",
-      "summary": "\u200b\u200bThe Personal Information Protection Commission (PIPC), South Korea's data protection regulator, has fined e-commerce giant Coupang a record 624.6 billion won (roughly $409 million) following a massive data breach affecting more than 37 million customers [...]"
-    },
-    {
       "title": "Most Cybersecurity Teams Struggle to Find Time for Training on New Cyber Threats",
       "url": "https://www.infosecurity-magazine.com/news/cybersecurity-training-time/",
       "source": "Infosecurity Magazine",
@@ -2936,14 +2976,6 @@
       "category": "news",
       "published": "2026-06-11T12:00:00+00:00",
       "summary": "The new open-source project could serve as the basis for a future of apps with features as complex as Slack, Discord, or Google Docs\u2014but with added protection against surveillance."
-    },
-    {
-      "title": "AI Broke Vulnerability Management. That's Why CISOs Are Moving Budget to BAS.",
-      "url": "https://thehackernews.com/2026/06/ai-broke-vulnerability-management-thats.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-11T11:30:00+00:00",
-      "summary": "For thirty years, vulnerability management ran on a buffer: the months between when a vulnerability was found and when someone could figure out how to weaponize it. The solution was straightforward enough; triage by severity, schedule the fix, validate, and move on. The buffer was what made that wor"
     },
     {
       "title": "Interpol Dismantles SniperDz Phishing-as-a-Service Platform",
@@ -3016,6 +3048,14 @@
       "category": "news",
       "published": "2026-06-10T20:07:53+00:00",
       "summary": "Security research inadvertently led organizations to believe they were being breached through their ServiceNow instances."
+    },
+    {
+      "title": "CISA to require federal agencies to patch some cyber vulnerabilities within 3 days",
+      "url": "https://therecord.media/cisa-to-require-federal-agencies-to-patch-3-days",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-10T19:53:00+00:00",
+      "summary": "CISA is giving agencies 180 days to adopt the new patching time frame, according to a directive released Wednesday."
     },
     {
       "title": "AI Risk Worries Insurers &amp; Businesses Alike",
@@ -3324,7 +3364,7 @@
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 8,
+    "critical": 10,
     "high": 17,
     "exploited": 0,
     "kev_total": 50,
