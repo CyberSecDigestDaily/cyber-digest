@@ -1,53 +1,11 @@
 {
-  "generated": "2026-06-12T10:21:40.772147+00:00",
+  "generated": "2026-06-12T12:25:45.323154+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>10 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11859",
-      "desc": "An HTML injection vulnerability in the \"fetch links\" email sent by Thinkst Applied Research Canarytokens, enabling Interface Manipulation, Cross-Site Scripting (XSS) in emails clients that render HTML emails.\n\n\nThis issue affects Canarytokens: from Docker tag sha-c0f3cf142 before sha-08c3f93d, from Git commit c0f3cf142 before 08c3f93d.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-10T12:16:25.067",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11859"
-    },
-    {
-      "id": "CVE-2026-24066",
-      "desc": "Slate Digital Connect 1.37.0 for macOS installs a privileged helper tool, com.slatedigital.connect.privileged.helper.tool, which exposes the XPC service com.slatedigital.connect.privileged.helper.tool2. The helper validates connecting XPC clients by checking only the subject.OU value of the client's signing certificate and does not verify that the certificate chains to a trusted code-signing authority. A local attacker can sign a malicious client with a self-signed certificate containing the expected organizational unit value and connect to the privileged XPC service. This allows unauthorized access to privileged helper functionality and may lead to local privilege escalation.",
-      "cvss": 8.4,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-10T12:16:25.223",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-24066"
-    },
-    {
-      "id": "CVE-2026-24067",
-      "desc": "Slate Digital Connect 1.37.0 for macOS installs a privileged helper tool, com.slatedigital.connect.privileged.helper.tool, which exposes the XPC service com.slatedigital.connect.privileged.helper.tool2. The helper validates connecting XPC clients by obtaining the client's process identifier and using it to retrieve code-signing information for the process. This PID-based client validation is subject to a time-of-check time-of-use race condition because process identifiers can be reused. A local attacker can exploit PID reuse so that validation is performed against a trusted process instead of the original connecting process. This allows unauthorized access to privileged helper functionality and may lead to local privilege escalation.",
-      "cvss": 8.4,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-10T12:16:25.340",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-24067"
-    },
     {
       "id": "CVE-2024-58350",
       "desc": "Ghidra before 11.2 contains a use after free vulnerability in the Sleigh backend caused by undefined static initialization order of the SleighArchitecture::translators and XmlArchitectureCapability singletons. Attackers can trigger an infinite loop or denial of service during shutdown by exploiting the unsafe destruction order that causes iteration over deallocated memory.",
@@ -422,10 +380,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00021,
-        "percentile": 0.05966
-      },
+      "epss": null,
       "published": "2026-06-10T14:16:37.767",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9758"
     },
@@ -467,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00038,
+        "percentile": 0.11737
+      },
       "published": "2026-06-10T15:16:32.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11884"
     },
@@ -705,12 +663,54 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00053,
-        "percentile": 0.16899
-      },
+      "epss": null,
       "published": "2026-06-10T15:16:42.220",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53476"
+    },
+    {
+      "id": "CVE-2026-53689",
+      "desc": "libnfs through 6.0.2 before 55c18ea does not validate a string size, leading to an integer overflow during a connection to a crafted NFS server. This occurs in libnfs_zdr_string in lib/libnfs-zdr.c.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-10T15:16:42.350",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53689"
+    },
+    {
+      "id": "CVE-2026-6090",
+      "desc": "A potential authentication bypass was reported in Lenovo Smart Connect for Windows that could allow a local authenticated user to execute arbitrary code with elevated privileges.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-10T15:16:42.513",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6090"
+    },
+    {
+      "id": "CVE-2026-7516",
+      "desc": "A vulnerability was identified in the Lenovo Android Application, distributed exclusively on tablets in the Chinese market, that could allow a website visited by the built-in browser to overwrite system clipboard contents.",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00029,
+        "percentile": 0.08724
+      },
+      "published": "2026-06-10T15:16:42.657",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7516"
     }
   ],
   "kev": [
@@ -2682,6 +2682,46 @@
   ],
   "news": [
     {
+      "title": "Agentjacking Attack Tricks AI Coding Agents Into Running Malicious Code",
+      "url": "https://thehackernews.com/2026/06/agentjacking-attack-tricks-ai-coding.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-12T12:04:33+00:00",
+      "summary": "Cybersecurity researchers have described what they say is a new class of attack that can trick artificial intelligence (AI) coding agents into running arbitrary code on developer machines.\n\nCalled Agentjacking by Tenet Security, the attack can be triggered by means of a fake error report crafted usi"
+    },
+    {
+      "title": "Microsoft fixes Windows update failures linked to WUSA installer",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-windows-update-failures-linked-to-wusa-installer/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-12T11:44:58+00:00",
+      "summary": "Microsoft has fixed a known issue that caused Windows updates released since May 2025 to fail when installed via the Windows Update Standalone Installer (WUSA) from a network share. [...]"
+    },
+    {
+      "title": "Iranian Cyber Group Handala Claims Cal Water Hack",
+      "url": "https://www.securityweek.com/iranian-cyber-group-handala-claims-cal-water-hack/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-12T11:30:23+00:00",
+      "summary": "The hackers published 5GB of data, including customer personal information and credentials for the RTKBase platform.\nThe post Iranian Cyber Group Handala Claims Cal Water Hack appeared first on SecurityWeek."
+    },
+    {
+      "title": "Rethinking MDR as Attackers and Defenders Embrace AI",
+      "url": "https://thehackernews.com/2026/06/rethinking-mdr-as-attackers-and.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-12T11:00:00+00:00",
+      "summary": "For most of the past decade, managed detection and response was the answer to a real problem. Security teams couldn't staff around the clock, couldn't hire enough analysts, and needed someone else to handle the alert queue. MDR stepped in. It worked well enough. Until now.\n\nThe threat landscape has "
+    },
+    {
+      "title": "Over 80% of Sports Organizations Targeted by Hackers in the Last Year",
+      "url": "https://www.infosecurity-magazine.com/news/sports-organizations-targeted-by/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-12T11:00:00+00:00",
+      "summary": "As the FIFA World Cup 2026 kicks off, a new Darktrace report warns that sports teams and bodies are a major target for cyber criminals"
+    },
+    {
       "title": "Pharma giant Novo Nordisk discloses breach of clinical trials data",
       "url": "https://www.bleepingcomputer.com/news/security/pharmaceutical-giant-novo-nordisk-discloses-security-breach/",
       "source": "Bleeping Computer",
@@ -2762,7 +2802,7 @@
       "summary": "Authorities in Europe have disrupted AudiA6, a cryptocurrency laundering service used by ransomware gangs and cybercriminal networks.\n\nEuropol, in a statement issued Thursday, said the dismantling of AudiA6 cut off a \"key financial pipeline used to wash hundreds of millions in illicit profits.\" The "
     },
     {
-      "title": "Phishing Attack Volume Down 20%, but Risk Still Rising",
+      "title": "Phishing Attack Volume Down 20%, But Risk Still Rising",
       "url": "https://www.darkreading.com/cybersecurity-analytics/phishing-volume-down-20-risk-rising",
       "source": "Dark Reading",
       "category": "news",
@@ -2834,14 +2874,6 @@
       "summary": "Security researcher Chaotic Eclipse (aka Nightmare-Eclipse and MSNightmare) has released a new Windows BitLocker bypass dubbed GreatXML, a day after they published an exploit for Microsoft Defender.\n\n\"This was an accidental discovery, it took a total of 4 hours to find this,\" the researcher said in "
     },
     {
-      "title": "The Gentlemen Ransomware Claims 478 Victims, Can Spread Like a Worm",
-      "url": "https://thehackernews.com/2026/06/the-gentlemen-ransomware-claims-478.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-11T16:50:47+00:00",
-      "summary": "A new analysis of The Gentlemen operation has revealed that the financially motivated threat group initially operated as an affiliate responsible for conducting double extortion attacks, while leveraging resources from various ransomware-as-a-service (RaaS) schemes like LockBit (aka Tenacious Mantis"
-    },
-    {
       "title": "Cyber Force not included in Senate defense policy roadmap",
       "url": "https://therecord.media/cyber-force-not-included-senate-defense-roadmap",
       "source": "The Record",
@@ -2898,14 +2930,6 @@
       "summary": "Operational technology security remains as difficult as ever, with even the best practice recommendation falling short."
     },
     {
-      "title": "Why AI-driven threats are exposing the limits of MSP security stacks",
-      "url": "https://www.bleepingcomputer.com/news/security/why-ai-driven-threats-are-exposing-the-limits-of-msp-security-stacks/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-11T14:00:10+00:00",
-      "summary": "AI-driven attacks are exposing the limits of fragmented MSP security stacks and slow response workflows. Kaseya breaks down why integrated security, automation, and recovery are becoming essential. [...]"
-    },
-    {
       "title": "Cybercriminals Use Fake AI Guides and Dev Tools to Spread AsyncRAT Malware",
       "url": "https://www.infosecurity-magazine.com/news/fake-ai-guides-dev-tools-spread/",
       "source": "Infosecurity Magazine",
@@ -2938,28 +2962,12 @@
       "summary": "As alert volumes outpace human capacity, organizations are turning to AI, automation, and deeper context to separate real threats from the noise.\nThe post Alert Fatigue Is Becoming a Security Threat of Its Own appeared first on SecurityWeek."
     },
     {
-      "title": "Cybersecurity Stars Awards 2026: Winners Announced Across 95 Categories",
-      "url": "https://thehackernews.com/2026/06/cybersecurity-stars-awards-2026-winners.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-11T13:26:13+00:00",
-      "summary": "Most good security work is invisible by design. Today is the exception.\n\nThe 2026 Cybersecurity Stars Awards winners are announced across 95 subcategories in four main award categories.\n\nThe reason is simple. Cybersecurity is full of work that deserves recognition and rarely gets it. Products that q"
-    },
-    {
       "title": "CISA Directs Federal Agencies to Prioritize Security Patches Based on Risk",
       "url": "https://www.securityweek.com/cisa-directs-federal-agencies-to-prioritize-security-patches-based-on-risk/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-06-11T13:01:14+00:00",
       "summary": "The new BOD 26-04 requires agencies to review and update vulnerability management policies with a focus on KEV catalog entries.\nThe post CISA Directs Federal Agencies to Prioritize Security Patches Based on Risk appeared first on SecurityWeek."
-    },
-    {
-      "title": "OnyxC2 Stealer Offers Cybercriminals Enterprise-Grade Theft for $250 a Month",
-      "url": "https://www.securityweek.com/onyxc2-stealer-offers-cybercriminals-enterprise-grade-theft-for-250-a-month/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-11T13:00:00+00:00",
-      "summary": "Researchers say the OnyxC2 malware targets more than 200 applications and extensions while evading detection through encrypted payloads, DLL sideloading, and in-memory execution techniques.\nThe post OnyxC2 Stealer Offers Cybercriminals Enterprise-Grade Theft for $250 a Month appeared first on Securi"
     },
     {
       "title": "Most Cybersecurity Teams Struggle to Find Time for Training on New Cyber Threats",
@@ -3082,14 +3090,6 @@
       "summary": "Threat actors push fake free-software tutorials on TikTok and Instagram to spread Vidar stealer"
     },
     {
-      "title": "New SilabRAT Trojan Hijacks Sessions to Steal Crypto",
-      "url": "https://www.infosecurity-magazine.com/news/silabrat-trojan-session-hijacking/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-10T15:30:00+00:00",
-      "summary": "MaaS trojan SilabRAT uses HVNC and browser cloning to hijack sessions and steal crypto"
-    },
-    {
       "title": "Who Runs the Ransomware Group \u2018The Gentlemen?\u2019",
       "url": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
       "source": "Krebs on Security",
@@ -3106,20 +3106,20 @@
       "summary": "The ACLU is suing two Florida police departments over the arrest of a Fort Myers man in a child-abduction case, saying officers treated a flawed face-recognition match as a near-certain ID."
     },
     {
-      "title": "Soccer Fans, You\u2019re Being Watched",
-      "url": "https://www.wired.com/story/soccer-world-cup-biometric-surveillance/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-06-10T10:00:00+00:00",
-      "summary": "From anti-drone tech to face recognition, 2026 World Cup stadiums in the US, Canada, and Mexico are subjecting fans to an array of surveillance tech. Here\u2019s what you need to know."
-    },
-    {
       "title": "Mapping Every Flock License Plate Reader Near US World Cup Stadiums",
       "url": "https://www.wired.com/story/us-world-cup-2026-alpr-camera-stadiums/",
       "source": "Wired Security",
       "category": "news",
       "published": "2026-06-10T10:00:00+00:00",
       "summary": "Most US World Cup stadiums are surrounded by surveillance cameras. Want to know if you\u2019re being watched on your way to a match? These maps will help you."
+    },
+    {
+      "title": "Soccer Fans, You\u2019re Being Watched",
+      "url": "https://www.wired.com/story/soccer-world-cup-biometric-surveillance/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-06-10T10:00:00+00:00",
+      "summary": "From anti-drone tech to face recognition, 2026 World Cup stadiums in the US, Canada, and Mexico are subjecting fans to an array of surveillance tech. Here\u2019s what you need to know."
     },
     {
       "title": "How has use of framing protection security headers changed in the past 3 years&#x3f;, (Wed, Jun 10th)",
@@ -3346,20 +3346,20 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
+      "title": "Defending against China-nexus covert networks of compromised devices",
+      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "source": "NCSC UK",
+      "category": "news",
+      "published": "2026-04-23T12:00:00+00:00",
+      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+    },
+    {
       "title": "Passkeys are more secure than traditional ways to log in",
       "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
       "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
-    },
-    {
-      "title": "NCSC: Leave passwords in the past - passkeys are the future",
-      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
-      "source": "NCSC UK",
-      "category": "news",
-      "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     }
   ],
   "stats": {
