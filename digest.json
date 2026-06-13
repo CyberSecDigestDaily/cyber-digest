@@ -1,95 +1,11 @@
 {
-  "generated": "2026-06-13T09:23:40.170640+00:00",
+  "generated": "2026-06-13T11:22:03.243781+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>5 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2022-42479",
-      "desc": "Missing Authorization vulnerability in TemplateHouse Soledad allows Accessing Functionality Not Properly Constrained by ACLs.\n\nThis issue affects Soledad: from n/a through 8.2.5.",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T10:16:19.840",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-42479"
-    },
-    {
-      "id": "CVE-2022-44630",
-      "desc": "Cross-Site request forgery (CSRF) vulnerability in YITH YITH WooCommerce Product Slider Carousel allows Cross Site Request Forgery.\n\nThis issue affects YITH WooCommerce Product Slider Carousel: from n/a through 1.16.0.",
-      "cvss": 4.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T10:16:20.870",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-44630"
-    },
-    {
-      "id": "CVE-2025-7064",
-      "desc": "Authentication bypass by primary weakness vulnerability in ABB Freelance.\n\nThis issue affects Freelance: through 2013, 2013 SP1, 2016, 2016 SP1, 2019, 2019 SP1, 2019 SP1 FP1, 2024.",
-      "cvss": 6.6,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T10:16:21.053",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-7064"
-    },
-    {
-      "id": "CVE-2026-11850",
-      "desc": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read.\nThe attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len < 2, triggering the underflow when the KDC or kadmind reads principal data.",
-      "cvss": 5.0,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T10:16:21.217",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11850"
-    },
-    {
-      "id": "CVE-2026-53911",
-      "desc": "Cerebrate before version 1.37 allowed the id primary key field to be supplied through request input during CRUD edit operations and certain custom entity patching flows. In affected entities that did not explicitly mark id as inaccessible, an authenticated attacker could submit a crafted edit request containing the id of another record, causing the save operation to update that unrelated record instead of the record identified by the route parameter. The issue affected several entity types inheriting permissive mass-assignment defaults, including User, Role, UserSetting, LocalTool, PermissionLimitation, and EnumerationCollection. Since UserSettings edit functionality was reachable by any authenticated user, exploitation could allow unauthorized modification of records within the same entity type, with impact depending on the affected endpoint and writable fields. Cerebrate 1.37 fixes this by stripping id from request input after marshalling callbacks and by globally marking id as inaccessible in the base AppModel entity.\n\nThe discovery of those potential vulnerabilities are inherited from initial finding from Jeroen Pinoy additional support from AI-Assisted Optus 4.8 (the commit wrongly assign Claude Fable 5 as the model switched) and coordinated by Andras Iklody.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T10:16:21.757",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53911"
-    },
-    {
-      "id": "CVE-2026-5497",
-      "desc": "vLLM versions 0.8.0 and later are vulnerable to an Out-of-Memory (OOM) Denial of Service (DoS) attack due to unbounded frame count processing in the `VideoMediaIO.load_base64()` method. When processing `video/jpeg` data URLs, the method splits the base64 data string on commas to extract individual JPEG frames without enforcing a frame count limit. An attacker can exploit this by crafting a single API request containing thousands of comma-separated base64-encoded JPEG frames in a data URL, causing the server to decode all frames into memory and crash due to excessive memory consumption. This vulnerability is reachable via the OpenAI-compatible chat completions API and does not require authentication.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T10:16:21.903",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5497"
-    },
     {
       "id": "CVE-2022-45813",
       "desc": "Missing Authorization vulnerability in BeRocket Advanced AJAX Product Filters allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects Advanced AJAX Product Filters: from n/a through 1.6.3.3.",
@@ -422,10 +338,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00045,
-        "percentile": 0.14417
-      },
+      "epss": null,
       "published": "2026-06-11T13:16:33.300",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49214"
     },
@@ -509,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00045,
+        "percentile": 0.14417
+      },
       "published": "2026-06-11T14:16:31.403",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53723"
     },
@@ -705,12 +621,96 @@
       "product": "Axios",
       "exploited": false,
       "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:32.750",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44488"
+    },
+    {
+      "id": "CVE-2026-44489",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. From 1.15.2 to before 1.16.0, nested objects created by utils.merge() (e.g., config.proxy) are still constructed as plain {} with Object.prototype in their chain. The setProxy() function at lib/adapters/http.js:209-223 reads proxy.username, proxy.password, and proxy.auth without hasOwnProperty checks. When Object.prototype.username is polluted, setProxy() constructs a Proxy-Authorization header with attacker-controlled credentials and injects it into every proxied HTTP request. This vulnerability is fixed in 1.16.0.",
+      "cvss": 3.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:32.883",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44489"
+    },
+    {
+      "id": "CVE-2026-44490",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, axios exposes two read-side prototype-pollution gadgets. When Object.prototype is polluted by an upstream dependency in the same process (e.g. lodash _.merge / CVE-2018-16487), axios silently picks up the polluted values. (1) lib/utils.js line 406 builds merge()'s accumulator as result = {}, so result[targetKey] (line 414) walks Object.prototype and the polluted bucket's own keys are copied into the merged headers and ride out on the wire. (2) lib/core/mergeConfig.js line 26 builds the hasOwnProperty descriptor as a plain-object literal. Object.defineProperty reads descriptor.get/descriptor.set via the prototype chain, so a polluted Object.prototype.get or Object.prototype.set makes the call throw TypeError synchronously on every axios request. This vulnerability is fixed in 0.32.0 and 1.16.0.",
+      "cvss": 4.8,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:33.027",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44490"
+    },
+    {
+      "id": "CVE-2026-44492",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios does not normalise IPv4-mapped IPv6 addresses. When NO_PROXY lists an IPv4 address such as 127.0.0.1 or 169.254.169.254, a request URL using the IPv4-mapped IPv6 form (::ffff:7f00:1, ::ffff:a9fe:a9fe) still routes through the configured proxy. Node.js resolves these addresses to the underlying IPv4 host, so the request reaches the internal service via the proxy rather than being blocked. This vulnerability is fixed in 0.32.0 and 1.16.0.",
+      "cvss": 8.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Axios",
+      "product": "Axios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:33.167",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44492"
+    },
+    {
+      "id": "CVE-2026-44494",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. From 1.0.0 to before 1.16.0, the Axios library is vulnerable to a Prototype Pollution \"Gadget\" attack that allows any Object.prototype pollution in the application's dependency tree to be escalated into a full Man-in-the-Middle (MITM) attack \u2014 intercepting, reading, and modifying all HTTP traffic including authentication credentials. The HTTP adapter at lib/adapters/http.js:670 reads config.proxy via standard property access, which traverses the prototype chain. Because proxy is not present in Axios defaults, the merged config object has no own proxy property, making it trivially injectable via prototype pollution. Once injected, setProxy() routes all HTTP requests through the attacker's proxy server. This vulnerability is fixed in 1.16.0.",
+      "cvss": 8.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Axios",
+      "product": "Axios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:33.313",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44494"
+    },
+    {
+      "id": "CVE-2026-44495",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. From 0.19.0 to before 0.31.1 and 1.15.2, Axios contains prototype-pollution gadgets in request config processing. If another vulnerability in the same JavaScript process has already polluted Object.prototype.transformResponse, affected Axios versions may treat that inherited value as request configuration or as an option validator. Axios does not itself create the prototype pollution. Exploitability requires a separate prototype-pollution vulnerability or equivalent attacker control over Object.prototype before Axios creates a request. This vulnerability is fixed in 0.31.1 and 1.15.2.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:33.450",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44495"
+    },
+    {
+      "id": "CVE-2026-44496",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. Axios versions before 0.32.0 on the 0.x line and before 1.16.0 on the 1.x line build a regular expression from the configured XSRF cookie name without escaping regex metacharacters. In standard browser environments, an attacker who can influence the cookie name passed to axios can cause expensive regex backtracking while axios reads document.cookie. The practical impact is client-side availability degradation, such as freezing the affected browser tab while axios prepares a request. The issue does not affect ordinary Node.js HTTP adapter usage, React Native, or web workers, where axios does not read document.cookie. This vulnerability is fixed in 0.32.0 and 1.16.0.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Axios",
+      "product": "Axios",
+      "exploited": false,
+      "kev": false,
       "epss": {
         "epss": 0.0004,
         "percentile": 0.12486
       },
-      "published": "2026-06-11T17:16:32.750",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44488"
+      "published": "2026-06-11T17:16:33.590",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44496"
     }
   ],
   "kev": [
@@ -2681,6 +2681,22 @@
   ],
   "news": [
     {
+      "title": "The FCC Wants to Kill Burner Phones",
+      "url": "https://www.wired.com/story/security-news-this-week-the-fcc-wants-to-kill-burner-phones/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-06-13T10:30:00+00:00",
+      "summary": "Plus: AI bug hunting fuels Microsoft\u2019s biggest-ever Patch Tuesday, ShinyHunters ransomware gang exploits an Oracle zero-day, and more."
+    },
+    {
+      "title": "US Gov asks Anthropic to ban 'foreign national' access to Fable, Mythos",
+      "url": "https://www.bleepingcomputer.com/news/security/us-gov-asks-anthropic-to-ban-foreign-national-access-to-fable-mythos/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-13T10:01:32+00:00",
+      "summary": "The US government has ordered Anthropic to block all foreign nationals from accessing Fable 5 and Mythos 5, forcing the company to suspend both models worldwide. Anthropic is complying but disputes the basis, calling the cited jailbreak narrow and the capability widely available elsewhere. [...]"
+    },
+    {
       "title": "Anthropic Says It Has Taken Its Latest AI Models Offline to Comply With New Export Controls",
       "url": "https://www.securityweek.com/anthropic-says-it-has-taken-its-latest-ai-models-offline-to-comply-with-new-export-controls/",
       "source": "SecurityWeek",
@@ -2929,14 +2945,6 @@
       "summary": "An AI hacker claims to have achieved a prompt-based jailbreak shortly after Fable 5\u2019s launch, but Anthropic says it\u2019s not a real jailbreak.\nThe post Anthropic Disputes Fable 5 AI Jailbreak appeared first on SecurityWeek."
     },
     {
-      "title": "CISA orders feds to patch actively exploited Ivanti flaw by Sunday",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-gives-feds-3-days-to-patch-ivanti-flaw-exploited-in-attacks/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-12T08:26:55+00:00",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered government agencies to patch an actively exploited Ivanti Sentry flaw within three days, as mandated by the newly issued Binding Operational Directive (BOD) 26-04. [...]"
-    },
-    {
       "title": "Google Confirms Exploitation of Oracle PeopleSoft Zero-Day by ShinyHunters",
       "url": "https://www.securityweek.com/google-confirms-exploitation-of-oracle-peoplesoft-zero-day-by-shinyhunters/",
       "source": "SecurityWeek",
@@ -3111,14 +3119,6 @@
       "category": "news",
       "published": "2026-06-10T14:00:00+00:00",
       "summary": "The ACLU is suing two Florida police departments over the arrest of a Fort Myers man in a child-abduction case, saying officers treated a flawed face-recognition match as a near-certain ID."
-    },
-    {
-      "title": "Soccer Fans, You\u2019re Being Watched",
-      "url": "https://www.wired.com/story/soccer-world-cup-biometric-surveillance/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-06-10T10:00:00+00:00",
-      "summary": "From anti-drone tech to face recognition, 2026 World Cup stadiums in the US, Canada, and Mexico are subjecting fans to an array of surveillance tech. Here\u2019s what you need to know."
     },
     {
       "title": "Mapping Every Flock License Plate Reader Near US World Cup Stadiums",
@@ -3364,7 +3364,7 @@
   "stats": {
     "total_cves": 50,
     "critical": 5,
-    "high": 13,
+    "high": 16,
     "exploited": 0,
     "kev_total": 50,
     "kev_7d": 7,
