@@ -1,67 +1,11 @@
 {
-  "generated": "2026-06-13T08:46:47.322543+00:00",
+  "generated": "2026-06-13T09:23:40.170640+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>5 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2023-33999",
-      "desc": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in WPVibes WP Mail Log allows DOM-Based XSS.\n\nThis issue affects WP Mail Log: from n/a through 1.0.2.",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T09:16:25.097",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-33999"
-    },
-    {
-      "id": "CVE-2023-40200",
-      "desc": "Authorization bypass through User-Controlled key vulnerability in Essential Plugin WP Logo Showcase Responsive Slider and Carousel allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects WP Logo Showcase Responsive Slider and Carousel: from n/a through 3.6.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T09:16:25.250",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-40200"
-    },
-    {
-      "id": "CVE-2024-32110",
-      "desc": "Cross-Site request forgery (CSRF) vulnerability in Magepeople inc. WpEvently allows Cross Site Request Forgery.\n\nThis issue affects WpEvently: from n/a through 4.1.2.",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T09:16:25.400",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-32110"
-    },
-    {
-      "id": "CVE-2026-53901",
-      "desc": "Cerebrate before version 1.37 contains a mass-assignment vulnerability in the generic CRUD add path. The add() handler attempted to remove an attacker-supplied id from $params before normalizing the request through __massageInput(). Because the normalized $input could still contain an id field, a user able to reach an affected add endpoint could supply an identifier that should have been server-controlled.\n\n\nSuccessful exploitation could allow creation of objects with attacker-chosen identifiers, potentially causing unauthorized data manipulation, object spoofing, inconsistent references, or disruption through identifier collisions, depending on the affected model and endpoint permissions. The issue was fixed in v1.37 by removing id from the normalized input before entity patching.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T09:16:25.763",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53901"
-    },
     {
       "id": "CVE-2022-42479",
       "desc": "Missing Authorization vulnerability in TemplateHouse Soledad allows Accessing Functionality Not Properly Constrained by ACLs.\n\nThis issue affects Soledad: from n/a through 8.2.5.",
@@ -422,10 +366,7 @@
       "product": "Gitlab",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0001,
-        "percentile": 0.01115
-      },
+      "epss": null,
       "published": "2026-06-11T12:16:33.110",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9694"
     },
@@ -481,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00045,
+        "percentile": 0.14417
+      },
       "published": "2026-06-11T13:16:33.300",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49214"
     },
@@ -705,12 +649,68 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00018,
-        "percentile": 0.04858
-      },
+      "epss": null,
       "published": "2026-06-11T16:16:25.503",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9648"
+    },
+    {
+      "id": "CVE-2026-11945",
+      "desc": "PostgreSQL Anonymizer contains a vulnerability that allows a user to gain superuser privileges by creating a JSON document and placing malicious code inside a particular key-value pair. If a superuser calls the import_database_rules() or import_roles_rules() functions, the malicious code is executed with superuser privileges. The problem is resolved in PostgreSQL Anonymizer 3.1.1 and further versions",
+      "cvss": 6.4,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "MEDIUM",
+      "vendor": "GitLab",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:31.837",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11945"
+    },
+    {
+      "id": "CVE-2026-44486",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios\u2019 Node.js HTTP adapter can leak proxy credentials to a redirect target in affected versions. When a request is sent through an authenticated proxy, Axios may add a Proxy-Authorization header. If Axios then follows a redirect and the redirected request is no longer sent through that proxy, the stale Proxy-Authorization header can remain on the redirected request and be sent to the redirect target. This affects Node.js's use of Axios with automatic redirects enabled and an authenticated proxy configuration. Browser adapters are not affected. This vulnerability is fixed in 0.32.0 and 1.16.0.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Axios",
+      "product": "Axios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:32.450",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44486"
+    },
+    {
+      "id": "CVE-2026-44487",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. Prior to 0.32.0 and 1.16.0, Axios\u2019s Node.js HTTP adapter may forward a Proxy-Authorization header to a redirected origin during specific proxy-to-direct redirect flows. This affects Node.js usage, where an initial HTTP request is sent through an authenticated HTTP proxy, redirects are followed, and the redirected URL is no longer proxied. Under affected redirect shapes, the final origin can receive the proxy credential that was intended only for the outbound proxy. This vulnerability is fixed in 0.32.0 and 1.16.0.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Axios",
+      "product": "Axios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T17:16:32.607",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44487"
+    },
+    {
+      "id": "CVE-2026-44488",
+      "desc": "Axios is a promise based HTTP client for the browser and Node.js. Axios versions 1.7.0 through 1.15.x did not enforce configured request and response size limits when requests were sent with the fetch adapter. Applications that selected adapter: 'fetch', or ran in environments where axios resolved to the fetch adapter, could receive or send bodies larger than maxContentLength or maxBodyLength despite those limits being explicitly configured. This can cause resource exhaustion in server-side usage when a malicious or compromised server returns an oversized response, when an attacker can supply a large data: URL, or when an application forwards attacker-controlled request bodies through axios while relying on maxBodyLength as a boundary. This vulnerability is fixed in 0.32.0 and 1.16.0.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Axios",
+      "product": "Axios",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.0004,
+        "percentile": 0.12486
+      },
+      "published": "2026-06-11T17:16:32.750",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44488"
     }
   ],
   "kev": [
@@ -3364,7 +3364,7 @@
   "stats": {
     "total_cves": 50,
     "critical": 5,
-    "high": 11,
+    "high": 13,
     "exploited": 0,
     "kev_total": 50,
     "kev_7d": 7,
