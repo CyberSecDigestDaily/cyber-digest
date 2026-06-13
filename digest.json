@@ -1,263 +1,11 @@
 {
-  "generated": "2026-06-13T02:14:50.340596+00:00",
+  "generated": "2026-06-13T08:46:47.322543+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>2 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>5 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-2827",
-      "desc": "The Open User Map PRO plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'oum_location_notification' parameter in versions up to, and including, 1.4.31 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
-      "cvss": 4.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T02:16:42.967",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-2827"
-    },
-    {
-      "id": "CVE-2026-35273",
-      "desc": "Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Updates Environment Management). Supported versions that are affected are 8.61 and 8.62. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise PeopleSoft Enterprise PeopleTools. Successful attacks of this vulnerability can result in takeover of PeopleSoft Enterprise PeopleTools. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts). CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Oracle",
-      "product": "Peoplesoft Enterprise Peopletools",
-      "exploited": true,
-      "kev": true,
-      "epss": null,
-      "published": "2026-06-11T04:16:53.680",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-35273"
-    },
-    {
-      "id": "CVE-2026-40985",
-      "desc": "Applications that configure the WebFlowELExpressionParser are vulnerable to the use of malicious Unified EL expressions.\n\nAffected versions:\nSpring Web Flow 4.0.0; 3.0.0 through 3.0.1; 2.5.0 through 2.5.1.",
-      "cvss": 6.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T05:16:33.757",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40985"
-    },
-    {
-      "id": "CVE-2026-10795",
-      "desc": "The UpdraftPlus: WP Backup & Migration Plugin plugin for WordPress is vulnerable to Authentication Bypass in all versions up to, and including, 1.26.4 via the UpdraftPlus_Remote_Communications_V2::wp_loaded function. This is due to insufficient validation of the remote communications message format, where signature verification can be bypassed and unchecked decryption return values collapse to a predictable all-zero encryption key. This makes it possible for unauthenticated attackers to forge arbitrary RPC commands and run them as the connected administrator, such as uploading and activating a malicious plugin, which ultimately leads to remote code execution.",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:26.713",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10795"
-    },
-    {
-      "id": "CVE-2026-40986",
-      "desc": "Spring Web Flow's JavaScript RemotingHandler renders the body of an error response as HTML even when the response is not \"text/html\", which can result in a scripting attack in the user's browser if the error response from the server contains error details with input reflected from an attacker.\n\nAffected versions:\nSpring Web Flow 4.0.0; 3.0.0 through 3.0.1; 2.5.0 through 2.5.1.",
-      "cvss": 4.8,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:26.920",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40986"
-    },
-    {
-      "id": "CVE-2026-40987",
-      "desc": "A malicious or compromised FTP/SFTP/SMB server can write arbitrary files anywhere on the client filesystem (outside the configured local-directory) with attacker-controlled content.\n\nAffected versions:\nSpring Integration 7.0.0 through 7.0.4; 6.5.0 through 6.5.8; 6.4.0 through 6.4.11; 6.3.0 through 6.3.14; 5.5.0 through 5.5.20.",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:H/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.053",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40987"
-    },
-    {
-      "id": "CVE-2026-40992",
-      "desc": "Spring Boot's Mail auto-configuration does not enable hostname verification. Applications that set the relevant JavaMail property, such as spring.mail.properties.mail.smtp.ssl.checkserveridentity=true, are not affected.\n\nAffected versions:\nSpring Boot 4.0.0 through 4.0.6; 3.5.0 through 3.5.14; 3.4.0 through 3.4.16.",
-      "cvss": 5.0,
-      "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.177",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40992"
-    },
-    {
-      "id": "CVE-2026-40994",
-      "desc": "Wss4jSecurityInterceptor initialized its BSP (WS-I Basic Security Profile) compliance flag so that inbound validation disabled WSS4J BSP enforcement on RequestData. Services that validate WS-Security on the network could therefore accept messages that violate BSP rules, weakening protocol-level checks.\n\nAffected versions:\nSpring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.297",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40994"
-    },
-    {
-      "id": "CVE-2026-40995",
-      "desc": "X509AuthenticationProvider could issue a fully authenticated X509AuthenticationToken when a presented certificate mapped to UserDetails, without applying Spring Security's standard account lifecycle checks (disabled, locked, expired, or credentials-expired accounts).\n\nAffected versions:\nSpring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.430",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40995"
-    },
-    {
-      "id": "CVE-2026-40996",
-      "desc": "Wss4jSecurityInterceptor defaulted allowRSA15KeyTransportAlgorithm to true, overriding Apache WSS4J's safer default for validation RequestData. Inbound WS-Security decryption could therefore accept RSA PKCS#1 v1.5 (rsa-1_5) encrypted key material unless operators explicitly reconfigured the flag.\n\nAffected versions:\nSpring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
-      "cvss": 4.8,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.550",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40996"
-    },
-    {
-      "id": "CVE-2026-40997",
-      "desc": "Several Spring WS integration paths with Spring Security could surface detailed account state (for example locked or disabled user semantics) to remote SOAP clients through exception messages or callback outcomes, instead of failing with generic authentication errors. That behavior assists remote attackers in distinguishing valid accounts from invalid ones and inferring lifecycle state.\n\nAffected versions:\nSpring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.663",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40997"
-    },
-    {
-      "id": "CVE-2026-40998",
-      "desc": "Jaxp13XPathTemplate evaluated XPath expressions for StreamSource and SAXSource inputs using a code path that parsed attacker-controlled XML with the JDK's default DocumentBuilderFactory behavior instead of Spring's hardened parser configuration. Applications that evaluate XPath against untrusted XML payloads could therefore be exposed to XML External Entity (XXE) style attacks.\n\nAffected versions:\nSpring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.787",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40998"
-    },
-    {
-      "id": "CVE-2026-40999",
-      "desc": "When WS-Addressing is used with non-anonymous ReplyTo or FaultTo addresses, Spring WS may initiate outbound connections through configured WebServiceMessageSender instances to destinations taken directly from request headers without verifying that those destinations are safe to connect to.\n\nAffected versions:\nSpring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:27.907",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40999"
-    },
-    {
-      "id": "CVE-2026-41000",
-      "desc": "Wss4jSecurityInterceptor did not consistently wire Apache WSS4J ReplayCache instances into RequestData for validation-time checks. As a result, protections against replay of UsernameToken nonces and creation timestamps, Timestamp elements, and certain SAML one-time-use semantics could be ineffective even when operators configured a replay cache on the interceptor.\n\nAffected versions:\nSpring Web Services 5.0.0 through 5.0.1; 4.1.0 through 4.1.3; 4.0.0 through 4.0.18; 3.1.0 through 3.1.8.",
-      "cvss": 3.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:28.037",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41000"
-    },
-    {
-      "id": "CVE-2026-41001",
-      "desc": "Spring Boot's ArtemisEmbeddedConfigurationFactory uses a fixed, static path for the embedded Artemis message broker's data directory when no explicit path is configured. A local attacker on the same host can pre-create this predictable directory or place a symlink before the application starts.\n\nAffected versions:\nSpring Boot 4.0.0 through 4.0.6; 3.5.0 through 3.5.14; 3.4.0 through 3.4.16; 3.3.0 through 3.3.19; 2.7.0 through 2.7.33.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:28.163",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41001"
-    },
-    {
-      "id": "CVE-2026-41699",
-      "desc": "Spring for GraphQL applications are vulnerable to Unsafe Deserialization when processing paginated GraphQL queries. An attacker can craft a malicious GraphQL request that can lead to Remote Code Execution when the application exposes a paginated (Connection) field and the classpath contains specific classes that can be leveraged during deserialization.\n\nAffected versions:\nSpring for GraphQL 2.0.0 through 2.0.3; 1.4.0 through 1.4.5; 1.3.0 through 1.3.8.",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Vmware",
-      "product": "Spring For Graphql",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:28.280",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41699"
-    },
-    {
-      "id": "CVE-2026-41700",
-      "desc": "Spring for GraphQL applications that have enabled the WebSocket transport are vulnerable to Cross-Site WebSocket Hijacking. An attacker can trick an authenticated user into visiting a malicious page, allowing the attacker to execute arbitrary GraphQL operations with the victim's credentials.\n\nAffected versions:\nSpring for GraphQL 2.0.0 through 2.0.3; 1.4.0 through 1.4.5; 1.3.0 through 1.3.8; 1.0.0 through 1.0.6.",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "Vmware",
-      "product": "Spring For Graphql",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:28.400",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41700"
-    },
-    {
-      "id": "CVE-2026-41856",
-      "desc": "The Spring GraphQL annotation detection mechanism for @Controller data fetchers may not correctly resolve annotations on methods within type hierarchies. This can be an issue if such annotations are used for authorization decisions. When all conditions are met, security annotations can be ignored at runtime.\n\nAffected versions:\nSpring for GraphQL 2.0.0 through 2.0.3; 1.4.0 through 1.4.5; 1.3.0 through 1.3.8; 1.0.0 through 1.0.6.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "Vmware",
-      "product": "Spring For Graphql",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-11T07:16:28.513",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41856"
-    },
     {
       "id": "CVE-2023-33999",
       "desc": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in WPVibes WP Mail Log allows DOM-Based XSS.\n\nThis issue affects WP Mail Log: from n/a through 1.0.2.",
@@ -422,10 +170,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00032,
-        "percentile": 0.09947
-      },
+      "epss": null,
       "published": "2026-06-11T12:16:29.607",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-47150"
     },
@@ -677,7 +422,10 @@
       "product": "Gitlab",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0001,
+        "percentile": 0.01115
+      },
       "published": "2026-06-11T12:16:33.110",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9694"
     },
@@ -705,12 +453,264 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00024,
-        "percentile": 0.07097
-      },
+      "epss": null,
       "published": "2026-06-11T13:16:32.237",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11956"
+    },
+    {
+      "id": "CVE-2026-48998",
+      "desc": "guzzlehttp/psr7 is a PSR-7 HTTP message library implementation in PHP. Versions prior to 2.10.2 contain improper Host header validation when parsing raw HTTP request messages and when deriving a server request URI from server variables. An attacker can provide a malformed Host header containing URI authority delimiters, such as `trusted.example@evil.example`. When the Host value is used to construct a URI, the malformed value can be reinterpreted as URI userinfo and host. This can cause the PSR-7 request URI host to differ from the original Host header value. Applications are affected if they parse attacker-controlled raw HTTP requests with `GuzzleHttp\\Psr7\\Message::parseRequest()` or the legacy 1.x `GuzzleHttp\\Psr7\\parse_request()` function, or if they build server requests from attacker-controlled server variables, then rely on the resulting URI host for routing, allow-list checks, or forwarding decisions. In affected forwarding or gateway scenarios, this may cause requests or credentials to be sent to an unintended host. The issue is patched in `2.10.2`. `1.x` is end-of-life and will not receive a patch. Some workarounds are available. Validate the `Host` header as `uri-host [ \":\" port ]` before calling `Message::parseRequest()` or legacy `parse_request()` on untrusted HTTP request data, or before deriving routing and forwarding decisions from a parsed request URI. Reject Host values containing userinfo, path, query, or fragment delimiters.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T13:16:33.133",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48998"
+    },
+    {
+      "id": "CVE-2026-49214",
+      "desc": "guzzlehttp/psr7 is a PSR-7 HTTP message library implementation in PHP. Versions prior to 2.10.2 did not reject ASCII control characters, whitespace, or DEL in first-party URI host components. A vulnerable flow is: First, an application accepts a user-controlled URL. Second, the URL is used to construct a PSR-7 `Uri` or `Request`. Third, the host component contains CRLF or another header-unsafe character. Fourth, the host is copied into the PSR-7 `Host` header when no explicit `Host` header is provided. Finally, the request is serialized or sent by an HTTP client that does not independently reject the malformed host. In that flow, an attacker can cause the serialized request to contain additional attacker-controlled header lines. For example, a host containing `\"\\r\\nX-Injected: yes\"` can cause the generated `Host` header to span multiple HTTP header lines. Applications are affected when they use user-controlled URLs for outbound HTTP requests, URL forwarding, proxying, crawling, webhook delivery, or similar request-dispatch flows. In deployments involving HTTP/1.1 connection reuse, proxies, gateways, or load balancers, this malformed request may also contribute to request smuggling or cache poisoning, depending on how downstream components parse the request. The issue is patched in `2.10.2` and later. `1.x` is end-of-life and will not receive a patch. As a workaround, validate and reject all untrusted URI strings before constructing PSR-7 `Uri` or `Request` instances. Reject input containing ASCII control characters, whitespace, or DEL, including CRLF, tab, space, NUL, or DEL characters. Applications that forward requests should also ensure the final HTTP client or serializer rejects invalid URI and header data before writing requests to the network.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T13:16:33.300",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49214"
+    },
+    {
+      "id": "CVE-2026-7852",
+      "desc": "Unrestricted upload of file with dangerous type vulnerability in Limatek System Inc. LimRAD NAC allows Remote Code Inclusion.\n\nThis issue affects LimRAD NAC: before 5.5.7.3.9.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T13:16:37.460",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7852"
+    },
+    {
+      "id": "CVE-2026-10847",
+      "desc": "A local privilege escalation vulnerability exists in Check Point Identity Agent Full for Windows OS. An authenticated local user may be able to execute arbitrary code with SYSTEM privileges due to improper handling of executable resolution during the log collection process. Successful exploitation could allow an attacker to gain elevated privileges on the affected Windows endpoint.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Check Point",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T14:16:26.060",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10847"
+    },
+    {
+      "id": "CVE-2026-11816",
+      "desc": "Keras versions prior to 3.14.0 are vulnerable to a path traversal issue in the archive extraction utilities located in `keras/src/utils/file_utils.py`. The functions `filter_safe_tarinfos()` and `filter_safe_zipinfos()` validate archive member paths against the process current working directory (CWD) instead of the actual extraction destination. When the process runs with CWD set to `/`, which is common in Docker containers, CI/CD runners, and Jupyter environments, the validation boundary becomes the filesystem root, allowing traversal paths to bypass the security check. Additionally, the zip filter contains a bug that causes an `AttributeError` when a blocked entry is encountered, leading to incomplete extraction. Furthermore, Python 3.11 installations lack the `filter=\"data\"` safety net, leaving them entirely reliant on the flawed CWD-based filter. Exploitation of this vulnerability can result in arbitrary file writes outside the intended extraction directory, enabling attackers to overwrite configuration files, inject malicious code, or corrupt machine learning datasets and pipelines.",
+      "cvss": 8.1,
+      "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T14:16:26.557",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11816"
+    },
+    {
+      "id": "CVE-2026-38581",
+      "desc": "SQL Injection vulnerability in damasac thaipalliative_lte through version 3.0 allows remote attackers to execute arbitrary SQL commands via the idFormMain parameter to /substudy/ezform.php (line 14) and the id parameter (line 49). The parameters are concatenated directly into SQL queries without sanitization or parameterized statements.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T14:16:27.123",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-38581"
+    },
+    {
+      "id": "CVE-2026-53661",
+      "desc": "Boruta is a standalone authorization server that aims to implement OAuth 2.0 and Openid Connect up to decentralized identity specifications. Prior to version 0.9.1, boruta session cookies and the identity \u201cremember me\u201d cookie were set without the Secure attribute. In deployments where users could reach the same Boruta origin over plaintext HTTP, browsers could send these cookies over an unencrypted connection. An attacker able to observe or intercept that network traffic could recover a valid session or remember-me cookie and reuse it to impersonate the affected user. Affected components include boruta_web, boruta_identity, and boruta_admin. The affected cookies include the shared session cookie, defaulting to _boruta_web_key, and the identity remember-me cookie, defaulting to `_boruta_identity_web_user_remember_me`. The issue is fixed in commit 18691c655164635066aa113003a3cd87f6ed11cd, released as part of version 0.9.1. The patch sets `secure: true` and `same_site: \"Lax\"` on configured session cookies for boruta_web, boruta_identity, and boruta_admin, and sets `secure: true` on the identity remember-me cookie. Until upgrading to a release containing the fix: terminate or reject plaintext HTTP before requests reach Boruta; enforce HTTPS-only access at the reverse proxy or load balancer; enable HSTS for Boruta domains; if cookie exposure is suspected, rotate SECRET_KEY_BASE and BORUTA_SESSION_COOKIE_SIGNING_SALT, then require users to authenticate again. Upgrade to a version containing commit 18691c655164635066aa113003a3cd87f6ed11cd, or apply the patch manually. After deploying the fix, verify that Boruta session and remember-me cookies include the Secure attribute in browser developer tools or with an HTTP response inspection tool.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T14:16:31.213",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53661"
+    },
+    {
+      "id": "CVE-2026-53723",
+      "desc": "Guzzle Services provides an implementation of the Guzzle Command library that uses Guzzle service descriptions to describe web services, serialize requests, and parse responses into easy to use model structures. Versions prior ro 1.5.4 do not safely serialize scalar XML element values containing the CDATA terminator `]]>`. The XML request serializer writes values containing `<`, `>`, or `&` with `XMLWriter::writeCData($value)`. If attacker-controlled input contains `]]>`, the CDATA section closes early and the remainder is interpreted as XML markup. This is an outgoing request-body integrity issue, not a response parsing issue. The attacker does not need to control the service description or schema. Users are affected when all of the following are true: the application uses `guzzlehttp/guzzle-services` to serialize outgoing requests; a request parameter or `additionalParameters` schema uses `location: xml`; the value is serialized as XML element text, not an XML attribute; the value can contain attacker-controlled, user-controlled, tenant-controlled, or otherwise untrusted input; the value is not constrained by a safe `enum`, `pattern`, or custom filter that excludes `]]>`; and the downstream service parses the generated XML structurally and may act on unexpected, duplicated, or injected elements. Applications that serialize untrusted input into `location: xml` request parameters can emit XML containing attacker-controlled elements outside the intended text node. Depending on the receiving service, this can alter operation semantics, smuggle privileged fields, bypass modeled parameter boundaries, or create conflicting duplicated elements. Fixed service descriptions are sufficient if they contain an XML element parameter populated from attacker-controlled input. Users are not directly affected if they only use Guzzle Services to deserialize HTTP response bodies. Response XML parsing uses the response XML location visitor and does not invoke the vulnerable request XML serializer. Response bodies matter only in a second-order flow, such as parsing attacker-controlled response XML, storing or forwarding a parsed string value, and later using it as a `location: xml` request parameter. The issue is patched in `1.5.3` and later by safely splitting embedded CDATA terminators before serialization. The fix preserves the original scalar value as XML text and prevents injected nodes. As a workaround, constrain attacker-controlled XML element values with a strict `enum`, `pattern`, or custom filter that excludes `]]>`, or avoid serializing untrusted data into `location: xml` element text until patched. Where appropriate for the service schema, XML attributes are not affected because they are written with XMLWriter attribute APIs rather than CDATA sections. To determine whether action is needed, search service descriptions for request parameters using `location: xml`, including operation `parameters` and `additionalParameters`. Response-only `models` are not directly affected unless parsed values are reused for request serialization. For object and array parameters, review nested scalar properties because leaf element values can still be affected.",
+      "cvss": 5.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T14:16:31.403",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53723"
+    },
+    {
+      "id": "CVE-2026-6338",
+      "desc": "A HTTP request smuggling and desynchronization vulnerability affects Kong Gateway Enterprise 3.4, 3.10, 3.11, 3.12, 3.13, and 3.14 series. The vulnerability is caused by a parsing flaw in Kong\u2019s HTTP request processing pipeline when handling untrusted HTTP/1.1 traffic.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T14:16:32.553",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6338"
+    },
+    {
+      "id": "CVE-2026-8406",
+      "desc": "openSIS Classic 9.3 contains an insecure direct object reference vulnerability in the messaging module. Any authenticated user with access to the messaging module can request sent-message details from modules/messaging/SentMail.php by supplying an arbitrary mail_id value.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T14:16:32.930",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8406"
+    },
+    {
+      "id": "CVE-2024-45636",
+      "desc": "IBM Security QRadar EDR 3.12 through 3.12.24 stores user credentials in plain text which can be read by a local privileged user.",
+      "cvss": 4.1,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T16:16:21.357",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-45636"
+    },
+    {
+      "id": "CVE-2026-11839",
+      "desc": "Unrestricted upload of file with dangerous type vulnerability in Ba\u015farsoft Information Technologies Inc. Rotaban allows Upload a Web Shell to a Web Server.\n\nThis issue affects Rotaban: from V2026.06.002 before V2026.06.003.",
+      "cvss": 9.9,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T16:16:22.497",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11839"
+    },
+    {
+      "id": "CVE-2026-3341",
+      "desc": "IBM Langflow Desktop 1.0.0 through 1.9.2 IBM Langflow is vulnerable to server-side request forgery (SSRF). This may allow an authenticated attacker to send unauthorized requests from the system, potentially leading to network enumeration or facilitating other attacks.",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T16:16:22.770",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3341"
+    },
+    {
+      "id": "CVE-2026-4096",
+      "desc": "IBM DevOps Plan 3.0.0 through 3.0.6 is vulnerable to HTTP header injection, caused by improper validation of input by the HOST headers. This could allow an attacker to conduct various attacks against the vulnerable system, including cross-site scripting, cache poisoning or session hijacking",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T16:16:24.140",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4096"
+    },
+    {
+      "id": "CVE-2026-53777",
+      "desc": "Perry before 0.5.1159 contains a path traversal vulnerability that allows a malicious build server to write arbitrary content to any location writable by the running process by supplying unsanitized path components in the artifact_name field of ArtifactReady WebSocket messages. Attackers controlling the server URL can deliver traversal payloads through the artifact_name or download_path fields, causing the client to overwrite sensitive files or expose arbitrary local files to an attacker-accessible location.",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T16:16:24.873",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53777"
+    },
+    {
+      "id": "CVE-2026-7787",
+      "desc": "IBM Langflow OSS 1.0.0 through 1.9.1 could allow an authenticated user to read or modify sensitive information by bypassing authentication using insecure direct object references.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T16:16:25.090",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7787"
+    },
+    {
+      "id": "CVE-2026-7870",
+      "desc": "IBM i 7.6, 7.5, 7.4, and 7.3 could allow a user to gain elevated privileges due to an unqualified library call. A malicious actor could cause user-controlled code to run with administrator privilege.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-11T16:16:25.220",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7870"
+    },
+    {
+      "id": "CVE-2026-9648",
+      "desc": "The crypton-x509-validation Haskell library fails to enforce X.509 NameConstraints, allowing TLS clients to accept certificates whose Subject Alternative Names fall outside the issuing CA\u2019s permitted subtrees. This oversight enables an attacker who compromises a name-constrained sub-CA to impersonate domains beyond its intended scope.",
+      "cvss": 9.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00018,
+        "percentile": 0.04858
+      },
+      "published": "2026-06-11T16:16:25.503",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9648"
     }
   ],
   "kev": [
@@ -1847,6 +1847,70 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "CVE-2026-40034 gitoxide - Command Injection via Partial .gitmodules Override in gix-submodule",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-40034",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:43:07+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-5222 Cargo can be coerced to share credentials between registries",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-5222",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:42:39+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-5545 wrong reuse of HTTP Negotiate connection",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-5545",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:42:15+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-6429 netrc credential leak with reused proxy connection",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-6429",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:42:01+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-4873 connection reuse ignores TLS requirement",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-4873",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:41:54+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-6276 stale custom cookie host causes cookie leak",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-6276",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:41:47+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2026-6253 proxy credentials leak over redirect-to proxy",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-6253",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:41:40+00:00",
+      "summary": "Information published."
+    },
+    {
+      "title": "CVE-2023-5678 Excessive time spent in DH check / generation with large Q parameter value",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-5678",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-13T08:06:42+00:00",
+      "summary": "Information published."
+    },
+    {
       "title": "Tracing Digital Intent: New MacOS Tahoe 26 Artifact Discovered",
       "url": "https://unit42.paloaltonetworks.com/new-macos-artifact-discovered/",
       "source": "Unit 42",
@@ -1869,30 +1933,6 @@
       "category": "threat",
       "published": "2026-06-12T08:59:49+00:00",
       "summary": "Learn how SentinelOne empowers modern enterprises to safely adopt Claude with Prompt Security, AI SIEM, and Wayfinder Frontier AI."
-    },
-    {
-      "title": "CVE-2026-49975 Apache HTTP Server: mod_http2 denial of service",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-49975",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-12T08:01:35+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-46683 Snappy: SSRF and local file read via the xsl-style-sheet option",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-46683",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-12T08:01:28+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-46643 Snappy: Binary path is never shell-escaped due to an inverted is_executable check",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-46643",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-12T08:01:22+00:00",
-      "summary": "Information published."
     },
     {
       "title": "CISA BOD 26-04: Frequently asked questions about the new risk-based patching directive",
@@ -1957,46 +1997,6 @@
       "category": "threat",
       "published": "2026-06-11T10:00:24+00:00",
       "summary": "Protect enterprise AI agents from supply chain risks by auditing third-party skills for hidden vulnerabilities and multi-stage attack chains.\nThe post Trust No Skill: Integrity Verification for AI Agent Supply Chains appeared first on Unit 42."
-    },
-    {
-      "title": "CVE-2026-42012 Gnutls: gnutls: certificate validation bypass due to improper handling of uri and srv sans",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42012",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-11T08:43:57+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-5260 Gnutls: gnutls: information disclosure via heap overread in rsa key exchange",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-5260",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-11T08:43:51+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-42015 Gnutls: gnutls: memory corruption due to off-by-one error in pkcs#12 bag handling",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42015",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-11T08:43:44+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-42013 Gnutls: gnutls: certificate validation bypass due to oversized subject alternative name",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42013",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-11T08:43:37+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-39833 Invoking  key constraints not enforced in golang.org/x/crypto/ssh/agent",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-39833",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-11T08:42:10+00:00",
-      "summary": "Information published."
     },
     {
       "title": "How Federal Agencies Can Activate a Risk Operations Center (ROC) to Meet CISA BOD 26-04",
@@ -2615,6 +2615,14 @@
       "summary": "\n \n  CVSSv3 Score:\n \n 5.9\n\n\n CVE-2025-26466A flaw was found in the OpenSSH package. For each ping packet the SSH server receives, a pong packet is allocated in a memory buffer and stored in a queue of packages. It is only freed when the server/client key exchange has finished. A malicious client may"
     },
     {
+      "title": "Why AI Projects Stall and How CIOs Can Respond",
+      "url": "https://www.crowdstrike.com/en-us/blog/why-ai-projects-stall-and-how-cios-can-respond/",
+      "source": "CrowdStrike Blog",
+      "category": "threat",
+      "published": "",
+      "summary": ""
+    },
+    {
       "title": "CrowdStrike Named an Innovation and Growth Leader in the 2026 Frost Radar&trade;: Cloud and Application Runtime Security",
       "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-leads-2026-frost-radar-cloud-runtime-security/",
       "source": "CrowdStrike Blog",
@@ -2669,17 +2677,25 @@
       "category": "threat",
       "published": "",
       "summary": ""
-    },
-    {
-      "title": "How to Stop AI-Driven Data Loss",
-      "url": "https://www.crowdstrike.com/en-us/blog/how-to-stop-ai-driven-data-loss/",
-      "source": "CrowdStrike Blog",
-      "category": "threat",
-      "published": "",
-      "summary": ""
     }
   ],
   "news": [
+    {
+      "title": "Anthropic Says It Has Taken Its Latest AI Models Offline to Comply With New Export Controls",
+      "url": "https://www.securityweek.com/anthropic-says-it-has-taken-its-latest-ai-models-offline-to-comply-with-new-export-controls/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-13T06:38:34+00:00",
+      "summary": "Anthropic takes Fable 5 and Mythos 5 offline to comply with a directive from the Trump administration to prevent use by foreign nationals.\nThe post Anthropic Says It Has Taken Its Latest AI Models Offline to Comply With New Export Controls appeared first on SecurityWeek."
+    },
+    {
+      "title": "U.S. Orders Anthropic to Suspend Fable 5 and Mythos 5 Access for Foreign Nationals",
+      "url": "https://thehackernews.com/2026/06/us-orders-anthropic-to-suspend-fable-5.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-13T05:42:50+00:00",
+      "summary": "Anthropic said on Friday it will \"abruptly disable\" its most advanced artificial intelligence (AI) models, Claude Fable 5 and Mythos 5, for all users after the U.S. government ordered it to suspend access to the models for foreign nationals, whether inside or outside the U.S., citing national securi"
+    },
     {
       "title": "ShinyHunters Uses Oracle Zero-Day to Rampage Higher Ed",
       "url": "https://www.darkreading.com/vulnerabilities-threats/shinyhunters-oracle-zero-day-higher-ed",
@@ -2737,6 +2753,22 @@
       "summary": "A Ukrainian national extradited from Ireland to the United States last year has pleaded guilty to conspiracy charges tied to the Conti ransomware operation. [...]"
     },
     {
+      "title": "Bankruptcy admin approves settlement fund of $47 million for 23andMe data breach victims",
+      "url": "https://therecord.media/bankruptcy-admin-approves-settlement-for-23andme-breach-victims",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-12T17:12:00+00:00",
+      "summary": "About 7 million customers of the genetics testing company had their data stolen by hackers starting in April 2023, and many had their information posted on the dark web."
+    },
+    {
+      "title": "Major US surveillance program poised to lapse after legislative deadlock",
+      "url": "https://therecord.media/major-us-surveillance-program-set-to-lapse-702-fisa",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-12T17:08:00+00:00",
+      "summary": "It is the first lapse of the spy program, known as Section 702 of the Foreign Intelligence Surveillance Act (FISA), since it was passed into law in 2008."
+    },
+    {
       "title": "Over 400 Arch Linux packages compromised to push rootkit, infostealer",
       "url": "https://www.bleepingcomputer.com/news/security/over-400-arch-linux-packages-compromised-to-push-rootkit-infostealer/",
       "source": "Bleeping Computer",
@@ -2751,6 +2783,14 @@
       "category": "news",
       "published": "2026-06-12T16:17:26+00:00",
       "summary": "Other noteworthy stories that might have slipped under the radar: ICS device exposure remains flat as attack surface widens, Microsoft issues incident response playbook for AI, IBM and AT&#038;T accused of hack cover-ups.\nThe post In Other News: Google Security Layoffs, AudiA6 Takedown, $400 Million"
+    },
+    {
+      "title": "South Korea hits Coupang with record $409 million fine over data breach",
+      "url": "https://therecord.media/south-korea-data-breach-record-fine-coupang",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-12T15:56:00+00:00",
+      "summary": "The penalty is the largest ever issued by the commission for a personal data breach, surpassing the record 134.8 billion won ($88.8 million) fine levied against SK Telecom earlier this year."
     },
     {
       "title": "Early Warning Signs of Supply-Chain Attacks Live in the Dark Web",
@@ -2905,14 +2945,6 @@
       "summary": "Oracle has mitigated CVE-2026-35273, but it has not publicly confirmed the vulnerability\u2019s in-the-wild exploitation.\nThe post Google Confirms Exploitation of Oracle PeopleSoft Zero-Day by ShinyHunters appeared first on SecurityWeek."
     },
     {
-      "title": "Europol Disrupts AudiA6 Crypto Laundering Service Used by Ransomware Gangs",
-      "url": "https://thehackernews.com/2026/06/europol-disrupts-audia6-crypto.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-12T06:38:41+00:00",
-      "summary": "Authorities in Europe have disrupted AudiA6, a cryptocurrency laundering service used by ransomware gangs and cybercriminal networks.\n\nEuropol, in a statement issued Thursday, said the dismantling of AudiA6 cut off a \"key financial pipeline used to wash hundreds of millions in illicit profits.\" The "
-    },
-    {
       "title": "Phishing Attack Volume Down 20%, But Risk Still Rising",
       "url": "https://www.darkreading.com/cybersecurity-analytics/phishing-volume-down-20-risk-rising",
       "source": "Dark Reading",
@@ -2937,12 +2969,28 @@
       "summary": "Initial methods suggest attackers had likely mapped out Ivanti's asset landscape upfront and acted quickly once the exploit became public."
     },
     {
+      "title": "Cyber Force not included in Senate defense policy roadmap",
+      "url": "https://therecord.media/cyber-force-not-included-senate-defense-roadmap",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-11T16:47:00+00:00",
+      "summary": "An amendment by Sen. Kirsten Gillibrand (D-NY) to the chamber\u2019s fiscal 2027 national defense authorization bill that would have created the digital-focused service was defeated 14-13 when the Senate Armed Services Committee took up the nearly $1.2 trillion legislation behind closed doors this week."
+    },
+    {
       "title": "Drug Sites Hijacked Spotify\u2019s Search Ranking Through Fake Podcasts",
       "url": "https://www.wired.com/story/drug-sites-hijacked-spotifys-search-ranking-through-fake-podcasts-report-finds/",
       "source": "Wired Security",
       "category": "news",
       "published": "2026-06-11T16:07:30+00:00",
       "summary": "A joint congressional report describes a spam operation that turned tens of thousands of fake podcasts into search-engine bait for illegal pharmacy and scam sites."
+    },
+    {
+      "title": "British high school sends students home following cyberattack",
+      "url": "https://therecord.media/british-school-sends-students-home-cyberattack",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-11T15:25:00+00:00",
+      "summary": "Great Marlow School, which has 1,428 pupils according to the Department for Education (DfE), said it was set to remain closed while it works with specialist IT and cybersecurity professionals to resolve the issue."
     },
     {
       "title": "CISA Orders Agencies to Patch by Risk, Not Severity",
@@ -2967,14 +3015,6 @@
       "category": "news",
       "published": "2026-06-11T14:00:00+00:00",
       "summary": "Fake AI guides hide a multi-stage chain that drops AsyncRAT, with signs of AI-assisted coding"
-    },
-    {
-      "title": "Oracle Addresses PeopleSoft Vulnerability Amid Reports of Zero-Day Attacks",
-      "url": "https://www.securityweek.com/oracle-addresses-peoplesoft-vulnerability-amid-reports-of-zero-day-attacks/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-11T13:57:54+00:00",
-      "summary": "Oracle has released mitigations for CVE-2026-35273, but it has not said whether it\u2019s a zero-day exploited in ShinyHunters attacks.\nThe post Oracle Addresses PeopleSoft Vulnerability Amid Reports of Zero-Day Attacks appeared first on SecurityWeek."
     },
     {
       "title": "Most Cybersecurity Teams Struggle to Find Time for Training on New Cyber Threats",
@@ -3073,20 +3113,20 @@
       "summary": "The ACLU is suing two Florida police departments over the arrest of a Fort Myers man in a child-abduction case, saying officers treated a flawed face-recognition match as a near-certain ID."
     },
     {
-      "title": "Mapping Every Flock License Plate Reader Near US World Cup Stadiums",
-      "url": "https://www.wired.com/story/us-world-cup-2026-alpr-camera-stadiums/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-06-10T10:00:00+00:00",
-      "summary": "Most US World Cup stadiums are surrounded by surveillance cameras. Want to know if you\u2019re being watched on your way to a match? These maps will help you."
-    },
-    {
       "title": "Soccer Fans, You\u2019re Being Watched",
       "url": "https://www.wired.com/story/soccer-world-cup-biometric-surveillance/",
       "source": "Wired Security",
       "category": "news",
       "published": "2026-06-10T10:00:00+00:00",
       "summary": "From anti-drone tech to face recognition, 2026 World Cup stadiums in the US, Canada, and Mexico are subjecting fans to an array of surveillance tech. Here\u2019s what you need to know."
+    },
+    {
+      "title": "Mapping Every Flock License Plate Reader Near US World Cup Stadiums",
+      "url": "https://www.wired.com/story/us-world-cup-2026-alpr-camera-stadiums/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-06-10T10:00:00+00:00",
+      "summary": "Most US World Cup stadiums are surrounded by surveillance cameras. Want to know if you\u2019re being watched on your way to a match? These maps will help you."
     },
     {
       "title": "How has use of framing protection security headers changed in the past 3 years&#x3f;, (Wed, Jun 10th)",
@@ -3323,9 +3363,9 @@
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 2,
-    "high": 14,
-    "exploited": 1,
+    "critical": 5,
+    "high": 11,
+    "exploited": 0,
     "kev_total": 50,
     "kev_7d": 7,
     "gh_advisories": 30,
