@@ -1,81 +1,11 @@
 {
-  "generated": "2026-06-14T11:34:52.443770+00:00",
+  "generated": "2026-06-14T13:27:58.927695+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>9 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-47195",
-      "desc": "Quest Bot is an opensource Discord Bot. Prior to version 1.1.6, the purge and slowmode commands check only guild-level permissions on the invoking member. They do not check the member\u2019s effective permissions in the channel where the command is run. A user denied channel-level moderation permissions can still delete messages or change slowmode through the bot. This issue has been patched in version 1.1.6.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-12T13:16:32.930",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47195"
-    },
-    {
-      "id": "CVE-2026-47196",
-      "desc": "Quest Bot is an opensource Discord Bot. Prior to version 1.1.6, the automod add command trims user input but does not reject an empty result. Adding a rule containing only whitespace stores an empty word. The message listener later checks content.includes(\"\"), which is always true, causing the bot to delete every non-bot guild message. This issue has been patched in version 1.1.6.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-12T13:16:33.527",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47196"
-    },
-    {
-      "id": "CVE-2026-47197",
-      "desc": "Quest Bot is an opensource Discord Bot. Prior to version 1.1.6, a moderator with the relevant Discord permission bit can use the bot to moderate users above them in the Discord role hierarchy, as long as the bot itself outranks the target. This bypasses Discord\u2019s normal role hierarchy protections and lets lower-ranked moderators ban, kick, timeout, untimeout, warn, or rename higher-ranked users. This issue has been patched in version 1.1.6.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-12T13:16:33.677",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47197"
-    },
-    {
-      "id": "CVE-2026-48485",
-      "desc": "Quest Bot is an opensource Discord Bot. Prior to version 1.1.6, the latest release suppresses mentions when creating, unbanning, unwarning, kicking, muting, and unmuting, but stored warning reasons are still printed by /warns without mention suppression. A moderator can create a warning with @everyone or @here in the reason, then make the bot later output that reason through /warns, causing a mass ping if the bot has permission. This issue has been patched in version 1.1.6.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-12T13:16:33.820",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48485"
-    },
-    {
-      "id": "CVE-2026-49347",
-      "desc": "Quest Bot is an opensource Discord Bot. Prior to version 1.1.8, any user who can access the ticket panel can repeatedly create new ticket channels. The latest release still creates a new database ticket and Discord channel for every completed ticket modal submission, without checking whether the same user already has an open ticket and without applying a cooldown. This issue has been patched in version 1.1.8.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-12T13:16:34.030",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49347"
-    },
     {
       "id": "CVE-2017-20240",
       "desc": "Crypt::PBKDF2 versions before 0.261630 for Perl are vulnerable to timing attacks.\n\nThese versions use Perl's built-in eq comparison. Discrepancies in timing could be used to guess the underlying derived-key.",
@@ -422,10 +352,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00038,
-        "percentile": 0.11734
-      },
+      "epss": null,
       "published": "2026-06-12T15:16:28.007",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47135"
     },
@@ -495,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00077,
+        "percentile": 0.23392
+      },
       "published": "2026-06-12T15:16:28.767",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47208"
     },
@@ -705,12 +635,82 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00041,
-        "percentile": 0.12902
-      },
+      "epss": null,
       "published": "2026-06-12T16:16:27.713",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44207"
+    },
+    {
+      "id": "CVE-2026-44208",
+      "desc": "Frappe is a full-stack web application framework. Prior to versions 15.107.0 and 16.17.0, lack of validations in the \"submit_discussion()\" endpoint allows for unauthorized access to resources. This issue has been patched in versions 15.107.0 and 16.17.0.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-12T16:16:27.843",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44208"
+    },
+    {
+      "id": "CVE-2026-44967",
+      "desc": "OpenTelemetry-cpp is the C++ implementation of OpenTelemetry. Prior to release 1.27.0, the OTLP HTTP exporters (traces/metrics/logs) read the full HTTP response into an in-memory vector of bytes without a size cap. This is exploitable for memory exhaustion when the configured collector endpoint is attacker-controlled (or a network attacker can MITM the exporter connection). This vulnerability is fixed in opentelemetry-cpp release 1.27.0.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-12T16:16:27.973",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44967"
+    },
+    {
+      "id": "CVE-2026-44975",
+      "desc": "Frappe is a full-stack web application framework. Prior to versions 15.107.2 and 16.17.4, any authenticated user can reset onboarding for all users in the system. This issue has been patched in versions 15.107.2 and 16.17.4.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-12T16:16:28.120",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44975"
+    },
+    {
+      "id": "CVE-2026-44976",
+      "desc": "Frappe is a full-stack web application framework. Prior to version 16.17.4, any user can modify any field in any Onboarding Step record. This issue has been patched in version 16.17.4.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-12T16:16:28.260",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44976"
+    },
+    {
+      "id": "CVE-2026-45830",
+      "desc": "A lack of authorization validation in version 0.4.17 or later of the ChromaDB Python project allows any authenticated users to arbitrarily read, write, update, or delete data in any tenant's collection regardless of which tenant they belong to.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00038,
+        "percentile": 0.11956
+      },
+      "published": "2026-06-12T16:16:28.660",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45830"
     }
   ],
   "kev": [
@@ -2745,14 +2745,6 @@
       "summary": "Anthropic said on Friday it will \"abruptly disable\" its most advanced artificial intelligence (AI) models, Claude Fable 5 and Mythos 5, for all users after the U.S. government ordered it to suspend access to the models for foreign nationals, whether inside or outside the U.S., citing national securi"
     },
     {
-      "title": "ShinyHunters Uses Oracle Zero-Day to Rampage Higher Ed",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/shinyhunters-oracle-zero-day-higher-ed",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-12T20:26:32+00:00",
-      "summary": "A major bug in Oracle's ERP software disproportionately affected American universities, and hackers have capitalized by stealing gobs of data."
-    },
-    {
       "title": "Maine disables data breach notification portal after fake disclosures",
       "url": "https://www.bleepingcomputer.com/news/security/maine-disables-data-breach-notification-portal-after-fake-disclosures/",
       "source": "Bleeping Computer",
@@ -2857,14 +2849,6 @@
       "summary": "Domain of dark web money laundering platform AudiA6 seized and suspects arrested in joint operation by the FBI, Europol and others"
     },
     {
-      "title": "Claude Fable 5 Doesn't Change the Mythos Security Story",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/claude-fable-5-doesnt-change-mythos-security-story",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-12T13:01:00+00:00",
-      "summary": "Stay cool: Mythos 5 is an upgrade over Mythos Preview while Fable 5 is Mythos &quot;made safe for general use,&quot; Anthropic explained."
-    },
-    {
       "title": "GitHub to Update npm to Thwart Software Supply Chain Attacks",
       "url": "https://www.infosecurity-magazine.com/news/github-update-npm-supply-chain/",
       "source": "Infosecurity Magazine",
@@ -2953,28 +2937,12 @@
       "summary": "An AI hacker claims to have achieved a prompt-based jailbreak shortly after Fable 5\u2019s launch, but Anthropic says it\u2019s not a real jailbreak.\nThe post Anthropic Disputes Fable 5 AI Jailbreak appeared first on SecurityWeek."
     },
     {
-      "title": "Phishing Attack Volume Down 20%, But Risk Still Rising",
-      "url": "https://www.darkreading.com/cybersecurity-analytics/phishing-volume-down-20-risk-rising",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-12T00:58:07+00:00",
-      "summary": "Hackers are valuing quality over quantity, using AI to upgrade their phishing attacks rather than multiply them."
-    },
-    {
       "title": "Grok Is Still Hosting Sexualized Deepfakes of Famous Women",
       "url": "https://www.wired.com/story/grok-is-still-hosting-sexualized-deepfakes-of-famous-women/",
       "source": "Wired Security",
       "category": "news",
       "published": "2026-06-11T19:41:01+00:00",
       "summary": "A WIRED investigation found dozens of \u201cnudified\u201d deepfake images and videos on Grok's website, including nonconsensual depictions of celebrities and at least one prominent US politician."
-    },
-    {
-      "title": "Max-Severity Ivanti Flaw Exploited 24 Hours After Disclosure",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/max-severity-ivanti-sentry-flaw-exploited-24-hours",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-11T18:43:57+00:00",
-      "summary": "Initial methods suggest attackers had likely mapped out Ivanti's asset landscape upfront and acted quickly once the exploit became public."
     },
     {
       "title": "Cyber Force not included in Senate defense policy roadmap",
@@ -3007,14 +2975,6 @@
       "category": "news",
       "published": "2026-06-11T15:00:00+00:00",
       "summary": "New CISA directive tells federal agencies to patch by real-world risk, not CVSS severity scores"
-    },
-    {
-      "title": "Segmentation Works for OT If Operators Are Paying Attention",
-      "url": "https://www.darkreading.com/cybersecurity-operations/segmentation-works-for-ot-if-operators-are-paying-attention",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-11T14:51:48+00:00",
-      "summary": "Even the best segmentation strategy will fall apart without constant oversight and disciplined operations."
     },
     {
       "title": "Cybercriminals Use Fake AI Guides and Dev Tools to Spread AsyncRAT Malware",
@@ -3065,22 +3025,6 @@
       "summary": ""
     },
     {
-      "title": "Chinese, N. Korean Threat Groups Build on Asia-Pacific Success",
-      "url": "https://www.darkreading.com/cyberattacks-data-breaches/chinese-korean-threat-groups-asia-pacific-success",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-11T00:01:00+00:00",
-      "summary": "North Korea's gross domestic product (GDP) has grown, in part because of the nation's state-sponsored cybercrime groups, which target financial firms and other businesses."
-    },
-    {
-      "title": "CISA Rewrites Federal Patching Requirements for AI Threat Era",
-      "url": "https://www.darkreading.com/cyber-risk/cisa-rewrites-federal-patching-requirements-ai-threat-era",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-10T21:17:12+00:00",
-      "summary": "The new directive gives federal agencies three days to fix the most dangerous flaws, while less severe issues can be deferred."
-    },
-    {
       "title": "CISA Tells US Agencies to Fix Security Bugs in as Little as 3 Days Thanks to AI Threats",
       "url": "https://www.wired.com/story/cisa-ai-vulnerability-directive/",
       "source": "Wired Security",
@@ -3095,14 +3039,6 @@
       "category": "news",
       "published": "2026-06-10T20:28:58+00:00",
       "summary": "US lawmakers are alarmed that Bill Pulte, a housing official with no intelligence experience, is poised to take charge of one of the government's most powerful surveillance tools."
-    },
-    {
-      "title": "Bug Bounty Research Triggers ServiceNow Security Alert",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/bug-bounty-research-triggers-servicenow-security-alert",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-10T20:07:53+00:00",
-      "summary": "Security research inadvertently led organizations to believe they were being breached through their ServiceNow instances."
     },
     {
       "title": "Who Runs the Ransomware Group \u2018The Gentlemen?\u2019",
