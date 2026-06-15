@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-15T15:22:49.335020+00:00",
+  "generated": "2026-06-15T16:56:06.778736+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
@@ -698,9 +698,9 @@
     {
       "id": "CVE-2026-9278",
       "desc": "The Form Builder CP WordPress plugin before 1.2.47 does not properly sanitize a form configuration value before storing it and using it as part of a client-side script execution, allowing authenticated users with Editor-level access and above to perform Stored Cross-Site Scripting attacks against any visitor of a page rendering the affected form, even when the `unfiltered_html` capability is disallowed (e.g. in a multisite network).",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
       "vendor": "",
       "product": "",
       "exploited": false,
@@ -1465,6 +1465,94 @@
   "kev_7d": 7,
   "gh_advisories": [
     {
+      "id": "GHSA-p3vc-36g9-x9gr",
+      "cve": "CVE-2026-50171",
+      "severity": "high",
+      "summary": "@angular/common: Denial of Service (DoS) via OOM in Number Formatting (digitsInfo)",
+      "url": "https://github.com/advisories/GHSA-p3vc-36g9-x9gr",
+      "published": "2026-06-15T16:52:30Z",
+      "ecosystem": "npm",
+      "pkg": "@angular/common",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-q6f4-qqrg-jv6x",
+      "cve": "CVE-2026-50170",
+      "severity": "high",
+      "summary": "@angular/common: Information Leak via Default Caching of Credentialed Requests in HttpTransferCache",
+      "url": "https://github.com/advisories/GHSA-q6f4-qqrg-jv6x",
+      "published": "2026-06-15T16:51:53Z",
+      "ecosystem": "npm",
+      "pkg": "@angular/common",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-692r-grfm-v8x7",
+      "cve": "CVE-2026-52725",
+      "severity": "medium",
+      "summary": "@angular/core: Angular Template and Dynamic Component Namespace Bypass leading to Cross-Site Scripting (XSS)",
+      "url": "https://github.com/advisories/GHSA-692r-grfm-v8x7",
+      "published": "2026-06-15T16:51:35Z",
+      "ecosystem": "npm",
+      "pkg": "@angular/core",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-x5qj-865h-mgvm",
+      "cve": "CVE-2026-48761",
+      "severity": "medium",
+      "summary": "Symfony: HtmlSanitizer UrlAttributeSanitizer Misses URL Attributes",
+      "url": "https://github.com/advisories/GHSA-x5qj-865h-mgvm",
+      "published": "2026-06-15T16:46:53Z",
+      "ecosystem": "composer",
+      "pkg": "symfony/html-sanitizer",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-gv2q-mqqv-365m",
+      "cve": "CVE-2026-50169",
+      "severity": "medium",
+      "summary": "Angular Service Worker Policy-Bypass & Credential-Stripping Vulnerabilities",
+      "url": "https://github.com/advisories/GHSA-gv2q-mqqv-365m",
+      "published": "2026-06-15T16:44:21Z",
+      "ecosystem": "npm",
+      "pkg": "@angular/service-worker",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-xrxm-cp7j-8xf6",
+      "cve": "CVE-2026-50168",
+      "severity": "high",
+      "summary": "@angular/platform-server: URL Parser Differential leading to SSRF Allowlist Bypass",
+      "url": "https://github.com/advisories/GHSA-xrxm-cp7j-8xf6",
+      "published": "2026-06-15T16:39:20Z",
+      "ecosystem": "npm",
+      "pkg": "@angular/platform-server",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-7c78-jf6q-g5cm",
+      "cve": "CVE-2026-49982",
+      "severity": "high",
+      "summary": "tmp: Type-confusion bypass of _assertPath allows path traversal via non-string prefix/postfix/template",
+      "url": "https://github.com/advisories/GHSA-7c78-jf6q-g5cm",
+      "published": "2026-06-15T16:36:46Z",
+      "ecosystem": "npm",
+      "pkg": "tmp",
+      "cvss_score": 8.2
+    },
+    {
+      "id": "GHSA-96hv-2xvq-fx4p",
+      "cve": "CVE-2026-48779",
+      "severity": "high",
+      "summary": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+      "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+      "published": "2026-06-15T16:34:23Z",
+      "ecosystem": "npm",
+      "pkg": "ws",
+      "cvss_score": 7.5
+    },
+    {
       "id": "GHSA-rgjc-h3x7-9mwg",
       "cve": "CVE-2026-54267",
       "severity": "high",
@@ -1705,94 +1793,6 @@
       "ecosystem": "composer",
       "pkg": "typo3/html-sanitizer",
       "cvss_score": null
-    },
-    {
-      "id": "GHSA-36hh-v3qg-5jq4",
-      "cve": null,
-      "severity": "high",
-      "summary": "PyO3 has an Out-of-bounds Read in `nth` / `nth_back` for `PyList` and `PyTuple` iterators",
-      "url": "https://github.com/advisories/GHSA-36hh-v3qg-5jq4",
-      "published": "2026-06-12T19:32:47Z",
-      "ecosystem": "rust",
-      "pkg": "pyo3",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-jh32-v29g-68pq",
-      "cve": "CVE-2026-49741",
-      "severity": "high",
-      "summary": "TYPO3 CMS has Privilege Escalation & SQL Injection in its Form Framework",
-      "url": "https://github.com/advisories/GHSA-jh32-v29g-68pq",
-      "published": "2026-06-12T19:32:22Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-qcmw-6rm2-5x78",
-      "cve": "CVE-2026-47350",
-      "severity": "medium",
-      "summary": "TYPO3 CMS has Broken Access Control in its DataHandler",
-      "url": "https://github.com/advisories/GHSA-qcmw-6rm2-5x78",
-      "published": "2026-06-12T19:32:15Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-hwvq-2w67-rvxp",
-      "cve": "CVE-2026-47346",
-      "severity": "high",
-      "summary": "TYPO3 CMS has Broken Access Control in its Form Framework",
-      "url": "https://github.com/advisories/GHSA-hwvq-2w67-rvxp",
-      "published": "2026-06-12T19:32:09Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-chm7-4vch-h8vr",
-      "cve": "CVE-2026-49742",
-      "severity": "high",
-      "summary": "TYPO3 CMS has Broken Access Control in its Media Module",
-      "url": "https://github.com/advisories/GHSA-chm7-4vch-h8vr",
-      "published": "2026-06-12T19:09:30Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-c78m-c52x-jgwp",
-      "cve": "CVE-2026-49740",
-      "severity": "medium",
-      "summary": "TYPO3 CMS has Insecure Deserialization via Core API",
-      "url": "https://github.com/advisories/GHSA-c78m-c52x-jgwp",
-      "published": "2026-06-12T19:09:26Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-jf56-v8jc-jcc5",
-      "cve": "CVE-2026-49738",
-      "severity": "low",
-      "summary": "TYPO3 CMS has Broken Access Control in its File Abstraction Layer",
-      "url": "https://github.com/advisories/GHSA-jf56-v8jc-jcc5",
-      "published": "2026-06-12T19:09:04Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-2j54-93q2-3hjq",
-      "cve": "CVE-2026-47352",
-      "severity": "medium",
-      "summary": "TYPO3 CMS has Broken Access Control in Backend API",
-      "url": "https://github.com/advisories/GHSA-2j54-93q2-3hjq",
-      "published": "2026-06-12T19:08:59Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
     }
   ],
   "threatfox": [],
@@ -1847,12 +1847,20 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "What Changed\u00a0in OWASP Top 10 2025\u00a0and\u00a0Recommendations\u00a0for Each Category",
+      "url": "https://blog.qualys.com/category/qualys-insights",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-06-15T16:00:00+00:00",
+      "summary": "Key Takeaways&#160; The OWASP Foundation has released the eighth edition of its Top 10 Web Application Security Risks. This is the first major update since 2021, and was built on analysis of more than 175,000 CVE records and 589 Common Weakness Enumerations. Two entirely new OWASP Top 10 2025 catego"
+    },
+    {
       "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
       "source": "Mandiant Blog",
       "category": "threat",
       "published": "2026-06-15T14:00:00+00:00",
-      "summary": "Google Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community. While remaining undetected for over a year, t"
+      "summary": "Written by: Patrick Whitsell, John McGuiness\n\nGoogle Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community."
     },
     {
       "title": "15th June \u2013 Threat Intelligence Report",
@@ -2303,14 +2311,6 @@
       "summary": "In this newsletter, Thor breaks down why you should stop relying solely on CVSS and start using EPSS and GCVE to focus your patching efforts on the threats that actually matter."
     },
     {
-      "title": "Extending EOL/EOS Software Intelligence Across Containers, Kubernetes, and Modern Workloads",
-      "url": "https://blog.qualys.com/category/product-tech",
-      "source": "Qualys Blog",
-      "category": "threat",
-      "published": "2026-05-28T16:00:00+00:00",
-      "summary": "Key Takeaways Software inventory used to stop at the server. Modern application delivery erased that boundary. In cloud-native environments, software now moves continuously through container images, registries, CI/CD pipelines, and Kubernetes clusters, often reaching production faster than tradition"
-    },
-    {
       "title": "2026 World Cup: Discussing The World\u2019s Biggest Game\u2019s Attack Surface",
       "url": "https://unit42.paloaltonetworks.com/fifa-world-cup-attack-surface/",
       "source": "Unit 42",
@@ -2681,12 +2681,60 @@
   ],
   "news": [
     {
+      "title": "China-Nexus Actor Spy on US Researchers Undetected for a Year",
+      "url": "https://www.darkreading.com/threat-intelligence/china-nexus-actor-us-researchers-undetected",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-15T17:00:45+00:00",
+      "summary": "Google discovered and disrupted the sprawling campaign, which stole RedCAP credentials to target numerous institutions and exfiltrate sensitive data."
+    },
+    {
+      "title": "Council of Europe investigates ShinyHunters data breach claims",
+      "url": "https://www.bleepingcomputer.com/news/security/council-of-europe-investigates-shinyhunters-data-breach-claims/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T16:37:11+00:00",
+      "summary": "The Council of Europe, the continent's oldest intergovernmental body, is probing claims of a data breach made by the ShinyHunters extortion group over the weekend. [...]"
+    },
+    {
+      "title": "Adriatic Port Cyber-Attack by Anubis Sparks Warning Over Maritime Security Risks",
+      "url": "https://www.infosecurity-magazine.com/news/anubis-ransomware-adriatic-port/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-15T16:15:00+00:00",
+      "summary": "How the Anubis ransomware group stole and leaked an Italian Adriatic port authority's data"
+    },
+    {
+      "title": "FBI: Fraudsters use couriers to steal money in crypto scams",
+      "url": "https://www.bleepingcomputer.com/news/security/fbi-fraudsters-use-couriers-to-steal-money-in-crypto-scams/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T15:30:23+00:00",
+      "summary": "The U.S. Federal Bureau of Investigation (FBI) warned that criminals are using couriers to collect money from victims of cryptocurrency investment scams, also known as pig butchering or romance baiting. [...]"
+    },
+    {
       "title": "Ransomware Attack Shuts Down Mills of Australia\u2019s Second-Largest Sugar Producer",
       "url": "https://www.securityweek.com/ransomware-attack-shuts-down-mills-of-australias-second-largest-sugar-producer/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-06-15T15:15:55+00:00",
       "summary": "Mackay Sugar was targeted in a cyberattack carried out by a threat group known as The Gentlemen.\nThe post Ransomware Attack Shuts Down Mills of Australia&#8217;s Second-Largest Sugar Producer appeared first on SecurityWeek."
+    },
+    {
+      "title": "One-Click Microsoft 365 Copilot Flaw Could Have Let Attackers Steal Emails, Files, and MFA Codes",
+      "url": "https://thehackernews.com/2026/06/one-click-microsoft-365-copilot-flaw.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-15T15:09:05+00:00",
+      "summary": "A single click on a trusted Microsoft link could have let an attacker pull emails, calendar details, and indexed files out of Microsoft 365 Copilot Enterprise Search.\n\nResearchers at Varonis Threat Labs chained three bugs into a one-click exfiltration path they call SearchLeak. Because the link poin"
+    },
+    {
+      "title": "The Beginning of the End of Social Engineering",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/beginning-end-social-engineering",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-15T15:08:32+00:00",
+      "summary": "AI-native operating systems are shifting the responsibility to stay vigilant against social engineering cyberattacks from the user onto the system itself."
     },
     {
       "title": "Cyberattack on Russian tech firm Astral disrupts business, government services for week",
@@ -2929,22 +2977,6 @@
       "summary": "In a coordinated effort, the FBI, working with Google and Black Lotus Labs, has dismantled a massive Chinese phishing-as-a-service operation called Outsider Enterprise with thousands of phishing websites used to steal credit card data and passwords. [...]"
     },
     {
-      "title": "Ex-school district employee jailed for hacks on former employer",
-      "url": "https://www.bleepingcomputer.com/news/security/ex-school-district-employee-jailed-for-hacks-on-former-employer/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-13T20:53:13+00:00",
-      "summary": "A former \u00a0IT employee at an Iowa school district was sentenced to 21 months in prison after conducting a prolonged cyberattack against the former employer that disrupted classroom operations, deleted accounts, and caused tens of thousands of dollars in damages. [...]"
-    },
-    {
-      "title": "Chinese hackers hijack auth flow, spy on isolated network for a decade",
-      "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-hijack-auth-flow-spy-on-isolated-network-for-a-decade/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-13T14:06:42+00:00",
-      "summary": "Chinese hackers took control of a target organization's authentication stack and maintained persistence for 10 years, with full visibility into the administrative activity. [...]"
-    },
-    {
       "title": "Critical Splunk Enterprise Flaw Lets Attackers Run Code Without Authentication",
       "url": "https://thehackernews.com/2026/06/critical-splunk-enterprise-flaw-lets.html",
       "source": "The Hacker News",
@@ -2959,14 +2991,6 @@
       "category": "news",
       "published": "2026-06-13T10:30:00+00:00",
       "summary": "Plus: AI bug hunting fuels Microsoft\u2019s biggest-ever Patch Tuesday, ShinyHunters ransomware gang exploits an Oracle zero-day, and more."
-    },
-    {
-      "title": "U.S. Orders Anthropic to Suspend Fable 5 and Mythos 5 Access for Foreign Nationals",
-      "url": "https://thehackernews.com/2026/06/us-orders-anthropic-to-suspend-fable-5.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-13T05:42:50+00:00",
-      "summary": "Anthropic said on Friday it will \"abruptly disable\" its most advanced artificial intelligence (AI) models, Claude Fable 5 and Mythos 5, for all users after the U.S. government ordered it to suspend access to the models for foreign nationals, whether inside or outside the U.S., citing national securi"
     },
     {
       "title": "ShinyHunters Uses Oracle Zero-Day to Rampage Higher Ed",
@@ -3073,14 +3097,6 @@
       "summary": "Even the best segmentation strategy will fall apart without constant oversight and disciplined operations."
     },
     {
-      "title": "Cybercriminals Use Fake AI Guides and Dev Tools to Spread AsyncRAT Malware",
-      "url": "https://www.infosecurity-magazine.com/news/fake-ai-guides-dev-tools-spread/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-11T14:00:00+00:00",
-      "summary": "Fake AI guides hide a multi-stage chain that drops AsyncRAT, with signs of AI-assisted coding"
-    },
-    {
       "title": "Signal Alums Reveal \u2018Encrypted Spaces,\u2019 a System for Making Private Collaboration Apps",
       "url": "https://www.wired.com/story/signal-alums-release-encrypted-spaces-a-new-system-for-building-private-collaboration-apps/",
       "source": "Wired Security",
@@ -3095,22 +3111,6 @@
       "category": "news",
       "published": "2026-06-11T02:25:21+00:00",
       "summary": ""
-    },
-    {
-      "title": "Chinese, N. Korean Threat Groups Build on Asia-Pacific Success",
-      "url": "https://www.darkreading.com/cyberattacks-data-breaches/chinese-korean-threat-groups-asia-pacific-success",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-11T00:01:00+00:00",
-      "summary": "North Korea's gross domestic product (GDP) has grown, in part because of the nation's state-sponsored cybercrime groups, which target financial firms and other businesses."
-    },
-    {
-      "title": "CISA Rewrites Federal Patching Requirements for AI Threat Era",
-      "url": "https://www.darkreading.com/cyber-risk/cisa-rewrites-federal-patching-requirements-ai-threat-era",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-10T21:17:12+00:00",
-      "summary": "The new directive gives federal agencies three days to fix the most dangerous flaws, while less severe issues can be deferred."
     },
     {
       "title": "CISA Tells US Agencies to Fix Security Bugs in as Little as 3 Days Thanks to AI Threats",
