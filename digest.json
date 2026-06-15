@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-15T12:26:29.499147+00:00",
+  "generated": "2026-06-15T15:22:49.335020+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
@@ -422,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00196,
+        "percentile": 0.0946
+      },
       "published": "2026-06-15T02:16:12.477",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12206"
     },
@@ -653,9 +656,9 @@
     {
       "id": "CVE-2026-8385",
       "desc": "The WP Go Maps  WordPress plugin before 10.0.10 does not properly enforce the marker approval filter on the admin-ajax fallback for its datatables route, allowing unauthenticated visitors to retrieve marker records that the site owner has not approved for public display, including their title, category, address and description fields.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
       "vendor": "",
       "product": "",
       "exploited": false,
@@ -702,7 +705,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00191,
+        "percentile": 0.08911
+      },
       "published": "2026-06-15T08:16:22.200",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9278"
     }
@@ -1459,6 +1465,17 @@
   "kev_7d": 7,
   "gh_advisories": [
     {
+      "id": "GHSA-rgjc-h3x7-9mwg",
+      "cve": "CVE-2026-54267",
+      "severity": "high",
+      "summary": "Angular Client Hydration DOM Clobbering & Response-Cache Poisoning",
+      "url": "https://github.com/advisories/GHSA-rgjc-h3x7-9mwg",
+      "published": "2026-06-15T15:16:18Z",
+      "ecosystem": "npm",
+      "pkg": "@angular/core",
+      "cvss_score": null
+    },
+    {
       "id": "GHSA-8c9q-7855-wfxq",
       "cve": "CVE-2026-54090",
       "severity": "high",
@@ -1776,17 +1793,6 @@
       "ecosystem": "composer",
       "pkg": "typo3/cms-core",
       "cvss_score": null
-    },
-    {
-      "id": "GHSA-q93m-25xv-94hh",
-      "cve": "CVE-2026-47351",
-      "severity": "medium",
-      "summary": "TYPO3 CMS: Broken Access Control in Media Module",
-      "url": "https://github.com/advisories/GHSA-q93m-25xv-94hh",
-      "published": "2026-06-12T19:06:59Z",
-      "ecosystem": "composer",
-      "pkg": "typo3/cms-core",
-      "cvss_score": null
     }
   ],
   "threatfox": [],
@@ -1840,6 +1846,22 @@
   ],
   "osv_vulns": [],
   "threats": [
+    {
+      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
+      "source": "Mandiant Blog",
+      "category": "threat",
+      "published": "2026-06-15T14:00:00+00:00",
+      "summary": "Google Threat Intelligence Group (GTIG) has identified a sophisticated campaign attributed to UNC6508, a People's Republic of China (PRC)-nexus threat actor, targeting institutions in the North American academic, medical, and military research community. While remaining undetected for over a year, t"
+    },
+    {
+      "title": "15th June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/15th-june-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-15T13:40:44+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 15th June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES The University of Nottingham, a UK research university, has\u00a0suffered a data breach after ShinyHunters accessed its student records system. The incident a"
+    },
     {
       "title": "CVE-2026-46433 lldpd: Heap OOB Read in VLAN Decapsulation memmove",
       "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-46433",
@@ -2110,7 +2132,7 @@
       "source": "Checkpoint Research",
       "category": "threat",
       "published": "2026-06-08T14:47:59+00:00",
-      "summary": "For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES DentaQuest, a U.S. dental benefits administrator owned by Sun Life, has\u00a0suffered a data breach after threat group ShinyHunters leaked exfiltrated data. An"
+      "summary": "For the latest discoveries in cyber research for the week of 8th June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES DentaQuest, a U.S. dental benefits administrator owned by Sun Life, has\u00a0suffered a data breach after threat group ShinyHunters leaked exfiltrated data. An"
     },
     {
       "title": "Seeking Counsel: Ongoing Targeted Campaign Against US Law Firms",
@@ -2401,14 +2423,6 @@
       "summary": "Prompt for Agentic AI Security empowers organizations with proactive governance, meaning security teams can deploy agents with confidence."
     },
     {
-      "title": "18th May \u2013 Threat Intelligence Report",
-      "url": "https://research.checkpoint.com/2026/18th-may-threat-intelligence-report/",
-      "source": "Checkpoint Research",
-      "category": "threat",
-      "published": "2026-05-18T14:58:29+00:00",
-      "summary": "For the latest discoveries in cyber research for the week of 18th May, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Vodafone, a major international telecom, has\u00a0sustained a source code leak claimed by the Lapsus$ extortion group. The company confirmed limited access to "
-    },
-    {
       "title": "SHub Reaper | macOS Stealer Spoofs Apple, Google, and Microsoft in a Single Attack Chain",
       "url": "https://www.sentinelone.com/blog/shub-reaper-macos-stealer-spoofs-apple-google-and-microsoft-in-a-single-attack-chain/",
       "source": "SentinelOne Blog",
@@ -2447,14 +2461,6 @@
       "category": "threat",
       "published": "2026-05-13T18:11:51+00:00",
       "summary": "SentinelOne\u2019s latest report examines the evolving 'secrets' threatscape, showing how modern cloud and AI infrastructures are being exploited."
-    },
-    {
-      "title": "Linux Kernel Vulnerability copy.fail - CVE-2026-31431",
-      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-139",
-      "source": "Fortinet PSIRT",
-      "category": "threat",
-      "published": "2026-05-13T07:00:00+00:00",
-      "summary": "\n \n  CVSSv3 Score:\n \n 7.8\n\n\n CVE-2026-31431In the Linux kernel, the following vulnerability has been resolved: crypto: algif_aead - Revert to operating out-of-place This mostly reverts commit 72548b093ee3 except for the copying of the associated data. There is no benefit in operating in-place in alg"
     },
     {
       "title": "A 0-click exploit chain for the Pixel 10: When a Door Closes, a Window Opens",
@@ -2519,14 +2525,6 @@
       "category": "threat",
       "published": "2026-04-23T14:00:00+00:00",
       "summary": "Written by: JP Glab, Tufail Ahmed, Josh Kelley, Muhammad Umair\n\nIntroduction\u00a0\nGoogle Threat Intelligence Group (GTIG) identified a multistage intrusion campaign by a newly tracked threat group, UNC6692, that leveraged persistent social engineering, a custom modular malware suite, and deft pivoting i"
-    },
-    {
-      "title": "Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities/",
-      "source": "Mandiant Blog",
-      "category": "threat",
-      "published": "2026-04-16T14:00:00+00:00",
-      "summary": "Introduction\u00a0\nAdvances in AI model-powered exploitation have demonstrated that general-purpose AI models can excel at vulnerability discovery, even without being purpose-built for the task. Eventually, capabilities such as these will be integrated directly into the development cycle, and code will b"
     },
     {
       "title": "On the Effectiveness of Mutational Grammar Fuzzing",
@@ -2599,6 +2597,14 @@
       "category": "threat",
       "published": "2025-10-14T07:00:00+00:00",
       "summary": "\n \n  CVSSv3 Score:\n \n 2.6\n\n\n An Insertion of Sensitive Information into Log File vulnerability [CWE-532] in FortiOS may allow an attacker with at least read-only privileges to retrieve sensitive 2FA-related information via observing logs or via diagnose command.\n\n\n \n  Revised on 2026-06-08 00:00:00\n"
+    },
+    {
+      "title": "Information Disclosure on SSLVPN endpoint",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-24-257",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2025-06-10T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 3.9\n\n\n An Exposure of Sensitive Information to an Unauthorized Actor vulnerability [CWE-200] in FortiOS SSL-VPN web-mode may allow an authenticated user to access full SSL-VPN settings via crafted URL.\n\n\n \n  Revised on 2026-06-15 00:00:00\n \n"
     },
     {
       "title": "Pre-authentication Denial of Service attack in OpenSSH - CVE-2025-26466",
@@ -2675,12 +2681,100 @@
   ],
   "news": [
     {
+      "title": "Ransomware Attack Shuts Down Mills of Australia\u2019s Second-Largest Sugar Producer",
+      "url": "https://www.securityweek.com/ransomware-attack-shuts-down-mills-of-australias-second-largest-sugar-producer/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-15T15:15:55+00:00",
+      "summary": "Mackay Sugar was targeted in a cyberattack carried out by a threat group known as The Gentlemen.\nThe post Ransomware Attack Shuts Down Mills of Australia&#8217;s Second-Largest Sugar Producer appeared first on SecurityWeek."
+    },
+    {
+      "title": "Cyberattack on Russian tech firm Astral disrupts business, government services for week",
+      "url": "https://therecord.media/cyberattack-on-russian-tech-firm-astral-disrupts-business-government-services",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-15T15:07:00+00:00",
+      "summary": "According to customer complaints, the disruption affected a range of services used by businesses, leading to interruptions in cash register operations, difficulties selling certain regulated goods, loss of access to customer portals and corporate email and problems with electronic human resources do"
+    },
+    {
+      "title": "Chinese Hackers Target Medical, Military, and AI Research in North America",
+      "url": "https://www.securityweek.com/chinese-hackers-target-medical-military-and-ai-research-in-north-america/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-15T14:07:45+00:00",
+      "summary": "Google\u2019s Threat Intelligence Group has been tracking the cyberespionage group as UNC6508 since early 2025.\nThe post Chinese Hackers Target Medical, Military, and AI Research in North America appeared first on SecurityWeek."
+    },
+    {
+      "title": "Vibe coders are gonna vibe code: How CISOs are tackling code sprawl",
+      "url": "https://www.bleepingcomputer.com/news/security/vibe-coders-are-gonna-vibe-code-how-cisos-are-tackling-code-sprawl/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T14:01:11+00:00",
+      "summary": "Employees are increasingly building automations, agents, and apps with AI tools outside traditional security oversight. Tines explores how CISOs are handling AI-driven code sprawl, shadow tooling, and governance challenges. [...]"
+    },
+    {
+      "title": "Chinese hackers breach REDCap servers, steal medical research",
+      "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-breach-redcap-servers-steal-medical-research/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T14:00:00+00:00",
+      "summary": "A China-linked espionage campaign targeted exposed REDCap servers to deploy the InfiniteRed malware and steal sensitive data from a medical institution in North America. [...]"
+    },
+    {
+      "title": "\u26a1 Weekly Recap: Chrome 0-Day, UniFi Exploits, macOS Stealers, VPN Flaw and More",
+      "url": "https://thehackernews.com/2026/06/weekly-recap-chrome-0-day-unifi.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-15T13:49:29+00:00",
+      "summary": "Stuff broke again. Not in a movie way. An old tool was left exposed. An abandoned package was abused. A deprecated feature was still running in prod.\n\nThis week is the same lesson in a new form: phishing kits are easier to rent, AI names are useful bait, old login paths still fail, and forgotten sof"
+    },
+    {
+      "title": "Finland brings charges against cargo ship officers for cutting submarine cables",
+      "url": "https://therecord.media/finland-brings-charges-against-cargo-ship-undersea-cables",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-15T13:30:00+00:00",
+      "summary": "According to the deputy prosecutor general, the ship\u2019s officers have now been charged with \u201chaving damaged two subsea telecommunications cables and of having attempted to damage a total of eight other subsea connections.\u201d"
+    },
+    {
+      "title": "New attack turned Microsoft 365 Copilot into 1-click data theft tool",
+      "url": "https://www.bleepingcomputer.com/news/security/new-attack-turned-microsoft-365-copilot-into-1-click-data-theft-tool/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T13:00:00+00:00",
+      "summary": "A critical vulnerability chain dubbed SearchLeak in Microsoft 365 Copilot Enterprise could allow attackers to steal sensitive data from a target's mailbox, OneDrive, or SharePoint account through a specially crafted URL. [...]"
+    },
+    {
+      "title": "NewCore Emerges From Stealth Mode With $66 Million in Funding",
+      "url": "https://www.securityweek.com/newcore-emerges-from-stealth-mode-with-66-million-in-funding/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-15T13:00:00+00:00",
+      "summary": "The startup has built a security-first identity platform to protect humans, machines, and AI agents.\nThe post NewCore Emerges From Stealth Mode With $66 Million in Funding appeared first on SecurityWeek."
+    },
+    {
+      "title": "Infinite Campus data breach affects 137,000 school staff accounts",
+      "url": "https://www.bleepingcomputer.com/news/security/infinite-campus-data-breach-affects-137-000-school-staff-accounts/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T12:38:55+00:00",
+      "summary": "The ShinyHunters extortion gang stole personal information from more than 137,000 school staff accounts in a Salesforce data theft attack that targeted the widely used Infinite Campus K-12 student information system in March. [...]"
+    },
+    {
+      "title": "Anthropic says US government forced it to disable cybersecurity AI models",
+      "url": "https://therecord.media/anthropic-says-gov-forced-it-to-disable-cyber-ai-models",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-15T12:31:00+00:00",
+      "summary": "According to the company, the directive cited national security authorities. It appears to be the first time such authorities have been used to curtail the export of AI models rather than chips or hardware."
+    },
+    {
       "title": "US Cracks Down on Anthropic AI Models Amid Abuse Concerns",
       "url": "https://www.darkreading.com/cyber-risk/us-cracks-down-anthropic-ai-models-abuse-concerns",
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-06-15T12:17:22+00:00",
-      "summary": "Anthropic abruptly suspended all access to Fable 5 and Mythos 5 after receiving an export control directive that banned foreign nationals from using the AI models."
+      "summary": "Anthropic abruptly suspended all access to Fable 5 and Mythos 5 after receiving an export control directive that banned foreign nationals from using the technology."
     },
     {
       "title": "Webinar: How behavioral AI stops phishing and account takeovers",
@@ -2787,14 +2881,6 @@
       "summary": "The Office of the Maine Attorney General has suspended its breach reporting portal"
     },
     {
-      "title": "Maine Disables Data Breach Portal Due to Fake Submissions",
-      "url": "https://www.securityweek.com/maine-disables-data-breach-portal-due-to-fake-submissions/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-15T08:34:54+00:00",
-      "summary": "Someone posted fake VRChat and Discord data breach reports on the system, prompting the Maine AG to take action.\nThe post Maine Disables Data Breach Portal Due to Fake Submissions\u00a0 appeared first on SecurityWeek."
-    },
-    {
       "title": "Evil MSI Background: BASE64 Statistical Analysis, (Mon, Jun 15th)",
       "url": "https://isc.sans.edu/diary/rss/33072",
       "source": "SANS ISC Diary",
@@ -2851,14 +2937,6 @@
       "summary": "A former \u00a0IT employee at an Iowa school district was sentenced to 21 months in prison after conducting a prolonged cyberattack against the former employer that disrupted classroom operations, deleted accounts, and caused tens of thousands of dollars in damages. [...]"
     },
     {
-      "title": "NPM 12 Will Change Script Execution Behavior to Prevent Supply Chain Attacks",
-      "url": "https://www.securityweek.com/npm-12-will-change-script-execution-behavior-to-prevent-supply-chain-attacks/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-13T15:52:58+00:00",
-      "summary": "By default, npm install will no longer execute scripts from dependencies, unless explicitly allowed.\nThe post NPM 12 Will Change Script Execution Behavior to Prevent Supply Chain Attacks appeared first on SecurityWeek."
-    },
-    {
       "title": "Chinese hackers hijack auth flow, spy on isolated network for a decade",
       "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-hijack-auth-flow-spy-on-isolated-network-for-a-decade/",
       "source": "Bleeping Computer",
@@ -2883,22 +2961,6 @@
       "summary": "Plus: AI bug hunting fuels Microsoft\u2019s biggest-ever Patch Tuesday, ShinyHunters ransomware gang exploits an Oracle zero-day, and more."
     },
     {
-      "title": "US Gov asks Anthropic to ban 'foreign national' access to Fable, Mythos",
-      "url": "https://www.bleepingcomputer.com/news/security/us-gov-asks-anthropic-to-ban-foreign-national-access-to-fable-mythos/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-13T10:01:32+00:00",
-      "summary": "The US government has ordered Anthropic to block all foreign nationals from accessing Fable 5 and Mythos 5, forcing the company to suspend both models worldwide. Anthropic is complying but disputes the basis, calling the cited jailbreak narrow and the capability widely available elsewhere. [...]"
-    },
-    {
-      "title": "Anthropic Says It Has Taken Its Latest AI Models Offline to Comply With New Export Controls",
-      "url": "https://www.securityweek.com/anthropic-says-it-has-taken-its-latest-ai-models-offline-to-comply-with-new-export-controls/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-13T06:38:34+00:00",
-      "summary": "Anthropic takes Fable 5 and Mythos 5 offline to comply with a directive from the Trump administration to prevent use by foreign nationals.\nThe post Anthropic Says It Has Taken Its Latest AI Models Offline to Comply With New Export Controls appeared first on SecurityWeek."
-    },
-    {
       "title": "U.S. Orders Anthropic to Suspend Fable 5 and Mythos 5 Access for Foreign Nationals",
       "url": "https://thehackernews.com/2026/06/us-orders-anthropic-to-suspend-fable-5.html",
       "source": "The Hacker News",
@@ -2915,60 +2977,12 @@
       "summary": "A major bug in Oracle's ERP software disproportionately affected American universities, and hackers have capitalized by stealing gobs of data."
     },
     {
-      "title": "Maine disables data breach notification portal after fake disclosures",
-      "url": "https://www.bleepingcomputer.com/news/security/maine-disables-data-breach-notification-portal-after-fake-disclosures/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-12T19:33:32+00:00",
-      "summary": "Maine has taken its public data breach reporting portal offline after fraudulent breach disclosures were published on the state's website, prompting a review of procedures to prevent abuse in the future. [...]"
-    },
-    {
-      "title": "Over 400 Arch Linux AUR Packages Hijacked to Deploy Infostealer and eBPF Rootkit",
-      "url": "https://thehackernews.com/2026/06/over-400-arch-linux-aur-packages.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-12T19:33:25+00:00",
-      "summary": "Attackers took over more than 400 packages in the Arch User Repository (AUR) this week and rewrote their build scripts to install a credential stealer on any machine that built them.\n\nThe malware is a Rust binary built to harvest developer secrets. When it lands with root, it can also load an eBPF r"
-    },
-    {
-      "title": "phpBB forum fixes auth bypass bug lurking for a decade",
-      "url": "https://www.bleepingcomputer.com/news/security/phpbb-forum-fixes-auth-bypass-bug-lurking-for-a-decade/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-12T18:19:34+00:00",
-      "summary": "A 10-year-old authentication bypass vulnerability discovered in the phpBB forum software allows an attacker to log in as any user, including administrators. [...]"
-    },
-    {
-      "title": "Ukrainian national pleads guilty to role in Conti ransomware operation",
-      "url": "https://www.bleepingcomputer.com/news/security/ukrainian-national-pleads-guilty-to-role-in-conti-ransomware-operation/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-12T17:54:28+00:00",
-      "summary": "A Ukrainian national extradited from Ireland to the United States last year has pleaded guilty to conspiracy charges tied to the Conti ransomware operation. [...]"
-    },
-    {
       "title": "Bankruptcy admin approves settlement fund of $47 million for 23andMe data breach victims",
       "url": "https://therecord.media/bankruptcy-admin-approves-settlement-for-23andme-breach-victims",
       "source": "The Record",
       "category": "news",
       "published": "2026-06-12T17:12:00+00:00",
       "summary": "About 7 million customers of the genetics testing company had their data stolen by hackers starting in April 2023, and many had their information posted on the dark web."
-    },
-    {
-      "title": "Major US surveillance program poised to lapse after legislative deadlock",
-      "url": "https://therecord.media/major-us-surveillance-program-set-to-lapse-702-fisa",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-12T17:08:00+00:00",
-      "summary": "It is the first lapse of the spy program, known as Section 702 of the Foreign Intelligence Surveillance Act (FISA), since it was passed into law in 2008."
-    },
-    {
-      "title": "South Korea hits Coupang with record $409 million fine over data breach",
-      "url": "https://therecord.media/south-korea-data-breach-record-fine-coupang",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-12T15:56:00+00:00",
-      "summary": "The penalty is the largest ever issued by the commission for a personal data breach, surpassing the record 134.8 billion won ($88.8 million) fine levied against SK Telecom earlier this year."
     },
     {
       "title": "Ransomware Payment Crypto Laundering Platform Taken Out by FBI and Europol",
@@ -2984,7 +2998,7 @@
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-06-12T13:01:00+00:00",
-      "summary": "Stay cool: Mythos 5 is an upgrade over Mythos Preview while Fable 5 is Mythos &quot;made safe for general use,&quot; Anthropic explained."
+      "summary": "Stay cool: Mythos 5 is an upgrade over Mythos Preview while Fable 5 is Mythos &quot;made safe for general use,&quot; Anthropic explains."
     },
     {
       "title": "GitHub to Update npm to Thwart Software Supply Chain Attacks",
@@ -3033,14 +3047,6 @@
       "category": "news",
       "published": "2026-06-11T18:43:57+00:00",
       "summary": "Initial methods suggest attackers had likely mapped out Ivanti's asset landscape upfront and acted quickly once the exploit became public."
-    },
-    {
-      "title": "Cyber Force not included in Senate defense policy roadmap",
-      "url": "https://therecord.media/cyber-force-not-included-senate-defense-roadmap",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-11T16:47:00+00:00",
-      "summary": "An amendment by Sen. Kirsten Gillibrand (D-NY) to the chamber\u2019s fiscal 2027 national defense authorization bill that would have created the digital-focused service was defeated 14-13 when the Senate Armed Services Committee took up the nearly $1.2 trillion legislation behind closed doors this week."
     },
     {
       "title": "Drug Sites Hijacked Spotify\u2019s Search Ranking Through Fake Podcasts",
@@ -3339,20 +3345,20 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
-      "title": "Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "title": "NCSC: Leave passwords in the past - passkeys are the future",
+      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     },
     {
-      "title": "Passkeys are more secure than traditional ways to log in",
-      "url": "https://www.ncsc.gov.uk/blogs/passkeys-are-more-secure-than-traditional-ways-to-log-in",
+      "title": "International cyber agencies share fresh advice to defend against China-linked covert networks",
+      "url": "https://www.ncsc.gov.uk/news/international-cyber-agencies-fresh-advice-defend-against-china-linked-covert-networks",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Passkeys offer a more usable, secure replacement for passwords and are already supported by most modern devices."
+      "summary": "New advisory highlights how to defend against attacker tactics believed to be used by China-linked actors to hide malicious cyber activity."
     }
   ],
   "stats": {
@@ -3364,6 +3370,6 @@
     "kev_7d": 7,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
-    "epss_enriched": 0
+    "epss_enriched": 2
   }
 }
