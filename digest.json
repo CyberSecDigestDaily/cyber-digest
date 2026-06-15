@@ -1,25 +1,11 @@
 {
-  "generated": "2026-06-15T11:45:19.625436+00:00",
+  "generated": "2026-06-15T12:26:29.499147+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>1 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-5513",
-      "desc": "The Online Scheduling and Appointment Booking System \u2013 Bookly plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'bookly-customer-full-name' cookie in versions up to, and including, 27.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires 'Remember personal information in cookies' setting to be enabled (disabled by default).",
-      "cvss": 7.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-13T12:16:15.947",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5513"
-    },
     {
       "id": "CVE-2026-6428",
       "desc": "SQL Injection in reports/catalogue_out.pl in Koha Community Koha through 22.11.37, 23.x, 24.x before 24.11.16, 25.05.x before 25.05.11, 25.11.x before 25.11.05, 26.05.x before 26.05.01, and 26.11.x before 26.11.00 allows an authenticated staff user with the Reports module flag to read arbitrary data from the Koha application database via the Filter URL parameter when the Criteria parameter matches /branchcode/.\n\n\n\nThe vulnerable sink in sub calculate concatenates the unmodified Filter request parameter directly into a LIKE clause of the auxiliary $strsth2 statement and executes it via DBI without bound parameters:\n\n\n\nmy $f = @$filters[0];\n$f =~ s/\\*/%/g;\n$strsth2 .= \" AND $column LIKE '$f' \";\n\n\n\nThis enables error-based SQL injection (e.g., via EXTRACTVALUE) and full read access to sensitive tables including borrowers (password hashes, 2FA secrets, PII), borrower_password_recovery, api_keys, and sessions.\n\n\n\nProof of concept (error-based, single request):\n\n\n\nGET /cgi-bin/koha/reports/catalogue_out.pl?do_it=1&output=screen&Limit=10&Criteria=branchcode&Filter=x'+AND+EXTRACTVALUE(1,CONCAT(0x7e,VERSION(),0x7c,USER(),0x7c,DATABASE(),0x7e))--+-\nCookie: CGISESSID=<LIBRARIAN_SESSION>\n\n\n\nThe response body contains the DBI exception leaking the MariaDB version, database user, client IP, and database name, after which arbitrary data can be paged out using LIMIT n,1 / SUBSTRING(...).\n\n\n\nThe vulnerable sink was introduced in commit 6bb77ae3e4 (2008-07-09); CVE-2015-4633 patched the same class in sibling files but did not generalise the fix to reports/catalogue_out.pl. Fixed in Koha 22.11.38, 24.11.16, 25.05.11, 25.11.05, 26.05.01, and 26.11.00 by replacing the raw concatenation with a parameterised placeholder.",
@@ -705,6 +691,20 @@
       "epss": null,
       "published": "2026-06-15T08:16:22.100",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8935"
+    },
+    {
+      "id": "CVE-2026-9278",
+      "desc": "The Form Builder CP WordPress plugin before 1.2.47 does not properly sanitize a form configuration value before storing it and using it as part of a client-side script execution, allowing authenticated users with Editor-level access and above to perform Stored Cross-Site Scripting attacks against any visitor of a page rendering the affected form, even when the `unfiltered_html` capability is disallowed (e.g. in a multisite network).",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T08:16:22.200",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9278"
     }
   ],
   "kev": [
@@ -2675,12 +2675,36 @@
   ],
   "news": [
     {
+      "title": "US Cracks Down on Anthropic AI Models Amid Abuse Concerns",
+      "url": "https://www.darkreading.com/cyber-risk/us-cracks-down-anthropic-ai-models-abuse-concerns",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-15T12:17:22+00:00",
+      "summary": "Anthropic abruptly suspended all access to Fable 5 and Mythos 5 after receiving an export control directive that banned foreign nationals from using the AI models."
+    },
+    {
+      "title": "Webinar: How behavioral AI stops phishing and account takeovers",
+      "url": "https://www.bleepingcomputer.com/news/security/webinar-how-behavioral-ai-stops-phishing-and-account-takeovers/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T12:12:20+00:00",
+      "summary": "Modern phishing, BEC, and account takeover attacks increasingly bypass traditional email defenses and create operational strain for security teams. This webinar explores how behavioral AI can help automate detection, investigation, and remediation to reduce alert fatigue and accelerate response time"
+    },
+    {
       "title": "Ukrainian Man Pleads Guilty in US to Conti Ransomware Charges",
       "url": "https://www.securityweek.com/ukrainian-man-pleads-guilty-in-us-to-conti-ransomware-charges/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-06-15T11:33:20+00:00",
       "summary": "Oleksii Oleksiyovych Lytvynenko admitted to working on the development of a loader for the Conti gang.\nThe post Ukrainian Man Pleads Guilty in US to Conti Ransomware Charges appeared first on SecurityWeek."
+    },
+    {
+      "title": "The Onboarding Password Mistake That Creates Unnecessary Risk",
+      "url": "https://thehackernews.com/2026/06/the-onboarding-password-mistake-that.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-15T11:30:00+00:00",
+      "summary": "Employee onboarding is a busy time for IT teams. New starters need devices, accounts, access permissions, and passwords, all delivered within a tight timeframe.\n\nThat usually means sharing a temporary \"first-day\" password so employees can access systems for the first time. The issue is that these pa"
     },
     {
       "title": "Ozempic Maker Novo Nordisk Says Hackers Breached IT Systems",
@@ -2907,14 +2931,6 @@
       "summary": "Attackers took over more than 400 packages in the Arch User Repository (AUR) this week and rewrote their build scripts to install a credential stealer on any machine that built them.\n\nThe malware is a Rust binary built to harvest developer secrets. When it lands with root, it can also load an eBPF r"
     },
     {
-      "title": "Google Sues Chinese Smishing Network Accused of Using Gemini AI in Phishing",
-      "url": "https://thehackernews.com/2026/06/google-sues-chinese-smishing-network.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-12T18:59:32+00:00",
-      "summary": "Google on Friday said it's pursuing legal action against a Chinese cybercrime network, accusing it of using its Gemini artificial intelligence (AI) agent to send phishing text messages targeting Americans.\n\nThe network is said to be behind the development and management of a phishing-as-a-service (P"
-    },
-    {
       "title": "phpBB forum fixes auth bypass bug lurking for a decade",
       "url": "https://www.bleepingcomputer.com/news/security/phpbb-forum-fixes-auth-bypass-bug-lurking-for-a-decade/",
       "source": "Bleeping Computer",
@@ -2945,14 +2961,6 @@
       "category": "news",
       "published": "2026-06-12T17:08:00+00:00",
       "summary": "It is the first lapse of the spy program, known as Section 702 of the Foreign Intelligence Surveillance Act (FISA), since it was passed into law in 2008."
-    },
-    {
-      "title": "Over 400 Arch Linux packages compromised to push rootkit, infostealer",
-      "url": "https://www.bleepingcomputer.com/news/security/over-400-arch-linux-packages-compromised-to-push-rootkit-infostealer/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-12T17:03:55+00:00",
-      "summary": "More than 400 packages in the Arch User Repository (AUR) are distributing a Linux rootkit and infostealer malware targeting credentials and access tokens. [...]"
     },
     {
       "title": "South Korea hits Coupang with record $409 million fine over data breach",
@@ -3113,14 +3121,6 @@
       "category": "news",
       "published": "2026-06-10T20:28:58+00:00",
       "summary": "US lawmakers are alarmed that Bill Pulte, a housing official with no intelligence experience, is poised to take charge of one of the government's most powerful surveillance tools."
-    },
-    {
-      "title": "Bug Bounty Research Triggers ServiceNow Security Alert",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/bug-bounty-research-triggers-servicenow-security-alert",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-10T20:07:53+00:00",
-      "summary": "Security research inadvertently led organizations to believe they were being breached through their ServiceNow instances."
     },
     {
       "title": "Who Runs the Ransomware Group \u2018The Gentlemen?\u2019",
@@ -3358,7 +3358,7 @@
   "stats": {
     "total_cves": 50,
     "critical": 1,
-    "high": 22,
+    "high": 21,
     "exploited": 0,
     "kev_total": 50,
     "kev_7d": 7,
