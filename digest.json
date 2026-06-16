@@ -1,53 +1,11 @@
 {
-  "generated": "2026-06-15T20:45:06.721712+00:00",
+  "generated": "2026-06-16T02:45:44.773657+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>2 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>2 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-12174",
-      "desc": "A security vulnerability has been detected in D-Link DCS-935L 1.10.01. This issue affects the function snprintf of the file /web/cgi-bin/greece/rhea of the component HTTP Handler. Such manipulation of the argument data leads to format string. The attack may be launched remotely. The exploit has been disclosed publicly and may be used.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-13T21:16:18.830",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12174"
-    },
-    {
-      "id": "CVE-2026-12175",
-      "desc": "A vulnerability was detected in CodeAstro Student Attendance Management System 1.0. Impacted is an unknown function of the file /attendance-php/Admin/createStudents.php. Performing a manipulation of the argument admissionNumber results in sql injection. Remote exploitation of the attack is possible. The exploit is now public and may be used.",
-      "cvss": 4.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-13T23:16:37.263",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12175"
-    },
-    {
-      "id": "CVE-2026-12176",
-      "desc": "A vulnerability has been found in SourceCodester CET Automated Grading System with AI Predictive Analytics 1.0. The impacted element is an unknown function of the file /index.php. The manipulation of the argument action leads to cross site scripting. The attack is possible to be carried out remotely. The exploit has been disclosed to the public and may be used.",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-14T00:16:19.790",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12176"
-    },
     {
       "id": "CVE-2026-54420",
       "desc": "LiteSpeed cPanel plugin before 2.4.8 (as distributed in LiteSpeed WHM PlugIn before 5.3.2.0) mishandles symlinks provided by a user with FTP or web shell access on a shared hosting server running CloudLinux/CageFS, as exploited in the wild in May 2026.",
@@ -107,9 +65,9 @@
     {
       "id": "CVE-2026-11527",
       "desc": "Config::IniFiles versions before 3.001000 for Perl allow OS command injection and file overwrite via a 2-arg open() of the -file argument in _make_filehandle.\n\nConfig::IniFiles::_make_filehandle opens a filename argument with Perl's 2-arg open(), so a filename that begins or ends with a pipe (\"| cmd\", \"cmd |\") or begins with a redirect (\"> path\", \">> path\") is run as a command or redirect rather than opened as a file. The helper is the open path behind the documented -file argument: new(-file => $thing) reaches it through ReadConfig. An in-memory scalar reference (-file => \\$text) does not open a path and is unaffected.\n\nAny caller that forwards untrusted input to the -file argument can run an arbitrary command or truncate a file under the process UID.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
+      "cvss": 8.6,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
       "vendor": "",
       "product": "",
       "exploited": false,
@@ -422,10 +380,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00314,
-        "percentile": 0.229
-      },
+      "epss": null,
       "published": "2026-06-15T03:16:23.993",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12208"
     },
@@ -467,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00372,
+        "percentile": 0.28791
+      },
       "published": "2026-06-15T03:16:24.490",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12211"
     },
@@ -705,12 +663,51 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00442,
-        "percentile": 0.34977
-      },
+      "epss": null,
       "published": "2026-06-15T10:16:28.213",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44188"
+    },
+    {
+      "id": "CVE-2026-50100",
+      "desc": "Multiple printer drivers provided by Ricoh Company, Ltd. and KONICA MINOLTA JAPAN, INC. contain a privilege escalation vulnerability. If this vulnerability is exploited, an attacker who can log in to a computer running an affected printer driver could elevate privileges by using a specially crafted driver.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T10:16:28.847",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50100"
+    },
+    {
+      "id": "CVE-2026-12057",
+      "desc": "When the application executes the JavaScript script embedded in the PDF within the sandbox, it fails to intercept some dangerous interfaces, which allows remote scripts to be loaded, resulting in arbitrary code execution.",
+      "cvss": 8.6,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T12:16:23.050",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12057"
+    },
+    {
+      "id": "CVE-2026-34021",
+      "desc": "The Wertheim SafeController 5400, Controller 5400 - AssemblyVersion 6.11.8130.22320, uses RS-485 communication between the server and the microcontroller without cryptographic protection. An attacker with access to the communication path between the server and the microcontroller can sniff RS-485 messages and replay previously observed messages. This can be used, for example, to spoof a \"quit alarm\" message and continuously deactivate the safe alarm.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T12:16:24.230",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34021"
     }
   ],
   "kev": [
@@ -1462,8 +1459,74 @@
       ]
     }
   ],
-  "kev_7d": 9,
+  "kev_7d": 7,
   "gh_advisories": [
+    {
+      "id": "GHSA-rq7w-g337-39qq",
+      "cve": null,
+      "severity": "low",
+      "summary": "Nuxt: Dev server discloses project absolute path and persistent workspace UUID via `/.well-known/appspecific/com.chrome.devtools.json`",
+      "url": "https://github.com/advisories/GHSA-rq7w-g337-39qq",
+      "published": "2026-06-15T20:56:22Z",
+      "ecosystem": "npm",
+      "pkg": "nuxt",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-999r-qq7v-r334",
+      "cve": "CVE-2026-11417",
+      "severity": "high",
+      "summary": "aws-cdk-lib: OS Command Injection in NodejsFunction Bundling",
+      "url": "https://github.com/advisories/GHSA-999r-qq7v-r334",
+      "published": "2026-06-15T20:47:36Z",
+      "ecosystem": "npm",
+      "pkg": "aws-cdk-lib",
+      "cvss_score": 7.3
+    },
+    {
+      "id": "GHSA-563q-j3cm-6jxm",
+      "cve": "CVE-2026-50560",
+      "severity": "medium",
+      "summary": "Netty susceptible to HTTP/2 Reset Attack with different on-the-wire signature",
+      "url": "https://github.com/advisories/GHSA-563q-j3cm-6jxm",
+      "published": "2026-06-15T20:46:56Z",
+      "ecosystem": "maven",
+      "pkg": "io.netty:netty-codec-http2",
+      "cvss_score": 5.3
+    },
+    {
+      "id": "GHSA-hvcg-qmg6-jm4c",
+      "cve": "CVE-2026-50020",
+      "severity": "medium",
+      "summary": "Netty: HttpObjectDecoder skips arbitrary initial control characters when only initial CRLF characters are permitted",
+      "url": "https://github.com/advisories/GHSA-hvcg-qmg6-jm4c",
+      "published": "2026-06-15T20:46:36Z",
+      "ecosystem": "maven",
+      "pkg": "io.netty:netty-codec-http",
+      "cvss_score": 5.3
+    },
+    {
+      "id": "GHSA-5w86-c3rq-vjj7",
+      "cve": "CVE-2026-50011",
+      "severity": "high",
+      "summary": "Netty: Unbounded pre-allocation in RedisArrayAggregator from RESP array length",
+      "url": "https://github.com/advisories/GHSA-5w86-c3rq-vjj7",
+      "published": "2026-06-15T20:46:16Z",
+      "ecosystem": "maven",
+      "pkg": "io.netty:netty-codec-redis",
+      "cvss_score": 7.5
+    },
+    {
+      "id": "GHSA-c653-97m9-rcg9",
+      "cve": "CVE-2026-50010",
+      "severity": "high",
+      "summary": "Netty: Wrapping plain trust manager silently disables hostname verification",
+      "url": "https://github.com/advisories/GHSA-c653-97m9-rcg9",
+      "published": "2026-06-15T20:45:45Z",
+      "ecosystem": "maven",
+      "pkg": "io.netty:netty-handler",
+      "cvss_score": 7.5
+    },
     {
       "id": "GHSA-cq4q-cv5g-r8q5",
       "cve": "CVE-2026-50009",
@@ -1727,72 +1790,6 @@
       "ecosystem": "pip",
       "pkg": "aiohttp",
       "cvss_score": null
-    },
-    {
-      "id": "GHSA-4m7w-qmgq-4wj5",
-      "cve": "CVE-2026-54275",
-      "severity": "low",
-      "summary": "aiohttp: TLS Server Hostname Override Is Ignored When Reusing HTTPS Connections",
-      "url": "https://github.com/advisories/GHSA-4m7w-qmgq-4wj5",
-      "published": "2026-06-15T20:11:13Z",
-      "ecosystem": "pip",
-      "pkg": "aiohttp",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-9x8q-7h8h-wcw9",
-      "cve": "CVE-2026-54280",
-      "severity": "low",
-      "summary": "aiohttp: Payload Response Resources Are Not Closed After Mid-Body Disconnect",
-      "url": "https://github.com/advisories/GHSA-9x8q-7h8h-wcw9",
-      "published": "2026-06-15T20:10:44Z",
-      "ecosystem": "pip",
-      "pkg": "aiohttp",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-4fvr-rgm6-gqmc",
-      "cve": "CVE-2026-54273",
-      "severity": "medium",
-      "summary": "aiohttp: HTTP/1 Pipelined Requests Queue Without Limit",
-      "url": "https://github.com/advisories/GHSA-4fvr-rgm6-gqmc",
-      "published": "2026-06-15T20:10:32Z",
-      "ecosystem": "pip",
-      "pkg": "aiohttp",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-g3cq-j2xw-wf74",
-      "cve": "CVE-2026-54278",
-      "severity": "medium",
-      "summary": "aiohttp: Unread Compressed Request Bodies Bypass client_max_size During Cleanup",
-      "url": "https://github.com/advisories/GHSA-g3cq-j2xw-wf74",
-      "published": "2026-06-15T20:09:51Z",
-      "ecosystem": "pip",
-      "pkg": "aiohttp",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-63hw-fmq6-xxg2",
-      "cve": "CVE-2026-54277",
-      "severity": "medium",
-      "summary": "aiohttp: C HTTP Parser Bypasses max_line_size for Fragmented Lines",
-      "url": "https://github.com/advisories/GHSA-63hw-fmq6-xxg2",
-      "published": "2026-06-15T20:09:16Z",
-      "ecosystem": "pip",
-      "pkg": "aiohttp",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-hpj7-wq8m-9hgp",
-      "cve": "CVE-2026-54276",
-      "severity": "medium",
-      "summary": "aiohttp: DigestAuthMiddleware Applies Credentials to Cross-Origin Redirect Challenges",
-      "url": "https://github.com/advisories/GHSA-hpj7-wq8m-9hgp",
-      "published": "2026-06-15T20:09:06Z",
-      "ecosystem": "pip",
-      "pkg": "aiohttp",
-      "cvss_score": null
     }
   ],
   "threatfox": [],
@@ -1847,6 +1844,38 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "Chromium: CVE-2026-11631 Use after free in Aura",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-11631",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-16T02:13:34+00:00",
+      "summary": "This CVE was assigned by Chrome.\u00a0 Microsoft Edge (Chromium-based) ingests Chromium, which addresses this vulnerability. Please see [Google Chrome Releases](https://chromereleases.googleblog.com/2025) for more information."
+    },
+    {
+      "title": "Chromium: CVE-2026-11629 Use after free in Ozone",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-11629",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-16T02:13:31+00:00",
+      "summary": "This CVE was assigned by Chrome.\u00a0 Microsoft Edge (Chromium-based) ingests Chromium, which addresses this vulnerability. Please see [Google Chrome Releases](https://chromereleases.googleblog.com/2025) for more information."
+    },
+    {
+      "title": "Chromium: CVE-2026-11628 Use after free in Ozone",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-11628",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-16T02:13:29+00:00",
+      "summary": "This CVE was assigned by Chrome.\u00a0 Microsoft Edge (Chromium-based) ingests Chromium, which addresses this vulnerability. Please see [Google Chrome Releases](https://chromereleases.googleblog.com/2025) for more information."
+    },
+    {
+      "title": "Inside the Modern SOC: The 72-Minute Race",
+      "url": "https://unit42.paloaltonetworks.com/soc-72-minute-race/",
+      "source": "Unit 42",
+      "category": "threat",
+      "published": "2026-06-15T23:00:19+00:00",
+      "summary": "Attackers can move from access to exfiltration in 72 minutes. Learn how modern SOC teams close the speed gap with Unit 42's AI-driven automation, threat hunting, MDR and Managed XSIAM.\nThe post Inside the Modern SOC: The 72-Minute Race appeared first on Unit 42."
+    },
+    {
       "title": "What Changed\u00a0in OWASP Top 10 2025\u00a0and\u00a0Recommendations\u00a0for Each Category",
       "url": "https://blog.qualys.com/category/qualys-insights",
       "source": "Qualys Blog",
@@ -1860,14 +1889,6 @@
       "source": "Microsoft Security",
       "category": "threat",
       "published": "2026-06-15T14:00:40+00:00",
-      "summary": "This CVE was assigned by Chrome. Microsoft Edge (Chromium-based) ingests Chromium, which addresses this vulnerability. Please see [Google Chrome Releases](https://chromereleases.googleblog.com/search/label/Desktop%20Update) for more information."
-    },
-    {
-      "title": "Chromium: CVE-2026-12018 Inappropriate implementation\u00a0 Mojo",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-12018",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-15T14:00:38+00:00",
       "summary": "This CVE was assigned by Chrome. Microsoft Edge (Chromium-based) ingests Chromium, which addresses this vulnerability. Please see [Google Chrome Releases](https://chromereleases.googleblog.com/search/label/Desktop%20Update) for more information."
     },
     {
@@ -1903,22 +1924,6 @@
       "summary": "This CVE was assigned by Chrome. Microsoft Edge (Chromium-based) ingests Chromium, which addresses this vulnerability. Please see [Google Chrome Releases](https://chromereleases.googleblog.com/search/label/Desktop%20Update) for more information."
     },
     {
-      "title": "Chromium: CVE-2026-12007 Use after free\u00a0 Core",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-12007",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-15T14:00:24+00:00",
-      "summary": "This CVE was assigned by Chrome. Microsoft Edge (Chromium-based) ingests Chromium, which addresses this vulnerability. Please see [Google Chrome Releases](https://chromereleases.googleblog.com/search/label/Desktop%20Update) for more information."
-    },
-    {
-      "title": "CVE-2026-33118 Microsoft Edge (Chromium-based) Spoofing Vulnerability",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33118",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-15T14:00:00+00:00",
-      "summary": "Updated an acknowledgement. This is an informational change only."
-    },
-    {
       "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
       "source": "Mandiant Blog",
@@ -1941,14 +1946,6 @@
       "category": "threat",
       "published": "2026-06-12T22:00:14+00:00",
       "summary": "Unit 42 has discovered a new macOS Tahoe 26 forensic artifact that tracks user menu selections across the operating system. Learn more here. \nThe post Tracing Digital Intent: New MacOS Tahoe 26 Artifact Discovered appeared first on Unit 42."
-    },
-    {
-      "title": "The Good, the Bad and the Ugly in Cybersecurity \u2013 Week 24",
-      "url": "https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-24-7/",
-      "source": "SentinelOne Blog",
-      "category": "threat",
-      "published": "2026-06-12T13:00:56+00:00",
-      "summary": "Authorities seize crypto-laundering network and fake recruitment sites, JDY botnet targets U.S. military, and Miasma worm infects Microsoft and PyPi repos."
     },
     {
       "title": "SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense",
@@ -2311,14 +2308,6 @@
       "summary": "In this newsletter, Thor breaks down why you should stop relying solely on CVSS and start using EPSS and GCVE to focus your patching efforts on the threats that actually matter."
     },
     {
-      "title": "2026 World Cup: Discussing The World\u2019s Biggest Game\u2019s Attack Surface",
-      "url": "https://unit42.paloaltonetworks.com/fifa-world-cup-attack-surface/",
-      "source": "Unit 42",
-      "category": "threat",
-      "published": "2026-05-28T10:00:53+00:00",
-      "summary": "The 2026 World Cup presents major cyber risks from ransomware groups, state-aligned actors, and other groups targeting critical infrastructure. Learn more here. \nThe post 2026 World Cup: Discussing The World\u2019s Biggest Game\u2019s Attack Surface appeared first on Unit 42."
-    },
-    {
       "title": "DICOM, Pydicom, GDCM, and Orthanc: A technical tour of what really happens in the heap",
       "url": "https://blog.talosintelligence.com/dicom-pydicom-gdcm-and-orthanc-a-technical-tour-of-what-really-happens-in-the-heap/",
       "source": "Talos Intelligence",
@@ -2527,6 +2516,14 @@
       "summary": "Written by: JP Glab, Tufail Ahmed, Josh Kelley, Muhammad Umair\n\nIntroduction\u00a0\nGoogle Threat Intelligence Group (GTIG) identified a multistage intrusion campaign by a newly tracked threat group, UNC6692, that leveraged persistent social engineering, a custom modular malware suite, and deft pivoting i"
     },
     {
+      "title": "Hypersonic Supply Chain Attacks: One Solution That Didn\u2019t Need to Know the Payload",
+      "url": "https://www.sentinelone.com/blog/hypersonic-supply-chain-attacks-one-solution-that-didnt-need-to-know-the-payload/",
+      "source": "SentinelOne Blog",
+      "category": "threat",
+      "published": "2026-04-22T16:44:53+00:00",
+      "summary": "Learn how SentinelOne has stopped three recent zero-day supply chain attacks with AI-driven defense built for machine-speed threats."
+    },
+    {
       "title": "On the Effectiveness of Mutational Grammar Fuzzing",
       "url": "https://projectzero.google/2026/03/mutational-grammar-fuzzing.html",
       "source": "Google Project Zero",
@@ -2681,6 +2678,30 @@
   ],
   "news": [
     {
+      "title": "ISC Stormcast For Tuesday, June 16th, 2026 https://isc.sans.edu/podcastdetail/9974, (Tue, Jun 16th)",
+      "url": "https://isc.sans.edu/diary/rss/33078",
+      "source": "SANS ISC Diary",
+      "category": "news",
+      "published": "2026-06-16T02:00:02+00:00",
+      "summary": ""
+    },
+    {
+      "title": "UK to ban social media access for children under 16",
+      "url": "https://therecord.media/uk-to-ban-social-media-access-for-children-under-16",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-16T00:03:00+00:00",
+      "summary": "The ban will apply to all \u201cuser-to-user platforms, whose purpose is to enable social interaction and\u202fwhich allow users to post material, alongside algorithms,\u201d according to a press release from the government\u2019s Department for Science, Innovation and Technology."
+    },
+    {
+      "title": "DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act",
+      "url": "https://www.bleepingcomputer.com/news/security/doj-seizes-cfake-socfake-deepfake-nude-sites-under-take-it-down-act/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-15T21:56:55+00:00",
+      "summary": "The U.S. Department of Justice announced Friday that it has seized the CFAKE.com and SOCFAKE.com websites, which allegedly hosted nonconsensual AI-generated nude images and videos of women, in what appears to be the first publicly announced domain seizure under the TAKE IT DOWN Act. [...]"
+    },
+    {
       "title": "SimpleHelp bug lets hackers create rogue remote support accounts",
       "url": "https://www.bleepingcomputer.com/news/security/simplehelp-bug-lets-hackers-create-rogue-remote-support-accounts/",
       "source": "Bleeping Computer",
@@ -2689,12 +2710,28 @@
       "summary": "A vulnerability in the SimpleHelp remote management software allows unauthenticated attackers to create privileged technician accounts on servers using the OpenID Connect (OIDC) authentication protocol. [...]"
     },
     {
+      "title": "Chinese Hackers Abused Google Workspace Rules to Steal Research and Defense Emails",
+      "url": "https://thehackernews.com/2026/06/chinese-hackers-abused-google-workspace.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-15T19:44:06+00:00",
+      "summary": "A China-linked espionage group hid inside North American medical, academic, and military research networks for more than a year, quietly stealing sensitive research and defense email.\n\nThe way in was a backdoor on their REDCap research servers that stole login credentials. The exfiltration was the u"
+    },
+    {
       "title": "North Korean Hackers Are Turning Developer Tools Into Malware Delivery Channels",
       "url": "https://thehackernews.com/2026/06/north-korean-hackers-are-turning.html",
       "source": "The Hacker News",
       "category": "news",
       "published": "2026-06-15T19:32:52+00:00",
       "summary": "Cybersecurity researchers have flagged two malicious cyber campaigns that exhibit similarities with a persistent North Korean threat cluster known as Contagious Interview (aka Famous Chollima, HexagonalRodent, and Void Dokkaebi).\n\nAccording to a report published by Proofpoint, the threat actor has b"
+    },
+    {
+      "title": "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
+      "url": "https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-15T19:27:48+00:00",
+      "summary": "The critical, three-stage attack is now patched, but it's part of a new group of AI prompt-injection issues that use hidden URLs and other variables."
     },
     {
       "title": "Maine closes data breach portal to the public after fake reports",
@@ -2849,14 +2886,6 @@
       "summary": "According to the deputy prosecutor general, the ship\u2019s officers have now been charged with \u201chaving damaged two subsea telecommunications cables and of having attempted to damage a total of eight other subsea connections.\u201d"
     },
     {
-      "title": "New attack turned Microsoft 365 Copilot into 1-click data theft tool",
-      "url": "https://www.bleepingcomputer.com/news/security/new-attack-turned-microsoft-365-copilot-into-1-click-data-theft-tool/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-15T13:00:00+00:00",
-      "summary": "A critical vulnerability chain dubbed SearchLeak in Microsoft 365 Copilot Enterprise could allow attackers to steal sensitive data from a target's mailbox, OneDrive, or SharePoint account through a specially crafted URL. [...]"
-    },
-    {
       "title": "NewCore Emerges From Stealth Mode With $66 Million in Funding",
       "url": "https://www.securityweek.com/newcore-emerges-from-stealth-mode-with-66-million-in-funding/",
       "source": "SecurityWeek",
@@ -2985,28 +3014,12 @@
       "summary": "I like it when a fellow handler posts a diary entry about images with malicious content. Last one is Xavier: \"The Evil MSI Background is Back&#x21;\".&#xd;"
     },
     {
-      "title": "Sniper Dz Scams Target MENA Users via Fake Facebook Offers and Browser Alerts",
-      "url": "https://thehackernews.com/2026/06/sniper-dz-scams-target-mena-users-via.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-15T06:30:22+00:00",
-      "summary": "Cybersecurity researchers have disclosed details of fraudulent activity targeting users across the Middle East and North Africa by employing various fraudulent Facebook accounts impersonating politicians, public figures, and trusted organizations.\n\n\"These accounts promoted fake offers, including fre"
-    },
-    {
       "title": "ISC Stormcast For Monday, June 15th, 2026 https://isc.sans.edu/podcastdetail/9972, (Mon, Jun 15th)",
       "url": "https://isc.sans.edu/diary/rss/33076",
       "source": "SANS ISC Diary",
       "category": "news",
       "published": "2026-06-15T02:00:02+00:00",
       "summary": ""
-    },
-    {
-      "title": "Belarus-linked hackers target Gmail accounts of Polish public figures and their families",
-      "url": "https://therecord.media/ghostwriter-targets-personal-gmail-accounts-in-poland",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-14T23:00:00+00:00",
-      "summary": "Poland has warned that Ghostwriter, the Belarus-linked hacker group, has expanded its phishing operations to target personal Gmail accounts belonging to senior public figures and their relatives."
     },
     {
       "title": "The FCC Wants to Kill Burner Phones",
@@ -3079,14 +3092,6 @@
       "category": "news",
       "published": "2026-06-11T19:41:01+00:00",
       "summary": "A WIRED investigation found dozens of \u201cnudified\u201d deepfake images and videos on Grok's website, including nonconsensual depictions of celebrities and at least one prominent US politician."
-    },
-    {
-      "title": "Max-Severity Ivanti Flaw Exploited 24 Hours After Disclosure",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/max-severity-ivanti-sentry-flaw-exploited-24-hours",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-11T18:43:57+00:00",
-      "summary": "Initial methods suggest attackers had likely mapped out Ivanti's asset landscape upfront and acted quickly once the exploit became public."
     },
     {
       "title": "Drug Sites Hijacked Spotify\u2019s Search Ranking Through Fake Podcasts",
@@ -3183,14 +3188,6 @@
       "category": "news",
       "published": "2026-06-09T17:34:29+00:00",
       "summary": "Microsoft today released patches for 204 vulnerabilities. 38 of these vulnerabilities are considered critical, and three have been disclosed before today. Six of the vulnerabilities affect Microsoft cloud solutions and do not require any user action. In addition, Microsoft incorporated 360 different"
-    },
-    {
-      "title": "ISC Stormcast For Tuesday, June 9th, 2026 https://isc.sans.edu/podcastdetail/9964, (Tue, Jun 9th)",
-      "url": "https://isc.sans.edu/diary/rss/33062",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-06-09T02:00:03+00:00",
-      "summary": ""
     },
     {
       "title": "Soap Box: Detection and response in the AI age",
@@ -3364,12 +3361,12 @@
   "stats": {
     "total_cves": 50,
     "critical": 2,
-    "high": 20,
+    "high": 22,
     "exploited": 1,
     "kev_total": 50,
-    "kev_7d": 9,
+    "kev_7d": 7,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
-    "epss_enriched": 2
+    "epss_enriched": 1
   }
 }
