@@ -1,39 +1,11 @@
 {
-  "generated": "2026-06-16T11:20:52.477169+00:00",
+  "generated": "2026-06-16T14:23:51.095985+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>2 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>1 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11526",
-      "desc": "GD versions before 2.86 for Perl allow OS command injection and file overwrite via a 2-arg open() of filename arguments in _make_filehandle.\n\nGD::Image::_make_filehandle opens a filename argument with Perl's 2-arg open(), so a filename that begins or ends with a pipe (\"| cmd\", \"cmd |\") or begins with a redirect (\"> path\", \">> path\") is run as a command or redirect rather than opened as a file. _make_filehandle is the single open path behind every filename-accepting constructor (new, newFromPng, newFromJpeg, and the rest); the in-memory *Data variants do not open a path and are unaffected.\n\nAny caller that forwards untrusted input to one of these constructors as a pathname can run an arbitrary command or truncate a file under the process UID.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-14T12:16:22.403",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11526"
-    },
-    {
-      "id": "CVE-2026-11527",
-      "desc": "Config::IniFiles versions before 3.001000 for Perl allow OS command injection and file overwrite via a 2-arg open() of the -file argument in _make_filehandle.\n\nConfig::IniFiles::_make_filehandle opens a filename argument with Perl's 2-arg open(), so a filename that begins or ends with a pipe (\"| cmd\", \"cmd |\") or begins with a redirect (\"> path\", \">> path\") is run as a command or redirect rather than opened as a file. The helper is the open path behind the documented -file argument: new(-file => $thing) reaches it through ReadConfig. An in-memory scalar reference (-file => \\$text) does not open a path and is unaffected.\n\nAny caller that forwards untrusted input to the -file argument can run an arbitrary command or truncate a file under the process UID.",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-14T12:16:23.357",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11527"
-    },
     {
       "id": "CVE-2026-54410",
       "desc": "nanoMODBUS through v1.23.0 contains an off-by-one buffer overflow in the recv_msg_header() function of the Modbus/TCP server that allows remote unauthenticated attackers to write one attacker-controlled byte past the end of the 260-byte receive buffer by sending a crafted MBAP frame whose Length field is set to 255. The overflow corrupts the adjacent buffer-index field of the nanoMODBUS state structure, resulting in denial of service through invalid memory accesses and, on bare-metal and RTOS targets without memory protection, one-byte information disclosure and writes to unintended register addresses on the Write Multiple Registers (FC16) handler path.",
@@ -422,10 +394,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00124,
-        "percentile": 0.02477
-      },
+      "epss": null,
       "published": "2026-06-15T04:16:25.957",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12214"
     },
@@ -453,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00111,
+        "percentile": 0.01577
+      },
       "published": "2026-06-15T04:16:26.350",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12217"
     },
@@ -708,6 +680,37 @@
       "epss": null,
       "published": "2026-06-15T12:16:24.713",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34024"
+    },
+    {
+      "id": "CVE-2026-34025",
+      "desc": "The Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains an IP restriction bypass vulnerability in the login process. The application restricts user logins based on the IP address associated with a branch location, but the client IP address is derived from the HTTP X-Forwarded-For header when that header is present. An attacker with valid branch user credentials can manipulate the X-Forwarded-For header during login to spoof the expected branch IP address and obtain a valid authenticated session from an unauthorized network location.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T12:16:24.867",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34025"
+    },
+    {
+      "id": "CVE-2026-34026",
+      "desc": "Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains a path traversal vulnerability in the documentName parameter of the /safe/selfservice/openselfservicedocument endpoint. The application constructs a file path using attacker-controlled input without sufficient validation, allowing an authenticated attacker with any role or permission level to traverse out of the intended document directory and download arbitrary files accessible to the application. This includes, but is not limited to, application log files containing sensitive information and application binaries.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00394,
+        "percentile": 0.31041
+      },
+      "published": "2026-06-15T12:16:25.040",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34026"
     }
   ],
   "kev": [
@@ -1462,6 +1465,182 @@
   "kev_7d": 7,
   "gh_advisories": [
     {
+      "id": "GHSA-88fw-hqm2-52qc",
+      "cve": "CVE-2026-54290",
+      "severity": "high",
+      "summary": "hono: CORS Middleware reflects any Origin with credentials when `origin` defaults to the wildcard",
+      "url": "https://github.com/advisories/GHSA-88fw-hqm2-52qc",
+      "published": "2026-06-16T14:15:39Z",
+      "ecosystem": "npm",
+      "pkg": "hono",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-wwfh-h76j-fc44",
+      "cve": "CVE-2026-54286",
+      "severity": "medium",
+      "summary": "hono: Path traversal in `serve-static` on Windows via encoded backslash (`%5C`)",
+      "url": "https://github.com/advisories/GHSA-wwfh-h76j-fc44",
+      "published": "2026-06-16T14:09:03Z",
+      "ecosystem": "npm",
+      "pkg": "hono",
+      "cvss_score": 5.9
+    },
+    {
+      "id": "GHSA-j6c9-x7qj-28xf",
+      "cve": "CVE-2026-54287",
+      "severity": "medium",
+      "summary": "hono: AWS Lambda adapter merges multiple `Set-Cookie` headers into one value, dropping cookies on ALB single-header and Lattice",
+      "url": "https://github.com/advisories/GHSA-j6c9-x7qj-28xf",
+      "published": "2026-06-16T14:08:40Z",
+      "ecosystem": "npm",
+      "pkg": "hono",
+      "cvss_score": 5.3
+    },
+    {
+      "id": "GHSA-gj48-438w-jh9v",
+      "cve": null,
+      "severity": "medium",
+      "summary": "Bleach clean() / Cleaner() fails to sanitize dangerous URI schemes in allowed formaction attributes",
+      "url": "https://github.com/advisories/GHSA-gj48-438w-jh9v",
+      "published": "2026-06-16T14:07:49Z",
+      "ecosystem": "pip",
+      "pkg": "bleach",
+      "cvss_score": 6.1
+    },
+    {
+      "id": "GHSA-g75f-g53v-794x",
+      "cve": null,
+      "severity": "medium",
+      "summary": "Bleach linkify(parse_email=True) CPU exhaustion via unbounded email regex scanning",
+      "url": "https://github.com/advisories/GHSA-g75f-g53v-794x",
+      "published": "2026-06-16T14:07:30Z",
+      "ecosystem": "pip",
+      "pkg": "bleach",
+      "cvss_score": 4.3
+    },
+    {
+      "id": "GHSA-8rfp-98v4-mmr6",
+      "cve": null,
+      "severity": "low",
+      "summary": "Bleach: URI sanitization allows disallowed URI schemes with Unicode > U+00A0 in output",
+      "url": "https://github.com/advisories/GHSA-8rfp-98v4-mmr6",
+      "published": "2026-06-16T14:06:29Z",
+      "ecosystem": "pip",
+      "pkg": "bleach",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-m2v9-299j-rv96",
+      "cve": "CVE-2026-54531",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop when processing outlines/bookmarks in writer",
+      "url": "https://github.com/advisories/GHSA-m2v9-299j-rv96",
+      "published": "2026-06-16T14:05:57Z",
+      "ecosystem": "pip",
+      "pkg": "pypdf",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-52x6-gq3r-vpf4",
+      "cve": "CVE-2026-54530",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop when retrieving fonts for layout-mode text extraction",
+      "url": "https://github.com/advisories/GHSA-52x6-gq3r-vpf4",
+      "published": "2026-06-16T14:05:40Z",
+      "ecosystem": "pip",
+      "pkg": "pypdf",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-8hv8-536x-4wqp",
+      "cve": "CVE-2026-50146",
+      "severity": "high",
+      "summary": "Astro: Reflected XSS via unescaped slot name",
+      "url": "https://github.com/advisories/GHSA-8hv8-536x-4wqp",
+      "published": "2026-06-16T14:05:06Z",
+      "ecosystem": "npm",
+      "pkg": "astro",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-934w-87qh-qr26",
+      "cve": "CVE-2026-53722",
+      "severity": "medium",
+      "summary": "Nuxt: Reflected XSS in `<NuxtLink>` via unsanitised `javascript:` or `data:` URL",
+      "url": "https://github.com/advisories/GHSA-934w-87qh-qr26",
+      "published": "2026-06-16T13:49:36Z",
+      "ecosystem": "npm",
+      "pkg": "nuxt",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-534h-c3cw-v3h9",
+      "cve": null,
+      "severity": "medium",
+      "summary": "Nuxt dev server vite-node IPC socket is world-connectable on Linux",
+      "url": "https://github.com/advisories/GHSA-534h-c3cw-v3h9",
+      "published": "2026-06-16T13:49:10Z",
+      "ecosystem": "npm",
+      "pkg": "nuxt",
+      "cvss_score": 5.5
+    },
+    {
+      "id": "GHSA-mm7m-92g8-7m47",
+      "cve": "CVE-2026-53721",
+      "severity": "high",
+      "summary": "Nuxt: Route-rule middleware bypass via case-sensitivity mismatch between vue-router and the routeRules matcher",
+      "url": "https://github.com/advisories/GHSA-mm7m-92g8-7m47",
+      "published": "2026-06-16T13:48:31Z",
+      "ecosystem": "npm",
+      "pkg": "nuxt",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-c9cv-mq2m-ppp3",
+      "cve": null,
+      "severity": "medium",
+      "summary": "Nuxt: URL-handling weaknesses in `navigateTo` and `reloadNuxtApp`: SSR open redirect, client-side script execution via the `open` option, and protocol-relative bypass in `reloadNuxtApp`",
+      "url": "https://github.com/advisories/GHSA-c9cv-mq2m-ppp3",
+      "published": "2026-06-16T13:47:52Z",
+      "ecosystem": "npm",
+      "pkg": "nuxt",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-j543-4vmf-qm7v",
+      "cve": "CVE-2026-49461",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage for form XObjects during text extraction",
+      "url": "https://github.com/advisories/GHSA-j543-4vmf-qm7v",
+      "published": "2026-06-16T13:47:08Z",
+      "ecosystem": "pip",
+      "pkg": "pypdf",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-5hgr-hg42-57jg",
+      "cve": "CVE-2026-49460",
+      "severity": "medium",
+      "summary": "pypdf: Inefficient decoding of FlateDecode PNG predictor streams",
+      "url": "https://github.com/advisories/GHSA-5hgr-hg42-57jg",
+      "published": "2026-06-16T13:46:42Z",
+      "ecosystem": "pip",
+      "pkg": "pypdf",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-wjqc-6w8f-h24c",
+      "cve": "CVE-2026-48735",
+      "severity": "medium",
+      "summary": "pypdf: Manipulated XMP metadata streams can exhaust RAM",
+      "url": "https://github.com/advisories/GHSA-wjqc-6w8f-h24c",
+      "published": "2026-06-16T13:45:58Z",
+      "ecosystem": "pip",
+      "pkg": "pypdf",
+      "cvss_score": null
+    },
+    {
       "id": "GHSA-rq7w-g337-39qq",
       "cve": null,
       "severity": "low",
@@ -1614,182 +1793,6 @@
       "ecosystem": "npm",
       "pkg": "@nestjs/platform-fastify",
       "cvss_score": null
-    },
-    {
-      "id": "GHSA-5rvq-cxj2-64vf",
-      "cve": "CVE-2026-53539",
-      "severity": "high",
-      "summary": "python-multipart: Quadratic-time querystring parsing with semicolon separators causes CPU denial of service",
-      "url": "https://github.com/advisories/GHSA-5rvq-cxj2-64vf",
-      "published": "2026-06-15T20:24:09Z",
-      "ecosystem": "pip",
-      "pkg": "python-multipart",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-v9pg-7xvm-68hf",
-      "cve": "CVE-2026-53540",
-      "severity": "low",
-      "summary": "python-multipart: Negative Content-Length in parse_form buffers the entire body in memory",
-      "url": "https://github.com/advisories/GHSA-v9pg-7xvm-68hf",
-      "published": "2026-06-15T20:23:45Z",
-      "ecosystem": "pip",
-      "pkg": "python-multipart",
-      "cvss_score": 3.7
-    },
-    {
-      "id": "GHSA-6jv3-5f52-599m",
-      "cve": "CVE-2026-53538",
-      "severity": "low",
-      "summary": "python-multipart: Semicolon treated as querystring field separator enables parameter smuggling",
-      "url": "https://github.com/advisories/GHSA-6jv3-5f52-599m",
-      "published": "2026-06-15T20:22:25Z",
-      "ecosystem": "pip",
-      "pkg": "python-multipart",
-      "cvss_score": 3.7
-    },
-    {
-      "id": "GHSA-vffw-93wf-4j4q",
-      "cve": "CVE-2026-53537",
-      "severity": "low",
-      "summary": "python-multipart: Content-Disposition parameter smuggling via RFC 2231/5987 extended parameters",
-      "url": "https://github.com/advisories/GHSA-vffw-93wf-4j4q",
-      "published": "2026-06-15T20:20:51Z",
-      "ecosystem": "pip",
-      "pkg": "python-multipart",
-      "cvss_score": 3.7
-    },
-    {
-      "id": "GHSA-q6m5-f73j-m9mc",
-      "cve": "CVE-2026-54257",
-      "severity": "critical",
-      "summary": "Electron: Buffer performs incorrect byte length calculations resulting in heap buffer under/overflow",
-      "url": "https://github.com/advisories/GHSA-q6m5-f73j-m9mc",
-      "published": "2026-06-15T20:20:24Z",
-      "ecosystem": "npm",
-      "pkg": "electron",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-3x9g-8vmp-wqvf",
-      "cve": "CVE-2026-49853",
-      "severity": "high",
-      "summary": "Tornado: Authorization header forwarded across cross-origin redirects in SimpleAsyncHTTPClient",
-      "url": "https://github.com/advisories/GHSA-3x9g-8vmp-wqvf",
-      "published": "2026-06-15T20:20:00Z",
-      "ecosystem": "pip",
-      "pkg": "tornado",
-      "cvss_score": 7.7
-    },
-    {
-      "id": "GHSA-mgf9-4vpg-hj56",
-      "cve": "CVE-2026-49855",
-      "severity": "high",
-      "summary": "tornado AsyncHTTPClient accumulates decompressed chunks without size limit (gzip bomb)",
-      "url": "https://github.com/advisories/GHSA-mgf9-4vpg-hj56",
-      "published": "2026-06-15T20:19:28Z",
-      "ecosystem": "pip",
-      "pkg": "tornado",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-wqp7-x3pw-xc5r",
-      "cve": "CVE-2026-48818",
-      "severity": "high",
-      "summary": "Starlette: SSRF and NTLM credential theft via UNC paths in StaticFiles on Windows",
-      "url": "https://github.com/advisories/GHSA-wqp7-x3pw-xc5r",
-      "published": "2026-06-15T20:16:30Z",
-      "ecosystem": "pip",
-      "pkg": "starlette",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-x746-7m8f-x49c",
-      "cve": "CVE-2026-48817",
-      "severity": "medium",
-      "summary": "Starlette: Arbitrary HTTP method dispatched to `HTTPEndpoint` attributes via `getattr`",
-      "url": "https://github.com/advisories/GHSA-x746-7m8f-x49c",
-      "published": "2026-06-15T20:16:05Z",
-      "ecosystem": "pip",
-      "pkg": "starlette",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-9h5v-pfqq-x599",
-      "cve": "CVE-2026-48125",
-      "severity": "medium",
-      "summary": "UAParser.js: Unbounded `Sec-CH-UA-Model` parsing can trigger ReDoS in `withClientHints()`",
-      "url": "https://github.com/advisories/GHSA-9h5v-pfqq-x599",
-      "published": "2026-06-15T20:15:02Z",
-      "ecosystem": "npm",
-      "pkg": "ua-parser-js",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-pr59-h9ph-3fr8",
-      "cve": "CVE-2026-54271",
-      "severity": "high",
-      "summary": "protobufjs-cli: Code injection in pbjs static output from crafted JSON descriptor names",
-      "url": "https://github.com/advisories/GHSA-pr59-h9ph-3fr8",
-      "published": "2026-06-15T20:13:54Z",
-      "ecosystem": "npm",
-      "pkg": "protobufjs-cli",
-      "cvss_score": 8.2
-    },
-    {
-      "id": "GHSA-94rc-8x27-4472",
-      "cve": "CVE-2026-54270",
-      "severity": "medium",
-      "summary": "protobufjs: Memory amplification from preserved unknown fields in binary decode",
-      "url": "https://github.com/advisories/GHSA-94rc-8x27-4472",
-      "published": "2026-06-15T20:13:28Z",
-      "ecosystem": "npm",
-      "pkg": "protobufjs",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-vxr8-fq34-vvx9",
-      "cve": null,
-      "severity": "low",
-      "summary": "DOMPurify: Trusted Types policy survives `clearConfig()` and can poison later `RETURN_TRUSTED_TYPE` output",
-      "url": "https://github.com/advisories/GHSA-vxr8-fq34-vvx9",
-      "published": "2026-06-15T20:12:53Z",
-      "ecosystem": "npm",
-      "pkg": "dompurify",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-537c-gmf6-5ccf",
-      "cve": null,
-      "severity": "high",
-      "summary": "Vulnerable OpenSSL included in cryptography wheels",
-      "url": "https://github.com/advisories/GHSA-537c-gmf6-5ccf",
-      "published": "2026-06-15T20:12:27Z",
-      "ecosystem": "pip",
-      "pkg": "cryptography",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-f8h2-vmm9-qhj6",
-      "cve": "CVE-2026-45591",
-      "severity": "high",
-      "summary": "Microsoft Security Advisory CVE-2026-45591 \u2013 ASP.NET Core Denial of Service Vulnerability",
-      "url": "https://github.com/advisories/GHSA-f8h2-vmm9-qhj6",
-      "published": "2026-06-15T20:11:56Z",
-      "ecosystem": "nuget",
-      "pkg": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-xcgm-r5h9-7989",
-      "cve": "CVE-2026-54274",
-      "severity": "medium",
-      "summary": "aiohttp: Incomplete websocket frame payloads bypass memory limits",
-      "url": "https://github.com/advisories/GHSA-xcgm-r5h9-7989",
-      "published": "2026-06-15T20:11:22Z",
-      "ecosystem": "pip",
-      "pkg": "aiohttp",
-      "cvss_score": null
     }
   ],
   "threatfox": [],
@@ -1843,6 +1846,14 @@
   ],
   "osv_vulns": [],
   "threats": [
+    {
+      "title": "Improving precision in CTEM: How continuous controls validation in Tenable One transforms exposure management",
+      "url": "https://www.tenable.com/blog/ctem-exposure-management-validation",
+      "source": "Tenable Blog",
+      "category": "threat",
+      "published": "2026-06-16T12:45:00+00:00",
+      "summary": "Discover how continuous control validation in Tenable One can improve your CTEM program by filtering out alert noise and factoring in your active cyber defenses. Focus your team on accessible and exploitable attack paths.&nbsp;Key takeaways:With vulnerability exploitation ranking as the top initial "
+    },
     {
       "title": "Pickle in the Middle \u2013 Hijacking Vertex AI Model Uploads for Cross-Tenant RCE",
       "url": "https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/",
@@ -2324,14 +2335,6 @@
       "summary": "Learn how attackers exploit automated bot traffic as part of software supply chain attacks to artificially inflate download counters and mask malicious payloads as legitimate.Key takeawaysVolume doesn\u2019t equal trust. Packages with numerous versions and high download counts might seem legitimate, but "
     },
     {
-      "title": "Inside the customer environment: Where threat actors, vulnerabilities, and exposed assets intersect",
-      "url": "https://www.tenable.com/blog/vulnerability-prioritization-attacker-mapping-severity-exploitation-risk",
-      "source": "Tenable Blog",
-      "category": "threat",
-      "published": "2026-05-27T16:25:00+00:00",
-      "summary": "Tenable Research has developed a graph-based model linking 600+ threat groups to real-world customer exposures. It reveals which vulnerabilities sit at the intersection of severity, active exploitation, and organizational risk.Key takeawaysThe \"patch everything\" strategy is dead: Vulnerability prior"
-    },
-    {
       "title": "MediaArea heap-based buffer overflow vulnerabilities",
       "url": "https://blog.talosintelligence.com/mediaarea-heap-based-buffer-overflow-vulnerabilities/",
       "source": "Talos Intelligence",
@@ -2678,6 +2681,118 @@
   ],
   "news": [
     {
+      "title": "'Lorem Ipsum' Malware Pivots to ClickFix Delivery",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/lorem-ipsum-malware-clickfix-delivery",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-16T15:10:48+00:00",
+      "summary": "New analysis shows the campaign, which uses compromised WordPress sites, may be linked to the ransomware and data extortion group Vice Society."
+    },
+    {
+      "title": "FTC warns of record $3.5 billion losses to imposter scams in 2025",
+      "url": "https://www.bleepingcomputer.com/news/security/ftc-warns-of-record-35-billion-losses-to-imposter-scams-in-2025/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-16T13:42:19+00:00",
+      "summary": "The U.S. Federal Trade Commission (FTC) warned that Americans lost $3.5 billion to imposter scams in 2025, with reported losses nearly tripling since 2020. [...]"
+    },
+    {
+      "title": "Magnitude Emerges From Stealth Mode With $10 Million in Funding",
+      "url": "https://www.securityweek.com/magnitude-emerges-from-stealth-mode-with-10-million-in-funding/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-16T13:34:57+00:00",
+      "summary": "The company is enhancing third-party risk management (TPRM) through autonomous AI agents.\nThe post Magnitude Emerges From Stealth Mode With $10 Million in Funding appeared first on SecurityWeek."
+    },
+    {
+      "title": "AI and Cybersecurity \u2013 Everything You Wanted to Know, But Were Afraid to Ask",
+      "url": "https://www.securityweek.com/ai-and-cybersecurity-everything-you-wanted-to-know-but-were-afraid-to-ask/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-16T13:15:34+00:00",
+      "summary": "From defending networks to enabling attacks, artificial intelligence is changing every aspect of cybersecurity. Here's what dozens of experts say security leaders need to understand now.\nThe post AI and Cybersecurity \u2013 Everything You Wanted to Know, But Were Afraid to Ask appeared first on SecurityW"
+    },
+    {
+      "title": "Rokarolla Trojan Combines Banking Fraud With Device Surveillance",
+      "url": "https://www.infosecurity-magazine.com/news/rokarolla-android-banking-trojan/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-16T13:15:00+00:00",
+      "summary": "Rokarolla Android trojan steals banking logins and spies on victims while blocking fraud alerts"
+    },
+    {
+      "title": "New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds",
+      "url": "https://thehackernews.com/2026/06/new-rokarolla-android-malware-steals.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-16T13:10:17+00:00",
+      "summary": "Security researchers at&nbsp;Zimperium's zLabs&nbsp;have documented a new Android banking trojan, Rokarolla, that targets 217 banking and cryptocurrency apps and packs 137 remote commands.\n\nTogether, they give an operator near-total control of an infected phone: it lifts lock-screen PINs, reads and "
+    },
+    {
+      "title": "Endpoint Security Startup Ent Emerges From Stealth With $100 Million Seed Round",
+      "url": "https://www.securityweek.com/endpoint-security-startup-ent-emerges-from-stealth-with-100-million-seed-round/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-16T12:53:19+00:00",
+      "summary": "Ent has developed an intent-aware platform designed to interpret user and agent behavior before risky actions are carried out.\nThe post Endpoint Security Startup Ent Emerges From Stealth With $100 Million Seed Round appeared first on SecurityWeek."
+    },
+    {
+      "title": "Cybercrime Group Claims Novo Nordisk Hack",
+      "url": "https://www.securityweek.com/cybercrime-group-claims-novo-nordisk-hack/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-16T12:32:27+00:00",
+      "summary": "The hack-and-leak group FulcrumSec claims to have stolen 1.3TB of data from the pharmaceutical giant.\nThe post Cybercrime Group Claims Novo Nordisk Hack appeared first on SecurityWeek."
+    },
+    {
+      "title": "Can CISOs Trust Their Applications? TrustCloud Wants to Replace the Questionnaire",
+      "url": "https://www.securityweek.com/can-cisos-trust-their-applications-trustcloud-wants-to-replace-the-questionnaire/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-16T12:15:00+00:00",
+      "summary": "By continuously analyzing security, infrastructure, and governance data, TrustCloud aims to give CISOs a real-time view of application risk and board-ready assurance.\nThe post Can CISOs Trust Their Applications? TrustCloud Wants to Replace the Questionnaire appeared first on SecurityWeek."
+    },
+    {
+      "title": "Over Two-Thirds of Security Pros Say Cyber Is Getting Harder",
+      "url": "https://www.infosecurity-magazine.com/news/security-pros-cyber-cyber-harder/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-16T12:00:00+00:00",
+      "summary": "ISSA study finds most security professionals feel challenged by colleagues\u2019 involvement in cyber"
+    },
+    {
+      "title": "Cal Water Investigating Iranian Hackers\u2019 Claims",
+      "url": "https://www.securityweek.com/cal-water-investigating-iranian-hackers-claims/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-16T11:53:11+00:00",
+      "summary": "California Water Service says there is no indication of operational disruptions to its water and wastewater systems.\u00a0\nThe post Cal Water Investigating Iranian Hackers&#8217; Claims appeared first on SecurityWeek."
+    },
+    {
+      "title": "White House Issues Memo to Bolster NSS Cybersecurity",
+      "url": "https://www.securityweek.com/white-house-issues-memo-to-bolster-nss-cybersecurity/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-16T11:41:46+00:00",
+      "summary": "NSPM-12 establishes a clear structure for NSS cybersecurity governance and accountability and reestablishes CNSS.\nThe post White House Issues Memo to Bolster NSS Cybersecurity appeared first on SecurityWeek."
+    },
+    {
+      "title": "Survey: 94% of Incidents Involve Anonymized Infrastructure. Teams Are Still Reactive",
+      "url": "https://thehackernews.com/2026/06/survey-94-of-incidents-involve.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-16T11:30:00+00:00",
+      "summary": "Security teams have never had more IP data at their disposal. Every day, analysts ingest enrichment feeds, geolocation data, reputation scores, telemetry, and threat intelligence from a growing ecosystem of vendors and platforms.\n\nYet despite this abundance of information, many organizations continu"
+    },
+    {
+      "title": "DragonForce Ransomware Exploited Microsoft Teams to Hide in Attack Against Major Company",
+      "url": "https://www.infosecurity-magazine.com/news/dragonforce-ransomware-hidden/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-16T11:30:00+00:00",
+      "summary": "Command and control traffic exploited a Teams visitor token to make malicious activity look legitimate to defenders"
+    },
+    {
       "title": "Chainguard, JPMorgan, BNY Team Up to Secure Open Source from AI Threats",
       "url": "https://www.infosecurity-magazine.com/news/chainguard-bny-open-source-athena/",
       "source": "Infosecurity Magazine",
@@ -2710,14 +2825,6 @@
       "summary": "Bad actors are exploiting multiple security vulnerabilities in Fortinet FortiSandbox, according to threat intelligence firm Defused Cyber.\n\nIn a post shared on X, the company said it has observed exploitation of CVE-2026-39813, CVE-2026-39808, and CVE-2026-25089 over the past 24 hours.\n\nCVE-2026-398"
     },
     {
-      "title": "Cybersecurity Executives Urge the Trump Administration to Ease Restrictions on Anthropic AI Models",
-      "url": "https://www.securityweek.com/cybersecurity-executives-urge-the-trump-administration-to-ease-restrictions-on-anthropic-ai-models/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-16T10:28:30+00:00",
-      "summary": "A group of cybersecurity executives and experts is asking the Trump administration to lift its directive preventing the use of Anthropic\u2019s latest artificial intelligence models by foreign nationals.\nThe post Cybersecurity Executives Urge the Trump Administration to Ease Restrictions on Anthropic AI "
-    },
-    {
       "title": "Ransomware gang abuses Microsoft Teams relays to hide malicious traffic",
       "url": "https://www.bleepingcomputer.com/news/security/ransomware-gang-abuses-microsoft-teams-relays-to-hide-malicious-traffic/",
       "source": "Bleeping Computer",
@@ -2732,14 +2839,6 @@
       "category": "news",
       "published": "2026-06-16T09:44:34+00:00",
       "summary": "Cybersecurity researchers have flagged two previously undocumented Windows variants of what was believed to be a Linux-only backdoor called SprySOCKS.\n\n\"The Windows variants discovered are internally marked as WIN_DRV and WIN_PLUS,\" ESET said in a report shared with The Hacker News. \"Both come with "
-    },
-    {
-      "title": "Tech Coalition \u2018Athena\u2019 Targets OSS Vulnerabilities Ahead of Disclosure",
-      "url": "https://www.securityweek.com/tech-coalition-athena-targets-oss-vulnerabilities-ahead-of-disclosure/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-16T09:39:47+00:00",
-      "summary": "Over two dozen organizations built a shared platform to triage vulnerabilities, fix them, and secure the software before patches arrive.\nThe post Tech Coalition &#8216;Athena&#8217; Targets OSS Vulnerabilities Ahead of Disclosure appeared first on SecurityWeek."
     },
     {
       "title": "Critical Fortinet FortiSandbox flaws now exploited in attacks",
@@ -2790,14 +2889,6 @@
       "summary": "Digital healthcare company iRhythm Holdings has disclosed a data breach after hackers stole patients' personal and health information stored on third-party-hosted business applications. [...]"
     },
     {
-      "title": "Cisco Patches Another SD-WAN Zero-Day Exploited in Attacks",
-      "url": "https://www.securityweek.com/cisco-patches-another-sd-wan-zero-day-exploited-in-attacks/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-16T06:20:18+00:00",
-      "summary": "Cisco recently became aware of the exploitation of CVE-2026-20262, a Catalyst SD-WAN Manager zero-day that allows arbitrary file write.\nThe post Cisco Patches Another SD-WAN Zero-Day Exploited in Attacks appeared first on SecurityWeek."
-    },
-    {
       "title": "Cisco Releases Security Updates for Actively Exploited SD-WAN Manager Flaw",
       "url": "https://thehackernews.com/2026/06/cisco-releases-security-updates-for.html",
       "source": "The Hacker News",
@@ -2820,14 +2911,6 @@
       "category": "news",
       "published": "2026-06-16T02:00:02+00:00",
       "summary": ""
-    },
-    {
-      "title": "UK to ban social media access for children under 16",
-      "url": "https://therecord.media/uk-to-ban-social-media-access-for-children-under-16",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-16T00:03:00+00:00",
-      "summary": "The ban will apply to all \u201cuser-to-user platforms, whose purpose is to enable social interaction and\u202fwhich allow users to post material, alongside algorithms,\u201d according to a press release from the government\u2019s Department for Science, Innovation and Technology."
     },
     {
       "title": "DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act",
@@ -2854,14 +2937,6 @@
       "summary": "A China-linked espionage group hid inside North American medical, academic, and military research networks for more than a year, quietly stealing sensitive research and defense email.\n\nThe way in was a backdoor on their REDCap research servers that stole login credentials. The exfiltration was the u"
     },
     {
-      "title": "North Korean Hackers Are Turning Developer Tools Into Malware Delivery Channels",
-      "url": "https://thehackernews.com/2026/06/north-korean-hackers-are-turning.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-15T19:32:52+00:00",
-      "summary": "Cybersecurity researchers have flagged two malicious cyber campaigns that exhibit similarities with a persistent North Korean threat cluster known as Contagious Interview (aka Famous Chollima, HexagonalRodent, and Void Dokkaebi).\n\nAccording to a report published by Proofpoint, the threat actor has b"
-    },
-    {
       "title": "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
       "url": "https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft",
       "source": "Dark Reading",
@@ -2870,28 +2945,12 @@
       "summary": "The critical, three-stage attack is now patched, but it's part of a new group of AI prompt-injection issues that use hidden URLs and other variables."
     },
     {
-      "title": "Maine closes data breach portal to the public after fake reports",
-      "url": "https://therecord.media/maine-turns-off-breach-portal-fake-reports",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-15T18:23:00+00:00",
-      "summary": "Maine is still allowing companies to report breaches, but won\u2019t make the portal easily available to the public until after it completes an audit of its procedures to stop such incidents, according to a press release from the Maine attorney general\u2019s office."
-    },
-    {
-      "title": "OptinMonster WordPress plugin hacked in CDN supply-chain attack",
-      "url": "https://www.bleepingcomputer.com/news/security/optinmonster-wordpress-plugin-hacked-in-cdn-supply-chain-attack/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-15T17:37:07+00:00",
-      "summary": "WordPress plugins OptinMonster, TrustPulse, and PushEngage have been compromised in a supply-chain attack impacting Awesome Motive-s content distribution network (CDN). [...]"
-    },
-    {
-      "title": "China-Nexus Actor Spy on US Researchers Undetected for a Year",
+      "title": "China-Nexus Actor Spies on US Researchers Undetected for a Year",
       "url": "https://www.darkreading.com/threat-intelligence/china-nexus-actor-us-researchers-undetected",
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-06-15T17:00:45+00:00",
-      "summary": "Google discovered and disrupted the sprawling campaign, which stole RedCAP credentials to target numerous institutions and exfiltrate sensitive data."
+      "summary": "Google discovered and disrupted the sprawling campaign, which stole RedCAP credentials to breach numerous institutions and exfiltrate sensitive data."
     },
     {
       "title": "Attackers Hijack Popular WordPress Plugins to Deploy Backdoors",
@@ -2910,28 +2969,12 @@
       "summary": "Executive leaders may not be saying it aloud, but business objectives and priorities don't always promote timely disclosures."
     },
     {
-      "title": "LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers",
-      "url": "https://thehackernews.com/2026/06/litellm-vulnerability-chain-lets-low.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-15T16:39:01+00:00",
-      "summary": "A default low-privilege account on a LiteLLM proxy can climb to full admin and run code on the server by chaining three vulnerabilities, researchers at Obsidian Security disclosed\n\nLiteLLM is a widely deployed open-source AI gateway that brokers calls to more than 100 model providers behind one Open"
-    },
-    {
       "title": "Adriatic Port Cyber-Attack by Anubis Sparks Warning Over Maritime Security Risks",
       "url": "https://www.infosecurity-magazine.com/news/anubis-ransomware-adriatic-port/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-06-15T16:15:00+00:00",
       "summary": "How the Anubis ransomware group stole and leaked an Italian Adriatic port authority's data"
-    },
-    {
-      "title": "Ransomware Attack Shuts Down Mills of Australia\u2019s Second-Largest Sugar Producer",
-      "url": "https://www.securityweek.com/ransomware-attack-shuts-down-mills-of-australias-second-largest-sugar-producer/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-15T15:15:55+00:00",
-      "summary": "Mackay Sugar was targeted in a cyberattack carried out by a threat group known as The Gentlemen.\nThe post Ransomware Attack Shuts Down Mills of Australia&#8217;s Second-Largest Sugar Producer appeared first on SecurityWeek."
     },
     {
       "title": "The Beginning of the End of Social Engineering",
@@ -2942,60 +2985,12 @@
       "summary": "AI-native operating systems are shifting the responsibility to stay vigilant against social engineering cyberattacks from the user onto the system itself."
     },
     {
-      "title": "Cyberattack on Russian tech firm Astral disrupts business, government services for week",
-      "url": "https://therecord.media/cyberattack-on-russian-tech-firm-astral-disrupts-business-government-services",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-15T15:07:00+00:00",
-      "summary": "According to customer complaints, the disruption affected a range of services used by businesses, leading to interruptions in cash register operations, difficulties selling certain regulated goods, loss of access to customer portals and corporate email and problems with electronic human resources do"
-    },
-    {
-      "title": "Chinese Hackers Target Medical, Military, and AI Research in North America",
-      "url": "https://www.securityweek.com/chinese-hackers-target-medical-military-and-ai-research-in-north-america/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-15T14:07:45+00:00",
-      "summary": "Google\u2019s Threat Intelligence Group has been tracking the cyberespionage group as UNC6508 since early 2025.\nThe post Chinese Hackers Target Medical, Military, and AI Research in North America appeared first on SecurityWeek."
-    },
-    {
-      "title": "Finland brings charges against cargo ship officers for cutting submarine cables",
-      "url": "https://therecord.media/finland-brings-charges-against-cargo-ship-undersea-cables",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-15T13:30:00+00:00",
-      "summary": "According to the deputy prosecutor general, the ship\u2019s officers have now been charged with \u201chaving damaged two subsea telecommunications cables and of having attempted to damage a total of eight other subsea connections.\u201d"
-    },
-    {
-      "title": "NewCore Emerges From Stealth Mode With $66 Million in Funding",
-      "url": "https://www.securityweek.com/newcore-emerges-from-stealth-mode-with-66-million-in-funding/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-15T13:00:00+00:00",
-      "summary": "The startup has built a security-first identity platform to protect humans, machines, and AI agents.\nThe post NewCore Emerges From Stealth Mode With $66 Million in Funding appeared first on SecurityWeek."
-    },
-    {
-      "title": "Anthropic says US government forced it to disable cybersecurity AI models",
-      "url": "https://therecord.media/anthropic-says-gov-forced-it-to-disable-cyber-ai-models",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-15T12:31:00+00:00",
-      "summary": "According to the company, the directive cited national security authorities. It appears to be the first time such authorities have been used to curtail the export of AI models rather than chips or hardware."
-    },
-    {
       "title": "US Cracks Down on Anthropic AI Models Amid Abuse Concerns",
       "url": "https://www.darkreading.com/cyber-risk/us-cracks-down-anthropic-ai-models-abuse-concerns",
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-06-15T12:17:22+00:00",
       "summary": "Anthropic abruptly suspended all access to Fable 5 and Mythos 5 after receiving an export control directive that banned foreign nationals from using the technology."
-    },
-    {
-      "title": "Ukrainian Man Pleads Guilty in US to Conti Ransomware Charges",
-      "url": "https://www.securityweek.com/ukrainian-man-pleads-guilty-in-us-to-conti-ransomware-charges/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-15T11:33:20+00:00",
-      "summary": "Oleksii Oleksiyovych Lytvynenko admitted to working on the development of a loader for the Conti gang.\nThe post Ukrainian Man Pleads Guilty in US to Conti Ransomware Charges appeared first on SecurityWeek."
     },
     {
       "title": "Cybersecurity Experts Urge US to Lift Ban on Anthropic's Frontier AI Models",
@@ -3006,28 +3001,12 @@
       "summary": "Access to two Anthropic large language models, Mythos 5 and Fable 5, has effectively been banned to any non-US nationals by the Trump administration"
     },
     {
-      "title": "UK Government Finds 400+ Vulnerabilities in AI Hackathons",
-      "url": "https://www.infosecurity-magazine.com/news/uk-government-400-vulnerabilities/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-15T09:30:00+00:00",
-      "summary": "Government departments find hundreds of vulnerabilities after testing frontier models"
-    },
-    {
       "title": "Meta Tapped a Pentagon Supplier to Prototype Face Recognition for Its Glasses",
       "url": "https://www.wired.com/story/meta-rank-one-computing-face-recognition-smart-glasses/",
       "source": "Wired Security",
       "category": "news",
       "published": "2026-06-15T09:00:00+00:00",
       "summary": "Rank One, whose board includes a former CIA deputy director and a former FBI science chief, supplied face recognition to Meta for internal development of its smart glasses app."
-    },
-    {
-      "title": "Maine Takes Breach Reporting Portal Offline After Fake Entries",
-      "url": "https://www.infosecurity-magazine.com/news/maine-breach-reporting-portal/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-15T09:00:00+00:00",
-      "summary": "The Office of the Maine Attorney General has suspended its breach reporting portal"
     },
     {
       "title": "Evil MSI Background: BASE64 Statistical Analysis, (Mon, Jun 15th)",
@@ -3062,14 +3041,6 @@
       "summary": "A major bug in Oracle's ERP software disproportionately affected American universities, and hackers have capitalized by stealing gobs of data."
     },
     {
-      "title": "Ransomware Payment Crypto Laundering Platform Taken Out by FBI and Europol",
-      "url": "https://www.infosecurity-magazine.com/news/ransomware-crypto-laundering/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-12T14:00:00+00:00",
-      "summary": "Domain of dark web money laundering platform AudiA6 seized and suspects arrested in joint operation by the FBI, Europol and others"
-    },
-    {
       "title": "Claude Fable 5 Doesn't Change the Mythos Security Story",
       "url": "https://www.darkreading.com/vulnerabilities-threats/claude-fable-5-doesnt-change-mythos-security-story",
       "source": "Dark Reading",
@@ -3084,14 +3055,6 @@
       "category": "news",
       "published": "2026-06-12T12:30:10+00:00",
       "summary": ""
-    },
-    {
-      "title": "Phishing Attack Volume Down 20%, But Risk Still Rising",
-      "url": "https://www.darkreading.com/cybersecurity-analytics/phishing-volume-down-20-risk-rising",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-12T00:58:07+00:00",
-      "summary": "Hackers are valuing quality over quantity, using AI to upgrade their phishing attacks rather than multiply them."
     },
     {
       "title": "Grok Is Still Hosting Sexualized Deepfakes of Famous Women",
@@ -3342,31 +3305,31 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
-      "title": "Executive Summary: Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/executive-summary-defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "title": "NCSC: Leave passwords in the past - passkeys are the future",
+      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Organisations should map and baseline their edge device traffic, especially VPN and remote access connections, and adopt dynamic threat feed filtering that includes known covert network indicators."
+      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     },
     {
-      "title": "Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "title": "International cyber agencies share fresh advice to defend against China-linked covert networks",
+      "url": "https://www.ncsc.gov.uk/news/international-cyber-agencies-fresh-advice-defend-against-china-linked-covert-networks",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+      "summary": "New advisory highlights how to defend against attacker tactics believed to be used by China-linked actors to hide malicious cyber activity."
     }
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 2,
-    "high": 21,
+    "critical": 1,
+    "high": 20,
     "exploited": 0,
     "kev_total": 50,
     "kev_7d": 7,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
-    "epss_enriched": 1
+    "epss_enriched": 2
   }
 }
