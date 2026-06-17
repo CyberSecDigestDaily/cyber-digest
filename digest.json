@@ -1,193 +1,11 @@
 {
-  "generated": "2026-06-17T11:05:28.940822+00:00",
+  "generated": "2026-06-17T12:56:43.085604+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>2 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>3 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-12057",
-      "desc": "When the application executes the JavaScript script embedded in the PDF within the sandbox, it fails to intercept some dangerous interfaces, which allows remote scripts to be loaded, resulting in arbitrary code execution.",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Foxit",
-      "product": "Ai",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:23.050",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12057"
-    },
-    {
-      "id": "CVE-2026-34021",
-      "desc": "The Wertheim SafeController 5400, Controller 5400 - AssemblyVersion 6.11.8130.22320, uses RS-485 communication between the server and the microcontroller without cryptographic protection. An attacker with access to the communication path between the server and the microcontroller can sniff RS-485 messages and replay previously observed messages. This can be used, for example, to spoof a \"quit alarm\" message and continuously deactivate the safe alarm.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:24.230",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34021"
-    },
-    {
-      "id": "CVE-2026-34022",
-      "desc": "The\u00a0Wertheim SafeController Family 65000, Controller 65000 - AssemblyVersion 6.11.8130.22319, uses weak custom cryptographic algorithms with hard-coded cryptographic keys to protect communication. An attacker in an adversary-in-the-middle position can decrypt the data traffic. During reassessment, it was possible to break the encryption/decryption routine and decrypt messages without knowledge of the encryption key. It was also possible to gain knowledge about the encryption key by intercepting enough messages.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:24.410",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34022"
-    },
-    {
-      "id": "CVE-2026-34023",
-      "desc": "The Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains an incorrect authorization vulnerability in the WebSocket communication used by the SafeController WebMessageBroker. An authenticated attacker with valid low-privileged branch user credentials can manipulate WebSocket messages by specifying controller identifiers belonging to other branches. This allows the attacker to access restricted functions and resources in other branches, including activating boxes outside of the user's authorized branch.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:24.563",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34023"
-    },
-    {
-      "id": "CVE-2026-34024",
-      "desc": "The Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains missing authorization checks on multiple web application endpoints. An authenticated attacker with minimal privileges can access endpoints that are not visible in the frontend but remain directly reachable. This allows the attacker to perform restricted actions such as switching the user's branch, uploading arbitrary files, downloading arbitrary files, and viewing details of arbitrary branches.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:24.713",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34024"
-    },
-    {
-      "id": "CVE-2026-34025",
-      "desc": "The Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains an IP restriction bypass vulnerability in the login process. The application restricts user logins based on the IP address associated with a branch location, but the client IP address is derived from the HTTP X-Forwarded-For header when that header is present. An attacker with valid branch user credentials can manipulate the X-Forwarded-For header during login to spoof the expected branch IP address and obtain a valid authenticated session from an unauthorized network location.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:24.867",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34025"
-    },
-    {
-      "id": "CVE-2026-34026",
-      "desc": "Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains a path traversal vulnerability in the documentName parameter of the /safe/selfservice/openselfservicedocument endpoint. The application constructs a file path using attacker-controlled input without sufficient validation, allowing an authenticated attacker with any role or permission level to traverse out of the intended document directory and download arbitrary files accessible to the application. This includes, but is not limited to, application log files containing sensitive information and application binaries.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:25.040",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34026"
-    },
-    {
-      "id": "CVE-2026-34027",
-      "desc": "The Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains insufficient server-side file type validation in the /safe/contract/uploadcustomdocuments endpoint. The application validates uploaded files based on the user-controlled HTTP Content-Type value and accepts the upload if this value contains an allowed string such as pdf, jpeg, tiff, or png. An authenticated attacker with any role or permission level can spoof the Content-Type value and upload arbitrary file content.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:25.203",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34027"
-    },
-    {
-      "id": "CVE-2026-34028",
-      "desc": "The Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, exposes web-accessible file paths that are not protected by an authorization scheme. An unauthenticated attacker can directly access HTTP endpoints to download files from locations such as /Resources/CompanyId_[ID]/Audio/ and /SafeData/.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:25.367",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34028"
-    },
-    {
-      "id": "CVE-2026-34029",
-      "desc": "The\u00a0Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, contains a hard-coded cryptographic key in the SafeSystem.Infrastructure.Security.dll component. An attacker with access to the application files can reverse engineer the DLL and recover the hard-coded cryptographic key. This key can be used to decrypt the licence.whs file, which contains sensitive information about the licensing party and a second key that can be used to decrypt other configuration files.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:25.500",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34029"
-    },
-    {
-      "id": "CVE-2026-34030",
-      "desc": "The\u00a0Wertheim SafeController Software, AssemblyVersion 6.15.8328.28014, does not sufficiently validate the branch code when a new branch is created. The branch code is later used in multiple application functions, including filesystem path generation for uploaded files, profile pictures, and settings. An authenticated attacker with the settings_branches_manage privilege can include path traversal sequences in the branch code and influence the final filesystem location used by affected file operations. This can allow files to be stored in unintended locations, subject to service-account write permissions and branch-code length restrictions.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:25.633",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34030"
-    },
-    {
-      "id": "CVE-2026-49757",
-      "desc": "Authentication Bypass by Spoofing vulnerability in team-alembic AshAuthentication allows account takeover of local users via OAuth2/OIDC sign-in.\n\nAshAuthentication's OAuth2 and OIDC family strategies matched the local user by email address (an upsert on the email field, or a user-defined sign-in filter) rather than by the OpenID Connect iss/sub claim combination. Per OpenID Connect Core \u00a75.7, only iss/sub uniquely and stably identifies an end-user; other claims, including email, MUST NOT be used as unique identifiers.\n\nA provider login presenting a victim's email, including an unverified email, a reused email, or an account with email_verified: false, resolved to and signed in as the victim's existing local account. An unauthenticated attacker who can register an account on any accepted OAuth provider with the victim's email (or who benefits from provider-side email reuse or reclamation) obtains the victim's full local privileges.\n\nThe fix resolves users by the (strategy, sub) identity stored in a user identity resource, and only links a new sub to an existing local account by email when the provider's email_verified claim is trusted (trust_email_verified?).\n\nThis issue affects ash_authentication from 0.1.0 before 4.14.0 and from 5.0.0-rc.0 before 5.0.0-rc.10.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:25.777",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49757"
-    },
-    {
-      "id": "CVE-2026-5482",
-      "desc": "Responsive FileManager's allows an unauthenticated\u00a0attacker to upload files of any type and extension without restriction using dialog.php endpoint, leading to Remote Code Execution.\u00a0\n\nThis project is unmaintained at the time of CVE assignment. The vulnerability was found in the latest release\u00a09.14.0",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-15T12:16:25.947",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5482"
-    },
     {
       "id": "CVE-2016-20066",
       "desc": "WordPress CP Polls 1.0.8 contains a persistent cross-site scripting vulnerability that allows attackers to inject malicious scripts through unsanitized file upload functionality. Attackers can upload files containing script payloads with event handlers like onerror attributes to execute arbitrary JavaScript in the browsers of users viewing the affected content.",
@@ -422,10 +240,7 @@
       "product": "",
       "exploited": true,
       "kev": false,
-      "epss": {
-        "epss": 0.00326,
-        "percentile": 0.24144
-      },
+      "epss": null,
       "published": "2026-06-15T14:16:31.787",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2016-20082"
     },
@@ -607,7 +422,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00174,
+        "percentile": 0.0713
+      },
       "published": "2026-06-15T14:16:37.427",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5230"
     },
@@ -705,12 +523,194 @@
       "product": "Multer",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00247,
-        "percentile": 0.15698
-      },
+      "epss": null,
       "published": "2026-06-15T16:16:34.423",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5038"
+    },
+    {
+      "id": "CVE-2026-8683",
+      "desc": "Mattermost Desktop App versions <=6.1 5.5.13.0 fail to account for attempting to open extremely long URLs in the Mattermost Desktop App which allows a malicious server owner to crash the application via including a script to call window.open on a very large URL. Mattermost Advisory ID: MMSA-2026-00652",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Mattermost",
+      "product": "Mattermost Desktop",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T16:16:34.700",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8683"
+    },
+    {
+      "id": "CVE-2026-9595",
+      "desc": "Impact: When a user-configured proxy on webpack-dev-server has a broad context (e.g. /) and ws: true, it also intercepts the dev server's own HMR WebSocket and forwards it to the proxy target. This leaks the browser's cookies and Origin header to the backend, bypasses the dev server's Host/Origin validation, and corrupts the HMR socket (both HMR and the proxy end up writing to the same socket).\n\nPatches: Fixed in webpack-dev-server@5.2.5.\n\nWorkarounds: Scope user-defined proxy context to specific paths instead of /, or omit ws: true from the proxy entry when WebSocket forwarding is not required.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Webpack.Js",
+      "product": "Webpack-Dev-Server",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T16:16:35.227",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9595"
+    },
+    {
+      "id": "CVE-2026-9862",
+      "desc": "Fortra's\u00a0\nCore Privileged Access Manager (BoKS)\u00a0contains an OS command injection vulnerability in the boks_autoregisterd service. A remote attacker with network access to the service may be able to cause commands to be executed with the privileges of the service during the autoregistration processing.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T16:16:35.357",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9862"
+    },
+    {
+      "id": "CVE-2026-9863",
+      "desc": "Fortra BoKS Manager contains an OS command injection vulnerability in the client upgrade and patch tooling for legacy tar-based client installations. A malicious or compromised legacy tar-installed client selected for upgrade or patching may be able to cause commands to be executed on the BoKS Master during client version handling.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T16:16:35.507",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9863"
+    },
+    {
+      "id": "CVE-2026-20262",
+      "desc": "A vulnerability in the web UI of Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system.\r\n\r\nThis vulnerability exists because the affected software does not properly validate user-supplied input during a file upload process. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected API endpoint of the affected system. A successful exploit could allow the attacker to create or overwrite any file on the underlying operating system. This file could later be used to elevate to root. To exploit this vulnerability, the attacker must have valid credentials with at least a lower-privileged, single-task user account.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Cisco",
+      "product": "Catalyst Sd-Wan Manager",
+      "exploited": true,
+      "kev": true,
+      "epss": null,
+      "published": "2026-06-15T18:16:34.820",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262"
+    },
+    {
+      "id": "CVE-2026-47777",
+      "desc": "Mastodon is a free, open-source social network server based on ActivityPub. In versions there is a missing condition in the check if remote accounts consented to be featured in a remote Collection could lead to attackers bypassing the check and faking consent. An attacker could forge the FeatureAuthorization object that is used to verify consent to be featured in a Collection and thus make it appear as if an account is allowed to be in a Collection when it actually is not. While the FeatureAuthorization must reside on the same domain as the object it is for, a check is missing to make sure said object is actually the same as in the Collection item. This allows an attacker to forge the authorization. Mastodon servers are affected only if running the main branch or nightly builds who have opted into testing the experimental \"Collections\" feature by setting the environment variable EXPERIMENTAL_FEATURES to a value including collections. This has been patched in version 4.6.0-beta.1.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T18:16:35.287",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47777"
+    },
+    {
+      "id": "CVE-2026-49294",
+      "desc": "Valhalla is an open source routing engine and accompanying libraries for use with OpenStreetMap data. Versions 3.6.3 and prior are vulnerable to reflected cross-site scripting (XSS) due to improper neutralization of input in the JSONP callback parameter. When a request specifies a JSONP callback, the value is reflected directly into the HTTP response body with Content-Type: application/javascript, without any validation, output encoding, or allowlist filtering. An attacker can craft a URL containing arbitrary JavaScript in the callback parameter; if a victim is induced to load that URL via a <script src=\"...\"> tag, the injected script executes in the context of the serving origin, potentially leading to session token theft, credential disclosure, or actions performed on behalf of the victim. This issue was not fixed at time of publication.",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T18:16:35.460",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49294"
+    },
+    {
+      "id": "CVE-2026-6039",
+      "desc": "LibreOffice can import drawings in the DXF format used by CAD software. A heap buffer overflow existed when importing a DXF polyline. The point count taken from the file was truncated to a 16-bit value when the point buffer was sized, while the full count was used to fill it, so a polyline whose point count exceeded the 16-bit range was written past the end of the buffer. In fixed versions such oversized polylines are rejected.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T18:16:36.740",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6039"
+    },
+    {
+      "id": "CVE-2026-6040",
+      "desc": "A heap use-after-free existed when importing the blank-width characters of an ODF number format. A position value read from the document was not checked against the length of the format-code string, so a malformed number format could be processed against memory outside that string. In fixed versions the position is bounds-checked before use.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T18:16:36.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6040"
+    },
+    {
+      "id": "CVE-2026-6045",
+      "desc": "LibreOffice can import EMF+ graphics, which may be embedded in documents. A heap buffer overflow existed when importing an EMF+ gradient brush. The number of gradient blend points was read from the file and used to compute an allocation size, but that multiplication could overflow, so a small buffer was allocated and then filled as if it were large, writing past its end. In fixed versions the blend-point count is checked against the data actually available before allocating.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T18:16:37.007",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6045"
+    },
+    {
+      "id": "CVE-2026-6047",
+      "desc": "LibreOffice can import documents in the OOXML format (DOCX). A heap buffer overflow existed when replaying deferred parser events for a text box element. A handler object was assumed to be of one type and written to at that type's field layout, but it could be a smaller object, so the write landed past the end of the allocation. In fixed versions the type is checked before the write.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T18:16:37.127",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6047"
+    },
+    {
+      "id": "CVE-2026-8356",
+      "desc": "LibreOffice can import presentations in the legacy binary PPT format. A stack buffer overflow existed when importing a colour-replacement record. Two fixed-size colour tables were filled from the file, but the write position was not reset between the two passes over the record, so a file whose combined colour counts exceeded the table size wrote past the end of the tables on the stack. In fixed versions the unused second pass is no longer read into those tables.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-15T18:16:37.390",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8356"
+    },
+    {
+      "id": "CVE-2026-8357",
+      "desc": "LibreOffice Calc compiles cell formulas when opening a spreadsheet. A heap buffer overflow existed when compiling a very long formula made up of many opening tokens. The array that tracks nesting depth was allocated one element too small for that worst case, so such a formula wrote one element past its end. In fixed versions the array is sized to hold the largest possible nesting.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00119,
+        "percentile": 0.0209
+      },
+      "published": "2026-06-15T18:16:37.513",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8357"
     }
   ],
   "kev": [
@@ -2617,6 +2617,54 @@
   ],
   "news": [
     {
+      "title": "1Password Acquires Apono in Reported $250M-$300M Deal",
+      "url": "https://www.securityweek.com/1password-acquires-apono-in-reported-250m-300m-deal/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-17T12:36:46+00:00",
+      "summary": "Apono specializes in just-in-time access governance technology for humans, machines, and AI agents.\nThe post 1Password Acquires Apono in Reported $250M-$300M Deal appeared first on SecurityWeek."
+    },
+    {
+      "title": "AI Threats and Alert Fatigue Challenge Cybersecurity Teams",
+      "url": "https://www.infosecurity-magazine.com/news/ai-threats-alert-fatigue-challenge/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-17T12:30:00+00:00",
+      "summary": "Filigran survey at Infosecurity Europe 2026 reveals AI-powered attacks as the top concern, with false positives, alert fatigue and manual processes draining security teams"
+    },
+    {
+      "title": "Tenet Security Emerges From Stealth With $6 Million Seed Funding",
+      "url": "https://www.securityweek.com/tenet-security-emerges-from-stealth-with-6-million-seed-funding/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-17T12:00:00+00:00",
+      "summary": "Tenet aims to detect and stop dangerous AI agentic behavior in real time.\nThe post Tenet Security Emerges From Stealth With $6 Million Seed Funding appeared first on SecurityWeek."
+    },
+    {
+      "title": "Adversarial Exposure Validation Turns Security Visibility into Confident Prioritization",
+      "url": "https://thehackernews.com/2026/06/adversarial-exposure-validation-turns.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-17T11:58:00+00:00",
+      "summary": "For security teams, the findings never stop, but confidence in knowing which ones matter is becoming harder to maintain.\n\nThe problem is no longer visibility. It's validation. Security teams must decide which findings warrant action while operating under constant pressure and incomplete information."
+    },
+    {
+      "title": "Microsoft confirms Office apps launch issues after June updates",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-office-apps-launch-issues-after-june-updates/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-17T11:54:21+00:00",
+      "summary": "Microsoft is investigating a new issue preventing third-party applications from launching Microsoft Office applications or opening documents on up-to-date Windows systems. [...]"
+    },
+    {
+      "title": "Rockwell Automation Patches Vulnerabilities in ICS Controllers and Software",
+      "url": "https://www.securityweek.com/rockwell-automation-patches-vulnerabilities-in-ics-controllers-and-software/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-17T11:32:44+00:00",
+      "summary": "The industrial automation giant has fixed security holes in Logix, CompactLogix, Flex, RSLinx, and FactoryTalk products.\nThe post Rockwell Automation Patches Vulnerabilities in ICS Controllers and Software appeared first on SecurityWeek."
+    },
+    {
       "title": "Microsoft Teams Relay Servers Abused in DragonForce Ransomware Attack",
       "url": "https://www.securityweek.com/microsoft-teams-relay-servers-abused-in-dragonforce-ransomware-attack/",
       "source": "SecurityWeek",
@@ -2743,14 +2791,6 @@
       "category": "news",
       "published": "2026-06-17T07:07:56+00:00",
       "summary": "Kodak has confirmed that it's working with external cybersecurity experts to investigate a security breach after hackers gained access to some of the company's data. [...]"
-    },
-    {
-      "title": "3 Recently Patched Fortinet FortiSandbox Vulnerabilities in Hacker Crosshairs",
-      "url": "https://www.securityweek.com/3-recently-patched-fortinet-fortisandbox-vulnerabilities-in-hacker-crosshairs/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-17T06:53:58+00:00",
-      "summary": "SOCRadar has detected 30,000 compromised Fortinet firewalls that expose networks to hacking.\u00a0\nThe post 3 Recently Patched Fortinet FortiSandbox Vulnerabilities in Hacker Crosshairs appeared first on SecurityWeek."
     },
     {
       "title": "CISA Warns of Actively Exploited Joomla JCE Flaw Allowing PHP Code Execution",
@@ -2897,14 +2937,6 @@
       "summary": "New analysis shows the campaign, which uses compromised WordPress sites, may be linked to the ransomware and data extortion group Vice Society."
     },
     {
-      "title": "iRhythm Confirms Data Stolen in Hack",
-      "url": "https://www.securityweek.com/irhythm-confirms-data-stolen-in-hack/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-16T15:06:24+00:00",
-      "summary": "The digital health company said it learned of the breach on June 8 and the attackers demanded a ransom.\nThe post iRhythm Confirms Data Stolen in Hack appeared first on SecurityWeek."
-    },
-    {
       "title": "UK to require ID or face scan before you can make social media accounts",
       "url": "https://www.bleepingcomputer.com/news/security/uk-to-require-id-or-face-scan-before-you-can-make-social-media-accounts/",
       "source": "Bleeping Computer",
@@ -2919,22 +2951,6 @@
       "category": "news",
       "published": "2026-06-16T14:30:00+00:00",
       "summary": "China-linked SprySOCKS backdoor gains stealthy Windows variants and 30-plus C2 commands"
-    },
-    {
-      "title": "Hacker Conversations: Isira Adithya, the Evolution of an Ethical Hacker",
-      "url": "https://www.securityweek.com/hacker-conversations-isira-adithya-the-evolution-of-an-ethical-hacker/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-16T14:27:45+00:00",
-      "summary": "From building LED bulbs to graduating college and buying a house with money earned from bug bounties.\nThe post Hacker Conversations: Isira Adithya, the Evolution of an Ethical Hacker appeared first on SecurityWeek."
-    },
-    {
-      "title": "GhostTree Attack Abused Recursive Windows Junctions to Hide Malware",
-      "url": "https://www.bleepingcomputer.com/news/security/ghosttree-attack-abused-recursive-windows-junctions-to-hide-malware/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-16T14:17:27+00:00",
-      "summary": "GhostTree uses recursive NTFS junctions to generate vast numbers of valid Windows file paths. Varonis explains how the technique could cause Microsoft Defender folder scans to never complete, leaving malware undetected. [...]"
     },
     {
       "title": "Rokarolla Trojan Combines Banking Fraud With Device Surveillance",
@@ -2961,28 +2977,12 @@
       "summary": "ISSA study finds most security professionals feel challenged by colleagues\u2019 involvement in cyber"
     },
     {
-      "title": "Survey: 94% of Incidents Involve Anonymized Infrastructure. Teams Are Still Reactive",
-      "url": "https://thehackernews.com/2026/06/survey-94-of-incidents-involve.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-16T11:30:00+00:00",
-      "summary": "Security teams have never had more IP data at their disposal. Every day, analysts ingest enrichment feeds, geolocation data, reputation scores, telemetry, and threat intelligence from a growing ecosystem of vendors and platforms.\n\nYet despite this abundance of information, many organizations continu"
-    },
-    {
       "title": "DragonForce Ransomware Exploited Microsoft Teams to Hide in Attack Against Major Company",
       "url": "https://www.infosecurity-magazine.com/news/dragonforce-ransomware-hidden/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-06-16T11:30:00+00:00",
       "summary": "Command and control traffic exploited a Teams visitor token to make malicious activity look legitimate to defenders"
-    },
-    {
-      "title": "Chainguard, JPMorgan, BNY Team Up to Secure Open Source from AI Threats",
-      "url": "https://www.infosecurity-magazine.com/news/chainguard-bny-open-source-athena/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-16T11:00:00+00:00",
-      "summary": "Athena is a new an industry coalition to fix the vulnerabilities frontier AI models find before attackers can exploit them"
     },
     {
       "title": "From a VHDX File to a Remcos RAT, (Tue, Jun 16th)",
@@ -3281,27 +3281,27 @@
       "summary": "Poor metrics can render a well-intentioned security operation centre entirely ineffective."
     },
     {
-      "title": "Executive Summary: Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/executive-summary-defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "title": "NCSC: Leave passwords in the past - passkeys are the future",
+      "url": "https://www.ncsc.gov.uk/news/ncsc-leave-passwords-in-the-past-passkeys-are-the-future",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Organisations should map and baseline their edge device traffic, especially VPN and remote access connections, and adopt dynamic threat feed filtering that includes known covert network indicators."
+      "summary": "Passkeys are the more secure and user-friendly login method and should be the default authentication option for consumers."
     },
     {
-      "title": "Defending against China-nexus covert networks of compromised devices",
-      "url": "https://www.ncsc.gov.uk/news/defending-against-china-nexus-covert-networks-of-compromised-devices",
+      "title": "International cyber agencies share fresh advice to defend against China-linked covert networks",
+      "url": "https://www.ncsc.gov.uk/news/international-cyber-agencies-fresh-advice-defend-against-china-linked-covert-networks",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-04-23T12:00:00+00:00",
-      "summary": "Explaining the widespread shift in tactics, techniques and procedures (TTPs) towards networks of compromised infrastructure, and how to defend against it"
+      "summary": "New advisory highlights how to defend against attacker tactics believed to be used by China-linked actors to hide malicious cyber activity."
     }
   ],
   "stats": {
     "total_cves": 50,
-    "critical": 2,
-    "high": 20,
-    "exploited": 22,
+    "critical": 3,
+    "high": 21,
+    "exploited": 23,
     "kev_total": 50,
     "kev_7d": 5,
     "gh_advisories": 30,
