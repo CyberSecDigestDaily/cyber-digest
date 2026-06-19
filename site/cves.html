@@ -162,8 +162,7 @@
         <button class="chip on" data-filter="all">All</button>
         <button class="chip" data-filter="crit">Critical</button>
         <button class="chip" data-filter="high">High</button>
-        <button class="chip" data-filter="kev">CISA KEV</button>
-        <button class="chip" data-filter="zero-day">0-day</button>
+        <button class="chip" data-filter="kev">Exploited / KEV</button>
       </div>
       <div class="right">
         <span data-result-count></span>
@@ -173,7 +172,8 @@
     <!-- Vendor filter (multi-select — click to toggle, multiple active at once) -->
     <div class="cve-toolbar" style="border-top:none;padding-top:10px;padding-bottom:10px;gap:10px;flex-wrap:wrap">
       <span class="label">Vendor</span>
-      <div class="chips" style="flex:1">
+      <!-- Chips rebuilt from live data by app.js (initCvesPage); static set is a no-JS fallback -->
+      <div class="chips" style="flex:1" data-vendor-chips>
         <button class="chip" data-vendor-filter="fortinet">Fortinet</button>
         <button class="chip" data-vendor-filter="paloalto">Palo Alto</button>
         <button class="chip" data-vendor-filter="ivanti">Ivanti</button>
@@ -200,7 +200,7 @@
           <th class="refs-h">Refs</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody data-cve-tbody>
         <tr data-cats="crit kev" data-vendor="fortinet" onclick="location='https://nvd.nist.gov/vuln/detail/CVE-2024-47575'">
           <td class="id"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener">CVE-2024-47575</a></td>
           <td class="vendor">Fortinet · FortiManager</td>

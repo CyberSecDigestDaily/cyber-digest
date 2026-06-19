@@ -57,13 +57,6 @@
     </div>
   </div>
 </div>
-<!-- Vendor filter chips: populated by app.js from live KEV data -->
-<div class="ticker-vendor-bar" style="display:none" aria-label="Filter ticker by vendor">
-  <div class="container">
-    <div class="row" data-ticker-vendor-row></div>
-  </div>
-</div>
-
 <main>
 <section class="hero">
   <div class="container hero-grid">
@@ -109,26 +102,8 @@
       </div>
       <!-- Tracked actors — rendered by ACTORS config in app.js — update there to change -->
       <div class="console-actors" data-actors-list></div>
-      <!-- Console filters — multi-select vendor filter, wired to live KEV feed -->
-      <div class="console-filters" aria-label="Filter feed">
-        <div class="cf-group">
-          <span class="cf-label">Vendor</span>
-          <button class="cf-chip on" data-cf-vendor="all">All</button>
-          <button class="cf-chip" data-cf-vendor="fortinet">Fortinet</button>
-          <button class="cf-chip" data-cf-vendor="ivanti">Ivanti</button>
-          <button class="cf-chip" data-cf-vendor="vmware">VMware</button>
-          <button class="cf-chip" data-cf-vendor="microsoft">Microsoft</button>
-          <button class="cf-chip" data-cf-vendor="cisco">Cisco</button>
-          <button class="cf-chip" data-cf-vendor="palo alto">Palo Alto</button>
-          <button class="cf-chip" data-cf-vendor="apple">Apple</button>
-          <button class="cf-chip" data-cf-vendor="citrix">Citrix</button>
-          <button class="cf-chip" data-cf-vendor="sonicwall">SonicWall</button>
-          <button class="cf-chip" data-cf-vendor="apache">Apache</button>
-          <button class="cf-chip" data-cf-vendor="f5">F5</button>
-          <button class="cf-chip" data-cf-vendor="juniper">Juniper</button>
-          <button class="cf-chip" data-cf-vendor="google">Google</button>
-        </div>
-      </div>
+      <!-- Full CVE index with vendor/severity/exploited filtering lives on cves.html -->
+      <a class="console-cves-link" href="cves.html">Browse all CVEs &amp; filter by vendor <span class="arr">&rarr;</span></a>
       <!-- Console feed: app.js populates from CISA KEV. Fallback uses real KEV dates. -->
       <div class="console-feed" data-live-feed aria-label="Live event feed">
         <div class="line" data-feed-vendor="fortinet"><span class="t">2024-10-23</span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager &mdash; exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>

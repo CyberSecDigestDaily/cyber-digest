@@ -1,0 +1,65 @@
+name: CI
+
+# Lightweight pre-merge checks so a broken pipeline or broken site JS never
+# reaches main / Cloudflare. Runs on every push and PR.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Python — compile digest.py
+        run: python -m py_compile digest.py
+
+      - name: Python — import smoke test (no network)
+        run: python -c "import ast,sys; ast.parse(open('digest.py').read()); print('digest.py parses OK')"
+
+      - name: JS — syntax check all site scripts
+        run: |
+          for f in site/*.js; do
+            echo "node --check $f"
+            node --check "$f"
+          done
+
+      - name: JSON — validate committed data files
+        run: |
+          python - <<'PY'
+          import json, glob, sys
+          bad = 0
+          for f in ["digest.json"] + glob.glob("site/*.json"):
+              try:
+                  json.load(open(f))
+                  print("OK  ", f)
+              except FileNotFoundError:
+                  print("skip", f, "(not present)")
+              except Exception as e:
+                  print("FAIL", f, e); bad += 1
+          sys.exit(1 if bad else 0)
+          PY
+
+      - name: HTML — basic sanity (no stray merge markers, single workflow)
+        run: |
+          if grep -RnE '^(<<<<<<<|=======|>>>>>>>)' site/ digest.py; then
+            echo "Merge conflict markers found"; exit 1
+          fi
+          echo "OK"

@@ -138,7 +138,6 @@
 
   // Ticker state
   let tickerAllItems      = [];
-  let tickerActiveVendors = new Set();
   let lastKev7d           = null;       // persist last known kev7d across fetch paths
 
   function getCached(key){
@@ -373,64 +372,6 @@
     track.style.animationDuration = dur;
   }
 
-  // Apply active vendor filter to the full items array and re-render ticker
-  function applyTickerFilter(){
-    if (!tickerAllItems.length) return;
-    const filtered = tickerActiveVendors.size === 0
-      ? tickerAllItems
-      : tickerAllItems.filter(i => tickerActiveVendors.has((i.vendor || '').toLowerCase()));
-    populateTicker(filtered.length ? filtered : tickerAllItems);
-  }
-
-  // Build vendor filter chips from live data
-  function buildTickerVendorBar(items){
-    const bar = document.querySelector('[data-ticker-vendor-row]');
-    if (!bar) return;
-    const wrap = bar.closest('.ticker-vendor-bar');
-
-    // Extract unique vendors, sorted by frequency in KEV data
-    const vendorCount = {};
-    items.forEach(i => { if (i.vendor) vendorCount[i.vendor] = (vendorCount[i.vendor] || 0) + 1; });
-    const vendors = Object.entries(vendorCount)
-      .sort((a, b) => b[1] - a[1])
-      .map(([v]) => v)
-      .slice(0, 10);
-
-    if (!vendors.length){ if (wrap) wrap.style.display = 'none'; return; }
-
-    bar.innerHTML = '<span class="tvb-label">Vendor</span>' +
-      vendors.map(v =>
-        '<button class="ticker-vchip" data-ticker-vendor="' + v.toLowerCase().replace(/"/g, '') + '">' + v + '</button>'
-      ).join('') +
-      '<button class="ticker-vchip" id="ticker-vchip-all" style="margin-left:auto">All</button>';
-
-    if (wrap) wrap.style.display = '';
-
-    bar.addEventListener('click', function(e){
-      const chip = e.target.closest('[data-ticker-vendor]');
-      const allBtn = e.target.closest('#ticker-vchip-all');
-      if (allBtn){
-        tickerActiveVendors.clear();
-        bar.querySelectorAll('.ticker-vchip').forEach(c => c.classList.remove('on'));
-        applyTickerFilter();
-        return;
-      }
-      if (!chip) return;
-      const v = chip.dataset.tickerVendor;
-      if (tickerActiveVendors.has(v)){
-        tickerActiveVendors.delete(v);
-        chip.classList.remove('on');
-      } else {
-        tickerActiveVendors.add(v);
-        chip.classList.add('on');
-      }
-      // Update All button state
-      const allChip = bar.querySelector('#ticker-vchip-all');
-      if (allChip) allChip.classList.toggle('on', tickerActiveVendors.size === 0);
-      applyTickerFilter();
-    });
-  }
-
   // Render fallback immediately, swap in live data async
   tickerAllItems = TICKER_FALLBACK;
   populateTicker(TICKER_FALLBACK);
@@ -446,9 +387,8 @@
         // Persist kev7d for use in fallback paths
         if (kevData.kev7d != null) lastKev7d = kevData.kev7d;
         tickerAllItems = kev;
-        applyTickerFilter();
-        if (!forceFresh) { consoleFeedAllItems = kev; populateConsoleFeed(kev); }
-        buildTickerVendorBar(kev);
+        populateTicker(kev);
+        if (!forceFresh) populateConsoleFeed(kev);
         populateCVEGrid(kev);
         // Show KEV count immediately; then try to get NVD 7d count
         updateConsoleMetrics(lastKev7d, null);
@@ -469,10 +409,9 @@
         const nvd = await fetchNVD();
         if (nvd && nvd.length){
           tickerAllItems = nvd;
-          applyTickerFilter();
-          buildTickerVendorBar(nvd);
+          populateTicker(nvd);
           populateCVEGrid(nvd);
-          if (!forceFresh) { consoleFeedAllItems = nvd; populateConsoleFeed(nvd); }
+          if (!forceFresh) populateConsoleFeed(nvd);
           // Use lastKev7d if we have it from a previous KEV fetch; otherwise show NVD count
           updateConsoleMetrics(lastKev7d, nvd.length);
         }
@@ -520,56 +459,6 @@
       feedEl.appendChild(line);
     });
   }
-
-  /* ═══════════════════════════════════════════════════════════
-     9b. CONSOLE FEED FILTERS (vendor / kit / tech)
-  ═══════════════════════════════════════════════════════════ */
-  let consoleFeedAllItems  = [];
-  let consoleFeedActiveVendors = new Set(); // empty = show all
-
-  function applyConsoleFilters(){
-    if (consoleFeedAllItems.length) {
-      const filtered = consoleFeedAllItems.filter(item => {
-        const v = (item.vendor || '').toLowerCase();
-        return consoleFeedActiveVendors.size === 0 ||
-          [...consoleFeedActiveVendors].some(sel => v.includes(sel));
-      });
-      populateConsoleFeed(filtered.length ? filtered : consoleFeedAllItems);
-      return;
-    }
-    // Fallback: filter static HTML .line elements
-    document.querySelectorAll('[data-live-feed] .line').forEach(line => {
-      const lv = (line.dataset.feedVendor || '').toLowerCase();
-      const ok = consoleFeedActiveVendors.size === 0 ||
-        [...consoleFeedActiveVendors].some(sel => lv.includes(sel));
-      line.style.display = ok ? '' : 'none';
-    });
-  }
-
-  // Multi-select vendor chips — "All" clears selection; individual chips toggle
-  document.querySelectorAll('.cf-chip[data-cf-vendor]').forEach(chip => {
-    chip.addEventListener('click', () => {
-      const v = chip.dataset.cfVendor;
-      if (v === 'all'){
-        consoleFeedActiveVendors.clear();
-        document.querySelectorAll('.cf-chip[data-cf-vendor]').forEach(c => c.classList.remove('on'));
-        chip.classList.add('on');
-      } else {
-        if (consoleFeedActiveVendors.has(v)){
-          consoleFeedActiveVendors.delete(v);
-          chip.classList.remove('on');
-        } else {
-          consoleFeedActiveVendors.add(v);
-          chip.classList.add('on');
-        }
-        // If nothing selected, default back to All
-        const allBtn = document.querySelector('.cf-chip[data-cf-vendor="all"]');
-        if (consoleFeedActiveVendors.size === 0 && allBtn) allBtn.classList.add('on');
-        else if (allBtn) allBtn.classList.remove('on');
-      }
-      applyConsoleFilters();
-    });
-  });
 
   /* ═══════════════════════════════════════════════════════════
      10. (metric drift removed — metrics now come from real API data)
@@ -780,6 +669,24 @@
       url:    'https://attack.mitre.org/groups/G1017/'
     },
     {
+      name:   'Salt Typhoon',
+      nation: 'China (MSS)',
+      sector: 'Telecom / ISP',
+      url:    'https://attack.mitre.org/groups/G1045/'
+    },
+    {
+      name:   'Scattered Spider',
+      nation: 'eCrime',
+      sector: 'Identity / social engineering',
+      url:    'https://attack.mitre.org/groups/G1015/'
+    },
+    {
+      name:   'RansomHub',
+      nation: 'Crimeware',
+      sector: 'Ransomware-as-a-service',
+      url:    'https://attack.mitre.org/groups/G1075/'
+    },
+    {
       name:   'APT28 / Fancy Bear',
       nation: 'Russia (GRU)',
       sector: 'Espionage',
@@ -790,18 +697,6 @@
       nation: 'North Korea',
       sector: 'Financial / espionage',
       url:    'https://attack.mitre.org/groups/G0032/'
-    },
-    {
-      name:   'Salt Typhoon',
-      nation: 'China',
-      sector: 'Telecom / ISP',
-      url:    'https://attack.mitre.org/groups/G1045/'
-    },
-    {
-      name:   'RansomHub',
-      nation: 'Crimeware',
-      sector: 'Ransomware-as-a-service',
-      url:    'https://attack.mitre.org/groups/G1075/'
     },
   ];
 
@@ -1143,5 +1038,112 @@
     `;
     document.head.appendChild(s);
   })();
+
+  /* ═══════════════════════════════════════════════════════════
+     24. CVES PAGE — dynamic CVE index (cves.html)
+     Renders the table from digest.json, rebuilds vendor chips from
+     live data, populates stats, refreshes hourly. Static rows in the
+     HTML act as a no-JS / fetch-failure fallback.
+  ═══════════════════════════════════════════════════════════ */
+  function initCvesPage(){
+    const tbody = document.querySelector('[data-cve-tbody]');
+    if (!tbody) return;
+
+    const esc  = s => (s == null ? '' : String(s)).replace(/[&<>"]/g,
+      c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    const slug = v => (v || '').toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24);
+    const sevShort = sev => {
+      const s = (sev || '').toLowerCase();
+      if (s.startsWith('crit')) return 'crit';
+      if (s.startsWith('high')) return 'high';
+      if (s.startsWith('med') || s === 'mid') return 'mid';
+      return 'low';
+    };
+
+    function buildVendorChips(rows){
+      const wrap = document.querySelector('[data-vendor-chips]');
+      if (!wrap) return;
+      const count = {};
+      rows.forEach(c => {
+        const v = c.vendor; if (!v) return;
+        const s = slug(v); if (!s) return;
+        (count[s] = count[s] || {n: 0, label: v}).n++;
+      });
+      const top = Object.entries(count).sort((a, b) => b[1].n - a[1].n).slice(0, 12);
+      if (!top.length) return;
+      wrap.innerHTML = top.map(([s, o]) =>
+        '<button class="chip" data-vendor-filter="' + s + '">' + esc(o.label) + '</button>'
+      ).join('');
+    }
+
+    function populateStats(digest){
+      const st = digest.stats || {};
+      const vals = [st.total_cves, st.critical,
+        (st.kev_7d != null ? st.kev_7d : digest.kev_7d), st.exploited];
+      document.querySelectorAll('.cves-stats .cves-stat [data-metric]').forEach((el, i) => {
+        if (vals[i] != null) el.textContent = vals[i];
+      });
+      const epssHigh = document.querySelector('[data-digest-epss-high]');
+      if (epssHigh && st.epss_enriched != null) epssHigh.textContent = st.epss_enriched;
+      const ioc = document.querySelector('[data-digest-ioc-count]');
+      if (ioc && st.threatfox_iocs != null) ioc.textContent = st.threatfox_iocs;
+    }
+
+    function render(digest){
+      if (!digest || !Array.isArray(digest.cves) || !digest.cves.length) return false;
+      const kevMap = {};
+      (digest.kev || []).forEach(k => { if (k.cveID) kevMap[k.cveID.toUpperCase()] = k; });
+
+      const rows = digest.cves.filter(c => c.id && c.id.indexOf('CVE-') === 0).slice();
+      rows.sort((a, b) => {
+        const ax = (a.kev || a.exploited) ? 1 : 0, bx = (b.kev || b.exploited) ? 1 : 0;
+        if (bx !== ax) return bx - ax;
+        if ((b.cvss || 0) !== (a.cvss || 0)) return (b.cvss || 0) - (a.cvss || 0);
+        return (b.published || '').localeCompare(a.published || '');
+      });
+
+      tbody.innerHTML = rows.map(c => {
+        const sc        = sevShort(c.severity);
+        const exploited = !!(c.kev || c.exploited);
+        const k         = kevMap[(c.id || '').toUpperCase()];
+        const vendor    = c.vendor || (k && k.vendorProject) || '';
+        const product   = c.product || (k && k.product) || '';
+        const vp        = vendor ? (product ? vendor + ' · ' + product : vendor) : (product || '—');
+        const cats      = [sc, exploited ? 'kev' : ''].filter(Boolean).join(' ');
+        const score     = (c.cvss != null && c.cvss > 0) ? c.cvss.toFixed(1) : '—';
+        const epss      = (c.epss && c.epss.epss != null)
+          ? ' <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim)">· EPSS ' + (c.epss.epss * 100).toFixed(0) + '%</span>' : '';
+        const added     = (k && k.dateAdded) ? k.dateAdded : ((c.published || '').slice(0, 10) || '—');
+        const status    = exploited
+          ? '<span class="badge">Exploited</span>'
+          : '<span class="badge" style="color:var(--fg-muted);border-color:var(--hairline-2);background:transparent">Not known</span>';
+        const url = c.nvdUrl || ('https://nvd.nist.gov/vuln/detail/' + c.id);
+        return '<tr data-cats="' + cats + '" data-vendor="' + slug(vendor) + '" ' +
+          'onclick="window.open(\'' + url + '\',\'_blank\',\'noopener\')">' +
+          '<td class="id"><a href="' + url + '" target="_blank" rel="noopener">' + esc(c.id) + '</a></td>' +
+          '<td class="vendor">' + esc(vp) + '</td>' +
+          '<td class="title">' + esc((c.desc || '').slice(0, 160)) + (c.desc && c.desc.length > 160 ? '…' : '') + epss + '</td>' +
+          '<td class="score"><span class="pill ' + sc + '">' + score + '</span></td>' +
+          '<td class="kev">' + status + '</td>' +
+          '<td class="added">' + esc(added) + '</td>' +
+          '<td class="refs"><a href="' + url + '" target="_blank" rel="noopener">NVD</a></td>' +
+        '</tr>';
+      }).join('');
+
+      buildVendorChips(rows);
+      populateStats(digest);
+      if (typeof applyTableFilters === 'function') applyTableFilters();
+      return true;
+    }
+
+    async function load(){
+      try { sessionStorage.removeItem('cd_digest_v2'); } catch {}
+      const digest = await fetchDigestFeed();
+      render(digest); // on null/empty, static fallback rows stay in place
+    }
+    load();
+    setInterval(load, 60 * 60 * 1000); // hourly refresh
+  }
+  initCvesPage();
 
 })();
