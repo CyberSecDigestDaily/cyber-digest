@@ -1102,10 +1102,11 @@
         const s = slug(v); if (!s) return;
         (count[s] = count[s] || {n: 0, label: v}).n++;
       });
-      const top = Object.entries(count).sort((a, b) => b[1].n - a[1].n).slice(0, 12);
+      const top = Object.entries(count).sort((a, b) => b[1].n - a[1].n).slice(0, 30);
       if (!top.length) return;
       wrap.innerHTML = top.map(([s, o]) =>
-        '<button class="chip" data-vendor-filter="' + s + '">' + esc(o.label) + '</button>'
+        '<button class="chip" data-vendor-filter="' + s + '">' + esc(o.label) +
+        ' <span style="opacity:.5">' + o.n + '</span></button>'
       ).join('');
     }
 
@@ -1169,10 +1170,38 @@
       return true;
     }
 
+    function renderIOCPanel(digest){
+      const el = document.querySelector('[data-ioc-panel]');
+      if (!el) return;
+      const iocs = (digest && digest.threatfox) || [];
+      if (!iocs.length){
+        el.innerHTML = '<p style="color:var(--fg-dim);font-size:13px;font-family:var(--font-mono)">IOC feed updates with the daily digest — run pending.</p>';
+        return;
+      }
+      const rows = iocs.slice(0, 40).map(i => {
+        const ioc  = esc((i.ioc || '').slice(0, 60));
+        const conf = (i.confidence != null) ? i.confidence + '%' : '—';
+        return '<tr>' +
+          '<td class="id" style="max-width:280px;overflow:hidden;text-overflow:ellipsis">' + ioc + '</td>' +
+          '<td class="vendor">' + esc(i.ioc_type || '') + '</td>' +
+          '<td class="vendor">' + esc(i.malware || i.threat_type || '') + '</td>' +
+          '<td class="added">' + esc((i.first_seen || '').slice(0, 10)) + '</td>' +
+          '<td class="score"><span class="pill mid">' + conf + '</span></td>' +
+        '</tr>';
+      }).join('');
+      el.innerHTML =
+        '<div class="cve-table-wrap" style="margin:0">' +
+        '<table class="cve-table"><thead><tr>' +
+        '<th>Indicator</th><th class="vendor-h">Type</th><th class="vendor-h">Malware / Threat</th>' +
+        '<th class="added-h">First seen</th><th>Confidence</th>' +
+        '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+    }
+
     async function load(){
       try { sessionStorage.removeItem('cd_digest_v2'); } catch {}
       const digest = await fetchDigestFeed();
-      render(digest); // on null/empty, static fallback rows stay in place
+      render(digest);        // on null/empty, static fallback rows stay in place
+      renderIOCPanel(digest); // ThreatFox IOCs (present only in digest.json)
     }
     load();
     setInterval(load, 60 * 60 * 1000); // hourly refresh

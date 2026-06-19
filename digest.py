@@ -25,9 +25,9 @@ GMAIL_PASS      = os.environ.get("GMAIL_APP_PASSWORD", "")
 EMAIL_TO        = os.environ.get("EMAIL_TO", "")
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 
-CVE_LOOKBACK_HOURS = 48
-MAX_CVES           = 200   # cap stored after pagination (was 50 — silently truncated busy windows)
-NVD_PAGE_SIZE      = 2000  # NVD 2.0 max resultsPerPage; one page usually covers a 48h window
+CVE_LOOKBACK_HOURS = 168   # 7-day window — full CVE index for cves.html, not just exploited
+MAX_CVES           = 1000  # comprehensive index; paginated fetch below handles the volume
+NVD_PAGE_SIZE      = 2000  # NVD 2.0 max resultsPerPage
 MAX_KEV            = 50
 MAX_PER_FEED       = 8
 
@@ -183,7 +183,7 @@ def fetch_nvd_cves() -> list:
 
         cves.append({
             "id":          cid,
-            "desc":        desc,
+            "desc":        desc[:300],   # trimmed to keep digest.json size sane at 1000 CVEs
             "cvss":        round(score, 1),
             "vector":      vector,
             "severity":    cvss_severity(score),
@@ -425,7 +425,7 @@ def calc_urgency(cves: list, kev: list) -> dict:
                 "message": f"<strong>{len(crits)} critical CVE(s)</strong> and <strong>{len(kev_7d)} new KEV addition(s)</strong> in the last 7 days. Review immediately."}
     if crits:
         return {"level": "HIGH", "colour": "#D07A25",
-                "message": f"<strong>{len(crits)} critical CVE(s)</strong> published in the last {CVE_LOOKBACK_HOURS}h. Review before standup."}
+                "message": f"<strong>{len(crits)} critical CVE(s)</strong> published in the past week. Review before standup."}
     if kev_7d:
         return {"level": "ELEVATED", "colour": "#C4A820",
                 "message": f"<strong>{len(kev_7d)} new CISA KEV addition(s)</strong> this week. Patch validation recommended."}
