@@ -838,13 +838,18 @@
   async function fetchDigestFeed(){
     const cached = getCached('cd_digest_v2');
     if (cached) return cached;
-    try {
-      const r = await fetch('/digest.json', {signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined});
-      if (!r.ok) throw new Error('digest.json ' + r.status);
-      const json = await r.json();
-      setCache('cd_digest_v2', json);
-      return json;
-    } catch { return null; }
+    // Prefer full digest.json; fall back to the lightweight feed.json snapshot
+    // (committed daily) so the page still has data before the first pipeline run.
+    for (const path of ['/digest.json', '/feed.json']){
+      try {
+        const r = await fetch(path, {signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined});
+        if (!r.ok) continue;
+        const json = await r.json();
+        setCache('cd_digest_v2', json);
+        return json;
+      } catch { /* try next */ }
+    }
+    return null;
   }
 
   /* ═══════════════════════════════════════════════════════════
@@ -852,11 +857,19 @@
   ═══════════════════════════════════════════════════════════ */
   function renderThreatFeed(digest){
     const el = document.querySelector('[data-threat-feed]');
-    if (!el || !digest) return;
-    const items = [...(digest.threats || []), ...(digest.news || [])]
+    if (!el) return;
+    // Accept digest.json (threats/news arrays) or feed.json (items array).
+    const source = (digest && (digest.threats || digest.news))
+      ? [...(digest.threats || []), ...(digest.news || [])]
+      : (digest && digest.items) ? digest.items : [];
+    const items = source
+      .slice()
       .sort((a, b) => (b.published || '').localeCompare(a.published || ''))
       .slice(0, 12);
-    if (!items.length) { el.closest('[data-threat-feed-section]').style.display = 'none'; return; }
+    if (!items.length) {
+      el.innerHTML = '<div style="padding:20px 14px;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim)">Feed updates with the daily digest — run pending.</div>';
+      return;
+    }
     el.innerHTML = items.map(item => {
       const age    = item.published ? fmtRel((Date.now() - new Date(item.published).getTime()) / 1000) : '';
       const catCls = item.category === 'threat' ? 'tag-threat' : 'tag-news';
@@ -885,7 +898,10 @@
       const lbl   = sevLabel(a.severity);
       const score = a.cvss ? ' · ' + a.cvss : '';
       const pkg   = a.pkg ? a.ecosystem + '/' + a.pkg : a.ecosystem;
-      return '<a class="gh-adv-item" href="' + a.url + '" target="_blank" rel="noopener">' +
+      const tip   = ('<div class="tip-id">' + (a.cve || a.id) + ' <span style="color:var(--fg-dim)">' + lbl + '</span></div>' +
+        (pkg ? '<div class="tip-vendor">' + pkg + (score ? '  ·  CVSS' + score : '') + '</div>' : '') +
+        '<div class="tip-desc">' + (a.summary || 'No summary available.') + '</div>').replace(/"/g, '&quot;');
+      return '<a class="gh-adv-item" href="' + a.url + '" target="_blank" rel="noopener" data-cve-tip="' + tip + '">' +
         '<span class="sev ' + cls + '">' + lbl + '</span>' +
         '<span class="gh-adv-id">' + (a.cve || a.id) + '</span>' +
         (pkg ? '<span class="gh-adv-pkg">' + pkg + score + '</span>' : '') +
@@ -901,7 +917,15 @@
       const pct  = (e.epss * 100).toFixed(1);
       const bar  = Math.round(e.epss * 100);
       const risk = e.epss >= 0.7 ? 'crit' : e.epss >= 0.4 ? 'high' : e.epss >= 0.1 ? 'mid' : 'low';
-      return '<a class="epss-item" href="https://nvd.nist.gov/vuln/detail/' + e.cve + '" target="_blank" rel="noopener">' +
+      const band = risk === 'crit' ? 'Critical exploit likelihood'
+                 : risk === 'high' ? 'High exploit likelihood'
+                 : risk === 'mid'  ? 'Elevated exploit likelihood' : 'Lower exploit likelihood';
+      const pctl = (e.percentile != null) ? (e.percentile * 100).toFixed(0) : null;
+      const tip  = ('<div class="tip-id">' + e.cve + '</div>' +
+        '<div class="tip-desc">' + band + ' — ' + pct + '% EPSS exploit probability' +
+        (pctl ? ' (ranks in the top ' + Math.max(1, 100 - pctl) + '% of all CVEs)' : '') + '.</div>' +
+        '<div class="tip-foot">Click for full NVD detail ↗</div>').replace(/"/g, '&quot;');
+      return '<a class="epss-item" href="https://nvd.nist.gov/vuln/detail/' + e.cve + '" target="_blank" rel="noopener" data-cve-tip="' + tip + '">' +
         '<span class="epss-cve">' + e.cve + '</span>' +
         '<span class="epss-bar-wrap"><span class="epss-bar-fill ' + risk + '" style="width:' + Math.min(bar, 100) + '%"></span></span>' +
         '<span class="epss-pct sev ' + risk + '">' + pct + '%</span>' +
@@ -943,13 +967,22 @@
       }
     }
 
-    if (digest.status === 'fulfilled' && digest.value){
-      renderThreatFeed(digest.value);
+    const dg = (digest.status === 'fulfilled') ? digest.value : null;
+    renderThreatFeed(dg); // handles null/empty with a friendly message
+    if (dg) {
       // Supplement urgency metric
       const urgEl = document.getElementById('console-urgency');
-      if (urgEl && digest.value.urgency) {
-        urgEl.textContent = digest.value.urgency.level;
-        urgEl.style.color = digest.value.urgency.colour || '';
+      if (urgEl && dg.urgency) {
+        urgEl.textContent = dg.urgency.level;
+        urgEl.style.color = dg.urgency.colour || '';
+      }
+      // Fallback for "New CVEs (7d)" when the live NVD count was blocked (CORS).
+      const cveEl = document.getElementById('console-cve7d');
+      const st    = dg.stats || {};
+      if (cveEl && !/^\d/.test(cveEl.textContent) && st.total_cves != null) {
+        cveEl.textContent = st.total_cves;
+        const sub = document.getElementById('console-cve7d-sub');
+        if (sub) sub.textContent = 'recent · via daily digest';
       }
     }
   }
