@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-18T20:16:37.013467+00:00",
+  "generated": "2026-06-19T02:54:52.155397+00:00",
   "urgency": {
     "level": "ELEVATED",
     "colour": "#C4A820",
-    "message": "<strong>6 new CISA KEV addition(s)</strong> this week. Patch validation recommended."
+    "message": "<strong>5 new CISA KEV addition(s)</strong> this week. Patch validation recommended."
   },
   "cves": [],
   "kev": [
@@ -755,8 +755,305 @@
       ]
     }
   ],
-  "kev_7d": 6,
+  "kev_7d": 5,
   "gh_advisories": [
+    {
+      "id": "GHSA-q59x-jc9f-gfqf",
+      "cve": "CVE-2026-55591",
+      "severity": "medium",
+      "summary": "Signal K Server: Server-Side Request Forgery via Remote Connection Endpoints",
+      "url": "https://github.com/advisories/GHSA-q59x-jc9f-gfqf",
+      "published": "2026-06-18T21:13:36Z",
+      "ecosystem": "npm",
+      "pkg": "signalk-server",
+      "cvss_score": 5.8
+    },
+    {
+      "id": "GHSA-5739-39v2-5754",
+      "cve": null,
+      "severity": "medium",
+      "summary": "PHP JWT Library: RSA1_5 (RSAES-PKCS1-v1_5) decryption lacks implicit rejection, exposing a Bleichenbacher/Marvin padding oracle",
+      "url": "https://github.com/advisories/GHSA-5739-39v2-5754",
+      "published": "2026-06-18T21:09:56Z",
+      "ecosystem": "composer",
+      "pkg": "web-token/jwt-library",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-jc38-x7x8-2xc8",
+      "cve": null,
+      "severity": "high",
+      "summary": "PHP JWT Framework: JWSVerifier uses algorithm from unprotected header, enabling algorithm confusion attacks",
+      "url": "https://github.com/advisories/GHSA-jc38-x7x8-2xc8",
+      "published": "2026-06-18T21:09:17Z",
+      "ecosystem": "composer",
+      "pkg": "web-token/jwt-framework",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-3prj-6hqw-cm82",
+      "cve": null,
+      "severity": "high",
+      "summary": "PHP JWT Library: PBES2-HS*+A*KW unwrap accepts an unbounded p2c iteration count, enabling CPU-amplification denial of service",
+      "url": "https://github.com/advisories/GHSA-3prj-6hqw-cm82",
+      "published": "2026-06-18T21:09:01Z",
+      "ecosystem": "composer",
+      "pkg": "web-token/jwt-library",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-6vvh-pxr4-25r7",
+      "cve": null,
+      "severity": "medium",
+      "summary": "PHP JWT Framework: Chacha20Poly1305 key-encryption algorithm discards the Poly1305 authentication tag, performing no authentication on decryption",
+      "url": "https://github.com/advisories/GHSA-6vvh-pxr4-25r7",
+      "published": "2026-06-18T21:08:15Z",
+      "ecosystem": "composer",
+      "pkg": "web-token/jwt-experimental",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-2jx3-65f3-xr8r",
+      "cve": null,
+      "severity": "medium",
+      "summary": "spomky-labs/otphp: Mass-assignment in Factory::loadFromProvisioningUri lets a hostile provisioning URI corrupt OTP state or leak an uncaught TypeError",
+      "url": "https://github.com/advisories/GHSA-2jx3-65f3-xr8r",
+      "published": "2026-06-18T21:07:41Z",
+      "ecosystem": "composer",
+      "pkg": "spomky-labs/otphp",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-g7m4-839x-ch6v",
+      "cve": null,
+      "severity": "high",
+      "summary": "spomky-labs/otphp: Unbounded digits parameter in a provisioning URI triggers an uncaught DivisionByZeroError in OTP generation",
+      "url": "https://github.com/advisories/GHSA-g7m4-839x-ch6v",
+      "published": "2026-06-18T20:45:47Z",
+      "ecosystem": "composer",
+      "pkg": "spomky-labs/otphp",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-4h5r-5jm8-jxjm",
+      "cve": "CVE-2026-0755",
+      "severity": "critical",
+      "summary": "gemini-mcp-tool vulnerable to OS command injection and @file exfiltration via prompt quoting (CVE-2026-0755)",
+      "url": "https://github.com/advisories/GHSA-4h5r-5jm8-jxjm",
+      "published": "2026-06-18T20:44:58Z",
+      "ecosystem": "npm",
+      "pkg": "gemini-mcp-tool",
+      "cvss_score": 9.8
+    },
+    {
+      "id": "GHSA-4hpg-mp64-x7xq",
+      "cve": "CVE-2026-53854",
+      "severity": "medium",
+      "summary": "OpenClaw: Internal/webchat command auth could inherit ownerAllowFrom wildcard state",
+      "url": "https://github.com/advisories/GHSA-4hpg-mp64-x7xq",
+      "published": "2026-06-18T20:44:06Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-8mg9-j9cf-54cj",
+      "cve": "CVE-2026-53852",
+      "severity": "low",
+      "summary": "OpenClaw: Empty-scope device re-pairing could confuse caller scope containment",
+      "url": "https://github.com/advisories/GHSA-8mg9-j9cf-54cj",
+      "published": "2026-06-18T20:42:40Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 5.4
+    },
+    {
+      "id": "GHSA-rx78-29qr-5hq8",
+      "cve": "CVE-2026-53865",
+      "severity": "high",
+      "summary": "OpenClaw: Workspace-derived service PATH could influence trash command selection",
+      "url": "https://github.com/advisories/GHSA-rx78-29qr-5hq8",
+      "published": "2026-06-18T20:41:36Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-wc84-j36w-pw4x",
+      "cve": "CVE-2026-53858",
+      "severity": "high",
+      "summary": "OpenClaw: Workspace .env STATE_DIRECTORY could influence bundled runtime dependency roots",
+      "url": "https://github.com/advisories/GHSA-wc84-j36w-pw4x",
+      "published": "2026-06-18T20:39:19Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-cw4q-gqg5-g38h",
+      "cve": "CVE-2026-53849",
+      "severity": "high",
+      "summary": "OpenClaw: Discord allowFrom could bind to mutable display names",
+      "url": "https://github.com/advisories/GHSA-cw4q-gqg5-g38h",
+      "published": "2026-06-18T20:36:31Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 8.1
+    },
+    {
+      "id": "GHSA-mpc8-jxjh-qpgh",
+      "cve": "CVE-2026-53850",
+      "severity": "medium",
+      "summary": "OpenClaw: Focus command could miss controlScope enforcement",
+      "url": "https://github.com/advisories/GHSA-mpc8-jxjh-qpgh",
+      "published": "2026-06-18T20:34:46Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-24vr-rprv-67rf",
+      "cve": "CVE-2026-53846",
+      "severity": "high",
+      "summary": "OpenClaw: Workspace .env npm_execpath could influence bundled runtime dependency install",
+      "url": "https://github.com/advisories/GHSA-24vr-rprv-67rf",
+      "published": "2026-06-18T20:33:54Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-v2ww-5rh7-2h5v",
+      "cve": "CVE-2026-53853",
+      "severity": "high",
+      "summary": "OpenClaw: Linux and macOS exec allowlists skipped configured argument patterns",
+      "url": "https://github.com/advisories/GHSA-v2ww-5rh7-2h5v",
+      "published": "2026-06-18T20:33:22Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-8j37-5w68-wj2g",
+      "cve": "CVE-2026-53860",
+      "severity": "low",
+      "summary": "OpenClaw: BlueBubbles sender policy could match mutable conversation identifiers",
+      "url": "https://github.com/advisories/GHSA-8j37-5w68-wj2g",
+      "published": "2026-06-18T20:32:21Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 4.2
+    },
+    {
+      "id": "GHSA-72fw-cqh5-f324",
+      "cve": "CVE-2026-53844",
+      "severity": "medium",
+      "summary": "OpenClaw: memory-wiki shared search could miss session visibility checks",
+      "url": "https://github.com/advisories/GHSA-72fw-cqh5-f324",
+      "published": "2026-06-18T20:31:46Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 6.5
+    },
+    {
+      "id": "GHSA-rwp6-7w3q-75fq",
+      "cve": "CVE-2026-53856",
+      "severity": "medium",
+      "summary": "OpenClaw: Config recovery could restore openclaw.json with broad file permissions",
+      "url": "https://github.com/advisories/GHSA-rwp6-7w3q-75fq",
+      "published": "2026-06-18T20:29:50Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 5.5
+    },
+    {
+      "id": "GHSA-8c59-hr4w-qg69",
+      "cve": "CVE-2026-53857",
+      "severity": "high",
+      "summary": "OpenClaw: Zalo allowFrom could bind to mutable display names",
+      "url": "https://github.com/advisories/GHSA-8c59-hr4w-qg69",
+      "published": "2026-06-18T20:17:50Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 8.1
+    },
+    {
+      "id": "GHSA-68xw-r643-9p5w",
+      "cve": "CVE-2026-53845",
+      "severity": "low",
+      "summary": "OpenClaw: Skill-command dispatch could skip before-tool-call hooks",
+      "url": "https://github.com/advisories/GHSA-68xw-r643-9p5w",
+      "published": "2026-06-18T20:16:30Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 4.3
+    },
+    {
+      "id": "GHSA-x629-46cc-7xgw",
+      "cve": "CVE-2026-53847",
+      "severity": "medium",
+      "summary": "OpenClaw: Active Memory write scope could mutate global config",
+      "url": "https://github.com/advisories/GHSA-x629-46cc-7xgw",
+      "published": "2026-06-18T20:15:20Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-w9hf-3pp7-pvxv",
+      "cve": "CVE-2026-53841",
+      "severity": "medium",
+      "summary": "OpenClaw: Exported session HTML could keep unsafe markdown links",
+      "url": "https://github.com/advisories/GHSA-w9hf-3pp7-pvxv",
+      "published": "2026-06-18T20:14:40Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 6.1
+    },
+    {
+      "id": "GHSA-fcvx-5cxc-v5p8",
+      "cve": "CVE-2026-53851",
+      "severity": "medium",
+      "summary": "OpenClaw: Slack reaction events could ignore reaction notification settings",
+      "url": "https://github.com/advisories/GHSA-fcvx-5cxc-v5p8",
+      "published": "2026-06-18T20:13:11Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 5.3
+    },
+    {
+      "id": "GHSA-9v8j-9c9g-w66c",
+      "cve": "CVE-2026-53862",
+      "severity": "low",
+      "summary": "OpenClaw: Bootstrap token replay could widen pending pairing scopes",
+      "url": "https://github.com/advisories/GHSA-9v8j-9c9g-w66c",
+      "published": "2026-06-18T20:12:43Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 4.2
+    },
+    {
+      "id": "GHSA-5cj2-3jr2-5h77",
+      "cve": "CVE-2026-53855",
+      "severity": "high",
+      "summary": "OpenClaw: Shell positional parameters could weaken strict inline-eval checks",
+      "url": "https://github.com/advisories/GHSA-5cj2-3jr2-5h77",
+      "published": "2026-06-18T20:12:12Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 8.1
+    },
+    {
+      "id": "GHSA-gxg4-2rrr-jhc7",
+      "cve": "CVE-2026-53859",
+      "severity": "medium",
+      "summary": "OpenClaw: Hostname checks could treat trailing-dot hosts inconsistently",
+      "url": "https://github.com/advisories/GHSA-gxg4-2rrr-jhc7",
+      "published": "2026-06-18T20:11:31Z",
+      "ecosystem": "npm",
+      "pkg": "openclaw",
+      "cvss_score": 6.5
+    },
     {
       "id": "GHSA-cwpp-5962-q4f6",
       "cve": "CVE-2026-53848",
@@ -789,303 +1086,6 @@
       "ecosystem": "pip",
       "pkg": "crawl4ai",
       "cvss_score": 10.0
-    },
-    {
-      "id": "GHSA-2jq4-q6vv-4cp3",
-      "cve": null,
-      "severity": "critical",
-      "summary": "Crawl4AI: Arbitrary file write (path traversal) in crawler downloads can lead to RCE",
-      "url": "https://github.com/advisories/GHSA-2jq4-q6vv-4cp3",
-      "published": "2026-06-18T17:25:13Z",
-      "ecosystem": "pip",
-      "pkg": "crawl4ai",
-      "cvss_score": 9.6
-    },
-    {
-      "id": "GHSA-qqf5-x7mj-v43p",
-      "cve": null,
-      "severity": "high",
-      "summary": "budibase: Database Connector SQL Injections in PostgreSQL, MS SQL, and MySQL",
-      "url": "https://github.com/advisories/GHSA-qqf5-x7mj-v43p",
-      "published": "2026-06-18T17:24:47Z",
-      "ecosystem": "npm",
-      "pkg": "budibase",
-      "cvss_score": 8.4
-    },
-    {
-      "id": "GHSA-gfj5-979r-92pw",
-      "cve": null,
-      "severity": "critical",
-      "summary": "@acastellon/auth: Authentication bypass via spoofable headers in validateToken()",
-      "url": "https://github.com/advisories/GHSA-gfj5-979r-92pw",
-      "published": "2026-06-18T17:22:47Z",
-      "ecosystem": "npm",
-      "pkg": "@acastellon/auth",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-hgw6-8c77-v4gq",
-      "cve": "CVE-2026-11752",
-      "severity": "medium",
-      "summary": "Armeria: External Control of File Name or Path in xDS SDS DataSource",
-      "url": "https://github.com/advisories/GHSA-hgw6-8c77-v4gq",
-      "published": "2026-06-18T17:22:17Z",
-      "ecosystem": "maven",
-      "pkg": "com.linecorp.armeria:armeria-xds",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-hxpf-9xvq-wph8",
-      "cve": null,
-      "severity": "critical",
-      "summary": "netlicensing-mcp: REST Path Traversal Bypasses Token Redaction",
-      "url": "https://github.com/advisories/GHSA-hxpf-9xvq-wph8",
-      "published": "2026-06-18T17:22:02Z",
-      "ecosystem": "pip",
-      "pkg": "netlicensing-mcp",
-      "cvss_score": 9.6
-    },
-    {
-      "id": "GHSA-fq4x-789w-jg5h",
-      "cve": null,
-      "severity": "high",
-      "summary": "AgenticMail: Unauthenticated inbound mail triggers bypassPermissions resume of the operator's Claude Code session (bridge-wake)",
-      "url": "https://github.com/advisories/GHSA-fq4x-789w-jg5h",
-      "published": "2026-06-18T17:21:27Z",
-      "ecosystem": "npm",
-      "pkg": "@agenticmail/core",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-hjwc-26pj-v3pm",
-      "cve": null,
-      "severity": "high",
-      "summary": "AgenticMail: Cross-agent task authorization bypass in AgenticMail API",
-      "url": "https://github.com/advisories/GHSA-hjwc-26pj-v3pm",
-      "published": "2026-06-18T17:20:55Z",
-      "ecosystem": "npm",
-      "pkg": "@agenticmail/api",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-jr45-52cw-69h5",
-      "cve": "CVE-2026-54683",
-      "severity": "medium",
-      "summary": "NL Portal Backend Libraries: Document contents remained downloadable by any logged-in user (incomplete fix of CVE-2026-49463)",
-      "url": "https://github.com/advisories/GHSA-jr45-52cw-69h5",
-      "published": "2026-06-18T17:20:14Z",
-      "ecosystem": "maven",
-      "pkg": "nl.nl-portal:documenten-api",
-      "cvss_score": 6.5
-    },
-    {
-      "id": "GHSA-fjv8-j4p5-cr9m",
-      "cve": "CVE-2026-54319",
-      "severity": "medium",
-      "summary": "Daytona: Path traversal in sandbox volume id mounts arbitrary host paths into the sandbox \u2014 cross-tenant data access and host escape",
-      "url": "https://github.com/advisories/GHSA-fjv8-j4p5-cr9m",
-      "published": "2026-06-18T17:19:51Z",
-      "ecosystem": "go",
-      "pkg": "github.com/daytonaio/daytona",
-      "cvss_score": 4.2
-    },
-    {
-      "id": "GHSA-cf98-j28v-49v6",
-      "cve": "CVE-2026-55170",
-      "severity": "low",
-      "summary": "OpenFGA Improper Policy Enforcement",
-      "url": "https://github.com/advisories/GHSA-cf98-j28v-49v6",
-      "published": "2026-06-18T15:05:30Z",
-      "ecosystem": "go",
-      "pkg": "github.com/openfga/openfga",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-x5mv-8wgw-29hg",
-      "cve": "CVE-2026-55093",
-      "severity": "medium",
-      "summary": "tract-nnef: integer overflow in NNEF `.dat` tensor parser yields an out-of-bounds read on model load",
-      "url": "https://github.com/advisories/GHSA-x5mv-8wgw-29hg",
-      "published": "2026-06-18T15:05:23Z",
-      "ecosystem": "rust",
-      "pkg": "tract-nnef",
-      "cvss_score": 6.1
-    },
-    {
-      "id": "GHSA-mpx4-jmpr-vm8v",
-      "cve": "CVE-2026-54711",
-      "severity": "low",
-      "summary": "PGHoard: Password written to debug log",
-      "url": "https://github.com/advisories/GHSA-mpx4-jmpr-vm8v",
-      "published": "2026-06-18T15:05:20Z",
-      "ecosystem": "pip",
-      "pkg": "pghoard",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-j8cv-x86q-rj85",
-      "cve": "CVE-2026-54695",
-      "severity": "high",
-      "summary": "Pipecat: Telephony WebSocket `/ws` Unauthenticated Call-Control Abuse via Attacker-Supplied Call SID",
-      "url": "https://github.com/advisories/GHSA-j8cv-x86q-rj85",
-      "published": "2026-06-18T15:05:17Z",
-      "ecosystem": "pip",
-      "pkg": "pipecat-ai",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-w5cv-pw74-4rxc",
-      "cve": "CVE-2026-55701",
-      "severity": "medium",
-      "summary": "opentelemetry-collector-contrib: githubreceiver silently ignores configured required_headers authentication",
-      "url": "https://github.com/advisories/GHSA-w5cv-pw74-4rxc",
-      "published": "2026-06-18T15:05:14Z",
-      "ecosystem": "go",
-      "pkg": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/githubreceiver",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-r3w8-2c5r-h9j9",
-      "cve": "CVE-2026-54005",
-      "severity": "high",
-      "summary": "Kirby: `pages.access` permission is not checked in the `site/find` REST API route",
-      "url": "https://github.com/advisories/GHSA-r3w8-2c5r-h9j9",
-      "published": "2026-06-18T15:05:11Z",
-      "ecosystem": "composer",
-      "pkg": "getkirby/cms",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-89cp-7p28-jffg",
-      "cve": "CVE-2026-54004",
-      "severity": "medium",
-      "summary": "Kirby: Access to files of top-level drafts is not protected by permissions",
-      "url": "https://github.com/advisories/GHSA-89cp-7p28-jffg",
-      "published": "2026-06-18T15:05:05Z",
-      "ecosystem": "composer",
-      "pkg": "getkirby/cms",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-whxw-24jc-cwmv",
-      "cve": "CVE-2026-54003",
-      "severity": "critical",
-      "summary": "Kirby: External Initialization of the Panel on reverse proxy setups with the `Forwarded` header",
-      "url": "https://github.com/advisories/GHSA-whxw-24jc-cwmv",
-      "published": "2026-06-18T15:04:57Z",
-      "ecosystem": "composer",
-      "pkg": "getkirby/cms",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-wr9h-4r83-f4v6",
-      "cve": "CVE-2026-54002",
-      "severity": "high",
-      "summary": "Kirby: Cross-site scripting (XSS) from incomplete HTML/XML sanitization in `Dom::sanitize()`",
-      "url": "https://github.com/advisories/GHSA-wr9h-4r83-f4v6",
-      "published": "2026-06-18T15:04:52Z",
-      "ecosystem": "composer",
-      "pkg": "getkirby/cms",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-4v4h-m2qq-ppgw",
-      "cve": "CVE-2026-50188",
-      "severity": "medium",
-      "summary": "Kirby: Request header injection in `Http\\Remote`",
-      "url": "https://github.com/advisories/GHSA-4v4h-m2qq-ppgw",
-      "published": "2026-06-18T15:04:46Z",
-      "ecosystem": "composer",
-      "pkg": "getkirby/cms",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-rhj6-r49h-5932",
-      "cve": "CVE-2026-49276",
-      "severity": "high",
-      "summary": "Kirby: Self cross-site scripting (self-XSS) in the writer field",
-      "url": "https://github.com/advisories/GHSA-rhj6-r49h-5932",
-      "published": "2026-06-18T15:04:41Z",
-      "ecosystem": "composer",
-      "pkg": "getkirby/cms",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-23q2-54qv-rq5x",
-      "cve": "CVE-2026-49274",
-      "severity": "medium",
-      "summary": "Kirby: `pages.access` permission is not checked in the pages picker for parent pages",
-      "url": "https://github.com/advisories/GHSA-23q2-54qv-rq5x",
-      "published": "2026-06-18T15:04:14Z",
-      "ecosystem": "composer",
-      "pkg": "getkirby/cms",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-4jvg-4jfx-fmhc",
-      "cve": "CVE-2026-47256",
-      "severity": "medium",
-      "summary": "opentelemetry-collector-contrib sentryexporter: Path traversal in Sentry exporter via attacker-controlled service.name reaches privileged Sentry API endpoints with operator bearer token",
-      "url": "https://github.com/advisories/GHSA-4jvg-4jfx-fmhc",
-      "published": "2026-06-18T15:04:10Z",
-      "ecosystem": "go",
-      "pkg": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/sentryexporter",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-fcw5-x6j4-ccmp",
-      "cve": "CVE-2026-44727",
-      "severity": "critical",
-      "summary": "Jupyter Server: Stored XSS in `NbconvertFileHandler` / `NbconvertPostHandler` via missing `sandbox` CSP ",
-      "url": "https://github.com/advisories/GHSA-fcw5-x6j4-ccmp",
-      "published": "2026-06-18T15:04:07Z",
-      "ecosystem": "pip",
-      "pkg": "jupyter-server",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-rvp7-w75q-9fv2",
-      "cve": "CVE-2026-12567",
-      "severity": "low",
-      "summary": "BBOT: Symlink-Following Arbitrary Write via github_workflows Module",
-      "url": "https://github.com/advisories/GHSA-rvp7-w75q-9fv2",
-      "published": "2026-06-18T15:04:00Z",
-      "ecosystem": "pip",
-      "pkg": "bbot",
-      "cvss_score": 2.2
-    },
-    {
-      "id": "GHSA-m54h-vhf9-3w3m",
-      "cve": "CVE-2026-12568",
-      "severity": "medium",
-      "summary": "BBOT: Arbitrary File Write in postman_download Module",
-      "url": "https://github.com/advisories/GHSA-m54h-vhf9-3w3m",
-      "published": "2026-06-18T15:03:38Z",
-      "ecosystem": "pip",
-      "pkg": "bbot",
-      "cvss_score": 6.5
-    },
-    {
-      "id": "GHSA-3mp7-vp6j-2mxx",
-      "cve": "CVE-2026-12566",
-      "severity": "low",
-      "summary": "BBOT: Server-Side Request Forgery (SSRF) in docker_pull module via WWW-Authenticate realm parsing",
-      "url": "https://github.com/advisories/GHSA-3mp7-vp6j-2mxx",
-      "published": "2026-06-18T15:03:25Z",
-      "ecosystem": "pip",
-      "pkg": "bbot",
-      "cvss_score": 3.1
-    },
-    {
-      "id": "GHSA-3vgw-585j-4m45",
-      "cve": "CVE-2026-12565",
-      "severity": "medium",
-      "summary": "BBOT: Path traversal (Zip-Slip) in unarchive module - incomplete fix for CVE-2025-10284",
-      "url": "https://github.com/advisories/GHSA-3vgw-585j-4m45",
-      "published": "2026-06-18T15:02:35Z",
-      "ecosystem": "pip",
-      "pkg": "bbot",
-      "cvss_score": 5.3
     }
   ],
   "threatfox": [],
@@ -1164,60 +1164,68 @@
       "summary": "Oracle released its\u00a0third quarterly edition of this year\u2019s Critical Patch Update. The update received patches for\u00a0245\u00a0security vulnerabilities. Some of the vulnerabilities addressed in this update impact more than one product. These patches address vulnerabilities in various product families, includ"
     },
     {
-      "title": "Schneider Electric Easergy, EcoStruxture, PowerLogic, and Saitel Products",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-07",
-      "source": "CISA ICS",
+      "title": "CVE-2026-47633 Microsoft Cost Management Information Disclosure Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47633",
+      "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-06-18T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSchneider Electric is aware of vulnerabilities in its PowerChute\u2122 Serial Shutdown product. The [PowerChute Serial Shutdown](https://www.se.com/ww/en/product-range/137943580-powerchute-serial-shutdown/#products) product is a UPS management software enabling graceful system shutdown "
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Exposure of sensitive information to an unauthorized actor in Cost Management Interactive Experiences allows an unauthorized attacker to disclose information over a network."
     },
     {
-      "title": "Mitsubishi Electric Co.'s MELSEC iQ-F Series FX5-ENET/IP Ethernet Module",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-06",
-      "source": "CISA ICS",
+      "title": "CVE-2026-32208 Microsoft Edge (Chromium-based) Spoofing Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32208",
+      "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-06-18T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of this vulnerability could allow a remote attacker to cause a denial-of-service (DoS) condition in the affected product by continuously sending a large number of communication packets to the Ethernet port of the product in a short period of time, increasing"
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Edge (Chromium-based) allows an authorized attacker to perform spoofing over a network."
     },
     {
-      "title": "Schneider Electric EasyLogic T150 and Saitel DP",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-04",
-      "source": "CISA ICS",
+      "title": "CVE-2026-32174 Azure Bot Service Elevation of Privilege Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32174",
+      "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-06-18T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation this vulnerability could allow an attacker to gain unauthorized access to sensitive files\nThe following versions of Schneider Electric EasyLogic T150 and Saitel DP are affected:\n\nSchneider Electric EasyLogic T150 (formerly Saitel DR) Remote Terminal Unit &am"
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Improper authentication in Azure Bot Service allows an authorized attacker to elevate privileges over a network."
     },
     {
-      "title": "Mitsubishi Electric MELSEC iQ-F Series",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-05",
-      "source": "CISA ICS",
+      "title": "CVE-2026-45480 Azure Active Directory Elevation of Privilege Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45480",
+      "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-06-18T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of this vulnerability could allow a remote attacker to cause a denial-of-service (DoS) condition in the affected product by rapidly establishing a large number of TCP connections to it, resulting in an inconsistency in the product's internal connection manag"
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Improper authentication in Azure Active Directory allows an unauthorized attacker to elevate privileges over a network."
     },
     {
-      "title": "Rockwell Automation FactoryTalk Historian Site Edition",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-03",
-      "source": "CISA ICS",
+      "title": "CVE-2026-42895 Microsoft Copilot Tampering Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42895",
+      "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-06-18T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of these vulnerabilities could allow an attacker to obtain a valid authentication token, perform a denial of service, or crash the system.\nThe following versions of Rockwell Automation FactoryTalk Historian Site Edition are affected:\n\nFactoryTalk Historian S"
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Improper neutralization of special elements used in a command ('command injection') in Microsoft Copilot allows an unauthorized attacker to perform tampering over a network."
     },
     {
-      "title": "AVer PTC cameras",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-01",
-      "source": "CISA ICS",
+      "title": "CVE-2026-54130 M365 Copilot Information Disclosure Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-54130",
+      "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-06-18T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of this vulnerability could allow arbitrary code execution.\nThe following versions of AVer PTC cameras are affected:\n\nPTC500S vers:all/* (CVE-2026-40624)\nPTC115 vers:all/* (CVE-2026-40624)\nPTC500+ vers:all/* (CVE-2026-40624)\nPTC115+ vers:all/* (CVE-2026-4062"
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Missing authentication for critical function in M365 Copilot allows an unauthorized attacker to disclose information over a network."
     },
     {
-      "title": "AzeoTech DAQFactory",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-02",
-      "source": "CISA ICS",
+      "title": "CVE-2026-47647 Dynamics 365 Elevation of Privilege Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47647",
+      "source": "Microsoft Security",
       "category": "threat",
-      "published": "2026-06-18T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of this vulnerability could allow an attacker to upload malicious .ctl files that may lead to arbitrary code execution.\nThe following versions of AzeoTech DAQFactory are affected:\n\nDAQFactory &lt;=21.1 (CVE-2026-12390)\n\n\n\n\n\nCVSS\nVendor\nEquipment\nVulnerabilit"
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Improper access control in Microsoft Dynamics 365 allows an authorized attacker to elevate privileges over a network."
+    },
+    {
+      "title": "CVE-2026-48584 Microsoft Azure Synapse Elevation of Privilege Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48584",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-18T14:00:00+00:00",
+      "summary": "Execution with unnecessary privileges in Azure Synapse allows an authorized attacker to elevate privileges over a network."
     },
     {
       "title": "Scripting the disassembler: Local agentic reverse engineering through vbdec\u2019s live COM object model",
@@ -1234,70 +1242,6 @@
       "category": "threat",
       "published": "2026-06-18T09:23:34+00:00",
       "summary": "Oracle addresses 243 CVEs in its June 2026 Critical Security Patch Update with 245 patches, including 122 critical updates.Key TakeawaysThe June 2026 Critical Security Patch Update (CSPU) contains fixes for 243 unique CVEs in 245 security updates122 issues (49.8% of all patches) were assigned a crit"
-    },
-    {
-      "title": "CVE-2026-28387 Potential Use-after-free in DANE Client Code",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-28387",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:50:00+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-43308 btrfs: don't BUG() on unexpected delayed ref type in run_one_delayed_ref()",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-43308",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:48:34+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2025-71072 shmem: fix recovery on rename failures",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-71072",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:48:17+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2025-71073 Input: lkkbd - disable pending work before freeing device",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-71073",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:48:00+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-45445 AES-OCB IV Ignored on EVP_Cipher() Path",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45445",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:46:59+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-45447 Heap Use-After-Free in the PKCS7_verify() Function",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45447",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:41:13+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-25681 Invoking  incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-25681",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:40:41+00:00",
-      "summary": "Information published."
-    },
-    {
-      "title": "CVE-2026-25680 Invoking denial of service when parsing arbitrary HTML in golang.org/x/net/html",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-25680",
-      "source": "Microsoft Security",
-      "category": "threat",
-      "published": "2026-06-18T08:40:25+00:00",
-      "summary": "Information published."
     },
     {
       "title": "Operationalize CISA BOD 26-04 with Tenable One",
@@ -1330,14 +1274,6 @@
       "category": "threat",
       "published": "2026-06-16T12:45:00+00:00",
       "summary": "Discover how continuous control validation in Tenable One can improve your CTEM program by filtering out alert noise and factoring in your active cyber defenses. Focus your team on accessible and exploitable attack paths.&nbsp;Key takeaways:With vulnerability exploitation ranking as the top initial "
-    },
-    {
-      "title": "Rockwell Automation FactoryTalk Analytics PavilionX",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-167-01",
-      "source": "CISA ICS",
-      "category": "threat",
-      "published": "2026-06-16T12:00:00+00:00",
-      "summary": "View CSAF\nSummary\nSuccessful exploitation of this vulnerability could result in an attacker executing privileged operations.\nThe following versions of Rockwell Automation FactoryTalk Analytics PavilionX are affected:\n\nFactoryTalk Analytics PavilionX &lt;7.01 (CVE-2025-14272)\n\n\n\n\n\nCVSS\nVendor\nEquipme"
     },
     {
       "title": "Pickle in the Middle \u2013 Hijacking Vertex AI Model Uploads for Cross-Tenant RCE",
@@ -1476,6 +1412,30 @@
       "summary": "We include indicators of activity and mitigations for PAN-OS vulnerability CVE-2026-0257.\nThe post Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 appeared first on Unit 42."
     },
     {
+      "title": "Improper access control in API endpoints",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-140",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2026-06-09T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 6.2\n\n\n An improper access control vulnerability [CWE-284] in FortiPortal API endpoints may allow a remote privileged attacker with organization user role to obtain sensitive network configuration data via crafted HTTP requests.\n\n\n \n  Revised on 2026-06-09 00:00:00\n \n"
+    },
+    {
+      "title": "Restricted CLI escape using Lua",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-143",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2026-06-09T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 6.0\n\n\n An Internal Asset Exposed to Unsafe Debug Access Level or State vulnerability [CWE-1244] in FortiOS and FortiProxy may allow an authenticated admin to execute lua scripts via crafted CLI commands.\n\n\n \n  Revised on 2026-06-09 00:00:00\n \n"
+    },
+    {
+      "title": "Second-Order OS Command Injection via JSON Input on start vnc feature",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-141",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2026-06-09T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 9.1\n\n\n An improper neutralization of special elements used in an OS command vulnerability [CWE-78] in FortiSandbox, FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.\n\n\n "
+    },
+    {
       "title": "When \u201cHi, This Is IT\u201d Comes Through Microsoft Teams",
       "url": "https://unit42.paloaltonetworks.com/microsoft-teams-phishing/",
       "source": "Unit 42",
@@ -1570,6 +1530,14 @@
       "category": "threat",
       "published": "2026-06-03T13:00:00+00:00",
       "summary": "Tenable CTO Vlad Korsunsky talks about participating in the World Economic Forum\u2019s Annual Meeting on Cybersecurity and Tenable\u2019s EXPOSURE 2026 conference, where he talked with global leaders about new game-changing AI threats and the groundbreaking benefits of exposure management.Key takeawaysThe pa"
+    },
+    {
+      "title": "Linux Kernel vulnerability Dirty Frag",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-144",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2026-06-03T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 7.9\n\n\n Linux kernel is impacted by CVE-2026-43284 and CVE-2026-43500 which chained together create the Dirty Frag vulnerability.CVE-2026-43284In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAG"
     },
     {
       "title": "The npm Threat Landscape: Attack Surface and Mitigations (Updated June 2)",
@@ -1780,6 +1748,38 @@
       "summary": "With the advent of a potential Dolby Unified Decoder RCE exploit, it seemed prudent to see what kind of Linux kernel drivers might be accessible from the resulting userland context, the mediacodec context. As per the AOSP documentation, the mediacodec SELinux context is intended to be a constrained "
     },
     {
+      "title": "Trusted hosts bypass via SSH",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-545",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2025-11-18T08:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 1.8\n\n\n An Improper Privilege Management vulnerability [CWE-269] in FortiOS, FortiProxy and FortiPAM may allow an authenticated administrator to bypass the trusted host policy via crafted CLI command.\n\n\n \n  Revised on 2026-05-27 00:00:00\n \n"
+    },
+    {
+      "title": "Insertion of Sensitive 2FA Information in logs and debug command",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-24-452",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2025-10-14T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 2.6\n\n\n An Insertion of Sensitive Information into Log File vulnerability [CWE-532] in FortiOS may allow an attacker with at least read-only privileges to retrieve sensitive 2FA-related information via observing logs or via diagnose command.\n\n\n \n  Revised on 2026-06-08 00:00:00\n"
+    },
+    {
+      "title": "Information Disclosure on SSLVPN endpoint",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-24-257",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2025-06-10T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 3.9\n\n\n An Exposure of Sensitive Information to an Unauthorized Actor vulnerability [CWE-200] in FortiOS SSL-VPN web-mode may allow an authenticated user to access full SSL-VPN settings via crafted URL.\n\n\n \n  Revised on 2026-06-15 00:00:00\n \n"
+    },
+    {
+      "title": "Pre-authentication Denial of Service attack in OpenSSH - CVE-2025-26466",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-122",
+      "source": "Fortinet PSIRT",
+      "category": "threat",
+      "published": "2025-03-11T07:00:00+00:00",
+      "summary": "\n \n  CVSSv3 Score:\n \n 5.9\n\n\n CVE-2025-26466A flaw was found in the OpenSSH package. For each ping packet the SSH server receives, a pong packet is allocated in a memory buffer and stored in a queue of packages. It is only freed when the server/client key exchange has finished. A malicious client may"
+    },
+    {
       "title": "After Executive Order 14409: Next Steps for Securing AI",
       "url": "https://www.crowdstrike.com/en-us/blog/after-executive-order-14409-next-steps-for-securing-ai/",
       "source": "CrowdStrike Blog",
@@ -1845,6 +1845,22 @@
     }
   ],
   "news": [
+    {
+      "title": "Gentlemen ransomware uses multiple EDR killers to disable defenses",
+      "url": "https://www.bleepingcomputer.com/news/security/gentlemen-ransomware-uses-multiple-edr-killers-to-disable-defenses/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-18T22:31:52+00:00",
+      "summary": "The Gentlemen ransomware-as-a-service (RaaS) is actively developing and maintaining a suite of endpoint detection and response (EDR) killers\u00a0to help affiliates evade detection in attacks. [...]"
+    },
+    {
+      "title": "How the Peter Thiel-Linked Dialog Club Secretly Ranks Its Members",
+      "url": "https://www.wired.com/story/how-peter-thiels-private-dialog-club-secretly-ranks-its-members/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-06-18T22:12:45+00:00",
+      "summary": "Leaked files show the invite-only network grades members by their money and fame, shaping who\u2019s in, who\u2019s out, and who pays."
+    },
     {
       "title": "Novo Nordisk Breach Exposes Software Development Pipeline Risk",
       "url": "https://www.darkreading.com/cyber-risk/novo-nordisk-breach-exposes-dev-pipeline-risk",
@@ -2052,14 +2068,6 @@
       "category": "news",
       "published": "2026-06-18T12:30:00+00:00",
       "summary": "Analysis of chatter on underground forums by Sophos finds that hackers fear AI could take work away from them"
-    },
-    {
-      "title": "Apple fixes Beats Studio Buds flaw that let hackers spy on conversations",
-      "url": "https://www.bleepingcomputer.com/news/security/apple-fixes-beats-studio-buds-flaw-that-let-hackers-spy-on-conversations/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-18T12:23:58+00:00",
-      "summary": "Apple has released security updates to patch a high-severity flaw affecting the Beats Studio Buds wireless earbuds that could allow attackers in Bluetooth range to spy on users' conversations. [...]"
     },
     {
       "title": "Alert: NCSC issues advice following global targeting of Fortinet firewalls and VPN gateways",
@@ -2326,14 +2334,6 @@
       "summary": "A WIRED investigation found dozens of \u201cnudified\u201d deepfake images and videos on Grok's website, including nonconsensual depictions of celebrities and at least one prominent US politician."
     },
     {
-      "title": "Drug Sites Hijacked Spotify\u2019s Search Ranking Through Fake Podcasts",
-      "url": "https://www.wired.com/story/drug-sites-hijacked-spotifys-search-ranking-through-fake-podcasts-report-finds/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-06-11T16:07:30+00:00",
-      "summary": "A joint congressional report describes a spam operation that turned tens of thousands of fake podcasts into search-engine bait for illegal pharmacy and scam sites."
-    },
-    {
       "title": "Who Runs the Ransomware Group \u2018The Gentlemen?\u2019",
       "url": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
       "source": "Krebs on Security",
@@ -2492,7 +2492,7 @@
     "high": 0,
     "exploited": 0,
     "kev_total": 50,
-    "kev_7d": 6,
+    "kev_7d": 5,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
     "epss_enriched": 0
