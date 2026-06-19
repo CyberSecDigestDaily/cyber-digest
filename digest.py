@@ -15,7 +15,7 @@ Optional env vars:
   DISCORD_WEBHOOK    — Discord notification URL
 """
 
-import os, json, re, time, urllib.request, urllib.parse, feedparser
+import os, json, re, time, urllib.request, urllib.parse, urllib.error, feedparser
 from datetime import datetime, timedelta, timezone
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
@@ -26,7 +26,8 @@ EMAIL_TO        = os.environ.get("EMAIL_TO", "")
 DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK", "")
 
 CVE_LOOKBACK_HOURS = 48
-MAX_CVES           = 50
+MAX_CVES           = 200   # cap stored after pagination (was 50 — silently truncated busy windows)
+NVD_PAGE_SIZE      = 2000  # NVD 2.0 max resultsPerPage; one page usually covers a 48h window
 MAX_KEV            = 50
 MAX_PER_FEED       = 8
 
@@ -127,24 +128,39 @@ def fetch_nvd_cves() -> list:
     now   = datetime.now(timezone.utc)
     start = now - timedelta(hours=CVE_LOOKBACK_HOURS)
     fmt   = "%Y-%m-%dT%H:%M:%S.000"
-    params = {
-        "pubStartDate":   start.strftime(fmt),
-        "pubEndDate":     now.strftime(fmt),
-        "resultsPerPage": MAX_CVES,
-    }
-    url = "https://services.nvd.nist.gov/rest/json/cves/2.0?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"User-Agent": "CyberDigest/2.0"})
-    if NVD_API_KEY:
-        req.add_header("apiKey", NVD_API_KEY)
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            raw = json.loads(resp.read())
-    except Exception as e:
-        print(f"[NVD] fetch error: {e}")
-        return []
+
+    # Paginate through the full window instead of capping at one short page.
+    # Without this, a busy 48h window (NVD routinely publishes 100+ CVEs/day)
+    # silently dropped everything past the first 50 results.
+    vulnerabilities, start_index = [], 0
+    while True:
+        params = {
+            "pubStartDate":   start.strftime(fmt),
+            "pubEndDate":     now.strftime(fmt),
+            "resultsPerPage": NVD_PAGE_SIZE,
+            "startIndex":     start_index,
+            "noRejected":     "",
+        }
+        url = "https://services.nvd.nist.gov/rest/json/cves/2.0?" + urllib.parse.urlencode(params)
+        req = urllib.request.Request(url, headers={"User-Agent": "CyberDigest/2.0"})
+        if NVD_API_KEY:
+            req.add_header("apiKey", NVD_API_KEY)
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                raw = json.loads(resp.read())
+        except Exception as e:
+            print(f"[NVD] fetch error (startIndex={start_index}): {e}")
+            break
+        page  = raw.get("vulnerabilities", [])
+        total = raw.get("totalResults", 0)
+        vulnerabilities.extend(page)
+        start_index += len(page)
+        if not page or start_index >= total or len(vulnerabilities) >= MAX_CVES:
+            break
+        time.sleep(6 if not NVD_API_KEY else 0.6)  # respect NVD rate limits
 
     cves = []
-    for item in raw.get("vulnerabilities", []):
+    for item in vulnerabilities[:MAX_CVES]:
         cve  = item.get("cve", {})
         cid  = cve.get("id", "N/A")
         refs = cve.get("references", [])
@@ -202,8 +218,8 @@ def fetch_epss(cve_ids: list) -> dict:
     """Fetch EPSS scores from FIRST.org for a list of CVE IDs."""
     if not cve_ids:
         return {}
-    # EPSS API accepts up to 30 CVEs per request
-    chunks = [cve_ids[i:i+30] for i in range(0, min(len(cve_ids), 90), 30)]
+    # EPSS API accepts up to 100 CVEs per request; chunk at 50 to be safe
+    chunks = [cve_ids[i:i+50] for i in range(0, len(cve_ids), 50)]
     result = {}
     for chunk in chunks:
         try:
@@ -460,22 +476,45 @@ def send_email(digest: dict) -> None:
         print(f"[email] error: {e}")
 
 # ── DISCORD (optional) ────────────────────────────────────────────────────────
-def send_discord(digest: dict) -> None:
+def post_discord(content: str) -> bool:
+    """POST a message to the Discord webhook. Retries once on 429/5xx.
+    Returns True on success. Truncates to Discord's 2000-char limit."""
     if not DISCORD_WEBHOOK:
-        return
+        print("[discord] DISCORD_WEBHOOK not set — skipping")
+        return False
+    content = content[:1990] + "…" if len(content) > 2000 else content
+    payload = json.dumps({"content": content}).encode()
+    for attempt in range(2):
+        try:
+            req = urllib.request.Request(
+                DISCORD_WEBHOOK, data=payload,
+                headers={"Content-Type": "application/json"}, method="POST")
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                if resp.status in (200, 204):
+                    print("[discord] sent")
+                    return True
+                print(f"[discord] unexpected status {resp.status}")
+        except urllib.error.HTTPError as e:
+            retry_after = e.headers.get("Retry-After")
+            print(f"[discord] HTTP {e.code} (attempt {attempt+1})")
+            if e.code == 429 and retry_after:
+                time.sleep(min(float(retry_after), 10))
+                continue
+            if 500 <= e.code < 600:
+                time.sleep(2); continue
+            break
+        except Exception as e:
+            print(f"[discord] error: {e}")
+            time.sleep(2)
+    return False
+
+def send_discord(digest: dict) -> None:
     crits   = len([c for c in digest["cves"] if c["severity"] == "CRITICAL"])
     ioc_cnt = len(digest.get("threatfox", []))
     msg     = (f"**Cyber Digest** | {digest['urgency']['level']} | "
                f"{crits} critical CVEs | {len(digest['kev'])} KEV | "
-               f"{ioc_cnt} ThreatFox IOCs (24h)")
-    try:
-        payload = json.dumps({"content": msg}).encode()
-        req = urllib.request.Request(DISCORD_WEBHOOK, data=payload,
-                                     headers={"Content-Type": "application/json"}, method="POST")
-        urllib.request.urlopen(req, timeout=10)
-        print("[discord] sent")
-    except Exception as e:
-        print(f"[discord] error: {e}")
+               f"{ioc_cnt} ThreatFox IOCs (24h) | https://cyber-digest.pages.dev/")
+    send_discord.ok = post_discord(msg)
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
@@ -542,18 +581,37 @@ def main():
         }
     }
 
-    # Write full digest.json
-    with open("digest.json", "w") as f:
-        json.dump(digest, f, indent=2)
-    print(f"[OK] digest.json written")
+    # Write full digest.json to BOTH repo root (archival) and site/ (served).
+    # Cloudflare Pages serves from site/, so app.js's fetch('/digest.json')
+    # only resolves if the file exists under site/. Root copy kept for the
+    # GitHub Action's diff/commit history.
+    import pathlib
+    pathlib.Path("site").mkdir(exist_ok=True)
+    digest_blob = json.dumps(digest, indent=2)
+    for path in ("digest.json", "site/digest.json"):
+        with open(path, "w") as f:
+            f.write(digest_blob)
+    print("[OK] digest.json written (root + site/)")
 
-    # Write site/feed.json — lightweight feed for homepage consumption
-    # Combines threats + news, sorted by published date, top 50 items
-    feed_items = sorted(
-        threats + news,
-        key=lambda x: x.get("published", ""),
-        reverse=True
-    )[:50]
+    # Write site/kev.json — same-origin KEV snapshot consumed by app.js.
+    # app.js fetches '/kev.json' first (no CORS) before trying CISA direct.
+    kev_blob = {"generated": digest["generated"], "vulnerabilities": kev}
+    with open("site/kev.json", "w") as f:
+        json.dump(kev_blob, f, indent=2)
+    print(f"[OK] site/kev.json written — {len(kev)} entries")
+
+    # Write site/feed.json — lightweight feed for homepage consumption.
+    # Combine threats + news, dedup by normalised title/URL, then top 50.
+    seen, feed_items = set(), []
+    for item in sorted(threats + news, key=lambda x: x.get("published", ""), reverse=True):
+        key = (re.sub(r"\s+", " ", (item.get("title") or "").strip().lower()),
+               (item.get("url") or "").split("?")[0].rstrip("/").lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        feed_items.append(item)
+        if len(feed_items) >= 50:
+            break
     feed = {
         "generated": digest["generated"],
         "urgency":   urgency,
@@ -561,11 +619,9 @@ def main():
         "items":     feed_items,
         "stats":     digest["stats"],
     }
-    import pathlib
-    pathlib.Path("site").mkdir(exist_ok=True)
     with open("site/feed.json", "w") as f:
         json.dump(feed, f, indent=2)
-    print(f"[OK] site/feed.json written — {len(feed_items)} items")
+    print(f"[OK] site/feed.json written — {len(feed_items)} items (deduped)")
 
     print(f"Summary: {len(cves)} CVEs | {len(kev)} KEV | {len(gh_advisories)} GHSA | "
           f"{len(threatfox)} ThreatFox IOCs | {len(threats)+len(news)} feed items")
