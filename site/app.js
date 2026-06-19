@@ -475,13 +475,13 @@
     {t:'CVE',   l:'CVE-2024-21762 — Fortinet FortiOS SSL VPN out-of-bounds write (9.6)',    h:'https://nvd.nist.gov/vuln/detail/CVE-2024-21762', ext:true},
     {t:'CVE',   l:'CVE-2024-6387 — OpenSSH regreSSHion unauthenticated RCE',               h:'https://nvd.nist.gov/vuln/detail/CVE-2024-6387',  ext:true},
     {t:'CVE',   l:'CVE-2024-37085 — VMware ESXi AD auth bypass (Akira/Black Basta)',        h:'https://nvd.nist.gov/vuln/detail/CVE-2024-37085', ext:true},
-    {t:'Actor', l:'Volt Typhoon — China-nexus, US critical infrastructure',                  h:'actor.html'},
-    {t:'Actor', l:'Salt Typhoon — China-nexus, US telecommunications',                       h:'actor.html'},
-    {t:'Actor', l:'Akira — eCrime ransomware affiliate group',                                h:'actor.html'},
-    {t:'Actor', l:'Lazarus Group — DPRK, financial crime & espionage',                       h:'actor.html'},
-    {t:'Page',  l:'The Wire — chronological threat news feed',                               h:'wire.html'},
+    {t:'Actor', l:'Volt Typhoon — China-nexus, US critical infrastructure',                  h:'https://attack.mitre.org/groups/G1017/', ext:true},
+    {t:'Actor', l:'Salt Typhoon — China-nexus, US telecommunications',                       h:'https://attack.mitre.org/groups/G1045/', ext:true},
+    {t:'Actor', l:'Scattered Spider — eCrime, identity/social engineering',                  h:'https://attack.mitre.org/groups/G1015/', ext:true},
+    {t:'Actor', l:'RansomHub — crimeware, ransomware-as-a-service',                          h:'https://attack.mitre.org/groups/G1075/', ext:true},
+    {t:'Actor', l:'APT28 / Fancy Bear — Russia GRU, espionage',                              h:'https://attack.mitre.org/groups/G0007/', ext:true},
+    {t:'Actor', l:'Lazarus Group — DPRK, financial crime & espionage',                       h:'https://attack.mitre.org/groups/G0032/', ext:true},
     {t:'Page',  l:'Vulnerabilities — CVE index & CISA KEV tracker',                          h:'cves.html'},
-    {t:'Page',  l:'Briefings — analyst-written intelligence reports',                         h:'briefing.html'},
     {t:'KEV',   l:'CISA Known Exploited Vulnerabilities catalog',                             h:'https://www.cisa.gov/known-exploited-vulnerabilities-catalog', ext:true},
     {t:'Source',l:'Krebs on Security — investigative security journalism',                    h:'https://krebsonsecurity.com/', ext:true},
     {t:'Source',l:'Google TAG — Threat Analysis Group research blog',                         h:'https://blog.google/threat-analysis-group/', ext:true},
@@ -970,12 +970,6 @@
     const dg = (digest.status === 'fulfilled') ? digest.value : null;
     renderThreatFeed(dg); // handles null/empty with a friendly message
     if (dg) {
-      // Supplement urgency metric
-      const urgEl = document.getElementById('console-urgency');
-      if (urgEl && dg.urgency) {
-        urgEl.textContent = dg.urgency.level;
-        urgEl.style.color = dg.urgency.colour || '';
-      }
       // Fallback for "New CVEs (7d)" when the live NVD count was blocked (CORS).
       const cveEl = document.getElementById('console-cve7d');
       const st    = dg.stats || {};

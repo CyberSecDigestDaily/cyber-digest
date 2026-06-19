@@ -96,7 +96,7 @@ VENDOR_DOMAINS = {
     "rapid7.com": "Rapid7", "tenable.com": "Tenable", "qualys.com": "Qualys",
     "sonicwall.com": "SonicWall", "watchguard.com": "WatchGuard",
     "netscout.com": "NetScout", "progress.com": "Progress Software",
-    "moveit.com": "MOVEit", "ivanti.com": "Ivanti",
+    "moveit.com": "MOVEit",
 }
 
 def vendor_from_refs(refs: list) -> str:
@@ -145,12 +145,32 @@ def fetch_nvd_cves() -> list:
         req = urllib.request.Request(url, headers={"User-Agent": "CyberDigest/2.0"})
         if NVD_API_KEY:
             req.add_header("apiKey", NVD_API_KEY)
-        try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                raw = json.loads(resp.read())
-        except Exception as e:
-            print(f"[NVD] fetch error (startIndex={start_index}): {e}")
+
+        # Retry up to 3 times on rate-limit (429) or transient errors (5xx/timeout).
+        # Without an API key the NVD limit is 5 req/30s; with a key it's 50 req/30s.
+        raw = None
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=45) as resp:
+                    raw = json.loads(resp.read())
+                break  # success
+            except urllib.error.HTTPError as e:
+                wait = 32 if e.code == 429 else (10 if 500 <= e.code < 600 else 0)
+                print(f"[NVD] HTTP {e.code} (attempt {attempt+1}, startIndex={start_index})")
+                if wait and attempt < 2:
+                    time.sleep(wait)
+                else:
+                    break
+            except Exception as e:
+                print(f"[NVD] fetch error (attempt {attempt+1}, startIndex={start_index}): {e}")
+                if attempt < 2:
+                    time.sleep(10)
+                else:
+                    break
+        if raw is None:
+            print(f"[NVD] all retries exhausted at startIndex={start_index}")
             break
+
         page  = raw.get("vulnerabilities", [])
         total = raw.get("totalResults", 0)
         vulnerabilities.extend(page)
@@ -357,12 +377,6 @@ def fetch_feodo_c2() -> list:
 # ── FETCH OSV.DEV RECENT VULNS ───────────────────────────────────────────────
 def fetch_osv_recent() -> list:
     """Fetch recent vulnerabilities from OSV.dev."""
-    # Query modified in last 24h for critical/high
-    url     = "https://api.osv.dev/v1/querybatch"
-    payload = json.dumps({"queries": [{"package": {"ecosystem": "PyPI"}},
-                                       {"package": {"ecosystem": "npm"}},
-                                       {"package": {"ecosystem": "Go"}}]}).encode()
-    # Use the list endpoint instead for simplicity
     list_url = "https://api.osv.dev/v1/vulns?page_size=20"
     req = urllib.request.Request(list_url, headers={"User-Agent": "CyberDigest/2.0"})
     try:
@@ -521,7 +535,26 @@ def main():
     print("=== Cyber Digest pipeline v2 starting ===")
 
     # Primary vulnerability data
-    cves    = fetch_nvd_cves()
+    cves = fetch_nvd_cves()
+
+    # If NVD returned nothing (rate-limit, timeout, or API outage), fall back to
+    # the CVE list from the previous digest.json rather than publishing an empty index.
+    if not cves:
+        print("[NVD] WARNING: 0 CVEs returned — attempting fallback from existing digest.json")
+        for fallback_path in ("site/digest.json", "digest.json"):
+            try:
+                with open(fallback_path) as f:
+                    prev = json.load(f)
+                prev_cves = prev.get("cves", [])
+                if prev_cves:
+                    cves = prev_cves
+                    print(f"[NVD] fallback loaded {len(cves)} CVEs from {fallback_path}")
+                    break
+            except Exception as e:
+                print(f"[NVD] fallback read error ({fallback_path}): {e}")
+        if not cves:
+            print("[NVD] WARNING: no fallback available — digest.cves will be empty")
+
     kev     = fetch_kev()
 
     # Mark CVEs that appear in KEV
@@ -622,6 +655,7 @@ def main():
     with open("site/feed.json", "w") as f:
         json.dump(feed, f, indent=2)
     print(f"[OK] site/feed.json written — {len(feed_items)} items (deduped)")
+
 
     print(f"Summary: {len(cves)} CVEs | {len(kev)} KEV | {len(gh_advisories)} GHSA | "
           f"{len(threatfox)} ThreatFox IOCs | {len(threats)+len(news)} feed items")
