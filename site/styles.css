@@ -1046,3 +1046,61 @@ img,svg{display:block;max-width:100%}
 
 /* Active nav link (highlight current page) */
 .nav a[aria-current="page"]{ color:var(--fg); background:var(--bg-elev-2) }
+
+/* ═══════════════════════════════════════════════════════════════
+   CVEs page overhaul — filter chips, toolbar, sort/search, badges
+   + prominent homepage CTA.  (appended)
+═══════════════════════════════════════════════════════════════ */
+.chip{
+  font-family:var(--font-mono);font-size:11px;
+  padding:6px 12px;border:1px solid var(--hairline-2);border-radius:2px;
+  color:var(--fg-muted);letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;transition:all .18s var(--ease);background:var(--bg);
+}
+.chip:hover{ color:var(--fg);border-color:var(--fg-muted);background:var(--bg-elev-1) }
+/* Prominent selected state — filled accent, weight + ring so it clearly reads as active */
+.chip[aria-pressed="true"], .chip.on{
+  color:var(--accent-ink);background:var(--accent);border-color:var(--accent);
+  font-weight:600;box-shadow:0 0 0 1px var(--accent);
+}
+.chip .chip-n{ opacity:.55;margin-left:5px;font-weight:400 }
+.chip[aria-pressed="true"] .chip-n{ opacity:.85 }
+
+.cve-toolbar-sub{ border-top:none;padding-top:10px;padding-bottom:10px;gap:10px;flex-wrap:wrap }
+.sort-wrap{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);
+  letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;
+}
+.sort-select{
+  background:var(--bg);color:var(--fg);border:1px solid var(--hairline-2);border-radius:2px;
+  font-family:var(--font-mono);font-size:11px;padding:6px 10px;cursor:pointer;letter-spacing:.02em;
+}
+.sort-select:hover{ border-color:var(--fg-muted) }
+.cve-search{
+  background:var(--bg);color:var(--fg);border:1px solid var(--hairline-2);border-radius:2px;
+  font-family:var(--font-sans);font-size:13px;padding:7px 12px;min-width:220px;flex:0 0 auto;
+}
+.cve-search:focus{ outline:none;border-color:var(--accent) }
+.cve-search::placeholder{ color:var(--fg-dim) }
+
+/* Table status badges + EPSS tag */
+.badge-ransom{ color:var(--status-crit)!important;border-color:rgba(216,92,92,.5)!important;background:rgba(216,92,92,.10)!important }
+.badge-muted{ color:var(--fg-muted)!important;border-color:var(--hairline-2)!important;background:transparent!important }
+.cve-table td.kev .badge-muted::before{ display:none }
+.epss-tag{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;color:var(--status-mid);
+  border:1px solid rgba(214,168,106,.35);padding:1px 5px;border-radius:2px;white-space:nowrap;
+}
+
+/* Homepage → full CVE index CTA, now a clear button */
+.console-cves-link{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin:14px 0 2px;padding:13px 16px;
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;
+  color:var(--accent-ink);background:var(--accent);text-decoration:none;
+  border:1px solid var(--accent);border-radius:3px;border-top:1px solid var(--accent);
+  transition:filter .15s var(--ease);
+}
+.console-cves-link:hover{ filter:brightness(1.08);color:var(--accent-ink);background:var(--accent) }
+.console-cves-link .arr{ transition:transform .15s var(--ease) }
+.console-cves-link:hover .arr{ transform:translateX(3px) }

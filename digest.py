@@ -227,8 +227,8 @@ def fetch_kev() -> list:
             data = json.loads(resp.read())
         vulns = data.get("vulnerabilities", [])
         vulns.sort(key=lambda x: x.get("dateAdded",""), reverse=True)
-        print(f"[KEV] {len(vulns)} total entries; returning top {MAX_KEV}")
-        return vulns[:MAX_KEV]
+        print(f"[KEV] {len(vulns)} total entries; saving full catalog to kev.json")
+        return vulns
     except Exception as e:
         print(f"[KEV] fetch error: {e}")
         return []
@@ -592,7 +592,7 @@ def main():
         "generated":      datetime.now(timezone.utc).isoformat(),
         "urgency":        urgency,
         "cves":           cves,
-        "kev":            kev,
+        "kev":            kev[:MAX_KEV],   # digest.json stays small; full catalog goes to kev.json
         "kev_7d":         kev_7d_count,
         "gh_advisories":  gh_advisories,
         "threatfox":      threatfox,
@@ -660,9 +660,14 @@ def main():
     print(f"Summary: {len(cves)} CVEs | {len(kev)} KEV | {len(gh_advisories)} GHSA | "
           f"{len(threatfox)} ThreatFox IOCs | {len(threats)+len(news)} feed items")
 
-    # Notifications
-    send_email(digest)
-    send_discord(digest)
+    # Notifications — once daily only. Data refreshes hourly, but email/Discord
+    # should not fire 24x/day. Send at NOTIFY_HOUR UTC (default 09:00) or when forced.
+    notify_hour = int(os.environ.get("NOTIFY_HOUR", "9"))
+    if os.environ.get("SEND_DIGEST", "") == "1" or datetime.now(timezone.utc).hour == notify_hour:
+        send_email(digest)
+        send_discord(digest)
+    else:
+        print(f"[notify] skipped — not {notify_hour:02d}:00 UTC (set SEND_DIGEST=1 to force)")
 
     print("=== Done ===")
 

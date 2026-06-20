@@ -7,7 +7,7 @@ name: Daily Cyber Digest
 
 on:
   schedule:
-    - cron: "0 9 * * *"   # 09:00 UTC daily (matches CLAUDE.md target)
+    - cron: "0 * * * *"   # hourly — data refresh; digest.py gates email/Discord to 09:00 UTC
   workflow_dispatch:
 
 # Never let two runs (e.g. a manual dispatch + the cron) race on the push.
@@ -44,6 +44,8 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           EMAIL_TO:           ${{ secrets.EMAIL_TO }}
           DISCORD_WEBHOOK:    ${{ secrets.DISCORD_WEBHOOK }}
+          # Manual dispatch always sends notifications; scheduled hourly runs only at 09:00 UTC.
+          SEND_DIGEST:        ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
         run: python digest.py
 
       - name: Commit and push outputs

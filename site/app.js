@@ -1082,6 +1082,9 @@
      live data, populates stats, refreshes hourly. Static rows in the
      HTML act as a no-JS / fetch-failure fallback.
   ═══════════════════════════════════════════════════════════ */
+  /* ═══════════════════════════════════════════════════════════
+     CVEs PAGE — full KEV catalog + NVD digest merge, live filter/sort
+  ═══════════════════════════════════════════════════════════ */
   function initCvesPage(){
     const tbody = document.querySelector('[data-cve-tbody]');
     if (!tbody) return;
@@ -1089,89 +1092,202 @@
     const esc  = s => (s == null ? '' : String(s)).replace(/[&<>"]/g,
       c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
     const slug = v => (v || '').toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24);
-    const sevShort = sev => {
-      const s = (sev || '').toLowerCase();
-      if (s.startsWith('crit')) return 'crit';
-      if (s.startsWith('high')) return 'high';
-      if (s.startsWith('med') || s === 'mid') return 'mid';
-      return 'low';
-    };
+    const sevFromCvss = c => (c == null ? '' : c >= 9 ? 'crit' : c >= 7 ? 'high' : c >= 4 ? 'mid' : 'low');
+    const TO = ms => (typeof AbortSignal !== 'undefined' && AbortSignal.timeout) ? AbortSignal.timeout(ms) : undefined;
 
-    function buildVendorChips(rows){
+    const state = { sev:'all', status:'all', time:'all', sort:'date-desc', vendors:new Set(), q:'' };
+    let ALL = [];
+
+    function parseKEV(json){
+      return (json.vulnerabilities || []).map(v => ({
+        id:        v.cveID,
+        vendor:    v.vendorProject || '',
+        product:   v.product || '',
+        title:     v.vulnerabilityName || v.shortDescription || '',
+        dateAdded: (v.dateAdded || '').slice(0, 10),
+        ransomware:(v.knownRansomwareCampaignUse || '').toLowerCase() === 'known',
+        kev:       true,
+        cvss:      null,
+        epss:      null,
+        url:       'https://nvd.nist.gov/vuln/detail/' + v.cveID
+      })).filter(r => r.id && r.id.indexOf('CVE-') === 0);
+    }
+
+    // Full CISA KEV catalog — CISA direct (~1300, CORS-enabled) then same-origin snapshot.
+    async function loadKEV(){
+      try {
+        const r = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json', {signal: TO(12000)});
+        if (r.ok){ const rows = parseKEV(await r.json()); if (rows.length) return rows; }
+      } catch {}
+      try {
+        const r = await fetch('/kev.json', {signal: TO(6000)});
+        if (r.ok) return parseKEV(await r.json());
+      } catch {}
+      return [];
+    }
+
+    function fromDigest(digest){
+      if (!digest || !Array.isArray(digest.cves)) return [];
+      return digest.cves.filter(c => c.id && c.id.indexOf('CVE-') === 0).map(c => ({
+        id:        c.id,
+        vendor:    c.vendor || '',
+        product:   c.product || '',
+        title:     (c.desc || '').slice(0, 200),
+        dateAdded: (c.published || '').slice(0, 10),
+        ransomware:false,
+        kev:       !!(c.kev || c.exploited),
+        cvss:      (c.cvss != null && c.cvss > 0) ? c.cvss : null,
+        epss:      (c.epss && c.epss.epss != null) ? c.epss.epss : null,
+        url:       c.nvdUrl || ('https://nvd.nist.gov/vuln/detail/' + c.id)
+      }));
+    }
+
+    function merge(kevRows, nvdRows){
+      const map = new Map();
+      kevRows.forEach(r => map.set(r.id.toUpperCase(), r));
+      nvdRows.forEach(n => {
+        const ex = map.get(n.id.toUpperCase());
+        if (ex){
+          if (ex.cvss == null) ex.cvss = n.cvss;
+          if (ex.epss == null) ex.epss = n.epss;
+          if (!ex.vendor) ex.vendor = n.vendor;
+          if (!ex.title)  ex.title  = n.title;
+        } else {
+          map.set(n.id.toUpperCase(), n);
+        }
+      });
+      return [...map.values()];
+    }
+
+    // Best-effort EPSS enrichment so every row has a sortable exploit-probability.
+    async function enrichEPSS(rows){
+      const ids = rows.filter(r => r.epss == null).map(r => r.id);
+      const CHUNK = 80, MAX = 800;
+      for (let i = 0; i < ids.length && i < MAX; i += CHUNK){
+        const batch = ids.slice(i, i + CHUNK);
+        try {
+          const r = await fetch('https://api.first.org/data/v1/epss?cve=' + batch.join(',') + '&limit=' + CHUNK, {signal: TO(8000)});
+          if (!r.ok) continue;
+          const j = await r.json();
+          const m = {};
+          (j.data || []).forEach(e => { m[e.cve] = parseFloat(e.epss); });
+          rows.forEach(row => { if (row.epss == null && m[row.id] != null) row.epss = m[row.id]; });
+        } catch {}
+      }
+    }
+
+    function filtered(){
+      const now = Date.now();
+      const days = {'7d':7,'30d':30,'90d':90,'1y':365}[state.time];
+      const q = state.q.toLowerCase();
+      let rows = ALL.filter(r => {
+        if (state.sev !== 'all' && sevFromCvss(r.cvss) !== state.sev) return false;
+        if (state.status === 'kev'    && !r.kev) return false;
+        if (state.status === 'ransom' && !r.ransomware) return false;
+        if (state.vendors.size && !state.vendors.has(slug(r.vendor))) return false;
+        if (days){
+          if (!r.dateAdded) return false;
+          if ((now - new Date(r.dateAdded).getTime()) / 864e5 > days) return false;
+        }
+        if (q && (r.id + ' ' + r.vendor + ' ' + r.product + ' ' + r.title).toLowerCase().indexOf(q) === -1) return false;
+        return true;
+      });
+      const cmp = {
+        'date-desc': (a,b) => (b.dateAdded || '').localeCompare(a.dateAdded || ''),
+        'date-asc':  (a,b) => (a.dateAdded || '').localeCompare(b.dateAdded || ''),
+        'cvss-desc': (a,b) => (b.cvss == null ? -1 : b.cvss) - (a.cvss == null ? -1 : a.cvss),
+        'epss-desc': (a,b) => (b.epss == null ? -1 : b.epss) - (a.epss == null ? -1 : a.epss),
+        'vendor-asc':(a,b) => (a.vendor || '').localeCompare(b.vendor || '')
+      }[state.sort];
+      return cmp ? rows.sort(cmp) : rows;
+    }
+
+    function renderRows(rows){
+      if (!rows.length){
+        tbody.innerHTML = '<tr><td colspan="7" style="padding:48px 16px;text-align:center;color:var(--fg-dim);font-family:var(--font-mono);font-size:13px">No CVEs match these filters.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = rows.slice(0, 600).map(r => {
+        const sc    = sevFromCvss(r.cvss);
+        const score = r.cvss != null
+          ? '<span class="pill ' + sc + '">' + r.cvss.toFixed(1) + '</span>'
+          : '<span class="pill" style="color:var(--fg-dim);border-color:var(--hairline-2)">—</span>';
+        const epss  = r.epss != null
+          ? ' <span class="epss-tag">EPSS ' + (r.epss * 100).toFixed(0) + '%</span>' : '';
+        const status = r.ransomware
+          ? '<span class="badge badge-ransom">Ransomware</span>'
+          : (r.kev ? '<span class="badge">Exploited</span>'
+                   : '<span class="badge badge-muted">Not known</span>');
+        const vp = r.vendor ? (r.product ? esc(r.vendor) + ' · ' + esc(r.product) : esc(r.vendor)) : '—';
+        const t  = (r.title || '');
+        return '<tr onclick="window.open(\'' + r.url + '\',\'_blank\',\'noopener\')">' +
+          '<td class="id"><a href="' + r.url + '" target="_blank" rel="noopener">' + esc(r.id) + '</a></td>' +
+          '<td class="vendor">' + vp + '</td>' +
+          '<td class="title">' + esc(t.slice(0, 150)) + (t.length > 150 ? '…' : '') + epss + '</td>' +
+          '<td class="score">' + score + '</td>' +
+          '<td class="kev">' + status + '</td>' +
+          '<td class="added">' + esc(r.dateAdded || '—') + '</td>' +
+          '<td class="refs"><a href="' + r.url + '" target="_blank" rel="noopener">NVD</a></td>' +
+        '</tr>';
+      }).join('');
+    }
+
+    function buildVendorChips(){
       const wrap = document.querySelector('[data-vendor-chips]');
       if (!wrap) return;
       const count = {};
-      rows.forEach(c => {
-        const v = c.vendor; if (!v) return;
-        const s = slug(v); if (!s) return;
-        (count[s] = count[s] || {n: 0, label: v}).n++;
-      });
-      const top = Object.entries(count).sort((a, b) => b[1].n - a[1].n).slice(0, 30);
+      ALL.forEach(r => { const v = r.vendor; if (!v) return; const s = slug(v); if (!s) return; (count[s] = count[s] || {n:0, label:v}).n++; });
+      const top = Object.entries(count).sort((a,b) => b[1].n - a[1].n).slice(0, 30);
       if (!top.length) return;
-      wrap.innerHTML = top.map(([s, o]) =>
-        '<button class="chip" data-vendor-filter="' + s + '">' + esc(o.label) +
-        ' <span style="opacity:.5">' + o.n + '</span></button>'
+      wrap.innerHTML = top.map(([s,o]) =>
+        '<button class="chip" data-vendor="' + s + '" aria-pressed="' + (state.vendors.has(s) ? 'true' : 'false') + '">' +
+        esc(o.label) + ' <span class="chip-n">' + o.n + '</span></button>'
       ).join('');
     }
 
-    function populateStats(digest){
-      const st = digest.stats || {};
-      const vals = [st.total_cves, st.critical,
-        (st.kev_7d != null ? st.kev_7d : digest.kev_7d), st.exploited];
-      document.querySelectorAll('.cves-stats .cves-stat [data-metric]').forEach((el, i) => {
-        if (vals[i] != null) el.textContent = vals[i];
-      });
-      const epssHigh = document.querySelector('[data-digest-epss-high]');
-      if (epssHigh && st.epss_enriched != null) epssHigh.textContent = st.epss_enriched;
-      const ioc = document.querySelector('[data-digest-ioc-count]');
-      if (ioc && st.threatfox_iocs != null) ioc.textContent = st.threatfox_iocs;
+    function stats(){
+      const now = Date.now();
+      const addedWithin = n => ALL.filter(r => r.dateAdded && (now - new Date(r.dateAdded).getTime()) / 864e5 <= n).length;
+      const set = (sel, val) => { const el = document.querySelector(sel); if (el) el.textContent = val; };
+      set('[data-stat-total]',   ALL.length.toLocaleString());
+      set('[data-stat-kev]',     ALL.filter(r => r.kev).length.toLocaleString());
+      set('[data-stat-7d]',      addedWithin(7));
+      set('[data-stat-ransom]',  ALL.filter(r => r.ransomware).length.toLocaleString());
+      set('[data-stat-epss]',    ALL.filter(r => r.epss != null && r.epss >= 0.1).length.toLocaleString());
+      set('[data-stat-vendors]', new Set(ALL.map(r => slug(r.vendor)).filter(Boolean)).size.toLocaleString());
     }
 
-    function render(digest){
-      if (!digest || !Array.isArray(digest.cves) || !digest.cves.length) return false;
-      const kevMap = {};
-      (digest.kev || []).forEach(k => { if (k.cveID) kevMap[k.cveID.toUpperCase()] = k; });
+    function update(){
+      const rows = filtered();
+      renderRows(rows);
+      const c = document.querySelector('[data-result-count]');
+      if (c) c.textContent = rows.length.toLocaleString() + ' CVE' + (rows.length !== 1 ? 's' : '');
+    }
 
-      const rows = digest.cves.filter(c => c.id && c.id.indexOf('CVE-') === 0).slice();
-      rows.sort((a, b) => {
-        const ax = (a.kev || a.exploited) ? 1 : 0, bx = (b.kev || b.exploited) ? 1 : 0;
-        if (bx !== ax) return bx - ax;
-        if ((b.cvss || 0) !== (a.cvss || 0)) return (b.cvss || 0) - (a.cvss || 0);
-        return (b.published || '').localeCompare(a.published || '');
-      });
-
-      tbody.innerHTML = rows.map(c => {
-        const sc        = sevShort(c.severity);
-        const exploited = !!(c.kev || c.exploited);
-        const k         = kevMap[(c.id || '').toUpperCase()];
-        const vendor    = c.vendor || (k && k.vendorProject) || '';
-        const product   = c.product || (k && k.product) || '';
-        const vp        = vendor ? (product ? vendor + ' · ' + product : vendor) : (product || '—');
-        const cats      = [sc, exploited ? 'kev' : ''].filter(Boolean).join(' ');
-        const score     = (c.cvss != null && c.cvss > 0) ? c.cvss.toFixed(1) : '—';
-        const epss      = (c.epss && c.epss.epss != null)
-          ? ' <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim)">· EPSS ' + (c.epss.epss * 100).toFixed(0) + '%</span>' : '';
-        const added     = (k && k.dateAdded) ? k.dateAdded : ((c.published || '').slice(0, 10) || '—');
-        const status    = exploited
-          ? '<span class="badge">Exploited</span>'
-          : '<span class="badge" style="color:var(--fg-muted);border-color:var(--hairline-2);background:transparent">Not known</span>';
-        const url = c.nvdUrl || ('https://nvd.nist.gov/vuln/detail/' + c.id);
-        return '<tr data-cats="' + cats + '" data-vendor="' + slug(vendor) + '" ' +
-          'onclick="window.open(\'' + url + '\',\'_blank\',\'noopener\')">' +
-          '<td class="id"><a href="' + url + '" target="_blank" rel="noopener">' + esc(c.id) + '</a></td>' +
-          '<td class="vendor">' + esc(vp) + '</td>' +
-          '<td class="title">' + esc((c.desc || '').slice(0, 160)) + (c.desc && c.desc.length > 160 ? '…' : '') + epss + '</td>' +
-          '<td class="score"><span class="pill ' + sc + '">' + score + '</span></td>' +
-          '<td class="kev">' + status + '</td>' +
-          '<td class="added">' + esc(added) + '</td>' +
-          '<td class="refs"><a href="' + url + '" target="_blank" rel="noopener">NVD</a></td>' +
-        '</tr>';
-      }).join('');
-
-      buildVendorChips(rows);
-      populateStats(digest);
-      if (typeof applyTableFilters === 'function') applyTableFilters();
-      return true;
+    function wire(){
+      const tb = document.querySelector('[data-cve-toolbar]');
+      if (tb){
+        tb.addEventListener('click', e => {
+          const press = (group, el) => tb.querySelectorAll('[' + group + ']').forEach(x => x.setAttribute('aria-pressed', x === el));
+          const sev = e.target.closest('[data-sev]');
+          if (sev){ state.sev = sev.dataset.sev; press('data-sev', sev); return update(); }
+          const st = e.target.closest('[data-status]');
+          if (st){ state.status = st.dataset.status; press('data-status', st); return update(); }
+          const tm = e.target.closest('[data-time]');
+          if (tm){ state.time = tm.dataset.time; press('data-time', tm); return update(); }
+          const ven = e.target.closest('[data-vendor]');
+          if (ven){
+            const s = ven.dataset.vendor;
+            if (state.vendors.has(s)){ state.vendors.delete(s); ven.setAttribute('aria-pressed', 'false'); }
+            else { state.vendors.add(s); ven.setAttribute('aria-pressed', 'true'); }
+            return update();
+          }
+        });
+      }
+      const sortSel = document.querySelector('[data-sort]');
+      if (sortSel) sortSel.addEventListener('change', () => { state.sort = sortSel.value; update(); });
+      const search = document.querySelector('[data-cve-search]');
+      if (search) search.addEventListener('input', () => { state.q = search.value.trim(); update(); });
     }
 
     function renderIOCPanel(digest){
@@ -1203,12 +1319,20 @@
 
     async function load(){
       try { sessionStorage.removeItem('cd_digest_v2'); } catch {}
-      const digest = await fetchDigestFeed();
-      render(digest);        // on null/empty, static fallback rows stay in place
-      renderIOCPanel(digest); // ThreatFox IOCs (present only in digest.json)
+      const [kev, digest] = await Promise.all([ loadKEV(), fetchDigestFeed().catch(() => null) ]);
+      const merged = merge(kev, fromDigest(digest));
+      renderIOCPanel(digest);
+      if (!merged.length) return; // keep static no-JS fallback rows
+      ALL = merged;
+      buildVendorChips();
+      stats();
+      update();
+      enrichEPSS(ALL).then(() => { stats(); update(); });
     }
+
+    wire();
     load();
-    setInterval(load, 60 * 60 * 1000); // hourly refresh
+    setInterval(load, 60 * 60 * 1000);
   }
   initCvesPage();
 

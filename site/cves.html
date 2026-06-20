@@ -128,49 +128,69 @@
     <h1>Every vulnerability worth your attention, <em>continuously triaged.</em></h1>
     <p>A live index of vulnerabilities we are tracking — sorted by relevance to enterprise defenders. Sources: NVD, CISA KEV, MITRE, Watchtowr, Mandiant, Cisco Talos, Microsoft MSRC, Google TAG, Fortinet PSIRT, Apple Security.</p>
 
-    <!-- Stats grid — first 4 values are overwritten live from digest.json via populateDigestStats() -->
+    <!-- Stats grid — populated live from CISA KEV + NVD by initCvesPage() -->
     <div class="cves-stats">
-      <div class="cves-stat"><div class="k">CVEs (7d)</div><div class="v" data-metric>—</div><div class="d">Loading…</div></div>
-      <div class="cves-stat"><div class="k">Critical · CVSS ≥ 9</div><div class="v crit" data-metric>—</div><div class="d">Last 7 days</div></div>
-      <div class="cves-stat"><div class="k">In CISA KEV</div><div class="v high" data-metric>—</div><div class="d">Added last 7 days</div></div>
-      <div class="cves-stat"><div class="k">Actively exploited</div><div class="v crit" data-metric>—</div><div class="d">Last 7 days</div></div>
-      <div class="cves-stat"><div class="k">EPSS ≥ 10%</div><div class="v high" data-digest-epss-high>—</div><div class="d">High exploit probability</div></div>
-      <div class="cves-stat"><div class="k">IOCs (24h)</div><div class="v" style="color:var(--status-mid)" data-digest-ioc-count>—</div><div class="d">ThreatFox indicators</div></div>
+      <div class="cves-stat"><div class="k">Tracked CVEs</div><div class="v" data-stat-total>—</div><div class="d">CISA KEV + NVD index</div></div>
+      <div class="cves-stat"><div class="k">Actively exploited</div><div class="v crit" data-stat-kev>—</div><div class="d">Listed in CISA KEV</div></div>
+      <div class="cves-stat"><div class="k">Added (7d)</div><div class="v high" data-stat-7d>—</div><div class="d">New to KEV this week</div></div>
+      <div class="cves-stat"><div class="k">Ransomware-linked</div><div class="v crit" data-stat-ransom>—</div><div class="d">Known campaign use</div></div>
+      <div class="cves-stat"><div class="k">EPSS ≥ 10%</div><div class="v high" data-stat-epss>—</div><div class="d">High exploit probability</div></div>
+      <div class="cves-stat"><div class="k">Vendors</div><div class="v" data-stat-vendors>—</div><div class="d">Distinct affected</div></div>
     </div>
   </header>
 
   <div class="cve-table-wrap">
-    <!-- Severity filter (single-select) -->
-    <div class="cve-toolbar" data-filter-group>
-      <span class="label">Severity</span>
-      <div class="chips">
-        <button class="chip on" data-filter="all">All</button>
-        <button class="chip" data-filter="crit">Critical</button>
-        <button class="chip" data-filter="high">High</button>
-        <button class="chip" data-filter="kev">Exploited / KEV</button>
+    <!-- Filters — severity (by CVSS), status, time window, sort; all live via initCvesPage() -->
+    <div data-cve-toolbar>
+      <div class="cve-toolbar">
+        <span class="label">Severity</span>
+        <div class="chips">
+          <button class="chip" data-sev="all" aria-pressed="true">All</button>
+          <button class="chip" data-sev="crit" aria-pressed="false">Critical</button>
+          <button class="chip" data-sev="high" aria-pressed="false">High</button>
+          <button class="chip" data-sev="mid" aria-pressed="false">Medium</button>
+        </div>
+        <div class="right">
+          <span data-result-count>—</span>
+          <a href="feed.json" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">JSON feed ↗</a>
+        </div>
       </div>
-      <div class="right">
-        <span data-result-count></span>
-        <a href="feed.json" style="color:var(--fg);border-bottom:1px solid var(--hairline-2)">JSON feed ↗</a>
+      <div class="cve-toolbar cve-toolbar-sub">
+        <span class="label">Status</span>
+        <div class="chips">
+          <button class="chip" data-status="all" aria-pressed="true">All</button>
+          <button class="chip" data-status="kev" aria-pressed="false">Exploited (KEV)</button>
+          <button class="chip" data-status="ransom" aria-pressed="false">Ransomware</button>
+        </div>
+        <span class="label" style="margin-left:14px">Window</span>
+        <div class="chips">
+          <button class="chip" data-time="all" aria-pressed="true">All time</button>
+          <button class="chip" data-time="7d" aria-pressed="false">7d</button>
+          <button class="chip" data-time="30d" aria-pressed="false">30d</button>
+          <button class="chip" data-time="90d" aria-pressed="false">90d</button>
+          <button class="chip" data-time="1y" aria-pressed="false">1y</button>
+        </div>
+        <div class="right">
+          <label class="sort-wrap">Sort
+            <select class="sort-select" data-sort>
+              <option value="date-desc">Date added · newest</option>
+              <option value="date-asc">Date added · oldest</option>
+              <option value="cvss-desc">CVSS · high to low</option>
+              <option value="epss-desc">EPSS · high to low</option>
+              <option value="vendor-asc">Vendor · A–Z</option>
+            </select>
+          </label>
+        </div>
       </div>
-    </div>
-    <!-- Vendor filter (multi-select — click to toggle, multiple active at once) -->
-    <div class="cve-toolbar" style="border-top:none;padding-top:10px;padding-bottom:10px;gap:10px;flex-wrap:wrap">
-      <span class="label">Vendor</span>
-      <!-- Chips rebuilt from live data by app.js (initCvesPage); static set is a no-JS fallback -->
-      <div class="chips" style="flex:1" data-vendor-chips>
-        <button class="chip" data-vendor-filter="fortinet">Fortinet</button>
-        <button class="chip" data-vendor-filter="paloalto">Palo Alto</button>
-        <button class="chip" data-vendor-filter="ivanti">Ivanti</button>
-        <button class="chip" data-vendor-filter="microsoft">Microsoft</button>
-        <button class="chip" data-vendor-filter="vmware">VMware</button>
-        <button class="chip" data-vendor-filter="google">Google</button>
-        <button class="chip" data-vendor-filter="citrix">Citrix</button>
-        <button class="chip" data-vendor-filter="connectwise">ConnectWise</button>
-        <button class="chip" data-vendor-filter="openssh">OpenSSH</button>
-        <button class="chip" data-vendor-filter="php">PHP Group</button>
+      <div class="cve-toolbar cve-toolbar-sub">
+        <span class="label">Vendor</span>
+        <div class="chips" style="flex:1" data-vendor-chips>
+          <button class="chip" data-vendor="fortinet" aria-pressed="false">Fortinet</button>
+          <button class="chip" data-vendor="microsoft" aria-pressed="false">Microsoft</button>
+          <button class="chip" data-vendor="ivanti" aria-pressed="false">Ivanti</button>
+        </div>
+        <input type="search" class="cve-search" data-cve-search placeholder="Search CVE, vendor, keyword…" aria-label="Search CVEs" />
       </div>
-      <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.08em">Multi-select</span>
     </div>
 
     <table class="cve-table" role="table">
@@ -181,7 +201,7 @@
           <th class="title-h">Title</th>
           <th>CVSS</th>
           <th class="kev-h">Status</th>
-          <th class="added-h">KEV Added</th>
+          <th class="added-h">Added</th>
           <th class="refs-h">Refs</th>
         </tr>
       </thead>
@@ -353,4 +373,4 @@
 </footer>
 
 </body>
-</html>                                                                                                                                                                                                                                                                                                                                       
+</html>
