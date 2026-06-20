@@ -1131,3 +1131,22 @@ img,svg{display:block;max-width:100%}
 /* Console fills the grid row height; CTA pinned to the bottom like a footer */
 .console .console-cves-link{ margin-top:auto }
 @media (max-width: 980px){ .console .console-cves-link{ margin-top:16px } }
+
+/* "Latest exploited" feed — refined for the wide hero column (was cramped/boxy) */
+.hero-feed .console-feed{ border:none;background:transparent;margin-top:6px }
+.hero-feed .console-feed .line{
+  grid-template-columns:98px 58px 1fr auto;
+  gap:18px;padding:14px 4px;
+  border-bottom:1px solid var(--hairline);
+}
+.hero-feed .console-feed .line:hover{ background:var(--bg-elev-1) }
+.hero-feed .console-feed .t{ font-size:11px;letter-spacing:.04em;color:var(--fg-dim) }
+.hero-feed .console-feed .sev{ justify-self:start;align-self:center }
+.hero-feed .console-feed .msg{
+  font-family:var(--font-sans);font-size:13.5px;color:var(--fg);line-height:1.45;
+}
+.hero-feed .console-feed .meta a{ font-size:11.5px;white-space:nowrap }
+@media (max-width: 620px){
+  .hero-feed .console-feed .line{ grid-template-columns:84px 52px 1fr;gap:12px }
+  .hero-feed .console-feed .meta{ display:none }
+}
