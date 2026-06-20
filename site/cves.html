@@ -37,7 +37,7 @@
 .cve-toolbar .chips{ display:flex;gap:6px;flex-wrap:wrap }
 .cve-toolbar .label{ font-family:var(--font-mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.14em;text-transform:uppercase;margin-right:6px }
 .cve-toolbar .right{ margin-left:auto;display:flex;gap:10px;align-items:center;font-family:var(--font-mono);font-size:11px;color:var(--fg-dim) }
-.cve-table{ width:100%;border-collapse:collapse;font-size:14px;font-family:var(--font-sans) }
+.cve-table{ width:100%;border-collapse:collapse;font-size:14px;font-family:var(--font-sans);table-layout:fixed }
 .cve-table thead th{
   text-align:left;padding:12px 16px;
   background:var(--bg-elev-1);
@@ -52,8 +52,17 @@
 .cve-table td.id{ font-family:var(--font-mono);font-size:13px;color:var(--fg);letter-spacing:.02em;white-space:nowrap }
 .cve-table td.id a{ color:var(--fg) }
 .cve-table td.id a:hover{ color:var(--accent) }
-.cve-table td.vendor{ font-family:var(--font-mono);font-size:12px;color:var(--fg-muted);letter-spacing:.03em;text-transform:uppercase;white-space:nowrap }
-.cve-table td.title{ font-size:14.5px;color:var(--fg);line-height:1.5;max-width:520px }
+.cve-table td.vendor{ font-family:var(--font-mono);font-size:12px;color:var(--fg-muted);letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.cve-table td.title{ font-size:14.5px;color:var(--fg);line-height:1.5 }
+/* Fixed column widths — keeps the table stable no matter which filters are active */
+.cve-table thead th:nth-child(1){ width:11% }   /* CVE ID */
+.cve-table thead th:nth-child(2){ width:19% }   /* Vendor / Product */
+.cve-table thead th:nth-child(3){ width:40% }   /* Title */
+.cve-table thead th:nth-child(4){ width:8% }    /* Severity */
+.cve-table thead th:nth-child(5){ width:11% }   /* Status */
+.cve-table thead th:nth-child(6){ width:8% }    /* Added */
+.cve-table thead th:nth-child(7){ width:5% }    /* Refs */
+.cve-table td.id{ overflow:hidden;text-overflow:ellipsis }
 .cve-table td.score{ font-family:var(--font-mono);font-weight:500;font-size:13px;white-space:nowrap }
 .cve-table td.score .pill{
   display:inline-block;padding:3px 8px;border:1px solid var(--hairline-2);
