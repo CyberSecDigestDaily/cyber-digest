@@ -1122,6 +1122,7 @@
     const sevOf = r => r.cvss != null ? band(r.cvss)
       : r.ransomware ? 'crit'
       : (r.epss != null && r.epss >= 0.5) ? 'crit'
+      : (r.sevHint === 'high') ? 'high'
       : (r.kev || (r.epss != null && r.epss >= 0.1)) ? 'high'
       : (r.epss != null && r.epss >= 0.01) ? 'mid' : 'low';
     const sevRank = {crit:4, high:3, mid:2, low:1};
@@ -1150,6 +1151,40 @@
       return [];
     }
 
+    // Fresh CVEs from cvefeed.io RSS (CORS-open) — newest published vulns, updates hourly.
+    async function loadCvefeed(){
+      const parseFeed = (xml, sevHint) => {
+        let doc;
+        try { doc = new DOMParser().parseFromString(xml, 'application/xml'); } catch { return []; }
+        if (doc.querySelector('parsererror')) return [];
+        return [...doc.querySelectorAll('item')].map(it => {
+          const gt = t => ((it.querySelector(t) && it.querySelector(t).textContent) || '').trim();
+          const title = gt('title'), link = gt('link');
+          const m = (title.match(/CVE-\d{4}-\d+/) || link.match(/CVE-\d{4}-\d+/));
+          if (!m) return null;
+          const id = m[0];
+          const parts = title.split(' - ');
+          const vendor = parts.length >= 3 ? parts[1] : '';
+          const titleTxt = parts.length >= 3 ? parts.slice(2).join(' - ') : (parts.slice(1).join(' - ') || title);
+          let dateAdded = '';
+          const pub = gt('pubDate');
+          if (pub){ const d = new Date(pub); if (!isNaN(d)) dateAdded = d.toISOString().slice(0, 10); }
+          return { id, vendor, product:'', title:titleTxt, dateAdded,
+                   ransomware:false, kev:false, cvss:null, epss:null, sevHint,
+                   url:'https://nvd.nist.gov/vuln/detail/' + id };
+        }).filter(Boolean);
+      };
+      const grab = async (u, hint) => {
+        try { const r = await fetch(u, {signal: TO(8000)}); if (r.ok) return parseFeed(await r.text(), hint); } catch {}
+        return [];
+      };
+      const [high, latest] = await Promise.all([
+        grab('https://cvefeed.io/rssfeed/severity/high.xml', 'high'),
+        grab('https://cvefeed.io/rssfeed/latest.xml', null)
+      ]);
+      return [...high, ...latest];
+    }
+
     function fromDigest(digest){
       if (!digest || !Array.isArray(digest.cves)) return [];
       return digest.cves.filter(c => c.id && c.id.indexOf('CVE-') === 0).map(c => ({
@@ -1169,7 +1204,8 @@
       nvdRows.forEach(n => {
         const ex = map.get(n.id.toUpperCase());
         if (ex){ if (ex.cvss == null) ex.cvss = n.cvss; if (ex.epss == null) ex.epss = n.epss;
-                 if (!ex.vendor) ex.vendor = n.vendor; if (!ex.title) ex.title = n.title; }
+                 if (!ex.vendor) ex.vendor = n.vendor; if (!ex.title) ex.title = n.title;
+                 if (!ex.dateAdded) ex.dateAdded = n.dateAdded; if (!ex.sevHint && n.sevHint) ex.sevHint = n.sevHint; }
         else map.set(n.id.toUpperCase(), n);
       });
       return [...map.values()];
@@ -1334,8 +1370,8 @@
 
     async function load(){
       try { sessionStorage.removeItem('cd_digest_v2'); } catch {}
-      const [kev, digest] = await Promise.all([ loadKEV(), fetchDigestFeed().catch(() => null) ]);
-      const merged = merge(kev, fromDigest(digest));
+      const [kev, digest, cvefeed] = await Promise.all([ loadKEV(), fetchDigestFeed().catch(() => null), loadCvefeed() ]);
+      const merged = merge(merge(kev, fromDigest(digest)), cvefeed);
       renderIOCPanel(digest);
       if (!merged.length) return;
       ALL = merged;
