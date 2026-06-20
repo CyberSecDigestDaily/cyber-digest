@@ -1108,3 +1108,14 @@ img,svg{display:block;max-width:100%}
 
 /* Hero label readability */
 .hero .section-tag{ font-size:12.5px; letter-spacing:.1em; color:var(--fg-muted); }
+
+/* CVEs vendor filter system (searchable, collapsible) */
+.vendor-row .vendor-search{
+  background:var(--bg);color:var(--fg);border:1px solid var(--hairline-2);border-radius:2px;
+  font-family:var(--font-sans);font-size:13px;padding:6px 10px;min-width:150px;flex:0 0 auto;
+}
+.vendor-row .vendor-search:focus{ outline:none;border-color:var(--accent) }
+.vendor-row .vendor-search::placeholder{ color:var(--fg-dim) }
+.vendor-chips{ display:flex;gap:6px;flex-wrap:wrap;flex:1;max-height:152px;overflow-y:auto;align-content:flex-start }
+.chip-more{ color:var(--accent);border-color:var(--accent);background:transparent;font-weight:600 }
+.chip-more:hover{ background:var(--accent-soft);color:var(--accent) }

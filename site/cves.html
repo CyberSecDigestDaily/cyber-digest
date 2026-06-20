@@ -18,7 +18,7 @@
 .cves-mast{ padding:48px 0 40px; border-bottom:1px solid var(--hairline) }
 .cves-mast h1{ font-size:clamp(40px,5vw,64px);letter-spacing:-.028em;line-height:1.04;font-weight:500;margin:14px 0 0;text-wrap:balance }
 .cves-mast h1 em{ font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--fg-muted) }
-.cves-mast p{ color:var(--fg-muted);max-width:60ch;margin-top:18px;font-size:16px }
+.cves-mast p{ color:var(--fg-muted);max-width:64ch;margin-top:18px;font-size:17px;line-height:1.55 }
 .cves-stats{ display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin-top:40px }
 .cves-stat{ background:var(--bg);padding:22px;display:flex;flex-direction:column;gap:6px }
 .cves-stat .k{ font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim) }
@@ -48,12 +48,12 @@
 }
 .cve-table tbody tr{ border-bottom:1px solid var(--hairline);transition:background .2s var(--ease);cursor:pointer }
 .cve-table tbody tr:hover{ background:var(--bg-elev-1) }
-.cve-table td{ padding:14px 16px;vertical-align:top }
-.cve-table td.id{ font-family:var(--font-mono);font-size:12.5px;color:var(--fg);letter-spacing:.02em;white-space:nowrap }
+.cve-table td{ padding:15px 16px;vertical-align:top }
+.cve-table td.id{ font-family:var(--font-mono);font-size:13px;color:var(--fg);letter-spacing:.02em;white-space:nowrap }
 .cve-table td.id a{ color:var(--fg) }
 .cve-table td.id a:hover{ color:var(--accent) }
-.cve-table td.vendor{ font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap }
-.cve-table td.title{ font-size:14px;color:var(--fg);line-height:1.4;max-width:520px }
+.cve-table td.vendor{ font-family:var(--font-mono);font-size:12px;color:var(--fg-muted);letter-spacing:.03em;text-transform:uppercase;white-space:nowrap }
+.cve-table td.title{ font-size:14.5px;color:var(--fg);line-height:1.5;max-width:520px }
 .cve-table td.score{ font-family:var(--font-mono);font-weight:500;font-size:13px;white-space:nowrap }
 .cve-table td.score .pill{
   display:inline-block;padding:3px 8px;border:1px solid var(--hairline-2);
@@ -69,7 +69,7 @@
   display:inline-flex;align-items:center;gap:6px;background:rgba(216,92,92,.06);
 }
 .cve-table td.kev .badge::before{ content:"";width:5px;height:5px;border-radius:50%;background:var(--status-crit) }
-.cve-table td.added{ font-family:var(--font-mono);font-size:11.5px;color:var(--fg-dim);white-space:nowrap }
+.cve-table td.added{ font-family:var(--font-mono);font-size:12px;color:var(--fg-muted);white-space:nowrap }
 .cve-table td.refs{ font-family:var(--font-mono);font-size:11px;color:var(--fg-dim);white-space:nowrap }
 .cve-table td.refs a{ color:var(--fg-muted);margin-right:6px;border-bottom:1px solid var(--hairline-2) }
 .cve-table td.refs a:hover{ color:var(--fg);border-color:var(--fg) }
@@ -182,14 +182,18 @@
           </label>
         </div>
       </div>
-      <div class="cve-toolbar cve-toolbar-sub">
+      <div class="cve-toolbar cve-toolbar-sub vendor-row">
         <span class="label">Vendor</span>
-        <div class="chips" style="flex:1" data-vendor-chips>
+        <input type="search" class="vendor-search" data-vendor-search placeholder="Filter vendors…" aria-label="Filter vendors" />
+        <div class="chips vendor-chips" data-vendor-chips>
           <button class="chip" data-vendor="fortinet" aria-pressed="false">Fortinet</button>
           <button class="chip" data-vendor="microsoft" aria-pressed="false">Microsoft</button>
           <button class="chip" data-vendor="ivanti" aria-pressed="false">Ivanti</button>
         </div>
-        <input type="search" class="cve-search" data-cve-search placeholder="Search CVE, vendor, keyword…" aria-label="Search CVEs" />
+      </div>
+      <div class="cve-toolbar cve-toolbar-sub">
+        <span class="label">Search</span>
+        <input type="search" class="cve-search" data-cve-search placeholder="Search CVE ID, vendor, product, keyword…" aria-label="Search CVEs" />
       </div>
     </div>
 
@@ -199,7 +203,7 @@
           <th>CVE ID</th>
           <th class="vendor-h">Vendor / Product</th>
           <th class="title-h">Title</th>
-          <th>CVSS</th>
+          <th>Severity</th>
           <th class="kev-h">Status</th>
           <th class="added-h">Added</th>
           <th class="refs-h">Refs</th>

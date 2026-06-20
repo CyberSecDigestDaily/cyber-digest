@@ -1081,7 +1081,6 @@
      Renders the table from digest.json, rebuilds vendor chips from
      live data, populates stats, refreshes hourly. Static rows in the
      HTML act as a no-JS / fetch-failure fallback.
-  ═══════════════════════════════════════════════════════════ */
   /* ═══════════════════════════════════════════════════════════
      CVEs PAGE — full KEV catalog + NVD digest merge, live filter/sort
   ═══════════════════════════════════════════════════════════ */
@@ -1092,35 +1091,37 @@
     const esc  = s => (s == null ? '' : String(s)).replace(/[&<>"]/g,
       c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
     const slug = v => (v || '').toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24);
-    const sevFromCvss = c => (c == null ? '' : c >= 9 ? 'crit' : c >= 7 ? 'high' : c >= 4 ? 'mid' : 'low');
     const TO = ms => (typeof AbortSignal !== 'undefined' && AbortSignal.timeout) ? AbortSignal.timeout(ms) : undefined;
 
+    const band = c => (c >= 9 ? 'crit' : c >= 7 ? 'high' : c >= 4 ? 'mid' : 'low');
+    // Effective severity: CVSS when known, else blended from exploited/ransomware/EPSS so
+    // every row (incl. KEV entries with no CVSS) is filterable & sortable.
+    const sevOf = r => r.cvss != null ? band(r.cvss)
+      : r.ransomware ? 'crit'
+      : (r.epss != null && r.epss >= 0.5) ? 'crit'
+      : (r.kev || (r.epss != null && r.epss >= 0.1)) ? 'high'
+      : (r.epss != null && r.epss >= 0.01) ? 'mid' : 'low';
+    const sevRank = {crit:4, high:3, mid:2, low:1};
+
     const state = { sev:'all', status:'all', time:'all', sort:'date-desc', vendors:new Set(), q:'' };
-    let ALL = [];
+    let ALL = [], vendorFilter = '', vendorExpanded = false;
 
-    function parseKEV(json){
-      return (json.vulnerabilities || []).map(v => ({
-        id:        v.cveID,
-        vendor:    v.vendorProject || '',
-        product:   v.product || '',
-        title:     v.vulnerabilityName || v.shortDescription || '',
-        dateAdded: (v.dateAdded || '').slice(0, 10),
-        ransomware:(v.knownRansomwareCampaignUse || '').toLowerCase() === 'known',
-        kev:       true,
-        cvss:      null,
-        epss:      null,
-        url:       'https://nvd.nist.gov/vuln/detail/' + v.cveID
-      })).filter(r => r.id && r.id.indexOf('CVE-') === 0);
-    }
+    const parseKEV = json => (json.vulnerabilities || []).map(v => ({
+      id:        v.cveID,
+      vendor:    v.vendorProject || '',
+      product:   v.product || '',
+      title:     v.vulnerabilityName || v.shortDescription || '',
+      dateAdded: (v.dateAdded || '').slice(0, 10),
+      ransomware:(v.knownRansomwareCampaignUse || '').toLowerCase() === 'known',
+      kev:true, cvss:null, epss:null,
+      url:'https://nvd.nist.gov/vuln/detail/' + v.cveID
+    })).filter(r => r.id && r.id.indexOf('CVE-') === 0);
 
-    // Full CISA KEV catalog — CISA direct (~1300, CORS-enabled) then same-origin snapshot.
+    // Same-origin snapshot only — CISA's feed has no CORS header, so a direct
+    // browser fetch always fails; the pipeline mirrors the full catalog to /kev.json.
     async function loadKEV(){
       try {
-        const r = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json', {signal: TO(12000)});
-        if (r.ok){ const rows = parseKEV(await r.json()); if (rows.length) return rows; }
-      } catch {}
-      try {
-        const r = await fetch('/kev.json', {signal: TO(6000)});
+        const r = await fetch('/kev.json', {signal: TO(8000)});
         if (r.ok) return parseKEV(await r.json());
       } catch {}
       return [];
@@ -1129,16 +1130,13 @@
     function fromDigest(digest){
       if (!digest || !Array.isArray(digest.cves)) return [];
       return digest.cves.filter(c => c.id && c.id.indexOf('CVE-') === 0).map(c => ({
-        id:        c.id,
-        vendor:    c.vendor || '',
-        product:   c.product || '',
-        title:     (c.desc || '').slice(0, 200),
-        dateAdded: (c.published || '').slice(0, 10),
-        ransomware:false,
-        kev:       !!(c.kev || c.exploited),
-        cvss:      (c.cvss != null && c.cvss > 0) ? c.cvss : null,
-        epss:      (c.epss && c.epss.epss != null) ? c.epss.epss : null,
-        url:       c.nvdUrl || ('https://nvd.nist.gov/vuln/detail/' + c.id)
+        id:c.id, vendor:c.vendor || '', product:c.product || '',
+        title:(c.desc || '').slice(0, 200),
+        dateAdded:(c.published || '').slice(0, 10),
+        ransomware:false, kev:!!(c.kev || c.exploited),
+        cvss:(c.cvss != null && c.cvss > 0) ? c.cvss : null,
+        epss:(c.epss && c.epss.epss != null) ? c.epss.epss : null,
+        url:c.nvdUrl || ('https://nvd.nist.gov/vuln/detail/' + c.id)
       }));
     }
 
@@ -1147,30 +1145,23 @@
       kevRows.forEach(r => map.set(r.id.toUpperCase(), r));
       nvdRows.forEach(n => {
         const ex = map.get(n.id.toUpperCase());
-        if (ex){
-          if (ex.cvss == null) ex.cvss = n.cvss;
-          if (ex.epss == null) ex.epss = n.epss;
-          if (!ex.vendor) ex.vendor = n.vendor;
-          if (!ex.title)  ex.title  = n.title;
-        } else {
-          map.set(n.id.toUpperCase(), n);
-        }
+        if (ex){ if (ex.cvss == null) ex.cvss = n.cvss; if (ex.epss == null) ex.epss = n.epss;
+                 if (!ex.vendor) ex.vendor = n.vendor; if (!ex.title) ex.title = n.title; }
+        else map.set(n.id.toUpperCase(), n);
       });
       return [...map.values()];
     }
 
-    // Best-effort EPSS enrichment so every row has a sortable exploit-probability.
     async function enrichEPSS(rows){
       const ids = rows.filter(r => r.epss == null).map(r => r.id);
-      const CHUNK = 80, MAX = 800;
+      const CHUNK = 80, MAX = 1200;
       for (let i = 0; i < ids.length && i < MAX; i += CHUNK){
         const batch = ids.slice(i, i + CHUNK);
         try {
           const r = await fetch('https://api.first.org/data/v1/epss?cve=' + batch.join(',') + '&limit=' + CHUNK, {signal: TO(8000)});
           if (!r.ok) continue;
           const j = await r.json();
-          const m = {};
-          (j.data || []).forEach(e => { m[e.cve] = parseFloat(e.epss); });
+          const m = {}; (j.data || []).forEach(e => { m[e.cve] = parseFloat(e.epss); });
           rows.forEach(row => { if (row.epss == null && m[row.id] != null) row.epss = m[row.id]; });
         } catch {}
       }
@@ -1181,21 +1172,19 @@
       const days = {'7d':7,'30d':30,'90d':90,'1y':365}[state.time];
       const q = state.q.toLowerCase();
       let rows = ALL.filter(r => {
-        if (state.sev !== 'all' && sevFromCvss(r.cvss) !== state.sev) return false;
+        if (state.sev !== 'all' && sevOf(r) !== state.sev) return false;
         if (state.status === 'kev'    && !r.kev) return false;
         if (state.status === 'ransom' && !r.ransomware) return false;
         if (state.vendors.size && !state.vendors.has(slug(r.vendor))) return false;
-        if (days){
-          if (!r.dateAdded) return false;
-          if ((now - new Date(r.dateAdded).getTime()) / 864e5 > days) return false;
-        }
+        if (days){ if (!r.dateAdded) return false; if ((now - new Date(r.dateAdded).getTime()) / 864e5 > days) return false; }
         if (q && (r.id + ' ' + r.vendor + ' ' + r.product + ' ' + r.title).toLowerCase().indexOf(q) === -1) return false;
         return true;
       });
+      const eff = r => r.cvss != null ? r.cvss : ({crit:9.5,high:7.5,mid:5,low:2}[sevOf(r)]);
       const cmp = {
         'date-desc': (a,b) => (b.dateAdded || '').localeCompare(a.dateAdded || ''),
         'date-asc':  (a,b) => (a.dateAdded || '').localeCompare(b.dateAdded || ''),
-        'cvss-desc': (a,b) => (b.cvss == null ? -1 : b.cvss) - (a.cvss == null ? -1 : a.cvss),
+        'sev-desc':  (a,b) => (sevRank[sevOf(b)] - sevRank[sevOf(a)]) || (eff(b) - eff(a)),
         'epss-desc': (a,b) => (b.epss == null ? -1 : b.epss) - (a.epss == null ? -1 : a.epss),
         'vendor-asc':(a,b) => (a.vendor || '').localeCompare(b.vendor || '')
       }[state.sort];
@@ -1208,16 +1197,13 @@
         return;
       }
       tbody.innerHTML = rows.slice(0, 600).map(r => {
-        const sc    = sevFromCvss(r.cvss);
-        const score = r.cvss != null
-          ? '<span class="pill ' + sc + '">' + r.cvss.toFixed(1) + '</span>'
-          : '<span class="pill" style="color:var(--fg-dim);border-color:var(--hairline-2)">—</span>';
-        const epss  = r.epss != null
-          ? ' <span class="epss-tag">EPSS ' + (r.epss * 100).toFixed(0) + '%</span>' : '';
-        const status = r.ransomware
-          ? '<span class="badge badge-ransom">Ransomware</span>'
-          : (r.kev ? '<span class="badge">Exploited</span>'
-                   : '<span class="badge badge-muted">Not known</span>');
+        const sc    = sevOf(r);
+        const label = r.cvss != null ? r.cvss.toFixed(1)
+          : (sc === 'crit' ? 'CRIT' : sc === 'high' ? 'HIGH' : sc === 'mid' ? 'MED' : 'LOW');
+        const score = '<span class="pill ' + sc + '">' + label + '</span>';
+        const epss  = r.epss != null ? ' <span class="epss-tag">EPSS ' + (r.epss * 100).toFixed(0) + '%</span>' : '';
+        const status = r.ransomware ? '<span class="badge badge-ransom">Ransomware</span>'
+          : (r.kev ? '<span class="badge">Exploited</span>' : '<span class="badge badge-muted">Not known</span>');
         const vp = r.vendor ? (r.product ? esc(r.vendor) + ' · ' + esc(r.product) : esc(r.vendor)) : '—';
         const t  = (r.title || '');
         return '<tr onclick="window.open(\'' + r.url + '\',\'_blank\',\'noopener\')">' +
@@ -1237,21 +1223,29 @@
       if (!wrap) return;
       const count = {};
       ALL.forEach(r => { const v = r.vendor; if (!v) return; const s = slug(v); if (!s) return; (count[s] = count[s] || {n:0, label:v}).n++; });
-      const top = Object.entries(count).sort((a,b) => b[1].n - a[1].n).slice(0, 30);
-      if (!top.length) return;
-      wrap.innerHTML = top.map(([s,o]) =>
-        '<button class="chip" data-vendor="' + s + '" aria-pressed="' + (state.vendors.has(s) ? 'true' : 'false') + '">' +
-        esc(o.label) + ' <span class="chip-n">' + o.n + '</span></button>'
-      ).join('');
+      let entries = Object.entries(count).sort((a,b) => b[1].n - a[1].n);
+      const f = vendorFilter.toLowerCase();
+      if (f) entries = entries.filter(([s,o]) => o.label.toLowerCase().indexOf(f) !== -1);
+      const sel = entries.filter(([s]) => state.vendors.has(s));
+      const others = entries.filter(([s]) => !state.vendors.has(s));
+      const LIMIT = 12;
+      const shown = (vendorExpanded || f) ? others : others.slice(0, LIMIT);
+      const chip = ([s,o]) => '<button class="chip" data-vendor="' + s + '" aria-pressed="' + (state.vendors.has(s) ? 'true' : 'false') + '">' +
+        esc(o.label) + ' <span class="chip-n">' + o.n + '</span></button>';
+      let html = sel.map(chip).join('') + shown.map(chip).join('');
+      const hidden = others.length - shown.length;
+      if (hidden > 0) html += '<button class="chip chip-more" data-vendor-more>+' + hidden + ' more</button>';
+      else if (vendorExpanded && others.length > LIMIT) html += '<button class="chip chip-more" data-vendor-more>show less</button>';
+      wrap.innerHTML = html || '<span style="color:var(--fg-dim);font-size:12px;font-family:var(--font-mono)">No vendors match.</span>';
     }
 
     function stats(){
       const now = Date.now();
-      const addedWithin = n => ALL.filter(r => r.dateAdded && (now - new Date(r.dateAdded).getTime()) / 864e5 <= n).length;
+      const within = n => ALL.filter(r => r.dateAdded && (now - new Date(r.dateAdded).getTime()) / 864e5 <= n).length;
       const set = (sel, val) => { const el = document.querySelector(sel); if (el) el.textContent = val; };
       set('[data-stat-total]',   ALL.length.toLocaleString());
       set('[data-stat-kev]',     ALL.filter(r => r.kev).length.toLocaleString());
-      set('[data-stat-7d]',      addedWithin(7));
+      set('[data-stat-7d]',      within(7));
       set('[data-stat-ransom]',  ALL.filter(r => r.ransomware).length.toLocaleString());
       set('[data-stat-epss]',    ALL.filter(r => r.epss != null && r.epss >= 0.1).length.toLocaleString());
       set('[data-stat-vendors]', new Set(ALL.map(r => slug(r.vendor)).filter(Boolean)).size.toLocaleString());
@@ -1268,19 +1262,20 @@
       const tb = document.querySelector('[data-cve-toolbar]');
       if (tb){
         tb.addEventListener('click', e => {
-          const press = (group, el) => tb.querySelectorAll('[' + group + ']').forEach(x => x.setAttribute('aria-pressed', x === el));
+          const press = (g, el) => tb.querySelectorAll('[' + g + ']').forEach(x => x.setAttribute('aria-pressed', x === el));
           const sev = e.target.closest('[data-sev]');
           if (sev){ state.sev = sev.dataset.sev; press('data-sev', sev); return update(); }
           const st = e.target.closest('[data-status]');
           if (st){ state.status = st.dataset.status; press('data-status', st); return update(); }
           const tm = e.target.closest('[data-time]');
           if (tm){ state.time = tm.dataset.time; press('data-time', tm); return update(); }
+          const more = e.target.closest('[data-vendor-more]');
+          if (more){ vendorExpanded = !vendorExpanded; return buildVendorChips(); }
           const ven = e.target.closest('[data-vendor]');
           if (ven){
             const s = ven.dataset.vendor;
-            if (state.vendors.has(s)){ state.vendors.delete(s); ven.setAttribute('aria-pressed', 'false'); }
-            else { state.vendors.add(s); ven.setAttribute('aria-pressed', 'true'); }
-            return update();
+            if (state.vendors.has(s)) state.vendors.delete(s); else state.vendors.add(s);
+            buildVendorChips(); return update();
           }
         });
       }
@@ -1288,6 +1283,8 @@
       if (sortSel) sortSel.addEventListener('change', () => { state.sort = sortSel.value; update(); });
       const search = document.querySelector('[data-cve-search]');
       if (search) search.addEventListener('input', () => { state.q = search.value.trim(); update(); });
+      const vs = document.querySelector('[data-vendor-search]');
+      if (vs) vs.addEventListener('input', () => { vendorFilter = vs.value.trim(); buildVendorChips(); });
     }
 
     function renderIOCPanel(digest){
@@ -1301,20 +1298,15 @@
       const rows = iocs.slice(0, 40).map(i => {
         const ioc  = esc((i.ioc || '').slice(0, 60));
         const conf = (i.confidence != null) ? i.confidence + '%' : '—';
-        return '<tr>' +
-          '<td class="id" style="max-width:280px;overflow:hidden;text-overflow:ellipsis">' + ioc + '</td>' +
+        return '<tr><td class="id" style="max-width:280px;overflow:hidden;text-overflow:ellipsis">' + ioc + '</td>' +
           '<td class="vendor">' + esc(i.ioc_type || '') + '</td>' +
           '<td class="vendor">' + esc(i.malware || i.threat_type || '') + '</td>' +
           '<td class="added">' + esc((i.first_seen || '').slice(0, 10)) + '</td>' +
-          '<td class="score"><span class="pill mid">' + conf + '</span></td>' +
-        '</tr>';
+          '<td class="score"><span class="pill mid">' + conf + '</span></td></tr>';
       }).join('');
-      el.innerHTML =
-        '<div class="cve-table-wrap" style="margin:0">' +
-        '<table class="cve-table"><thead><tr>' +
+      el.innerHTML = '<div class="cve-table-wrap" style="margin:0"><table class="cve-table"><thead><tr>' +
         '<th>Indicator</th><th class="vendor-h">Type</th><th class="vendor-h">Malware / Threat</th>' +
-        '<th class="added-h">First seen</th><th>Confidence</th>' +
-        '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+        '<th class="added-h">First seen</th><th>Confidence</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
     }
 
     async function load(){
@@ -1322,7 +1314,7 @@
       const [kev, digest] = await Promise.all([ loadKEV(), fetchDigestFeed().catch(() => null) ]);
       const merged = merge(kev, fromDigest(digest));
       renderIOCPanel(digest);
-      if (!merged.length) return; // keep static no-JS fallback rows
+      if (!merged.length) return;
       ALL = merged;
       buildVendorChips();
       stats();
