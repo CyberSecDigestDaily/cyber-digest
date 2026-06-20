@@ -55,14 +55,14 @@
 .cve-table td.vendor{ font-family:var(--font-mono);font-size:12px;color:var(--fg-muted);letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
 .cve-table td.title{ font-size:14.5px;color:var(--fg);line-height:1.5 }
 /* Fixed column widths — keeps the table stable no matter which filters are active */
-.cve-table thead th:nth-child(1){ width:11% }   /* CVE ID */
-.cve-table thead th:nth-child(2){ width:19% }   /* Vendor / Product */
-.cve-table thead th:nth-child(3){ width:40% }   /* Title */
+.cve-table thead th:nth-child(1){ width:14% }   /* CVE ID — wide enough to show the full ID, never truncate */
+.cve-table thead th:nth-child(2){ width:18% }   /* Vendor / Product */
+.cve-table thead th:nth-child(3){ width:37% }   /* Title */
 .cve-table thead th:nth-child(4){ width:8% }    /* Severity */
 .cve-table thead th:nth-child(5){ width:11% }   /* Status */
 .cve-table thead th:nth-child(6){ width:8% }    /* Added */
-.cve-table thead th:nth-child(7){ width:5% }    /* Refs */
-.cve-table td.id{ overflow:hidden;text-overflow:ellipsis }
+.cve-table thead th:nth-child(7){ width:4% }    /* Refs */
+.cve-table td.id{ padding-right:6px }
 .cve-table td.score{ font-family:var(--font-mono);font-weight:500;font-size:13px;white-space:nowrap }
 .cve-table td.score .pill{
   display:inline-block;padding:3px 8px;border:1px solid var(--hairline-2);

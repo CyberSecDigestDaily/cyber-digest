@@ -846,7 +846,7 @@
     // (committed daily) so the page still has data before the first pipeline run.
     for (const path of ['/digest.json', '/feed.json']){
       try {
-        const r = await fetch(path, {signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined});
+        const r = await fetch(path, {signal: AbortSignal.timeout ? AbortSignal.timeout(10000) : undefined});
         if (!r.ok) continue;
         const json = await r.json();
         setCache('cd_digest_v2', json);
