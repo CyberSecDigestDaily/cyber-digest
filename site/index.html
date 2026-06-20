@@ -75,6 +75,17 @@
         <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener" class="btn btn-primary btn-lg">CISA KEV catalog <span class="arr">-></span></a>
         <a href="https://nvd.nist.gov/" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">NVD database</a>
       </div>
+
+      <!-- Latest exploited CVEs — moved out of the console; app.js populates [data-live-feed] -->
+      <div class="hero-feed">
+        <div class="hero-feed-head">Latest exploited &middot; CISA KEV</div>
+      <div class="console-feed" data-live-feed aria-label="Live event feed">
+        <div class="line" data-feed-vendor="fortinet"><span class="t">2024-10-23</span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager &mdash; exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>
+        <div class="line" data-feed-vendor="ivanti"><span class="t">2025-01-15</span><span class="sev crit">CRIT</span><span class="msg">Ivanti Connect Secure &mdash; stack buffer overflow, unauthenticated RCE</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-0282</a></span></div>
+        <div class="line" data-feed-vendor="vmware"><span class="t">2025-03-04</span><span class="sev crit">CRIT</span><span class="msg">VMware ESXi VCMI heap overflow &mdash; zero-day exploited in wild</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-22224</a></span></div>
+        <div class="line" data-feed-vendor="microsoft"><span class="t">2025-01-14</span><span class="sev high">HIGH</span><span class="msg">Microsoft Hyper-V NT Kernel privilege escalation &mdash; zero-day</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-21333</a></span></div>
+      </div>
+      </div>
     </div>
 
     <aside class="console reveal" aria-label="Live threat operations console">
@@ -108,13 +119,6 @@
       <div class="console-actors" data-actors-list></div>
       <!-- Full CVE index with vendor/severity/exploited filtering lives on cves.html -->
       <a class="console-cves-link" href="cves.html">Browse all CVEs &amp; filter by vendor <span class="arr">&rarr;</span></a>
-      <!-- Console feed: app.js populates from CISA KEV. Fallback uses real KEV dates. -->
-      <div class="console-feed" data-live-feed aria-label="Live event feed">
-        <div class="line" data-feed-vendor="fortinet"><span class="t">2024-10-23</span><span class="sev crit">CRIT</span><span class="msg">Fortinet FortiManager &mdash; exploitation by UNC5820 confirmed</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47575" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2024-47575</a></span></div>
-        <div class="line" data-feed-vendor="ivanti"><span class="t">2025-01-15</span><span class="sev crit">CRIT</span><span class="msg">Ivanti Connect Secure &mdash; stack buffer overflow, unauthenticated RCE</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-0282" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-0282</a></span></div>
-        <div class="line" data-feed-vendor="vmware"><span class="t">2025-03-04</span><span class="sev crit">CRIT</span><span class="msg">VMware ESXi VCMI heap overflow &mdash; zero-day exploited in wild</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22224" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-22224</a></span></div>
-        <div class="line" data-feed-vendor="microsoft"><span class="t">2025-01-14</span><span class="sev high">HIGH</span><span class="msg">Microsoft Hyper-V NT Kernel privilege escalation &mdash; zero-day</span><span class="meta"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-21333" target="_blank" rel="noopener" style="color:var(--fg-muted);border-bottom:1px solid var(--hairline-2)">CVE-2025-21333</a></span></div>
-      </div>
     </aside>
   </div>
 </section>
