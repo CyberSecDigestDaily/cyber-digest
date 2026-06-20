@@ -482,7 +482,7 @@
     {t:'Actor', l:'Volt Typhoon — China-nexus, US critical infrastructure',                  h:'https://attack.mitre.org/groups/G1017/', ext:true},
     {t:'Actor', l:'Salt Typhoon — China-nexus, US telecommunications',                       h:'https://attack.mitre.org/groups/G1045/', ext:true},
     {t:'Actor', l:'Scattered Spider — eCrime, identity/social engineering',                  h:'https://attack.mitre.org/groups/G1015/', ext:true},
-    {t:'Actor', l:'RansomHub — crimeware, ransomware-as-a-service',                          h:'https://attack.mitre.org/groups/G1075/', ext:true},
+    {t:'Actor', l:'RansomHub — crimeware, ransomware-as-a-service',                          h:'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a', ext:true},
     {t:'Actor', l:'APT28 / Fancy Bear — Russia GRU, espionage',                              h:'https://attack.mitre.org/groups/G0007/', ext:true},
     {t:'Actor', l:'Lazarus Group — DPRK, financial crime & espionage',                       h:'https://attack.mitre.org/groups/G0032/', ext:true},
     {t:'Page',  l:'Vulnerabilities — CVE index & CISA KEV tracker',                          h:'cves.html'},
@@ -688,7 +688,7 @@
       name:   'RansomHub',
       nation: 'Crimeware',
       sector: 'Ransomware-as-a-service',
-      url:    'https://attack.mitre.org/groups/G1075/'
+      url:    'https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-242a'
     },
     {
       name:   'APT28 / Fancy Bear',
