@@ -440,7 +440,7 @@
     const feedEl = document.querySelector('[data-live-feed]');
     if (!feedEl || !items.length) return;
     feedEl.innerHTML = '';
-    items.slice(0, 5).forEach(item => {
+    items.slice(0, 30).forEach(item => {
       const cls    = sevClass(item.severity);
       const lbl    = sevLabel(item.severity);
       const vendor = item.vendor
@@ -734,7 +734,7 @@
       if (!r.ok) return;
       const doc = new DOMParser().parseFromString(await r.text(), 'application/xml');
       if (doc.querySelector('parsererror')) return;
-      const items = [...doc.querySelectorAll('item')].slice(0, 4).map(it => {
+      const items = [...doc.querySelectorAll('item')].slice(0, 30).map(it => {
         const g = t => ((it.querySelector(t) && it.querySelector(t).textContent) || '').trim();
         const title = g('title'), link = g('link');
         const m = title.match(/CVE-\d{4}-\d+/) || link.match(/CVE-\d{4}-\d+/);
@@ -1280,6 +1280,7 @@
         if (state.sev !== 'all' && sevOf(r) !== state.sev) return false;
         if (state.status === 'kev'    && !r.kev) return false;
         if (state.status === 'ransom' && !r.ransomware) return false;
+        if (state.status === 'none'   && (r.kev || r.ransomware)) return false;
         if (state.vendors.size && !state.vendors.has(slug(r.vendor))) return false;
         if (days){ if (!r.dateAdded) return false; if ((now - new Date(r.dateAdded).getTime()) / 864e5 > days) return false; }
         if (q && (r.id + ' ' + r.vendor + ' ' + r.product + ' ' + r.title).toLowerCase().indexOf(q) === -1) return false;

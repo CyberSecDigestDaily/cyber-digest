@@ -1165,3 +1165,13 @@ img,svg{display:block;max-width:100%}
 .cf-item:hover .cf-id{ color:var(--accent) }
 .cf-item .cf-ttl{ overflow:hidden;text-overflow:ellipsis;white-space:nowrap }
 .cf-item .cf-dt{ color:var(--fg-dim);white-space:nowrap;font-size:10px }
+
+/* Scrollable home feeds — fixed-height boxes you can scroll through */
+.hero-feed .console-feed{ max-height:300px; overflow-y:auto }
+.console-cvefeed [data-cvefeed-list]{ max-height:190px; overflow-y:auto }
+.hero-feed .console-feed::-webkit-scrollbar,
+.console-cvefeed [data-cvefeed-list]::-webkit-scrollbar{ width:8px }
+.hero-feed .console-feed::-webkit-scrollbar-thumb,
+.console-cvefeed [data-cvefeed-list]::-webkit-scrollbar-thumb{ background:var(--hairline-2);border-radius:4px }
+.hero-feed .console-feed::-webkit-scrollbar-track,
+.console-cvefeed [data-cvefeed-list]::-webkit-scrollbar-track{ background:transparent }
