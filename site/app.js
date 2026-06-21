@@ -431,6 +431,11 @@
   /* ═══════════════════════════════════════════════════════════
      9. CONSOLE FEED — live log on homepage
   ═══════════════════════════════════════════════════════════ */
+  // Display dates as DD-MM-YYYY (from ISO YYYY-MM-DD).
+  function fmtDMY(d){
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d || '');
+    return m ? m[3] + '-' + m[2] + '-' + m[1] : (d || '');
+  }
   function populateConsoleFeed(items){
     const feedEl = document.querySelector('[data-live-feed]');
     if (!feedEl || !items.length) return;
@@ -455,7 +460,7 @@
       line.dataset.feedTech   = feedTech;
       line.dataset.feedKit    = feedKit;
       line.innerHTML =
-        '<span class="t">' + (date || '') + '</span>' +
+        '<span class="t">' + fmtDMY(date) + '</span>' +
         '<span class="sev ' + cls + '">' + lbl + '</span>' +
         '<span class="msg">' + (vendor ? vendor + ' — ' : '') + msg + (msg.length >= 62 ? '…' : '') + '</span>' +
         '<span class="meta"><a href="' + item.nvdUrl + '" target="_blank" rel="noopener" data-cve-tip="' + tip + '" ' +
@@ -1271,7 +1276,7 @@
           '<td class="title">' + esc(t.slice(0, 150)) + (t.length > 150 ? '…' : '') + epss + '</td>' +
           '<td class="score">' + score + '</td>' +
           '<td class="kev">' + status + '</td>' +
-          '<td class="added">' + esc(r.dateAdded || '—') + '</td>' +
+          '<td class="added">' + esc(r.dateAdded ? fmtDMY(r.dateAdded) : '—') + '</td>' +
           '<td class="refs"><a href="' + r.url + '" target="_blank" rel="noopener">NVD</a></td>' +
         '</tr>';
       }).join('');
@@ -1360,7 +1365,7 @@
         return '<tr><td class="id" style="max-width:280px;overflow:hidden;text-overflow:ellipsis">' + ioc + '</td>' +
           '<td class="vendor">' + esc(i.ioc_type || '') + '</td>' +
           '<td class="vendor">' + esc(i.malware || i.threat_type || '') + '</td>' +
-          '<td class="added">' + esc((i.first_seen || '').slice(0, 10)) + '</td>' +
+          '<td class="added">' + esc(fmtDMY((i.first_seen || '').slice(0, 10))) + '</td>' +
           '<td class="score"><span class="pill mid">' + conf + '</span></td></tr>';
       }).join('');
       el.innerHTML = '<div class="cve-table-wrap" style="margin:0"><table class="cve-table"><thead><tr>' +
