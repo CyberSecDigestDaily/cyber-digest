@@ -440,7 +440,7 @@
     const feedEl = document.querySelector('[data-live-feed]');
     if (!feedEl || !items.length) return;
     feedEl.innerHTML = '';
-    items.slice(0, 6).forEach(item => {
+    items.slice(0, 5).forEach(item => {
       const cls    = sevClass(item.severity);
       const lbl    = sevLabel(item.severity);
       const vendor = item.vendor
@@ -724,7 +724,7 @@
   /* ═══════════════════════════════════════════════════════════
      LATEST CVEs — fresh feed from cvefeed.io (homepage console)
   ═══════════════════════════════════════════════════════════ */
-  (async function renderLatestCvefeed(){
+  async function renderLatestCvefeed(){
     const list = document.querySelector('[data-cvefeed-list]');
     if (!list) return;
     const wrap = document.querySelector('[data-cvefeed-wrap]');
@@ -734,7 +734,7 @@
       if (!r.ok) return;
       const doc = new DOMParser().parseFromString(await r.text(), 'application/xml');
       if (doc.querySelector('parsererror')) return;
-      const items = [...doc.querySelectorAll('item')].slice(0, 6).map(it => {
+      const items = [...doc.querySelectorAll('item')].slice(0, 4).map(it => {
         const g = t => ((it.querySelector(t) && it.querySelector(t).textContent) || '').trim();
         const title = g('title'), link = g('link');
         const m = title.match(/CVE-\d{4}-\d+/) || link.match(/CVE-\d{4}-\d+/);
@@ -755,7 +755,9 @@
       ).join('');
       if (wrap) wrap.hidden = false;
     } catch {}
-  })();
+  }
+  renderLatestCvefeed();
+  setInterval(renderLatestCvefeed, 5 * 60 * 1000);
 
   /* ═══════════════════════════════════════════════════════════
      16. HIGHLIGHT CURRENT PAGE IN NAV
@@ -1169,7 +1171,7 @@
     const sevRank = {crit:4, high:3, mid:2, low:1};
 
     const state = { sev:'all', status:'all', time:'all', sort:'date-desc', vendors:new Set(), q:'' };
-    let ALL = [], vendorFilter = '', vendorExpanded = false;
+    let ALL = [], vendorFilter = '', vendorExpanded = false, epssMemo = Object.create(null);
 
     const parseKEV = json => (json.vulnerabilities || []).map(v => ({
       id:        v.cveID,
@@ -1253,6 +1255,8 @@
     }
 
     async function enrichEPSS(rows){
+      // Reuse EPSS already fetched this session so periodic reloads only query NEW CVEs.
+      rows.forEach(r => { if (r.epss == null && epssMemo[r.id] != null) r.epss = epssMemo[r.id]; });
       const ids = rows.filter(r => r.epss == null).map(r => r.id);
       const CHUNK = 80, MAX = 1200;
       for (let i = 0; i < ids.length && i < MAX; i += CHUNK){
@@ -1263,6 +1267,7 @@
           const j = await r.json();
           const m = {}; (j.data || []).forEach(e => { m[e.cve] = parseFloat(e.epss); });
           rows.forEach(row => { if (row.epss == null && m[row.id] != null) row.epss = m[row.id]; });
+          Object.assign(epssMemo, m);
         } catch {}
       }
     }
@@ -1424,7 +1429,7 @@
 
     wire();
     load();
-    setInterval(load, 60 * 60 * 1000);
+    setInterval(load, 5 * 60 * 1000);  // refresh every 5 min — cvefeed live, EPSS memoised
   }
   initCvesPage();
 
