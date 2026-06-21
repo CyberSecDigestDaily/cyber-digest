@@ -722,6 +722,42 @@
   })();
 
   /* ═══════════════════════════════════════════════════════════
+     LATEST CVEs — fresh feed from cvefeed.io (homepage console)
+  ═══════════════════════════════════════════════════════════ */
+  (async function renderLatestCvefeed(){
+    const list = document.querySelector('[data-cvefeed-list]');
+    if (!list) return;
+    const wrap = document.querySelector('[data-cvefeed-wrap]');
+    const esc = s => (s == null ? '' : String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    try {
+      const r = await fetch('https://cvefeed.io/rssfeed/latest.xml', {signal: AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined});
+      if (!r.ok) return;
+      const doc = new DOMParser().parseFromString(await r.text(), 'application/xml');
+      if (doc.querySelector('parsererror')) return;
+      const items = [...doc.querySelectorAll('item')].slice(0, 6).map(it => {
+        const g = t => ((it.querySelector(t) && it.querySelector(t).textContent) || '').trim();
+        const title = g('title'), link = g('link');
+        const m = title.match(/CVE-\d{4}-\d+/) || link.match(/CVE-\d{4}-\d+/);
+        if (!m) return null;
+        const parts = title.split(' - ');
+        const ttl = parts.length >= 3 ? parts.slice(2).join(' - ') : (parts.slice(1).join(' - ') || title);
+        const pub = g('pubDate'); let d = '';
+        if (pub) { const dt = new Date(pub); if (!isNaN(dt)) d = dt.toISOString().slice(0, 10); }
+        return { id: m[0], ttl, d };
+      }).filter(Boolean);
+      if (!items.length) return;
+      list.innerHTML = items.map(c =>
+        '<a class="cf-item" href="https://nvd.nist.gov/vuln/detail/' + c.id + '" target="_blank" rel="noopener">' +
+          '<span class="cf-id">' + c.id + '</span>' +
+          '<span class="cf-ttl">' + esc(c.ttl) + '</span>' +
+          '<span class="cf-dt">' + fmtDMY(c.d) + '</span>' +
+        '</a>'
+      ).join('');
+      if (wrap) wrap.hidden = false;
+    } catch {}
+  })();
+
+  /* ═══════════════════════════════════════════════════════════
      16. HIGHLIGHT CURRENT PAGE IN NAV
   ═══════════════════════════════════════════════════════════ */
   (function markCurrent(){
