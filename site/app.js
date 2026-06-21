@@ -1304,7 +1304,7 @@
       const set = (sel, val) => { const el = document.querySelector(sel); if (el) el.textContent = val; };
       set('[data-stat-total]',   ALL.length.toLocaleString());
       set('[data-stat-kev]',     ALL.filter(r => r.kev).length.toLocaleString());
-      set('[data-stat-7d]',      within(7));
+      set('[data-stat-7d]',      ALL.filter(r => r.kev && r.dateAdded && (now - new Date(r.dateAdded).getTime()) / 864e5 <= 7).length);  // KEV additions this week (matches the card label)
       set('[data-stat-ransom]',  ALL.filter(r => r.ransomware).length.toLocaleString());
       set('[data-stat-epss]',    ALL.filter(r => r.epss != null && r.epss >= 0.1).length.toLocaleString());
       set('[data-stat-vendors]', new Set(ALL.map(r => slug(r.vendor)).filter(Boolean)).size.toLocaleString());
