@@ -746,13 +746,14 @@
         return { id: m[0], ttl, d };
       }).filter(Boolean);
       if (!items.length) return;
-      list.innerHTML = items.map(c =>
-        '<a class="cf-item" href="https://nvd.nist.gov/vuln/detail/' + c.id + '" target="_blank" rel="noopener">' +
+      list.innerHTML = items.map(c => {
+        const tip = '<strong>' + c.id + '</strong> &middot; ' + fmtDMY(c.d) + '<br>' + esc(c.ttl);
+        return '<a class="cf-item" data-cve-tip="' + tip + '" href="https://nvd.nist.gov/vuln/detail/' + c.id + '" target="_blank" rel="noopener">' +
           '<span class="cf-id">' + c.id + '</span>' +
           '<span class="cf-ttl">' + esc(c.ttl) + '</span>' +
           '<span class="cf-dt">' + fmtDMY(c.d) + '</span>' +
-        '</a>'
-      ).join('');
+        '</a>';
+      }).join('');
       if (wrap) wrap.hidden = false;
     } catch {}
   }
