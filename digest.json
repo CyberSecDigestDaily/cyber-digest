@@ -1,515 +1,11 @@
 {
-  "generated": "2026-06-26T09:40:47.148102+00:00",
+  "generated": "2026-06-26T14:34:38.325403+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>75 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>65 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-11576",
-      "desc": "The security fix for CVE-2025-0728 in eclipse-threadx NetX Duo refactors error handling in the HTTP server PUT process to use a shared cleanup label, but this unified cleanup path unconditionally calls\u00a0fx_file_close()\u00a0even when the file was never successfully opened. Multiple error branches jump to ",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T10:16:09.743",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11576"
-    },
-    {
-      "id": "CVE-2026-34192",
-      "desc": "Software installed and run as a non-privileged user may conduct improper GPU system calls to cause an error path leading to UAF of GPU page tables.\n\n\n\nThe vulnerability allows physical memory allocated for MMU page tables to be used after being freed. This was caused by an error path that would not ",
-      "cvss": 7.7,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T10:16:11.203",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34192"
-    },
-    {
-      "id": "CVE-2026-41156",
-      "desc": "Software installed and run as a non-privileged user may conduct improper GPU system calls to cause mismanagement of resources creating a write use after free scenario.\n\n\n\nA shared resource (memory page) managed by a CPU thread of control (driver) and accessed by a GPU thread of control (Firmware) ca",
-      "cvss": 7.7,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T10:16:11.317",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41156"
-    },
-    {
-      "id": "CVE-2026-56138",
-      "desc": "AIL framework contains a path traversal vulnerability in the /objects/item/diff endpoint. The endpoint accepts item identifiers through the s1 and s2 query parameters and, prior to the fix, attempted to retrieve and compare item contents without first verifying that both referenced items existed as ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T10:16:11.420",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56138"
-    },
-    {
-      "id": "CVE-2026-8296",
-      "desc": "In affected versions of Octopus Server with certain access levels it was possible to embed a Cross-Site Scripting Payload via artifacts.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T10:16:11.577",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8296"
-    },
-    {
-      "id": "CVE-2026-11941",
-      "desc": "Cloudflare Quiche was affected by 2 use-after-free vulnerabilities in the connection ID iterator FFI functions.\n\n\n\nThe \u201cquiche_connection_id_iter_next\u201d and \u201cquiche_conn_retired_scid_next\u201d functions would return a pointer to a \u201cConnectionId\u201d to the applications via function arguments, but the owned \u201c",
-      "cvss": 5.6,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T12:16:26.137",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11941"
-    },
-    {
-      "id": "CVE-2026-12706",
-      "desc": "A use-after-free vulnerability was found in FFmpeg's RASC video decoder. The decode_move() function initializes a read pointer into a decompressed buffer, but a subsequent reallocation of that same buffer during move-table processing leaves the pointer dangling. An attacker could exploit this by pro",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T12:16:27.100",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12706"
-    },
-    {
-      "id": "CVE-2026-44939",
-      "desc": "A command injection vulnerability in the Rancher Manager cluster before 2.14.2 import endpoint  /v3/import/{token}_{clusterId}.yaml through unsanitized YAML parameters could allow remote attackers to break out of an image, and execute e.g. malicious containers.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T13:16:30.583",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44939"
-    },
-    {
-      "id": "CVE-2026-50242",
-      "desc": "In JetBrains Hub before 2026.1.13757,\n2025.3.148033,\n2025.2.148048,\n2025.1.148120,\n2024.3.148430,\n2024.2.148429 authentication bypass via direct database access leading to administrative access was possible",
-      "cvss": 10.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T13:16:36.987",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50242"
-    },
-    {
-      "id": "CVE-2026-53915",
-      "desc": "In JetBrains GoLand before 2026.1.3 remote code execution was possible via untrusted project configuration",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T13:16:37.100",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53915"
-    },
-    {
-      "id": "CVE-2026-56141",
-      "desc": "In JetBrains Hub before 2026.1.13757,\n2025.3.148033,\n2025.2.148048,\n2025.1.148120,\n2024.3.148430,\n2024.2.148429 account takeover via predictable restore codes was possible",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T13:16:37.203",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56141"
-    },
-    {
-      "id": "CVE-2026-56142",
-      "desc": "In JetBrains Hub before 2026.1.13757,\n2025.3.148033,\n2025.2.148048,\n2025.1.148120,\n2024.3.148430,\n2024.2.148429 privilege escalation by attaching authentication details to accounts was possible",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T13:16:37.313",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56142"
-    },
-    {
-      "id": "CVE-2025-62821",
-      "desc": "Microsoft HEIF Image Extensions 1.2.22.0 has an out-of-bounds read because CHEIFItemInfoEntry_GetDataSize can return success while leaving the reported data size as 0. This causes a caller to make a 1-byte allocation. Later, CopyPixels computes copy_size = stride * abs(roi_height) but does not check",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:21.570",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-62821"
-    },
-    {
-      "id": "CVE-2026-12104",
-      "desc": "OS command injection in the environment and tunnel configuration functionality in SIMA GmbH Bondix through version 1.25.7.5 on Linux allows an authenticated attacker with configuration write access to execute arbitrary operating-system commands via crafted configuration values passed to server-side ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:21.687",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12104"
-    },
-    {
-      "id": "CVE-2026-39998",
-      "desc": "Improper Input Validation vulnerability in Apache APISIX.\n\nThe attacker can take advantage of certain configuration in forward-auth plugin to spoof identity headers.\nThis issue affects Apache APISIX: from 2.12.0 through 3.16.0.\n\nUsers are recommended to upgrade to version 3.17.0, which fixes the iss",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:21.823",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39998"
-    },
-    {
-      "id": "CVE-2026-39999",
-      "desc": "Authentication Bypass by Spoofing vulnerability in Apache APISIX.\n\nThe attacker can completely bypass authentication capitalising on certain configurations of jwt-auth plugin.\nThis issue affects Apache APISIX: from v2.2 through v3.16.0.\n\nUsers are recommended to upgrade to version v3.17.0, which fix",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:21.950",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39999"
-    },
-    {
-      "id": "CVE-2026-44046",
-      "desc": "Use of Less Trusted Source vulnerability in Apache APISIX.\n\nAttacker can take advantage of wolf-rbac plugin under default configuration to potentially pollute logs with spoofed identity information and exploit IP based access control rules.\nThis issue affects Apache APISIX: from 1.2.0 through 3.16.0",
-      "cvss": 5.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.070",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44046"
-    },
-    {
-      "id": "CVE-2026-44087",
-      "desc": "Insufficient Verification of Data Authenticity vulnerability in Apache APISIX.\n\nThe openid-connect plugin under default configuration has an attack surface that allows the attacker to spoof identity headers allowing the attacker to get unauthorized access the protected resources.\nThis issue affects ",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.200",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44087"
-    },
-    {
-      "id": "CVE-2026-44915",
-      "desc": "URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache APISIX.\n\nThe default configuration of cas-auth in Apache APISIX is vulnerable to phishing and credential theft.\n\nThis issue affects Apache APISIX: from 3.0.0 through 3.16.0.\n\nUsers are recommended to upgrade to version 3.17.",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.323",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44915"
-    },
-    {
-      "id": "CVE-2026-47339",
-      "desc": "Incorrect Authorization vulnerability in Apache APISIX.\n\nAn attacker can capitalise on authz-casdoor plugin under default configuration to authenticate themselves with credentials from a different source.\nThis issue affects Apache APISIX: from 2.14.1 through 3.16.0.\n\nUsers are recommended to upgrade",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.443",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47339"
-    },
-    {
-      "id": "CVE-2026-47341",
-      "desc": "Authentication Bypass by Capture-replay vulnerability in Apache APISIX.\n\nAttacker can benefit from certain configurations in hmac-auth to re-use a token forever, bypassing expiry.\nThis issue affects Apache APISIX: from 3.11.0 through 3.16.0.\n\nUsers are recommended to upgrade to version 3.17.0, which",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.560",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47341"
-    },
-    {
-      "id": "CVE-2026-48137",
-      "desc": "There is an untrusted pointer dereference vulnerability in the NI grpc-device sideband streaming API that may allow an attacker to cause an arbitrary memory dereference, potentially resulting in remote code execution.\u00a0 Successful exploitation requires an attacker\u00a0 to supply a specially crafted\u00a0Monik",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "Ni",
-      "product": "Instrumentstudio, Ni Grpc Device Server",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.680",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48137"
-    },
-    {
-      "id": "CVE-2026-48138",
-      "desc": "There is an out-of-bounds read vulnerability in the NI grpc-device streaming API due to a missing bounds check that may result in a denial of service. Successful exploitation requires an attacker to supply a specially crafted write request. This affects NI grpc-device 2.17.0 and prior versions.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ni",
-      "product": "Instrumentstudio, Ni Grpc Device Server",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.817",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48138"
-    },
-    {
-      "id": "CVE-2026-48139",
-      "desc": "There is a NULL pointer dereference vulnerability in NI grpc-device in the data moniker service that may allow an attacker to cause a denial of service by triggering a crash.\u00a0 Successful exploitation requires an attacker to provide an unknown\u00a0value to the data moniker service. This affects NI grpc-d",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ni",
-      "product": "Instrumentstudio, Ni Grpc Device Server",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:22.937",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48139"
-    },
-    {
-      "id": "CVE-2026-48140",
-      "desc": "There is an unchecked enum cast vulnerability in NI grpc-device BeginSidebandStream that may allow an attacker to trigger invalid enum states and undefined behavior, potentially resulting in a denial of service. Successful exploitation requires an attacker to supply a specially crafted message conta",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Ni",
-      "product": "Instrumentstudio, Ni Grpc Device Server",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.063",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48140"
-    },
-    {
-      "id": "CVE-2026-48141",
-      "desc": "There is a memory leak in NI grpc-device BeginSidebandStream that may result in denial of service due to memory exhaustion.\u00a0 This affects NI grpc-device 2.17.0 and prior versions.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Ni",
-      "product": "Instrumentstudio, Ni Grpc Device Server",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.190",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48141"
-    },
-    {
-      "id": "CVE-2026-48895",
-      "desc": "URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Apache APISIX.\n\nThe attacker could manipulate some client headers to perform an open-redirect, to potentially expose the session token.\n\nThis issue affects Apache APISIX: from 3.0.0 through 3.16.0.\n\nUsers are recommended to upgrade",
-      "cvss": 7.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.310",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48895"
-    },
-    {
-      "id": "CVE-2026-49230",
-      "desc": "Improper Validation of Integrity Check Value vulnerability in Apache APISIX.\n\nThe jwe-decrypt plugin under default configuration is vulnerable to authentication bypass.\u00a0\nThis issue affects Apache APISIX: from 3.8.0 through 3.16.0.\n\nUsers are recommended to upgrade to version 3.17.0, which fixes the ",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.427",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49230"
-    },
-    {
-      "id": "CVE-2026-49231",
-      "desc": "Authentication Bypass by Spoofing vulnerability in opa plugin.\n\nAn attacker could relay spoofed identity headers to upstream capitalising on non-default configuration in opa plugin.\n\nThis could allow the attacker to assume higher privileges on the upstream service.\nThis issue affects Apache APISIX: ",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.543",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49231"
-    },
-    {
-      "id": "CVE-2026-49357",
-      "desc": "Line Desktop MCP is a project that, while unaffiliated with the official line-bot-mcp-server, allows users to directly operate the LINE Desktop application on Windows or Mac via MCP. `line-desktop-mcp` supports a `--http-mode` Streamable HTTP transport for use with clients such as n8n. In this mode ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.667",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49357"
-    },
-    {
-      "id": "CVE-2026-49871",
-      "desc": "Cross-Site Request Forgery (CSRF) vulnerability in the cas-auth plugin under default configurations.\n\nThis defect allows a\u00a0remote attacker that manages to send a victim to a webpage controlled by them can cause the victim's browser to become authenticated as a different identity.\n\nActions the victim",
-      "cvss": 9.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.800",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49871"
-    },
-    {
-      "id": "CVE-2026-49872",
-      "desc": "Improper Authentication vulnerability in Apache APISIX.\n\nWhen the cas-auth plugin is used in a route, an attacker can possibly authenticate itself with credentials from a different source.\nThis issue affects Apache APISIX: from 3.0.0 through 3.16.0.\n\nUsers are recommended to upgrade to version 3.17.",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "Apache",
-      "product": "Apisix",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:23.917",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49872"
-    },
-    {
-      "id": "CVE-2026-4026",
-      "desc": "A security vulnerability has been identified in FlexNet Manager Suite 2025 R1 that could allow an authenticated user with read-only access to account settings to escalate their privileges to Administrator level.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:24.037",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4026"
-    },
-    {
-      "id": "CVE-2026-4027",
-      "desc": "A security vulnerability has been identified in FlexNet Manager Suite 2025 R1 and R2 that could allow unauthorized access to attachment files due to insufficient access control.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:24.157",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4027"
-    },
-    {
-      "id": "CVE-2026-9142",
-      "desc": "There is an insecure default credentials vulnerability in NI grpc-device when TLS configuration is not present and the server is bound beyond loopback.\u00a0 This may allow an unauthenticated user access to the server on the local network.\u00a0 This affects NI grpc-device 2.17.0 and prior versions.",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "Ni",
-      "product": "Instrumentstudio, Ni Grpc Device Server",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:24.423",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9142"
-    },
-    {
-      "id": "CVE-2026-9143",
-      "desc": "There is an incorrect conversion between numeric types vulnerability in NI grpc-device due to missing range checks in\u00a0CodeGen.\u00a0 This may silently discard high bits if a size value exceeded the target type's range. This affects NI grpc-device 2.17.0 and prior versions.",
-      "cvss": 3.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "LOW",
-      "vendor": "Ni",
-      "product": "Instrumentstudio, Ni Grpc Device Server",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-19T14:16:24.550",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9143"
-    },
     {
       "id": "CVE-2016-20085",
       "desc": "Realtek High Definition Audio Driver 6.0.1.6730 contains an unquoted service path vulnerability that allows local attackers to escalate privileges by placing a malicious executable in the service path. Attackers can insert an executable file in the unquoted path and restart the service to execute co",
@@ -642,8 +138,8 @@
       "cvss": 7.8,
       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
       "severity": "HIGH",
-      "vendor": "",
-      "product": "",
+      "vendor": "Anydesk",
+      "product": "Anydesk",
       "exploited": true,
       "kev": false,
       "epss": null,
@@ -702,10 +198,7 @@
       "product": "",
       "exploited": true,
       "kev": false,
-      "epss": {
-        "epss": 0.00119,
-        "percentile": 0.02032
-      },
+      "epss": null,
       "published": "2026-06-19T15:16:33.877",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2020-37251"
     },
@@ -771,8 +264,8 @@
       "cvss": 7.8,
       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
       "severity": "HIGH",
-      "vendor": "",
-      "product": "",
+      "vendor": "Malwarebytes",
+      "product": "Malwarebytes",
       "exploited": true,
       "kev": false,
       "epss": null,
@@ -1209,7 +702,10 @@
       "product": "",
       "exploited": true,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00237,
+        "percentile": 0.14607
+      },
       "published": "2026-06-19T17:16:15.190",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2017-20271"
     },
@@ -1405,10 +901,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00102,
-        "percentile": 0.01158
-      },
+      "epss": null,
       "published": "2026-06-19T17:16:22.810",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3196"
     },
@@ -1740,8 +1233,8 @@
       "cvss": 6.5,
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
       "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
+      "vendor": "Struktur",
+      "product": "Libheif",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -1894,8 +1387,8 @@
       "cvss": 7.5,
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
       "severity": "HIGH",
-      "vendor": "",
-      "product": "",
+      "vendor": "Sunnyadn",
+      "product": "Js-Toml",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -1912,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0065,
+        "percentile": 0.46492
+      },
       "published": "2026-06-19T19:16:36.430",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49336"
     },
@@ -2108,10 +1604,7 @@
       "product": "Edge Chromium",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00282,
-        "percentile": 0.19842
-      },
+      "epss": null,
       "published": "2026-06-19T21:16:41.883",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32208"
     },
@@ -2615,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0026,
+        "percentile": 0.17309
+      },
       "published": "2026-06-20T14:16:19.147",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12673"
     },
@@ -2811,10 +2307,7 @@
       "product": "Nuxt",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00209,
-        "percentile": 0.11066
-      },
+      "epss": null,
       "published": "2026-06-20T16:17:05.733",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56317"
     },
@@ -3318,7 +2811,10 @@
       "product": "Litellm",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00288,
+        "percentile": 0.2045
+      },
       "published": "2026-06-21T10:16:17.173",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12799"
     },
@@ -3356,8 +2852,8 @@
       "cvss": 8.1,
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
       "severity": "HIGH",
-      "vendor": "",
-      "product": "",
+      "vendor": "Mmaitre314",
+      "product": "Picklescan",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -3370,8 +2866,8 @@
       "cvss": 8.1,
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
       "severity": "HIGH",
-      "vendor": "",
-      "product": "",
+      "vendor": "Mmaitre314",
+      "product": "Picklescan",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -3468,8 +2964,8 @@
       "cvss": 9.8,
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
+      "vendor": "Kidocode",
+      "product": "Crawl4Ai",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -3510,14 +3006,11 @@
       "cvss": 3.7,
       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
       "severity": "LOW",
-      "vendor": "",
-      "product": "",
+      "vendor": "Imagemagick",
+      "product": "Imagemagick",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00189,
-        "percentile": 0.08642
-      },
+      "epss": null,
       "published": "2026-06-21T14:16:25.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56367"
     },
@@ -3527,8 +3020,8 @@
       "cvss": 3.7,
       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
       "severity": "LOW",
-      "vendor": "",
-      "product": "",
+      "vendor": "Imagemagick",
+      "product": "Imagemagick",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -4003,8 +3496,8 @@
       "cvss": 5.3,
       "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
       "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
+      "vendor": "Langflow",
+      "product": "Langflow",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -4021,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00115,
+        "percentile": 0.01819
+      },
       "published": "2026-06-22T00:16:42.260",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12823"
     },
@@ -4200,7 +3696,7 @@
       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
       "severity": "HIGH",
       "vendor": "Apache",
-      "product": "",
+      "product": "Doris Mcp Server",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -4217,10 +3713,7 @@
       "product": "Nifi",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00327,
-        "percentile": 0.24414
-      },
+      "epss": null,
       "published": "2026-06-22T08:17:05.447",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44911"
     },
@@ -4724,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0029,
+        "percentile": 0.20676
+      },
       "published": "2026-06-22T14:17:52.697",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7165"
     },
@@ -4920,10 +4416,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00376,
-        "percentile": 0.29435
-      },
+      "epss": null,
       "published": "2026-06-22T16:16:34.230",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12628"
     },
@@ -5427,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00313,
+        "percentile": 0.22984
+      },
       "published": "2026-06-22T18:16:38.470",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46417"
     },
@@ -5623,10 +5119,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00217,
-        "percentile": 0.12077
-      },
+      "epss": null,
       "published": "2026-06-22T18:16:44.497",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53540"
     },
@@ -6130,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00244,
+        "percentile": 0.1544
+      },
       "published": "2026-06-22T20:16:29.227",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44272"
     },
@@ -6326,10 +5822,7 @@
       "product": "Pypdf",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00125,
-        "percentile": 0.02568
-      },
+      "epss": null,
       "published": "2026-06-22T21:16:25.420",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54530"
     },
@@ -6833,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00265,
+        "percentile": 0.17831
+      },
       "published": "2026-06-22T22:16:51.470",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56311"
     },
@@ -7029,10 +6525,7 @@
       "product": "Vllm",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00304,
-        "percentile": 0.22019
-      },
+      "epss": null,
       "published": "2026-06-22T23:16:30.873",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54232"
     },
@@ -7536,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00359,
+        "percentile": 0.27762
+      },
       "published": "2026-06-23T13:16:44.687",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56248"
     },
@@ -7732,10 +7228,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00236,
-        "percentile": 0.14404
-      },
+      "epss": null,
       "published": "2026-06-23T14:17:21.853",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10609"
     },
@@ -8239,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0035,
+        "percentile": 0.26916
+      },
       "published": "2026-06-23T17:16:39.560",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-61027"
     },
@@ -8435,10 +7931,7 @@
       "product": "N8N",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00632,
-        "percentile": 0.45646
-      },
+      "epss": null,
       "published": "2026-06-23T17:16:59.290",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44789"
     },
@@ -8942,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00174,
+        "percentile": 0.07053
+      },
       "published": "2026-06-23T18:17:31.403",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2020-9695"
     },
@@ -9138,10 +8634,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0015,
-        "percentile": 0.04562
-      },
+      "epss": null,
       "published": "2026-06-23T18:18:03.563",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49440"
     },
@@ -9645,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00289,
+        "percentile": 0.20584
+      },
       "published": "2026-06-23T19:17:07.477",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53755"
     },
@@ -9841,10 +9337,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00074,
-        "percentile": 0.00102
-      },
+      "epss": null,
       "published": "2026-06-23T20:16:49.473",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54327"
     },
@@ -10348,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00209,
+        "percentile": 0.11149
+      },
       "published": "2026-06-23T21:17:00.873",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47388"
     },
@@ -10544,10 +10040,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00152,
-        "percentile": 0.04675
-      },
+      "epss": null,
       "published": "2026-06-23T21:17:03.440",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9073"
     },
@@ -11051,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0029,
+        "percentile": 0.2068
+      },
       "published": "2026-06-24T07:16:26.527",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12095"
     },
@@ -11099,7 +10595,7 @@
     },
     {
       "id": "CVE-2026-13006",
-      "desc": "ACE vulnerability in conditional configuration file processing  by QOS.CH logback-core up to and including version 1.5.34 in Java applications, allows an attacker to execute arbitrary code circumventing existing protections against CVE-2025-11226 by\u00a0compromising an existing logback configuration fil",
+      "desc": "ACE vulnerability in conditional configuration file processing  by QOS.CH logback-core up to and including version 1.5.35 in Java applications, allows an attacker to execute arbitrary code circumventing existing protections against CVE-2025-11226 by\u00a0compromising an existing logback configuration fil",
       "cvss": 0.0,
       "vector": "",
       "severity": "NONE",
@@ -11247,10 +10743,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00505,
-        "percentile": 0.39231
-      },
+      "epss": null,
       "published": "2026-06-24T07:16:28.417",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8705"
     },
@@ -11754,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00164,
+        "percentile": 0.05996
+      },
       "published": "2026-06-24T08:16:23.040",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52929"
     },
@@ -11950,10 +11446,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00226,
-        "percentile": 0.132
-      },
+      "epss": null,
       "published": "2026-06-24T08:16:24.623",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56052"
     },
@@ -12457,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0012,
+        "percentile": 0.02119
+      },
       "published": "2026-06-24T14:17:31.190",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-42450"
     },
@@ -12653,10 +12149,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0017,
-        "percentile": 0.06652
-      },
+      "epss": null,
       "published": "2026-06-24T14:17:35.520",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57293"
     },
@@ -13160,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00184,
+        "percentile": 0.08199
+      },
       "published": "2026-06-24T17:17:04.610",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52946"
     },
@@ -13356,10 +12852,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00162,
-        "percentile": 0.05771
-      },
+      "epss": null,
       "published": "2026-06-24T17:17:06.260",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52960"
     },
@@ -13863,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00188,
+        "percentile": 0.08657
+      },
       "published": "2026-06-24T17:17:10.567",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52996"
     },
@@ -14059,12 +13555,516 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00166,
-        "percentile": 0.06129
-      },
+      "epss": null,
       "published": "2026-06-24T17:17:12.210",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53010"
+    },
+    {
+      "id": "CVE-2026-53011",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: taprio: fix use-after-free in advance_sched() on schedule switch\n\nIn advance_sched(), when should_change_schedules() returns true,\nswitch_schedules() is called to promote the admin schedule to oper.\nswitch_schedules() qu",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:12.310",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53011"
+    },
+    {
+      "id": "CVE-2026-53012",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnexthop: fix IPv6 route referencing IPv4 nexthop\n\nsyzbot reported a panic [1] [2].\n\nWhen an IPv6 nexthop is replaced with an IPv4 nexthop, the has_v4 flag\nof all groups containing this nexthop is not updated. This is because\nnh_gro",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:12.433",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53012"
+    },
+    {
+      "id": "CVE-2026-53013",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nmacvlan: fix macvlan_get_size() not reserving space for IFLA_MACVLAN_BC_CUTOFF\n\nmacvlan_get_size() does not account for IFLA_MACVLAN_BC_CUTOFF, but\nmacvlan_fill_info() conditionally includes it when port->bc_cutoff != 1.\nThis cause",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:12.570",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53013"
+    },
+    {
+      "id": "CVE-2026-53014",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: act_mirred: fix wrong device for mac_header_xmit check in tcf_blockcast_redir\n\nIn tcf_blockcast_redir(), when iterating block ports to redirect\npackets to multiple devices, the mac_header_xmit flag is queried\nfrom the wr",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:12.683",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53014"
+    },
+    {
+      "id": "CVE-2026-53015",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nerofs: unify lcn as u64 for 32-bit platforms\n\nAs sashiko reported [1], `lcn` was typed as `unsigned long` (or\n`unsigned int` sometimes), which is only 32 bits wide on 32-bit\nplatforms, which causes `(lcn << lclusterbits)` to be tru",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:12.790",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53015"
+    },
+    {
+      "id": "CVE-2026-53016",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ncrypto: ccp - copy IV using skcipher ivsize\n\nAF_ALG rfc3686-ctr-aes-ccp requests pass an 8-byte IV to the driver.\n\nccp_aes_complete() restores AES_BLOCK_SIZE bytes into the caller's IV\nbuffer while RFC3686 skciphers expose an 8-byt",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:12.893",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53016"
+    },
+    {
+      "id": "CVE-2026-53017",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: fix data loss caused by incorrect use of nat_entry flag\n\nData loss can occur when fsync is performed on a newly created file\n(before any checkpoint has been written) concurrently with a checkpoint\noperation. The scenario is a",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.020",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53017"
+    },
+    {
+      "id": "CVE-2026-53018",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: avoid reading already updated pages during GC\n\nWe found the following issue during fuzz testing:\n\npage: refcount:3 mapcount:0 mapping:00000000b6e89c65 index:0x18b2dc pfn:0x161ba9\nmemcg:f8ffff800e269c00\naops:f2fs_meta_aops ino",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.120",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53018"
+    },
+    {
+      "id": "CVE-2026-53019",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nclk: spacemit: ccu_mix: fix inverted condition in ccu_mix_trigger_fc()\n\nFix inverted condition that skips frequency change trigger,\ncausing kernel panics during cpufreq scaling.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.227",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53019"
+    },
+    {
+      "id": "CVE-2026-53020",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\num: Fix potential race condition in TLB sync\n\nDuring the TLB sync, we need to traverse and modify the page table,\nso we should hold the page table lock. Since full SMP support for\nthreads within the same process is still missing, l",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.317",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53020"
+    },
+    {
+      "id": "CVE-2026-53021",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: target: core: Fix integer overflow in UNMAP bounds check\n\nsbc_execute_unmap() checks LBA + range does not exceed the device capacity,\nbut does not guard against LBA + range wrapping around on 64-bit overflow.\n\nAdd an overflow",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.410",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53021"
+    },
+    {
+      "id": "CVE-2026-53022",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nplatform/x86: dell-wmi-sysman: bound enumeration string aggregation\n\npopulate_enum_data() aggregates firmware-provided value-modifier\nand possible-value strings into fixed 512-byte struct members.\nThe current code bounds each indiv",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.527",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53022"
+    },
+    {
+      "id": "CVE-2026-53023",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: terminate the cached volume label after UTF-8 conversion\n\nntfs_fill_super() loads the on-disk volume label with utf16s_to_utf8s()\nand stores the result in sbi->volume.label. The converted label is later\nexposed through nt",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.643",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53023"
+    },
+    {
+      "id": "CVE-2026-53024",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ngreybus: raw: fix use-after-free if write is called after disconnect\n\nIf a user writes to the chardev after disconnect has been called, the\nkernel panics with the following trace (with\nCONFIG_INIT_ON_FREE_DEFAULT_ON=y):\n\n        BU",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.760",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53024"
+    },
+    {
+      "id": "CVE-2026-53025",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ngreybus: raw: fix use-after-free on cdev close\n\nThis addresses a use-after-free bug when a raw bundle is disconnected\nbut its chardev is still opened by an application. When the application\nreleases the cdev, it causes the followin",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.857",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53025"
+    },
+    {
+      "id": "CVE-2026-53026",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nNFSD: fix nfs4_file access extra count in nfsd4_add_rdaccess_to_wrdeleg\n\nIn nfsd4_add_rdaccess_to_wrdeleg, if fp->fi_fds[O_RDONLY] is already\nset by another thread, __nfs4_file_get_access should not be called\nto increment the nfs4_",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:13.960",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53026"
+    },
+    {
+      "id": "CVE-2026-53027",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: fix missing run load for vcn0 in attr_data_get_block_locked()\n\nWhen a compressed or sparse attribute has its clusters frame-aligned,\nvcn is rounded down to the frame start using cmask, which can result\nin vcn != vcn0. In ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.087",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53027"
+    },
+    {
+      "id": "CVE-2026-53028",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: typec: Fix error pointer dereference\n\nThe variable tps->partner is checked for an error pointer and then if it\nis, it sends an error message but does not return and then immediately\ndereferenced a few lines below:\n\ntps->partne",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.200",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53028"
+    },
+    {
+      "id": "CVE-2026-53029",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: prevent uninitialized lcn caused by zero len\n\nsyzbot reported a uninit-value in ntfs_iomap_begin [1].\n\nSince runs was not touched yet, run_lookup_entry() immediately fails\nand returns false, which makes the value of \"*len",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.297",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53029"
+    },
+    {
+      "id": "CVE-2026-53030",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\ni3c: master: renesas: Fix memory leak in renesas_i3c_i3c_xfers()\n\nThe xfer structure allocated by renesas_i3c_alloc_xfer() was never freed\nin the renesas_i3c_i3c_xfers() function. Use the __free(kfree) cleanup\nattribute to automati",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.393",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53030"
+    },
+    {
+      "id": "CVE-2026-53031",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Validate node_id in arena_alloc_pages()\n\narena_alloc_pages() accepts a plain int node_id and forwards it through\nthe entire allocation chain without any bounds checking.\n\nValidate node_id before passing it down the allocation ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.490",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53031"
+    },
+    {
+      "id": "CVE-2026-53032",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Fix NULL deref in map_kptr_match_type for scalar regs\n\nCommit ab6c637ad027 (\"bpf: Fix a bpf_kptr_xchg() issue with local\nkptr\") refactored map_kptr_match_type() to branch on btf_is_kernel()\nbefore checking base_type(). A scala",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.590",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53032"
+    },
+    {
+      "id": "CVE-2026-53033",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf, sockmap: Take state lock for af_unix iter\n\nWhen a BPF iterator program updates a sockmap, there is a race condition in\nunix_stream_bpf_update_proto() where the `peer` pointer can become stale[1]\nduring a state transition TCP_E",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.700",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53033"
+    },
+    {
+      "id": "CVE-2026-53034",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf, sockmap: Fix af_unix null-ptr-deref in proto update\n\nunix_stream_connect() sets sk_state (`WRITE_ONCE(sk->sk_state,\nTCP_ESTABLISHED)`) _before_ it assigns a peer (`unix_peer(sk) = newsk`).\nsk_state == TCP_ESTABLISHED makes soc",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.843",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53034"
+    },
+    {
+      "id": "CVE-2026-53035",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf, sockmap: Fix af_unix iter deadlock\n\nbpf_iter_unix_seq_show() may deadlock when lock_sock_fast() takes the fast\npath and the iter prog attempts to update a sockmap. Which ends up spinning\nat sock_map_update_elem()'s bh_lock_soc",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:14.990",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53035"
+    },
+    {
+      "id": "CVE-2026-53036",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf, arm64: Fix off-by-one in check_imm signed range check\n\ncheck_imm(bits, imm) is used in the arm64 BPF JIT to verify that\na branch displacement (in arm64 instruction units) fits into the\nsigned N-bit immediate field of a B, B.co",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:15.137",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53036"
+    },
+    {
+      "id": "CVE-2026-53037",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nHID: usbhid: fix deadlock in hid_post_reset()\n\nYou can build a USB device that includes a HID component\nand a storage or UAS component. The components can be reset\nonly together. That means that hid_pre_reset() and hid_post_reset()",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:15.263",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53037"
+    },
+    {
+      "id": "CVE-2026-53038",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nima_fs: Correctly create securityfs files for unsupported hash algos\n\nima_tpm_chip->allocated_banks[i].crypto_id is initialized to\nHASH_ALGO__LAST if the TPM algorithm is not supported. However there\nare places relying on the algor",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:15.403",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53038"
+    },
+    {
+      "id": "CVE-2026-53039",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nocfs2: validate group add input before caching\n\n[BUG]\nOCFS2_IOC_GROUP_ADD can trigger a BUG_ON in\nocfs2_set_new_buffer_uptodate():\n\nkernel BUG at fs/ocfs2/uptodate.c:509!\nOops: invalid opcode: 0000 [#1] SMP KASAN NOPTI\nRIP: 0010:oc",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:15.540",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53039"
+    },
+    {
+      "id": "CVE-2026-53040",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nocfs2: validate bg_bits during freefrag scan\n\n[BUG]\nA crafted filesystem can trigger an out-of-bounds bitmap walk when\nOCFS2_IOC_INFO is issued with OCFS2_INFO_FL_NON_COHERENT.\n\nBUG: KASAN: use-after-free in instrument_atomic_read ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:15.687",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53040"
+    },
+    {
+      "id": "CVE-2026-53041",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nocfs2: fix listxattr handling when the buffer is full\n\n[BUG]\nIf an OCFS2 inode has both inline and block-based xattrs, listxattr()\ncan return a size larger than the caller's buffer when the inline names\nconsume that buffer exactly.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:15.830",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53041"
+    },
+    {
+      "id": "CVE-2026-53042",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfwctl: Fix class init ordering to avoid NULL pointer dereference on device removal\n\nCXL is linked before fwctl in drivers/Makefile. Both use `module_init, so\n`cxl_pci_driver_init()` runs first. When `cxl_pci_probe()` calls\n`fwctl_r",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:15.967",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53042"
+    },
+    {
+      "id": "CVE-2026-53043",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nocfs2/dlm: validate qr_numregions in dlm_match_regions()\n\nPatch series \"ocfs2/dlm: fix two bugs in dlm_match_regions()\".\n\nIn dlm_match_regions(), the qr_numregions field from a DLM_QUERY_REGION\nnetwork message is used to drive loop",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:16.063",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53043"
+    },
+    {
+      "id": "CVE-2026-53044",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nsoc/tegra: cbb: Fix incorrect ARRAY_SIZE in fabric lookup tables\n\nFix incorrect ARRAY_SIZE usage in fabric lookup tables which could\ncause out-of-bounds access during target timeout lookup.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:16.200",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53044"
+    },
+    {
+      "id": "CVE-2026-53045",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nmemory: tegra124-emc: Fix dll_change check\n\nThe code checking whether the specified memory timing enables DLL\nin the EMRS register was reversed. DLL is enabled if bit A0 is low.\nFix the check.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-24T17:17:16.290",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53045"
+    },
+    {
+      "id": "CVE-2026-53046",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: fix use-after-free from async crypto on Qualcomm crypto engine\n\nksmbd_crypt_message() sets a NULL completion callback on AEAD requests\nand does not handle the -EINPROGRESS return code from async hardware\ncrypto engines like ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.0018,
+        "percentile": 0.07798
+      },
+      "published": "2026-06-24T17:17:16.420",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53046"
     }
   ],
   "kev": [
@@ -15202,6 +15202,14 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "The Good, the Bad and the Ugly in Cybersecurity \u2013 Week 26",
+      "url": "https://www.sentinelone.com/blog/the-good-the-bad-and-the-ugly-in-cybersecurity-week-26-7/",
+      "source": "SentinelOne Blog",
+      "category": "threat",
+      "published": "2026-06-26T13:00:00+00:00",
+      "summary": "Operation Endgame takes down Amadey and StealC servers, macOS.Gaslight floods AI triage with fake errors, and attackers exploit Cisco flaws for root access."
+    },
+    {
       "title": "CVE-2026-4367 Libxpm: libxpm: denial of service via out-of-bounds read in xpm file parsing",
       "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-4367",
       "source": "Microsoft Security",
@@ -15722,14 +15730,6 @@
       "summary": "Learn how adversaries weaponize CI/CD pipelines and how continuous behavioral monitoring helps protect against software supply chain attacks."
     },
     {
-      "title": "The Convergence of Cloud Secrets & AI Risk",
-      "url": "https://www.sentinelone.com/blog/the-convergence-of-cloud-secrets-and-ai-risk/",
-      "source": "SentinelOne Blog",
-      "category": "threat",
-      "published": "2026-05-13T18:11:51+00:00",
-      "summary": "SentinelOne\u2019s latest report examines the evolving 'secrets' threatscape, showing how modern cloud and AI infrastructures are being exploited."
-    },
-    {
       "title": "A 0-click exploit chain for the Pixel 10: When a Door Closes, a Window Opens",
       "url": "https://projectzero.google/2026/05/pixel-10-exploit.html",
       "source": "Google Project Zero",
@@ -15908,6 +15908,158 @@
   ],
   "news": [
     {
+      "title": "In Other News: Chinese Mythos-Like AI, Tata Electronics Breach, Snyk Layoffs",
+      "url": "https://www.securityweek.com/in-other-news-chinese-mythos-like-ai-tata-electronics-breach-snyk-layoffs/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-26T14:30:00+00:00",
+      "summary": "Other noteworthy stories that might have slipped under the radar: Russia used Cellebrite to hack activist\u2019s phone, Five Eyes issue urgent AI threat warning, macOS Gaslight backdoor, Scattered Spider guilty pleas.\nThe post In Other News: Chinese Mythos-Like AI, Tata Electronics Breach, Snyk Layoffs a"
+    },
+    {
+      "title": "Your First GRC Agent: A Red Teamer's Walkthrough",
+      "url": "https://www.bleepingcomputer.com/news/security/your-first-grc-agent-a-red-teamers-walkthrough/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-26T14:01:11+00:00",
+      "summary": "AI won't replace GRC analysts, but it can eliminate much of the repetitive work they do. Anecdotes walks through building an agent that continuously monitors controls, identifies evidence gaps, and opens remediation tasks. [...]"
+    },
+    {
+      "title": "New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries",
+      "url": "https://thehackernews.com/2026/06/new-linux-pedit-cow-exploit-enables.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-26T13:57:55+00:00",
+      "summary": "A flaw in the Linux kernel's traffic-control subsystem can let a local unprivileged user gain root on affected systems.\n\nCVE-2026-46331, nicknamed \"pedit COW,\" is an out-of-bounds write in the packet-editing action (act_pedit) that corrupts shared page-cache memory. A&nbsp;public, working exploit&nb"
+    },
+    {
+      "title": "Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs",
+      "url": "https://thehackernews.com/2026/06/amazon-q-developer-flaw-could-let.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-26T13:53:00+00:00",
+      "summary": "A high-severity flaw in Amazon Q Developer let a malicious repository run commands and steal a developer's cloud credentials. The path was short: a developer opens the repo, trusts the workspace, and Amazon Q does the rest. Amazon has patched it.\n\nTracked as&nbsp;CVE-2026-12957&nbsp;(CVSS 8.5), the "
+    },
+    {
+      "title": "Russia accuses Apple of \u2018political censorship\u2019 after VK apps removed from App Store",
+      "url": "https://therecord.media/russia-accuses-apple-of-political-censorship-after-vk-removal",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-26T13:42:00+00:00",
+      "summary": "Apple removed VK's flagship social network VKontakte, often described as Russia's equivalent of Facebook, along with VK Music, VK Messenger, VK Video, Odnoklassniki and Mail.ru services, including its email application."
+    },
+    {
+      "title": "Turla group adds more malware to Russia\u2019s espionage efforts against Ukraine",
+      "url": "https://therecord.media/russia-turla-espionage-ukraine-stockstay-malware",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-26T13:30:00+00:00",
+      "summary": "Threat intelligence researchers at Google described StockStay, the latest malware developed by the Russian cyber-espionage group known as Turla."
+    },
+    {
+      "title": "Meeting Trump's 2030 Quantum Deadline Will be Expensive, Complex",
+      "url": "https://www.darkreading.com/cybersecurity-operations/meeting-2030-quantum-deadline-expensive-complex",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-26T13:30:00+00:00",
+      "summary": "Getting accurate visibility into IT and OT systems will be compounded by multivendor environments, misaligned update life cycles, and interoperability gaps."
+    },
+    {
+      "title": "Russia used social engineering to breach prominent messaging accounts, Ukraine says",
+      "url": "https://therecord.media/russia-ukraine-social-engineering-messaging-accounts",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-26T13:10:00+00:00",
+      "summary": "Ukraine's SBU described a long-running Russian operation that used fake tech-support workers to persuade people to hand over credentials to their messaging apps."
+    },
+    {
+      "title": "Thanks for Crushing the Submissions Inbox. We're Trying to Keep Up",
+      "url": "https://www.darkreading.com/cybersecurity-operations/submissions-guidelines-reminder",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-26T13:00:00+00:00",
+      "summary": "It might be taking a bit longer than usual to respond to your submissions \u2014 here's why."
+    },
+    {
+      "title": "Nebulock Raises $25 Million for AI-Native Contextual Security",
+      "url": "https://www.securityweek.com/nebulock-raises-25-million-for-ai-native-contextual-security/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-26T12:37:13+00:00",
+      "summary": "The cybersecurity startup provides threat hunting, proactive detection, and behavioral security analytics.\nThe post Nebulock Raises $25 Million for AI-Native Contextual Security appeared first on SecurityWeek."
+    },
+    {
+      "title": "CISA Adds Exploited PTC Windchill RCE Flaw to KEV as Web Shell Attacks Continue",
+      "url": "https://thehackernews.com/2026/06/cisa-adds-exploited-ptc-windchill-rce.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-26T12:31:56+00:00",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a critical remote code execution vulnerability impacting PTC Windchill PDMlink and PTC FlexPLM enterprise Product Data Management (PDM) and Product Lifecycle Management (PLM) software to its Known Exploited Vulnerabil"
+    },
+    {
+      "title": "FCC votes to toughen rules in bid to better protect undersea cables",
+      "url": "https://therecord.media/fcc-votes-to-toughen-rules-undersea-cables",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-26T12:10:00+00:00",
+      "summary": "In an unprecedented move, the FCC also said it plans to mandate that owners and operators of submarine line terminal equipment (SLTE) be licensed."
+    },
+    {
+      "title": "New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets",
+      "url": "https://thehackernews.com/2026/06/new-dirtyclone-linux-kernel-flaw-lets.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-26T11:51:35+00:00",
+      "summary": "DirtyClone is a new Linux kernel privilege escalation in the DirtyFrag family.&nbsp;JFrog Security Research published a working exploit walkthrough&nbsp;for the flaw on June 25, the first public demonstration for this variant.\n\nTracked as&nbsp;CVE-2026-43503&nbsp;(CVSS 8.8), it lets a local user cor"
+    },
+    {
+      "title": "Guardian Agents: The Next Layer of Identity Governance",
+      "url": "https://thehackernews.com/2026/06/guardian-agents-next-layer-of-identity.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-26T11:30:00+00:00",
+      "summary": "AI agents are moving through enterprise environments, inheriting permissions, traversing systems, and executing decisions at machine speed with minimal oversight. The identity infrastructure built to govern human access wasn't designed for autonomous actors, and the gap between what enterprises are "
+    },
+    {
+      "title": "Linux Foundation Unveils New Open Source Security Project Akrites",
+      "url": "https://www.securityweek.com/linux-foundation-unveils-new-open-source-security-project-akrites/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-26T11:28:20+00:00",
+      "summary": "It will provide the tools and channels to report, patch, and disclose open source software vulnerabilities.\nThe post Linux Foundation Unveils New Open Source Security Project Akrites appeared first on SecurityWeek."
+    },
+    {
+      "title": "Miasma Malware Targets npm Packages and GitHub Actions in Supply Chain Attack",
+      "url": "https://thehackernews.com/2026/06/miasma-malware-targets-npm-packages-and.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-26T11:05:45+00:00",
+      "summary": "Cybersecurity researchers have flagged yet another evolution of the supply chain attack linked to the Mini Shai-Hulud, Miasma, and Hades malware family that has compromised a new set of npm packages, even as it has propagated to the Go ecosystem.\n\n\"The latest activity includes malicious npm releases"
+    },
+    {
+      "title": "China-Linked Hackers Strike Asian Critical Infrastructure with TinyRCT Backdoor",
+      "url": "https://www.infosecurity-magazine.com/news/china-hackers-asian-cni-backdoor/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-26T10:30:00+00:00",
+      "summary": "A China-linked threat group has been targeting critical infrastructure in Southeast Asia with a new custom backdoor called TinyRCT"
+    },
+    {
+      "title": "$3 Million Reportedly Stolen in Polymarket Hack",
+      "url": "https://www.securityweek.com/3-million-reportedly-stolen-in-polymarket-hack/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-26T09:47:35+00:00",
+      "summary": "The decentralized prediction market said hackers targeted some of its users through a compromise of a third-party vendor.\nThe post $3 Million Reportedly Stolen in Polymarket Hack appeared first on SecurityWeek."
+    },
+    {
+      "title": "Microsoft Warns of Photo ZIP Phishing Campaign Targeting Hotels with Node.js Implant",
+      "url": "https://thehackernews.com/2026/06/microsoft-warns-of-photo-zip-phishing.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-26T09:27:12+00:00",
+      "summary": "An active phishing campaign has been targeting hotel and other hospitality organizations across Europe and Asia since April 2026, using photo-themed ZIP files to drop a Node.js implant and dig into front-desk machines, Microsoft says.\n\nThe company has&nbsp;not attributed&nbsp;the activity to a known"
+    },
+    {
       "title": "Russian APT Deploys \u2018StockStay\u2019 Backdoor Against Ukrainian Targets",
       "url": "https://www.securityweek.com/russian-apt-deploys-stockstay-backdoor-against-ukrainian-targets/",
       "source": "SecurityWeek",
@@ -15948,14 +16100,6 @@
       "summary": "The UK Cyber Monitoring Centre reviews the Canvas breach affecting 160 UK universities, highlighting data theft risks and financial impacts of cyber incidents"
     },
     {
-      "title": "Google Details Turla's New STOCKSTAY Backdoor Used in Ukraine Espionage Attacks",
-      "url": "https://thehackernews.com/2026/06/google-details-turlas-new-stockstay.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-26T07:15:46+00:00",
-      "summary": "The Russian state-sponsored threat actor known as Turla has been attributed to a previously undocumented .NET backdoor called STOCKSTAY that has been deployed against government and military organizations in Ukraine, and entities that have an interest in Italian foreign policy.\n\nDescribing the Windo"
-    },
-    {
       "title": "Philip Martin Joins Uber as Chief Information Security Officer",
       "url": "https://www.securityweek.com/philip-martin-joins-uber-as-chief-information-security-officer/",
       "source": "SecurityWeek",
@@ -15970,6 +16114,14 @@
       "category": "news",
       "published": "2026-06-25T22:53:32+00:00",
       "summary": "Anthropic appears to be testing Claude Cowork support on mobile, allowing you to manage\u00a0long-running Claude tasks from your phone. [...]"
+    },
+    {
+      "title": "Robinhood Cuts Access Approval Time to Support High-Velocity Development",
+      "url": "https://www.darkreading.com/application-security/robinhood-reengineered-access-approvals-for-high-velocity-development",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-25T22:42:36+00:00",
+      "summary": "The fintech company's engineering-first application security team re-engineered the process for granting system access, making it easier and more secure for developers working on their projects. Here are the lessons learned from Robinhood's experience."
     },
     {
       "title": "Poland busts SIM-swapping gang tied to millions in crypto theft",
@@ -16020,7 +16172,7 @@
       "summary": "With tens of billions of dollars flowing into regional economies from cybercrime, scam centers continue to flourish, despite international and law-enforcement efforts."
     },
     {
-      "title": "DHS chief says president has met with potential CISA nominee; agency plans to hire 600",
+      "title": "DHS chief says president has met with likely CISA nominee; agency plans to hire 600",
       "url": "https://therecord.media/cisa-director-nominee-workforce-hires-mullin-house-hearing",
       "source": "The Record",
       "category": "news",
@@ -16060,14 +16212,6 @@
       "summary": "The Bluekit phishing-as-a-service platform continues to evolve with nearly 70 new hostnames identified over the past week and by adding browser-in-the-middle capabilities for improved data theft. [...]"
     },
     {
-      "title": "Another Russian dairy company reportedly disrupted by cyberattack",
-      "url": "https://therecord.media/russia-dairy-producter-cyberattack-ufa",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-25T14:45:00+00:00",
-      "summary": "A dairy products manufacturer in Russia's republic of Bashkortostan is the latest such company to have its operations snarled by a cyberattack."
-    },
-    {
       "title": "Cisco Vulnerability Exploited Months Before Disclosure, Google Warns",
       "url": "https://www.infosecurity-magazine.com/news/cisco-vulnerability-exploited/",
       "source": "Infosecurity Magazine",
@@ -16076,68 +16220,12 @@
       "summary": "A high-severity flaw in Cisco Catalyst SD-WAN Manager disclosed in early June was exploited as early as March"
     },
     {
-      "title": "Chrome Ad Blocker with 10M+ Installs Found with Dormant Script Injection Capability",
-      "url": "https://thehackernews.com/2026/06/chrome-ad-blocker-with-10m-installs.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-25T14:12:52+00:00",
-      "summary": "An analysis of a popular Google Chrome ad block extension for YouTube has uncovered the ability to execute arbitrary JavaScript code.\n\nAccording to Island, the extension, named Adblock for YouTube (ID: cmedhionkhpnakcndndgjdbohmhepckk), has more than 10 million installs and carries a Featured badge "
-    },
-    {
-      "title": "The Four Elevations of Effective Fraud Prevention",
-      "url": "https://www.bleepingcomputer.com/news/security/the-four-elevations-of-effective-fraud-prevention/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-06-25T14:01:11+00:00",
-      "summary": "Fraudsters don't attack just one transaction. They target accounts, platforms, and entire ecosystems. IPQS explains the four elevations of fraud prevention and why broader visibility improves fraud detection. [...]"
-    },
-    {
       "title": "Twenty Million US IP Connections Used by Proxy Services",
       "url": "https://www.infosecurity-magazine.com/news/twenty-million-us-ip-connections/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-06-25T13:00:00+00:00",
       "summary": "Digital Citizens Alliance report claims that millions of Americans may have unwittingly had IP connections used by cybercriminals"
-    },
-    {
-      "title": "Runlayer Raises $30 Million in Series A Funding",
-      "url": "https://www.securityweek.com/runlayer-raises-30-million-in-series-a-funding/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-25T12:39:50+00:00",
-      "summary": "The startup\u2019s platform functions as a secure control layer, aiming to secure AI tools across enterprises.\nThe post Runlayer Raises $30 Million in Series A Funding appeared first on SecurityWeek."
-    },
-    {
-      "title": "ThreatsDay Bulletin: Smart TV Proxyware, 24-Year curl Bug, AI Crime Forums + 13 More Stories",
-      "url": "https://thehackernews.com/2026/06/threatsday-bulletin-smart-tv-proxyware.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-25T12:24:43+00:00",
-      "summary": "It\u2019s dumb out there again.\n\nThis week has the usual smell of prod on fire and nobody wanting to admit who left the door open \u2014 old creds still working, trusted apps doing sketchy crap, browser tricks jumping the fence, and \u201cnormal\u201d workflows turning into phishing pipes because apparently email was n"
-    },
-    {
-      "title": "Ukraine's state postal operator reports app disruption after cyberattack",
-      "url": "https://therecord.media/ukraine-state-postal-operator-reports-disruption",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-25T12:16:00+00:00",
-      "summary": "Ukraine's state-owned postal operator said it was experiencing disruptions to some of its app services due to a suspected cyberattack, but did not say who was behind it."
-    },
-    {
-      "title": "Russia used Cellebrite phone-hacking tool to crack down on dissident after firm cut off country",
-      "url": "https://therecord.media/russia-used-cellebrite-tool-after-company-pulled-out-of-country",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-25T12:15:00+00:00",
-      "summary": "The continued use of the powerful data extraction product soon after the company in March 2021 said it would stop working with Russia suggests the firm has been unable to pull back its technology from authoritarian government customers, researchers say."
-    },
-    {
-      "title": "Cal Water Says No OT Systems Breached in Iranian Handala Cyberattack",
-      "url": "https://www.securityweek.com/cal-water-finds-no-evidence-of-ot-activity-after-hackers-claimed-they-could-disrupt-water-supply/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-25T12:07:00+00:00",
-      "summary": "Mandiant has helped the California water utility investigate the cyberattack launched by Iranian hacker group Handala.\nThe post Cal Water Says No OT Systems Breached in Iranian Handala Cyberattack appeared first on SecurityWeek."
     },
     {
       "title": "Trust in Automated AI Vulnerability Scanning Collapses to 9%, New Study Finds",
@@ -16154,30 +16242,6 @@
       "category": "news",
       "published": "2026-06-25T11:30:00+00:00",
       "summary": "New CISA guidance shows federal agencies how to use SASE to move from legacy TIC 2.0 to zero trust"
-    },
-    {
-      "title": "Lantronix Serial-to-IP Converter Flaw Exploited in Attacks After OT Threat Warning",
-      "url": "https://www.securityweek.com/lantronix-serial-to-ip-converter-flaw-exploited-in-attacks-after-ot-threat-warning/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-25T11:23:40+00:00",
-      "summary": "The exploited flaw, CVE-2025-67038, is one of the vulnerabilities disclosed in April as part of the BRIDGE:BREAK research project.\nThe post Lantronix Serial-to-IP Converter Flaw Exploited in Attacks After OT Threat Warning appeared first on SecurityWeek."
-    },
-    {
-      "title": "Surviving the Mythos Era: Richard Bejtlich on the Case for NDR",
-      "url": "https://thehackernews.com/2026/06/surviving-mythos-era-richard-bejtlich.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-25T11:17:31+00:00",
-      "summary": "Despite the abundance of telemetry at analysts\u2019 disposal, many security operations teams struggle to answer a few basic questions during incident investigation: What happened? What evidence do we have? How do we know we\u2019re seeing it all, in context?\n\nAnswering these questions requires teams to go be"
-    },
-    {
-      "title": "GitLab Patches Code Execution, Information Disclosure Vulnerabilities",
-      "url": "https://www.securityweek.com/gitlab-patches-code-execution-information-disclosure-vulnerabilities/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-25T11:10:04+00:00",
-      "summary": "The latest GitLab CE/EE updates address 13 vulnerabilities, including three high-severity defects.\nThe post GitLab Patches Code Execution, Information Disclosure Vulnerabilities appeared first on SecurityWeek."
     },
     {
       "title": "macOS Flaw Lets Standard Users Disable EDR and MDM",
@@ -16218,70 +16282,6 @@
       "category": "news",
       "published": "2026-06-25T10:00:00+00:00",
       "summary": "As UK police embrace the AI revolution, a WIRED investigation reveals the messy inside story of one region\u2019s experiment with predictive analytics."
-    },
-    {
-      "title": "New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis",
-      "url": "https://thehackernews.com/2026/06/new-gaslight-macos-malware-uses-prompt.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-25T09:23:03+00:00",
-      "summary": "A previously undocumented Rust-based macOS implant and information stealer has been found to embed a prompt injection payload designed to trick a malware analyst's artificial intelligence (AI) tools and trick it into aborting or refusing an analysis of the artifact.\n\nThe malware has been codenamed G"
-    },
-    {
-      "title": "New Mistic Backdoor Linked to KongTuke in ClickFix and ModeloRAT Campaigns",
-      "url": "https://thehackernews.com/2026/06/new-mistic-backdoor-linked-to-kongtuke.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-25T08:54:37+00:00",
-      "summary": "A new, stealthy backdoor named Mistic has been deployed as part of suspected financially motivated attacks aimed at multiple organizations spanning insurance, education, IT, and professional services sectors since April 2026.\n\nAccording to Symantec and Carbon Black's Threat Hunter Team, the backdoor"
-    },
-    {
-      "title": "Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access",
-      "url": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-25T05:46:54+00:00",
-      "summary": "An unknown threat actor exploited a recently disclosed high-severity security flaw impacting Cisco Catalyst SD-WAN as a zero-day at least two months before it was publicly disclosed, according to new findings from Google-owned Mandiant.\n\nThe vulnerability, tracked as CVE-2026-20245 (CVSS score: 7.8)"
-    },
-    {
-      "title": "Attackers Hit Cisco SD-WAN Flaw 2 Months Before Disclosure",
-      "url": "https://www.darkreading.com/cyberattacks-data-breaches/attackers-hit-cisco-sd-wan-flaw-2-months-before-disclosure",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-24T21:16:41+00:00",
-      "summary": "Researchers believe rogue peering was used to connect to the victim's SD-WAN devices to gain admin privileges and root-level access."
-    },
-    {
-      "title": "2026 FIFA World Cup Faces Surge in Cyber Threats",
-      "url": "https://www.darkreading.com/cybersecurity-operations/2026-fifa-world-cup-faces-surge-cyber-threats",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-24T20:29:08+00:00",
-      "summary": "Persistent cybercrime, social engineering, and infrastructure threats continue to plague the FIFA 2026 World Cup across the US, Canada, and Mexico."
-    },
-    {
-      "title": "Three \u2018cybercrime as a service\u2019 operations undercut by Microsoft, law enforcement",
-      "url": "https://therecord.media/stealc-amadey-socgholish-malware-takedown-europol-microsoft",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-06-24T20:00:00+00:00",
-      "summary": "Microsoft touted its latest action against malware infrastructure as a new approach aimed at the full cybercrime \"supply chain.\" Europol said more than 300 servers were targeted."
-    },
-    {
-      "title": "Do CISOs Need a Code of Ethics?",
-      "url": "https://www.darkreading.com/cybersecurity-operations/ciso-code-of-ethics",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-24T19:10:17+00:00",
-      "summary": "Dark Reading Confidential Episode 19: Kickbacks, no-show jobs, &quot;dirty&quot; VCs, and shelf ware \u2014 industry expert Robert &quot;RSnake&quot; Hansen explains why he thinks it's time for a CISO code of ethics. It could ensure cybersecurity bosses aren't engaged in self-dealing that could risk ente"
-    },
-    {
-      "title": "Researchers Trick AI Browsers Into Leaking Credentials",
-      "url": "https://www.infosecurity-magazine.com/news/bioshocking-ai-browser-prompt/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-06-24T16:05:00+00:00",
-      "summary": "LayerX tricked AI browsers including ChatGPT Atlas and Comet into bypassing their guardrails"
     },
     {
       "title": "Linux Process Name Masquerading, (Wed, Jun 24th)",
@@ -16590,8 +16590,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 75,
-    "high": 319,
+    "critical": 65,
+    "high": 309,
     "exploited": 71,
     "kev_total": 1629,
     "kev_7d": 6,
