@@ -1,473 +1,11 @@
 {
-  "generated": "2026-06-30T09:49:20.564436+00:00",
+  "generated": "2026-06-30T14:33:35.736979+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>93 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>92 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-4983",
-      "desc": "Open VSX Registry does not sanitize SVG files uploaded as extension icons prior to storage, and serves them with Content-Type: image/svg+xml without security headers such as Content-Security-Policy or Content-Disposition: attachment. This allows an attacker to publish an extension with a malicious S",
-      "cvss": 4.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Eclipse",
-      "product": "Open Vsx",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T12:16:26.537",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4983"
-    },
-    {
-      "id": "CVE-2023-54365",
-      "desc": "Traefik before 2.10.5 and 3.0.0-beta4 is affected by a denial-of-service vulnerability in HTTP/2 request handling inherited from the Go standard library's HTTP/2 implementation (CVE-2023-44487 / CVE-2023-39325, the 'Rapid Reset' technique). A remote attacker can rapidly create and cancel HTTP/2 stre",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:30.420",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-54365"
-    },
-    {
-      "id": "CVE-2025-71337",
-      "desc": "Flowise before 3.0.10 (affected versions 3.0.7 and earlier) contains an unverified email change vulnerability. An authenticated user can change the account email address, used as a login identifier and password-recovery channel, via the account profile endpoint without confirming the change to the o",
-      "cvss": 8.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L",
-      "severity": "HIGH",
-      "vendor": "Flowiseai",
-      "product": "Flowise",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:38.233",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71337"
-    },
-    {
-      "id": "CVE-2025-71341",
-      "desc": "picklescan before 0.0.29 fails to detect the profile.Profile.runctx function when analyzing pickle files, allowing attackers to embed undetected malicious code. Remote attackers can craft malicious pickle files using profile.Profile.runctx in the reduce method to achieve remote code execution when t",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:38.370",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71341"
-    },
-    {
-      "id": "CVE-2025-71365",
-      "desc": "picklescan before 0.0.33 fails to detect malicious pickle files that invoke numpy.f2py.crackfortran.myeval function through the reduce method. Attackers can craft malicious pickle files embedding arbitrary code that evades picklescan detection and executes remote code when loaded.",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:38.617",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71365"
-    },
-    {
-      "id": "CVE-2025-71370",
-      "desc": "picklescan before 0.0.28 fails to detect malicious torch.jit.unsupported_tensor_ops.execWrapper function calls embedded in pickle files. Attackers can craft malicious pickle files that bypass picklescan detection and execute arbitrary code when loaded via pickle.load().",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:38.743",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71370"
-    },
-    {
-      "id": "CVE-2025-71376",
-      "desc": "picklescan before 0.0.29 fails to detect malicious pickle files using idlelib.autocomplete.AutoComplete.fetch_completions in reduce methods. Attackers can embed undetected code in pickle files that executes arbitrary commands when loaded by victims.",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:38.870",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71376"
-    },
-    {
-      "id": "CVE-2026-10711",
-      "desc": "Missing authentication for critical function vulnerability in AKIN Software Computer Import Export Industry and Trade Ltd. CafePlus allows Accessing Functionality Not Properly Constrained by ACLs.\n\nThis issue affects CafePlus: from 12.05.03 before 12.05.04.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:39.410",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10711"
-    },
-    {
-      "id": "CVE-2026-10857",
-      "desc": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in AKIN Software Computer Import Export Industry and Trade Ltd. E-Commerce allows Reflected XSS.\n\nThis issue affects e-Commerce: before 1.25.01.06.",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:39.527",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10857"
-    },
-    {
-      "id": "CVE-2026-44089",
-      "desc": "Totolink\u00a0EX1200L router is vulnerable to Buffer Overflow in the login functionality in\u00a0cgi-bin/cstecgi.cgi endpoint.\u00a0This vulnerability could be exploited to cause the program to crash and to execute code remotely. This allows the attacker to perform actions as root including reading and editing dat",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:40.400",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44089"
-    },
-    {
-      "id": "CVE-2026-4610",
-      "desc": "The ProfileGrid \u2013 User Profiles, Groups and Communities plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'pm_author_message' parameter in the pm_send_message_to_author function in all versions up to, and including, 5.9.9.2 due to insufficient input sanitization and output es",
-      "cvss": 6.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:41.997",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4610"
-    },
-    {
-      "id": "CVE-2026-54892",
-      "desc": "Inefficient algorithmic complexity in Plug's nested-parameter decoder allows an unauthenticated remote attacker to cause denial of service. Plug.Conn.Query.decode/4 (and Plug.Conn.Query.decode_each/2) parse query strings and application/x-www-form-urlencoded request bodies. When a key contains many ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:43.167",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54892"
-    },
-    {
-      "id": "CVE-2026-56222",
-      "desc": "Capgo before 12.128.2 contains an authorization bypass vulnerability in POST /private/role_bindings that fails to verify app_id ownership during app-scoped role binding creation. An attacker with administrative privileges in one organization can create role bindings targeting applications owned by o",
-      "cvss": 7.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:44.097",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56222"
-    },
-    {
-      "id": "CVE-2026-56225",
-      "desc": "Capgo before 12.128.2 contains an authorization bypass vulnerability in its public API key management handlers (get/put/delete/post). API keys created with mode=all but restricted to a single app via limited_to_apps are only checked for limited_to_orgs and not for limited_to_apps, so an app-scoped k",
-      "cvss": 8.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:44.250",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56225"
-    },
-    {
-      "id": "CVE-2026-56234",
-      "desc": "Capgo before 12.128.2 contains a credential validation vulnerability in the POST /functions/v1/private/validate_password_compliance endpoint that is callable using only the public Supabase key without authentication. The endpoint is CORS-permissive with wildcard origin allowance and lacks rate limit",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:44.420",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56234"
-    },
-    {
-      "id": "CVE-2026-56243",
-      "desc": "Capgo before 12.128.2 contains a security control bypass vulnerability where the PostgREST/RLS plane accepts plaintext API keys through the capgkey header despite enforce_hashed_api_keys being enabled. Attackers can bypass org-level hashed-key enforcement by sending plaintext API keys directly to th",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:44.553",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56243"
-    },
-    {
-      "id": "CVE-2026-56248",
-      "desc": "Cap-go capgo (capgo-backend) before 12.128.12 contains an unauthenticated denial-of-service vulnerability arising from the audit_logs table's Row-Level Security (RLS) policy when accessed via the Supabase PostgREST API. Because the PostgreSQL query planner executes costly logic before RLS rejection,",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:44.687",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56248"
-    },
-    {
-      "id": "CVE-2026-56258",
-      "desc": "Crawl4AI before 0.8.8 contains an arbitrary file write vulnerability in the screenshot and PDF endpoints that allows unauthenticated attackers to write files outside the intended directory via symlink and time-of-check-time-of-use (TOCTOU) attacks on the output_path parameter. Remote attackers can e",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Kidocode",
-      "product": "Crawl4Ai",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:44.817",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56258"
-    },
-    {
-      "id": "CVE-2026-56263",
-      "desc": "Crawl4AI before 0.8.7 contains a stored cross-site scripting vulnerability in the monitor dashboard that renders crawl URLs and error messages via innerHTML without escaping. An attacker can submit a crafted crawl request with malicious markup that executes in an operator's browser when viewing the ",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Kidocode",
-      "product": "Crawl4Ai",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:44.947",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56263"
-    },
-    {
-      "id": "CVE-2026-56274",
-      "desc": "Flowise before 3.1.2 contains multiple OS command injection vulnerabilities in the Custom MCP Server feature due to incomplete command-flag validation and a regex bypass in local file access restrictions. An attacker with a Flowise account of any role, or API access with view/update permissions for ",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Flowiseai",
-      "product": "Flowise",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:45.083",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56274"
-    },
-    {
-      "id": "CVE-2026-56275",
-      "desc": "Flowise before 3.1.0 contains a server-side request forgery vulnerability in the Execute Flow node that allows attackers to bypass security validation by providing intranet addresses through the base URL field. Attackers can initiate HTTP requests to internal network addresses, access cloud metadata",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "Flowiseai",
-      "product": "Flowise",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:45.223",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56275"
-    },
-    {
-      "id": "CVE-2026-56301",
-      "desc": "Nuxt 4.0.0 before 4.4.7 and 3.18.0 before 3.21.7, when running the development server (nuxt dev) on Linux, binds the vite-node IPC server to an abstract-namespace Unix socket without permission restrictions, allowing local users to enumerate and connect. Unprivileged co-resident users can exploit th",
-      "cvss": 5.5,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Nuxt",
-      "product": "Nuxt",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:45.373",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56301"
-    },
-    {
-      "id": "CVE-2026-56315",
-      "desc": "picklescan before 1.0.4 fails to block at least seven Python standard library modules (including uuid, _osx_support, _aix_support, _pyrepl.pager, and imaplib) exposing eight functions that provide direct arbitrary command execution. Attackers can craft malicious pickle files importing these unblocke",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:45.770",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56315"
-    },
-    {
-      "id": "CVE-2026-56322",
-      "desc": "Capgo before 12.128.2 contains an information disclosure vulnerability in the unauthenticated /updates endpoint that resolves the defaultChannel parameter before enforcing privacy restrictions, allowing attackers to enumerate private channels and leak version/config state. Unauthenticated attackers ",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:45.903",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56322"
-    },
-    {
-      "id": "CVE-2026-56371",
-      "desc": "ImageMagick before 7.1.2-15 and 6.9.13-40 contains a memory leak in coders/txt.c when processing TXT files with texture attributes: the texture object allocated via ReadImage is not released when GetTypeMetrics fails, leaking memory each time a crafted TXT file with a texture attribute is processed.",
-      "cvss": 0.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N",
-      "severity": "NONE",
-      "vendor": "Imagemagick",
-      "product": "Imagemagick",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:46.267",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56371"
-    },
-    {
-      "id": "CVE-2026-56376",
-      "desc": "ImageMagick before 7.1.2-15 and 6.9.13-40 contains a heap use-after-free in the meta coder: when memory allocation fails, a single byte is written to a stale pointer. Remote attackers can trigger it by processing specially crafted image files, causing a denial of service.",
-      "cvss": 3.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "LOW",
-      "vendor": "Imagemagick",
-      "product": "Imagemagick",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:46.397",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56376"
-    },
-    {
-      "id": "CVE-2026-56379",
-      "desc": "ImageMagick before 7.1.2-15 and 6.9.13-40 contains a command injection vulnerability in the SVG decoder that allows attackers to inject arbitrary MVG drawing commands. Attackers can craft malicious SVG files with injected Magick Vector Graphics commands that execute during rendering.",
-      "cvss": 0.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N",
-      "severity": "NONE",
-      "vendor": "Imagemagick",
-      "product": "Imagemagick",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:46.523",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56379"
-    },
-    {
-      "id": "CVE-2026-56701",
-      "desc": "Grav before 2.0.0-beta.2 contains an XML external entity injection vulnerability in SVG file upload processing that allows authenticated attackers to read arbitrary files. The application uses simplexml_load_string without disabling external entity loading, enabling attackers to inject XXE payloads ",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:46.667",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56701"
-    },
-    {
-      "id": "CVE-2026-56762",
-      "desc": "Hono before 4.12.12 does not validate cookie names on the write path in the setCookie(), serialize(), and serializeSigned() functions, allowing invalid characters such as control characters (e.g. \\r or \\n) when an application passes a user-controlled cookie name. This can produce malformed Set-Cooki",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:46.813",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56762"
-    },
-    {
-      "id": "CVE-2026-56784",
-      "desc": "OpenRemote before 1.25.0 contains an insecure direct object reference (IDOR) vulnerability in the bulk alarm deletion endpoint that allows authenticated users to permanently delete alarms belonging to other tenants by supplying arbitrary alarm IDs. The removeAlarms() method in AlarmResourceImpl.java",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T13:16:46.980",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56784"
-    },
-    {
-      "id": "CVE-2026-10609",
-      "desc": "A missing authorization flaw was found in the OpenShift Cluster Logging Operator. The operator creates and forwards ServiceAccount tokens to output destinations without verifying that the ClusterLogForwarder creator has permission to use those credentials, allowing a delegated editor to exfiltrate S",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T14:17:21.853",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10609"
-    },
-    {
-      "id": "CVE-2026-11772",
-      "desc": "DRIMO CMS is vulnerable to Reflected XSS via q parameter in searching functionality. An attacker can prepare an URL that, when opened, results in arbitrary JavaScript execution in the victim's browser.\n\nProduct is in End Of Life phase and will not receive any updates. However, deleting\u00a0info.php file",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T14:17:22.183",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11772"
-    },
-    {
-      "id": "CVE-2026-12969",
-      "desc": "An out-of-bounds read vulnerability exists in dnsmasq's find_soa() function in src/rfc1035.c. When parsing NS section records, extract_name() is called with extrabytes=0, failing to validate that 10 additional bytes exist for fixed-length DNS record fields. A remote attacker controlling a DNS zone c",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-23T14:17:22.790",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12969"
-    },
     {
       "id": "CVE-2026-27604",
       "desc": "FOSSBilling is a free, open-source billing and client management system. Starting in version 0.5.4 and prior to version 0.8.0, an authorization bypass in the API role handling allows unauthenticated access to privileged `/api/system/*` endpoints. Because `system` resolves to the cron admin identity,",
@@ -702,10 +240,7 @@
       "product": "Guzzle",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00106,
-        "percentile": 0.01335
-      },
+      "epss": null,
       "published": "2026-06-23T16:17:02.990",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55568"
     },
@@ -1167,7 +702,10 @@
       "product": "N8N",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00634,
+        "percentile": 0.45809
+      },
       "published": "2026-06-23T17:16:59.547",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44791"
     },
@@ -1405,10 +943,7 @@
       "product": "N8N",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0021,
-        "percentile": 0.11179
-      },
+      "epss": null,
       "published": "2026-06-23T17:17:06.193",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54302"
     },
@@ -1870,7 +1405,10 @@
       "product": "Deno",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00101,
+        "percentile": 0.01088
+      },
       "published": "2026-06-23T18:18:04.053",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49860"
     },
@@ -2108,10 +1646,7 @@
       "product": "Open Webui",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00226,
-        "percentile": 0.13161
-      },
+      "epss": null,
       "published": "2026-06-23T18:18:06.957",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54016"
     },
@@ -2573,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00128,
+        "percentile": 0.02851
+      },
       "published": "2026-06-23T20:16:49.737",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54555"
     },
@@ -2811,10 +2349,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00296,
-        "percentile": 0.2129
-      },
+      "epss": null,
       "published": "2026-06-23T21:16:58.583",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46552"
     },
@@ -3276,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00318,
+        "percentile": 0.23549
+      },
       "published": "2026-06-23T23:16:49.033",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11972"
     },
@@ -3514,10 +3052,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00427,
-        "percentile": 0.34251
-      },
+      "epss": null,
       "published": "2026-06-24T05:17:26.463",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12846"
     },
@@ -3979,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00187,
+        "percentile": 0.08475
+      },
       "published": "2026-06-24T07:16:28.660",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8896"
     },
@@ -4217,10 +3755,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00142,
-        "percentile": 0.03851
-      },
+      "epss": null,
       "published": "2026-06-24T08:16:20.640",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52912"
     },
@@ -4682,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00264,
+        "percentile": 0.1771
+      },
       "published": "2026-06-24T09:16:30.147",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10745"
     },
@@ -4920,10 +4458,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00238,
-        "percentile": 0.14698
-      },
+      "epss": null,
       "published": "2026-06-24T13:16:34.980",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56256"
     },
@@ -5385,7 +4920,10 @@
       "product": "Ec2 Fleet",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00128,
+        "percentile": 0.02766
+      },
       "published": "2026-06-24T14:17:35.703",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57295"
     },
@@ -5623,10 +5161,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00313,
-        "percentile": 0.23044
-      },
+      "epss": null,
       "published": "2026-06-24T15:16:41.000",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50699"
     },
@@ -6088,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00184,
+        "percentile": 0.08189
+      },
       "published": "2026-06-24T17:17:06.520",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52962"
     },
@@ -6326,10 +5864,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00166,
-        "percentile": 0.06167
-      },
+      "epss": null,
       "published": "2026-06-24T17:17:08.513",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52979"
     },
@@ -6791,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00185,
+        "percentile": 0.08304
+      },
       "published": "2026-06-24T17:17:12.433",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53012"
     },
@@ -7029,10 +6567,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00172,
-        "percentile": 0.06902
-      },
+      "epss": null,
       "published": "2026-06-24T17:17:14.297",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53029"
     },
@@ -7494,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00125,
+        "percentile": 0.02586
+      },
       "published": "2026-06-24T17:17:19.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53062"
     },
@@ -7732,10 +7270,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00145,
-        "percentile": 0.04102
-      },
+      "epss": null,
       "published": "2026-06-24T17:17:21.953",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53079"
     },
@@ -8197,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00164,
+        "percentile": 0.06006
+      },
       "published": "2026-06-24T17:17:25.583",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53112"
     },
@@ -8435,10 +7973,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00157,
-        "percentile": 0.05237
-      },
+      "epss": null,
       "published": "2026-06-24T17:17:28.793",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53129"
     },
@@ -8900,7 +8435,10 @@
       "product": "Chrome, Linux Kernel, Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00149,
+        "percentile": 0.04518
+      },
       "published": "2026-06-24T19:17:09.193",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13029"
     },
@@ -9138,10 +8676,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0014,
-        "percentile": 0.03784
-      },
+      "epss": null,
       "published": "2026-06-24T19:17:12.090",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53945"
     },
@@ -9603,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00129,
+        "percentile": 0.02862
+      },
       "published": "2026-06-24T21:16:54.890",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50128"
     },
@@ -9841,10 +9379,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00474,
-        "percentile": 0.37463
-      },
+      "epss": null,
       "published": "2026-06-24T21:16:57.093",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52811"
     },
@@ -10306,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00323,
+        "percentile": 0.23988
+      },
       "published": "2026-06-24T22:16:49.667",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55762"
     },
@@ -10544,10 +10082,7 @@
       "product": "Gpac",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0013,
-        "percentile": 0.02978
-      },
+      "epss": null,
       "published": "2026-06-25T00:17:47.267",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-60473"
     },
@@ -11009,7 +10544,10 @@
       "product": "Gitlab",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00188,
+        "percentile": 0.08553
+      },
       "published": "2026-06-25T05:16:50.767",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11379"
     },
@@ -11247,10 +10785,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00208,
-        "percentile": 0.10984
-      },
+      "epss": null,
       "published": "2026-06-25T07:16:45.830",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9702"
     },
@@ -11712,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00173,
+        "percentile": 0.07011
+      },
       "published": "2026-06-25T09:16:33.073",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53157"
     },
@@ -11950,10 +11488,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00129,
-        "percentile": 0.02904
-      },
+      "epss": null,
       "published": "2026-06-25T09:16:34.747",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53174"
     },
@@ -12415,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0018,
+        "percentile": 0.07779
+      },
       "published": "2026-06-25T09:16:38.233",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53207"
     },
@@ -12653,10 +12191,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00547,
-        "percentile": 0.41716
-      },
+      "epss": null,
       "published": "2026-06-25T09:16:40.200",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53224"
     },
@@ -13118,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00151,
+        "percentile": 0.04674
+      },
       "published": "2026-06-25T09:16:43.713",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53257"
     },
@@ -13356,10 +12894,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00181,
-        "percentile": 0.07828
-      },
+      "epss": null,
       "published": "2026-06-25T09:16:45.577",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53274"
     },
@@ -13821,7 +13356,10 @@
       "product": "Emberznet",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00217,
+        "percentile": 0.12041
+      },
       "published": "2026-06-25T14:16:41.243",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-47151"
     },
@@ -14059,12 +13597,474 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00229,
-        "percentile": 0.1365
-      },
+      "epss": null,
       "published": "2026-06-25T14:16:48.383",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54843"
+    },
+    {
+      "id": "CVE-2026-54844",
+      "desc": "Unauthenticated Broken Access Control in CheckView Automated Testing <= 2.1.0 versions.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:48.560",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54844"
+    },
+    {
+      "id": "CVE-2026-54845",
+      "desc": "Unauthenticated Local File Inclusion in MDTF <= 1.3.8 versions.",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:48.853",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54845"
+    },
+    {
+      "id": "CVE-2026-54848",
+      "desc": "Insertion of Sensitive Information Into Sent Data vulnerability in Saad Iqbal APIExperts Square for WooCommerce allows Retrieve Embedded Sensitive Data.\n\nThis issue affects APIExperts Square for WooCommerce: from n/a through 4.7.3.",
+      "cvss": 8.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:49.037",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54848"
+    },
+    {
+      "id": "CVE-2026-54849",
+      "desc": "Unauthenticated SQL Injection in Premmerce Wishlist for WooCommerce <= 1.1.11 versions.",
+      "cvss": 9.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:49.183",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54849"
+    },
+    {
+      "id": "CVE-2026-56005",
+      "desc": "Subscriber Cross Site Scripting (XSS) in WP Activity Log <= 5.6.3.1 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:49.720",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56005"
+    },
+    {
+      "id": "CVE-2026-56006",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in H5P <= 1.17.6 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:50.093",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56006"
+    },
+    {
+      "id": "CVE-2026-56013",
+      "desc": "Unauthenticated Insecure Direct Object References (IDOR) in License Manager for WooCommerce <= 3.0.15 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:50.210",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56013"
+    },
+    {
+      "id": "CVE-2026-56014",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in Master Slider <= 3.11.2 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:50.340",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56014"
+    },
+    {
+      "id": "CVE-2026-56023",
+      "desc": "Customer Broken Access Control in UPI QR Code Payment Gateway for WooCommerce <= 1.6.2 versions.",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:50.490",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56023"
+    },
+    {
+      "id": "CVE-2026-56042",
+      "desc": "Customer Cross Site Scripting (XSS) in Advanced Order Export For WooCommerce <= 4.0.9 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:50.637",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56042"
+    },
+    {
+      "id": "CVE-2026-56049",
+      "desc": "Contributor Remote Code Execution (RCE) in Post Snippets <= 4.0.19 versions.",
+      "cvss": 8.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:50.753",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56049"
+    },
+    {
+      "id": "CVE-2026-56050",
+      "desc": "Improper Access Control vulnerability in Themeisle PPOM for WooCommerce allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects PPOM for WooCommerce: from n/a through 33.0.18.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:50.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56050"
+    },
+    {
+      "id": "CVE-2026-56051",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in TablePress <= 3.3.1 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:51.030",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56051"
+    },
+    {
+      "id": "CVE-2026-56053",
+      "desc": "Subscriber PHP Object Injection in EventPrime <= 4.3.4.1 versions.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:51.160",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56053"
+    },
+    {
+      "id": "CVE-2026-56054",
+      "desc": "Subscriber Arbitrary File Deletion in JS Help Desk <= 3.1.1 versions.",
+      "cvss": 7.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:51.283",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56054"
+    },
+    {
+      "id": "CVE-2026-56071",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in Forminator <= 1.53.1 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:51.400",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56071"
+    },
+    {
+      "id": "CVE-2026-56122",
+      "desc": "Winstone Servlet Engine through 0.9.10 contains a path traversal vulnerability that allows unauthenticated attackers to read arbitrary files by sending HTTP GET requests with dot-dot-slash sequences that are not sanitized when serving static files from the configured webroot. Attackers can traverse ",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:51.513",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56122"
+    },
+    {
+      "id": "CVE-2026-57429",
+      "desc": "Contributor Broken Access Control in Slim SEO <= 4.6.2 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:54.820",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57429"
+    },
+    {
+      "id": "CVE-2026-57619",
+      "desc": "Contributor Sensitive Data Exposure in Elementor Website Builder <= 4.1.3 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T14:16:55.033",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57619"
+    },
+    {
+      "id": "CVE-2026-13222",
+      "desc": "Our payment integration with Oppwa-based payment methods did not \nproperly validate payment status responses. An attacker could use a \nsuccessful payment status response from one payment and supply it to the\n system for a different payment, gaining access to multiple valid \ntickets with only one pay",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:34.150",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13222"
+    },
+    {
+      "id": "CVE-2026-13223",
+      "desc": "Our payment integration with Computop-based payment methods did not \nproperly validate payment status responses. An attacker could use a \nsuccessful payment status response from one payment and supply it to the\n system for a different payment, gaining access to multiple valid \ntickets with only one ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:34.270",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13223"
+    },
+    {
+      "id": "CVE-2026-13225",
+      "desc": "Malicious HTML content could be injected into the email address of an \norder, which pretix showed without sanitization on the confirmation page\n for individual tickets in that order.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:34.380",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13225"
+    },
+    {
+      "id": "CVE-2026-13314",
+      "desc": "Malicious HTML content could be injected into the content rendered by the pretix-digital plugin.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:34.513",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13314"
+    },
+    {
+      "id": "CVE-2026-46735",
+      "desc": "Dell Display and Peripheral Manager (DDPM Mac), versions prior to 2.3, contain an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to Command exe",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:35.797",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46735"
+    },
+    {
+      "id": "CVE-2026-49319",
+      "desc": "Remote Keyless Entry System (RKES), using the 433 MHz key fob bearing FCC ID CWTR53R0 manufactured by ALPS ALPINE CO., LTD., is vulnerable to a roll-back attack against its rolling-code authentication.\u00a0\n\n\n\nAn attacker within RF range who records two consecutive lock or unlock transmissions from a le",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:37.980",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49319"
+    },
+    {
+      "id": "CVE-2026-57234",
+      "desc": "Nokogiri is an open source XML and HTML library for the Ruby programming language. Prior to 1.19.4, the NONET parse option, which Nokogiri turns on by default for Nokogiri::XML::Schema (see CVE-2020-26247), was not correctly enforced on the JRuby implementation. As a result, a schema parsed with def",
+      "cvss": 2.6,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "Nokogiri",
+      "product": "Nokogiri",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:40.343",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57234"
+    },
+    {
+      "id": "CVE-2026-57235",
+      "desc": "Nokogiri is an open source XML and HTML library for the Ruby programming language. Prior to 1.19.4, Nokogiri::XML::NodeSet#[] (and its alias #slice) checked the requested index against the node set's bounds using a 32-bit-truncated copy of the index. A large negative index could pass the check and t",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Nokogiri",
+      "product": "Nokogiri",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:40.493",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57235"
+    },
+    {
+      "id": "CVE-2026-57236",
+      "desc": "Nokogiri is an open source XML and HTML library for the Ruby programming language. Prior to 1.19.4, calling Document#encoding= with an invalid encoding (e.g., a non-string, or a string containing a null byte) raises an exception, but only after freeing the document's current encoding string without ",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Nokogiri",
+      "product": "Nokogiri",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:40.627",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57236"
+    },
+    {
+      "id": "CVE-2026-57434",
+      "desc": "Nokogiri is an open source XML and HTML library for the Ruby programming language. Prior to 1.19.4, Nokogiri contains a bug when calling certain methods on allocated-but-uninitialized native wrapper classes that inherit from Nokogiri::XML::Node. This caused a NULL pointer dereference that could cras",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Nokogiri",
+      "product": "Nokogiri",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:40.860",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57434"
+    },
+    {
+      "id": "CVE-2026-57435",
+      "desc": "Nokogiri is an open source XML and HTML library for the Ruby programming language. Prior to 1.19.4, Nokogiri\u2019s CRuby native extension could leave a Ruby wrapper pointing to freed memory when replacing the value of an XML attribute. If Ruby code had already accessed an attribute child node, Nokogiri:",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Nokogiri",
+      "product": "Nokogiri",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:41.000",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57435"
+    },
+    {
+      "id": "CVE-2026-57436",
+      "desc": "Nokogiri is an open source XML and HTML library for the Ruby programming language. Prior to 1.19.4, Nokogiri::XML::Document#root= validated only that the new root was a Nokogiri::XML::Node, allowing a DTD node to be set as the document root. The result is a heap use-after-free during garbage collect",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Nokogiri",
+      "product": "Nokogiri",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:41.163",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57436"
+    },
+    {
+      "id": "CVE-2026-57437",
+      "desc": "Nokogiri is an open source XML and HTML library for the Ruby programming language. Prior to 1.19.4, Nokogiri::XML::XPathContext did not keep its source document alive for garbage collection. If an XPathContext outlived its document and the document was collected, evaluating an XPath expression could",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Nokogiri",
+      "product": "Nokogiri",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-06-25T15:16:41.317",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57437"
+    },
+    {
+      "id": "CVE-2026-57532",
+      "desc": "Malicious HTML content contained in the layout specification of a PDF \nticket or badge layout was executed when the PDF editor is opened in the\n browser. This could allow one backend user to inject JavaScript into \nthe browser context of another backend user. Due to requirements of the \nPDF renderin",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.0033,
+        "percentile": 0.24716
+      },
+      "published": "2026-06-25T15:16:41.457",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57532"
     }
   ],
   "kev": [
@@ -15202,6 +15202,22 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "CVE-2026-42910 Windows Hotpatch Monitoring Service Elevation of Privilege Vulnerability",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42910",
+      "source": "Microsoft Security",
+      "category": "threat",
+      "published": "2026-06-30T14:00:00+00:00",
+      "summary": "Updated an acknowledgement. This is an informational change only."
+    },
+    {
+      "title": "How CISA BOD 26-04 redefines vulnerability management metrics for security leaders",
+      "url": "https://www.tenable.com/blog/bod-26-04-ciso-reporting-risk-metrics",
+      "source": "Tenable Blog",
+      "category": "threat",
+      "published": "2026-06-30T13:00:00+00:00",
+      "summary": "CISA\u2019s BOD 26-04 changes how federal agencies patch and how security leaders must measure, justify, and communicate cyber risk to executives and boards.Key takeawaysBOD 26-04 requires agencies to make and defend risk-based vulnerability prioritization decisions, including decisions to defer vulnerab"
+    },
+    {
       "title": "CVE-2026-11979 Stack-Based Buffer Overflow in libxml2",
       "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-11979",
       "source": "Microsoft Security",
@@ -15250,12 +15266,12 @@
       "summary": "Information published."
     },
     {
-      "title": "CVE-2026-52908 RDMA: During rereg_mr ensure that REREG_ACCESS is compatible",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-52908",
-      "source": "Microsoft Security",
+      "title": "29th June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/29th-june-threat-intelligence-report-2/",
+      "source": "Checkpoint Research",
       "category": "threat",
-      "published": "2026-06-29T08:05:37+00:00",
-      "summary": "Information published."
+      "published": "2026-06-29T14:06:59+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 29th June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Polymarket, a large cryptocurrency-based prediction market, has\u00a0confirmed a supply chain attack after a third-party frontend vendor breach led to malicio"
     },
     {
       "title": "CVE-2026-52910 bpf: Free reuseport cBPF prog after RCU grace period.",
@@ -15418,6 +15434,14 @@
       "summary": "CISA\u2019s new directive officially ends federal agencies\u2019 reliance on static vulnerability scores. Learn how Tenable One helps federal agencies pivot to dynamic asset exposure, threat validation, and AI-powered automation to meet compressed compliance timelines.Key takeawaysCISA\u2019s BOD 26-04 supersedes "
     },
     {
+      "title": "From Stars to Upvotes: Fake Reputation Fueling a Crypto Clipboard Hijacker",
+      "url": "https://research.checkpoint.com/2026/from-stars-to-upvotes-fake-reputation-fueling-a-crypto-clipboard-hijacker/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-17T13:38:55+00:00",
+      "summary": "Key Points Introduction In this research, we analyze a clipboard hijacker campaign that is hidden inside a collection of \u201csolutions\u201d and \u201ctools\u201d that claim to give users an unfair advantage. These offers include Solana and Pump.fun sniper bots (automated tools that try to buy new tokens or meme coin"
+    },
+    {
       "title": "The Agentic SOC: Solving Security\u2019s Investigation Capacity Crisis in the Frontier AI Era",
       "url": "https://www.sentinelone.com/blog/frontier-ai-and-agentic-soc/",
       "source": "SentinelOne Blog",
@@ -15458,6 +15482,14 @@
       "summary": "Key Takeaways The 2025 list introduces two new categories \u2013 Software Supply Chain Failures (A03) and Mishandling of Exceptional Conditions (A10) &#8211; reflecting attacks already happening in production. Security Misconfiguration jumping from #5 to #2 signals that continuous deployment without cont"
     },
     {
+      "title": "15th June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/15th-june-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-15T13:40:44+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 15th June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES The University of Nottingham, a UK research university, has\u00a0suffered a data breach after ShinyHunters accessed its student records system. The incident a"
+    },
+    {
       "title": "Tracing Digital Intent: New MacOS Tahoe 26 Artifact Discovered",
       "url": "https://unit42.paloaltonetworks.com/new-macos-artifact-discovered/",
       "source": "Unit 42",
@@ -15488,6 +15520,14 @@
       "category": "threat",
       "published": "2026-06-11T18:00:49+00:00",
       "summary": "In this week\u2019s newsletter, Amy reminisces on the tech toys of their childhood, inspired by a hilarious lesson about why your digital privacy shouldn't be left on an open channel."
+    },
+    {
+      "title": "From SQLi to RCE \u2013 Exploiting LangGraph\u2019s Checkpointer",
+      "url": "https://research.checkpoint.com/2026/from-sqli-to-rce-exploiting-langgraphs-checkpointer/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-11T13:37:11+00:00",
+      "summary": "By Yarden Porat AI agents need memory. Frameworks like LangGraph provide it through checkpointers &#8211; persistence layers that store execution state. But what happens when that persistence layer isn&#8217;t locked down? Key Points Background LangGraph is an open-source framework for building stat"
     },
     {
       "title": "Trust No Skill: Integrity Verification for AI Agent Supply Chains",
@@ -15562,12 +15602,12 @@
       "summary": "\n \n  CVSSv3 Score:\n \n 9.1\n\n\n An improper neutralization of special elements used in an OS command vulnerability [CWE-78] in FortiSandbox, FortiSandbox Cloud and FortiSandbox PaaS WEB UI may allow an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.\n\n\n "
     },
     {
-      "title": "The June 2026 AI Executive Order: What federal agencies need to know and how Tenable can help",
-      "url": "https://www.tenable.com/blog/summary-june-2026-ai-executive-order-requirements",
-      "source": "Tenable Blog",
+      "title": "8th June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/8th-june-threat-intelligence-report/",
+      "source": "Checkpoint Research",
       "category": "threat",
-      "published": "2026-06-04T23:33:00+00:00",
-      "summary": "On June 2, 2026, the White House signed an Executive Order directing federal agencies to harden their systems with AI-enabled cyber defenses and to stand up a new AI cybersecurity clearinghouse \u2014 most of it on a 30-day clock. Here\u2019s what the EO requires and how Tenable can help.Key takeaways:The new"
+      "published": "2026-06-08T14:47:59+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 8th June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES DentaQuest, a U.S. dental benefits administrator owned by Sun Life, has\u00a0suffered a data breach after threat group ShinyHunters leaked exfiltrated data. An"
     },
     {
       "title": "Reporting from Vegas: Networking, AI, and good boys",
@@ -15586,6 +15626,14 @@
       "summary": "Tony Giandomenico, Senior Director of Product Management, joins Amy to discuss the Talos Threat Hunting launch what he's excited about for the future of cybersecurity, and, of course, his Ironman triathlons."
     },
     {
+      "title": "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem",
+      "url": "https://research.checkpoint.com/2026/impersonation-click-hijacking-and-tds-inside-a-malware-distribution-ecosystem/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-03T13:21:44+00:00",
+      "summary": "Research by:&#160;Alexey Bukhteyev Key Takeaways Introduction When we search Google for a popular piece of software, we usually click the first result, sometimes without even looking at the rest, because official project sites tend to rank highest and appear near the top of the results. After landin"
+    },
+    {
       "title": "Linux Kernel vulnerability Dirty Frag",
       "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-144",
       "source": "Fortinet PSIRT",
@@ -15600,6 +15648,22 @@
       "category": "threat",
       "published": "2026-06-02T00:00:00+00:00",
       "summary": "Find out how Elastic Security ingests Google Threat Intelligence for continuous detection and uses AI-driven workflows to enrich alerts in real time, from API key to live detections in minutes."
+    },
+    {
+      "title": "1st June \u2013 Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/1st-june-threat-intelligence-report/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-06-01T14:43:11+00:00",
+      "summary": "For the latest discoveries in cyber research for the week of 1st June, please download our Threat Intelligence Bulletin. TOP ATTACKS AND BREACHES Carnival Corporation, a global cruise line operator, has\u00a0confirmed a data breach affecting nearly 6 million people after attackers used social engineering"
+    },
+    {
+      "title": "AI Threat Landscape Digest March-April 2026",
+      "url": "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026/",
+      "source": "Checkpoint Research",
+      "category": "threat",
+      "published": "2026-05-26T10:09:59+00:00",
+      "summary": "Executive Summary During the March\u2013April 2026 reporting period, AI use in offensive operations advanced from development and planning to real-time operational deployment. Multiple independent cases, involving individual criminal actors, mass exploitation platforms, ransomware groups, and state-spons"
     },
     {
       "title": "Detecting Tycoon 2FA AiTM attacks across Entra ID and Google Workspace",
@@ -15844,6 +15908,150 @@
   ],
   "news": [
     {
+      "title": "GuardFall Exposes Open-Source AI Coding Agents to Decades-Old Shell Injection Risks",
+      "url": "https://thehackernews.com/2026/06/guardfall-exposes-open-source-ai-coding.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-30T14:26:15+00:00",
+      "summary": "The safety check that is supposed to stop an AI coding agent from running a dangerous command can be walked straight past using a shell trick that has been public for decades.\n\nNew research from&nbsp;Adversa AI, which is named the bypass GuardFall, found it works against ten of the eleven popular op"
+    },
+    {
+      "title": "Lessons from the Underground: How to Combat Business Email Compromise",
+      "url": "https://www.bleepingcomputer.com/news/security/lessons-from-the-underground-how-to-combat-business-email-compromise/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-30T14:00:10+00:00",
+      "summary": "Business Email Compromise is more than an email scam. It's a coordinated operation involving compromised accounts, financial research, and cash-out networks. Flare explores how underground forums reveal how BEC attacks are planned and executed. [...]"
+    },
+    {
+      "title": "BlueHammer Vulnerability Exploited in Ransomware Attacks",
+      "url": "https://www.securityweek.com/bluehammer-vulnerability-exploited-in-ransomware-attacks/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-30T13:56:07+00:00",
+      "summary": "The Microsoft Defender vulnerability CVE-2026-33825 was exploited in the wild as a zero-day before patches were released.\nThe post BlueHammer Vulnerability Exploited in Ransomware Attacks appeared first on SecurityWeek."
+    },
+    {
+      "title": "An intelligence budget 'super user' job is now in the hands of Russ Vought",
+      "url": "https://therecord.media/intelligence-budget-super-user-job-russ-vought-omb",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-06-30T13:52:00+00:00",
+      "summary": "Russell Vought, director of the White House Office of Management and Budget (OMB), assumed hands-on responsibility for overseeing the spending plans of intelligence agencies following the recent departure of Amaryllis Fox Kennedy, a senior intelligence official who simultaneously served in multiple "
+    },
+    {
+      "title": "282 iOS AI Apps Leak API Keys and Open AI Proxy Access in Network Traffic Study",
+      "url": "https://thehackernews.com/2026/06/282-ios-apps-found-leaking-llm-api-keys.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-30T13:49:34+00:00",
+      "summary": "Researchers tested 444 AI chatbot apps for iPhone and found that 282 of them, nearly two-thirds, exposed paid AI access through their network traffic.\n\nIn many cases, the path in was visible just by watching what the app sent: a plaintext API key, a reusable token, or a backend server that accepted "
+    },
+    {
+      "title": "Decades-Old Bash Tricks Expose AI Coding Agents to Supply Chain Attacks",
+      "url": "https://www.securityweek.com/decades-old-bash-tricks-expose-ai-coding-agents-to-supply-chain-attacks/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-30T13:00:00+00:00",
+      "summary": "Decades-old Bash shell tricks can bypass safeguards in most open source AI coding agents, potentially turning malicious repositories into supply chain attack vectors.\nThe post Decades-Old Bash Tricks Expose AI Coding Agents to Supply Chain Attacks appeared first on SecurityWeek."
+    },
+    {
+      "title": "AI-Generated Workflows Are a Silent Security Disaster",
+      "url": "https://www.darkreading.com/cyber-risk/ai-generated-workflows-silent-security-disaster",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-06-30T13:00:00+00:00",
+      "summary": "Teams are dealing with a truly dangerous problem \u2014 automation that works, but that no one understands."
+    },
+    {
+      "title": "Aflac Japan Data Breach Impacts 4.38 Million",
+      "url": "https://www.securityweek.com/aflac-japan-data-breach-impacts-4-38-million/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-30T12:52:33+00:00",
+      "summary": "Hackers accessed the insurance giant\u2019s policyholder portal multiple times between June 15 and June 25.\nThe post Aflac Japan Data Breach Impacts 4.38 Million appeared first on SecurityWeek."
+    },
+    {
+      "title": "Hacker Conversations: Chris Thompson, Former Head of IBM X-Force Red, Co-Founder of RemoteThreat",
+      "url": "https://www.securityweek.com/hacker-conversations-chris-thompson-former-head-of-ibm-x-force-red-co-founder-of-remotethreat/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-30T12:00:00+00:00",
+      "summary": "Chris Thompson's journey took him from hacking game controls as a teenager to founding IBM\u2019s X-Force Red team.\nThe post Hacker Conversations: Chris Thompson, Former Head of IBM X-Force Red, Co-Founder of RemoteThreat appeared first on SecurityWeek."
+    },
+    {
+      "title": "ClickFix Now Cybercriminals' Favorite Malware Delivery Technique",
+      "url": "https://www.infosecurity-magazine.com/news/clickfix-cybercriminals-favorite/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-30T12:00:00+00:00",
+      "summary": "ReliaQuest report warns of a surge in ClickFix social engineering attacks against Windows and macOS users"
+    },
+    {
+      "title": "Supreme Court Rules Constitutional Privacy Protections Apply to Cellphone Users\u2019 Location History",
+      "url": "https://www.securityweek.com/supreme-court-rules-constitutional-privacy-protections-apply-to-cellphone-users-location-history/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-30T11:48:40+00:00",
+      "summary": "The ruling was made in the case of a bank robber whose identity was discovered through a geofence warrant.\nThe post Supreme Court Rules Constitutional Privacy Protections Apply to Cellphone Users&#8217; Location History appeared first on SecurityWeek."
+    },
+    {
+      "title": "What the Numbers Say About FIFA 2026 Cyber Risk",
+      "url": "https://thehackernews.com/2026/06/what-numbers-say-about-fifa-2026-cyber.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-30T11:30:00+00:00",
+      "summary": "The FIFA World Cup 2026 opened on June 11. By that date, according to Check Point Research, the fraud infrastructure targeting it had already been built, staged, and partially deployed. Threat actor activity was pre-planned, months out, across three sectors and at least ten languages.\n\nCheck Point E"
+    },
+    {
+      "title": "Exploitation of Recent Oracle E-Business Suite Vulnerability Begins",
+      "url": "https://www.securityweek.com/exploitation-of-recent-oracle-e-business-suite-vulnerability-begins/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-30T11:29:48+00:00",
+      "summary": "The critical-severity defect allows unauthenticated attackers to take over the E-Business Suite\u2019s Payments product.\nThe post Exploitation of Recent Oracle E-Business Suite Vulnerability Begins appeared first on SecurityWeek."
+    },
+    {
+      "title": "Attackers Exploit SimpleHelp CVE-2026-48558 to Deploy TaskWeaver and Djinn Stealer",
+      "url": "https://thehackernews.com/2026/06/attackers-exploit-simplehelp-cve-2026.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-30T11:18:47+00:00",
+      "summary": "An unknown threat actor has been observed exploiting a recently disclosed maximum-severity security flaw in SimpleHelp to deliver two previously unreported malware families, TaskWeaver and Djinn Stealer.\n\nThe intrusion involves the exploitation of CVE-2026-48558 (CVSS score: 10.0), a critical authen"
+    },
+    {
+      "title": "Insurance giant Aflac discloses data breach after subsidiary hack",
+      "url": "https://www.bleepingcomputer.com/news/security/insurance-giant-aflac-discloses-data-breach-after-subsidiary-hack/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-30T11:12:18+00:00",
+      "summary": "American insurance giant Aflac has disclosed a new data breach after attackers breached its Japan subsidiary's systems and stole personal and bank account information. [...]"
+    },
+    {
+      "title": "Microsoft adds smarter bot protection to Teams meetings",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-adds-smarter-bot-protection-to-teams-meetings/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-06-30T10:52:26+00:00",
+      "summary": "Microsoft has introduced a new Teams admin policy that allows organizers to prevent third-party bots from joining meetings without approval. [...]"
+    },
+    {
+      "title": "Hackers Leverage Blockchain to Hit Japan's Hotels Through Booking.com Phishing",
+      "url": "https://www.infosecurity-magazine.com/news/hackers-blockchain-japan-hotels/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-30T10:30:00+00:00",
+      "summary": "A wave of phishing emails sent to Booking.com partner accommodations in Japan in May led to blockchain-hosted malware"
+    },
+    {
+      "title": "The AI Token Costs That Can Break Cybersecurity",
+      "url": "https://www.securityweek.com/the-ai-token-costs-that-can-break-cybersecurity/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-06-30T10:00:00+00:00",
+      "summary": "As cybersecurity platforms embrace agentic AI, organizations must balance detection performance against the escalating costs of token consumption, deployment architecture, and AI credits.\nThe post The AI Token Costs That Can Break Cybersecurity appeared first on SecurityWeek."
+    },
+    {
       "title": "Kali Linux 2026.2 released with 9 new tools, NetHunter updates",
       "url": "https://www.bleepingcomputer.com/news/linux/kali-linux-20262-released-with-9-new-tools-nethunter-updates/",
       "source": "Bleeping Computer",
@@ -15860,12 +16068,20 @@
       "summary": "The Blackfield ransomware gang is asking for a $2 million ransom from Nidec Corporation, a large Japanese manufacturer of electronic components for automotive and computing applications. [...]"
     },
     {
-      "title": "June 2026 Apple Updates, (Tue, Jun 30th)",
-      "url": "https://isc.sans.edu/diary/rss/33114",
-      "source": "SANS ISC Diary",
+      "title": "UK Healthcare Sector Records Tenfold Increase in Cyber-Attacks",
+      "url": "https://www.infosecurity-magazine.com/news/uk-healthcare-tenfold-increase/",
+      "source": "Infosecurity Magazine",
       "category": "news",
-      "published": "2026-06-30T09:31:27+00:00",
-      "summary": "Apple released updates for iOS/iPadOS, macOS, and Safari on Monday. There have been no updates for other Apple operating systems (visionOS, watchOS, tvOS). Usually, Apple updates all products at the same time.&#xd;"
+      "published": "2026-06-30T09:30:00+00:00",
+      "summary": "SonicWall records 264,000 events in first five months of 2026 as UK hospitals come under siege"
+    },
+    {
+      "title": "AirDrop and Quick Share Flaws Let Nearby Attackers Trigger Crashes and Bypass Checks",
+      "url": "https://thehackernews.com/2026/06/airdrop-and-quick-share-flaws-let.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-06-30T09:27:58+00:00",
+      "summary": "Two researchers have found six security flaws in AirDrop and Quick Share, the wireless features that beam files between nearby devices with no cables or shared network.\n\nAn attacker within wireless range, with just a laptop and no prior connection, can crash the sharing service on a Mac or iPhone se"
     },
     {
       "title": "Nissan Employee Data Breached in Oracle PeopleSoft Hack",
@@ -15884,20 +16100,20 @@
       "summary": "CISA confirmed on Monday that ransomware gangs are now exploiting a Microsoft Defender privilege escalation vulnerability, dubbed BlueHammer, that has previously been abused in zero-day attacks. [...]"
     },
     {
-      "title": "Critical SimpleHelp Vulnerability Exploited for Malware Delivery",
-      "url": "https://www.securityweek.com/critical-simplehelp-vulnerability-exploited-for-malware-delivery/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-30T08:43:10+00:00",
-      "summary": "The threat actor is focused on collecting credentials, SSH keys, cryptocurrency wallets, and development tooling.\nThe post Critical SimpleHelp Vulnerability Exploited for Malware Delivery appeared first on SecurityWeek."
-    },
-    {
       "title": "New BioShocking Attack Tricks AI Browsers Into Leaking User Credentials",
       "url": "https://thehackernews.com/2026/06/new-bioshocking-attack-tricks-ai.html",
       "source": "The Hacker News",
       "category": "news",
       "published": "2026-06-30T08:37:19+00:00",
       "summary": "Convince an AI browser that it is playing a game, and it can hand over your login details. That is the finding behind&nbsp;BioShocking, a technique from security firm LayerX that tricked six AI browsers and assistants into copying a user's credentials and sending them to an attacker.\n\nThe targets in"
+    },
+    {
+      "title": "Over 300 UK Firms Hit by Ransomware in a Year",
+      "url": "https://www.infosecurity-magazine.com/news/over-300-uk-firms-hit-ransomware/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-06-30T08:00:00+00:00",
+      "summary": "Report Fraud data reveals that more than half of 323 UK ransomware victims last year were SMEs"
     },
     {
       "title": "Progress Kemp LoadMaster Flaw Could Let Attackers Run Root Commands Pre-Auth",
@@ -15908,30 +16124,6 @@
       "summary": "A critical vulnerability in Progress Kemp LoadMaster can let an unauthenticated attacker execute arbitrary commands as root on the appliance by sending a crafted request to its API.\n\nThe flaw, tracked as&nbsp;CVE-2026-8037, carries a CVSS score of&nbsp;9.8 according to ZDI. A patch is available. If "
     },
     {
-      "title": "Apple Patches 30+ iOS, macOS, Safari Flaws, Including AI-Discovered WebKit Bugs",
-      "url": "https://thehackernews.com/2026/06/apple-patches-30-ios-macos-safari-flaws.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-30T07:15:07+00:00",
-      "summary": "Apple on Monday released security updates for iOS, macOS, and the Safari web browser to address over three dozen flaws, including four vulnerabilities in WebKit that were discovered using artificial intelligence (AI) tools like Anthropic Claude and OpenAI Codex Security.\n\nThe WebKit vulnerabilities "
-    },
-    {
-      "title": "Quantifind Raises $200 Million for AI-Native Risk Intelligence",
-      "url": "https://www.securityweek.com/quantifind-raises-200-million-for-ai-native-risk-intelligence/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-30T06:40:02+00:00",
-      "summary": "Quantifind will accelerate international expansion and extend its platform\u2019s localized risk intelligence capabilities.\nThe post Quantifind Raises $200 Million for AI-Native Risk Intelligence appeared first on SecurityWeek."
-    },
-    {
-      "title": "New Controller Flaws Expose Highway Signs and Billboards to Remote Hacking",
-      "url": "https://www.securityweek.com/new-controller-flaws-expose-highway-signs-and-billboards-to-remote-hacking/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-30T05:04:15+00:00",
-      "summary": "CISA has published an advisory to inform organizations about three vulnerabilities found by a researcher in Daktronics controllers.\nThe post New Controller Flaws Expose Highway Signs and Billboards to Remote Hacking appeared first on SecurityWeek."
-    },
-    {
       "title": "Oracle E-Business Suite Flaw CVE-2026-46817 Actively Exploited in the Wild",
       "url": "https://thehackernews.com/2026/06/oracle-e-business-suite-flaw-cve-2026.html",
       "source": "The Hacker News",
@@ -15940,12 +16132,12 @@
       "summary": "A critical security flaw impacting Oracle E-Business Suite has come under active exploitation in the wild, according to Defused Cyber.\n\nThe vulnerability, tracked as CVE-2026-46817 (CVSS score: 9.8), refers to an improper privilege management and authentication flaw in Oracle Payments that could be "
     },
     {
-      "title": "ISC Stormcast For Tuesday, June 30th, 2026 https://isc.sans.edu/podcastdetail/9988, (Tue, Jun 30th)",
-      "url": "https://isc.sans.edu/diary/rss/33112",
-      "source": "SANS ISC Diary",
+      "title": "NIST Enrichment Reductions Impact CVE Coverage, Accuracy",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/nist-enrichment-reductions-cve-coverage-accuracy",
+      "source": "Dark Reading",
       "category": "news",
-      "published": "2026-06-30T02:25:12+00:00",
-      "summary": ""
+      "published": "2026-06-29T22:46:45+00:00",
+      "summary": "The National Institute of Standards and Technology (NIST) scaled back the number of CVEs it selects for in-depth analysis, but the move has produced mixed results, according to researchers."
     },
     {
       "title": "Meta Contractors Posed as Teens to Prompt Rival Chatbots About Suicide, Sex, and Drugs",
@@ -16004,100 +16196,52 @@
       "summary": "Nation-state attackers breach water systems through weak passwords, exposed PLCs, and poor segmentation \u2014 not sophisticated malware."
     },
     {
-      "title": "Malicious Perplexity Chrome Extension Intercepted Searches and Address Bar Input",
-      "url": "https://thehackernews.com/2026/06/malicious-perplexity-chrome-extension.html",
-      "source": "The Hacker News",
+      "title": "Justices rule that cellphone location histories are protected by the Fourth Amendment",
+      "url": "https://therecord.media/supreme-court-geofencing-ruling-fourth-amendment",
+      "source": "The Record",
       "category": "news",
-      "published": "2026-06-29T18:40:09+00:00",
-      "summary": "Microsoft has found a malicious Chrome extension that posed as the AI search engine Perplexity and quietly logged what people searched for. It routed every query and every character typed into the address bar through an attacker-controlled server before redirecting users to real results.\n\nMicrosoft "
+      "published": "2026-06-29T18:50:00+00:00",
+      "summary": "Police must get a warrant to request geofence data involving individual cellphones, the U.S. Supreme Court ruled in what represents a victory for privacy advocates."
     },
     {
-      "title": "WhatsApp rolls out usernames to help users hide their phone number",
-      "url": "https://www.bleepingcomputer.com/news/security/whatsapp-rolls-out-usernames-to-help-users-hide-their-phone-number/",
-      "source": "Bleeping Computer",
+      "title": "US racks up about 400 wins over illegal World Cup streaming sites",
+      "url": "https://therecord.media/us-takes-down-hundreds-world-cup-streaming-sites",
+      "source": "The Record",
       "category": "news",
-      "published": "2026-06-29T17:48:28+00:00",
-      "summary": "WhatsApp is finally allowing users to reserve usernames, a privacy feature that lets them hide their phone numbers from people not in their contact list. [...]"
+      "published": "2026-06-29T17:10:00+00:00",
+      "summary": "The World Cup\u2019s organizing body, FIFA, helped identify hundreds of  domains taken down in an action organized by the U.S., along with the help of U.S. broadcaster NBC Universal and other entities."
     },
     {
-      "title": "Microsoft extends Windows Server 2022 hotpatching until October 2027",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-extends-windows-server-2022-hotpatching-until-october-2027/",
-      "source": "Bleeping Computer",
+      "title": "US posts $10 million reward over Russian cyber campaign targeting Signal, WhatsApp",
+      "url": "https://therecord.media/10million-reward-us-russian-hackers-unc4221-unc5792",
+      "source": "The Record",
       "category": "news",
-      "published": "2026-06-29T17:11:15+00:00",
-      "summary": "Microsoft has extended Windows Server 2022 hotpatching until October 2027, one year after the mainstream end date of October 2026. [...]"
+      "published": "2026-06-29T15:20:00+00:00",
+      "summary": "Russia-linked hacking groups tracked as UNC5792 and UNC4221 have socially engineered their way into the messaging accounts of government officials."
     },
     {
-      "title": "WhatsApp is Finally Getting Usernames to Help Keep Phone Numbers Private",
-      "url": "https://thehackernews.com/2026/06/whatsapp-is-finally-getting-usernames.html",
-      "source": "The Hacker News",
+      "title": "OpenAI Reveals GPT-5.6 Sol Cybersecurity Model, Restricts Early Access",
+      "url": "https://www.infosecurity-magazine.com/news/openai-gpt-5-6-sol-limited-preview/",
+      "source": "Infosecurity Magazine",
       "category": "news",
-      "published": "2026-06-29T16:09:21+00:00",
-      "summary": "WhatsApp on Monday officially announced the start of global reservations of usernames with an aim to protect the privacy of more than three billion users on the messaging platform.\n\nThe optional feature is designed to help users connect with someone on the service through usernames, as opposed to di"
+      "published": "2026-06-29T15:00:00+00:00",
+      "summary": "OpenAI is previewing its GPT-5.6 Sol model to a vetted few at the US government's request"
     },
     {
-      "title": "WhatsApp Rolling Out Username Feature to Bolster Phone Number Privacy",
-      "url": "https://www.securityweek.com/whatsapp-rolling-out-username-feature-to-bolster-phone-number-privacy/",
-      "source": "SecurityWeek",
+      "title": "Telegram-Based Millenium RAT Campaign Infects 60,000 Devices",
+      "url": "https://www.infosecurity-magazine.com/news/millenium-rat-telegram-60000/",
+      "source": "Infosecurity Magazine",
       "category": "news",
-      "published": "2026-06-29T16:00:01+00:00",
-      "summary": "An optional \u2018username key\u2019 adds another layer by requiring a secondary credential before someone can message users.\nThe post WhatsApp Rolling Out Username Feature to Bolster Phone Number Privacy appeared first on SecurityWeek."
+      "published": "2026-06-29T14:30:00+00:00",
+      "summary": "Group-IB says Millenium RAT, now rewritten in C++, has hit 62,289 devices in 160+ countries"
     },
     {
-      "title": "U.S. offers $10 million for hackers targeting WhatsApp, Signal users",
-      "url": "https://www.bleepingcomputer.com/news/security/us-offers-10-million-for-hackers-targeting-whatsapp-signal-users/",
-      "source": "Bleeping Computer",
+      "title": "Ukraine to use seized crypto from cybercrime group to buy war bonds",
+      "url": "https://therecord.media/ukraine-uses-seized-crypto-cybercrime-for-war-bonds",
+      "source": "The Record",
       "category": "news",
-      "published": "2026-06-29T15:09:43+00:00",
-      "summary": "The U.S. Department of State is offering up to $10 million for information that helps identify or locate members of the UNC5792 and UNC4221 hacker groups, which are linked to Russia's intelligence and military services. [...]"
-    },
-    {
-      "title": "Mustang Panda Uses Zoho WorkDrive as Command Channel in Indian Government Attacks",
-      "url": "https://thehackernews.com/2026/06/mustang-panda-uses-zoho-workdrive-as.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-29T15:03:40+00:00",
-      "summary": "The China-aligned espionage group&nbsp;Mustang Panda&nbsp;is running two campaigns against the Indian government and hydropower targets, deploying new malware and turning a legitimate cloud service into its command channel.\n\nAcronis Threat Research Unit&nbsp;found active compromises inside Indian go"
-    },
-    {
-      "title": "\u26a1 Weekly Recap: Linux Kernel Flaws, AI Malware Tricks, Turla Backdoor, Infostealers and More",
-      "url": "https://thehackernews.com/2026/06/weekly-recap-linux-kernel-flaws-ai.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-06-29T14:41:07+00:00",
-      "summary": "This week was a reminder that attackers do not always need big tricks. One small mistake, one old access path, one missed patch, and suddenly the door is open.\n\nThe noise is not all noise, either. Forums are talking, researchers are finding easy cracks, and defenders have more cleanup waiting.\n\nHere"
-    },
-    {
-      "title": "Researchers Demo New Claude Code Attack Using Harmless-Looking Repositories to Hijack Developer Machines",
-      "url": "https://www.securityweek.com/new-attack-abuses-claude-code-and-harmless-looking-repositories-to-hijack-developer-machines/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-29T14:28:40+00:00",
-      "summary": "Indirect prompts hidden in a repository can lead to Claude Code spawning a reverse shell on the developer\u2019s machine.\nThe post Researchers Demo New Claude Code Attack Using Harmless-Looking Repositories to Hijack Developer Machines appeared first on SecurityWeek."
-    },
-    {
-      "title": "Straiker Raises $64 Million for AI Security Platform",
-      "url": "https://www.securityweek.com/straiker-raises-64-million-for-ai-security-platform/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-29T14:07:34+00:00",
-      "summary": "The startup\u2019s platform can identify AI agents and provide visibility into their access, behavior, and risks.\nThe post Straiker Raises $64 Million for AI Security Platform appeared first on SecurityWeek."
-    },
-    {
-      "title": "Insurance Regulators Group NAIC Hit in Oracle PeopleSoft Hack",
-      "url": "https://www.securityweek.com/insurance-regulators-group-naic-hit-in-oracle-peoplesoft-hack/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-06-29T13:42:28+00:00",
-      "summary": "The ShinyHunters extortion group claims to have stolen 3.1 TB of data from the organization.\nThe post Insurance Regulators Group NAIC Hit in Oracle PeopleSoft Hack appeared first on SecurityWeek."
-    },
-    {
-      "title": "Adding some Automation to the favicon.ico method of Host Recon, (Mon, Jun 29th)",
-      "url": "https://isc.sans.edu/diary/rss/33110",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-06-29T12:00:54+00:00",
-      "summary": "I&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;m in the throes of target host recon for another pentest, and thought I&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;d share some workflow / automation stuff.&#xd;"
+      "published": "2026-06-29T13:40:00+00:00",
+      "summary": "Ukraine's Asset Recovery and Management Agency (ARMA), which manages property seized in criminal proceedings, said more than $8.3 million in cryptocurrency had been transferred to its official digital wallet following a court order."
     },
     {
       "title": "Amazon Q VS Extension Flaw Leads to Cloud Credential Theft",
@@ -16116,20 +16260,20 @@
       "summary": "Europe\u2019s pro-competition proposals could see Google Search and Android systems opened up. The company claims there are serious privacy flaws."
     },
     {
-      "title": "ISC Stormcast For Monday, June 29th, 2026 https://isc.sans.edu/podcastdetail/9986, (Mon, Jun 29th)",
-      "url": "https://isc.sans.edu/diary/rss/33108",
-      "source": "SANS ISC Diary",
+      "title": "US Federal Insurance Regulator Confirms Data Breach Via Oracle Flaw",
+      "url": "https://www.infosecurity-magazine.com/news/us-insurance-regulator-confirms/",
+      "source": "Infosecurity Magazine",
       "category": "news",
-      "published": "2026-06-29T02:00:02+00:00",
-      "summary": ""
+      "published": "2026-06-29T10:00:00+00:00",
+      "summary": "An attacker has exploited a zero day in Oracle Peoplesoft to gain access to the IT systems of the NAIC, the standard-setting association for the US federal insurance system"
     },
     {
-      "title": "YARA-X 1.18.0 and 1.19.0 Release, (Sun, Jun 28th)",
-      "url": "https://isc.sans.edu/diary/rss/33106",
-      "source": "SANS ISC Diary",
+      "title": "Russian Hackers Accused of Destructive Cyber-Attack on Jaguar Land Rover",
+      "url": "https://www.infosecurity-magazine.com/news/russian-hackers-destructive-jaguar/",
+      "source": "Infosecurity Magazine",
       "category": "news",
-      "published": "2026-06-28T07:56:44+00:00",
-      "summary": "YARA-X&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;s 1.18.0 release brings 3 improvements and 2 bugfixes.&#xd;"
+      "published": "2026-06-29T09:15:00+00:00",
+      "summary": "Experts warn the Jaguar Land Rover breach bears hallmarks of Kremlin-backed hackers, citing novel ransomware, strategic timing and efforts to obscure attribution"
     },
     {
       "title": "Third-Party Breaches Teach Education Sector a Costly Lesson in Vendor Risk",
@@ -16148,36 +16292,12 @@
       "summary": "Plus: Former national security advisor John Bolton pleads guilty in classified-materials case, Microsoft helps take down major infostealer infrastructure, and more."
     },
     {
-      "title": "AI Decline? Confidence in Autonomous Penetration Testing Falls",
-      "url": "https://www.darkreading.com/cybersecurity-operations/ai-decline-confidence-autonomous-penetration-testing",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-26T19:11:02+00:00",
-      "summary": "Companies are still experimenting with automated AI systems to find security weaknesses, but fewer are relying on the technology."
-    },
-    {
-      "title": "Cisco Adds NHI to Security Stack With Astrix, WideField Acquisitions",
-      "url": "https://www.darkreading.com/identity-access-management-security/cisco-adds-nhi-security-stack-with-astrix-widefield",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-06-26T17:31:04+00:00",
-      "summary": "Cisco joins a growing list of security platform providers that are betting that securing the agentic workforce means turning identity into the primary control plane."
-    },
-    {
       "title": "The Pentagon Is Looking Into the Dialog Data Exposure for Unmasking National Security Officials",
       "url": "https://www.wired.com/story/the-pentagon-is-looking-into-the-dialog-data-exposure-for-unmasking-national-security-officials/",
       "source": "Wired Security",
       "category": "news",
       "published": "2026-06-26T16:30:33+00:00",
       "summary": "Exposed records from the private group included the personal information of a senior White House intelligence official and an active-duty special operations officer."
-    },
-    {
-      "title": "What do Ports Hear When Nobody's Listening&#x3f; An Assessment of Automated Cybercrime &#x5b;Guest Diary&#x5d;, (Wed, Jun 24th)",
-      "url": "https://isc.sans.edu/diary/rss/33104",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-06-25T10:01:19+00:00",
-      "summary": "&#x5b;This is a Guest Diary by Nicole Phillips, an ISC intern as part of the SANS.edu BACS program&#x5d;&#xd;"
     },
     {
       "title": "British Police Built a Sprawling Crime-Prediction Machine. Some Results Couldn\u2019t Be Trusted",
@@ -16188,28 +16308,12 @@
       "summary": "As UK police embrace the AI revolution, a WIRED investigation reveals the messy inside story of one region\u2019s experiment with predictive analytics."
     },
     {
-      "title": "Linux Process Name Masquerading, (Wed, Jun 24th)",
-      "url": "https://isc.sans.edu/diary/rss/33102",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-06-24T06:29:03+00:00",
-      "summary": "In a previous diary, I talked about stack strings&&#x23&#x3b;x26&#x3b;&#x23&#x3b;x5b&#x3b;1&&#x23&#x3b;x26&#x3b;&#x23&#x3b;x5d&#x3b; with a practical example of them. Since my SEC670 class, I&&#x23&#x3b;x26&#x3b;&#x23&#x3b;xe2&#x3b;&&#x23&#x3b;x26&#x3b;&#x23&#x3b;x80&#x3b;&&#x23&#x3b;x26&#x3b;&#x23&"
-    },
-    {
       "title": "Risky Business #843 -- Fortibleed is kinda awesome, actually",
       "url": "https://risky.biz/RB843/",
       "source": "Risky Business",
       "category": "news",
       "published": "2026-06-24T05:47:01+00:00",
       "summary": "On this week\u2019s show special guest co-host Rob Joyce joins Patrick Gray and James Wilson to discuss the week\u2019s cybersecurity news. Rob served as an advisor to Donald Trump during his first term as president and also served at NSA for 34 years. While at the agency, Joyce led Tailored Access Operations"
-    },
-    {
-      "title": "ISC Stormcast For Wednesday, June 24th, 2026 https://isc.sans.edu/podcastdetail/9984, (Wed, Jun 24th)",
-      "url": "https://isc.sans.edu/diary/rss/33100",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-06-24T02:00:03+00:00",
-      "summary": ""
     },
     {
       "title": "Dialog Claims It Was Hacked. A Misconfigured Website Left Its Members Exposed",
@@ -16422,8 +16526,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 93,
-    "high": 377,
+    "critical": 92,
+    "high": 380,
     "exploited": 0,
     "kev_total": 1630,
     "kev_7d": 7,
