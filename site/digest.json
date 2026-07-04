@@ -1,109 +1,11 @@
 {
-  "generated": "2026-07-04T08:43:28.813665+00:00",
+  "generated": "2026-07-04T13:42:24.773360+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>105 critical CVE(s)</strong> and <strong>2 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-45258",
-      "desc": "dsp_mmap_single() validated the requested mapping by checking the sum of the user-supplied offset and length against the buffer size.  This addition could overflow, so that a large offset and length wrapped around and passed the check.  The offset was then narrowed from 64 to 32 bits when converted ",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Freebsd",
-      "product": "Freebsd",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-27T09:16:22.847",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45258"
-    },
-    {
-      "id": "CVE-2026-45259",
-      "desc": "sigqueue(2) was marked as permitted in capability mode with the introduction of Capsicum in 2011, but the implementation of kern_sigqueue did not include a capability mode check restricting signal delivery to the calling process's own PID.\n\nA process in capability mode can use sigqueue(2) to send si",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Freebsd",
-      "product": "Freebsd",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-27T09:16:22.963",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45259"
-    },
-    {
-      "id": "CVE-2026-49412",
-      "desc": "The kernel handler for IPV6_MSFILTER dropped a serializing lock in order to copy the source-filter list from userspace, then reacquired the lock.  During this window another thread could free the multicast filter structure, leaving the handler with a stale pointer to freed memory.\n\nAn unprivileged l",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Freebsd",
-      "product": "Freebsd",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-27T09:16:23.937",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49412"
-    },
-    {
-      "id": "CVE-2026-49413",
-      "desc": "The Linuxulator determined whether a binary was set-user-ID or set-group-ID by checking the P_SUGID process flag.  During execve(2), this flag is not yet set at the point where the auxiliary vector is constructed, so AT_SECURE was incorrectly set to zero for set-user-ID and set-group-ID executables.",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Freebsd",
-      "product": "Freebsd",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-27T09:16:24.040",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49413"
-    },
-    {
-      "id": "CVE-2026-49417",
-      "desc": "Second, the audio buffer backing a mapping could be freed when the device was closed even though the mapping remained valid.  The freed memory could then be reused elsewhere while still accessible through the stale mapping.\n\nThe /dev/dsp device nodes are world-accessible by default.  On a system wit",
-      "cvss": 7.0,
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Freebsd",
-      "product": "Freebsd",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-27T09:16:24.153",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49417"
-    },
-    {
-      "id": "CVE-2026-49414",
-      "desc": "The ELF image activator cleared per-process ASLR preference flags for setuid binaries after the code that computes the PIE base address, rather than before.  As a result, a user-requested ASLR disable was still in effect at the point where the base address was chosen.\n\nAn unprivileged local user can",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Freebsd",
-      "product": "Freebsd",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-27T10:16:37.007",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49414"
-    },
-    {
-      "id": "CVE-2026-49416",
-      "desc": "The CONS_HISTORY ioctl handler did not adequately validate the requested history size.  A large value caused an integer overflow in the buffer size calculation, resulting in a heap allocation smaller than expected.  Subsequent initialization of the buffer wrote beyond the end of the allocation.\n\nAn ",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Freebsd",
-      "product": "Freebsd",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-06-27T10:16:38.077",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49416"
-    },
     {
       "id": "CVE-2026-10643",
       "desc": "Zephyr's IP socket recvmsg() implementation (subsys/net/lib/sockets/sockets_inet.c, insert_pktinfo()) validated the user-supplied ancillary (msg_control) buffer using only the payload length (msg-msg_controllen < pktinfo_len) before writing a full control message consisting of an aligned cmsg header",
@@ -702,10 +604,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0022,
-        "percentile": 0.12441
-      },
+      "epss": null,
       "published": "2026-06-28T23:16:48.487",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13512"
     },
@@ -803,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00466,
+        "percentile": 0.37092
+      },
       "published": "2026-06-29T02:16:25.063",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13519"
     },
@@ -1405,10 +1307,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00137,
-        "percentile": 0.03489
-      },
+      "epss": null,
       "published": "2026-06-29T09:16:31.403",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57966"
     },
@@ -1506,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00443,
+        "percentile": 0.3552
+      },
       "published": "2026-06-29T10:16:30.033",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13557"
     },
@@ -2108,10 +2010,7 @@
       "product": "Page Builder Ck",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00329,
-        "percentile": 0.24797
-      },
+      "epss": null,
       "published": "2026-06-29T15:16:42.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56290"
     },
@@ -2209,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00344,
+        "percentile": 0.26427
+      },
       "published": "2026-06-29T15:16:43.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57331"
     },
@@ -2811,10 +2713,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00272,
-        "percentile": 0.19015
-      },
+      "epss": null,
       "published": "2026-06-29T18:16:39.587",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57946"
     },
@@ -2912,7 +2811,10 @@
       "product": "Mythic",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00249,
+        "percentile": 0.16096
+      },
       "published": "2026-06-29T18:16:40.547",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57953"
     },
@@ -3514,10 +3416,7 @@
       "product": "Ipados, Iphone Os, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00314,
-        "percentile": 0.23243
-      },
+      "epss": null,
       "published": "2026-06-29T20:17:36.937",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-43725"
     },
@@ -3615,7 +3514,10 @@
       "product": "Ipados, Iphone Os, Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00203,
+        "percentile": 0.10321
+      },
       "published": "2026-06-29T20:17:37.600",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-43740"
     },
@@ -4217,10 +4119,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00276,
-        "percentile": 0.19375
-      },
+      "epss": null,
       "published": "2026-06-30T07:16:31.627",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11589"
     },
@@ -4318,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0155,
+        "percentile": 0.72075
+      },
       "published": "2026-06-30T07:16:32.620",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56808"
     },
@@ -4920,10 +4822,7 @@
       "product": "Rancher",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00291,
-        "percentile": 0.20875
-      },
+      "epss": null,
       "published": "2026-06-30T13:18:42.190",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44946"
     },
@@ -5021,7 +4920,10 @@
       "product": "Enterprise Linux, Glib",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00329,
+        "percentile": 0.24806
+      },
       "published": "2026-06-30T13:19:17.457",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58013"
     },
@@ -5623,10 +5525,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00124,
-        "percentile": 0.02475
-      },
+      "epss": null,
       "published": "2026-06-30T17:16:20.273",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10654"
     },
@@ -5724,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00286,
+        "percentile": 0.20367
+      },
       "published": "2026-06-30T17:16:23.907",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58169"
     },
@@ -6326,10 +6228,7 @@
       "product": "Langflow",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00357,
-        "percentile": 0.27769
-      },
+      "epss": null,
       "published": "2026-06-30T20:17:31.413",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7803"
     },
@@ -6427,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00422,
+        "percentile": 0.33984
+      },
       "published": "2026-06-30T21:16:29.113",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-36319"
     },
@@ -7029,10 +6931,7 @@
       "product": "Chrome, Linux Kernel, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00293,
-        "percentile": 0.21036
-      },
+      "epss": null,
       "published": "2026-06-30T23:16:52.583",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13777"
     },
@@ -7130,7 +7029,10 @@
       "product": "Chrome, Linux Kernel, Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00314,
+        "percentile": 0.23233
+      },
       "published": "2026-06-30T23:16:53.253",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13784"
     },
@@ -7732,10 +7634,7 @@
       "product": "Chrome, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00109,
-        "percentile": 0.01473
-      },
+      "epss": null,
       "published": "2026-06-30T23:16:57.327",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13827"
     },
@@ -7833,7 +7732,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00297,
+        "percentile": 0.21434
+      },
       "published": "2026-06-30T23:16:58.037",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13834"
     },
@@ -8435,10 +8337,7 @@
       "product": "Chrome, Linux Kernel, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00265,
-        "percentile": 0.17898
-      },
+      "epss": null,
       "published": "2026-06-30T23:17:01.990",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13877"
     },
@@ -8536,7 +8435,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00204,
+        "percentile": 0.10483
+      },
       "published": "2026-06-30T23:17:02.640",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13884"
     },
@@ -9138,10 +9040,7 @@
       "product": "Android, Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0012,
-        "percentile": 0.02188
-      },
+      "epss": null,
       "published": "2026-06-30T23:17:06.597",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13927"
     },
@@ -9239,7 +9138,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00316,
+        "percentile": 0.23426
+      },
       "published": "2026-06-30T23:17:07.220",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13934"
     },
@@ -9841,10 +9743,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00171,
-        "percentile": 0.06788
-      },
+      "epss": null,
       "published": "2026-06-30T23:17:11.110",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13977"
     },
@@ -9942,7 +9841,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00183,
+        "percentile": 0.08091
+      },
       "published": "2026-06-30T23:17:11.707",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13984"
     },
@@ -10544,10 +10446,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00253,
-        "percentile": 0.16522
-      },
+      "epss": null,
       "published": "2026-06-30T23:17:15.460",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14027"
     },
@@ -10645,7 +10544,10 @@
       "product": "Chrome, Linux Kernel, Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0022,
+        "percentile": 0.12524
+      },
       "published": "2026-06-30T23:17:16.083",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14035"
     },
@@ -11247,10 +11149,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00253,
-        "percentile": 0.1652
-      },
+      "epss": null,
       "published": "2026-06-30T23:17:19.940",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14078"
     },
@@ -11348,7 +11247,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00247,
+        "percentile": 0.1589
+      },
       "published": "2026-06-30T23:17:20.570",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14085"
     },
@@ -11950,10 +11852,7 @@
       "product": "Chrome, Iphone Os",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00179,
-        "percentile": 0.07635
-      },
+      "epss": null,
       "published": "2026-06-30T23:17:24.437",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14128"
     },
@@ -12051,7 +11950,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0018,
+        "percentile": 0.07701
+      },
       "published": "2026-06-30T23:17:25.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14135"
     },
@@ -12653,10 +12555,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00353,
-        "percentile": 0.27363
-      },
+      "epss": null,
       "published": "2026-06-30T23:17:29.743",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56286"
     },
@@ -12754,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00234,
+        "percentile": 0.14258
+      },
       "published": "2026-06-30T23:17:30.617",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56333"
     },
@@ -13356,10 +13258,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00328,
-        "percentile": 0.24698
-      },
+      "epss": null,
       "published": "2026-07-01T05:16:17.037",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12110"
     },
@@ -13457,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00319,
+        "percentile": 0.23755
+      },
       "published": "2026-07-01T05:16:18.040",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12923"
     },
@@ -14059,12 +13961,110 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00232,
-        "percentile": 0.14009
-      },
+      "epss": null,
       "published": "2026-07-01T08:16:21.060",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12435"
+    },
+    {
+      "id": "CVE-2026-12575",
+      "desc": "DVP80ES3 with\u00a0\nImproper Resource Shutdown or Release vulnerability.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-01T08:16:21.177",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12575"
+    },
+    {
+      "id": "CVE-2026-12576",
+      "desc": "DVP80ES3 with Improper Enforcement of Message Integrity During Transmission in a Communication Channel vulnerability.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-01T08:16:21.277",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12576"
+    },
+    {
+      "id": "CVE-2026-12577",
+      "desc": "DVP80ES3 with Improperly Implemented Security Check for Standard vulnerability.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-01T08:16:21.380",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12577"
+    },
+    {
+      "id": "CVE-2026-12732",
+      "desc": "The LearnPress plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'class_wrapper_form' shortcode attribute in versions up to, and including, 4.4.0. This is due to insufficient input sanitization and output escaping in the FilterCourseTemplate::sections() method at line 98, whe",
+      "cvss": 6.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "WordPress",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-01T08:16:21.487",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12732"
+    },
+    {
+      "id": "CVE-2026-13733",
+      "desc": "The Download Manager plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'no_data_msg' Shortcode Attribute in all versions up to, and including, 3.3.60 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-l",
+      "cvss": 6.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "WordPress",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-01T08:16:21.603",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13733"
+    },
+    {
+      "id": "CVE-2026-50043",
+      "desc": "Improper neutralization of special elements used in an OS command ('OS Command Injection') issue exists in SkyBridge MB-A100/MB-A110. If this vulnerability is exploited, an arbitrary OS command may be executed by an attacker who can log in to the product with an administrative privilege.",
+      "cvss": 7.2,
+      "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-01T08:16:21.727",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50043"
+    },
+    {
+      "id": "CVE-2026-56016",
+      "desc": "CGI::Session::ID::md5 versions before 4.49 for Perl generate predictable session ids from low-entropy sources.\n\nThe generate_id method builds the session id from a MD5 digest of the process id, the epoch time, and the built-in rand() function. All three are predictable, low-entropy sources: the PID ",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00322,
+        "percentile": 0.24088
+      },
+      "published": "2026-07-01T08:16:21.883",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56016"
     }
   ],
   "kev": [
@@ -15908,6 +15908,30 @@
   ],
   "news": [
     {
+      "title": "U.S. Government Entity Paid Kairos $1 Million in Data-Theft Extortion Case",
+      "url": "https://thehackernews.com/2026/07/us-government-entity-paid-kairos-group.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-04T12:47:53+00:00",
+      "summary": "A U.S. government entity paid about $1 million to keep stolen files from being leaked, according to a new&nbsp;case study by Rakesh Krishnan for Ransom-ISAC, built on a leaked negotiation chat and the blockchain trail the payment left.\n\nThe odd part: the group that took the money calls itself Kairos"
+    },
+    {
+      "title": "North Korean Hackers Publish 108 Malicious Packages and Extensions in PolinRider Campaign",
+      "url": "https://thehackernews.com/2026/07/north-korean-hackers-publish-108.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-04T11:17:24+00:00",
+      "summary": "The North Korean threat actors linked to the Contagious Interview campaign have been observed publishing 108 unique packages and web browser extensions spanning npm, Packagist, Go, and Google Chrome as part of an ongoing activity referred to as PolinRider.\n\n\"The campaign remains active, and new mali"
+    },
+    {
+      "title": "Security Roundup: Apple\u2019s Hide My Email Service Fails to Hide Your Email",
+      "url": "https://www.wired.com/story/security-roundup-apples-hide-my-email-service-fails-to-hide-your-email/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-07-04T10:30:00+00:00",
+      "summary": "Plus: Alleged Scattered Spider hacking member extradited, dozens of license plate reader errors, and Indian officials are concerned about WhatsApp\u2019s username rollout."
+    },
+    {
       "title": "Unpatched Flaws Disclosed in Filesystem Bundled Into Millions of Embedded Devices",
       "url": "https://thehackernews.com/2026/07/unpatched-flaws-disclosed-in-filesystem.html",
       "source": "The Hacker News",
@@ -16044,28 +16068,12 @@
       "summary": "NetNut rented access to millions of compromised devices, allowing cybercriminals and nation-state actors to mask their identities during attacks.\nThe post Google, FBI Disrupt NetNut Residential Proxy Network Powered by Millions of Devices appeared first on SecurityWeek."
     },
     {
-      "title": "PamStealer Uses Fake Maccy Sites and PAM Checks to Steal Mac Login Passwords",
-      "url": "https://thehackernews.com/2026/07/pamstealer-uses-fake-maccy-sites-and.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-03T08:03:37+00:00",
-      "summary": "Cybersecurity researchers have flagged a new macOS information stealer called PamStealer that employs a series of clever tricks to infect systems and siphon sensitive data.\n\nThe stealer, discovered by Jamf Threat Labs, is distributed as a compiled AppleScript (.scpt) file impersonating Maccy, a legi"
-    },
-    {
       "title": "Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution",
       "url": "https://www.securityweek.com/critical-cursor-ai-ide-flaws-could-lead-to-os-level-remote-code-execution/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-07-03T07:57:53+00:00",
       "summary": "The DuneSlide vulnerabilities enable zero-click prompt injection attacks that escape Cursor's sandbox and execute arbitrary code on the underlying operating system.\nThe post Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution appeared first on SecurityWeek."
-    },
-    {
-      "title": "Spyware found on phone of European Parliament member probing it",
-      "url": "https://therecord.media/pegasus-spyware-european-parliament-pega-committee-member",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-07-03T05:00:00+00:00",
-      "summary": "Stelios Kouloglou, formerly a member of the European Parliament's committee investigating abuses of commercial spyware, was twice infected with Pegasus while serving, researchers said."
     },
     {
       "title": "EU Politicians Investigated Pegasus Spyware. Then It Ended Up on One of Their Phones",
@@ -16100,14 +16108,6 @@
       "summary": "Improved institutional safeguards and stricter regulations have pushed the burdens of protection and risk reduction on to Australian businesses."
     },
     {
-      "title": "Launch of UK's National Cyber Action Plan delayed amid Labour leadership crisis",
-      "url": "https://therecord.media/launch-of-uk-national-cyber-action-plan-delayed",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-07-02T20:32:00+00:00",
-      "summary": "The plan had been due for publication on Monday, the sources said. It has been postponed amid the uncertainty over the governing Labour Party\u2019s leadership contest, which opens July 9."
-    },
-    {
       "title": "Apple Reverses Age-Old Patch Policy to Keep Up With AI",
       "url": "https://www.darkreading.com/cybersecurity-operations/apple-patch-policy-ai",
       "source": "Dark Reading",
@@ -16132,28 +16132,12 @@
       "summary": "After gaining a foothold in thousands of Fortinet firewalls, the attackers are starting to monetize that access, and are also piling on a Nextcloud zero-day bug."
     },
     {
-      "title": "Google Disrupts NetNut Residential Proxy Network Spanning 2 Million Home Devices",
-      "url": "https://thehackernews.com/2026/07/google-disrupts-netnut-residential.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-02T18:54:06+00:00",
-      "summary": "Google has significantly degraded NetNut, one of the biggest networks that turns home devices into rented relays for other people's traffic.\n\nWorking with the FBI, Lumen, and others, Google's Threat Intelligence Group (GTIG)&nbsp;said this week&nbsp;it had reduced the network's pool of usable device"
-    },
-    {
       "title": "Ransomware Thugs Masquerade as Interpol to Entice Small Biz",
       "url": "https://www.darkreading.com/cyberattacks-data-breaches/attackers-use-interpol-lure-target-small-businesses",
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-07-02T18:07:40+00:00",
       "summary": "The ransomware campaign relies on basic social engineering and stretches across multiple regions, including the US, Europe, Middle East, and elsewhere."
-    },
-    {
-      "title": "Supreme Court decision threatens EU-US data transfer agreement",
-      "url": "https://therecord.media/supreme-court-decision-threatens-eu-us-data-sharing",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-07-02T16:50:00+00:00",
-      "summary": "In a Tuesday letter, Max Schrems, the founder of the Vienna-based privacy advocacy organization noyb, told European officials he plans to sue to invalidate the EU-U.S. Data Privacy Framework (DPF) that allows for the transfer of personal data from the EU to U.S. companies."
     },
     {
       "title": "Google loses final appeal to overturn \u20ac4.1 billion EU fine",
@@ -16260,14 +16244,6 @@
       "summary": "Attackers fingerprint victims through user-agent data to deliver OS-specific payloads, increasing compromise rates and campaign profitability."
     },
     {
-      "title": "Teen suspect in Scattered Spider hacks is extradited to US",
-      "url": "https://therecord.media/teen-suspect-in-scattered-spider-hacks-extradited-to-us",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-07-01T20:13:00+00:00",
-      "summary": "A complaint unsealed this week accuses a 19-year-old of participating in incidents including a breach of a \"luxury-jewelry retailer\" in 2025."
-    },
-    {
       "title": "And the Winner in Dominant Malware Delivery? ClickFix",
       "url": "https://www.darkreading.com/vulnerabilities-threats/winner-dominant-malware-delivery-clickfix",
       "source": "Dark Reading",
@@ -16282,14 +16258,6 @@
       "category": "news",
       "published": "2026-07-01T14:30:00+00:00",
       "summary": "Securonix said the Veil#Drop campaign abuses Google Blogspot to deliver PureLog Stealer in memory"
-    },
-    {
-      "title": "US lifts export controls on Anthropic\u2019s frontier cybersecurity AI models",
-      "url": "https://therecord.media/us-lifts-export-controls-anthropic-cyber-models",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-07-01T13:16:00+00:00",
-      "summary": "Anthropic said export controls on certain models had been lifted after the company came to a series of agreements with the government."
     },
     {
       "title": "Building more resilient CNI: what industry pen testers told us",
@@ -16418,14 +16386,6 @@
       "category": "news",
       "published": "2026-06-24T05:47:01+00:00",
       "summary": "On this week\u2019s show special guest co-host Rob Joyce joins Patrick Gray and James Wilson to discuss the week\u2019s cybersecurity news. Rob served as an advisor to Donald Trump during his first term as president and also served at NSA for 34 years. While at the agency, Joyce led Tailored Access Operations"
-    },
-    {
-      "title": "Dialog Claims It Was Hacked. A Misconfigured Website Left Its Members Exposed",
-      "url": "https://www.wired.com/story/dialog-hack-website-misconfiguration/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-06-23T19:18:51+00:00",
-      "summary": "The private events group, cofounded by Peter Thiel, says a \u201ccriminal\u201d hacker is behind a breach that exposed members\u2019 personal details. WIRED found no evidence a break-in was needed to access the files."
     },
     {
       "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
@@ -16591,7 +16551,7 @@
   "stats": {
     "total_cves": 1000,
     "critical": 105,
-    "high": 316,
+    "high": 313,
     "exploited": 0,
     "kev_total": 1631,
     "kev_7d": 2,
