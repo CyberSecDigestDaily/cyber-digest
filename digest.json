@@ -1,109 +1,11 @@
 {
-  "generated": "2026-07-19T13:25:23.733909+00:00",
+  "generated": "2026-07-19T19:11:44.781456+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>73 critical CVE(s)</strong> and <strong>10 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-58596",
-      "desc": "Untrusted pointer dereference in Microsoft Edge (Chromium-based) allows an unauthorized attacker to elevate privileges over a network.",
-      "cvss": 8.3,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Microsoft",
-      "product": "Edge Chromium",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-12T16:16:31.350",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58596"
-    },
-    {
-      "id": "CVE-2026-10663",
-      "desc": "In Zephyr's experimental USB host stack (CONFIG_USB_HOST_STACK), usbh_device_disconnect() (subsys/usb/host/usbh_device.c) freed the root usb_device slab object without clearing the cached pointer ctx->root. The bus removal handler dev_removed_handler() (subsys/usb/host/usbh_core.c) decides what to t",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Zephyrproject",
-      "product": "Zephyr",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-12T17:16:23.120",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10663"
-    },
-    {
-      "id": "CVE-2026-10664",
-      "desc": "The nRF70 Wi-Fi driver's power-save event handler nrf_wifi_event_proc_get_power_save_info() in drivers/wifi/nrf_wifi/src/wifi_mgmt.c copied TWT (Target Wake Time) flow entries from an nrf_wifi_umac_event_power_save_info event into the fixed-size twt_flows[WIFI_MAX_TWT_FLOWS] (8-element) array of a c",
-      "cvss": 5.0,
-      "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "Zephyrproject",
-      "product": "Zephyr",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-12T17:16:24.317",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10664"
-    },
-    {
-      "id": "CVE-2026-10665",
-      "desc": "In Zephyr's WireGuard subsystem (subsys/net/lib/wireguard), wg_process_data_message() in wg_crypto.c linearizes an inbound transport-data payload into a fixed pool buffer of CONFIG_WIREGUARD_BUF_LEN bytes before decryption. The call net_buf_linearize(buf->data, data_len, pkt->buffer, ..., data_len) ",
-      "cvss": 7.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Zephyrproject",
-      "product": "Zephyr",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-12T17:16:24.433",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10665"
-    },
-    {
-      "id": "CVE-2026-10666",
-      "desc": "parse_ipv4() in subsys/net/ip/utils.c (reached via net_ipaddr_parse() for strings of the form \"a.b.c.d:port\") copies the port substring into a fixed 17-byte stack buffer (char ipaddr[NET_IPV4_ADDR_LEN + 1]) using a length of str_len - end - 1, where str_len is the full, unbounded input length and en",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Zephyrproject",
-      "product": "Zephyr",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-12T17:16:24.550",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10666"
-    },
-    {
-      "id": "CVE-2026-10667",
-      "desc": "Zephyr's dynamic kernel-object tracking (kernel/userspace/userspace.c, formerly kernel/userspace.c) maintains a doubly-linked list (obj_list) of dynamically allocated kernel objects. Iteration over this list in k_object_wordlist_foreach() was performed under lists_lock using the SAFE iterator (which",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Zephyrproject",
-      "product": "Zephyr",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-12T17:16:24.670",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10667"
-    },
-    {
-      "id": "CVE-2026-10668",
-      "desc": "The Nuvoton NuMaker HSUSBD USB device-controller driver (drivers/usb/udc/udc_numaker.c) armed the control Data IN stage unconditionally (base->CEPTXCNT = len in numaker_hsusbd_ep_trigger). Because the HSUSBD hardware cannot disarm a control Data IN already armed for a previous transfer, a USB host t",
-      "cvss": 2.4,
-      "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "LOW",
-      "vendor": "Zephyrproject",
-      "product": "Zephyr",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-12T17:16:24.787",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10668"
-    },
     {
       "id": "CVE-2026-15505",
       "desc": "A weakness has been identified in vnotex vnote up to 3.20.1. Impacted is an unknown function of the file /src/data/extra/web/js/markdownit.js of the component YAML Frontmatter. This manipulation of the argument p_metaData causes cross site scripting. The attack may be initiated remotely. The vendor ",
@@ -702,10 +604,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00171,
-        "percentile": 0.0672
-      },
+      "epss": null,
       "published": "2026-07-13T07:16:27.923",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12275"
     },
@@ -803,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00227,
+        "percentile": 0.13389
+      },
       "published": "2026-07-13T07:16:29.020",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15539"
     },
@@ -1405,10 +1307,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00355,
-        "percentile": 0.2776
-      },
+      "epss": null,
       "published": "2026-07-13T10:16:30.330",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57371"
     },
@@ -1506,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0018,
+        "percentile": 0.07687
+      },
       "published": "2026-07-13T10:16:31.167",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57380"
     },
@@ -2108,10 +2010,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0018,
-        "percentile": 0.07705
-      },
+      "epss": null,
       "published": "2026-07-13T10:16:36.547",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57668"
     },
@@ -2209,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00291,
+        "percentile": 0.21088
+      },
       "published": "2026-07-13T10:16:37.377",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57702"
     },
@@ -2811,10 +2713,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00164,
-        "percentile": 0.05986
-      },
+      "epss": null,
       "published": "2026-07-13T10:16:42.527",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57786"
     },
@@ -2912,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00496,
+        "percentile": 0.39292
+      },
       "published": "2026-07-13T10:16:43.390",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57793"
     },
@@ -3514,10 +3416,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.002,
-        "percentile": 0.10009
-      },
+      "epss": null,
       "published": "2026-07-13T12:16:30.590",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15558"
     },
@@ -3615,7 +3514,10 @@
       "product": "Gawk",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00291,
+        "percentile": 0.21005
+      },
       "published": "2026-07-13T13:16:37.147",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40553"
     },
@@ -4217,10 +4119,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00313,
-        "percentile": 0.23369
-      },
+      "epss": null,
       "published": "2026-07-13T22:16:45.227",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15598"
     },
@@ -4318,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00409,
+        "percentile": 0.3317
+      },
       "published": "2026-07-13T22:16:46.247",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39042"
     },
@@ -4920,10 +4822,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00222,
-        "percentile": 0.12789
-      },
+      "epss": null,
       "published": "2026-07-13T23:16:47.127",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58102"
     },
@@ -5021,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0014,
+        "percentile": 0.03749
+      },
       "published": "2026-07-14T01:16:17.033",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15621"
     },
@@ -5623,10 +5525,7 @@
       "product": "Jetty",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00253,
-        "percentile": 0.16683
-      },
+      "epss": null,
       "published": "2026-07-14T09:16:39.783",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10051"
     },
@@ -5724,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00447,
+        "percentile": 0.36198
+      },
       "published": "2026-07-14T09:16:41.173",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57898"
     },
@@ -6326,10 +6228,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00103,
-        "percentile": 0.0117
-      },
+      "epss": null,
       "published": "2026-07-14T15:16:55.447",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10671"
     },
@@ -6427,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00796,
+        "percentile": 0.5235
+      },
       "published": "2026-07-14T15:17:00.753",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15695"
     },
@@ -7029,10 +6931,7 @@
       "product": "Forticlientems",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00126,
-        "percentile": 0.02642
-      },
+      "epss": null,
       "published": "2026-07-14T16:17:02.727",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-59836"
     },
@@ -7130,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00235,
+        "percentile": 0.14367
+      },
       "published": "2026-07-14T16:17:04.090",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-60118"
     },
@@ -7732,10 +7634,7 @@
       "product": "Windows 10 1607, Windows 10 1809, Windows Server 2012",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00763,
-        "percentile": 0.51281
-      },
+      "epss": null,
       "published": "2026-07-14T17:16:49.873",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48564"
     },
@@ -7833,7 +7732,10 @@
       "product": "Windows 11 24H2, Windows 11 25H2, Windows 11 26H1",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0024,
+        "percentile": 0.15014
+      },
       "published": "2026-07-14T17:16:51.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49166"
     },
@@ -8435,10 +8337,7 @@
       "product": "Windows 10 1607, Windows 10 1809, Windows 10 21H2",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00199,
-        "percentile": 0.09865
-      },
+      "epss": null,
       "published": "2026-07-14T17:16:57.987",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50296"
     },
@@ -8536,7 +8435,10 @@
       "product": "Windows 10 1607, Windows 10 1809, Windows 10 21H2",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0023,
+        "percentile": 0.13784
+      },
       "published": "2026-07-14T17:16:59.090",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50311"
     },
@@ -9138,10 +9040,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00388,
-        "percentile": 0.31135
-      },
+      "epss": null,
       "published": "2026-07-14T17:17:05.663",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54982"
     },
@@ -9239,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00188,
+        "percentile": 0.08581
+      },
       "published": "2026-07-14T17:17:06.720",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54991"
     },
@@ -9841,10 +9743,7 @@
       "product": "Windows Admin Center",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00289,
-        "percentile": 0.20879
-      },
+      "epss": null,
       "published": "2026-07-14T17:17:13.717",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58631"
     },
@@ -9942,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0035,
+        "percentile": 0.27283
+      },
       "published": "2026-07-14T17:17:14.620",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-59200"
     },
@@ -10544,10 +10446,7 @@
       "product": "Windows 11 24H2, Windows 11 25H2, Windows 11 26H1",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00188,
-        "percentile": 0.08623
-      },
+      "epss": null,
       "published": "2026-07-14T18:17:31.090",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50322"
     },
@@ -10645,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00245,
+        "percentile": 0.15717
+      },
       "published": "2026-07-14T18:17:32.263",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50331"
     },
@@ -11247,10 +11149,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00188,
-        "percentile": 0.08587
-      },
+      "epss": null,
       "published": "2026-07-14T18:17:40.090",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50385"
     },
@@ -11348,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00225,
+        "percentile": 0.13093
+      },
       "published": "2026-07-14T18:17:41.310",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50392"
     },
@@ -11950,10 +11852,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0168,
-        "percentile": 0.74354
-      },
+      "epss": null,
       "published": "2026-07-14T18:17:47.717",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50436"
     },
@@ -12051,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00604,
+        "percentile": 0.44952
+      },
       "published": "2026-07-14T18:17:48.737",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50444"
     },
@@ -12653,10 +12555,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00252,
-        "percentile": 0.16512
-      },
+      "epss": null,
       "published": "2026-07-14T18:17:55.463",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50491"
     },
@@ -12754,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00343,
+        "percentile": 0.26507
+      },
       "published": "2026-07-14T18:17:56.640",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50498"
     },
@@ -13356,10 +13258,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00444,
-        "percentile": 0.35976
-      },
+      "epss": null,
       "published": "2026-07-14T18:18:08.373",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54124"
     },
@@ -13457,7 +13356,10 @@
       "product": "365 Apps, Office 2016, Office 2019",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00303,
+        "percentile": 0.22285
+      },
       "published": "2026-07-14T18:18:12.163",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55017"
     },
@@ -14059,12 +13961,110 @@
       "product": "365 Apps, Microsoft 365, Office 2016",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00353,
-        "percentile": 0.27573
-      },
+      "epss": null,
       "published": "2026-07-14T18:18:18.347",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55121"
+    },
+    {
+      "id": "CVE-2026-55122",
+      "desc": "Out-of-bounds read in Microsoft Office Excel allows an unauthorized attacker to disclose information locally.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Excel, Microsoft 365",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-14T18:18:18.500",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55122"
+    },
+    {
+      "id": "CVE-2026-55123",
+      "desc": "Heap-based buffer overflow in Microsoft Office PowerPoint allows an unauthorized attacker to execute code locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Microsoft 365, Office 2019",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-14T18:18:18.633",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55123"
+    },
+    {
+      "id": "CVE-2026-55124",
+      "desc": "Improper validation of specified type of input in Microsoft Office Word allows an unauthorized attacker to disclose information locally.",
+      "cvss": 5.5,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Microsoft 365, Office 2019",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-14T18:18:18.767",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55124"
+    },
+    {
+      "id": "CVE-2026-55125",
+      "desc": "Heap-based buffer overflow in Microsoft Office allows an unauthorized attacker to execute code locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Microsoft 365, Office 2016",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-14T18:18:18.920",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55125"
+    },
+    {
+      "id": "CVE-2026-55126",
+      "desc": "Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Office SharePoint allows an authorized attacker to perform spoofing over a network.",
+      "cvss": 7.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "Sharepoint Server",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-14T18:18:19.063",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55126"
+    },
+    {
+      "id": "CVE-2026-55127",
+      "desc": "Heap-based buffer overflow in Microsoft Office Word allows an unauthorized attacker to execute code locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Microsoft 365, Office 2019",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-14T18:18:19.180",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55127"
+    },
+    {
+      "id": "CVE-2026-55128",
+      "desc": "Use after free in Microsoft Office Word allows an unauthorized attacker to execute code locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Microsoft 365, Office 2019",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00303,
+        "percentile": 0.2229
+      },
+      "published": "2026-07-14T18:18:19.320",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55128"
     }
   ],
   "kev": [
@@ -15911,12 +15911,44 @@
   ],
   "news": [
     {
+      "title": "Scans for Hikvision Intelligent Security API, (Sun, Jul 19th)",
+      "url": "https://isc.sans.edu/diary/rss/33164",
+      "source": "SANS ISC Diary",
+      "category": "news",
+      "published": "2026-07-19T15:00:38+00:00",
+      "summary": "We have been following issues with Hikvision cameras for a long, long time. Like many similar products, Hikvision cameras have a long history of vulnerabilities and are often targeted by internet-wide scans that our honeypot network detects.&#xd;"
+    },
+    {
+      "title": "Hackers abuse ViPNet software to target Russian govt agencies",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-vipnet-software-to-target-russian-govt-agencies/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-07-19T14:23:46+00:00",
+      "summary": "An advanced threat actor is abusing the update mechanism for the ViPNet private networking product suite to target Russian organizations, including government agencies. [...]"
+    },
+    {
+      "title": "UAC-0145 Uses ClickFix CAPTCHAs to Infect Ukrainian Devices wih Malware",
+      "url": "https://thehackernews.com/2026/07/uac-0145-uses-clickfix-captchas-to.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-19T13:30:55+00:00",
+      "summary": "Russian state-sponsored threat actors have been observed leveraging the infamous ClickFix strategy to trick Ukrainian targets into infecting their own machines with data-stealing malware.\n\nAccording to the Computer Emergency Response Team of Ukraine (CERT-UA), the activity has been attributed to UAC"
+    },
+    {
+      "title": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
+      "url": "https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-19T13:18:56+00:00",
+      "summary": "A previously undocumented threat actor has been attributed to the exploitation of recently disclosed SonicWall Secure Mobile Access (SMA) 1000 series VPN appliances as zero-days prior their public disclosure since June 22, 2026.\n\nCybersecurity company Volexity is tracking the activity under the moni"
+    },
+    {
       "title": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
       "url": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
       "source": "Bleeping Computer",
       "category": "news",
       "published": "2026-07-18T19:32:02+00:00",
-      "summary": "7-Zip version 26.02 was released to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]"
+      "summary": "7-Zip version 26.02 was released on June 25 to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]"
     },
     {
       "title": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now",
@@ -16063,14 +16095,6 @@
       "summary": "Noteworthy stories that might have slipped under the radar: OpenClaw AI agents exploited via WhatsApp, ransomware hits naval defense firm TKMS, Lidl discloses data breach.\nThe post In Other News: Iran Tracks US Military Phones, CrashStealer macOS Malware, CVD Blueprint appeared first on SecurityWeek"
     },
     {
-      "title": "Inside the Search for \"Clean\" Residential Proxies for Carding",
-      "url": "https://www.bleepingcomputer.com/news/security/inside-the-search-for-clean-residential-proxies-for-carding/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-07-17T14:00:10+00:00",
-      "summary": "Residential proxies are no longer the silver bullet they once were for carding. Flare explains why cybercriminals increasingly seek \"clean\" residential proxies and combine them with browser fingerprints, device profiles, and other identity signals to evade modern fraud detection. [...]"
-    },
-    {
       "title": "Fake Coding Tests Deliver OtterCookie-Aligned Malware Hidden in SVG Flag Images",
       "url": "https://thehackernews.com/2026/07/north-korea-linked-hackers-hide.html",
       "source": "The Hacker News",
@@ -16119,28 +16143,12 @@
       "summary": "Google Cloud incorporates key Wiz capabilities into an agentic defense platform to automate threat detection and remediation against AI attacks."
     },
     {
-      "title": "E.U. Orders Google to Open Android Mic, Camera and Screen to Rival AI Assistants",
-      "url": "https://thehackernews.com/2026/07/eu-orders-google-to-open-android-mic.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-17T11:44:41+00:00",
-      "summary": "The European Commission on Thursday ordered Google to give rival AI assistants the same reach into Android that Gemini already has: the camera, the microphone, whatever is on screen, a wake word that fires with the display off, and the ability to drive other apps in the background by imitating taps "
-    },
-    {
       "title": "Beacon Security Raises $13 Million for Security Data Platform",
       "url": "https://www.securityweek.com/beacon-security-raises-13-million-for-security-data-platform/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-07-17T11:43:36+00:00",
       "summary": "The startup helps organizations detect, hunt, and protect their assets across environments at machine speed.\nThe post Beacon Security Raises $13 Million for Security Data Platform appeared first on SecurityWeek."
-    },
-    {
-      "title": "The Race to Field Military Autonomy Is On, Can Trusted Information Infrastructure Keep Pace?",
-      "url": "https://thehackernews.com/2026/07/the-race-to-field-military-autonomy-is.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-17T11:30:00+00:00",
-      "summary": "Military forces are under increasing pressure to field autonomous capabilities faster than ever before. Across the U.S., UK, and NATO, new investment, evolving defense strategies, and accelerated acquisition pathways are transforming how capability is delivered, rewarding programs that can move from"
     },
     {
       "title": "Industry Reactions to Pentagon Suspending CMMC Phase 2: Feedback Friday",
@@ -16399,14 +16407,6 @@
       "summary": "The setup&#xd;"
     },
     {
-      "title": "ISC Stormcast For Monday, July 13th, 2026 https://isc.sans.edu/podcastdetail/10004, (Mon, Jul 13th)",
-      "url": "https://isc.sans.edu/diary/rss/33148",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-07-13T02:00:03+00:00",
-      "summary": ""
-    },
-    {
       "title": "AI Found a Root Bug in Linux That Everyone Missed for 15 Years",
       "url": "https://www.wired.com/story/security-news-this-week-ai-found-a-root-bug-in-linux-that-everyone-missed-for-15-years/",
       "source": "Wired Security",
@@ -16594,7 +16594,7 @@
   "stats": {
     "total_cves": 1000,
     "critical": 73,
-    "high": 539,
+    "high": 541,
     "exploited": 3,
     "kev_total": 1647,
     "kev_7d": 10,
