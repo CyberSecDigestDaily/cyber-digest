@@ -1,529 +1,11 @@
 {
-  "generated": "2026-07-29T14:20:45.109098+00:00",
+  "generated": "2026-07-29T19:22:51.184335+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>112 critical CVE(s)</strong> and <strong>4 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>111 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-10723",
-      "desc": "BIND may accept incorrect child-zone NSEC3 records as valid, which could allow an attacker to forge authenticated NXDOMAIN responses.\nThis issue affects BIND 9 versions 9.18.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:51.190",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10723"
-    },
-    {
-      "id": "CVE-2026-10822",
-      "desc": "If BIND encounters a particular invalid data structure in a DNS record, it will accept the invalid data, and may subsequently abort and exit.\n\nBIND will first need to store a DNS record for a key (KEY, DNSKEY, etc.). That key must specify a PRIVATEDNS algorithm (253), and in the algorithm identifier",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:51.330",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10822"
-    },
-    {
-      "id": "CVE-2026-11331",
-      "desc": "An attacker who knows (or guesses) that a resolver uses RPZ with wildcard CNAME policies can craft query names long enough to trigger a NAMETOOLONG error condition during RPZ processing. This is not handled correctly and may lead to defeating the RPZ rule. It also may lead to an unexpected exit of t",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:51.457",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11331"
-    },
-    {
-      "id": "CVE-2026-11605",
-      "desc": "The issue is a resource exhaustion vulnerability associated with DNSSEC validation. BIND always validates all RRSIG records in an answer, even if they are not strictly needed. A query to an authoritative server/zone which returns many valid but superfluous RRSIG records causes the validator to waste",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:51.573",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11605"
-    },
-    {
-      "id": "CVE-2026-11622",
-      "desc": "A DNSSEC validating resolver that is under a random subdomain attack against a DNSSEC-signed zone can suffer from runaway memory usage. The attacker needs to be able to send queries faster than the resolver can perform validation. The increased memory usage can be orders of magnitude beyond the limi",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:51.703",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11622"
-    },
-    {
-      "id": "CVE-2026-11721",
-      "desc": "It is possible for an attacker's zone to respond to a query with an RRSIG that has a smaller number of labels than the zone in which the RRSIG is contained. This causes `named` to produce a wildcard name for a zone that is shorter than the attacker's zone, which can result in cache poisoning. For th",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:51.837",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11721"
-    },
-    {
-      "id": "CVE-2026-12617",
-      "desc": "The issue is unexpected program termination based on ordering and/or specific content in responses to queries for CNAME or DNAME, and A records. Specifically, if a client queries for a DNAME and A record below the DNAME to the resolver, and the authoritative server responds positively to the A query",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:51.963",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12617"
-    },
-    {
-      "id": "CVE-2026-13204",
-      "desc": "If a provably insecure domain is covered by both an NSEC and NSEC3 record at the parent, and there exist an RRSIG for only one of these types, then BIND may exit unexpectedly with an assertion while validating this proof.\nThis issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:52.080",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13204"
-    },
-    {
-      "id": "CVE-2026-13321",
-      "desc": "The BIND resolver accepts validly-signed NSEC records where the \"Next Domain Name\" field points outside the signer's zone.\nThis issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24-S1.",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:52.200",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13321"
-    },
-    {
-      "id": "CVE-2026-14985",
-      "desc": "The Analog Way Picturall Quad Compact Mark II version 3.5.8, contains a local privilege escalation vulnerability in the core firmware. This is due to improper privilege delegation and insufficient input validation in a maintenance script.",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:52.420",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14985"
-    },
-    {
-      "id": "CVE-2026-2395",
-      "desc": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Xpoda T\u00fcrkiye Informatics Technology Inc. No Code Platform allows SQL Injection.\n\nThis issue affects No Code Platform: from 4.3.1.0 through 20260722.\u00a0NOTE: The vendor was contacted early about this ",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:16:54.193",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-2395"
-    },
-    {
-      "id": "CVE-2026-48029",
-      "desc": "libheif is a HEIF and AVIF file format decoder and encoder. Versions 1.19.0 through 1.21.2 have a heap OOB read in ImageItem_Grid::decode_grid_tile via irot-induced tile-coordinate underflow. Version 1.22.0 fixes the issue.",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T15:17:18.357",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48029"
-    },
-    {
-      "id": "CVE-2026-16606",
-      "desc": "A vulnerability in Fujitsu Software Linux openFT and\u00a0Fujitsu Software Oracle Solaris openFT before version\u00a012.1D00 allows for unauthenticated remote code execution\u00a0(pre-auth RCE) on GNU/Linux or Oracle Solaris. The Fsas Technologies PSIRT obtained that intelligence internally and covers the CVE beyo",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:16.800",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16606"
-    },
-    {
-      "id": "CVE-2026-16607",
-      "desc": "A vulnerability in Fujitsu Software Linux openFT and\u00a0Fujitsu Software Oracle Solaris openFT before version\u00a012.1D00 allows for\u00a0local privilege escalation\u00a0to root of an already authenticated user on GNU/Linux or Oracle Solaris.\u00a0The Fsas Technologies PSIRT obtained that intelligence internally and cove",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:16.963",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16607"
-    },
-    {
-      "id": "CVE-2026-40712",
-      "desc": "Dell PowerProtect Data Manager, versions prior to 20.2.0.0, contain(s) an Improper Input Validation vulnerability in the REST API. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Elevation of privileges.",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:19.247",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40712"
-    },
-    {
-      "id": "CVE-2026-40714",
-      "desc": "Dell PowerProtect Data Manager, versions prior to 20.2.0.0, contain(s) an Improper Input Validation vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Elevation of privileges.",
-      "cvss": 7.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:19.423",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40714"
-    },
-    {
-      "id": "CVE-2026-44276",
-      "desc": "Dell PowerProtect Data Manager, versions prior to 20.2.0.0, contain(s) an Exposure of Sensitive Information to an Unauthorized Actor vulnerability in the REST API. A high privileged attacker with local access could potentially exploit this vulnerability, leading to Information exposure.",
-      "cvss": 6.0,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:22.593",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44276"
-    },
-    {
-      "id": "CVE-2026-46737",
-      "desc": "Dell PowerProtect Data Manager, versions prior to 20.2.0.0, contain(s) an Improper Input Validation vulnerability in the REST API. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Remote execution.",
-      "cvss": 6.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:24.093",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46737"
-    },
-    {
-      "id": "CVE-2026-46738",
-      "desc": "Dell PowerProtect Data Manager, versions prior to 20.2.0.0, contain(s) an Improper Input Validation vulnerability in the REST API. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Elevation of privileges.",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:24.223",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46738"
-    },
-    {
-      "id": "CVE-2026-49499",
-      "desc": "Dell PowerProtect Data Manager, versions prior to 20.2.0.0, contain(s) a Generation of Incorrect Security Tokens vulnerability in the IAM. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Elevation of privileges.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:17:29.943",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49499"
-    },
-    {
-      "id": "CVE-2026-64828",
-      "desc": "Froiden TableTrack through 1.3.10 contains a stored cross-site scripting vulnerability that allows unauthenticated attackers to inject arbitrary HTML and JavaScript through the order notes field without sanitization. Attackers can craft malicious payloads in customer order placement that execute in ",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T16:18:50.487",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64828"
-    },
-    {
-      "id": "CVE-2026-16615",
-      "desc": "A flaw was found in librest. The PKCE implementation for OAuth authorization uses the GRand function from the GLib API, a cryptographically insecure pseudo-random number generator. Because the generated \"code verifier\" lacks sufficient cryptographic entropy, a malicious actor can reverse-engineer th",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T17:16:55.863",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16615"
-    },
-    {
-      "id": "CVE-2026-64830",
-      "desc": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpe",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Ffmpeg",
-      "product": "Ffmpeg",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T17:16:58.557",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64830"
-    },
-    {
-      "id": "CVE-2026-64831",
-      "desc": "FFmpeg versions 8.0 through 8.1.2 contains a stack buffer overflow vulnerability in the Vulkan HEVC hardware decoder that allows remote attackers to overwrite return addresses and adjacent stack frames by supplying a crafted HEVC/H.265 bitstream. Attackers can embed a malicious vps_num_hrd_parameter",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Ffmpeg",
-      "product": "Ffmpeg",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T17:16:58.697",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64831"
-    },
-    {
-      "id": "CVE-2026-65011",
-      "desc": "Graylog2 Server before commit 46a2eeb contains a missing per-entity permission check in the POST /events/definitions/{definitionId}/duplicate endpoint that allows authenticated users to clone any event definition. Attackers with the low-privilege eventdefinitions:create capability can read private e",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T17:16:58.837",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65011"
-    },
-    {
-      "id": "CVE-2026-65012",
-      "desc": "InvokeAI before 6.13.7 contains an unauthenticated directory enumeration vulnerability in the GET /api/v2/models/scan_folder endpoint that accepts attacker-controlled scan_path parameters. Unauthenticated attackers can recursively enumerate arbitrary server filesystem directories and use HTTP respon",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T17:16:58.990",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65012"
-    },
-    {
-      "id": "CVE-2026-65013",
-      "desc": "Onlook through 0.2.32, fixed in commit 423e2e9, contains a broken object level authorization vulnerability that allows authenticated attackers to access and manipulate other users' resources by supplying arbitrary UUID values to tRPC API procedures including project.get, member.remove, and chat.conv",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T17:16:59.143",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65013"
-    },
-    {
-      "id": "CVE-2026-7328",
-      "desc": "Missing authorization in Caliptra Core Runtime Firmware (INVOKE_DPE_MLDSA87, CM_AES_GCM_DECRYPT_DMA, EXTERNAL_MAILBOX_CMD commands) in subsystem mode allows a privileged local attacker to cause a denial of service via mailbox commands containing unverified AXI addresses. The security impact beyond a",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T17:16:59.557",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7328"
-    },
-    {
-      "id": "CVE-2026-16157",
-      "desc": "Duplicati v2.3.0.1 backup software gives Authenticated Users MODIFY permissions that propagate to all subdirectories. Installing the software outside of the Program Files directory, or on a custom path, creates a LocalSystem service running from a directory that any standard local user can write to.",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T18:16:55.410",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16157"
-    },
-    {
-      "id": "CVE-2026-64832",
-      "desc": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path free",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Ffmpeg",
-      "product": "Ffmpeg",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T18:17:05.483",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64832"
-    },
-    {
-      "id": "CVE-2026-64833",
-      "desc": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds ",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ffmpeg",
-      "product": "Ffmpeg",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T18:17:05.627",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64833"
-    },
-    {
-      "id": "CVE-2026-64834",
-      "desc": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when it",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ffmpeg",
-      "product": "Ffmpeg",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T18:17:05.780",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64834"
-    },
-    {
-      "id": "CVE-2026-64835",
-      "desc": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When A",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Ffmpeg",
-      "product": "Ffmpeg",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T18:17:05.917",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64835"
-    },
-    {
-      "id": "CVE-2026-65650",
-      "desc": "Elgg before 7.0.0 does not check image dimensions to prevent denial of service via a large avatar upload.",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T18:17:06.047",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65650"
-    },
-    {
-      "id": "CVE-2026-16624",
-      "desc": "Cal.com OSS ships lacks authorization on webhook teamId creation, allowing any authenticated user to create a webhook on any team via unvalidated teamId injection, then steal booking data, including fields like organizer/attendee emails and custom responses, and conditionally video-call passwords, b",
-      "cvss": 9.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T19:16:58.273",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16624"
-    },
-    {
-      "id": "CVE-2026-22049",
-      "desc": "ONTAP versions 9.16.1 and higher with WebAuthn multi-factor authentication (MFA) configured are susceptible to a vulnerability related to the Relying Party ID which when successfully exploited could allow an attacker with valid credentials to bypass MFA.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T19:16:59.820",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-22049"
-    },
-    {
-      "id": "CVE-2026-3482",
-      "desc": "IBM Sterling B2B Integrator and IBM Sterling File Gateway\u00a06.2.0.0 through 6.2.0.5_2,\u00a0 6.2.1.0 through\u00a06.2.1.1_2, and\u00a0 6.2.2.0 through 6.2.2.0_1 could allow an unauthenticated user to read sensitive information by bypassing authentication through a specially crafted HTTP request.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-07-22T19:17:03.233",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3482"
-    },
     {
       "id": "CVE-2026-13055",
       "desc": "The `$_internalIndexKey` aggregation expression can be used by any authenticated user to crash a MongoDB server (mongod). The expression fails to handle compound wildcard index specifications, triggering an internal consistency check that aborts the server process. The user must be able to run an ag",
@@ -702,10 +184,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00067,
-        "percentile": 0.00032
-      },
+      "epss": null,
       "published": "2026-07-22T20:16:44.967",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13067"
     },
@@ -1223,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00202,
+        "percentile": 0.10337
+      },
       "published": "2026-07-22T21:18:10.870",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64797"
     },
@@ -1405,10 +887,7 @@
       "product": "Platform Security For Java",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0017,
-        "percentile": 0.06726
-      },
+      "epss": null,
       "published": "2026-07-22T23:16:36.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-60371"
     },
@@ -1926,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00671,
+        "percentile": 0.48341
+      },
       "published": "2026-07-23T10:16:49.657",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14282"
     },
@@ -2108,10 +1590,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00193,
-        "percentile": 0.09341
-      },
+      "epss": null,
       "published": "2026-07-23T10:16:51.333",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15794"
     },
@@ -2629,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00214,
+        "percentile": 0.11915
+      },
       "published": "2026-07-23T12:17:18.400",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-27399"
     },
@@ -2811,10 +2293,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00175,
-        "percentile": 0.07278
-      },
+      "epss": null,
       "published": "2026-07-23T12:18:28.930",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57428"
     },
@@ -3332,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00175,
+        "percentile": 0.0723
+      },
       "published": "2026-07-23T12:18:34.433",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-61947"
     },
@@ -3514,10 +2996,7 @@
       "product": "Webstorm",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0014,
-        "percentile": 0.0377
-      },
+      "epss": null,
       "published": "2026-07-23T12:18:35.993",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64805"
     },
@@ -4035,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00214,
+        "percentile": 0.11917
+      },
       "published": "2026-07-23T12:18:40.470",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65476"
     },
@@ -4217,10 +3699,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00228,
-        "percentile": 0.13683
-      },
+      "epss": null,
       "published": "2026-07-23T12:18:42.067",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65489"
     },
@@ -4738,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00123,
+        "percentile": 0.02453
+      },
       "published": "2026-07-23T12:18:46.617",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65536"
     },
@@ -4920,10 +4402,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00262,
-        "percentile": 0.17907
-      },
+      "epss": null,
       "published": "2026-07-23T13:16:25.730",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15037"
     },
@@ -5441,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00138,
+        "percentile": 0.03645
+      },
       "published": "2026-07-23T16:17:25.903",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48535"
     },
@@ -5623,10 +5105,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00257,
-        "percentile": 0.1733
-      },
+      "epss": null,
       "published": "2026-07-23T17:16:30.190",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65759"
     },
@@ -6144,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00133,
+        "percentile": 0.03213
+      },
       "published": "2026-07-23T20:17:22.257",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65706"
     },
@@ -6326,10 +5808,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0015,
-        "percentile": 0.04647
-      },
+      "epss": null,
       "published": "2026-07-23T21:17:04.210",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39155"
     },
@@ -6774,7 +6253,7 @@
       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
       "severity": "CRITICAL",
       "vendor": "Microsoft",
-      "product": "",
+      "product": "365 Copilot",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -6830,7 +6309,7 @@
       "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:N",
       "severity": "HIGH",
       "vendor": "Microsoft",
-      "product": "",
+      "product": "Azure Ai Search",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -6844,10 +6323,13 @@
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
       "severity": "CRITICAL",
       "vendor": "Microsoft",
-      "product": "",
+      "product": "Exchange Online",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00681,
+        "percentile": 0.48763
+      },
       "published": "2026-07-24T01:17:36.417",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56191"
     },
@@ -7029,10 +6511,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00294,
-        "percentile": 0.21624
-      },
+      "epss": null,
       "published": "2026-07-24T05:16:49.577",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66139"
     },
@@ -7550,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00768,
+        "percentile": 0.51877
+      },
       "published": "2026-07-24T10:16:31.693",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16634"
     },
@@ -7732,10 +7214,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0032,
-        "percentile": 0.24352
-      },
+      "epss": null,
       "published": "2026-07-24T13:18:28.450",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66008"
     },
@@ -8082,7 +7561,7 @@
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
       "severity": "CRITICAL",
       "vendor": "Microsoft",
-      "product": "",
+      "product": "Azure Kubernetes Service",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -8096,7 +7575,7 @@
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
       "severity": "CRITICAL",
       "vendor": "Microsoft",
-      "product": "",
+      "product": "Purview Data Governance",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -8253,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00432,
+        "percentile": 0.35416
+      },
       "published": "2026-07-24T16:16:48.420",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64208"
     },
@@ -8435,10 +7917,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00126,
-        "percentile": 0.02656
-      },
+      "epss": null,
       "published": "2026-07-24T16:16:49.923",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64221"
     },
@@ -8956,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00392,
+        "percentile": 0.31854
+      },
       "published": "2026-07-24T17:17:34.107",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65623"
     },
@@ -9138,10 +8620,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00275,
-        "percentile": 0.19711
-      },
+      "epss": null,
       "published": "2026-07-24T19:16:58.340",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48033"
     },
@@ -9250,7 +8729,7 @@
       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L",
       "severity": "CRITICAL",
       "vendor": "Microsoft",
-      "product": "",
+      "product": "Azure Portal",
       "exploited": false,
       "kev": false,
       "epss": null,
@@ -9659,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00157,
+        "percentile": 0.05325
+      },
       "published": "2026-07-25T10:17:06.243",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64261"
     },
@@ -9841,10 +9323,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00211,
-        "percentile": 0.11475
-      },
+      "epss": null,
       "published": "2026-07-25T10:17:07.797",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64274"
     },
@@ -10362,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00157,
+        "percentile": 0.05324
+      },
       "published": "2026-07-25T10:17:12.263",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64311"
     },
@@ -10544,10 +10026,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00156,
-        "percentile": 0.05215
-      },
+      "epss": null,
       "published": "2026-07-25T10:17:13.923",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64324"
     },
@@ -11065,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00129,
+        "percentile": 0.02959
+      },
       "published": "2026-07-25T10:17:18.677",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64361"
     },
@@ -11247,10 +10729,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00501,
-        "percentile": 0.40015
-      },
+      "epss": null,
       "published": "2026-07-25T10:17:20.433",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64374"
     },
@@ -11768,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00126,
+        "percentile": 0.02652
+      },
       "published": "2026-07-25T10:17:24.853",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64411"
     },
@@ -11950,10 +11432,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00168,
-        "percentile": 0.06462
-      },
+      "epss": null,
       "published": "2026-07-25T10:17:26.483",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64424"
     },
@@ -12471,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00184,
+        "percentile": 0.08333
+      },
       "published": "2026-07-25T10:17:31.293",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64461"
     },
@@ -12653,10 +12135,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00176,
-        "percentile": 0.07407
-      },
+      "epss": null,
       "published": "2026-07-25T10:17:32.863",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64474"
     },
@@ -13174,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00156,
+        "percentile": 0.05263
+      },
       "published": "2026-07-25T10:17:37.273",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64511"
     },
@@ -13356,10 +12838,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00144,
-        "percentile": 0.04099
-      },
+      "epss": null,
       "published": "2026-07-25T10:17:38.713",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64524"
     },
@@ -13877,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00149,
+        "percentile": 0.04565
+      },
       "published": "2026-07-27T07:16:25.023",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13400"
     },
@@ -14059,15 +13541,548 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00238,
-        "percentile": 0.15053
-      },
+      "epss": null,
       "published": "2026-07-27T07:16:30.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66412"
+    },
+    {
+      "id": "CVE-2026-9830",
+      "desc": "The bookingpress-appointment-booking-pro WordPress plugin before 5.7.3 does not correctly invoke its REST permission callback, leaving every route in one of its API namespaces reachable without authentication and allowing unauthenticated attackers to read customer booking data and modify other users",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T07:16:30.503",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9830"
+    },
+    {
+      "id": "CVE-2026-14837",
+      "desc": "Multiple Lenze products are affected by an improper signature verification vulnerability in the SSH enablement mechanism. A low-privileged local attacker can bypass verification of the SSH enable file signature and enable SSH access on the device. Successful exploitation may result in unauthorized a",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:17.463",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14837"
+    },
+    {
+      "id": "CVE-2026-64531",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: openvswitch: reject oversized nested action attrs\n\nOpen vSwitch stores generated flow actions as nlattrs, whose nla_len\nfield is u16. Commit a1e64addf3ff (\"net: openvswitch: remove\nmisbehaving actions length check\") allowed th",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:22.243",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64531"
+    },
+    {
+      "id": "CVE-2026-64532",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: bound NTFS_DE view.data_off in UpdateRecordData{Root,Allocation}\n\nIn do_action()'s UpdateRecordDataRoot (fslog.c:3489) and\nUpdateRecordDataAllocation (fslog.c:3697) cases, the memmove\ndestination is `Add2Ptr(e, le16_to_cp",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:22.383",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64532"
+    },
+    {
+      "id": "CVE-2026-64533",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/ntfs3: validate lcns_follow in log_replay conversion\n\nlog_replay() converts DIR_PAGE_ENTRY_32 records into DIR_PAGE_ENTRY\nrecords when replaying version 0 restart tables.\n\nDuring this conversion, the memmove() length is derived ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:22.510",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64533"
+    },
+    {
+      "id": "CVE-2026-64534",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnvmet-tcp: check INIT_FAILED before nvmet_req_uninit in digest error path\n\nIn nvmet_tcp_try_recv_ddgst(), when a data digest mismatch is detected,\nnvmet_req_uninit() is called unconditionally. However, if the command\narrived via th",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:22.643",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64534"
+    },
+    {
+      "id": "CVE-2026-64535",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nnvmet-tcp: Fix potential UAF when ddgst mismatch\n\nShivam Kumar found via vulnerability testing:\nWhen data digest is enabled on an NVMe/TCP connection and a digest\nmismatch occurs on a non-final H2C_DATA PDU during an R2T-based\ndata",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:22.773",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64535"
+    },
+    {
+      "id": "CVE-2026-64536",
+      "desc": "In the Linux kernel, the following vulnerability has been resolved:\n\nstaging: rtl8723bs: fix OOB reads in is_ap_in_tkip() IE loop\n\nThe loop in is_ap_in_tkip() iterates over IEs without verifying that\nenough bytes remain before dereferencing the IE header or its payload:\n\n- pIE->element_id and pIE->l",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:22.890",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64536"
+    },
+    {
+      "id": "CVE-2026-65893",
+      "desc": "This vulnerability exists in CP PLUS EZ-P21 IP Camera due to an insecure debug feature enabled in the firmware.\n\nAn attacker with physical access could exploit this vulnerability by placing arbitrary code on removable media and triggering their execution through the debug mechanism.\n\n\n\nSuccessful ex",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:23.010",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65893"
+    },
+    {
+      "id": "CVE-2026-65894",
+      "desc": "This vulnerability exists in CP PLUS EZ-P21 IP Camera due to improper authentication of HTTP endpoints. A remote attacker could exploit this vulnerability by conducting brute-force attacks against HTTP endpoint on the targeted device.\n\n\n\nSuccessful exploitation of this vulnerability could allow an a",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T08:16:23.157",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65894"
+    },
+    {
+      "id": "CVE-2026-16554",
+      "desc": "cJSON library is vulnerable to an integer overflow in the print_string_ptr() function in cJSON.c on 32-bit platforms. The escape_characters counter, a 32-bit size_t, can wrap around when processing strings containing approximately 858,993,460 or more control characters, causing the output buffer to ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T09:16:37.383",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16554"
+    },
+    {
+      "id": "CVE-2026-65764",
+      "desc": "Joomla Extension - phoca.cz - Reflected XSS vulnerability in Phoca Commander 5.0.0-6.1.1 - Improper validation of user inputs lead to a reflective XSS vulnerability.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T09:16:37.790",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65764"
+    },
+    {
+      "id": "CVE-2026-65765",
+      "desc": "Joomla Extension - phoca.cz - Path Traversal vulnerability in Phoca Commander 1.0.0-6.1.1 - Improper limitation of paths for save and download actions lead to path traversal vulnerabilities.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T09:16:37.923",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65765"
+    },
+    {
+      "id": "CVE-2026-17523",
+      "desc": "A flaw was found in the Linux kernel in net/can/bcm.c in can: bcm, where an unprivileged local user can exploit this vulnerability to execute arbitrary code within the kernel, which leads to a local privilege escalation (LPE). This allows the attacker to gain root privileges and take full control of",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T10:16:36.270",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17523"
+    },
+    {
+      "id": "CVE-2026-17527",
+      "desc": "In containerized-data-importer (CDI), the aggregated cdi.kubevirt.io:view ClusterRole, intended to provide read-only access to CDI resources, includes a rule granting create on the datavolumes/source subresource. CDI's DataVolume clone authorization accepts this permission as sufficient to authorize",
+      "cvss": 7.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Red Hat",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T10:16:37.617",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17527"
+    },
+    {
+      "id": "CVE-2026-17534",
+      "desc": "Kimi Code (@moonshot-ai/kimi-code) before 0.27.0 implements FetchURL SSRF hardening as a static hostname and IP-literal denylist in assertSafeFetchTarget, without resolving DNS or re-validating hosts after HTTP redirects. An attacker who can influence a FetchURL call (for example via prompt injectio",
+      "cvss": 5.5,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T10:16:37.747",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17534"
+    },
+    {
+      "id": "CVE-2026-40000",
+      "desc": "The Activity zte.com.cn.filer/zte.com.cn.filer.FilePreViewActivity within ZTE File Manager is designed to preview compressed files. Third-party applications can launch this Activity and supply arbitrary file paths (e.g., content://zte.com.cn.filer.fileprovider/root_path), enabling file access with t",
+      "cvss": 1.8,
+      "vector": "CVSS:3.1/AV:P/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T10:16:37.907",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40000"
+    },
+    {
+      "id": "CVE-2026-12495",
+      "desc": "Denial-of-service (DoS) vulnerability due to a stack buffer overflow in the http_gdpr_decrypt function of the Mercusys MB115-4G device's web interface. An unauthenticated attacker could exploit this vulnerability by sending a specially crafted request to the /cgi/login endpoint, causing memory corru",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:41.027",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12495"
+    },
+    {
+      "id": "CVE-2026-14856",
+      "desc": "A stored Cross-Site Scripting (XSS) vulnerability in the file upload functionality of the Media Manager in TastyIgniter v4.3.0, caused by insufficient validation and sanitization of SVG files. An authenticated user with low privileges can upload a malicious SVG file containing JavaScript code. When ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:42.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14856"
+    },
+    {
+      "id": "CVE-2026-41608",
+      "desc": "Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Thrift Python bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:44.277",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41608"
+    },
+    {
+      "id": "CVE-2026-43871",
+      "desc": "Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in Apache Thrift Python, Go, PHP and Java bindings.This issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:44.413",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-43871"
+    },
+    {
+      "id": "CVE-2026-45112",
+      "desc": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Java bindings.\n\nThis issue affects Apache Thrift: from 0.19.0 before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:44.560",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45112"
+    },
+    {
+      "id": "CVE-2026-48144",
+      "desc": "Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift c_glib bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 9.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "CRITICAL",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:44.700",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48144"
+    },
+    {
+      "id": "CVE-2026-48145",
+      "desc": "Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift C++ bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:44.840",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48145"
+    },
+    {
+      "id": "CVE-2026-48586",
+      "desc": "Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Thrift C++, Java, Python, Go, D, C/GLib bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:44.970",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48586"
+    },
+    {
+      "id": "CVE-2026-49158",
+      "desc": "Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Thrift Ruby bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:45.113",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49158"
+    },
+    {
+      "id": "CVE-2026-55968",
+      "desc": "Inefficient Algorithmic Complexity, Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Node.js bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:45.683",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55968"
+    },
+    {
+      "id": "CVE-2026-55969",
+      "desc": "Integer Overflow or Wraparound vulnerability in Apache Thrift C++, c_glib, Go, netstd, Delphi and Haxe bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:45.823",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55969"
+    },
+    {
+      "id": "CVE-2026-55970",
+      "desc": "Buffer Over-read vulnerability in Apache Thrift C++ bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:45.977",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55970"
+    },
+    {
+      "id": "CVE-2026-55971",
+      "desc": "Heap-based Buffer Overflow vulnerability in Apache Thrift C++ bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:46.110",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55971"
+    },
+    {
+      "id": "CVE-2026-57916",
+      "desc": "proCertum SmartSign opens Certificate Practice Statement (CPS) URI without schema validation. An attacker can prepare arbitrary certificate with CPS URI pointing to a local executable file or any URL, sign a document with it, and send it to the victim.\u00a0When the victim opens the document in the appli",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:46.243",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57916"
+    },
+    {
+      "id": "CVE-2026-57917",
+      "desc": "proCertum SmartSign\u00a0parses external XML entities from arbitrary crafted signature files, enabling SSRF and potentially allowing the reading of local files, depending on the parser's configuration. The XML External Entity (XXE) vulnerability is triggered simply by previewing a file in the file select",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:46.400",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57917"
+    },
+    {
+      "id": "CVE-2026-58023",
+      "desc": "Out-of-bounds Read vulnerability in Apache Thrift c_glib bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 9.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:46.547",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58023"
+    },
+    {
+      "id": "CVE-2026-58389",
+      "desc": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Rust bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:46.673",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58389"
+    },
+    {
+      "id": "CVE-2026-58662",
+      "desc": "Improper Validation of Specified Quantity in Input, Out-of-bounds Read vulnerability in Apache Thrift C++ bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss": 9.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:46.807",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58662"
+    },
+    {
+      "id": "CVE-2026-66053",
+      "desc": "Improper Validation of Certificate with Host Mismatch vulnerability in Apache Thrift Python bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.\n\nThis replaces\u00a0CVE-2026-41603",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Apache",
+      "product": "Thrift",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-07-27T12:16:55.027",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66053"
+    },
+    {
+      "id": "CVE-2026-12989",
+      "desc": "A lack of authentication in the mobile app (APK v5.5.0) for Ghost Robotics' Vision 60 robot allows an unauthenticated attacker connected to the device's internal Wi-Fi network to gain unrestricted access to the web administration interface and the HTTP API. Due to the lack of authorization mechanism",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00195,
+        "percentile": 0.09532
+      },
+      "published": "2026-07-27T13:16:51.993",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12989"
     }
   ],
   "kev": [
+    {
+      "cveID": "CVE-2026-20316",
+      "vendorProject": "Cisco",
+      "product": "Secure Firewall Management Center (FMC)",
+      "vulnerabilityName": "Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
+      "dateAdded": "2026-07-29",
+      "shortDescription": "Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-08-01",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20316",
+      "cwes": [
+        "CWE-259"
+      ]
+    },
     {
       "cveID": "CVE-2025-68686",
       "vendorProject": "Fortinet",
@@ -14807,354 +14822,339 @@
       "cwes": [
         "CWE-565"
       ]
-    },
-    {
-      "cveID": "CVE-2026-48027",
-      "vendorProject": "Nx",
-      "product": "Nx Console",
-      "vulnerabilityName": "Nx Console Embedded Malicious Code Vulnerability",
-      "dateAdded": "2026-05-27",
-      "shortDescription": "Nx Console contains an embedded malicious code vulnerability that allowed a malicious version of Nx Console to be published. The compromised extension fetched an obfuscated payload that could harvested credentials from multiple sources on disk and in memory.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2026-06-10",
-      "knownRansomwareCampaignUse": "Known",
-      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w ; https://nvd.nist.gov/vuln/detail/CVE-2026-48027",
-      "cwes": [
-        "CWE-506"
-      ]
     }
   ],
-  "kev_7d": 4,
+  "kev_7d": 5,
   "gh_advisories": [
     {
-      "id": "GHSA-964w-f6gj-5236",
-      "cve": "CVE-2026-66064",
+      "id": "GHSA-fm7p-gw32-828p",
+      "cve": "CVE-2026-54705",
       "severity": "medium",
-      "summary": "goshs has ACL Bypass & Path Traversal",
-      "url": "https://github.com/advisories/GHSA-964w-f6gj-5236",
-      "published": "2026-07-28T22:26:28Z",
-      "ecosystem": "go",
-      "pkg": "github.com/patrickhener/goshs/v2",
+      "summary": "mathlive's Lack of Escaping of HTML allows for XSS",
+      "url": "https://github.com/advisories/GHSA-fm7p-gw32-828p",
+      "published": "2026-07-29T17:21:26Z",
+      "ecosystem": "npm",
+      "pkg": "mathlive",
+      "cvss_score": 6.3
+    },
+    {
+      "id": "GHSA-rwqx-fvqh-6wm4",
+      "cve": "CVE-2026-54704",
+      "severity": "medium",
+      "summary": "OpenTelemetry Java Instrumentation: JDBC Auto-Instrumentation Logging Clear-Text Passwords",
+      "url": "https://github.com/advisories/GHSA-rwqx-fvqh-6wm4",
+      "published": "2026-07-29T17:18:34Z",
+      "ecosystem": "maven",
+      "pkg": "io.opentelemetry.javaagent:opentelemetry-javaagent",
+      "cvss_score": 6.5
+    },
+    {
+      "id": "GHSA-fq3f-m5qm-99f5",
+      "cve": "CVE-2026-54712",
+      "severity": "medium",
+      "summary": "OpenTelemetry Javaagent RMI context propagation allows resource exhaustion",
+      "url": "https://github.com/advisories/GHSA-fq3f-m5qm-99f5",
+      "published": "2026-07-29T17:16:32Z",
+      "ecosystem": "maven",
+      "pkg": "io.opentelemetry.javaagent:opentelemetry-javaagent",
       "cvss_score": 5.3
     },
     {
-      "id": "GHSA-2xmw-f8j8-wfxc",
-      "cve": "CVE-2026-54659",
-      "severity": "medium",
-      "summary": "Pagy I18n locale option is not validated before being used in a file path",
-      "url": "https://github.com/advisories/GHSA-2xmw-f8j8-wfxc",
-      "published": "2026-07-28T22:25:29Z",
+      "id": "GHSA-pmwx-rm49-xv39",
+      "cve": null,
+      "severity": "low",
+      "summary": "ActiveRecord::Tenanted::Storage::DiskService#path_for has a possible path traversal",
+      "url": "https://github.com/advisories/GHSA-pmwx-rm49-xv39",
+      "published": "2026-07-29T17:06:00Z",
       "ecosystem": "rubygems",
-      "pkg": "pagy",
+      "pkg": "activerecord-tenanted",
       "cvss_score": null
     },
     {
-      "id": "GHSA-6xx4-9wp6-65p7",
+      "id": "GHSA-xvg2-cgv6-6h7v",
       "cve": null,
-      "severity": "medium",
-      "summary": "skilo add follows symbolic links, allowing arbitrary local file disclosure from a malicious skill source",
-      "url": "https://github.com/advisories/GHSA-6xx4-9wp6-65p7",
-      "published": "2026-07-28T22:23:48Z",
-      "ecosystem": "rust",
-      "pkg": "skilo",
-      "cvss_score": 6.5
-    },
-    {
-      "id": "GHSA-vj5c-m527-mpff",
-      "cve": "CVE-2026-54639",
       "severity": "high",
-      "summary": "Style Dictionary - Prototype Pollution in convertTokenData utility function",
-      "url": "https://github.com/advisories/GHSA-vj5c-m527-mpff",
-      "published": "2026-07-28T22:23:03Z",
-      "ecosystem": "npm",
-      "pkg": "style-dictionary",
-      "cvss_score": 8.8
-    },
-    {
-      "id": "GHSA-fh2f-xfxc-q9cc",
-      "cve": "CVE-2026-54650",
-      "severity": "high",
-      "summary": "openhole-server vulnerable to path traversal via URL-decoded request path",
-      "url": "https://github.com/advisories/GHSA-fh2f-xfxc-q9cc",
-      "published": "2026-07-28T22:20:51Z",
+      "summary": "netfoil: Incorrect block responses could lead to localhost traffic",
+      "url": "https://github.com/advisories/GHSA-xvg2-cgv6-6h7v",
+      "published": "2026-07-29T17:03:48Z",
       "ecosystem": "go",
-      "pkg": "github.com/bablilayoub/openhole",
-      "cvss_score": 8.6
+      "pkg": "github.com/tinfoil-factory/netfoil",
+      "cvss_score": null
     },
     {
-      "id": "GHSA-6wcc-39rp-hh9p",
-      "cve": "CVE-2026-54658",
+      "id": "GHSA-mjqf-28ph-426h",
+      "cve": "CVE-2026-54680",
       "severity": "critical",
-      "summary": "@hypequery/clickhouse has SQL Injection in parameter escaping that allows arbitrary SQL execution",
-      "url": "https://github.com/advisories/GHSA-6wcc-39rp-hh9p",
-      "published": "2026-07-28T22:19:23Z",
-      "ecosystem": "npm",
-      "pkg": "@hypequery/clickhouse",
-      "cvss_score": 9.8
-    },
-    {
-      "id": "GHSA-whmm-qj9r-wvr2",
-      "cve": "CVE-2026-54638",
-      "severity": "high",
-      "summary": "td has pre-auth denial of service via unbounded memory allocation in proto.UnencryptedMessage.Decode",
-      "url": "https://github.com/advisories/GHSA-whmm-qj9r-wvr2",
-      "published": "2026-07-28T22:15:28Z",
+      "summary": "Logging operator has Fluentd configuration injection that allows remote code execution",
+      "url": "https://github.com/advisories/GHSA-mjqf-28ph-426h",
+      "published": "2026-07-29T17:01:29Z",
       "ecosystem": "go",
-      "pkg": "github.com/gotd/td",
-      "cvss_score": 7.5
+      "pkg": "github.com/kube-logging/logging-operator",
+      "cvss_score": 9.9
     },
     {
-      "id": "GHSA-wg2q-39h6-66x9",
-      "cve": "CVE-2026-66063",
-      "severity": "medium",
-      "summary": "goshs has a Path Traversal issue",
-      "url": "https://github.com/advisories/GHSA-wg2q-39h6-66x9",
-      "published": "2026-07-28T22:08:53Z",
+      "id": "GHSA-jq8w-8q2f-ffm9",
+      "cve": "CVE-2026-54693",
+      "severity": "high",
+      "summary": "ZITADEL Users Can Self-Verify Email/Phone via API",
+      "url": "https://github.com/advisories/GHSA-jq8w-8q2f-ffm9",
+      "published": "2026-07-29T16:54:49Z",
       "ecosystem": "go",
-      "pkg": "goshs.de/goshs/v2",
-      "cvss_score": 6.5
+      "pkg": "github.com/zitadel/zitadel",
+      "cvss_score": null
     },
     {
-      "id": "GHSA-hq33-8jgp-8qq3",
-      "cve": "CVE-2026-64863",
-      "severity": "critical",
-      "summary": "goshs --no-delete WebDAV MOVE bypass allows file deletion/overwrite",
-      "url": "https://github.com/advisories/GHSA-hq33-8jgp-8qq3",
-      "published": "2026-07-28T22:03:12Z",
-      "ecosystem": "go",
-      "pkg": "goshs.de/goshs/v2",
-      "cvss_score": 9.1
-    },
-    {
-      "id": "GHSA-rmxw-pq4x-3fvh",
-      "cve": "CVE-2026-54719",
+      "id": "GHSA-7h3g-4w2f-fj2f",
+      "cve": "CVE-2026-54727",
       "severity": "high",
-      "summary": "goshs: File-based .goshs ACL authorization bypass via the ?bulk zip-download route (unauthenticated read; residual of GHSA-wvhv-qcqf-f3cx)",
-      "url": "https://github.com/advisories/GHSA-rmxw-pq4x-3fvh",
-      "published": "2026-07-28T21:59:48Z",
-      "ecosystem": "go",
-      "pkg": "github.com/patrickhener/goshs",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-rjrw-mjq6-hpmm",
-      "cve": "CVE-2026-62325",
-      "severity": "critical",
-      "summary": "goshs SFTP authentication bypass via empty password (incomplete fix of CVE-2026-40884)",
-      "url": "https://github.com/advisories/GHSA-rjrw-mjq6-hpmm",
-      "published": "2026-07-28T21:56:28Z",
-      "ecosystem": "go",
-      "pkg": "github.com/patrickhener/goshs/v2",
-      "cvss_score": 9.1
-    },
-    {
-      "id": "GHSA-wjv6-jcfj-mf9r",
-      "cve": "CVE-2026-54654",
-      "severity": "high",
-      "summary": "`datamodel-code-generator` vulnerable to code injection via unescaped carriage return in `--extra-template-data` `comment` field",
-      "url": "https://github.com/advisories/GHSA-wjv6-jcfj-mf9r",
-      "published": "2026-07-28T21:50:09Z",
+      "summary": "proot-distro has a Container Isolation Bypass via Crafted Restore Archive",
+      "url": "https://github.com/advisories/GHSA-7h3g-4w2f-fj2f",
+      "published": "2026-07-29T16:42:11Z",
       "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 7.8
-    },
-    {
-      "id": "GHSA-8359-h9fx-j6v9",
-      "cve": "CVE-2026-55389",
-      "severity": "high",
-      "summary": "datamodel-code-generator vulnerable to arbitrary local file read via JSON-Schema `$ref` (`file://` and `../` traversal), bypassing `--no-allow-remote-refs`",
-      "url": "https://github.com/advisories/GHSA-8359-h9fx-j6v9",
-      "published": "2026-07-28T21:49:34Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-386q-5hp3-95m9",
-      "cve": "CVE-2026-54653",
-      "severity": "high",
-      "summary": "`datamodel-code-generator` vulnerable to code injection in via attacker-controlled `default_factory` schema field",
-      "url": "https://github.com/advisories/GHSA-386q-5hp3-95m9",
-      "published": "2026-07-28T21:48:14Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 8.8
-    },
-    {
-      "id": "GHSA-vx7x-vcc2-c44g",
-      "cve": "CVE-2026-55391",
-      "severity": "high",
-      "summary": "datamodel-code-generator vulnerable to SSRF protection bypass via DNS rebinding",
-      "url": "https://github.com/advisories/GHSA-vx7x-vcc2-c44g",
-      "published": "2026-07-28T21:45:48Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-8m8r-38jm-f355",
-      "cve": "CVE-2026-54656",
-      "severity": "high",
-      "summary": "`datamodel-code-generator` vulnerable to code execution on import via unescaped `validators` entries in --extra-template-data",
-      "url": "https://github.com/advisories/GHSA-8m8r-38jm-f355",
-      "published": "2026-07-28T21:44:09Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 7.8
-    },
-    {
-      "id": "GHSA-954p-556p-r752",
-      "cve": "CVE-2026-54690",
-      "severity": "high",
-      "summary": "datamodel-code-generator vulnerable to SSRF via JSON-Schema `$ref` to HTTP URL (silent by default)",
-      "url": "https://github.com/advisories/GHSA-954p-556p-r752",
-      "published": "2026-07-28T21:42:22Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
+      "pkg": "proot-distro",
       "cvss_score": 8.2
     },
     {
-      "id": "GHSA-5578-w22f-pfx9",
-      "cve": "CVE-2026-55415",
+      "id": "GHSA-9xq3-3fqg-4vg7",
+      "cve": "CVE-2026-54574",
       "severity": "high",
-      "summary": "datamodel-code-generator vulnerable to code injection via `x-python-import` / `customTypePath` in generated import statements",
-      "url": "https://github.com/advisories/GHSA-5578-w22f-pfx9",
-      "published": "2026-07-28T21:40:20Z",
+      "summary": "`proot-distro install` has a Symlink Escape (Arbitrary Host File Write) via Malicious Tar Archive",
+      "url": "https://github.com/advisories/GHSA-9xq3-3fqg-4vg7",
+      "published": "2026-07-29T16:32:34Z",
       "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
+      "pkg": "proot-distro",
+      "cvss_score": 8.2
+    },
+    {
+      "id": "GHSA-996f-334j-67g7",
+      "cve": "CVE-2026-52838",
+      "severity": "low",
+      "summary": "Easy!Appointments disable_booking_message rendered as raw HTML on public booking page \u2014 Stored XSS",
+      "url": "https://github.com/advisories/GHSA-996f-334j-67g7",
+      "published": "2026-07-29T16:30:09Z",
+      "ecosystem": "composer",
+      "pkg": "alextselegidis/easyappointments",
+      "cvss_score": 2.6
+    },
+    {
+      "id": "GHSA-8hm4-r66f-29wr",
+      "cve": "CVE-2026-52841",
+      "severity": "low",
+      "summary": "Easy!Appointments: Authorization bypass in Google OAuth provider binding lets any backend user rebind a peer provider's Google sync",
+      "url": "https://github.com/advisories/GHSA-8hm4-r66f-29wr",
+      "published": "2026-07-29T16:29:26Z",
+      "ecosystem": "composer",
+      "pkg": "alextselegidis/easyappointments",
+      "cvss_score": 3.1
+    },
+    {
+      "id": "GHSA-xgr6-pqjv-3pf8",
+      "cve": "CVE-2026-52837",
+      "severity": "medium",
+      "summary": "Easy!Appointments has unauthenticated customer PII disclosure on booking reschedule page",
+      "url": "https://github.com/advisories/GHSA-xgr6-pqjv-3pf8",
+      "published": "2026-07-29T16:28:23Z",
+      "ecosystem": "composer",
+      "pkg": "alextselegidis/easyappointments",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-w8xc-8g92-v77h",
+      "cve": "CVE-2026-52839",
+      "severity": "low",
+      "summary": "Easy!Appointments appointments/store and appointments/update allow cross-provider appointment injection \u2014 Authorization Bypass",
+      "url": "https://github.com/advisories/GHSA-w8xc-8g92-v77h",
+      "published": "2026-07-29T16:26:25Z",
+      "ecosystem": "composer",
+      "pkg": "alextselegidis/easyappointments",
+      "cvss_score": 3.3
+    },
+    {
+      "id": "GHSA-pm5p-7w5h-jm5q",
+      "cve": "CVE-2026-52840",
+      "severity": "low",
+      "summary": "Easy!Appointments has server-side request forgery in CalDAV connection test that exposes the deployment's internal network",
+      "url": "https://github.com/advisories/GHSA-pm5p-7w5h-jm5q",
+      "published": "2026-07-29T16:24:27Z",
+      "ecosystem": "composer",
+      "pkg": "alextselegidis/easyappointments",
+      "cvss_score": 2.7
+    },
+    {
+      "id": "GHSA-4vmm-5qvc-w5p7",
+      "cve": "CVE-2026-55651",
+      "severity": "high",
+      "summary": "Easy!Appointments Vulnerable to Appointments Takeover via Excessive Data Exposure",
+      "url": "https://github.com/advisories/GHSA-4vmm-5qvc-w5p7",
+      "published": "2026-07-29T16:22:17Z",
+      "ecosystem": "composer",
+      "pkg": "alextselegidis/easyappointments",
+      "cvss_score": 7.1
+    },
+    {
+      "id": "GHSA-wchh-9x6h-7f6p",
+      "cve": null,
+      "severity": "medium",
+      "summary": "olm dependency deprecation: CVE-2022-39255 and CVE-2024-45193",
+      "url": "https://github.com/advisories/GHSA-wchh-9x6h-7f6p",
+      "published": "2026-07-29T16:11:45Z",
+      "ecosystem": "pip",
+      "pkg": "matrix-commander",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-m4x6-gwgp-4pm7",
+      "cve": "CVE-2026-11393",
+      "severity": "high",
+      "summary": "AgentCore CLI Bedrock Agent Import Vulnerable to Code Injection via Improper Triple-Quote Escaping",
+      "url": "https://github.com/advisories/GHSA-m4x6-gwgp-4pm7",
+      "published": "2026-07-29T16:10:46Z",
+      "ecosystem": "npm",
+      "pkg": "@aws/agentcore",
+      "cvss_score": 9.0
+    },
+    {
+      "id": "GHSA-4p3g-4hcj-wpvx",
+      "cve": "CVE-2026-54735",
+      "severity": "critical",
+      "summary": "prebid-server's request forgery vulnerability allows for possible host environment data extraction",
+      "url": "https://github.com/advisories/GHSA-4p3g-4hcj-wpvx",
+      "published": "2026-07-29T16:00:36Z",
+      "ecosystem": "go",
+      "pkg": "github.com/prebid/prebid-server/v4",
+      "cvss_score": 10.0
+    },
+    {
+      "id": "GHSA-qcxp-gm7m-4j5v",
+      "cve": "CVE-2026-50559",
+      "severity": "high",
+      "summary": "Quarkus: Authentication/Authorization Bypass via Advanced Path Normalization Vulnerabilities",
+      "url": "https://github.com/advisories/GHSA-qcxp-gm7m-4j5v",
+      "published": "2026-07-29T15:40:05Z",
+      "ecosystem": "maven",
+      "pkg": "io.quarkus:quarkus-vertx-http",
       "cvss_score": 7.5
     },
     {
-      "id": "GHSA-j884-q54q-mmx3",
-      "cve": "CVE-2026-54621",
-      "severity": "high",
-      "summary": "`datamodel-code-generator` vulnerable to code injection via unescaped carriage return in GraphQL Union description",
-      "url": "https://github.com/advisories/GHSA-j884-q54q-mmx3",
-      "published": "2026-07-28T21:35:49Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 7.8
-    },
-    {
-      "id": "GHSA-m34r-v34r-rf9q",
-      "cve": "CVE-2026-54655",
-      "severity": "high",
-      "summary": "`datamodel-code-generator` vulnerable to code execution on import via `x-python-type` JSON-Schema extension in datamodel-code-generator",
-      "url": "https://github.com/advisories/GHSA-m34r-v34r-rf9q",
-      "published": "2026-07-28T21:33:57Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 7.8
-    },
-    {
-      "id": "GHSA-r5vv-ff45-prp2",
-      "cve": "CVE-2026-55403",
+      "id": "GHSA-pc2w-4mq8-32qw",
+      "cve": null,
       "severity": "low",
-      "summary": "datamodel-code-generator: Authorization / request headers leaked to cross-origin redirect target when fetching remote schemas",
-      "url": "https://github.com/advisories/GHSA-r5vv-ff45-prp2",
-      "published": "2026-07-28T21:32:08Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
+      "summary": "@dynatrace-oss/dynatrace-mcp-server's create_dynatrace_notebook missing the human-approval gate",
+      "url": "https://github.com/advisories/GHSA-pc2w-4mq8-32qw",
+      "published": "2026-07-29T15:36:19Z",
+      "ecosystem": "npm",
+      "pkg": "@dynatrace-oss/dynatrace-mcp-server",
       "cvss_score": 3.7
     },
     {
-      "id": "GHSA-rfr2-mq9m-x2qx",
-      "cve": "CVE-2026-54691",
-      "severity": "high",
-      "summary": "datamodel-code-generator vulnerable to SSRF via --url: no host/IP validation, follows redirects",
-      "url": "https://github.com/advisories/GHSA-rfr2-mq9m-x2qx",
-      "published": "2026-07-28T21:30:18Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 8.2
-    },
-    {
-      "id": "GHSA-442q-2j6p-642g",
-      "cve": "CVE-2026-55390",
-      "severity": "high",
-      "summary": "datamodel-code-generator vulnerable to arbitrary local file read via XSD `schemaLocation` (`xs:include`/`xs:import`) path traversal, with no remote-ref gate",
-      "url": "https://github.com/advisories/GHSA-442q-2j6p-642g",
-      "published": "2026-07-28T21:26:41Z",
-      "ecosystem": "pip",
-      "pkg": "datamodel-code-generator",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-6588-8gv4-xfgh",
-      "cve": "CVE-2026-32203",
-      "severity": "high",
-      "summary": "Microsoft Security Advisory CVE-2026-32203 \u2013 .NET and Visual Studio Denial of Service Vulnerability",
-      "url": "https://github.com/advisories/GHSA-6588-8gv4-xfgh",
-      "published": "2026-07-28T21:02:48Z",
-      "ecosystem": "nuget",
-      "pkg": "System.Security.Cryptography.Xml",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-v8vm-cqh8-q87q",
-      "cve": "CVE-2026-52888",
+      "id": "GHSA-f42x-p2mx-hm8r",
+      "cve": "CVE-2026-50558",
       "severity": "medium",
-      "summary": "NocoBase: Sensitive Data Exposure via SQL Blacklist Bypass",
-      "url": "https://github.com/advisories/GHSA-v8vm-cqh8-q87q",
-      "published": "2026-07-28T20:53:08Z",
+      "summary": "Penelope unsafe tar extraction allows arbitrary local file write via crafted session archive",
+      "url": "https://github.com/advisories/GHSA-f42x-p2mx-hm8r",
+      "published": "2026-07-29T15:34:16Z",
+      "ecosystem": "pip",
+      "pkg": "penelope-shell-handler",
+      "cvss_score": 5.9
+    },
+    {
+      "id": "GHSA-px9f-whj3-246m",
+      "cve": "CVE-2026-49756",
+      "severity": "medium",
+      "summary": "Req vulnerable to multipart form-data header injection via unescaped name/filename/content_type",
+      "url": "https://github.com/advisories/GHSA-px9f-whj3-246m",
+      "published": "2026-07-29T15:29:14Z",
+      "ecosystem": "erlang",
+      "pkg": "req",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-655f-mp8p-96gv",
+      "cve": "CVE-2026-49755",
+      "severity": "high",
+      "summary": "Req vulnerable to unbounded archive/compression extraction triggered by response content-type",
+      "url": "https://github.com/advisories/GHSA-655f-mp8p-96gv",
+      "published": "2026-07-29T15:23:16Z",
+      "ecosystem": "erlang",
+      "pkg": "req",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-7c26-995w-6f47",
+      "cve": "CVE-2026-54081",
+      "severity": "medium",
+      "summary": "veraPDF Parser DoS via PostScript Type 1 Font Programs",
+      "url": "https://github.com/advisories/GHSA-7c26-995w-6f47",
+      "published": "2026-07-29T15:19:04Z",
+      "ecosystem": "maven",
+      "pkg": "org.verapdf:parser",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-jrmc-qg6p-94fp",
+      "cve": "CVE-2026-54080",
+      "severity": "medium",
+      "summary": "veraPDF Parser DoS via PostScript CMap Streams",
+      "url": "https://github.com/advisories/GHSA-jrmc-qg6p-94fp",
+      "published": "2026-07-29T15:17:32Z",
+      "ecosystem": "maven",
+      "pkg": "org.verapdf:parser",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-cg9x-g3gm-h5h6",
+      "cve": "CVE-2026-54082",
+      "severity": "medium",
+      "summary": "veraPDF-validatio: Use of Default `DocumentBuilderFactory` leads to XXE When Processing Untrusted PDFs",
+      "url": "https://github.com/advisories/GHSA-cg9x-g3gm-h5h6",
+      "published": "2026-07-29T15:14:32Z",
+      "ecosystem": "maven",
+      "pkg": "org.verapdf:validation-model",
+      "cvss_score": 6.5
+    },
+    {
+      "id": "GHSA-3jh7-wm29-q568",
+      "cve": "CVE-2026-54078",
+      "severity": "high",
+      "summary": "veraPDF Validation XXE via Rich Text",
+      "url": "https://github.com/advisories/GHSA-3jh7-wm29-q568",
+      "published": "2026-07-29T15:11:43Z",
+      "ecosystem": "maven",
+      "pkg": "org.verapdf:validation-model",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-36mm-w85j-3q2j",
+      "cve": "CVE-2026-54079",
+      "severity": "high",
+      "summary": "veraPDF Validation XXE via XFA",
+      "url": "https://github.com/advisories/GHSA-36mm-w85j-3q2j",
+      "published": "2026-07-29T15:08:17Z",
+      "ecosystem": "maven",
+      "pkg": "org.verapdf:validation-model",
+      "cvss_score": null
+    },
+    {
+      "id": "GHSA-w284-33mx-6g9v",
+      "cve": "CVE-2026-54666",
+      "severity": "high",
+      "summary": "swagger-typescript-api vulnerable to code injection via unescaped OpenAPI path strings in generated method bodies",
+      "url": "https://github.com/advisories/GHSA-w284-33mx-6g9v",
+      "published": "2026-07-29T14:35:02Z",
       "ecosystem": "npm",
-      "pkg": "@nocobase/plugin-collection-sql",
-      "cvss_score": 6.8
+      "pkg": "swagger-typescript-api",
+      "cvss_score": 8.3
     },
     {
-      "id": "GHSA-2rx5-2g7j-2659",
-      "cve": "CVE-2026-49446",
-      "severity": "medium",
-      "summary": "Cosmos-Server has an authentication bypass via forward-auth header smuggling on Constellation tunnel",
-      "url": "https://github.com/advisories/GHSA-2rx5-2g7j-2659",
-      "published": "2026-07-28T20:44:33Z",
-      "ecosystem": "go",
-      "pkg": "github.com/azukaar/cosmos-server",
-      "cvss_score": 6.1
-    },
-    {
-      "id": "GHSA-5fqm-cc34-fcf5",
-      "cve": "CVE-2026-49447",
-      "severity": "medium",
-      "summary": "Cosmos-Server's constellation public-devices endpoint accepts arbitrary bearer tokens",
-      "url": "https://github.com/advisories/GHSA-5fqm-cc34-fcf5",
-      "published": "2026-07-28T20:32:34Z",
-      "ecosystem": "go",
-      "pkg": "github.com/azukaar/cosmos-server",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-r5jh-q2mw-gcx4",
-      "cve": "CVE-2026-50568",
-      "severity": "low",
-      "summary": "Fission: SanitizeFilePath lexical HasPrefix bypass permits sibling-directory escape",
-      "url": "https://github.com/advisories/GHSA-r5jh-q2mw-gcx4",
-      "published": "2026-07-28T20:18:30Z",
-      "ecosystem": "go",
-      "pkg": "github.com/fission/fission",
-      "cvss_score": 3.6
-    },
-    {
-      "id": "GHSA-q6vm-xqc9-v3ff",
-      "cve": "CVE-2026-50567",
+      "id": "GHSA-5f94-x226-ccpm",
+      "cve": "CVE-2026-54664",
       "severity": "high",
-      "summary": " Fission: Zip Slip in pkg/utils/zip.go:Unarchive allows fetcher to write outside the destination directory",
-      "url": "https://github.com/advisories/GHSA-q6vm-xqc9-v3ff",
-      "published": "2026-07-28T20:16:52Z",
-      "ecosystem": "go",
-      "pkg": "github.com/fission/fission",
-      "cvss_score": 7.7
-    },
-    {
-      "id": "GHSA-vchh-r53j-8mpw",
-      "cve": "CVE-2026-50569",
-      "severity": "medium",
-      "summary": "Fission: HTTPTrigger admission omits RelativeURL / Prefix validation; kubectl apply bypasses CLI checks",
-      "url": "https://github.com/advisories/GHSA-vchh-r53j-8mpw",
-      "published": "2026-07-28T20:16:00Z",
-      "ecosystem": "go",
-      "pkg": "github.com/fission/fission",
-      "cvss_score": 4.3
+      "summary": "swagger-typescript-api vulnerable to code injection via unescaped enum string values",
+      "url": "https://github.com/advisories/GHSA-5f94-x226-ccpm",
+      "published": "2026-07-29T14:33:00Z",
+      "ecosystem": "npm",
+      "pkg": "swagger-typescript-api",
+      "cvss_score": 8.3
     }
   ],
   "threatfox": [],
@@ -15223,6 +15223,14 @@
       "category": "threat",
       "published": "2026-07-29T03:19:08+00:00",
       "summary": "A coordinated cyber attack disrupted water systems across more than 30 Minnesota communities. Here is what defenders need to know about the attack so far. This FAQ also details recent cyberactivity targeting internet-exposed PLCs, and how to protect exposed infrastructure.Key TakeawaysA coordinated "
+    },
+    {
+      "title": "Stop rewriting detection rules by hand: automatic Sentinel-to-Elastic migration is here",
+      "url": "https://www.elastic.co/security-labs/sentinel-detection-rules-migration",
+      "source": "Elastic Security",
+      "category": "threat",
+      "published": "2026-07-29T00:00:00+00:00",
+      "summary": "Elastic's first automatic migration from a modern SIEM. Translate your Sentinel detection rules into Elastic Security without rebuilding them."
     },
     {
       "title": "Chromium: CVE-2026-13037 Use after free in WebView",
@@ -15721,14 +15729,6 @@
       "summary": "A look inside the reverse-engineering journey of building the first RDP client outside of Windows to support WebAuthn redirection.\nThe post How We Added WebAuthn to a Browser-Based RDP Client appeared first on Unit 42."
     },
     {
-      "title": "Inside Elastic InfoSec's agentic SOC: cutting alert triage from 30 minutes to under 3",
-      "url": "https://www.elastic.co/security-labs/alert-triage-agentic-soc-elastic-workflows",
-      "source": "Elastic Security",
-      "category": "threat",
-      "published": "2026-07-02T00:00:00+00:00",
-      "summary": "Elastic's InfoSec team built AI agents on Elastic Workflows that investigate every alert and assemble the case before an analyst ever opens it."
-    },
-    {
       "title": "The Autonomous SOC, Revisited: What 18 Months on the Road Has Taught Us",
       "url": "https://www.sentinelone.com/blog/the-autonomous-soc-revisited-what-18-months-on-the-road-has-taught-us/",
       "source": "SentinelOne Blog",
@@ -15915,6 +15915,118 @@
   ],
   "news": [
     {
+      "title": "Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads",
+      "url": "https://thehackernews.com/2026/07/critical-rails-flaw-could-let.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-29T18:10:00+00:00",
+      "summary": "Ruby on Rails has released fixes for a critical Active Storage vulnerability that could let unauthenticated attackers read arbitrary files from application servers through crafted image uploads.\n\nTracked as CVE-2026-66066 (CVSS score: 9.5), the flaw can expose the Rails process environment and secre"
+    },
+    {
+      "title": "Health-ISAC warns of rising ShinyHunters data theft attacks on healthcare",
+      "url": "https://www.bleepingcomputer.com/news/security/health-isac-warns-of-rising-shinyhunters-data-theft-attacks-on-healthcare/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-07-29T17:54:05+00:00",
+      "summary": "Health-ISAC, a cybersecurity information-sharing organization for the health sector, is warning healthcare and medical technology organizations of an observed increase in successful attacks by ShinyHunters. [...]"
+    },
+    {
+      "title": "Who's Liable When AI Agents Escape? Hugging Face Breach Raises Hard Questions",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/liable-ai-agents-escape-hugging-face-breach-questions",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-07-29T17:43:38+00:00",
+      "summary": "Dark Reading walks through the many twists and turns in the bizarre story of how OpenAI's agent AI system broke out of its sandbox and decided to target Hugging Face, and what CISOs should be aware of."
+    },
+    {
+      "title": "Hugging Face Hack Lessons for Cyber Defenders",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/hugging-face-hack-lessons-cyber-defenders",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-07-29T17:35:23+00:00",
+      "summary": "Dark Reading Confidential Episode 20: Expert Rich Mogull reflects on lessons cyber teams should pull from the OpenAI agent's attack on Hugging Face."
+    },
+    {
+      "title": "OpenAI says rogue agent behind Hugging Face hack broke into additional services",
+      "url": "https://therecord.media/openai-says-rogue-agent-behind-hugging-face-hack-broke-into-additional-services",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-07-29T17:22:00+00:00",
+      "summary": "The four additional targeted organizations weren\u2019t named. OpenAI said they were not affected as severely as Hugging Face."
+    },
+    {
+      "title": "When AppSec Scanners Become a Supply Chain Attack Vector",
+      "url": "https://www.darkreading.com/application-security/when-appsec-scanners-become-supply-chain-attack-vector",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-07-29T17:06:52+00:00",
+      "summary": "New research shows how security scanners embedded in the software supply chain can be attacked to serve as a foothold for downstream attacks."
+    },
+    {
+      "title": "OpenAI agent used exposed credentials at 4 services in Hugging Face breach",
+      "url": "https://www.bleepingcomputer.com/news/security/openai-agent-used-exposed-credentials-at-4-services-in-hugging-face-breach/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-07-29T16:04:59+00:00",
+      "summary": "In a new update, OpenAI says its AI models also used publicly exposed credentials to compromise accounts on four third-party services during the recent attack on Hugging Face, expanding the scope of the four-day security incident to other organizations. [...]"
+    },
+    {
+      "title": "LogoKit Phishing Kit Screenshots Victim Sites in Real Time",
+      "url": "https://www.infosecurity-magazine.com/news/logokit-phishing-real-time/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-07-29T16:00:00+00:00",
+      "summary": "LogoKit now builds per-victim phishing pages using live screenshots of the target's real website"
+    },
+    {
+      "title": "Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory",
+      "url": "https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-29T15:39:30+00:00",
+      "summary": "Cybersecurity researchers have flagged a maximum-severity security flaw in Ruflo, an open-source agent meta-harness for Anthropic Claude Code and OpenAI Codex, that could result in unauthenticated remote code execution.\n\nThe vulnerability, tracked as CVE-2026-59726 (CVSS score: 10.0), impacts all ve"
+    },
+    {
+      "title": "Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape",
+      "url": "https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-29T15:31:15+00:00",
+      "summary": "Broadcom has released security updates to address multiple security flaws impacting VMware ESX, vCenter, Workstation, and Fusion, three of which have been designated as critical in severity.\n\nThe first of the three critical-rated flaws is CVE-2026-59309 (CVSS score: 9.8), which has been described as"
+    },
+    {
+      "title": "Russian-Alligned TA488 Returns With Persistent Outlook Web Access Attack",
+      "url": "https://www.infosecurity-magazine.com/news/ta488-outlook-half-click-owareaper/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-07-29T15:10:00+00:00",
+      "summary": "TA488 returned with OWA half-click exploit deploying OWAReaper implant that survived re-imaging"
+    },
+    {
+      "title": "Hackers disrupt over 30 Minnesota water utilities in coordinated OT attack",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-target-over-30-minnesota-water-utilities-in-coordinated-ot-attack/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-07-29T14:55:57+00:00",
+      "summary": "The Minnesota IT Services (MNIT) agency activated its cybersecurity incident response capabilities across the entire state after hackers targeted more than 30 community water systems in \"a coordinated cyberattack.\" [...]"
+    },
+    {
+      "title": "Laundry Bear\u2019s webmail hackers had more in store after February, report says",
+      "url": "https://therecord.media/russia-hackers-outlook-webmail-malware",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-07-29T14:45:00+00:00",
+      "summary": "Researchers say the Russian state-linked hacking group tracked as Laundry Bear recently began exploiting a bug in Microsoft Outlook Web Access."
+    },
+    {
+      "title": "Patch-Resistant 'RufRoot' Flaw Can Unleash Malicious AI Agent Swarms",
+      "url": "https://www.darkreading.com/cyber-risk/patch-resistant-rufroot-flaw-malicious-ai-agent-swarms",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-07-29T14:40:33+00:00",
+      "summary": "The vulnerability in the AI hosting platform Ruflo allows an unauthenticated attacker to take over the system and corrupt memory, so bad behavior can persist after patching."
+    },
+    {
       "title": "Your AI Agents Are Guessing at Scale: Permissions Decide the Damage",
       "url": "https://www.bleepingcomputer.com/news/security/your-ai-agents-are-guessing-at-scale-permissions-decide-the-damage/",
       "source": "Bleeping Computer",
@@ -15929,6 +16041,22 @@
       "category": "news",
       "published": "2026-07-29T13:56:22+00:00",
       "summary": "\u200b\u200bMicrosoft has released the KB5101684 preview cumulative update for Windows 11 24H2 and 25H2, which 42 bug fixes and additional feature improvements for the operating system. [...]"
+    },
+    {
+      "title": "Coordinated Cyberattack Targets 30+ Minnesota Water Systems as One Plant Goes Offline",
+      "url": "https://thehackernews.com/2026/07/coordinated-cyberattack-targets-30.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-29T13:48:36+00:00",
+      "summary": "A coordinated cyberattack targeted operational technology at more than 30 Minnesota community water systems on July 26 and 27, triggering a statewide cybersecurity response.\n\nBraham, Plymouth, South St. Paul and Maple Plain have publicly described a plant outage, communications failures or affected "
+    },
+    {
+      "title": "Nine-Year Fraud Campaign Clones Russian Company Sites to Steal Advance Payments",
+      "url": "https://thehackernews.com/2026/07/nine-year-fraud-campaign.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-07-29T13:42:57+00:00",
+      "summary": "Cybersecurity researchers have disclosed details of a large-scale fraud campaign that involves creating lookalike websites of major Russian companies with an aim to siphon funds from international firms for more than nine years.\n\nAccording to Russian cybersecurity vendor F6, the threat actors have s"
     },
     {
       "title": "US Bans Foreign-Made Humanoid Robots, Targeting China Over National Security",
@@ -16019,14 +16147,6 @@
       "summary": "Buying a new computer in 2026 is a unique experience. Rather than deal with incredibly high tech prices, more shoppers are opting for high-quality refurbished tech. This\u00a0ASUS Chromebook CM30\u00a0refurb is in near-mint condition with a grade \"A\" rating, but it still only costs $144.97 (reg. $369.99) on s"
     },
     {
-      "title": "Russia Charges Telegram Founder Pavel Durov With Aiding Terrorist Activity",
-      "url": "https://thehackernews.com/2026/07/russia-charges-telegram-founder-pavel.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-29T11:00:00+00:00",
-      "summary": "The Federal Security Service of the Russian Federation (FSB) on Wednesday said it charged Telegram founder Pavel Durov for allegedly facilitating terrorist activities and for failing to remove prohibited information in violation of Russian law.\n\nThe principal security agency said the instant messagi"
-    },
-    {
       "title": "The Average Cost of a Data Breach Rises to $5 Million",
       "url": "https://www.infosecurity-magazine.com/news/cost-of-a-data-breach-5m-ibm/",
       "source": "Infosecurity Magazine",
@@ -16083,14 +16203,6 @@
       "summary": "One day after a federal judge ordered an ICE detention center opened to state health inspectors, the agency posted new contract terms that would void state oversight at four facilities."
     },
     {
-      "title": "Public PoC Released for Exploited Check Point SmartConsole Authentication Bypass",
-      "url": "https://thehackernews.com/2026/07/rapid7-releases-poc-for-exploited-check.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-29T08:58:27+00:00",
-      "summary": "Cybersecurity researchers have shared additional technical details about a recently patched critical security flaw impacting Check Point Security Management Server and Multi-Domain Security Management Server (MDS) that has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CV"
-    },
-    {
       "title": "JFrog Zero-Days Exploited in OpenAI-Hugging Face Hack",
       "url": "https://www.securityweek.com/jfrog-zero-days-exploited-in-openai-hugging-face-hack/",
       "source": "SecurityWeek",
@@ -16107,36 +16219,12 @@
       "summary": "The National Cyber Security Centre has released a detailed framework to assist with incident response and recovery"
     },
     {
-      "title": "OpenAI Agent Used Exposed Credentials Across Four Services During Hugging Face Breach",
-      "url": "https://thehackernews.com/2026/07/openai-agent-used-exposed-credentials.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-29T07:51:00+00:00",
-      "summary": "OpenAI on Tuesday revealed the rogue artificial intelligence (AI) agent that escaped its sealed evaluation environment and broke into Hugging Face's production environment also hacked multiple third-party accounts and services as part of the attack.\n\nThe latest disclosure shows that the security inc"
-    },
-    {
-      "title": "New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands",
-      "url": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-29T07:47:19+00:00",
-      "summary": "Gitea, the self-hosted Git platform, has patched a critical remote code execution vulnerability. A user with ordinary repository write access can turn attacker-controlled patch content into a live Git hook and run shell commands as the Gitea service account.\n\nTracked as CVE-2026-60004 (CVSS score: 9"
-    },
-    {
       "title": "Apple Patches Everything (July 2026), (Wed, Jul 29th)",
       "url": "https://isc.sans.edu/diary/rss/33196",
       "source": "SANS ISC Diary",
       "category": "news",
       "published": "2026-07-29T07:32:37+00:00",
       "summary": "I am a bit late with this summary, but this week Apple released updates to all its operating systems and Safari. The Safari update, as usual, targets macOS prior to macOS 26. macOS updates covered the two older versions (14 and 15), while other operating system patches only covered the current 26 ve"
-    },
-    {
-      "title": "Flying Eagle Android RAT Traces Found on 170 Servers as Source Code Circulates",
-      "url": "https://thehackernews.com/2026/07/flying-eagle-android-rat-traces-found.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-07-29T07:07:23+00:00",
-      "summary": "Source code for the Flying Eagle Android remote access trojan (RAT) framework is circulating through criminal Telegram channels. Hunt.io and independent researcher NetAskari traced matching control panels and certificates to 170 internet servers.\n\nThey linked the framework to a fake \"\u516c\u5b89\u4e00\u7f51\u901a\u529e\" Public "
     },
     {
       "title": "Risky Business #846 -- OpenAI built a fireplace out of wood",
@@ -16227,30 +16315,6 @@
       "summary": "Researchers propose focusing on identification of certain cognitive elements in LLMs that indicate when AI systems may take an unwanted action."
     },
     {
-      "title": "CISA shares advice on isolating vital systems during cyberattacks",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-shares-advice-on-isolating-vital-systems-during-cyberattacks/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-07-28T18:41:04+00:00",
-      "summary": "The U.S. and Australian governments have released new guidance urging critical infrastructure organizations to prepare to isolate vital operational technology systems in the event of a cyberattack or other major disruptions. [...]"
-    },
-    {
-      "title": "vBulletin fixes critical pre-auth RCE flaw with public exploit",
-      "url": "https://www.bleepingcomputer.com/news/security/vbulletin-fixes-critical-pre-auth-rce-flaw-with-public-exploit/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-07-28T18:08:50+00:00",
-      "summary": "A critical vulnerability in the vBulletin forum software allows unauthenticated attackers to execute arbitrary PHP code through template rendering. [...]"
-    },
-    {
-      "title": "'Certighost' Flaw Haunts Microsoft Active Directory Certificates",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/certighost-flaw-microsoft-active-directory-certificates",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-07-28T16:38:48+00:00",
-      "summary": "Microsoft patched a high-severity vulnerability earlier this month that allows a threat actor to escalate privileges and compromise an AD environment."
-    },
-    {
       "title": "Bugs in Hugging Face Diffusers Bypass Custom Code Safeguard",
       "url": "https://www.infosecurity-magazine.com/news/hugging-face-diffusers-trust/",
       "source": "Infosecurity Magazine",
@@ -16259,52 +16323,12 @@
       "summary": "Three CVEs in Hugging Face diffusers let a malicious model repo run code on any machine that loads it"
     },
     {
-      "title": "India\u2019s Bank of Baroda confirms cyber incident after hackers claim data theft",
-      "url": "https://therecord.media/india-bank-of-baroda-reports-cybersecurity-incident",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-07-28T14:45:57+00:00",
-      "summary": "An employee's email account had been compromised, allowing unauthorized access to \"certain data,\" Bank of Baroda reported."
-    },
-    {
       "title": "AI-Assisted Bug Hunt Uncovers Linux Kernel 0-Day in net/sched",
       "url": "https://www.infosecurity-magazine.com/news/ai-linux-kernel-zero-day-net-sched/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-07-28T14:45:00+00:00",
       "summary": "AI-assisted research uncovered Linux kernel use-after-free allowing root escalation"
-    },
-    {
-      "title": "Is Your SSO Protected Against Modern Credential Attacks?",
-      "url": "https://www.bleepingcomputer.com/news/security/is-your-sso-protected-against-modern-credential-attacks/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-07-28T14:00:10+00:00",
-      "summary": "A compromised SSO login can provide attackers with access to multiple enterprise applications and services. Specops Software explains how stronger passwords, phishing-resistant MFA, and identity hardening help secure modern SSO environments and the applications they protect. [...]"
-    },
-    {
-      "title": "Phishing Dominates as Initial Entry Method for Cyber-Attacks, as Hackers Hone Evasion Techniques",
-      "url": "https://www.infosecurity-magazine.com/news/phishing-dominates-initial-entry/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-07-28T13:00:00+00:00",
-      "summary": "Analysis of real-life incident response cases by Cisco Talos warns that phishing remains a powerful method of initial compromise"
-    },
-    {
-      "title": "Microsoft Launches Flurry of AI Security Initiatives to Combat AI-Enabled Threats",
-      "url": "https://www.infosecurity-magazine.com/news/microsoft-ai-security-initiatives/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-07-28T12:45:00+00:00",
-      "summary": "Microsoft has launched a new agentic security system for cyber defenders as well as its first cyber-focused AI model"
-    },
-    {
-      "title": "Former Citigroup CISO Blauner on What Makes A Great Security Leader",
-      "url": "https://www.darkreading.com/cybersecurity-operations/former-citigroup-ciso-blauner-great-security-leader",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-07-28T12:30:00+00:00",
-      "summary": "The cybersecurity pioneer discusses the evolution of the CISO role, AI's impact on careers, and why operational resilience is the profession's next frontier."
     },
     {
       "title": "When cyber attacks happen: helping organisations recover",
@@ -16337,30 +16361,6 @@
       "category": "news",
       "published": "2026-07-28T02:00:03+00:00",
       "summary": ""
-    },
-    {
-      "title": "AI Agent Drives Espionage Attack on Thai Ministry of Finance",
-      "url": "https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-07-28T01:00:00+00:00",
-      "summary": "Attackers used Hermes, an autonomous open source tool, in unrestricted &quot;YOLO mode&quot; to conduct espionage against Thailand's Ministry of Finance."
-    },
-    {
-      "title": "Agentic Browsers Rewind Web Security by 20 Years",
-      "url": "https://www.darkreading.com/endpoint-security/agentic-browsers-rewind-web-security-20-years",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-07-27T21:39:09+00:00",
-      "summary": "PleaseFix class of flaws makes it easy to socially engineer agentic browsers and highlights weaknesses in how they handle cross-origin requests."
-    },
-    {
-      "title": "Outdated VPNs should be purged from federal agencies, senator says",
-      "url": "https://therecord.media/federal-purge-outdated-vpns-wyden-letter",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-07-27T20:45:00+00:00",
-      "summary": "Intelligence Committee member Ron Wyden wants CISA, OMB and NIST to lead a federal effort to rout out obsolete VPNs from the U.S. government."
     },
     {
       "title": "DHS Official Resigns, Citing \u2018War on Immigrants\u2019",
@@ -16597,11 +16597,11 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 112,
-    "high": 363,
+    "critical": 111,
+    "high": 356,
     "exploited": 0,
-    "kev_total": 1655,
-    "kev_7d": 4,
+    "kev_total": 1656,
+    "kev_7d": 5,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
     "epss_enriched": 20
