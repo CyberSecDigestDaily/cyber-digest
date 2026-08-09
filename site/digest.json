@@ -1,123 +1,11 @@
 {
-  "generated": "2026-08-08T18:42:26.878051+00:00",
+  "generated": "2026-08-09T02:00:05.933966+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>127 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>126 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-54894",
-      "desc": "Allocation of Resources Without Limits or Throttling in ueberauth guardian allows denial of service via unbounded atom creation from attacker-influenced binary input.\n\nGuardian.Plug.Keys derives connection and session namespace keys by passing arbitrary binaries to String.to_atom/1. base_key/1 in li",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ueberauth",
-      "product": "Guardian",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-01T19:16:41.977",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54894"
-    },
-    {
-      "id": "CVE-2026-55733",
-      "desc": "Allocation of Resources Without Limits or Throttling in ueberauth guardian allows denial of service via unbounded atom creation from attacker-controlled binary input.\n\nGuardian.Permissions.AtomEncoding encodes permission scopes by passing arbitrary binaries to String.to_atom/1. When encode/3 in lib/",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ueberauth",
-      "product": "Guardian",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-01T19:16:42.157",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55733"
-    },
-    {
-      "id": "CVE-2026-55734",
-      "desc": "Allocation of Resources Without Limits or Throttling vulnerability in ueberauth guardian (Guardian.Permissions module) allows a denial of service via BEAM atom-table exhaustion.\n\nThis vulnerability is associated with program file lib/guardian/permissions.ex and program routines 'Elixir.Guardian.Perm",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ueberauth",
-      "product": "Guardian",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-01T19:16:42.333",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55734"
-    },
-    {
-      "id": "CVE-2026-55735",
-      "desc": "Improper Verification of Cryptographic Signature in ueberauth guardian allows an unauthenticated attacker to revoke a victim's session with a forged token.\n\nGuardian.revoke/3 in lib/guardian.ex decodes the supplied token with peek/1, which performs no signature verification (it only base64-decodes t",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Ueberauth",
-      "product": "Guardian",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-01T19:16:42.510",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55735"
-    },
-    {
-      "id": "CVE-2026-18556",
-      "desc": "Authentication bypass using an alternate path or channel vulnerability in N-able N-central allows Authentication Bypass.\n\nThis issue affects N-central: through 2026.1.",
-      "cvss": 7.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "N-Able",
-      "product": "N-Central",
-      "exploited": true,
-      "kev": true,
-      "epss": null,
-      "published": "2026-08-01T20:16:37.157",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18556"
-    },
-    {
-      "id": "CVE-2026-13339",
-      "desc": "The CubeWP Framework plugin for WordPress is vulnerable to Directory Traversal in all versions up to, and including, 1.1.30 via the 'cubewp_get_svg_content' function. This makes it possible for unauthenticated attackers to read the contents of arbitrary files on the server, which can contain sensiti",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-02T00:16:22.760",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13339"
-    },
-    {
-      "id": "CVE-2026-18352",
-      "desc": "The User Access Manager plugin for WordPress is vulnerable to Directory Traversal in all versions up to, and including, 2.3.15 via the 'uamgetfile' parameter parameter. This makes it possible for unauthenticated attackers to read the contents of arbitrary files on the server, which can contain sensi",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-02T00:16:22.900",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18352"
-    },
-    {
-      "id": "CVE-2026-8457",
-      "desc": "The WooCommerce - Social Login plugin for WordPress is vulnerable to Authentication Bypass in all versions up to and including 2.8.7. This is due to the plugin's Apple login handler accepting the Apple id_token and decoding only its base64 payload without verifying the JWT signature against Apple's ",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-02T00:16:23.047",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8457"
-    },
     {
       "id": "CVE-2026-9335",
       "desc": "A vulnerability in keras-team/keras versions <= 3.14.0 allows arbitrary local HDF5 file content disclosure due to improper handling of HDF5 ExternalLinks. The `KerasFileEditor` and `keras.saving.load_weights` functions bypass the `safe_get_h5_group` and `safe_get_h5_dataset` helpers, which are desig",
@@ -702,10 +590,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00321,
-        "percentile": 0.24561
-      },
+      "epss": null,
       "published": "2026-08-02T13:16:54.087",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68581"
     },
@@ -817,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00241,
+        "percentile": 0.15177
+      },
       "published": "2026-08-03T00:16:29.280",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-3245"
     },
@@ -1405,10 +1293,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00117,
-        "percentile": 0.01946
-      },
+      "epss": null,
       "published": "2026-08-03T03:16:43.540",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20484"
     },
@@ -1520,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.001,
+        "percentile": 0.00966
+      },
       "published": "2026-08-03T03:16:44.443",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20493"
     },
@@ -2108,10 +1996,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00162,
-        "percentile": 0.05799
-      },
+      "epss": null,
       "published": "2026-08-03T07:16:41.240",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16289"
     },
@@ -2223,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00152,
+        "percentile": 0.04872
+      },
       "published": "2026-08-03T07:16:42.093",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16565"
     },
@@ -2811,10 +2699,7 @@
       "product": "Net\\",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0022,
-        "percentile": 0.12555
-      },
+      "epss": null,
       "published": "2026-08-03T14:16:25.157",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18108"
     },
@@ -2926,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00241,
+        "percentile": 0.15261
+      },
       "published": "2026-08-03T14:16:28.237",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68586"
     },
@@ -3514,10 +3402,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00213,
-        "percentile": 0.11698
-      },
+      "epss": null,
       "published": "2026-08-03T17:16:44.843",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68930"
     },
@@ -3629,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00548,
+        "percentile": 0.429
+      },
       "published": "2026-08-03T18:16:38.617",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18613"
     },
@@ -4217,10 +4105,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00243,
-        "percentile": 0.1542
-      },
+      "epss": null,
       "published": "2026-08-03T21:16:38.093",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18736"
     },
@@ -4332,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0011,
+        "percentile": 0.01476
+      },
       "published": "2026-08-03T21:16:39.900",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49132"
     },
@@ -4920,10 +4808,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00263,
-        "percentile": 0.17913
-      },
+      "epss": null,
       "published": "2026-08-03T23:16:47.213",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67978"
     },
@@ -5035,7 +4920,10 @@
       "product": "Edge",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00364,
+        "percentile": 0.29151
+      },
       "published": "2026-08-04T00:17:38.240",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66310"
     },
@@ -5623,10 +5511,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00204,
-        "percentile": 0.1054
-      },
+      "epss": null,
       "published": "2026-08-04T07:16:29.257",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15958"
     },
@@ -5738,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00171,
+        "percentile": 0.06708
+      },
       "published": "2026-08-04T07:16:30.157",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16296"
     },
@@ -6326,10 +6214,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00306,
-        "percentile": 0.22953
-      },
+      "epss": null,
       "published": "2026-08-04T13:18:57.930",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70371"
     },
@@ -6441,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0031,
+        "percentile": 0.23319
+      },
       "published": "2026-08-04T15:16:29.900",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18401"
     },
@@ -7029,10 +6917,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00271,
-        "percentile": 0.19083
-      },
+      "epss": null,
       "published": "2026-08-04T17:16:48.287",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18775"
     },
@@ -7144,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00376,
+        "percentile": 0.30328
+      },
       "published": "2026-08-04T17:16:56.633",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58072"
     },
@@ -7732,10 +7620,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00246,
-        "percentile": 0.15852
-      },
+      "epss": null,
       "published": "2026-08-04T19:16:41.890",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13229"
     },
@@ -7847,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00276,
+        "percentile": 0.197
+      },
       "published": "2026-08-04T19:16:54.280",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69704"
     },
@@ -8435,10 +8323,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00207,
-        "percentile": 0.10931
-      },
+      "epss": null,
       "published": "2026-08-04T21:16:37.910",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70490"
     },
@@ -8550,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00339,
+        "percentile": 0.26529
+      },
       "published": "2026-08-04T22:17:13.930",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18816"
     },
@@ -9138,10 +9026,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00328,
-        "percentile": 0.25328
-      },
+      "epss": null,
       "published": "2026-08-05T06:16:36.387",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11421"
     },
@@ -9253,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00266,
+        "percentile": 0.18573
+      },
       "published": "2026-08-05T06:16:38.097",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5062"
     },
@@ -9841,10 +9729,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00689,
-        "percentile": 0.4936
-      },
+      "epss": null,
       "published": "2026-08-05T07:16:37.333",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49004"
     },
@@ -9956,7 +9841,10 @@
       "product": "Qpid Proton-Dotnet",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00413,
+        "percentile": 0.34022
+      },
       "published": "2026-08-05T07:16:38.470",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67555"
     },
@@ -10544,10 +10432,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00186,
-        "percentile": 0.08388
-      },
+      "epss": null,
       "published": "2026-08-05T08:16:36.680",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64570"
     },
@@ -10659,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00156,
+        "percentile": 0.05249
+      },
       "published": "2026-08-05T08:16:37.760",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64578"
     },
@@ -11247,10 +11135,7 @@
       "product": "Theia",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00282,
-        "percentile": 0.20356
-      },
+      "epss": null,
       "published": "2026-08-05T11:16:25.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14574"
     },
@@ -11362,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00288,
+        "percentile": 0.21025
+      },
       "published": "2026-08-05T11:16:26.247",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71235"
     },
@@ -11950,10 +11838,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00254,
-        "percentile": 0.16828
-      },
+      "epss": null,
       "published": "2026-08-05T13:24:51.447",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71271"
     },
@@ -12065,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00363,
+        "percentile": 0.29062
+      },
       "published": "2026-08-05T13:24:52.437",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71279"
     },
@@ -12653,10 +12541,7 @@
       "product": "Answer",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00305,
-        "percentile": 0.22852
-      },
+      "epss": null,
       "published": "2026-08-05T16:16:57.213",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48912"
     },
@@ -12768,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00081,
+        "percentile": 0.0024
+      },
       "published": "2026-08-05T16:17:03.603",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70597"
     },
@@ -13356,10 +13244,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00327,
-        "percentile": 0.25264
-      },
+      "epss": null,
       "published": "2026-08-05T17:16:50.187",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20301"
     },
@@ -13471,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00335,
+        "percentile": 0.26084
+      },
       "published": "2026-08-05T17:16:54.687",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70607"
     },
@@ -14059,12 +13947,124 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00905,
-        "percentile": 0.56485
-      },
+      "epss": null,
       "published": "2026-08-05T19:17:31.070",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48168"
+    },
+    {
+      "id": "CVE-2026-63457",
+      "desc": "A potential denial of service vulnerability exists in HPE Integrated Lights-Out 6 (iLO 6) prior to v1.78.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-05T19:17:31.703",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-63457"
+    },
+    {
+      "id": "CVE-2026-70612",
+      "desc": "Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to 39.8.8, 40.9.0, 41.2.1, and 42.0.0-beta.3, requests to open external protocol URLs from web content did not take iframe sandbox restrictions into account, so a sandboxed iframe could caus",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-05T19:17:41.260",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70612"
+    },
+    {
+      "id": "CVE-2026-7658",
+      "desc": "IBM Langflow OSS 1.0.0 through 1.10.3 does not properly validate the username field, allowing attackers to inject path traversal sequences and bypass containment checks. This enables multiple severe impacts, including arbitrary directory deletion, cross-tenant data destruction, and JWT signing key d",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Langflow",
+      "product": "Langflow",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-05T19:17:43.580",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7658"
+    },
+    {
+      "id": "CVE-2026-7869",
+      "desc": "IBM Langflow OSS 1.0.0 through 1.10.3 is vulnerable to Path Traversal in the Knowledge Bases API (`POST /api/v1/knowledge_bases`). This occurs because user-supplied knowledge base names are used directly to create file paths without proper sanitization or containment checks. An authenticated attacke",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Langflow",
+      "product": "Langflow",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-05T19:17:43.700",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7869"
+    },
+    {
+      "id": "CVE-2026-8182",
+      "desc": "IBM Langflow OSS 1.0.0 through 1.10.3 installations allow anyone on the internet to execute arbitrary code on the server without any credentials via 2 HTTP requests.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Langflow",
+      "product": "Langflow",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-05T19:17:43.823",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8182"
+    },
+    {
+      "id": "CVE-2026-8183",
+      "desc": "IBM Langflow OSS 1.0.0 through 1.10.3, 1.0.0 through 1.10.3, 1.0.0 through 1.10.3, 1.0.0 through 1.10.3, 1.0.0 through 1.10.3, and 1.0.0 through 1.10.3 could allow a remote attacker to traverse directories on the system. An attacker could send a specially crafted URL request containing \"dot dot \" se",
+      "cvss": 7.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Langflow",
+      "product": "Langflow",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-05T19:17:43.943",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8183"
+    },
+    {
+      "id": "CVE-2026-8470",
+      "desc": "IBM Langflow OSS 1.0.0 through 1.10.3, 1.0.0 through 1.10.3, 1.0.0 through 1.10.3, and 1.0.0 through 1.10.3 use Python's non-cryptographic random module for generating Fernet encryption keys from user secrets under 32 characters. The deterministic Mersenne Twister PRNG produces identical keys for id",
+      "cvss": 7.4,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Langflow",
+      "product": "Langflow",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-05T19:17:44.823",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8470"
+    },
+    {
+      "id": "CVE-2026-8478",
+      "desc": "IBM Langflow OSS 1.0.0 through 1.10.3 could allow a remote attacker to inject arbitrary code on the system, due to the improper control of user input code.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Langflow",
+      "product": "Langflow",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00371,
+        "percentile": 0.29875
+      },
+      "published": "2026-08-05T19:17:45.043",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8478"
     }
   ],
   "kev": [
@@ -16598,9 +16598,9 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 127,
-    "high": 360,
-    "exploited": 2,
+    "critical": 126,
+    "high": 357,
+    "exploited": 1,
     "kev_total": 1662,
     "kev_7d": 6,
     "gh_advisories": 30,
