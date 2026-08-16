@@ -1,473 +1,11 @@
 {
-  "generated": "2026-08-16T01:36:12.088875+00:00",
+  "generated": "2026-08-16T06:45:41.706272+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>97 critical CVE(s)</strong> and <strong>3 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>96 critical CVE(s)</strong> and <strong>3 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-17510",
-      "desc": "Crypt::OpenSSL::PKCS12 versions before 1.98 for Perl allow a NULL pointer dereference in print_attribute via a zero length BMPSTRING attribute.\n\nprint_attribute() sizes the destination buffer for a BMPSTRING attribute from its declared byte length with `Renew(*attribute, length, char)`. A zero lengt",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T02:16:34.117",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17510"
-    },
-    {
-      "id": "CVE-2026-19324",
-      "desc": "A weakness has been identified in HelloGGX shadcn-vue-mcp up to e170e277b94235cde627803277fc8c41103a4d38. Affected by this issue is the function fs.promises.readFile of the file src/server/callback-server.ts. This manipulation of the argument filepath causes path traversal. The attack is restricted ",
-      "cvss": 3.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T03:16:56.377",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19324"
-    },
-    {
-      "id": "CVE-2026-19325",
-      "desc": "A security vulnerability has been detected in IncomeStreamSurfer roo-code-memory-bank-mcp-server up to 9dcb2fb5e6b65a35ac1983885a6d4e5621a0081e. This affects the function readMemoryBankFile/appendMemoryBankEntry of the file src/index.ts of the component read_memory_bank_file/append_memory_bank_entry",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T03:16:56.687",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19325"
-    },
-    {
-      "id": "CVE-2026-19326",
-      "desc": "A vulnerability was detected in Jevon-Zhong Ai-doctor 0.0.1. This vulnerability affects the function deleteImage of the file ai-doctor-server/src/filemanagement/filemanagement.service.ts. Performing a manipulation of the argument imagePath results in path traversal. The attack must be initiated from",
-      "cvss": 4.4,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T03:16:56.873",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19326"
-    },
-    {
-      "id": "CVE-2026-19327",
-      "desc": "A flaw has been found in abracadabra50 claude-sesh 1.0.0. This issue affects the function getEnrichedData/enrichSession of the file src/services/enricher.ts. Executing a manipulation of the argument sessionId can lead to path traversal. The attack needs to be launched locally. This patch is called 7",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T03:16:57.057",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19327"
-    },
-    {
-      "id": "CVE-2026-19328",
-      "desc": "A vulnerability has been found in aktsmm skill-ninja-mcp-server 0.1.0. Impacted is the function getInstalledSkills/installSkill/updateAgentsMd/uninstallSkill of the file src/installer.ts. The manipulation of the argument workspacePath leads to path traversal. The attack needs to be performed locally",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T03:16:57.243",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19328"
-    },
-    {
-      "id": "CVE-2026-10595",
-      "desc": "A path traversal vulnerability exists in parisneo/lollms version 2.1.0, specifically in the SPA catch-all route implemented in `backend/routers/ui.py`. The vulnerability arises from the improper handling of user-controlled path input, which is directly joined into a filesystem path without sanitizat",
-      "cvss": 7.5,
-      "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T04:17:29.400",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10595"
-    },
-    {
-      "id": "CVE-2026-19329",
-      "desc": "A vulnerability was found in andreahaku codex_mcp up to 1ff521cc6cc57cfe56ddef946c644b8534771390. The affected element is an unknown function of the file src/codex-process-simple.ts of the component ask MCP Tool. The manipulation of the argument model results in command injection. The attack require",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T04:17:37.780",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19329"
-    },
-    {
-      "id": "CVE-2026-19330",
-      "desc": "A vulnerability was determined in angrysky56 advanced-reasoning-mcp 1.0.0. The impacted element is the function create_system_json/create_library to get_system_json/switch_memory_library of the file src/index.ts. This manipulation causes path traversal. The attack requires local access. The project ",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T04:17:42.917",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19330"
-    },
-    {
-      "id": "CVE-2026-19331",
-      "desc": "A vulnerability was identified in bazylhorsey obsidian-mcp-server 1.0.0. This affects the function readCanvas/writeCanvas of the file src/services/CanvasService.ts. Such manipulation leads to path traversal. An attack has to be approached locally. The project was informed of the problem early throug",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T05:16:50.810",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19331"
-    },
-    {
-      "id": "CVE-2026-19332",
-      "desc": "A security vulnerability has been detected in NellyW8 MCP4EDA 1.0.0. Affected by this vulnerability is an unknown functionality of the component run_openlane/view_waveform. The manipulation of the argument design_name/vcd_file leads to command injection. Local access is required to approach this att",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T05:16:51.030",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19332"
-    },
-    {
-      "id": "CVE-2026-19333",
-      "desc": "A vulnerability was detected in NightTrek Supabase-MCP cc994ab2d2a36b0af6ee7c7f3e6ce8e08cda2170/db03237d92f7dc2f0da0d70a87dba84ebcde5b66. Affected by this issue is some unknown functionality of the component generate_types. The manipulation of the argument schema results in command injection. The at",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T05:16:51.207",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19333"
-    },
-    {
-      "id": "CVE-2026-19334",
-      "desc": "A flaw has been found in NightTrek Ollama-mcp up to 80cf2e17cfc144963a475b619093a2d13c13dbc9. This affects an unknown part of the file src/index.ts. This manipulation of the argument name/modelfile/source/destination causes command injection. The attack can only be executed locally. This product is ",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T05:16:51.397",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19334"
-    },
-    {
-      "id": "CVE-2026-15038",
-      "desc": "The InfiniteWP Client WordPress plugin before 1.13.6 does not properly verify the site-connection state and the authenticity of requests to its remote-management endpoint on WordPress Multisite installations, allowing unauthenticated attackers to bind their own key, hijack an administrator session, ",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:17:16.393",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15038"
-    },
-    {
-      "id": "CVE-2026-16032",
-      "desc": "The LWS Optimize  WordPress plugin before 4.1.2 does not properly escape a value submitted through an unauthenticated analytics endpoint before storing it and rendering it in an administrative dashboard, allowing unauthenticated attackers to inject arbitrary web scripts that execute when an administ",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:17:20.900",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16032"
-    },
-    {
-      "id": "CVE-2026-16957",
-      "desc": "The Slim SEO  WordPress plugin before 4.9.11 does not restrict a post-meta preview feature to posts the user is allowed to edit, verifying only read access, allowing users with the Contributor role to read arbitrary post meta, including protected and private keys, of published posts they do not own,",
-      "cvss": 2.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:17:55.643",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16957"
-    },
-    {
-      "id": "CVE-2026-16965",
-      "desc": "The Solace Extra WordPress plugin before 1.6.1 does not perform capability or nonce checks in one of its AJAX actions, allowing any authenticated user such as a subscriber (and, via CSRF, any logged-in user) to update post meta on arbitrary posts and to deactivate the site's active templates.",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:17:55.770",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16965"
-    },
-    {
-      "id": "CVE-2026-16988",
-      "desc": "The GeoDirectory  WordPress plugin before 2.8.169 does not perform any authorization check when returning map marker data for a single requested listing, allowing unauthenticated users to disclose the title and exact geographic coordinates of non-public (pending or draft) listings.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:17:55.887",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16988"
-    },
-    {
-      "id": "CVE-2026-16992",
-      "desc": "The Create WordPress plugin before 2.5.4 does not perform an authorization check before returning content over one of its REST API routes, and that route additionally publishes the requested content as a side effect, allowing unauthenticated attackers to read unpublished content and to make it publi",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:10.060",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16992"
-    },
-    {
-      "id": "CVE-2026-17011",
-      "desc": "The Nexter Blocks  WordPress plugin before 5.0.2 does not restrict who can save global CSS through one of its REST endpoints, allowing users with at least the Contributor role to store arbitrary CSS that is rendered site-wide on the front end, enabling defacement, content hiding, and UI redressing.",
-      "cvss": 3.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:10.180",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17011"
-    },
-    {
-      "id": "CVE-2026-17014",
-      "desc": "The WP Photo Album Plus WordPress plugin before 9.2.07.002 does not perform any capability or nonce check on one of its public REST endpoint actions, allowing unauthenticated users to delete the generated album export ZIP archives it stores.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:17.827",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17014"
-    },
-    {
-      "id": "CVE-2026-17017",
-      "desc": "The CubeWP Framework WordPress plugin before 1.1.31 does not properly sanitize and escape a parameter before using it in a SQL statement through an AJAX action, and does not include a capability check on that action, allowing users with Subscriber-level access and above to perform SQL injection atta",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:17.940",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17017"
-    },
-    {
-      "id": "CVE-2026-17044",
-      "desc": "The Iptanus File Upload WordPress plugin before 5.1.8 does not properly sanitise and escape a parameter before using it in a SQL statement, leading to an SQL injection exploitable by unauthenticated users.",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:22.520",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17044"
-    },
-    {
-      "id": "CVE-2026-18032",
-      "desc": "The WP Data Access  WordPress plugin before 5.5.79 does not validate the column names it accepts on one of its unauthenticated AJAX actions, and the nonce guarding that action does not cover them, allowing unauthenticated attackers to read arbitrary columns of the database table the affected front-e",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:22.640",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18032"
-    },
-    {
-      "id": "CVE-2026-18037",
-      "desc": "The Create WordPress plugin before 2.5.4 does not perform an authorization check before rendering content over one of its public REST API routes, and that route additionally publishes the requested content as a side effect, allowing unauthenticated attackers to read unpublished content and to make i",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:29.243",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18037"
-    },
-    {
-      "id": "CVE-2026-18357",
-      "desc": "The WPC Order Tip for WooCommerce WordPress plugin before 3.3.1 does not perform authorisation or nonce checks in one of its reporting features, allowing unauthenticated attackers to retrieve sensitive order data belonging to any customer of the store, such as billing names, order IDs and statuses, ",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:34.330",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18357"
-    },
-    {
-      "id": "CVE-2026-18464",
-      "desc": "The WP MAPS PRO WordPress plugin before 6.1.3 does not perform a capability check in one of its AJAX actions, which is also available to unauthenticated users, and does not restrict the operation it dispatches, allowing unauthenticated attackers to trigger uncontrolled recursion that exhausts server",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:18:34.450",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18464"
-    },
-    {
-      "id": "CVE-2026-18465",
-      "desc": "The WP MAPS PRO WordPress plugin before 6.1.3 does not perform a capability check in one of its AJAX actions, which is also available to unauthenticated users, and does not properly validate a user-controlled path before using it in a file inclusion, allowing unauthenticated attackers to include and",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:19:05.653",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18465"
-    },
-    {
-      "id": "CVE-2026-18473",
-      "desc": "The WP Directory Kit WordPress plugin before 1.5.5 does not properly sanitise and escape a parameter before using it in a SQL statement, leading to a SQL injection exploitable by unauthenticated users.",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:19:05.773",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18473"
-    },
-    {
-      "id": "CVE-2026-18603",
-      "desc": "The PiWeb Cancel order / Refund request for WooCommerce WordPress plugin before 1.3.4.34 does not have authorization or ownership checks when adding the contents of a previous order to the cart, allowing unauthenticated users to disclose the contents of other customers' orders, as well as to clear a",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:19:12.483",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18603"
-    },
-    {
-      "id": "CVE-2026-19335",
-      "desc": "A vulnerability has been found in Jane-xiaoer skill-vision-control up to 1.3.0. This vulnerability affects the function getSkillVersionsDir of the file src/svc/utils/config.ts. Such manipulation of the argument skillName leads to path traversal. The attack can only be performed from a local environm",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:19:47.653",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19335"
-    },
-    {
-      "id": "CVE-2026-19336",
-      "desc": "A vulnerability was found in Pimzino spec-workflow-mcp up to 2.2.6. This issue affects the function ApprovalStorage.createApproval of the file src/tools/approvals.ts. Performing a manipulation of the argument categoryName results in path traversal. The attack is only possible with local access. Upgr",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:19:55.713",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19336"
-    },
-    {
-      "id": "CVE-2026-19337",
-      "desc": "A vulnerability was determined in adenot mcp-google-search up to 0.3.1. Impacted is an unknown function of the file src/index.ts of the component read_webpage. Executing a manipulation of the argument url can lead to server-side request forgery. The attack is restricted to local execution. This patc",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-09T06:20:07.843",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19337"
-    },
     {
       "id": "CVE-2026-19338",
       "desc": "A vulnerability was identified in automateyournetwork MCPyATS up to 0.1.4. The affected element is the function processGenerateRequest of the file mcp_servers/mermaid/index.ts of the component generate_mermaid_markdown. The manipulation of the argument folder/name leads to path traversal. The attack",
@@ -702,10 +240,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00254,
-        "percentile": 0.1718
-      },
+      "epss": null,
       "published": "2026-08-09T14:17:26.763",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19355"
     },
@@ -1167,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00239,
+        "percentile": 0.15199
+      },
       "published": "2026-08-10T03:16:40.223",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19387"
     },
@@ -1405,10 +943,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00182,
-        "percentile": 0.07985
-      },
+      "epss": null,
       "published": "2026-08-10T07:16:47.607",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15229"
     },
@@ -1870,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00162,
+        "percentile": 0.05849
+      },
       "published": "2026-08-10T07:16:51.260",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19075"
     },
@@ -2108,10 +1646,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00145,
-        "percentile": 0.04233
-      },
+      "epss": null,
       "published": "2026-08-10T09:17:20.377",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-21070"
     },
@@ -2573,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00482,
+        "percentile": 0.39471
+      },
       "published": "2026-08-10T11:17:26.790",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55814"
     },
@@ -2811,10 +2349,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00551,
-        "percentile": 0.43466
-      },
+      "epss": null,
       "published": "2026-08-10T11:17:29.220",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72567"
     },
@@ -3276,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00149,
+        "percentile": 0.04675
+      },
       "published": "2026-08-10T12:17:21.207",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68086"
     },
@@ -3514,10 +3052,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00414,
-        "percentile": 0.34566
-      },
+      "epss": null,
       "published": "2026-08-10T13:19:54.047",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68097"
     },
@@ -3979,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0021,
+        "percentile": 0.11505
+      },
       "published": "2026-08-10T13:19:58.337",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68130"
     },
@@ -4217,10 +3755,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00134,
-        "percentile": 0.0335
-      },
+      "epss": null,
       "published": "2026-08-10T13:20:00.597",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68147"
     },
@@ -4682,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.002,
+        "percentile": 0.10135
+      },
       "published": "2026-08-10T13:20:05.110",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68181"
     },
@@ -4920,10 +4458,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00268,
-        "percentile": 0.19033
-      },
+      "epss": null,
       "published": "2026-08-10T13:20:07.277",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68198"
     },
@@ -5385,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00209,
+        "percentile": 0.11324
+      },
       "published": "2026-08-10T13:20:11.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68231"
     },
@@ -5623,10 +5161,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00168,
-        "percentile": 0.06442
-      },
+      "epss": null,
       "published": "2026-08-10T13:20:13.303",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68248"
     },
@@ -6088,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00175,
+        "percentile": 0.0727
+      },
       "published": "2026-08-10T13:20:17.303",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68281"
     },
@@ -6326,10 +5864,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00127,
-        "percentile": 0.0277
-      },
+      "epss": null,
       "published": "2026-08-10T13:20:19.323",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68298"
     },
@@ -6791,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00168,
+        "percentile": 0.06438
+      },
       "published": "2026-08-10T13:20:23.410",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68331"
     },
@@ -7029,10 +6567,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00131,
-        "percentile": 0.03087
-      },
+      "epss": null,
       "published": "2026-08-10T13:20:26.723",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68348"
     },
@@ -7494,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00463,
+        "percentile": 0.38232
+      },
       "published": "2026-08-10T13:20:31.197",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68381"
     },
@@ -7732,10 +7270,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00128,
-        "percentile": 0.02909
-      },
+      "epss": null,
       "published": "2026-08-10T13:20:33.243",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68398"
     },
@@ -8197,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00501,
+        "percentile": 0.40591
+      },
       "published": "2026-08-10T13:20:38.987",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72688"
     },
@@ -8435,10 +7973,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00282,
-        "percentile": 0.20742
-      },
+      "epss": null,
       "published": "2026-08-10T15:17:44.520",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72759"
     },
@@ -8900,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00297,
+        "percentile": 0.22269
+      },
       "published": "2026-08-10T18:18:51.823",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72734"
     },
@@ -9138,10 +8676,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00207,
-        "percentile": 0.11121
-      },
+      "epss": null,
       "published": "2026-08-10T19:17:30.877",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6791"
     },
@@ -9603,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00469,
+        "percentile": 0.38612
+      },
       "published": "2026-08-10T20:17:33.967",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72876"
     },
@@ -9841,10 +9379,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00381,
-        "percentile": 0.31295
-      },
+      "epss": null,
       "published": "2026-08-10T21:17:19.617",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15467"
     },
@@ -10306,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00214,
+        "percentile": 0.12024
+      },
       "published": "2026-08-10T21:17:26.760",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73035"
     },
@@ -10544,10 +10082,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00122,
-        "percentile": 0.02378
-      },
+      "epss": null,
       "published": "2026-08-10T23:16:51.587",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8718"
     },
@@ -11009,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00201,
+        "percentile": 0.10274
+      },
       "published": "2026-08-11T01:17:24.403",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66779"
     },
@@ -11247,10 +10785,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0039,
-        "percentile": 0.32195
-      },
+      "epss": null,
       "published": "2026-08-11T06:17:16.427",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4757"
     },
@@ -11712,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00247,
+        "percentile": 0.16322
+      },
       "published": "2026-08-11T09:17:15.163",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73161"
     },
@@ -11950,10 +11488,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00206,
-        "percentile": 0.10872
-      },
+      "epss": null,
       "published": "2026-08-11T12:17:39.347",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72540"
     },
@@ -12415,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00325,
+        "percentile": 0.25384
+      },
       "published": "2026-08-11T12:17:43.507",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72604"
     },
@@ -12653,10 +12191,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00654,
-        "percentile": 0.48324
-      },
+      "epss": null,
       "published": "2026-08-11T13:19:00.190",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58115"
     },
@@ -13118,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00145,
+        "percentile": 0.04219
+      },
       "published": "2026-08-11T13:19:09.077",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72784"
     },
@@ -13356,10 +12894,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00304,
-        "percentile": 0.23051
-      },
+      "epss": null,
       "published": "2026-08-11T15:17:28.887",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18860"
     },
@@ -13821,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00165,
+        "percentile": 0.06122
+      },
       "published": "2026-08-11T16:17:34.257",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67180"
     },
@@ -14059,12 +13597,474 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00072,
-        "percentile": 0.00058
-      },
+      "epss": null,
       "published": "2026-08-11T17:17:43.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-31356"
+    },
+    {
+      "id": "CVE-2025-31936",
+      "desc": "Improper handling of overlap between protected memory ranges for some Intel(R) Xeon(R) 6 processors when using Intel(R) TDX within SMM may allow an escalation of privilege. SMM adversary with a privileged user combined with a high complexity attack may enable escalation of privilege. This result may",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:43.500",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-31936"
+    },
+    {
+      "id": "CVE-2025-31938",
+      "desc": "Insufficient granularity of access control in some subsystem for some Intel(R) Xeon(R) 6 Scalable processors with Intel(R) TDX may allow an information disclosure. Authorized adversary with an authenticated user combined with a high complexity attack may enable data exposure. This result may potenti",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:43.633",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-31938"
+    },
+    {
+      "id": "CVE-2025-35973",
+      "desc": "Improper handling of values for some Intel(R) Processors within Ring 0: Kernel, Hypervisor and Bare Metal OS may allow an escalation of privilege. Authorized adversary with a privileged user combined with a high complexity attack may enable escalation of privilege. This result may potentially occur ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:43.773",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-35973"
+    },
+    {
+      "id": "CVE-2025-35987",
+      "desc": "Omission of security-relevant information for some Intel(R) Software Guard Extensions Data Center Attestation Primitives within Ring 0: Kernel may allow a denial of service. Authorized adversary with a privileged user combined with a high complexity attack may enable data alteration. This result may",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:43.923",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-35987"
+    },
+    {
+      "id": "CVE-2025-48505",
+      "desc": "Weak permissions in the Vitis\u2122 Unified installation path on local Windows machines could allow a low-privileged user to achieve privileged escalation, potentially resulting in arbitrary code execution.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:44.067",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-48505"
+    },
+    {
+      "id": "CVE-2025-48506",
+      "desc": "Uncontrolled search paths in Vitis\u2122 Unified installation path on local Windows machines could allow DLL injection into these install paths, potentially resulting in arbitrary code execution.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:44.200",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-48506"
+    },
+    {
+      "id": "CVE-2025-61970",
+      "desc": "Weak permissions in the Vitis\u2122 Unified installation path on local Windows machines could allow a low-privileged user to create arbitrary code, potentially resulting in binary hijacking.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:44.330",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-61970"
+    },
+    {
+      "id": "CVE-2025-8087",
+      "desc": "A DLL hijacking vulnerability in AMD Power Design Manager could allow a malicious local attacker to escalate privileges during the uninstallation process, potentially resulting in arbitrary code execution.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:44.463",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-8087"
+    },
+    {
+      "id": "CVE-2026-12571",
+      "desc": "An authentication bypass in ManageEngine DDI Central's password-reset workflow allows account takeover.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:46.940",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12571"
+    },
+    {
+      "id": "CVE-2026-18247",
+      "desc": "A Cross Site Scripting (XSS) vulnerability in the Web Portals of AtHoc IWS in versions earlier than 7.21 HF-734 could allow an attacker to potentially execute actions in the context of the victim's session.",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:48.220",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18247"
+    },
+    {
+      "id": "CVE-2026-20349",
+      "desc": "A vulnerability in the Remote Access SSL VPN service for Cisco Secure Firewall Adaptive Security Appliance (ASA) Software and Cisco Secure Firewall Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of servi",
+      "cvss": 8.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Cisco",
+      "product": "Adaptive Security Appliance Software, Secure Firewall Threat Defense",
+      "exploited": true,
+      "kev": true,
+      "epss": null,
+      "published": "2026-08-11T17:17:48.833",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20349"
+    },
+    {
+      "id": "CVE-2026-20702",
+      "desc": "Protection mechanism failure for some Intel(R) Data Center Attestation Primitives (Intel(R) DCAP) may allow information disclosure. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable data exposure. This result may potentially occur via netwo",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:49.090",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20702"
+    },
+    {
+      "id": "CVE-2026-20705",
+      "desc": "Insecure storage of sensitive information in the Intel(R) TDX module for some Intel(R) platform within Ring 0: Trust Domain may allow information disclosure. System software adversary with a privileged user combined with a high complexity attack may enable data exposure. This result may potentially ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:49.230",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20705"
+    },
+    {
+      "id": "CVE-2026-20707",
+      "desc": "Hardware logic contains race conditions for some 3rd Gen Intel(R) Xeon(R) Scalable Processors within Ring 3: unprivileged software may allow a denial of service. Unprivileged software adversary with an authenticated user combined with a high complexity attack may enable denial of service. This resul",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:49.353",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20707"
+    },
+    {
+      "id": "CVE-2026-20708",
+      "desc": "Insertion of sensitive information into log file in the subsystem for the Intel(R) AMT and Intel(R) Standard Manageability may allow an information disclosure. Network adversary with a privileged user combined with a high complexity attack may enable data exposure. This result may potentially occur ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:49.500",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20708"
+    },
+    {
+      "id": "CVE-2026-20713",
+      "desc": "Always-incorrect control flow implementation in some firmware for some Intel(R) Xeon(R) processors may allow an escalation of privilege. System software adversary with a privileged user combined with a high complexity attack may enable escalation of privilege. This result may potentially occur via l",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:49.633",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20713"
+    },
+    {
+      "id": "CVE-2026-20715",
+      "desc": "Improper input validation in some firmware for some Intel(R) Active Management Technology (Intel(R) AMT) and some Intel(R) Standard Manageability may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This res",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:49.833",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20715"
+    },
+    {
+      "id": "CVE-2026-20716",
+      "desc": "Improper access control for some Intel(R) Processors within Ring 3: User Applications may allow an escalation of privilege. Simple hardware adversary with an authenticated user combined with a high complexity attack may enable escalation of privilege. This result may potentially occur via local acce",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:49.973",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20716"
+    },
+    {
+      "id": "CVE-2026-20727",
+      "desc": "Null pointer dereference for some Intel(R) PROSet/Wireless WiFi Software for Windows within Ring 0: Kernel may allow a denial of service. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:50.113",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20727"
+    },
+    {
+      "id": "CVE-2026-20728",
+      "desc": "Protection mechanism failure for some Intel Extension for TensorFlow software before version 2.15.0.3 within Ring 3: User Applications may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:50.250",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20728"
+    },
+    {
+      "id": "CVE-2026-20731",
+      "desc": "Improper buffer restrictions for the Intel(R) NPU Driver for all versions within Ring 3: User Applications may allow a denial of service. Unprivileged software adversary with an authenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur v",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:50.380",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20731"
+    },
+    {
+      "id": "CVE-2026-20734",
+      "desc": "Improper initialization in some firmware for some Intel(R) Active Management Technology (Intel(R) AMT), and some Intel(R) Standard Manageability may allow an information disclosure. System software adversary with a privileged user combined with a low complexity attack may enable data exposure. This ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:50.510",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20734"
+    },
+    {
+      "id": "CVE-2026-20737",
+      "desc": "Exposure of sensitive information to an unauthorized actor for some Intel(R) PROSet/Wireless WiFi Software for Windows within Ring 2: Device Drivers may allow an escalation of privilege. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable loc",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:50.643",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20737"
+    },
+    {
+      "id": "CVE-2026-20739",
+      "desc": "Improper conditions check for some Intel(R) PROSet/Wireless WiFi Software for Windows within Ring 2: Device Drivers may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:50.777",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20739"
+    },
+    {
+      "id": "CVE-2026-20741",
+      "desc": "Improper access control for some Intel(R) PROSet/Wireless WiFi Software within Ring 2: Device Drivers may allow a denial of service. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:50.900",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20741"
+    },
+    {
+      "id": "CVE-2026-20745",
+      "desc": "Out-of-bounds write for some Intel(R) PROSet/Wireless WiFi Software for Windows within Ring 2: Device Drivers may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjace",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:51.030",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20745"
+    },
+    {
+      "id": "CVE-2026-20747",
+      "desc": "Improper conditions check for some Intel(R) PROSet/Wireless WiFi Software within Ring 2: Device Drivers may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent acc",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:51.163",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20747"
+    },
+    {
+      "id": "CVE-2026-20749",
+      "desc": "Out-of-bounds read for some Intel(R) PROSet/Wireless WiFi Software within Ring 2: Device Drivers may allow an escalation of privilege. Network adversary with an unauthenticated user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via adjace",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:51.293",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20749"
+    },
+    {
+      "id": "CVE-2026-20752",
+      "desc": "Improper authentication for some Intel(R) PROSet/Wireless WiFi Software within Ring 0: Kernel may allow an information disclosure. System software adversary with a privileged user combined with a low complexity attack may enable data exposure. This result may potentially occur via local access when ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:51.430",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20752"
+    },
+    {
+      "id": "CVE-2026-20755",
+      "desc": "Protection mechanism failure for some LLM Scaler software within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via loca",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:51.570",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20755"
+    },
+    {
+      "id": "CVE-2026-20760",
+      "desc": "Improper handling of overlap between protected memory ranges in some microcode for some Intel(R) Processors within Ring 0: Hypervisor may allow an escalation of privilege. Authorized adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This resul",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:51.703",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20760"
+    },
+    {
+      "id": "CVE-2026-20763",
+      "desc": "Incorrect calculation for some Intel(R) TDX Guest software before version 0.3.1 within Ring 3: User Applications may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentiall",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-11T17:17:51.827",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20763"
+    },
+    {
+      "id": "CVE-2026-20765",
+      "desc": "Incorrect comparison for some Intel(R) TDX Guest software before version 0.3.1 within Ring 3: User Applications may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00244,
+        "percentile": 0.1587
+      },
+      "published": "2026-08-11T17:17:51.970",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20765"
     }
   ],
   "kev": [
@@ -16597,9 +16597,9 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 97,
-    "high": 336,
-    "exploited": 1,
+    "critical": 96,
+    "high": 329,
+    "exploited": 2,
     "kev_total": 1665,
     "kev_7d": 3,
     "gh_advisories": 30,
