@@ -1,347 +1,11 @@
 {
-  "generated": "2026-08-19T06:50:40.889424+00:00",
+  "generated": "2026-08-19T12:53:57.966133+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>101 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>105 critical CVE(s)</strong> and <strong>5 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2025-41769",
-      "desc": "The device's PROFINET service is affected by a buffer overflow vulnerability that exists in the default configuration. An unauthenticated remote attacker could exploit this vulnerability to reboot the device or execute arbitrary code.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T08:17:11.590",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-41769"
-    },
-    {
-      "id": "CVE-2025-41770",
-      "desc": "An unauthenticated denial-of-service vulnerability in the device's PLCnext Engineer communication interface allow an remote attacker to interrupt access via the client application. Successful exploitation prevents communication until the PLCnext service is manually restarted.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T08:17:11.910",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-41770"
-    },
-    {
-      "id": "CVE-2025-41771",
-      "desc": "An authenticated attacker with low privileges can access an endpoint in the controller\u2019s web interface that is vulnerable to SQL injection. The vulnerability affects a SQLite database used only for storing notification messages. Therefore, the impact is limited to the system\u2019s notification functiona",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T08:17:12.130",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-41771"
-    },
-    {
-      "id": "CVE-2026-19426",
-      "desc": "POS System developed by FitSoft has a Missing Authentication vulnerability. Unauthenticated remote attackers can directly access and operate the system.",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T08:17:17.493",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19426"
-    },
-    {
-      "id": "CVE-2026-19566",
-      "desc": "Net::CIDR::Set versions before 0.23 for Perl allow memory exhaustion and malformed set ranges via unbounded IPv6 prefix lengths.\n\nThe _encode method accepts any prefix length matching `(0|[1-9][0-9]*)` and passes it to _width2bits(), which builds the mask as `'1' x ($width + 8)`, one character per b",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T09:17:29.753",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19566"
-    },
-    {
-      "id": "CVE-2026-67282",
-      "desc": "Joomla Extension - fabrikar.com - Unauthenticated remote code execution in Fabrik < 4.6.8 - An unauthenticated attacker could execute arbitrary code by using the frontend listfilter model.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T09:17:30.590",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67282"
-    },
-    {
-      "id": "CVE-2026-67283",
-      "desc": "Joomla Extension - tabaoca.org - Improper ACL implementation allows file operations in Cotton Cloud < 2.0.2 - Unauthenticated users could perform various file-related operations (read, delete, overwrite, re-assign permissions) on every file managed within the extension.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T09:17:30.720",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67283"
-    },
-    {
-      "id": "CVE-2026-18652",
-      "desc": "Velociraptor allows reading Stacked result sets from the GUI.\u00a0 Velociraptor's multi-tenant design stores sub orgs within the datastore directory.\u00a0The path requested by the GUI is not correctly checked against the prefix deny list, allowing result sets to read from denied prefixes.\n\nIn particular, a ",
-      "cvss": 4.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T10:17:16.940",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18652"
-    },
-    {
-      "id": "CVE-2026-18663",
-      "desc": "A flaw was found in 389-ds-base. The get_ldapmessage_controls_ext() function frees the parsed controls array on the Session Tracking critical-control rejection path without clearing the SLAPI_REQCONTROLS pblock slot. Operation teardown then frees the same pointer again, causing a double-free. An una",
-      "cvss": 5.9,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T10:17:18.437",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18663"
-    },
-    {
-      "id": "CVE-2026-64951",
-      "desc": "A rogue Velociraptor client can upload a malformed sparse file such that if the GUI attempts to expand the file, a panic occurs which may crash the server process.\n\nThe problem is a Divide by Zero bug in the\u00a0ShouldPadFile() function.",
-      "cvss": 3.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:L",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T10:17:20.063",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64951"
-    },
-    {
-      "id": "CVE-2026-64952",
-      "desc": "The hunt_delete() VQL function allows deleting hunts.\u00a0\n\nVelociraptor misapplied the permission check requiring only COLLECT_CLIENT (usually assigned to the \"investigator\" role) instead of the \"DELETE_RESULTS\" permission (usually only assigned to \"administrators\").",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T10:17:20.193",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64952"
-    },
-    {
-      "id": "CVE-2026-64955",
-      "desc": "When Microsoft Excel imports a CSV file, it executes cells beginning with certain characters as formulas, giving such CSV files arbitrary execution.\u00a0\n\nVelociraptor fails to sanitize such cells when exporting to CSV from various places such as the GUI, offline collector or data exports.\n\nIt is not cl",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T10:17:20.310",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-64955"
-    },
-    {
-      "id": "CVE-2026-67284",
-      "desc": "Joomla Extension - tabaoca.org - Improper ACL implementation allows file operations in Cotton Cloud < 2.0.3 - Authenticated users could perform various file-related operations (read, delete, overwrite, re-assign permissions) on files owned by other users.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T10:17:20.440",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67284"
-    },
-    {
-      "id": "CVE-2026-68868",
-      "desc": "The Google Cloud Secret Manager secrets backend in Apache Airflow's Google provider never applied the team scope when resolving Connections and Variables: the caller's `team_name` was accepted by the backend but dropped at the internal call boundary, so every lookup resolved against the team-agnosti",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Apache",
-      "product": "Apache-Airflow-Providers-Google",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T11:17:10.063",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68868"
-    },
-    {
-      "id": "CVE-2026-11325",
-      "desc": "Description\n\n\n\nCloudflare was recently notified by external researchers of vulnerabilities in this archived repository, including a remote code execution issue in `src/index.ts` reachable from certain GitHub Actions workflow configurations. Successful exploitation may expose workflow secrets such as",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:44.370",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-11325"
-    },
-    {
-      "id": "CVE-2026-15045",
-      "desc": "The Wallet System for WooCommerce WordPress plugin before 2.7.10 does not validate a user-supplied wallet amount against the customer's actual stored balance during checkout, allowing authenticated customers to arbitrarily reduce their own order total, including down to zero, and complete checkout w",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:46.563",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15045"
-    },
-    {
-      "id": "CVE-2026-15213",
-      "desc": "The Welcart e-Commerce WordPress plugin before 2.11.33 does not verify the authenticity of its convenience-store / bank-transfer settlement callback: an unauthenticated request can flip an order from unpaid to settled purely from an order number and a status flag, with no signature, amount, or origi",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:46.690",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15213"
-    },
-    {
-      "id": "CVE-2026-16621",
-      "desc": "The Payment Gateway for PayPal on WooCommerce WordPress plugin before 9.2.1 does not verify that payment actually succeeded before completing an order in its PayPal return handler: it reads attacker-controlled parameters, performs no amount comparison and no order-ownership check, and completes the ",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:46.920",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16621"
-    },
-    {
-      "id": "CVE-2026-16747",
-      "desc": "The Kirki WordPress plugin before 6.2.1 does not properly authorise its front-end form submission REST routes and passes attacker-controlled input through shortcode execution, allowing unauthenticated users to run any shortcode registered on the site, which on a default install leads to disclosure o",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:47.053",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16747"
-    },
-    {
-      "id": "CVE-2026-16990",
-      "desc": "The Payment Button for PayPal WordPress plugin through 1.2.3.44 does not enforce the merchant-configured price server-side and trusts a client-supplied payment amount, allowing unauthenticated attackers to create a real PayPal order against the merchant for an arbitrary lower amount.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:47.210",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16990"
-    },
-    {
-      "id": "CVE-2026-17008",
-      "desc": "The Quick Paypal Payments WordPress plugin through 5.7.50 does not verify the paid amount, receiver, or payment status in its PayPal IPN handler and marks an order paid on an order-token match alone, so a buyer who pays an arbitrary small amount can have a full-price order marked paid.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:47.330",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17008"
-    },
-    {
-      "id": "CVE-2026-18044",
-      "desc": "The Estatik Real Estate Plugin WordPress plugin before 4.3.4 does not validate the same recipient list that it later uses to address the message sent by its property request form, allowing unauthenticated users to send emails to arbitrary recipients with arbitrary subject, body and Reply-To on sites",
-      "cvss": 3.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:17:47.443",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18044"
-    },
-    {
-      "id": "CVE-2026-70465",
-      "desc": "A buffer copy without checking size of input ('classic buffer overflow') vulnerability in Fortinet FortiClientWindows 7.4.0 through 7.4.3, FortiClientWindows 7.2.0 through 7.2.11 may allow an unauthenticated attacker in a position to alter or craft DNS responses to the targeted host to execute arbit",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Fortinet",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:19:47.017",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70465"
-    },
-    {
-      "id": "CVE-2026-70560",
-      "desc": "Ultimate POS (Stock Management & Point of Sale) contains a stored cross-site scripting vulnerability that allows low-privileged authenticated attackers to inject arbitrary HTML and script markup by setting a malicious payload in the user first-name field during account creation. Attackers with a low",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-12T12:19:47.147",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70560"
-    },
     {
       "id": "CVE-2026-26035",
       "desc": "An Improper Authentication vulnerability [CWE-287] vulnerability in Fortinet FortiWeb 8.0.0 through 8.0.2, FortiWeb 7.6.0 through 7.6.6, FortiWeb 7.4.0 through 7.4.11, FortiWeb 7.2.0 through 7.2.12, FortiWeb 7.0.0 through 7.0.12 may allow a remote unauthenticated attacker to login into the Fortiweb ",
@@ -702,10 +366,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0015,
-        "percentile": 0.04698
-      },
+      "epss": null,
       "published": "2026-08-12T15:17:31.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-59324"
     },
@@ -1041,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00194,
+        "percentile": 0.09384
+      },
       "published": "2026-08-12T15:18:22.477",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68757"
     },
@@ -1405,10 +1069,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00188,
-        "percentile": 0.08712
-      },
+      "epss": null,
       "published": "2026-08-12T16:17:13.393",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65926"
     },
@@ -1744,7 +1405,10 @@
       "product": "I",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00165,
+        "percentile": 0.06221
+      },
       "published": "2026-08-12T17:17:23.993",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16694"
     },
@@ -2108,10 +1772,7 @@
       "product": "I",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00342,
-        "percentile": 0.27232
-      },
+      "epss": null,
       "published": "2026-08-12T18:17:24.517",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16863"
     },
@@ -2447,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0035,
+        "percentile": 0.28052
+      },
       "published": "2026-08-12T18:17:29.823",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44741"
     },
@@ -2811,10 +2475,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0026,
-        "percentile": 0.17912
-      },
+      "epss": null,
       "published": "2026-08-12T20:17:36.667",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15217"
     },
@@ -3150,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00308,
+        "percentile": 0.23364
+      },
       "published": "2026-08-12T20:17:46.897",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62420"
     },
@@ -3514,10 +3178,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00237,
-        "percentile": 0.14885
-      },
+      "epss": null,
       "published": "2026-08-12T20:17:51.830",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72800"
     },
@@ -3853,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00336,
+        "percentile": 0.26475
+      },
       "published": "2026-08-12T20:17:56.053",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73411"
     },
@@ -4217,10 +3881,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00179,
-        "percentile": 0.07748
-      },
+      "epss": null,
       "published": "2026-08-12T21:17:37.703",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19130"
     },
@@ -4556,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00237,
+        "percentile": 0.14886
+      },
       "published": "2026-08-12T22:17:15.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18750"
     },
@@ -4920,10 +4584,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00276,
-        "percentile": 0.20064
-      },
+      "epss": null,
       "published": "2026-08-13T00:17:32.587",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49473"
     },
@@ -5259,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00099,
+        "percentile": 0.00934
+      },
       "published": "2026-08-13T06:17:38.230",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19088"
     },
@@ -5623,10 +5287,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00696,
-        "percentile": 0.5001
-      },
+      "epss": null,
       "published": "2026-08-13T11:17:38.193",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12263"
     },
@@ -5962,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00364,
+        "percentile": 0.2946
+      },
       "published": "2026-08-13T12:17:26.337",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73615"
     },
@@ -6326,10 +5990,7 @@
       "product": "Postgresql",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00596,
-        "percentile": 0.45662
-      },
+      "epss": null,
       "published": "2026-08-13T13:17:44.907",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-14676"
     },
@@ -6665,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00143,
+        "percentile": 0.04097
+      },
       "published": "2026-08-13T14:16:48.170",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-62315"
     },
@@ -7029,10 +6693,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00352,
-        "percentile": 0.28283
-      },
+      "epss": null,
       "published": "2026-08-13T14:16:58.737",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-28159"
     },
@@ -7368,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00271,
+        "percentile": 0.1953
+      },
       "published": "2026-08-13T14:17:03.463",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-61979"
     },
@@ -7732,10 +7396,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00303,
-        "percentile": 0.22843
-      },
+      "epss": null,
       "published": "2026-08-13T14:17:07.417",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66462"
     },
@@ -8071,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0018,
+        "percentile": 0.07819
+      },
       "published": "2026-08-13T14:17:10.787",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66698"
     },
@@ -8435,10 +8099,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00347,
-        "percentile": 0.27728
-      },
+      "epss": null,
       "published": "2026-08-13T15:19:41.743",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49857"
     },
@@ -8774,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0013,
+        "percentile": 0.03046
+      },
       "published": "2026-08-13T15:19:55.517",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-63426"
     },
@@ -9138,10 +8802,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00129,
-        "percentile": 0.03031
-      },
+      "epss": null,
       "published": "2026-08-13T15:20:17.133",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73506"
     },
@@ -9477,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00188,
+        "percentile": 0.08765
+      },
       "published": "2026-08-13T16:19:06.923",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73576"
     },
@@ -9841,10 +9505,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00252,
-        "percentile": 0.16858
-      },
+      "epss": null,
       "published": "2026-08-13T17:17:26.300",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58416"
     },
@@ -10180,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00193,
+        "percentile": 0.09318
+      },
       "published": "2026-08-13T17:17:28.860",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58510"
     },
@@ -10544,10 +10208,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00306,
-        "percentile": 0.23224
-      },
+      "epss": null,
       "published": "2026-08-13T18:18:20.450",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73647"
     },
@@ -10883,7 +10544,10 @@
       "product": "I",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00265,
+        "percentile": 0.18501
+      },
       "published": "2026-08-13T20:17:15.187",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16815"
     },
@@ -11247,10 +10911,7 @@
       "product": "I",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00386,
-        "percentile": 0.31796
-      },
+      "epss": null,
       "published": "2026-08-13T20:17:19.267",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17229"
     },
@@ -11586,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00289,
+        "percentile": 0.21423
+      },
       "published": "2026-08-13T20:17:25.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72647"
     },
@@ -11950,10 +11614,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00289,
-        "percentile": 0.21423
-      },
+      "epss": null,
       "published": "2026-08-13T20:17:28.497",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72678"
     },
@@ -12289,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00357,
+        "percentile": 0.28768
+      },
       "published": "2026-08-13T21:17:42.290",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17212"
     },
@@ -12653,10 +12317,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00308,
-        "percentile": 0.23423
-      },
+      "epss": null,
       "published": "2026-08-13T21:17:46.343",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19748"
     },
@@ -12992,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00273,
+        "percentile": 0.19699
+      },
       "published": "2026-08-13T22:17:24.753",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72855"
     },
@@ -13356,10 +13020,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00237,
-        "percentile": 0.14944
-      },
+      "epss": null,
       "published": "2026-08-13T22:17:28.737",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73840"
     },
@@ -13695,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00151,
+        "percentile": 0.04802
+      },
       "published": "2026-08-14T05:16:56.113",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-10308"
     },
@@ -14059,12 +13723,348 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00219,
-        "percentile": 0.12617
-      },
+      "epss": null,
       "published": "2026-08-14T12:16:44.620",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72816"
+    },
+    {
+      "id": "CVE-2026-72817",
+      "desc": "go-chi/chi versions 0.9.0 before 5.3.0 contains an IP spoofing vulnerability in the RealIP middleware, which resolves the request source IP (Request.RemoteAddr) using the first IP in the X-Forwarded-For header without validating trusted proxies. A malicious client can prepend a forged IP as the firs",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:44.747",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72817"
+    },
+    {
+      "id": "CVE-2026-72819",
+      "desc": "Grav CMS before 2.0.13 contains a remote code execution vulnerability in the Flex Objects plugin settings validation that allows authenticated users to execute arbitrary code by uploading a ZIP file containing PHP code. Attackers can bypass routine name validation by using array notation instead of ",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:44.873",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72819"
+    },
+    {
+      "id": "CVE-2026-72820",
+      "desc": "Grav versions before 2.0.13 fail to properly validate backup profile root paths, allowing attackers to archive directories outside GRAV_ROOT when not in the hard-coded deny-list. Attackers with profile editor access can configure backup profiles with traversal paths to expose sensitive files from lo",
+      "cvss": 4.9,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.003",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72820"
+    },
+    {
+      "id": "CVE-2026-72821",
+      "desc": "Grav Form plugin versions before 9.1.15 contain a stored cross-site scripting vulnerability in radio and toggle field option labels rendered with the Twig |raw filter. Attackers with form authoring permissions can inject HTML and script payloads in option labels that execute in the browsers of visit",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.140",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72821"
+    },
+    {
+      "id": "CVE-2026-72822",
+      "desc": "The getgrav/grav-plugin-api Composer package before 1.0.13 (affected <= 1.0.12) fails to enforce API key scope caps on the disable2fa endpoint. Unlike the sibling generate2fa endpoint, disable2fa authorizes the admin (non-self) path solely via ACL reads (isSuperAdmin/hasPermission) and never invokes",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.267",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72822"
+    },
+    {
+      "id": "CVE-2026-72823",
+      "desc": "The Grav API plugin (getgrav/grav-plugin-api) before 1.0.13 contains an API-key scope cap bypass in DemoController. Its private requireSuper() method checks isSuperAdmin() and returns early before invoking requirePermission(), so the api_key_scopes cap (enforced only in requirePermission()) is skipp",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.397",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72823"
+    },
+    {
+      "id": "CVE-2026-72824",
+      "desc": "The Grav API plugin (getgrav/grav-plugin-api) before 1.0.13 contains an API key scope-cap bypass in PagesController::guardTwigContent(). The Twig-toggle check uses a bare isSuperAdmin() gate that does not consult api_key_scopes, so a least-privilege API key scoped only to api.pages.write and minted ",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.520",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72824"
+    },
+    {
+      "id": "CVE-2026-72825",
+      "desc": "The getgrav/grav-plugin-api plugin before 1.0.13 contains an API-key scope cap bypass in the POST /reports/twig-content/allowlist endpoint (ReportsController). The endpoint enforces requirePermission('api.config.write') followed by a bare isSuperAdmin() check instead of requireSuper(). Because isSup",
+      "cvss": 7.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.650",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72825"
+    },
+    {
+      "id": "CVE-2026-72826",
+      "desc": "The getgrav/grav-plugin-api plugin before 1.0.13 fails to validate that the scopes of a newly created API key are a subset of the caller's scopes in createApiKey. The self-target path of requireApiKeyPermission() requires only the baseline api.access scope, and the new key's scopes are read directly",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.780",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72826"
+    },
+    {
+      "id": "CVE-2026-72827",
+      "desc": "Grav CMS before 2.0.13 contains a server-side template injection vulnerability in email-action parameters that allows low-privileged page editors to execute arbitrary operating-system commands. Attackers can inject Twig payloads using the unsandboxed find filter in email subject, body, to, or from f",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:45.907",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72827"
+    },
+    {
+      "id": "CVE-2026-72828",
+      "desc": "Grav Plugin API (getgrav/grav-plugin-api) before 1.0.13 fails to enforce API-key scope caps in InvitationsController. The strip-super and accept-groups decisions are gated on a bare isSuperAdmin() check rather than a scope-aware permission check, so a least-privilege API key (scoped to api.users.wri",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.030",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72828"
+    },
+    {
+      "id": "CVE-2026-72829",
+      "desc": "The Grav API plugin (getgrav/grav-plugin-api) before 1.0.13 contains an API-key scope-cap bypass in UsersController's create() and update() methods. These methods enforce the scope cap only for api.users.write, but gate super-privilege grants on a bare isSuperAdmin() check that reads access.api.supe",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.157",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72829"
+    },
+    {
+      "id": "CVE-2026-72830",
+      "desc": "Grav API plugin versions before 1.0.13 fail to enforce API key scope caps in ConfigController super-scope gates, allowing scoped keys to write scheduler configuration. Attackers with a scoped api.config.write key can inject arbitrary commands into scheduler.custom_jobs that execute via Symfony Proce",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.277",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72830"
+    },
+    {
+      "id": "CVE-2026-72831",
+      "desc": "The Flex Objects plugin (through 1.4.6, tested with Grav 2.0.11) contains an incorrect authorization vulnerability in its Flex Objects API. FlexApiController::update() checks only the general Flex directory permission and does not apply the additional target/field/super-admin checks enforced by the ",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.400",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72831"
+    },
+    {
+      "id": "CVE-2026-72832",
+      "desc": "Grav versions from 1.5.2 through 2.0.12 contain a stored cross-site scripting vulnerability in the Security::detectXss() function (system/src/Grav/Common/Security.php). The event-handler scan is anchored at `<` and uses `[^>]*?`, which cannot cross the first literal `>`; when a `>` appears inside a ",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.540",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72832"
+    },
+    {
+      "id": "CVE-2026-72833",
+      "desc": "The Grav API plugin (getgrav/grav-plugin-api) versions >= 1.0.6 and <= 1.0.11 contain a privilege escalation vulnerability. A scoped API key minted on a super-admin account bypasses its declared scope cap on four isSuperAdmin()-gated write endpoints (in GroupsController, AccountsConfigController, Pr",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.670",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72833"
+    },
+    {
+      "id": "CVE-2026-72834",
+      "desc": "filebrowser before 2.63.19 contains a permission bypass in the /api/resources endpoint. The checksum (?checksum=) branch of resourceGetHandler reads the entire file to compute a digest and returns it without performing a Perm.Download check (unlike the sibling raw, preview, and subtitle paths). As a",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.807",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72834"
+    },
+    {
+      "id": "CVE-2026-72835",
+      "desc": "filebrowser versions before v2.63.21 fail to canonicalize paths before evaluating access rules, allowing authenticated users to bypass administrator-defined deny rules using case-variant or backslash-separated paths. Attackers can request files with alternate path representations that match no rule ",
+      "cvss": 6.8,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:46.930",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72835"
+    },
+    {
+      "id": "CVE-2026-72836",
+      "desc": "FileBrowser before 2.63.19 does not account for case-insensitive filesystems when checking home directory ownership during self-registration. When Signup and CreateUserDir are enabled and FileBrowser's root is on a case-insensitive filesystem (confirmed on Windows/NTFS), two self-registered username",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:47.060",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72836"
+    },
+    {
+      "id": "CVE-2026-72837",
+      "desc": "File Browser versions before 2.63.20 fail to honor the createUserDir isolation in proxy and hook authentication auto-provisioning paths. Attackers with valid upstream-authenticated credentials can read, modify, delete, and share files belonging to other users by exploiting the server root scope assi",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:47.187",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72837"
+    },
+    {
+      "id": "CVE-2026-72838",
+      "desc": "FileBrowser versions before 2.63.19 fail to enforce the declared Upload-Length in the TUS resumable-upload PATCH endpoint, allowing authenticated users to write arbitrary data to disk. Attackers can send oversized request bodies that exceed the declared upload length to exhaust available disk space ",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:47.313",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72838"
+    },
+    {
+      "id": "CVE-2026-72859",
+      "desc": "Budibase versions 3.39.4 before 3.40.0 contain an authorization regression in the S3 attachment upload endpoint that allows BASIC users to obtain S3 PutObject presigned URLs by sending POST requests to the attachments endpoint. The route was changed from a BUILDER permission check to a TABLE/WRITE c",
+      "cvss": 7.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:47.440",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72859"
+    },
+    {
+      "id": "CVE-2026-73048",
+      "desc": "SiYuan versions before v3.7.4 contain an information disclosure vulnerability in the getRefIDsByFileAnnotationID endpoint that returns block identifiers citing PDF annotations without publish-access filtering. Attackers can extract block identifiers from restricted documents by supplying annotation ",
+      "cvss": 5.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-14T12:16:47.567",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73048"
+    },
+    {
+      "id": "CVE-2026-73049",
+      "desc": "SiYuan versions before v3.7.4 contain an information disclosure vulnerability in the getAttributeViewBacklinks endpoint that consults the forbidden access list instead of the visibility list when filtering backlinks. Anonymous readers can supply a publicly visible database row identifier to discover",
+      "cvss": 5.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00194,
+        "percentile": 0.09469
+      },
+      "published": "2026-08-14T12:16:47.697",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73049"
     }
   ],
   "kev": [
@@ -15209,6 +15209,14 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "Describing attacks with crime script analysis",
+      "url": "https://blog.talosintelligence.com/describing-attacks-with-crime-script-analysis/",
+      "source": "Talos Intelligence",
+      "category": "threat",
+      "published": "2026-08-19T10:00:52+00:00",
+      "summary": "Martin explores how using crime script analysis to describe an attack with everyday language makes the situation accessible to non-technical audiences and identify points where the crime can be disrupted."
+    },
+    {
       "title": "Oracle August 2026 Critical Security Patch Update Addresses 925 CVEs",
       "url": "https://www.tenable.com/blog/oracle-august-2026-critical-security-patch-update-cspu-addresses-925-cves",
       "source": "Tenable Blog",
@@ -15713,14 +15721,6 @@
       "summary": "Amy hikes Virginia\u2019s most difficult trail and muses on the persistent challenges of cybersecurity. The two aren't dissimilar."
     },
     {
-      "title": "Black Hat special: Rewind and revisit",
-      "url": "https://blog.talosintelligence.com/black-hat-special-rewind-and-revisit/",
-      "source": "Talos Intelligence",
-      "category": "threat",
-      "published": "2026-07-30T10:00:08+00:00",
-      "summary": "Amy looks back at the incredible journeys that brought past guests to the world of threat intelligence."
-    },
-    {
       "title": "27th July \u2013 Threat Intelligence Report",
       "url": "https://research.checkpoint.com/2026/27th-july-threat-intelligence-report/",
       "source": "Checkpoint Research",
@@ -15915,6 +15915,182 @@
   ],
   "news": [
     {
+      "title": "US charges Iranians for sprawling hacking campaign on government agencies, universities",
+      "url": "https://therecord.media/iran-cyberattacks-us-doj",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-08-19T12:15:00+00:00",
+      "summary": "The Justice Department accused 17 alleged hackers with ties to the Iranian government of breaching email accounts at U.S. government agencies and stealing intellectual property from dozens of universities."
+    },
+    {
+      "title": "Prevalent AI Raises $22 Million to Expand Data Fabric Platform",
+      "url": "https://www.securityweek.com/prevalent-ai-raises-22-million-to-expand-data-fabric-platform/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-19T12:00:00+00:00",
+      "summary": "The previously bootstrapped company helps organizations securely and reliably operate AI agents at scale.\nThe post Prevalent AI Raises $22 Million to Expand Data Fabric Platform appeared first on SecurityWeek."
+    },
+    {
+      "title": "OpenAI Tightens AI Safeguards Following Hugging Face Incident",
+      "url": "https://www.infosecurity-magazine.com/news/openai-tightens-ai-safeguards/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-19T12:00:00+00:00",
+      "summary": "OpenAI is strengthening safeguards for its most advanced AI models, citing growing risks as frontier systems gain more powerful cyber capabilities"
+    },
+    {
+      "title": "US Charges 17 Iranian Hackers, Offers $10 Million Rewards for 5 of Them",
+      "url": "https://www.securityweek.com/us-charges-17-iranian-hackers-offers-10-million-rewards-for-5-of-them/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-19T11:30:33+00:00",
+      "summary": "The 17 members of the Mabna Institute targeted hundreds of universities and organizations in the US and abroad.\nThe post US Charges 17 Iranian Hackers, Offers $10 Million Rewards for 5 of Them appeared first on SecurityWeek."
+    },
+    {
+      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
+      "url": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-19T11:25:28+00:00",
+      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the activity.\n\n\"The opera"
+    },
+    {
+      "title": "Microsoft fixes known issue causing Windows Defender crashes",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-known-issue-causing-windows-defender-crashes/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-19T11:14:28+00:00",
+      "summary": "Microsoft has resolved a bug that caused Windows Defender to crash after a recent security update, resulting in 0xc0000005 access violation errors on some affected systems. [...]"
+    },
+    {
+      "title": "Cl0p Ransomware Group Names Over 40 Victims of PTC Windchill Campaign",
+      "url": "https://www.securityweek.com/cl0p-ransomware-group-names-over-40-victims-of-ptc-windchill-campaign/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-19T11:07:21+00:00",
+      "summary": "The cybercrime gang has listed major companies such as Shell, Philips, Fiserv, Zebra, Mindray, and Largan Precision.\nThe post Cl0p Ransomware Group Names Over 40 Victims of PTC Windchill Campaign appeared first on SecurityWeek."
+    },
+    {
+      "title": "Critical macOS, SharePoint, vCenter, and Microsoft IKE Flaws Under Active Exploitation",
+      "url": "https://thehackernews.com/2026/08/critical-macos-sharepoint-vcenter-and.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-19T11:01:48+00:00",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four critical vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, stating they are being exploited in the wild.\n\nThe shortcomings added to the KEV catalog are listed below -\n\n\n  CVE-2026-65400 (CVSS s"
+    },
+    {
+      "title": "Over 500 Critical Infrastructure Organizations Hit by Medusa Ransomware",
+      "url": "https://www.infosecurity-magazine.com/news/critical-infrastructure-medusa/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-19T10:50:00+00:00",
+      "summary": "The FBI warned that the RaaS operation has significantly enhanced its tactics, techniques and procedures, making it harder for defenders to counter"
+    },
+    {
+      "title": "CISA Urges Immediate Patching of Exploited Microsoft, VMware, Apple Vulnerabilities",
+      "url": "https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-microsoft-vmware-apple-vulnerabilities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-19T10:37:31+00:00",
+      "summary": "The flaws can be exploited for remote code execution, authentication bypass, and device takeover.\nThe post CISA Urges Immediate Patching of Exploited Microsoft, VMware, Apple Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
+      "title": "Critical RCE flaw in Windows IKE Extension now actively exploited",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-critical-windows-ike-extension-flaw-now-exploited-in-attacks/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-19T10:12:24+00:00",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned that hackers are exploiting a critical-severity remote code execution (RCE) flaw in the Windows Internet Key Exchange (IKE) Service Extensions component. [...]"
+    },
+    {
+      "title": "Reverse-Lookup Service Exposed Millions of Photos of People\u2019s Faces",
+      "url": "https://www.wired.com/story/reverse-lookup-service-exposed-millions-of-photos-of-peoples-faces/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-08-19T10:00:00+00:00",
+      "summary": "The people-search tool ClarityCheck says its reverse image search service is \u201cprivate and secure\u201d\u2014but it left a database containing more than 9 million image files exposed."
+    },
+    {
+      "title": "ICO Urges Police to Improve Data Governance in Facial Recognition Rollouts",
+      "url": "https://www.infosecurity-magazine.com/news/ico-police-data-governance-facial/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-19T09:30:00+00:00",
+      "summary": "The UK\u2019s privacy watchdog has called on police using facial recognition to follow its recommendations"
+    },
+    {
+      "title": "943 Patches Rolled Out With Oracle\u2019s August 2026 Security Update",
+      "url": "https://www.securityweek.com/943-patches-rolled-out-with-oracles-august-2026-security-update/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-19T09:14:51+00:00",
+      "summary": "The fixes resolve over 1,000 vulnerabilities across two dozen products, including over 460 remotely exploitable bugs.\nThe post 943 Patches Rolled Out With Oracle&#8217;s August 2026 Security Update appeared first on SecurityWeek."
+    },
+    {
+      "title": "Windows 11 24H2 Home and Pro reach end of support in 2 months",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-24h2-home-and-pro-reach-end-of-support-in-2-months/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-19T09:10:20+00:00",
+      "summary": "Microsoft has reminded customers that systems running Home and Pro editions of Windows 11 24H2 will stop receiving updates in two months. [...]"
+    },
+    {
+      "title": "Flock Has a Powerful New AI Tool for Police. We Got Its Code",
+      "url": "https://www.wired.com/story/flock-safety-os-investigate/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-08-19T09:00:00+00:00",
+      "summary": "Flock\u2019s surveillance cameras have already sparked outrage. WIRED reconstructed its next-generation AI system, already in use by some police, to confirm it goes much further than tracking license plates."
+    },
+    {
+      "title": "UK Fraud Cases Hit Record High in 2026",
+      "url": "https://www.infosecurity-magazine.com/news/uk-fraud-cases-hit-record-high/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-19T08:45:00+00:00",
+      "summary": "Cifas data finds account takeover and identity fraud are driving a surge in fraud cases"
+    },
+    {
+      "title": "Chrome, Firefox Updates Patch Dozens of Vulnerabilities",
+      "url": "https://www.securityweek.com/chrome-firefox-updates-patch-dozens-of-vulnerabilities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-19T08:19:09+00:00",
+      "summary": "The bugs could lead to code execution, privilege escalation, sandbox escape, and information disclosure.\nThe post Chrome, Firefox Updates Patch Dozens of Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
+      "title": "CISA: Medusa ransomware hit over 500 critical infrastructure orgs",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-medusa-ransomware-hit-over-500-critical-infrastructure-orgs/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-19T08:00:48+00:00",
+      "summary": "The FBI said Tuesday that the Medusa ransomware gang has breached more than 500 critical infrastructure organizations in the United States since June 2021. [...]"
+    },
+    {
+      "title": "CareCloud Data Breach Impact Grows to 3.7 Million Individuals",
+      "url": "https://www.securityweek.com/carecloud-data-breach-impact-grows-to-3-7-million-individuals/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-19T06:56:43+00:00",
+      "summary": "The data breach was initially believed to affect roughly 350,000 people, but the HHS breach tracker shows a far bigger impact.\nThe post CareCloud Data Breach Impact Grows to 3.7 Million Individuals appeared first on SecurityWeek."
+    },
+    {
+      "title": "Microsoft Links 30+ Rotating Domains to MacSync Stealer Infrastructure",
+      "url": "https://thehackernews.com/2026/08/microsoft-links-30-rotating-domains-to.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-19T06:01:53+00:00",
+      "summary": "Microsoft Defender Experts have linked more than 30 web domains to MacSync Stealer, a macOS-focused information stealer, after correlating recurring endpoint and network behaviors across changing infrastructure, tracing the malware from payload retrieval through data collection, staging, and exfiltr"
+    },
+    {
+      "title": "Clop-Linked Windchill Web Shell Decrypts Credentials and Maps Engineering Data",
+      "url": "https://thehackernews.com/2026/08/clop-linked-windchill-web-shell.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-19T05:39:25+00:00",
+      "summary": "A JavaServer Pages (JSP) web shell deployed following the exploitation of a critical security flaw in PTC Windchill and FlexPLM servers is specifically designed for the enterprise Product Lifecycle Management (PLM) software, according to new findings from ReliaQuest.\n\nThe cybersecurity company chara"
+    },
+    {
       "title": "Risky Business #849 -- Trump will unleash contractors on cybercriminals",
       "url": "https://risky.biz/RB849/",
       "source": "Risky Business",
@@ -16075,14 +16251,6 @@
       "summary": "The agency said the latest attack came amid preparations to select a manager for seized corporate rights in IDS Ukraine, one of the country\u2019s largest producers of bottled mineral water and beverages."
     },
     {
-      "title": "CISO Conversations: Nico Waisman \u2013 From Self-Taught Hacker to AI-Driven Offensive Security at XBOW",
-      "url": "https://www.securityweek.com/ciso-conversations-nico-waisman-from-self-taught-hacker-to-ai-driven-offensive-security-at-xbow/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-18T14:30:00+00:00",
-      "summary": "With no formal training and no career plan, Waisman built a path from Argentina's early hacking scene to leading security at an AI-powered offensive security firm.\nThe post CISO Conversations: Nico Waisman \u2013 From Self-Taught Hacker to AI-Driven Offensive Security at XBOW appeared first on SecurityWe"
-    },
-    {
       "title": "NASA Ground Control Software Flaw Enables Unauthenticated Commands",
       "url": "https://www.infosecurity-magazine.com/news/nasa-ground-control-software-flaw/",
       "source": "Infosecurity Magazine",
@@ -16099,12 +16267,12 @@
       "summary": "Security controls can block a familiar attack method while missing quieter ways to achieve the same objective. Picus Security's Blue Report 2026 shows how prevention rates can vary dramatically by technique and why behavioral testing is needed to uncover those gaps. [...]"
     },
     {
-      "title": "AI-Driven Vulnerability Surge Breaks the Traditional Patching Model",
-      "url": "https://www.securityweek.com/ai-driven-vulnerability-surge-breaks-the-traditional-patching-model/",
-      "source": "SecurityWeek",
+      "title": "Silent 'TwinLoot' Cyber Threat Operates Entirely From Microsoft's Cloud",
+      "url": "https://www.darkreading.com/cloud-security/silent-twinloot-threat-operates-microsoft-cloud",
+      "source": "Dark Reading",
       "category": "news",
       "published": "2026-08-18T13:00:00+00:00",
-      "summary": "Rapid7 warns that traditional patch cycles cannot keep pace with soaring vulnerability disclosures and faster exploitation, forcing defenders to prioritize exposure over severity scores.\nThe post AI-Driven Vulnerability Surge Breaks the Traditional Patching Model appeared first on SecurityWeek."
+      "summary": "The Python-based malware framework takes living-off-the-land tactics to a new heights of stealth, with a modular implant that steals credentials and achieves persistence."
     },
     {
       "title": "'Ransom Busters': Ransomware Actor Poses as Incident-Recovery Service",
@@ -16115,60 +16283,12 @@
       "summary": "A ransomware affiliate appears to be sidling up to victims with offers of aid, masking its true intention of diverting ransom payments."
     },
     {
-      "title": "Silent 'TwinLoot' Cyber Threat Operates Entirely From Microsoft's Cloud",
-      "url": "https://www.darkreading.com/cloud-security/silent-twinloot-threat-operates-microsoft-cloud",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-08-18T13:00:00+00:00",
-      "summary": "The Python-based malware framework takes living-off-the-land tactics to a new heights of stealth, with a modular implant that steals credentials and achieves persistence."
-    },
-    {
       "title": "AI \"Mind Viruses\" Can Spread Between Agents Through Persistent Prompt Files",
       "url": "https://thehackernews.com/2026/08/ai-mind-viruses-can-spread-between.html",
       "source": "The Hacker News",
       "category": "news",
       "published": "2026-08-18T12:38:36+00:00",
       "summary": "Security researchers at Anthropic and Switzerland's EPFL have demonstrated that self-propagating payloads can spread from one artificial intelligence (AI) agent to the next through the editable system prompt files that autonomous agent harnesses use to carry state between sessions.\n\nThe work, releas"
-    },
-    {
-      "title": "TWINLOOT Abuses SharePoint and Teams to Steal Credentials and Move Across Networks",
-      "url": "https://thehackernews.com/2026/08/twinloot-abuses-sharepoint-and-teams-to.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-18T12:38:20+00:00",
-      "summary": "Cybersecurity researchers have disclosed details of a previously undocumented Python implant framework dubbed TWINLOOT.\n\n\"TWINLOOT is a modular, PyArmor-hardened Python implant designed to operate its entire command-and-control infrastructure inside trusted Microsoft services,\" Ontinue said in a tec"
-    },
-    {
-      "title": "Xpander Raises $7.5 Million for AI Management and Governance",
-      "url": "https://www.securityweek.com/xpander-raises-7-5-million-for-ai-management-and-governance/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-18T12:29:08+00:00",
-      "summary": "Xpander\u2019s platform uses a universal agent harness that executes AI agents as portable workloads and securely renders interfaces on demand.\nThe post Xpander Raises $7.5 Million for AI Management and Governance appeared first on SecurityWeek."
-    },
-    {
-      "title": "Fortinet Acquires AI Security Company Virtue AI",
-      "url": "https://www.securityweek.com/fortinet-acquires-ai-security-company-virtue-ai/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-18T12:06:21+00:00",
-      "summary": "Fortinet will use Virtue AI technology to enhance its AI security portfolio, including for AI models, applications, and agentic systems.\nThe post Fortinet Acquires AI Security Company Virtue AI appeared first on SecurityWeek."
-    },
-    {
-      "title": "One Attacker Has Scraped Both Salesforce and ServiceNow Portals Since 2025",
-      "url": "https://thehackernews.com/2026/08/one-attacker-has-scraped-both.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-18T11:30:00+00:00",
-      "summary": "A single piece of infrastructure has been pulling records out of Salesforce and ServiceNow customer portals across multiple industries for more than a year, according to research published this week by agent security platform Reco.\n\nThe activity, which Reco has named the City Forum campaign after a "
-    },
-    {
-      "title": "16 Typosquatted RubyGems Packages Steal Browser Credentials and Crypto Wallets",
-      "url": "https://thehackernews.com/2026/08/16-typosquatted-rubygems-packages-steal.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-18T11:20:00+00:00",
-      "summary": "Cybersecurity researchers have flagged a new typosquatting campaign targeting RubyGems users with a Windows-based information stealer.\n\nOpenSourceMalware, which discovered the activity on August 15, 2026, is tracking the threat under the moniker StubMaker. The complete list of packages published as "
     },
     {
       "title": "Cyber Incident Disrupts Student Services at UT San Antonio",
@@ -16187,22 +16307,6 @@
       "summary": "Microsoft has started testing a faster\u00a0File Explorer and a less cluttered and more customizable context menu in Windows 11 preview builds rolling out to Insiders this week. [...]"
     },
     {
-      "title": "300,000 WordPress Sites Potentially Exposed to Hacking Due to Form Plugin Flaw",
-      "url": "https://www.securityweek.com/300000-wordpress-sites-potentially-exposed-to-hacking-due-to-form-plugin-flaw/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-18T10:48:23+00:00",
-      "summary": "Tracked as CVE-2026-15748, the arbitrary file upload bug allows unauthenticated attackers to upload executable files.\nThe post 300,000 WordPress Sites Potentially Exposed to Hacking Due to Form Plugin Flaw appeared first on SecurityWeek."
-    },
-    {
-      "title": "CISA: Windows Task Host flaw now exploited by ransomware gangs",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-windows-task-host-flaw-now-exploited-by-ransomware-gangs/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-18T10:32:16+00:00",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has confirmed that ransomware gangs are also exploiting a high-severity Windows Task Host vulnerability that was flagged as actively exploited in April. [...]"
-    },
-    {
       "title": "Can AI Coexist With Privacy? Proton\u2019s Andy Yen Says It Will Have To",
       "url": "https://www.wired.com/story/the-big-interview-podcast-andy-yen-proton/",
       "source": "Wired Security",
@@ -16219,76 +16323,12 @@
       "summary": "After Noel Pichardo called out his city's embrace of Flock surveillance cameras, he was subjected to five internal affairs investigations in less than two years."
     },
     {
-      "title": "Three-quarters of Ransomware Attacks Target Mid-Market Firms",
-      "url": "https://www.infosecurity-magazine.com/news/threequarters-ransomware-attacks/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-18T10:00:00+00:00",
-      "summary": "Black Kite finds mid-market is the sweet spot for ransomware as manufacturers are most likely to be hit"
-    },
-    {
-      "title": "Microsoft confirms outage affecting search in Microsoft 365 apps",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-working-to-fix-bug-behind-microsoft-365-search-issues/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-18T09:24:49+00:00",
-      "summary": "Microsoft says some users are experiencing issues searching in Microsoft 365 apps, including Outlook on the web, Outlook desktop, SharePoint Online, and OneDrive. [...]"
-    },
-    {
-      "title": "Heights Finance Data Breach Impacts at Least 1.2 Million Individuals",
-      "url": "https://www.securityweek.com/heights-finance-data-breach-impacts-at-least-1-2-million-individuals/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-18T09:18:34+00:00",
-      "summary": "Hackers stole names, addresses, phone numbers, Social Security numbers, and financial information from a third-party platform.\nThe post Heights Finance Data Breach Impacts at Least 1.2 Million Individuals appeared first on SecurityWeek."
-    },
-    {
-      "title": "SafePal Hardware Wallet Maker Says Flaw Exposed Data of Nearly 40,000 Customers",
-      "url": "https://thehackernews.com/2026/08/safepal-hardware-wallet-maker-says-flaw.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-18T09:10:45+00:00",
-      "summary": "SafePal has disclosed that an authorization flaw in an order-tracking plug-in exposed the names, email addresses, shipping addresses, phone numbers, and purchase details of approximately 39,798 customers.\n\nThe hardware wallet maker said all affected customers were notified individually by email on A"
-    },
-    {
-      "title": "GitLab Patches Critical Code Injection Vulnerability",
-      "url": "https://www.securityweek.com/gitlab-patches-critical-code-injection-vulnerability/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-18T08:51:07+00:00",
-      "summary": "The security defect allows unauthenticated attackers to modify or delete user data and public projects.\nThe post GitLab Patches Critical Code Injection Vulnerability appeared first on SecurityWeek."
-    },
-    {
-      "title": "UK Legal Regulator Raises AI Misuse Concerns",
-      "url": "https://www.infosecurity-magazine.com/news/uk-legal-regulator-raises-ai/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-18T08:17:00+00:00",
-      "summary": "Solicitors Regulation Authority sounds the alarm over AI hallucinations and data leaks"
-    },
-    {
-      "title": "Microsoft starts removing WMIC tool used by cybercriminals",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-removes-wmic-lolbin-tool-in-windows-11-beta-builds/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-18T08:12:08+00:00",
-      "summary": "Microsoft announced that it removed the Windows Management Instrumentation Command-line (WMIC) tool from Windows 11 24H2 and 25H2, as well as from Windows 11 beta builds released this week. [...]"
-    },
-    {
       "title": "ISC Stormcast For Tuesday, August 18th, 2026 https://isc.sans.edu/podcastdetail/10056, (Tue, Aug 18th)",
       "url": "https://isc.sans.edu/diary/rss/33256",
       "source": "SANS ISC Diary",
       "category": "news",
       "published": "2026-08-18T02:00:03+00:00",
       "summary": ""
-    },
-    {
-      "title": "Ukrainian software developer faces 12 years in Swiss ransomware trial",
-      "url": "https://therecord.media/ukrainian-software-developer-court-switzerland",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-08-17T23:00:00+00:00",
-      "summary": "The unnamed 52-year-old is accused of attacking Swiss train manufacturer Stadler Rail alongside other enterprises as part of an international ransomware operation."
     },
     {
       "title": "Video Call Exploit Chains Two Flaws in Unisoc Modems",
@@ -16315,36 +16355,12 @@
       "summary": "Three testing models with the same goal but different directives engaged in &quot;increasingly aggressive&quot; territorial attacks on one another, according to Anthropic."
     },
     {
-      "title": "Hacker claims 3.6 million Azure account records stolen from major companies",
-      "url": "https://www.bleepingcomputer.com/news/security/hacker-claims-36-million-azure-account-records-stolen-from-major-companies/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-17T19:35:01+00:00",
-      "summary": "A threat actor is selling employee databases allegedly stolen from the Microsoft Azure infrastructure of multiple Fortune 500 companies after gaining access using compromised credentials. [...]"
-    },
-    {
-      "title": "UNISOC Modem Flaw Enables Remote Code Execution via Video Calls",
-      "url": "https://www.infosecurity-magazine.com/news/unisoc-modem-flaw-rce-calls/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-17T15:45:00+00:00",
-      "summary": "UNISOC modem flaw enabled kernel-level code execution through video calls"
-    },
-    {
       "title": "Apple Screen Sharing Security, (Mon, Aug 17th)",
       "url": "https://isc.sans.edu/diary/rss/33252",
       "source": "SANS ISC Diary",
       "category": "news",
       "published": "2026-08-17T14:33:58+00:00",
       "summary": "About 20 years ago, with macOS 10.5 (Leopard), Apple introduced screen sharing. Apple did not invent a new protocol for screen sharing. Instead, it used the established VNC protocol. VNC is a pretty simple, unencrypted protocol using TCP port 5900. Historically, the protocol used a simple global pas"
-    },
-    {
-      "title": "WordPress Plugin Flaw Exposes 40,000 Sites to Admin Takeover",
-      "url": "https://www.infosecurity-magazine.com/news/wordpress-plugin-flaw-40000-sites/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-17T13:30:00+00:00",
-      "summary": "Critical User Profile Builder flaw let unauthenticated attackers access administrator accounts"
     },
     {
       "title": "ISC Stormcast For Monday, August 17th, 2026 https://isc.sans.edu/podcastdetail/10054, (Mon, Aug 17th)",
@@ -16419,28 +16435,12 @@
       "summary": ""
     },
     {
-      "title": "This Coin-Sized Device Can Hack a Boeing 737",
-      "url": "https://www.wired.com/story/this-coin-sized-device-can-hack-a-boeing-737/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-08-12T12:00:00+00:00",
-      "summary": "Security researchers found that in less than 60 seconds, they could open a\u00a0hatch on a plane\u2019s exterior, plug in a tiny device, and redirect the aircraft\u2019s autopilot or sabotage its flight plan."
-    },
-    {
       "title": "Help shape the future of resilient private 5G",
       "url": "https://www.ncsc.gov.uk/blogs/help-shape-the-future-of-resilient-private-5g",
       "source": "NCSC UK",
       "category": "news",
       "published": "2026-08-12T12:00:00+00:00",
       "summary": "The NCSC wants to collaborate with organisations developing technologies and approaches for secure, resilient and deployable private 5G"
-    },
-    {
-      "title": "\u2018The Worst I\u2019ve Ever Seen\u2019: Cargo Thefts Have Turned Violent in Pursuit of AI Hardware",
-      "url": "https://www.wired.com/story/the-worst-ive-ever-seen-cargo-thieves-are-turning-violent-in-pursuit-of-ai-hardware/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-08-12T10:00:00+00:00",
-      "summary": "Experts allege that two recent incidents in California show the extreme lengths that criminal organizations are willing to go to to steal servers and other gear meant for data centers."
     },
     {
       "title": "Risky Business #848 -- OpenAI comes clean",
@@ -16597,8 +16597,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 101,
-    "high": 405,
+    "critical": 105,
+    "high": 409,
     "exploited": 0,
     "kev_total": 1670,
     "kev_7d": 5,
