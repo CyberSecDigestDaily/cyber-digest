@@ -1,683 +1,11 @@
 {
-  "generated": "2026-08-25T06:54:26.070176+00:00",
+  "generated": "2026-08-25T12:53:42.011413+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>166 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>162 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-15371",
-      "desc": "Velociraptor's web GUI allows specifying a custom type for columns in tables. The URL type takes the cell value and forms a URL which can be clicked in the GUI.The code does not limit the schemes allowed in this URL , allowing an attacker to specify a JavaScript scheme exposing the user to XSS.",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T07:16:48.927",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15371"
-    },
-    {
-      "id": "CVE-2026-34884",
-      "desc": "SSRF via set_skywalking_url Tool and GraphQL expression injection vulnerability in Apache SkyWalking MCP.\n\n\n\n\n\nThis issue affects Apache SkyWalking MCP: 0.1.0.\n\nUsers are recommended to upgrade to version 0.2.0, which fixes this issue.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Apache",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T08:16:42.470",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-34884"
-    },
-    {
-      "id": "CVE-2024-14045",
-      "desc": "A weakness has been identified in OpenBoxes up to 0.9.2. This vulnerability affects unknown code of the file grails-app/controllers/org/pih/warehouse/RoleInterceptor.groovy of the component Product Supplier Edit Controller. Executing a manipulation can lead to improper authorization. The attack may ",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T09:16:45.447",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-14045"
-    },
-    {
-      "id": "CVE-2026-43971",
-      "desc": "Improper Encoding or Escaping of Output vulnerability in ninenines cowlib allows Link header directive smuggling via unescaped special characters in cow_link:link/1.\n\ncow_link:do_link/1 in cowlib interpolates the target URI, rel value, and attribute keys directly into the serialized Link: header val",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T09:17:14.340",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-43971"
-    },
-    {
-      "id": "CVE-2026-18929",
-      "desc": "Carbone is vulnerable to Denial of Service due to lack of protection against zip bombs when processing .docx files. The library uses yazl for zip decompression without validating entry sizes, allowing an attacker to supply a malicious .docx file containing a zip bomb that decompresses to a significa",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T10:16:46.023",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18929"
-    },
-    {
-      "id": "CVE-2024-14046",
-      "desc": "A security vulnerability has been detected in OpenBoxes up to 0.9.1. This issue affects the function DocumentController of the file grails-app/controllers/org/pih/warehouse/core/DocumentController.groovy of the component Document Upload Controller. The manipulation leads to unrestricted upload. It i",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T11:16:47.177",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-14046"
-    },
-    {
-      "id": "CVE-2026-19447",
-      "desc": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Fileorbis Informatics Services Trade Inc. FileOrbis allows Stored XSS.\n\nThis issue affects FileOrbis: before 16.5.",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T11:16:50.287",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19447"
-    },
-    {
-      "id": "CVE-2026-19608",
-      "desc": "A flaw was found in the group policy provider of Keycloak authorization services, which is used to manage fine-grained access control to resources. The issue occurs when the system evaluates group-based policies using tokens that only contain group names rather than full paths. If two groups in diff",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T11:16:50.403",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19608"
-    },
-    {
-      "id": "CVE-2026-75626",
-      "desc": "SpiderFoot fails to HTML-escape correlation titles built from external scan data sources including server banners and metadata. Attackers can inject malicious HTML elements with event handlers into correlation results that execute scripts in the operator's browser when the correlations view is opene",
-      "cvss": 9.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T11:16:51.920",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75626"
-    },
-    {
-      "id": "CVE-2026-75627",
-      "desc": "Bastillion fails to properly validate request URI paths in its controller dispatcher, allowing unauthenticated attackers to bypass authentication filters by prefixing requests with arbitrary path segments. Attackers can access administrative controllers to read user listings, create manager accounts",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T11:16:52.060",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75627"
-    },
-    {
-      "id": "CVE-2026-75773",
-      "desc": "A vulnerability was found in karakeep-app karakeep up to 0.32.0. The affected element is the function authorize of the file apps/web/server/auth.ts of the component Login Endpoint. The manipulation results in improper restriction of excessive authentication attempts. The attack may be performed from",
-      "cvss": 3.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T11:16:52.200",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75773"
-    },
-    {
-      "id": "CVE-2026-15585",
-      "desc": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in AKIN Software Computer Import Export Industry and Trade Ltd. AKINSOFT Wolvox9 ERP / KontrolPanel.exe allows Path Traversal.\n\nThis issue affects AKINSOFT Wolvox9 ERP / KontrolPanel.exe: from s26.02.17 befo",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:17:23.110",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15585"
-    },
-    {
-      "id": "CVE-2026-5224",
-      "desc": "Cleartext storage of sensitive information vulnerability in Kriptok Crypto and Information Technologies Industry Trade Inc. Cryptosim allows Retrieve Embedded Sensitive Data.\n\nThis issue affects Cryptosim: before 3.1.0.229.",
-      "cvss": 5.7,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:28.170",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5224"
-    },
-    {
-      "id": "CVE-2026-74902",
-      "desc": "SiYuan before v3.7.4 contains a cross-site scripting vulnerability in the file upload validation flow that fails to escape filenames before inserting them into HTML via insertAdjacentHTML. Attackers can craft a malicious filename containing script payloads that execute with full OS command access wh",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:30.370",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74902"
-    },
-    {
-      "id": "CVE-2026-74903",
-      "desc": "SiYuan before v3.7.4 contains an insufficient access control vulnerability in the /api/lute/spinBlockDOM endpoint, which is guarded only by CheckAuth middleware instead of CheckAdminRole like its sibling endpoint. Authenticated users with RoleEditor or RoleReader roles can invoke the endpoint to tra",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:30.507",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74903"
-    },
-    {
-      "id": "CVE-2026-74904",
-      "desc": "SiYuan before v3.7.4 is missing authorization checks in 17 block metadata/content endpoints in kernel/api/block.go (including getRefText, checkBlockExist, and getBlockBreadcrumb). These handlers are gated only by basic authentication (model.CheckAuth) and lack publish-access filtering, allowing anon",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:30.643",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74904"
-    },
-    {
-      "id": "CVE-2026-74905",
-      "desc": "SiYuan before v3.7.4 contains a server-side request forgery (SSRF) vulnerability in the isPrivateIP function in kernel/util/net.go, used by SSRFSafeDialer to enforce SSRF protection in SafeMode. The function only checks for loopback, link-local unicast, private, and unspecified addresses and does no",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:30.780",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74905"
-    },
-    {
-      "id": "CVE-2026-74906",
-      "desc": "SiYuan before v3.7.4 contains an incorrect authorization vulnerability in eight publish-mode reader-facing endpoints that filter results using the visibility list instead of the disabled list. Anonymous visitors can discover and read content from documents explicitly marked as forbidden from publish",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:30.913",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74906"
-    },
-    {
-      "id": "CVE-2026-74907",
-      "desc": "Grav before 2.0.15 contains a path traversal vulnerability in the static asset server within index.php that uses string prefix matching instead of directory-boundary validation. Unauthenticated attackers can access files in sibling directories by exploiting directory names that extend the base path ",
-      "cvss": 5.9,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:31.047",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74907"
-    },
-    {
-      "id": "CVE-2026-74908",
-      "desc": "Grav plugin-api before 1.0.15 contains a script injection vulnerability where the SVG sanitizer only checks for the exact extension 'svg', allowing .svgz and .xhtml files to bypass sanitization and be stored unsanitized. Attackers with api.media.write permission can upload files containing executabl",
-      "cvss": 4.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:31.190",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74908"
-    },
-    {
-      "id": "CVE-2026-75107",
-      "desc": "Grav Form Plugin before 9.1.19 fails to escape field-definition properties including prepend, append, spacer text, section text, and select option labels in form templates. Attackers with form authoring privileges can inject arbitrary HTML and JavaScript that executes for all form visitors through u",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:31.593",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75107"
-    },
-    {
-      "id": "CVE-2026-75774",
-      "desc": "A vulnerability was determined in karakeep-app karakeep up to 0.32.0. The impacted element is an unknown function of the file apps/web/server/auth.ts of the component OAuth Sign-In. This manipulation causes improper authentication. It is possible to initiate the attack remotely. The complexity of an",
-      "cvss": 3.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:32.380",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75774"
-    },
-    {
-      "id": "CVE-2026-75827",
-      "desc": "Grav before 2.0.15 contains an arbitrary file write vulnerability in the Blueprint dynamic-data bare-function validation that uses an incomplete denylist instead of a positive allowlist. Attackers with page-edit or blueprint-config access can invoke the error_log function through a data directive to",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:32.553",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75827"
-    },
-    {
-      "id": "CVE-2026-75828",
-      "desc": "Grav before 2.0.15 contains a stored cross-site scripting vulnerability in the detectXss() function where unpaired quotes in unquoted attribute values bypass event-handler detection. Authenticated editors can inject event handlers like onerror= that pass validation and execute in visitor browsers wh",
-      "cvss": 8.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:32.690",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75828"
-    },
-    {
-      "id": "CVE-2026-75829",
-      "desc": "grav-plugin-api versions before 1.0.15 fail to validate Twig content in the translate() endpoint, allowing attackers with api.pages.write permission to persist pages with process.twig enabled. Attackers can submit crafted header and content parameters to execute server-side template injection payloa",
-      "cvss": 8.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:32.827",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75829"
-    },
-    {
-      "id": "CVE-2026-75830",
-      "desc": "grav-plugin-api (getgrav/grav-plugin-api) versions >= 1.0.0-beta.10 and <= 1.0.14 contain a path traversal vulnerability in the PagesController::batchCopy() method. An incomplete fix for GHSA-qjq4-jp55-4mx2 left the user-controlled 'suffix' parameter (via POST /api/v1/pages/batch) unvalidated. An au",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:32.960",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75830"
-    },
-    {
-      "id": "CVE-2026-75831",
-      "desc": "Grav before 2.0.15 contains a stored cross-site scripting vulnerability in the audio and video media rendering through the sourceParsedownElement method. The media URL fragment is concatenated unescaped into rawHtml source elements, allowing attackers to inject arbitrary HTML and JavaScript that exe",
-      "cvss": 7.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:33.100",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75831"
-    },
-    {
-      "id": "CVE-2026-75832",
-      "desc": "The Grav API plugin (getgrav/grav-plugin-api, bundled with Grav 2.0) before version 1.0.14 (fixed in 1.0.15) contains a missing authorization vulnerability in BlueprintPathResolver::resolveUserScope(). The method gates the users/<name> scope on the account's raw super-admin ACL flag (access.api.supe",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:33.230",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75832"
-    },
-    {
-      "id": "CVE-2026-75833",
-      "desc": "The Grav API plugin (getgrav/grav-plugin-api, bundled with Grav 2.0's admin-next/API stack) before version 1.0.14 contains an open redirect weakness in SsoController::sanitizeReturnTo(). The function rejects a literal '//' prefix but does not account for browsers normalizing backslashes to slashes i",
-      "cvss": 4.2,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:33.370",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75833"
-    },
-    {
-      "id": "CVE-2026-75834",
-      "desc": "Grav before 2.0.14 contains a stored cross-site scripting vulnerability in the Security::detectXss() function (system/src/Grav/Common/Security.php). All XSS detection patterns use the PCRE /u (UTF-8) modifier, so a single invalid UTF-8 byte anywhere in page content causes preg_match() to return fals",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:33.513",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75834"
-    },
-    {
-      "id": "CVE-2026-75835",
-      "desc": "Grav API plugin (getgrav/grav-plugin-api) before 1.0.14 contains a missing authorization vulnerability in userPassesAuthorize() (AbstractApiController.php). The function fails to consult the calling request's API key scopes, relying instead on the account's raw super-admin flag and ACL grants. As a ",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:33.647",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75835"
-    },
-    {
-      "id": "CVE-2026-75836",
-      "desc": "The Grav API plugin (getgrav/grav-plugin-api, bundled with Grav's admin-next/API stack) before 1.0.14 fails to enforce the authorize requirement in MenubarController::executeAction(). While the GET /menubar/items listing endpoint correctly filters menubar items via userPassesAuthorize(), the POST /a",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:33.780",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75836"
-    },
-    {
-      "id": "CVE-2026-75837",
-      "desc": "Grav before 2.0.14 fails to guard the access field in the core group blueprint with the required security@: admin.super restriction. A delegated admin.users operator can save a group with access[admin][super]=true to escalate to super-admin, gaining scheduler and Twig evaluation capabilities.",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:33.913",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75837"
-    },
-    {
-      "id": "CVE-2026-75838",
-      "desc": "DOMPurify before 3.4.13 contains a cross-site scripting vulnerability in IN_PLACE sanitization where element-removal hooks fail to neutralize detached subtrees. Attackers can supply HTML with event handlers on descendant elements that execute after sanitization completes, even though the returned ro",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:34.050",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75838"
-    },
-    {
-      "id": "CVE-2026-75839",
-      "desc": "ArcadeDB (com.arcadedb:arcadedb-server) versions <= 26.7.3 contain an insecure direct object reference (IDOR) vulnerability in the Raft cluster-info endpoints (GetClusterHandler and PostBootstrapStateHandler), which authenticate but do not authorize access. On an ArcadeDB HA cluster (only reachable ",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:34.180",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75839"
-    },
-    {
-      "id": "CVE-2026-75840",
-      "desc": "ArcadeDB before 26.8.1 contains an arbitrary file read vulnerability in the GraalVM JavaScript sandbox allowlist enforcement, which uses unescaped regular expressions to validate package names. Attackers with trigger creation privileges can use Java.type() to access java.util.zip.ZipFile or java.uti",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:34.320",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75840"
-    },
-    {
-      "id": "CVE-2026-75841",
-      "desc": "ArcadeDB before 26.8.1 contains a denial of service vulnerability in the Cypher range() function that allows authenticated users to exhaust server heap memory. Attackers can submit oversized range() expressions with large bounds to trigger OutOfMemoryError and cause temporary service degradation or ",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:34.463",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75841"
-    },
-    {
-      "id": "CVE-2026-75842",
-      "desc": "ArcadeDB versions before 26.8.1 contain an arbitrary file read vulnerability in the OpenCypher LOAD CSV FROM clause that allows authenticated users to read local files. Attackers with read query privileges can use the file:// protocol in LOAD CSV statements to access arbitrary files with server proc",
-      "cvss": 7.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:34.597",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75842"
-    },
-    {
-      "id": "CVE-2026-75843",
-      "desc": "ArcadeDB before 26.8.1 fails to bind the authenticated principal on the gRPC transaction executor thread in beginTransaction, allowing authenticated readers to execute JavaScript commands without scripting authorization checks. Attackers can execute executeCommand with a transaction ID to run unrest",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:34.740",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75843"
-    },
-    {
-      "id": "CVE-2026-75844",
-      "desc": "ArcadeDB versions before 26.8.1 contain a server-side request forgery vulnerability in the IMPORT DATABASE command where the security validator resolves and checks hostnames but the subsequent connection re-resolves the raw URL and follows redirects. Authenticated attackers can bypass the validator ",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:34.890",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75844"
-    },
-    {
-      "id": "CVE-2026-75845",
-      "desc": "ArcadeDB versions 26.4.2 through 26.7.3 contain an authorization bypass vulnerability in the set_server_setting MCP server-level tool. SetServerSettingTool.execute() gates only on the global allowAdmin flag and never checks the caller's role, so in an MCP deployment with allowAdmin=true and a non-ro",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.040",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75845"
-    },
-    {
-      "id": "CVE-2026-75846",
-      "desc": "ArcadeDB before 26.8.1 (affected versions <= 26.7.3) contains a missing authorization vulnerability in the DELETE FUNCTION SQL statement. DeleteFunctionStatement.executeSimple unregisters and persists deletion of a server-side function without any checkPermissionsOnDatabase (UPDATE_SCHEMA) check. An",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.173",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75846"
-    },
-    {
-      "id": "CVE-2026-75850",
-      "desc": "ArcadeDB before 26.8.1 fails to bind the authenticated principal (setCurrentUser) on its batch and time-series HTTP handlers. Because no principal is bound on the worker thread, the engine's fine-grained per-type ACL layer (LocalBucket.checkPermissionsOnFile) does not execute for these handlers. In ",
-      "cvss": 4.2,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.310",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75850"
-    },
-    {
-      "id": "CVE-2026-75851",
-      "desc": "ArcadeDB server (com.arcadedb:arcadedb-server) in versions 26.7.3 and earlier fails to propagate the authenticated principal to asynchronous command worker threads. When an HTTP command is submitted with awaitResponse:false, it executes on an async worker whose DatabaseContext has no bound user, cau",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.457",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75851"
-    },
-    {
-      "id": "CVE-2026-75852",
-      "desc": "ArcadeDB versions before 26.8.1 fail to enforce SASL authentication on data commands in the MongoDB wire-protocol plugin. Unauthenticated attackers can issue insert, find, update, delete, and create commands against any database by connecting to port 27017 without credentials.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.593",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75852"
-    },
-    {
-      "id": "CVE-2026-75853",
-      "desc": "ArcadeDB's Gremlin wire-protocol plugin (com.arcadedb:arcadedb-gremlin) in versions <= 26.7.3 enforces authentication (SASL PLAIN) but performs no authorization: it never checks database access permissions (canAccessToDatabase) and never binds the authenticated principal into the engine. As a result",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.727",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75853"
-    },
-    {
-      "id": "CVE-2026-75854",
-      "desc": "ArcadeDB versions before 26.8.1 contain a missing authentication vulnerability in the Redis wire-protocol plugin that allows unauthenticated attackers to read, write, and delete data. Attackers can connect to the Redis port and execute arbitrary commands against any database on the server without pr",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.860",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75854"
-    },
-    {
-      "id": "CVE-2026-75855",
-      "desc": "ArcadeDB versions before 26.8.1 fail to sanitize database names in the POST /api/v1/server endpoint's create database and drop database commands, allowing authenticated root users to write and delete arbitrary files outside the configured database directory. Attackers can supply database names conta",
-      "cvss": 8.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-18T12:19:35.997",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75855"
-    },
     {
       "id": "CVE-2026-16309",
       "desc": "Authorization bypass through User-Controlled key vulnerability in Netiket Information Technologies EdoWEB allows Accessing Functionality Not Properly Constrained by ACLs.\n\nThis issue affects EdoWEB: before 780-g7.",
@@ -702,10 +30,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0011,
-        "percentile": 0.01398
-      },
+      "epss": null,
       "published": "2026-08-18T13:17:20.730",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18751"
     },
@@ -1377,7 +702,10 @@
       "product": "Firefox, Thunderbird",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00319,
+        "percentile": 0.24129
+      },
       "published": "2026-08-18T13:17:34.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74969"
     },
@@ -1405,10 +733,7 @@
       "product": "Firefox, Thunderbird",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00261,
-        "percentile": 0.17438
-      },
+      "epss": null,
       "published": "2026-08-18T13:17:34.563",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74971"
     },
@@ -2080,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00377,
+        "percentile": 0.30422
+      },
       "published": "2026-08-18T15:16:53.487",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32549"
     },
@@ -2108,10 +1436,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00304,
-        "percentile": 0.22426
-      },
+      "epss": null,
       "published": "2026-08-18T15:16:54.270",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45733"
     },
@@ -2783,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00386,
+        "percentile": 0.31421
+      },
       "published": "2026-08-18T15:17:02.647",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73341"
     },
@@ -2811,10 +2139,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00801,
-        "percentile": 0.53847
-      },
+      "epss": null,
       "published": "2026-08-18T15:17:02.943",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73343"
     },
@@ -3486,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.01021,
+        "percentile": 0.60799
+      },
       "published": "2026-08-18T15:17:13.857",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75784"
     },
@@ -3514,10 +2842,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00297,
-        "percentile": 0.21718
-      },
+      "epss": null,
       "published": "2026-08-18T15:17:15.367",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75898"
     },
@@ -4189,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00423,
+        "percentile": 0.35018
+      },
       "published": "2026-08-18T16:18:23.840",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75914"
     },
@@ -4217,10 +3545,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00145,
-        "percentile": 0.03973
-      },
+      "epss": null,
       "published": "2026-08-18T16:18:24.443",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75926"
     },
@@ -4892,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0061,
+        "percentile": 0.46482
+      },
       "published": "2026-08-18T18:18:20.020",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52608"
     },
@@ -4920,10 +4248,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00816,
-        "percentile": 0.54355
-      },
+      "epss": null,
       "published": "2026-08-18T18:18:20.263",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52610"
     },
@@ -5595,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0014,
+        "percentile": 0.03543
+      },
       "published": "2026-08-18T19:17:03.293",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70667"
     },
@@ -5623,10 +4951,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00185,
-        "percentile": 0.08083
-      },
+      "epss": null,
       "published": "2026-08-18T20:17:13.473",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19670"
     },
@@ -6298,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00344,
+        "percentile": 0.26924
+      },
       "published": "2026-08-18T21:16:35.133",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53454"
     },
@@ -6326,10 +5654,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00189,
-        "percentile": 0.08518
-      },
+      "epss": null,
       "published": "2026-08-18T21:16:35.423",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53456"
     },
@@ -7001,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0045,
+        "percentile": 0.372
+      },
       "published": "2026-08-18T21:16:42.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-60754"
     },
@@ -7029,10 +6357,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00278,
-        "percentile": 0.19642
-      },
+      "epss": null,
       "published": "2026-08-18T21:16:42.273",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-60758"
     },
@@ -7704,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00301,
+        "percentile": 0.22147
+      },
       "published": "2026-08-18T21:16:48.087",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-60934"
     },
@@ -7732,10 +7060,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00302,
-        "percentile": 0.22204
-      },
+      "epss": null,
       "published": "2026-08-18T21:16:48.320",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-60944"
     },
@@ -8407,7 +7732,10 @@
       "product": "Identity Manager",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00388,
+        "percentile": 0.31571
+      },
       "published": "2026-08-18T21:16:54.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-61066"
     },
@@ -8435,10 +7763,7 @@
       "product": "Webcenter Portal",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00322,
-        "percentile": 0.24466
-      },
+      "epss": null,
       "published": "2026-08-18T21:16:54.297",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-61124"
     },
@@ -9110,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00326,
+        "percentile": 0.24899
+      },
       "published": "2026-08-18T21:17:00.083",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-61321"
     },
@@ -9138,10 +8466,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00389,
-        "percentile": 0.31694
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:00.323",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-61330"
     },
@@ -9813,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00303,
+        "percentile": 0.22325
+      },
       "published": "2026-08-18T21:17:06.020",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62535"
     },
@@ -9841,10 +9169,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00149,
-        "percentile": 0.04327
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:06.247",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62537"
     },
@@ -10516,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00303,
+        "percentile": 0.22302
+      },
       "published": "2026-08-18T21:17:12.440",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62601"
     },
@@ -10544,10 +9872,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00228,
-        "percentile": 0.13306
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:12.677",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62603"
     },
@@ -11219,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00267,
+        "percentile": 0.1836
+      },
       "published": "2026-08-18T21:17:19.383",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70676"
     },
@@ -11247,10 +10575,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00204,
-        "percentile": 0.10213
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:19.610",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70678"
     },
@@ -11922,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00155,
+        "percentile": 0.04867
+      },
       "published": "2026-08-18T21:17:25.143",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70726"
     },
@@ -11950,10 +11278,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00303,
-        "percentile": 0.22302
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:25.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70728"
     },
@@ -12625,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00192,
+        "percentile": 0.08885
+      },
       "published": "2026-08-18T21:17:31.220",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70780"
     },
@@ -12653,10 +11981,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00298,
-        "percentile": 0.21807
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:31.513",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70782"
     },
@@ -13328,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00298,
+        "percentile": 0.21808
+      },
       "published": "2026-08-18T21:17:38.237",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70830"
     },
@@ -13356,10 +12684,7 @@
       "product": "Hyperion Financial Management",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00416,
-        "percentile": 0.34344
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:38.507",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70832"
     },
@@ -14031,7 +13356,10 @@
       "product": "Hyperion Data Relationship Management",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00323,
+        "percentile": 0.24582
+      },
       "published": "2026-08-18T21:17:44.730",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70882"
     },
@@ -14059,12 +13387,684 @@
       "product": "Hyperion Data Relationship Management",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00398,
-        "percentile": 0.32615
-      },
+      "epss": null,
       "published": "2026-08-18T21:17:44.963",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70884"
+    },
+    {
+      "id": "CVE-2026-70885",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracl",
+      "cvss": 8.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.090",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70885"
+    },
+    {
+      "id": "CVE-2026-70886",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle ",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.207",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70886"
+    },
+    {
+      "id": "CVE-2026-70887",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.330",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70887"
+    },
+    {
+      "id": "CVE-2026-70888",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows high privileged attacker with network access via HTTP to compromise Orac",
+      "cvss": 6.6,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.450",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70888"
+    },
+    {
+      "id": "CVE-2026-70889",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.570",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70889"
+    },
+    {
+      "id": "CVE-2026-70890",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.693",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70890"
+    },
+    {
+      "id": "CVE-2026-70891",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.817",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70891"
+    },
+    {
+      "id": "CVE-2026-70892",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracl",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:45.940",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70892"
+    },
+    {
+      "id": "CVE-2026-70893",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows low privileged attacker with network access via SQL to compromise Oracle",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:46.060",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70893"
+    },
+    {
+      "id": "CVE-2026-70894",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Hyp",
+      "cvss": 7.7,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:46.993",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70894"
+    },
+    {
+      "id": "CVE-2026-70895",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Hype",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.117",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70895"
+    },
+    {
+      "id": "CVE-2026-70896",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.237",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70896"
+    },
+    {
+      "id": "CVE-2026-70897",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTPS to compromise Oracl",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.357",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70897"
+    },
+    {
+      "id": "CVE-2026-70898",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Orac",
+      "cvss": 7.4,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.470",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70898"
+    },
+    {
+      "id": "CVE-2026-70899",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle ",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.587",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70899"
+    },
+    {
+      "id": "CVE-2026-70900",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to compromise Orac",
+      "cvss": 8.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.700",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70900"
+    },
+    {
+      "id": "CVE-2026-70901",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.820",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70901"
+    },
+    {
+      "id": "CVE-2026-70902",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Hype",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:47.933",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70902"
+    },
+    {
+      "id": "CVE-2026-70903",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle",
+      "cvss": 8.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.050",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70903"
+    },
+    {
+      "id": "CVE-2026-70904",
+      "desc": "Vulnerability in the Oracle Hyperion Data Relationship Management product of Oracle Hyperion (component: Access and security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with access to the physical communication segment",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Data Relationship Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.167",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70904"
+    },
+    {
+      "id": "CVE-2026-70905",
+      "desc": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Agent infrastructure).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via SAML to compromise Oracle A",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Oracle",
+      "product": "Access Manager",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.283",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70905"
+    },
+    {
+      "id": "CVE-2026-70906",
+      "desc": "Vulnerability in Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 25.0.4 and  26.0.2. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnera",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.393",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70906"
+    },
+    {
+      "id": "CVE-2026-70907",
+      "desc": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u501, 11.0.32, 17.0.20, 21.0.12, 25.0.4, 26.0.2; Oracle GraalVM for JDK: 17.0.20 and  21.0.12; Oracle",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.513",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70907"
+    },
+    {
+      "id": "CVE-2026-70908",
+      "desc": "Vulnerability in the Helidon product of Oracle Fusion Middleware (component: Imperative Web Server).   The supported version that is affected is 3.2.18. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Helidon.  Successful attacks of this vu",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.633",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70908"
+    },
+    {
+      "id": "CVE-2026-70909",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Financial",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.747",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70909"
+    },
+    {
+      "id": "CVE-2026-70910",
+      "desc": "Vulnerability in the Siebel CRM Integration product of Oracle Siebel CRM (component: REST).  Supported versions that are affected are 17.0-26.6. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Siebel CRM Integration.  Successful attacks of ",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.870",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70910"
+    },
+    {
+      "id": "CVE-2026-70911",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Financial",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:48.990",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70911"
+    },
+    {
+      "id": "CVE-2026-70912",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Hyperion Financial Ma",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:C/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.107",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70912"
+    },
+    {
+      "id": "CVE-2026-70914",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Hyperion Financial M",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.223",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70914"
+    },
+    {
+      "id": "CVE-2026-70916",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Hyperion Financial Man",
+      "cvss": 4.0,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.357",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70916"
+    },
+    {
+      "id": "CVE-2026-70917",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Hyperion Financial Man",
+      "cvss": 4.0,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.470",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70917"
+    },
+    {
+      "id": "CVE-2026-70918",
+      "desc": "Vulnerability in the Oracle Product Hub product of Oracle E-Business Suite (component: Outbound Data).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Product Hub.  Successful ",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.583",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70918"
+    },
+    {
+      "id": "CVE-2026-70919",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Difficult to exploit vulnerability allows unauthenticated attacker with logon to the infrastructure where Oracle Hyperion Financial M",
+      "cvss": 2.5,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.700",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70919"
+    },
+    {
+      "id": "CVE-2026-70920",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via SQL to compromise Oracle Hyperion Financial M",
+      "cvss": 9.9,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.810",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70920"
+    },
+    {
+      "id": "CVE-2026-70921",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via TLS to compromise Oracle Hyperion Financial ",
+      "cvss": 10.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "CRITICAL",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:49.927",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70921"
+    },
+    {
+      "id": "CVE-2026-70922",
+      "desc": "Vulnerability in the Oracle Financial Services Enterprise Case Management product of Oracle Financial Services Applications (component: Web UI).  Supported versions that are affected are 8.0.8.2 and  8.1.2.11. Easily exploitable vulnerability allows low privileged attacker with network access via HT",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.043",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70922"
+    },
+    {
+      "id": "CVE-2026-70923",
+      "desc": "Vulnerability in the Helidon product of Oracle Fusion Middleware (component: Imperative Web Server).   The supported version that is affected is 3.2.19. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Helidon.  Successful attacks require hu",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.163",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70923"
+    },
+    {
+      "id": "CVE-2026-70924",
+      "desc": "Vulnerability in the Oracle Web Services Manager product of Oracle Fusion Middleware (component: Web Services Security).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTPS to compromis",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Web Services Manager",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.280",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70924"
+    },
+    {
+      "id": "CVE-2026-70925",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via SQL to compromise Oracle Hyperion Financial M",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.393",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70925"
+    },
+    {
+      "id": "CVE-2026-70926",
+      "desc": "Vulnerability in the Oracle Workflow product of Oracle E-Business Suite (component: Workflow Notification Mailer).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via SMTP to compromise Oracle Workflow.  S",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.510",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70926"
+    },
+    {
+      "id": "CVE-2026-70927",
+      "desc": "Vulnerability in the Oracle Workflow product of Oracle E-Business Suite (component: Workflow Notification Mailer).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Workflow.  S",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.630",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70927"
+    },
+    {
+      "id": "CVE-2026-70928",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via SQL to compromise Oracle Hyperion Financial M",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.747",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70928"
+    },
+    {
+      "id": "CVE-2026-70929",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Hyperion Financial ",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.863",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70929"
+    },
+    {
+      "id": "CVE-2026-70930",
+      "desc": "Vulnerability in the Oracle Order Management product of Oracle E-Business Suite (component: Product Diagnostic Tools).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Order M",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:50.983",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70930"
+    },
+    {
+      "id": "CVE-2026-70931",
+      "desc": "Vulnerability in the Oracle Workflow product of Oracle E-Business Suite (component: Workflow Notification Mailer).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Workflow.  Su",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:51.097",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70931"
+    },
+    {
+      "id": "CVE-2026-70932",
+      "desc": "Vulnerability in the Oracle Order Management product of Oracle E-Business Suite (component: Product Diagnostic Tools).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows high privileged attacker with logon to the infrastructure where Oracle Order Mana",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:51.213",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70932"
+    },
+    {
+      "id": "CVE-2026-70933",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Hyperion Financial ",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-18T21:17:51.330",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70933"
+    },
+    {
+      "id": "CVE-2026-70934",
+      "desc": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.25.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Hyperion Financial ",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "Hyperion Financial Management",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00348,
+        "percentile": 0.2743
+      },
+      "published": "2026-08-18T21:17:51.443",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-70934"
     }
   ],
   "kev": [
@@ -15209,6 +15209,22 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "The State of AI-Enabled Malware August 2026: From Brand Abuse to Agentic Execution",
+      "url": "https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/",
+      "source": "Unit 42",
+      "category": "threat",
+      "published": "2026-08-25T10:00:57+00:00",
+      "summary": "Explore Unit 42 research on AI-enabled malware. Learn how existing behavioral detection and endpoint analytics stop AI-authored code before execution.\nThe post The State of AI-Enabled Malware August 2026: From Brand Abuse to Agentic Execution appeared first on Unit 42."
+    },
+    {
+      "title": "The safety penalty: Reclaiming operational sovereignty in the age of AI",
+      "url": "https://blog.talosintelligence.com/the-safety-penalty-reclaiming-operational-sovereignty-in-the-age-of-ai/",
+      "source": "Talos Intelligence",
+      "category": "threat",
+      "published": "2026-08-25T10:00:22+00:00",
+      "summary": "As frontier AI models become increasingly restrictive, security teams are facing a \"safety penalty\" that hampers real-time incident response. Discover how organizations can move toward operational sovereignty to ensure their defensive AI keeps pace with unconstrained adversaries."
+    },
+    {
       "title": "CVE-2026-69414 ShieldBreak Zero-Day: No Patch, and CISA BOD 26-04 Gives You 14 Days",
       "url": "https://blog.qualys.com/category/product-tech/vulnmgmt-detection-response",
       "source": "Qualys Blog",
@@ -15657,28 +15673,12 @@
       "summary": "By Yarden Porat, Check Point Research Key Points The short version We set out to break&#160;Cloudflare Code Mode, and ended up breaking&#160;Cloudflare Workers&#160;too. We did both by targeting&#160;workerd, the runtime beneath both: an in-process sandbox that relies entirely on V8 to isolate untru"
     },
     {
-      "title": "Why metaphor may dictate your security strategy",
-      "url": "https://blog.talosintelligence.com/why-metaphor-may-dictate-your-security-strategy/",
-      "source": "Talos Intelligence",
-      "category": "threat",
-      "published": "2026-08-06T18:00:01+00:00",
-      "summary": "In this week's newsletter, Martin looks at how the metaphors we use to describe AI \"escaping\" its sandbox can completely change how we react to the threat."
-    },
-    {
       "title": "AI code security with Claude Mythos Preview: Inside Tenable\u2019s 500+ hours of testing for Project Glasswing",
       "url": "https://www.tenable.com/blog/ai-code-security-with-claude-mythos-preview-inside-tenables-500-hours-of-testing-for-project",
       "source": "Tenable Blog",
       "category": "threat",
       "published": "2026-08-06T12:00:00+00:00",
       "summary": "We spent 500+ hours and 40 billion tokens testing Anthropic\u2019s Claude Mythos Preview for Project Glasswing. The takeaway: frontier AI won't run your code security program, but used well, it can make one even stronger.Key takeawaysFrontier AI dramatically scales security testing. In one month, Tenable"
-    },
-    {
-      "title": "Token Jacking: Cybercriminals Could Be Stealing Your AI Resources",
-      "url": "https://unit42.paloaltonetworks.com/ai-token-jacking/",
-      "source": "Unit 42",
-      "category": "threat",
-      "published": "2026-08-06T10:00:49+00:00",
-      "summary": "Discover how attackers hijack AI tokens to fuel gray market transfer stations by stealing developer API keys.\nThe post Token Jacking: Cybercriminals Could Be Stealing Your AI Resources appeared first on Unit 42."
     },
     {
       "title": "Shai-Hulud strikes again: CHAINDROP worm hits 400+ npm packages",
@@ -15915,6 +15915,150 @@
   ],
   "news": [
     {
+      "title": "UK government seeks powers to secretly block risky tech suppliers",
+      "url": "https://therecord.media/uk-technology-national-security",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-08-25T12:45:00+00:00",
+      "summary": "The British government is seeking new powers to ban certain technology vendors from supplying companies working in the country\u2019s critical sectors \u2014 potentially doing so in secret."
+    },
+    {
+      "title": "Hackers breached over 270 Zimbra servers in ongoing attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-breached-over-270-zimbra-servers-in-ongoing-attacks/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-25T12:04:02+00:00",
+      "summary": "Threat actors have already compromised over 270 Zimbra instances in remote code execution attacks targeting a high-severity Zimbra Collaboration Suite (ZCS) vulnerability. [...]"
+    },
+    {
+      "title": "Mirage2FA Surge Hits 4,500 US and EU Companies, Abusing Microsoft 365 Login Flows",
+      "url": "https://thehackernews.com/2026/08/mirage2fa-surge-hits-4500-us-and-eu.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-25T11:56:15+00:00",
+      "summary": "Thousands of companies have been affected by the Mirage2FA campaign from 2024 to 2026. The commercial phishing-as-a-service toolkit targets Microsoft 365 accounts by abusing legitimate login flows and bypassing two-factor authentication.\n\nAccording to ANY.RUN research, 48% of targeted email addresse"
+    },
+    {
+      "title": "24 npm Packages Abuse unpkg Mirrors to Host Fake Cloudflare CAPTCHA Pages",
+      "url": "https://thehackernews.com/2026/08/24-npm-packages-abuse-unpkg-mirrors-to.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-25T11:52:43+00:00",
+      "summary": "Cybersecurity researchers have disclosed details of a new campaign that uses a cluster of 24 npm packages as free phishing infrastructure for redirecting to ClickFix-style fake CAPTCHA pages.\n\n\"While the malware is simply a single HTML page inside the npm package, and while downloading it wouldn't d"
+    },
+    {
+      "title": "Large DDoS attack knocks Norwegian public services offline",
+      "url": "https://therecord.media/norway-cyberattack-ddos-government",
+      "source": "The Record",
+      "category": "news",
+      "published": "2026-08-25T11:45:00+00:00",
+      "summary": "The Norwegian Digitalisation Agency said it was working with its IT partner to stabilize systems affected by a distributed denial-of-service attack, with some services gradually coming back online."
+    },
+    {
+      "title": "E4del and PINHOLE RATs Turn FTP Banners Into Dead Drops for Malware Commands",
+      "url": "https://thehackernews.com/2026/08/e4del-and-pinhole-rats-turn-ftp-banners.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-25T11:33:44+00:00",
+      "summary": "Cybersecurity researchers are calling attention to a new campaign that employs FTP banners as dead drop resolvers (DDRs) to deliver two previously unreported remote access trojans (RATs) tracked as E4del and PINHOLE.\n\nWhile threat actors are known to abuse legitimate services to point to additional "
+    },
+    {
+      "title": "First Malware Built Specifically for Car Head Units Fuels Botnet",
+      "url": "https://www.securityweek.com/first-malware-built-specifically-for-car-head-units-fuels-botnet/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-25T11:18:22+00:00",
+      "summary": "Kaspersky researchers have linked the malware to the BadBox botnet, which has ensnared millions of devices.\nThe post First Malware Built Specifically for Car Head Units Fuels Botnet appeared first on SecurityWeek."
+    },
+    {
+      "title": "Frontier AI: Vulnerability Management's Systemic Revolution",
+      "url": "https://thehackernews.com/2026/08/frontier-ai-vulnerability-managements.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-25T11:14:07+00:00",
+      "summary": "Vulnerability management has been a staple of security programs since the dawn of the cybersecurity discipline. The symbiotic relationship between vulnerability and patch management teams has also existed for that time and has gone through waves of contention and thankfulness. While this relationshi"
+    },
+    {
+      "title": "The County Prosecutors Who Became ICE Informants",
+      "url": "https://www.wired.com/story/the-county-prosecutors-who-became-ice-informants/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-08-25T11:00:00+00:00",
+      "summary": "Illinois prosecutors shared defendants\u2019 personal data with federal immigration agents without criminal warrants, public disclosure, or legislative oversight."
+    },
+    {
+      "title": "Australia Warns of Active Exploitation of Critical TeamCity Server Flaw",
+      "url": "https://www.infosecurity-magazine.com/news/australia-exploitation-teamcity/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-25T11:00:00+00:00",
+      "summary": "Australian officials are urging TeamCity customers to patch an actively exploited critical flaw, which follows a similar warning from the US government"
+    },
+    {
+      "title": "Police arrests dozens of suspects in global cybercrime crackdown",
+      "url": "https://www.bleepingcomputer.com/news/security/police-arrests-dozens-of-suspects-in-global-cybercrime-crackdown/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-25T10:53:20+00:00",
+      "summary": "Law enforcement agencies from 22 countries helped identify 263 suspects and arrested 58 individuals linked to cybercrime networks coordinated by African crime groups. [...]"
+    },
+    {
+      "title": "Fake Minecraft Clients Deliver WeedHack Malware Despite Infrastructure Takedown",
+      "url": "https://www.infosecurity-magazine.com/news/fake-minecraft-weedhack-malware/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-25T10:30:00+00:00",
+      "summary": "A threat actor keeps spreading the WeedHack malware to Minecraft players despite its original infrastructure taken down in July"
+    },
+    {
+      "title": "Silent Patches Don\u2019t Stop Attackers \u2013 They Blind Defenders",
+      "url": "https://www.securityweek.com/silent-patches-dont-stop-attackers-they-blind-defenders/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-25T10:00:00+00:00",
+      "summary": "Silent patches can become exploit intelligence for attackers while leaving defenders without the context needed to prioritize risk.\nThe post Silent Patches Don\u2019t Stop Attackers &#8211; They Blind Defenders appeared first on SecurityWeek."
+    },
+    {
+      "title": "ReliaQuest Rejects Compromise Claims After ShinyHunters Incident",
+      "url": "https://www.infosecurity-magazine.com/news/reliaquest-not-compromised-by/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-25T09:30:00+00:00",
+      "summary": "ReliaQuest has detailed a social engineering attack linked to ShinyHunters, denying reports that the threat actor successfully compromised its systems"
+    },
+    {
+      "title": "US Sanctions Mabna Institute Hackers for Iranian Cyber-Attacks",
+      "url": "https://www.infosecurity-magazine.com/news/us-sanctions-mabna-institute/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-25T09:10:00+00:00",
+      "summary": "The US has sanctioned individuals connected to hacking-for-hire group the Mabna Institute"
+    },
+    {
+      "title": "Attackers Target miniOrange SAML Flaws That Can Grant WordPress Admin Access",
+      "url": "https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-25T08:34:07+00:00",
+      "summary": "Bad actors are attempting to exploit two severe unauthenticated authentication bypasses in the Xecurify miniOrange SAML 2.0 Single Sign On plugin that make it possible for an attacker to sign in as any WordPress user, including administrators.\n\nThe vulnerabilities, as disclosed by Patchstack, are li"
+    },
+    {
+      "title": "Taiwan Charges 9 Over Illegal AI Server Exports to China, Including Nvidia and Super Micro Staff",
+      "url": "https://www.securityweek.com/taiwan-charges-9-over-illegal-ai-server-exports-to-china-including-nvidia-and-super-micro-staff/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-25T08:30:00+00:00",
+      "summary": "AI infrastructure, including advanced semiconductors mostly made in Taiwan, has become a key point of competition between the U.S. and China.\nThe post Taiwan Charges 9 Over Illegal AI Server Exports to China, Including Nvidia and Super Micro Staff appeared first on SecurityWeek."
+    },
+    {
+      "title": "CISA Warns of Exploited Oracle WebLogic Vulnerability",
+      "url": "https://www.securityweek.com/cisa-warns-of-exploited-oracle-weblogic-vulnerability/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-25T07:46:34+00:00",
+      "summary": "The vulnerability is tracked as CVE-2026-21962 and it has been widely exploited by threat actors against WebLogic servers.\nThe post CISA Warns of Exploited Oracle WebLogic Vulnerability appeared first on SecurityWeek."
+    },
+    {
       "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
       "url": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
       "source": "The Hacker News",
@@ -16067,14 +16211,6 @@
       "summary": "The latest version of the Android malware has new features that expand its global reach and put more than users' financial applications at risk."
     },
     {
-      "title": "\u26a1 Weekly Recap: AI-Powered PLC Attacks, GitLab Attacks, Stripe Key Leaks and More",
-      "url": "https://thehackernews.com/2026/08/weekly-recap-ai-powered-plc-attacks.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-24T14:32:10+00:00",
-      "summary": "A package gets installed. A login prompt opens. A box sits exposed to the internet. Nothing looks unusual yet.\n\nThat\u2019s roughly the mood this week. Trusted tools turn hostile, old weak spots get fresh attention, AI makes exploit work cheaper, and researchers keep finding attacks that sound harder tha"
-    },
-    {
       "title": "Microsoft Teams now lets admins block external bots from meetings",
       "url": "https://www.bleepingcomputer.com/news/security/microsoft-teams-now-lets-admins-block-external-bots-from-meetings/",
       "source": "Bleeping Computer",
@@ -16123,116 +16259,12 @@
       "summary": "Dutch Data Protection Authority said it is imposing a fine of 825 million euros because Uber violated the EU\u2019s General Data Protection Regulation.\nThe post Uber Fined Nearly $1 Billion by Dutch Regulators Over Automated Suspensions of Driver Accounts appeared first on SecurityWeek."
     },
     {
-      "title": "Microsoft: August updates break printing, PDF export in WPF apps",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-updates-break-printing-pdf-export-in-wpf-apps/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-24T12:40:21+00:00",
-      "summary": "Microsoft has confirmed that .NET Framework updates released as part of the August 2026 Patch Tuesday are breaking printing and PDF export in WPF applications. [...]"
-    },
-    {
-      "title": "WordlistLoader Delivers Amatera via ClickFix, SynkLoader Phishes Windows Passwords",
-      "url": "https://thehackernews.com/2026/08/wordlistloader-delivers-amatera-via.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-24T12:35:36+00:00",
-      "summary": "Cybersecurity researchers have flagged two new malware families called  WordlistLoader and SynkLoader that's used to deliver next-stage payloads and likely sell access to ransomware groups.\n\nAccording to findings from Gen Digital, WordlistLoader is being used to deliver Amatera Stealer (aka ACR Stea"
-    },
-    {
-      "title": "Hackers infecting Android car systems to build proxy botnet",
-      "url": "https://therecord.media/android-botnet-china-hackers",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-08-24T12:15:00+00:00",
-      "summary": "A new strain of malware is being used to infect Android-based car systems, turning the devices into part of a botnet."
-    },
-    {
       "title": "91 Vulnerabilities Patched in Spring Application Framework",
       "url": "https://www.securityweek.com/91-vulnerabilities-patched-in-spring-application-framework/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-08-24T11:58:28+00:00",
       "summary": "More than 200 vulnerabilities have been patched to date this year, compared to only 16 in 2025 and 22 in 2024.\u00a0\nThe post 91 Vulnerabilities Patched in Spring Application Framework appeared first on SecurityWeek."
-    },
-    {
-      "title": "Critical Keycloak Password Reset Flaw Could Let Unauthenticated Attackers Take Over Any Account",
-      "url": "https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-24T11:56:34+00:00",
-      "summary": "Red Hat and the Keycloak project have released patches to address a critical security flaw in the open-source identity and access management server that could allow an unauthenticated remote attacker to take over any user account by forcing a password reset.\n\nThe vulnerability, assigned the CVE iden"
-    },
-    {
-      "title": "Operation QUICSILVER Targets Myanmar Government and IT with QUICAgent Backdoor",
-      "url": "https://thehackernews.com/2026/08/operation-quicsilver-targets-myanmar.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-24T11:51:36+00:00",
-      "summary": "Cybersecurity researchers have flagged a cyber espionage campaign targeting Myanmar that uses graduation ceremony invitation lures to deliver a Go backdoor called QUICAgent.\n\nThe campaign, codenamed Operation QUICSILVER, has been found to target government and information technology sectors, per Seq"
-    },
-    {
-      "title": "The Outsized Shadow: Why 5% of AI Users Are Your Biggest Security Risk",
-      "url": "https://thehackernews.com/2026/08/the-outsized-shadow-why-5-of-ai-users.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-24T11:30:00+00:00",
-      "summary": "Big security risks come in small packages. While enterprise security teams focus on policing the proliferation of employees using ChatGPT and Claude for quick drafting tasks, a more urgent threat is posed by a handful of AI super-adopters who are quietly hardcoding unvetted tools into critical busin"
-    },
-    {
-      "title": "Venezuelan Gets Record Federal Prison Term for ATM Jackpotting",
-      "url": "https://www.securityweek.com/venezuelan-gets-record-federal-prison-term-for-atm-jackpotting/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-24T10:59:30+00:00",
-      "summary": "Juan Manuel Gouveia-Aguilera has been sentenced to 8 years in prison for his role in an ATM jackpotting scheme that caused millions in losses.\nThe post Venezuelan Gets Record Federal Prison Term for ATM Jackpotting appeared first on SecurityWeek."
-    },
-    {
-      "title": "CISA orders urgent patching of actively exploited Zimbra flaw",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-24T10:45:12+00:00",
-      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) has ordered U.S. government agencies to patch an actively exploited vulnerability in Zimbra Collaboration Suite (ZCS) within three days. [...]"
-    },
-    {
-      "title": "Personal Information Exposed in Apollo Global Data Breach",
-      "url": "https://www.securityweek.com/personal-information-exposed-in-apollo-global-data-breach/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-24T10:08:42+00:00",
-      "summary": "The private equity firm appears to have been targeted as part of a campaign focusing on major financial companies.\nThe post Personal Information Exposed in Apollo Global Data Breach appeared first on SecurityWeek."
-    },
-    {
-      "title": "Rethinking Application Security for the AI Era",
-      "url": "https://www.securityweek.com/rethinking-application-security-for-the-ai-era/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-24T10:00:00+00:00",
-      "summary": "As AI dramatically shortens the time from vulnerability disclosure to exploitation, enterprises must look beyond patching to reduce application risk.\nThe post Rethinking Application Security for the AI Era appeared first on SecurityWeek."
-    },
-    {
-      "title": "Iran-Linked Hackers Shut Down UK Power Plant for Four Days",
-      "url": "https://www.securityweek.com/iran-linked-hackers-shut-down-uk-power-plant-for-four-days/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-24T09:22:09+00:00",
-      "summary": "The attack caused real-world operational disruption and raised concerns about the resilience of Britain\u2019s distributed energy infrastructure and the potential for repeatable attacks.\nThe post Iran-Linked Hackers Shut Down UK Power Plant for Four Days appeared first on SecurityWeek."
-    },
-    {
-      "title": "Wake-Up Call for CNI After Iranian Attack Shuts Down UK Power Plant",
-      "url": "https://www.infosecurity-magazine.com/news/cni-iranian-attack-shuts-uk-power/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-24T09:01:00+00:00",
-      "summary": "Experts argue Iranian cyber-attack on UK power plant lays bare frailty of critical national infrastructure"
-    },
-    {
-      "title": "Researchers Uncover Thousands of Leaked AWS Keys",
-      "url": "https://www.infosecurity-magazine.com/news/researchers-thousands-eaked-aws/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-24T08:05:00+00:00",
-      "summary": "Truffle Security says it found over 9000 publicly accessible and active AWS key pairs"
     },
     {
       "title": "DOUBLECUP's PNG Payload, (Mon, Aug 24th)",
@@ -16267,14 +16299,6 @@
       "summary": "New research shows how attacks against some unprotected TSN protocols could allow attackers to disrupt or manipulate physical processes."
     },
     {
-      "title": "Lawmakers call for investigation into impact of CISA staffing cuts",
-      "url": "https://therecord.media/lawmakers-call-for-investigation-into-impact-of-cisa-cuts",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-08-21T19:56:00+00:00",
-      "summary": "Lawmakers say little is known about how recent cuts have impacted CISA and how the knowledge that was lost has been replaced."
-    },
-    {
       "title": "OWASP Flags Top AI Skill Risks in New Security Blueprint",
       "url": "https://www.darkreading.com/application-security/owasp-flags-top-ai-skill-risks-security-blueprint",
       "source": "Dark Reading",
@@ -16289,22 +16313,6 @@
       "category": "news",
       "published": "2026-08-21T14:00:00+00:00",
       "summary": "Government agencies with smaller budgets need support \u2014 and here's how you can help."
-    },
-    {
-      "title": "North Korean Hackers Tied to Rust Supply Chain Attack",
-      "url": "https://www.infosecurity-magazine.com/news/north-korean-rust-supply-chain/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-21T12:40:00+00:00",
-      "summary": "Cybersecurity researchers have linked a malicious backdoor in compromised Rust packages to previous North Korean supply chain attacks"
-    },
-    {
-      "title": "New Agent Tesla Malware Variant Boosts Evasion Capabilities",
-      "url": "https://www.infosecurity-magazine.com/news/agent-tesla-malware-evasion/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-21T12:00:00+00:00",
-      "summary": "An Agent Tesla v4 malware campaign used novel emoji-based code obfuscation to evade detection, KnowBe4 has revealed"
     },
     {
       "title": "Who Got Missed in the MFA Rollout&#x3f; More Powershell &#x2b; Graph &#x2b; Entra scripting&#x21;, (Fri, Aug 21st)",
@@ -16409,14 +16417,6 @@
       "category": "news",
       "published": "2026-08-18T10:30:00+00:00",
       "summary": "Proton\u2019s CEO is a champion of encryption for everyone. So why is he going all in on un-encryptable AI?"
-    },
-    {
-      "title": "The Cop Who Took On Flock",
-      "url": "https://www.wired.com/story/the-cop-who-took-on-flock/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-08-18T10:00:00+00:00",
-      "summary": "After Noel Pichardo called out his city's embrace of Flock surveillance cameras, he was subjected to five internal affairs investigations in less than two years."
     },
     {
       "title": "Who\u2019s Tracking You? Use This New Service to Find Out",
@@ -16597,8 +16597,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 166,
-    "high": 515,
+    "critical": 162,
+    "high": 532,
     "exploited": 0,
     "kev_total": 1675,
     "kev_7d": 9,
