@@ -1,319 +1,11 @@
 {
-  "generated": "2026-08-26T06:56:01.268529+00:00",
+  "generated": "2026-08-26T12:58:49.936001+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>120 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>121 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-15446",
-      "desc": "The EWWW Image Optimizer plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'data-script' Lazy Load Attribute in Post Content in all versions up to, and including, 8.7.3 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers,",
-      "cvss": 6.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T07:16:27.530",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15446"
-    },
-    {
-      "id": "CVE-2026-15780",
-      "desc": "The WP Statistics \u2013 Simple, privacy-friendly Google Analytics alternative plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'utm_campaign' parameter in all versions up to, and including, 14.16.8 due to insufficient input sanitization and output escaping. This makes it possibl",
-      "cvss": 7.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T07:16:27.773",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15780"
-    },
-    {
-      "id": "CVE-2026-49423",
-      "desc": "When building the iovec array for a received TLS 1.2 CBC record, ktls_ocf_tls_cbc_decrypt() incremented the iovec index for every mbuf in the chain, including mbufs that were skipped because they contained only TLS header bytes.  This left uninitialized entries in the iovec array.  The iovec array w",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T07:16:28.570",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49423"
-    },
-    {
-      "id": "CVE-2026-75981",
-      "desc": "The TranslatePress \u2013 Translate Multilingual sites with AI Translation plugin for WordPress is vulnerable to unauthenticated Stored Cross-Site Scripting in versions up to and including 3.2.5. The special gettext markers '#!trpst#' and '#!trpen#' are unconditionally rewritten to '<' and '>' by transla",
-      "cvss": 7.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T07:16:59.907",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75981"
-    },
-    {
-      "id": "CVE-2026-49424",
-      "desc": "The Linux waitid() implementation translates a FreeBSD siginfo_t struct into a stack-declared Linux siginfo_t.  It did not first zero the stack struct.\n\nAn unprivileged user may observe 104 bytes of uninitialized kernel stack data, which may contain sensitive information.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.060",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49424"
-    },
-    {
-      "id": "CVE-2026-49425",
-      "desc": "The compat32 kevent() handler translates a 64-bit kevent struct into a stack- declared 32-bit struct.  It did not first zero the stack struct.\n\nAn unprivileged user may observe a small amount of uninitialized kernel stack data, which may contain sensitive information.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.160",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49425"
-    },
-    {
-      "id": "CVE-2026-58081",
-      "desc": "Several encoding modules, including HZ, UTF-7, VIQR, and ZW, did not properly check the size of the caller-supplied output buffer before writing converted characters.\n\nAn application that uses iconv(3) to convert untrusted input to or from one of the affected encodings may be vulnerable to buffer ov",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.263",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58081"
-    },
-    {
-      "id": "CVE-2026-58082",
-      "desc": "The ISO-2022 encoding module used a stack buffer sized to MB_LEN_MAX (6 bytes) for intermediate character output.  Some ISO-2022 variants can require up to 10 bytes per character, in which case conversions can trigger a stack buffer overflow of up to four bytes.\n\nAn application that uses iconv(3) to",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.370",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58082"
-    },
-    {
-      "id": "CVE-2026-58083",
-      "desc": "While the kernel was copying knotes during fork, a knote with a timer-based filter could fire and be enqueued on the kqueue's active list before the copy was complete.  The copy routine did not account for this and could enqueue the new knote a second time, corrupting the active list.  In addition, ",
-      "cvss": 8.4,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.470",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58083"
-    },
-    {
-      "id": "CVE-2026-58084",
-      "desc": "To retrieve the previous timer value, the kernel calls realtimer_gettime(), which obtains the current time for the timer's clock.  For a timer using CLOCK_TAI this can fail when no TAI offset has been configured, but the error return was not checked, so the uninitialized output buffer was copied to ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.570",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58084"
-    },
-    {
-      "id": "CVE-2026-58085",
-      "desc": "After dispatching a decrypt operation to OCF and receiving the result, the wg(4) driver failed to check whether the MAC verification step succeeded.  The driver thus silently accepted packets with an invalid Poly1305 authentication tag.\n\nA remote attacker who can send UDP packets to a WireGuard endp",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.673",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58085"
-    },
-    {
-      "id": "CVE-2026-58086",
-      "desc": "As an inadvertent side effect of an unrelated code change, PRIV_KTRACE was always denied to a jailed root user.  Tracing configured by a jailed root user was therefore not flagged as privileged.\n\nAn unprivileged user in a jail that has permission to debug the target process can modify the jailed roo",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.777",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58086"
-    },
-    {
-      "id": "CVE-2026-58087",
-      "desc": "The GETALL and SETALL commands in semctl(2) recorded the number of semaphores in the target set, dropped the lock protecting the set, allocated a buffer sized for that count, and reacquired the lock.  A sequence-number check was used to verify that the set had not been replaced in the interim, but t",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.877",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58087"
-    },
-    {
-      "id": "CVE-2026-58088",
-      "desc": "The ELF core dump code counted the number of dumpable VM map entries, allocated a buffer for the corresponding program headers, then iterated over the map a second time to populate them.  A process sharing the address space via rfork(2) can mutate the map between the two passes, causing the second p",
-      "cvss": 7.4,
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:12.983",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58088"
-    },
-    {
-      "id": "CVE-2026-72889",
-      "desc": "Net::OAuth versions before 0.33 for Perl allow the sender to choose the signature algorithm in verify.\n\nverify resolves the signature method class from the signature_method parameter of the incoming message. signature_method is required on every request, so the algorithm used to check a signature is",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:13.833",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72889"
-    },
-    {
-      "id": "CVE-2026-75589",
-      "desc": "Net::OAuth versions before 0.33 for Perl check HMAC-SHA1, HMAC-SHA256 and PLAINTEXT signatures with a non-constant-time comparison in verify.\n\nEach of the three compares the signature carried in the message against the locally computed one with the eq operator, which returns as soon as the two strin",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:13.970",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75589"
-    },
-    {
-      "id": "CVE-2026-75900",
-      "desc": "An out-of-bounds read vulnerability was found in swtpm's SWTPM_NVRAM_CheckHeader() function. The entry guard checks the buffer length against sizeof(bh), where bh is a pointer, instead of sizeof(*bh), the actual struct size. This allows an undersized buffer to pass validation, causing a 2-byte heap ",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T08:17:14.073",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75900"
-    },
-    {
-      "id": "CVE-2026-76164",
-      "desc": "AIL Framework contains a server-side request forgery (SSRF) vulnerability in its crawler submission functionality. A low-privileged authenticated user with access to the crawler interface can submit an arbitrary URL for crawling without adequate validation of the destination host.\n\n\nThe crawler can ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T09:17:36.830",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76164"
-    },
-    {
-      "id": "CVE-2026-76166",
-      "desc": "A flaw was found in mod_cluster's AdvertiseListenerImpl (org.jboss.modcluster core module). A single crafted UDP multicast datagram with a valid HTTP status line and a \"Server:\" header but without the \"Date:\", \"Digest:\", and \"Sequence:\" headers triggers a NullPointerException in verifyDigest() that ",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T10:16:38.150",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76166"
-    },
-    {
-      "id": "CVE-2026-16440",
-      "desc": "In Eclipse OpenJ9 versions up to 0.60, a crafted .class file with deeply nested annotations causes a segmentation fault.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T11:16:46.183",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16440"
-    },
-    {
-      "id": "CVE-2026-18371",
-      "desc": "HTML injection vulnerability in M-Files Web before 26.8.16330.2 allows an authenticated attacker to affect web user interface contents displayed to other users.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T12:17:16.900",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18371"
-    },
-    {
-      "id": "CVE-2026-18372",
-      "desc": "CSS injection vulnerability in M-Files Web before 26.8.16330.2 allows an authenticated vault administrator to inject arbitrary CSS, affecting the web user interface displayed to other vault users.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-19T12:17:17.043",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18372"
-    },
     {
       "id": "CVE-2026-19489",
       "desc": "Vulnerability in NetScaler ADC and NetScaler Gateway.\n\nThis issue affects ADC: from 14.1 through 73.32 and from 13.1 through 63.21; Gateway: from 14.1 through 73.32 and from 13.1 through 63.21.",
@@ -702,10 +394,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00314,
-        "percentile": 0.2363
-      },
+      "epss": null,
       "published": "2026-08-19T14:17:14.937",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2019-25766"
     },
@@ -1013,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00312,
+        "percentile": 0.23316
+      },
       "published": "2026-08-19T14:17:39.487",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74803"
     },
@@ -1405,10 +1097,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00583,
-        "percentile": 0.45254
-      },
+      "epss": null,
       "published": "2026-08-19T14:17:48.880",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76224"
     },
@@ -1716,7 +1405,10 @@
       "product": "Aix, Vios",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00429,
+        "percentile": 0.35523
+      },
       "published": "2026-08-19T15:16:55.610",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15061"
     },
@@ -2108,10 +1800,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00199,
-        "percentile": 0.09676
-      },
+      "epss": null,
       "published": "2026-08-19T15:17:05.580",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48711"
     },
@@ -2419,7 +2108,10 @@
       "product": "Command Update",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00103,
+        "percentile": 0.01073
+      },
       "published": "2026-08-19T15:17:51.893",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67268"
     },
@@ -2811,10 +2503,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00386,
-        "percentile": 0.31373
-      },
+      "epss": null,
       "published": "2026-08-19T16:18:19.460",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62669"
     },
@@ -3122,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00205,
+        "percentile": 0.10356
+      },
       "published": "2026-08-19T17:18:40.563",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20327"
     },
@@ -3514,10 +3206,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00303,
-        "percentile": 0.22327
-      },
+      "epss": null,
       "published": "2026-08-19T18:16:36.080",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18874"
     },
@@ -3825,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00478,
+        "percentile": 0.39173
+      },
       "published": "2026-08-19T18:17:23.583",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71866"
     },
@@ -4217,10 +3909,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00176,
-        "percentile": 0.07171
-      },
+      "epss": null,
       "published": "2026-08-19T19:17:18.380",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-50550"
     },
@@ -4528,7 +4217,10 @@
       "product": "Aix, Vios",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00404,
+        "percentile": 0.33302
+      },
       "published": "2026-08-19T20:17:04.553",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16836"
     },
@@ -4920,10 +4612,7 @@
       "product": "Aix, Vios",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00554,
-        "percentile": 0.43788
-      },
+      "epss": null,
       "published": "2026-08-19T20:17:09.090",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16882"
     },
@@ -5231,7 +4920,10 @@
       "product": "Power System E1050 \\(9043-Mrx\\), Power System E1050 \\(9043-Mrx\\) Firmware, Power System E1080 \\(9080-Hex\\)",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0011,
+        "percentile": 0.01392
+      },
       "published": "2026-08-19T20:17:12.797",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17097"
     },
@@ -5623,10 +5315,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00403,
-        "percentile": 0.33267
-      },
+      "epss": null,
       "published": "2026-08-19T20:17:21.567",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68899"
     },
@@ -5934,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00362,
+        "percentile": 0.28964
+      },
       "published": "2026-08-19T21:16:56.697",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-53546"
     },
@@ -6326,10 +6018,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.01067,
-        "percentile": 0.62224
-      },
+      "epss": null,
       "published": "2026-08-19T21:17:38.643",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76583"
     },
@@ -6637,7 +6326,10 @@
       "product": "Splunk",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00216,
+        "percentile": 0.11812
+      },
       "published": "2026-08-19T22:17:14.580",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76309"
     },
@@ -7029,10 +6721,7 @@
       "product": "Splunk",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00301,
-        "percentile": 0.22079
-      },
+      "epss": null,
       "published": "2026-08-19T22:17:18.233",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76337"
     },
@@ -7340,7 +7029,10 @@
       "product": "Soar",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00361,
+        "percentile": 0.28774
+      },
       "published": "2026-08-19T22:17:21.130",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76359"
     },
@@ -7732,10 +7424,7 @@
       "product": "Enterprise Security",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00278,
-        "percentile": 0.19679
-      },
+      "epss": null,
       "published": "2026-08-19T22:17:24.953",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76387"
     },
@@ -8043,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00844,
+        "percentile": 0.55224
+      },
       "published": "2026-08-19T22:17:27.960",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76832"
     },
@@ -8435,10 +8127,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00285,
-        "percentile": 0.2042
-      },
+      "epss": null,
       "published": "2026-08-19T23:16:21.570",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76928"
     },
@@ -8746,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0029,
+        "percentile": 0.20992
+      },
       "published": "2026-08-20T06:17:19.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74992"
     },
@@ -9138,10 +8830,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00268,
-        "percentile": 0.18487
-      },
+      "epss": null,
       "published": "2026-08-20T11:16:21.947",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77026"
     },
@@ -9449,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0018,
+        "percentile": 0.07541
+      },
       "published": "2026-08-20T12:16:34.063",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66604"
     },
@@ -9841,10 +9533,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00211,
-        "percentile": 0.11219
-      },
+      "epss": null,
       "published": "2026-08-20T12:16:37.567",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74019"
     },
@@ -10152,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00166,
+        "percentile": 0.06017
+      },
       "published": "2026-08-20T13:16:49.837",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-62306"
     },
@@ -10544,10 +10236,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00353,
-        "percentile": 0.27923
-      },
+      "epss": null,
       "published": "2026-08-20T14:17:59.973",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76635"
     },
@@ -10855,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00345,
+        "percentile": 0.26995
+      },
       "published": "2026-08-20T16:17:18.293",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19611"
     },
@@ -11247,10 +10939,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00155,
-        "percentile": 0.04919
-      },
+      "epss": null,
       "published": "2026-08-20T17:17:23.880",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18273"
     },
@@ -11558,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00238,
+        "percentile": 0.1454
+      },
       "published": "2026-08-20T17:17:26.643",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18298"
     },
@@ -11950,10 +11642,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00263,
-        "percentile": 0.1772
-      },
+      "epss": null,
       "published": "2026-08-20T17:19:49.063",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77019"
     },
@@ -12261,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00195,
+        "percentile": 0.09247
+      },
       "published": "2026-08-20T18:16:45.743",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73251"
     },
@@ -12653,10 +12345,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00175,
-        "percentile": 0.07039
-      },
+      "epss": null,
       "published": "2026-08-20T19:16:57.570",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-63654"
     },
@@ -12964,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00371,
+        "percentile": 0.29855
+      },
       "published": "2026-08-20T21:17:07.260",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67446"
     },
@@ -13356,10 +13048,7 @@
       "product": "Aix, Vios",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00106,
-        "percentile": 0.01212
-      },
+      "epss": null,
       "published": "2026-08-20T22:17:07.643",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16934"
     },
@@ -13667,7 +13356,10 @@
       "product": "Aix, Vios",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00111,
+        "percentile": 0.01446
+      },
       "published": "2026-08-20T22:17:11.310",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17007"
     },
@@ -14059,12 +13751,320 @@
       "product": "Aix, Vios",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00393,
-        "percentile": 0.32112
-      },
+      "epss": null,
       "published": "2026-08-20T22:17:16.103",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17425"
+    },
+    {
+      "id": "CVE-2026-17436",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote attacker to execute arbitrary code due to a heap-based buffer overflow.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:16.263",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-17436"
+    },
+    {
+      "id": "CVE-2026-18670",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote attacker to cause a denial of service and potentially disclose sensitive information due to an integer underflow.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:16.430",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18670"
+    },
+    {
+      "id": "CVE-2026-18716",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote authenticated attacker to obtain sensitive information or cause a denial of service due to an out-of-bounds read.",
+      "cvss": 7.9,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:16.600",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18716"
+    },
+    {
+      "id": "CVE-2026-18822",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a local attacker to cause a denial of service due to uncontrolled resource consumption when parsing directory records.",
+      "cvss": 4.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:16.763",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18822"
+    },
+    {
+      "id": "CVE-2026-18824",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote authenticated attacker to execute arbitrary commands due to improper neutralization of special elements used in an OS command.",
+      "cvss": 8.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:16.930",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18824"
+    },
+    {
+      "id": "CVE-2026-18828",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote attacker to cause a denial of service due to a stack-based buffer overflow.",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:17.097",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18828"
+    },
+    {
+      "id": "CVE-2026-18832",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote attacker to execute arbitrary code due to a heap-based buffer overflow.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:17.267",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18832"
+    },
+    {
+      "id": "CVE-2026-18835",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote authenticated attacker to execute arbitrary commands due to improper neutralization of special elements used in an OS command.",
+      "cvss": 9.9,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:17.430",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18835"
+    },
+    {
+      "id": "CVE-2026-18840",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a local attacker to execute arbitrary code due to improper validation of an attacker-controlled pointer.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:17.603",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18840"
+    },
+    {
+      "id": "CVE-2026-18842",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a local attacker to gain elevated privileges due to an out-of-bounds write.",
+      "cvss": 8.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:17.773",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18842"
+    },
+    {
+      "id": "CVE-2026-19437",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a remote attacker to execute arbitrary code due to a buffer overflow.",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:17.940",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19437"
+    },
+    {
+      "id": "CVE-2026-19442",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 has a pointer validation flaw exists in the AIX Virtual SCSI (vSCSI) initiator driver. Successful exploitation may result in denial of service, privilege escalation, or full compromise of the client LPAR kernel.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:18.110",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19442"
+    },
+    {
+      "id": "CVE-2026-19446",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 allows a remote unauthenticated attacker can send a crafted UDP packet to a reachable RPC service, resulting in complete system unavailability and requiring an LPAR restart.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:18.273",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19446"
+    },
+    {
+      "id": "CVE-2026-19448",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 A stack memory corruption vulnerability exists in the AIX IPsec ESP decapsulation handler. Successful exploitation may corrupt kernel stack state and cause a system crash, resulting in denial of service.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:18.440",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19448"
+    },
+    {
+      "id": "CVE-2026-19449",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 has a vulnerability in cmdnim that may allow an unprivileged local user to executes the payload as root.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:18.613",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19449"
+    },
+    {
+      "id": "CVE-2026-19783",
+      "desc": "IBM AIX 7.2, and 7.3 and IBM PowerVM VIOS 4.1 could allow a local attacker to cause kernel memory corruption due to insufficient validation. A crafted filesystem image can trigger an out-of-bounds kernel-stack write during directory reads, causing a system crash or potentially enabling privilege esc",
+      "cvss": 6.7,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Ibm",
+      "product": "Aix, Vios",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:18.773",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19783"
+    },
+    {
+      "id": "CVE-2026-46355",
+      "desc": "BigBlueButton is an open-source virtual classroom. Prior to 3.0.23, BigBlueButton exposed /bigbluebutton/api/handleJoinExistingUser through bigbluebutton-web/grails-app/controllers/org/bigbluebutton/web/controllers/ApiController.groovy. A requester able to supply an existingUserID for an active part",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:19.193",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46355"
+    },
+    {
+      "id": "CVE-2026-46682",
+      "desc": "BigBlueButton is an open-source virtual classroom. Prior to 3.0.23, BigBlueButton allowed authenticated moderators to inject SQL through the meetingId and userId values used by refreshBreakoutRoomsVisibleForUsers in akka-bbb-apps/src/main/scala/org/bigbluebutton/core/db/BreakoutRoomUserDAO.scala. Th",
+      "cvss": 8.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:19.347",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-46682"
+    },
+    {
+      "id": "CVE-2026-49217",
+      "desc": "Mailu is a mail server as a set of Docker images. Prior to version 2024.06.52, a missing authorization check in the Mailu admin REST API allows any unauthenticated attacker to remove any potential IP restriction or update the comment field from any existing user token provided the REST API is enable",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:19.803",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49217"
+    },
+    {
+      "id": "CVE-2026-49244",
+      "desc": "SFTPGo is an open source, event-driven file transfer solution. From 2.2.0 until 2.7.3, the public web-client partial ZIP download endpoint for a browsable share validates client-supplied files entries with a raw byte-prefix comparison rather than a directory-boundary-aware check. An unauthenticated ",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:19.947",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49244"
+    },
+    {
+      "id": "CVE-2026-49245",
+      "desc": "SFTPGo is an open source, event-driven file transfer solution. From 2.2.0 until 2.7.3, the inline query parameter on browsable-share file downloads and authenticated user-file downloads suppresses Content-Disposition: attachment, allowing an attacker-controlled HTML file stored in a share or home di",
+      "cvss": 3.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-20T22:17:20.107",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49245"
+    },
+    {
+      "id": "CVE-2026-49436",
+      "desc": "LinkAce is a self-hosted archive to collect website links. Prior to version 2.5.7, the Bulk Link API endpoint (`POST /api/v2/bulk/links`) accepts URLs without any format validation, allowing an authenticated user to store a `javascript:` URI. The stored URI is later rendered verbatim as an `href` in",
+      "cvss": 7.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00255,
+        "percentile": 0.16795
+      },
+      "published": "2026-08-20T22:17:20.240",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49436"
     }
   ],
   "kev": [
@@ -15209,6 +15209,14 @@
   "osv_vulns": [],
   "threats": [
     {
+      "title": "Choose your fighter: Balancing competing requirements to select models for your AI SOC",
+      "url": "https://blog.talosintelligence.com/choose-your-fighter-balancing-competing-requirements-to-select-models-for-your-ai-soc/",
+      "source": "Talos Intelligence",
+      "category": "threat",
+      "published": "2026-08-26T10:00:05+00:00",
+      "summary": "Selecting a model for your security operations center (SOC) and digital forensics and incident response (DFIR) tasks is important, but selecting the best one is more involved than you might think. Here's how to choose."
+    },
+    {
       "title": "The Path to the Autonomous SOC: The Early Returns of AI & What It Means for Cybersecurity",
       "url": "https://www.sentinelone.com/blog/the-early-returns-of-ai-what-it-means-for-cybersecurity/",
       "source": "SentinelOne Blog",
@@ -15561,14 +15569,6 @@
       "summary": "\n \n  CVSSv3 Score:\n \n 5.0\n\n\n An Allocation of Resources Without Limits or Throttling vulnerability [CWE-770] in FortiOS may allow an unauthenticated attacker to perform a slow HTTP DoS attack on the web interface via crafted HTTP requests.\n\n\n \n  Revised on 2026-08-12 00:00:00\n \n"
     },
     {
-      "title": "Microsoft Patch Tuesday for August 2026 \u2014 Snort rules and prominent vulnerabilities",
-      "url": "https://blog.talosintelligence.com/microsoft-patch-tuesday-for-august-2026/",
-      "source": "Talos Intelligence",
-      "category": "threat",
-      "published": "2026-08-11T22:21:02+00:00",
-      "summary": "Microsoft has released its monthly security update for August 2026, which includes 421\u00a0vulnerabilities affecting a range of products, including 62 that Microsoft marked as \"critical.\""
-    },
-    {
       "title": "Microsoft and Adobe Patch Tuesday,\u00a0August\u00a02026 Security Update Review",
       "url": "https://blog.qualys.com/category/vulnerabilities-threat-research",
       "source": "Qualys Blog",
@@ -15915,6 +15915,158 @@
   ],
   "news": [
     {
+      "title": "Adobe and Nvidia Patch Dozens of Vulnerabilities",
+      "url": "https://www.securityweek.com/adobe-and-nvidia-patch-dozens-of-vulnerabilities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-26T12:39:38+00:00",
+      "summary": "Adobe and Nvidia each published several advisories, including ones that address critical vulnerabilities in their products.\nThe post Adobe and Nvidia Patch Dozens of Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
+      "title": "Microsoft tests new privacy controls for Windows 11 desktop apps",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-tests-new-privacy-controls-for-windows-11-desktop-apps/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-26T12:06:28+00:00",
+      "summary": "Microsoft has begun testing new privacy controls that will let Windows 11 users choose which desktop applications can access their camera, microphone, and precise location. [...]"
+    },
+    {
+      "title": "Average Cyber Insurance Losses Increase Despite Fewer Claims",
+      "url": "https://www.infosecurity-magazine.com/news/cyber-insurance-losses-increase/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-26T12:00:00+00:00",
+      "summary": "Chubb reported that growing privacy litigation has contributed to surging cyber claim costs in the US"
+    },
+    {
+      "title": "Imagine the SOC Without a Queue: From Alert Backlog to AI Hypothesis Engine",
+      "url": "https://thehackernews.com/2026/08/imagine-soc-without-queue-from-alert.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-26T11:36:49+00:00",
+      "summary": "The SOC we've always known was built around a model that guarantees most of the alert queue will never receive analyst review. There's never time. In a traditional SOC, the typical progression follows a well-known pattern: an alert arrives; a detection engine assigns a severity score. The issue then"
+    },
+    {
+      "title": "CISA: Over 100 Internet-Exposed Water Systems Targeted in July Cyberattacks",
+      "url": "https://www.securityweek.com/cisa-over-100-internet-exposed-water-systems-targeted-in-july-cyberattacks/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-26T11:29:50+00:00",
+      "summary": "The agency has released guidance on reducing internet exposure in the wake of the recent Iran-linked hacker attacks.\nThe post CISA: Over 100 Internet-Exposed Water Systems Targeted in July Cyberattacks appeared first on SecurityWeek."
+    },
+    {
+      "title": "Hackers now exploit critical Gitea flaw in code injection attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-gitea-flaw-in-code-injection-attacks/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-26T11:07:48+00:00",
+      "summary": "Attackers are now exploiting a critical-severity vulnerability in the Gitea self-hosted Git service, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). [...]"
+    },
+    {
+      "title": "The MFA Identity Trap: When Authentication Creates a False Sense of Security",
+      "url": "https://www.securityweek.com/the-mfa-identity-trap-when-authentication-creates-a-false-sense-of-security/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-26T11:00:00+00:00",
+      "summary": "Organizations must distinguish identity verification, authentication and threat detection, or risk successfully authenticating the attackers they are trying to stop.\nThe post The MFA Identity Trap: When Authentication Creates a False Sense of Security appeared first on SecurityWeek."
+    },
+    {
+      "title": "Claude Opus 4.6 Bypasses Gym Booking Limit, Cancels Other Users' Reservations in Tests",
+      "url": "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-26T10:27:23+00:00",
+      "summary": "Aikido Security has published research that recreates the Australian gym-booking incident in a synthetic environment, finding that Claude Opus 4.6, running on the OpenClaw agent harness, exploited a client-side-only booking restriction in 9 of 10 runs.\n\nThe original incident was first reported by AB"
+    },
+    {
+      "title": "Chrome 152 Patches Over 300 Vulnerabilities",
+      "url": "https://www.securityweek.com/chrome-152-patches-over-300-vulnerabilities/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-26T09:50:34+00:00",
+      "summary": "Most of the flaws were discovered by Google using AI, but researchers are still discovering high-value Chrome vulnerabilities.\nThe post Chrome 152 Patches Over 300 Vulnerabilities appeared first on SecurityWeek."
+    },
+    {
+      "title": "OpenAI Bans Russian ChatGPT Accounts Used to Run Influence Operation",
+      "url": "https://thehackernews.com/2026/08/openai-bans-russian-chatgpt-accounts.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-26T09:38:45+00:00",
+      "summary": "OpenAI on Tuesday said it banned a cluster of Russian ChatGPT accounts that used VPNs to bypass access restrictions and run an influence operation, which relied on its artificial intelligence (AI) tool to generate social media posts and comments that were shared on Substack, Telegram, X, Facebook an"
+    },
+    {
+      "title": "Linux Foundation Introduces TRACE Standard for AI Runtime Evidence",
+      "url": "https://www.infosecurity-magazine.com/news/linux-foundation-trace-standard-ai/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-26T09:10:00+00:00",
+      "summary": "This new open standard offers hardware-attested runtime and compliance evidence for AI agents"
+    },
+    {
+      "title": "DDoS Attack Hits Norwegian Government Services",
+      "url": "https://www.infosecurity-magazine.com/news/ddos-attack-hits-norwegian/",
+      "source": "Infosecurity Magazine",
+      "category": "news",
+      "published": "2026-08-26T09:00:00+00:00",
+      "summary": "A coordinated DDoS campaign has caused disruption among Norwegian government services"
+    },
+    {
+      "title": "Interpol's Jackal IV Disrupts West African Crime Infrastructure",
+      "url": "https://www.darkreading.com/threat-intelligence/interpols-jackal-iv-west-african-crime-infrastructure",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-08-26T08:30:00+00:00",
+      "summary": "The international law enforcement operation focused on disrupting crime-as-a-service networks and infrastructure behind groups like Black Axe."
+    },
+    {
+      "title": "Nigeria Looks to Sovereign Cloud for Cyber, National Security",
+      "url": "https://www.darkreading.com/cybersecurity-operations/nigeria-sovereign-cloud-cyber-national-security",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-08-26T08:00:00+00:00",
+      "summary": "The West African nation launched financing, procurement, and infrastructure policies to boost its sovereign cloud initiative and increase domestic technical knowledge."
+    },
+    {
+      "title": "INTERPOL Operation Jackal IV Arrests 58, Identifies 263 in Global Cyber Fraud Crackdown",
+      "url": "https://thehackernews.com/2026/08/interpol-operation-jackal-iv-arrests-58.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-26T07:54:12+00:00",
+      "summary": "An eight-month INTERPOL operation targeting West African organized crime groups has led to arrests of 58 people and the identification of 263 suspects.\n\n\"The operation, which brought together 22 countries from six continents, is a response to the escalating global threat posed by West African crimin"
+    },
+    {
+      "title": "Sensitive Information Exposed in Nutex Health Data Breach",
+      "url": "https://www.securityweek.com/sensitive-information-exposed-in-nutex-health-data-breach/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-08-26T07:41:50+00:00",
+      "summary": "Nutex Health has informed the SEC that it recently detected unauthorized access and data exfiltration.\nThe post Sensitive Information Exposed in Nutex Health Data Breach appeared first on SecurityWeek."
+    },
+    {
+      "title": "Newly SLEEPWALKER Backdoor Waits for One Crafted Packet, Then Runs Its Own Bytecode",
+      "url": "https://thehackernews.com/2026/08/newly-sleepwalker-backdoor-waits-for.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-26T07:12:55+00:00",
+      "summary": "An independent malware researcher has documented a previously unreported Windows backdoor, dubbed SLEEPWALKER, that stays inert in memory until a specifically crafted network packet reaches the machine and then runs commands written in a 23-instruction language of its own design.\n\nThe sample is an u"
+    },
+    {
+      "title": "Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload",
+      "url": "https://thehackernews.com/2026/08/critical-gitea-rce-actively-exploited.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-26T06:27:07+00:00",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday warned of active exploitation efforts targeting a recently patched critical security flaw impacting Gitea.\n\nThe vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of remote code execution that allows an at"
+    },
+    {
+      "title": "Fake Apple Support AI Calls Target Stolen-Device Owners for Passcodes and 2FA Codes",
+      "url": "https://thehackernews.com/2026/08/fake-apple-support-ai-calls-target.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-08-26T05:47:28+00:00",
+      "summary": "Cybersecurity researchers have disclosed details of a phishing-as-a-service (PhaaS) platform built to strip Apple's Activation Lock from stolen devices, using rented AI voice agents that call theft victims posing as Apple Support and ask for their device passcode.\n\nSOCRadar Threat Research Unit (STR"
+    },
+    {
       "title": "CISA Warns of Exploited Gitea Vulnerability",
       "url": "https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/",
       "source": "SecurityWeek",
@@ -15984,7 +16136,7 @@
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-08-25T19:50:16+00:00",
-      "summary": "Attackers can exploit a security bug in NVIDIA's tool to gain unauthenticated access to the local model server through the Ollama API, paving the way for persistent AI agent corruption."
+      "summary": "Attackers can exploit a security bug in Nvidia's tool to gain unauthenticated access to the local model server through the Ollama API, paving the way for persistent AI agent corruption."
     },
     {
       "title": "Employee benefits platform Paylogix says hackers stole financial and health data",
@@ -16059,14 +16211,6 @@
       "summary": "The company, previously known as ActiveFence, has raised a total of $280 million from investors.\nThe post Alice Raises $140M to Expand AI Model Defenses and Enterprise Guardrails appeared first on SecurityWeek."
     },
     {
-      "title": "A Malicious Webpage Could Poison Your Local AI Model Behind NVIDIA NemoClaw",
-      "url": "https://thehackernews.com/2026/08/a-malicious-webpage-could-poison-your.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-25T14:07:37+00:00",
-      "summary": "Oasis Security has disclosed a weakness in NVIDIA NemoClaw that could let an attacker-controlled webpage take unauthenticated control of the local Ollama instance serving an AI agent and plant hidden instructions inside the model itself.\n\nThe findings were shared with The Hacker News ahead of public"
-    },
-    {
       "title": "From Fake Workers to Account Recovery: The Growing Identity Verification Risk",
       "url": "https://www.bleepingcomputer.com/news/security/from-fake-workers-to-account-recovery-the-growing-identity-verification-risk/",
       "source": "Bleeping Computer",
@@ -16083,60 +16227,12 @@
       "summary": "Ukraine will give Britain access to a vast trove of battlefield data collected during the war with Russia, allowing U.K. companies and researchers to use it to train and test artificial intelligence systems."
     },
     {
-      "title": "Microsoft PowerToys adds Alt+Tab-style switching for an app's windows",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-powertoys-adds-alt-plustab-style-switching-for-an-apps-windows/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-25T13:51:58+00:00",
-      "summary": "Microsoft updated its Windows PowerToys toolset with a new utility\u00a0dubbed \"Window Hopper\"\u00a0that lets users switch between an app's windows more quickly. [...]"
-    },
-    {
-      "title": "WordPress Websites Targeted via MiniOrange Plugin Vulnerabilities",
-      "url": "https://www.securityweek.com/wordpress-websites-targeted-via-miniorange-plugin-vulnerabilities/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-25T13:33:12+00:00",
-      "summary": "CVE-2026-61979 and CVE-2026-15981 are authentication bypass vulnerabilities affecting the MiniOrange SAML 2.0 SSO plugin.\nThe post WordPress Websites Targeted via MiniOrange Plugin Vulnerabilities appeared first on SecurityWeek."
-    },
-    {
-      "title": "WhatsApp Adds Multiple Passkeys for Phishing-Resistant Sign-Ins Across iOS and Android",
-      "url": "https://thehackernews.com/2026/08/whatsapp-adds-multiple-passkeys-for.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-25T13:19:41+00:00",
-      "summary": "Meta on Tuesday announced a set of WhatsApp account security features, including support for multiple passkeys to a single account to help users with both iOS and Android devices sign into their accounts using the phishing-resistant method.\n\nThe tech giant said more than 1 billion people use a passk"
-    },
-    {
-      "title": "WhatsApp adds stronger two-step verification, multiple passkeys",
-      "url": "https://www.bleepingcomputer.com/news/security/whatsapp-adds-stronger-two-step-verification-multiple-passkeys/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-25T13:00:00+00:00",
-      "summary": "WhatsApp has started rolling out several new account security features, including support for multiple passkeys and stronger two-step verification. [...]"
-    },
-    {
-      "title": "WhatsApp Adds Multiple Passkeys and Stronger 2SV in Account Security Update",
-      "url": "https://www.securityweek.com/whatsapp-adds-multiple-passkeys-and-stronger-2sv-in-account-security-update/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-25T13:00:00+00:00",
-      "summary": "When Android users get a call from a non-contact, they will see more information about the caller, including their country.\nThe post WhatsApp Adds Multiple Passkeys and Stronger 2SV in Account Security Update appeared first on SecurityWeek."
-    },
-    {
       "title": "Fake Recruiter Scams Target Corporate Credentials on Mobile",
       "url": "https://www.infosecurity-magazine.com/news/fake-recruiter-scams-corporate/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-08-25T13:00:00+00:00",
       "summary": "RecruitTrap campaigns use mobile-optimized phishing pages to target enterprise credentials"
-    },
-    {
-      "title": "Hands-On Cyber-Physical Systems Training Returns to ICS Cybersecurity Conference",
-      "url": "https://www.securityweek.com/hands-on-cyber-physical-systems-training-returns-to-ics-cybersecurity-conference/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-25T12:57:59+00:00",
-      "summary": "Hands-on Cyber Attack Methods course returns to SecurityWeek\u2019s ICS Cybersecurity Conference, October 6\u20138 at the W Nashville.\nThe post Hands-On Cyber-Physical Systems Training Returns to ICS Cybersecurity Conference appeared first on SecurityWeek."
     },
     {
       "title": "UK government seeks powers to secretly block risky tech suppliers",
@@ -16147,60 +16243,12 @@
       "summary": "The British government is seeking new powers to ban certain technology vendors from supplying companies working in the country\u2019s critical sectors \u2014 potentially doing so in secret."
     },
     {
-      "title": "Marimo Notebook Flaw Could Run MCP Commands Before Cells Execute in Edit Mode",
-      "url": "https://thehackernews.com/2026/08/marimo-notebook-flaw-could-run-mcp.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-25T12:43:51+00:00",
-      "summary": "Marimo has addressed a high-severity security flaw in its notebook software that allowed an attacker to execute an attacker-supplied Model Context Protocol (MCP) command in a specially crafted notebook, according to VulnCheck's CVE Numbering Authority (CNA) record.\n\nThe CNA record says the command c"
-    },
-    {
-      "title": "Mirage2FA Surge Hits 4,500 US and EU Companies, Abusing Microsoft 365 Login Flows",
-      "url": "https://thehackernews.com/2026/08/mirage2fa-surge-hits-4500-us-and-eu.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-25T11:56:15+00:00",
-      "summary": "Thousands of companies have been affected by the Mirage2FA campaign from 2024 to 2026. The commercial phishing-as-a-service toolkit targets Microsoft 365 accounts by abusing legitimate login flows and bypassing two-factor authentication.\n\nAccording to ANY.RUN research, 48% of targeted email addresse"
-    },
-    {
-      "title": "24 npm Packages Abuse unpkg Mirrors to Host Fake Cloudflare CAPTCHA Pages",
-      "url": "https://thehackernews.com/2026/08/24-npm-packages-abuse-unpkg-mirrors-to.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-25T11:52:43+00:00",
-      "summary": "Cybersecurity researchers have disclosed details of a new campaign that uses a cluster of 24 npm packages as free phishing infrastructure for redirecting to ClickFix-style fake CAPTCHA pages.\n\n\"While the malware is simply a single HTML page inside the npm package, and while downloading it wouldn't d"
-    },
-    {
       "title": "Large DDoS attack knocks Norwegian public services offline",
       "url": "https://therecord.media/norway-cyberattack-ddos-government",
       "source": "The Record",
       "category": "news",
       "published": "2026-08-25T11:45:00+00:00",
       "summary": "The Norwegian Digitalisation Agency said it was working with its IT partner to stabilize systems affected by a distributed denial-of-service attack, with some services gradually coming back online."
-    },
-    {
-      "title": "E4del and PINHOLE RATs Turn FTP Banners Into Dead Drops for Malware Commands",
-      "url": "https://thehackernews.com/2026/08/e4del-and-pinhole-rats-turn-ftp-banners.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-25T11:33:44+00:00",
-      "summary": "Cybersecurity researchers are calling attention to a new campaign that employs FTP banners as dead drop resolvers (DDRs) to deliver two previously unreported remote access trojans (RATs) tracked as E4del and PINHOLE.\n\nWhile threat actors are known to abuse legitimate services to point to additional "
-    },
-    {
-      "title": "First Malware Built Specifically for Car Head Units Fuels Botnet",
-      "url": "https://www.securityweek.com/first-malware-built-specifically-for-car-head-units-fuels-botnet/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-25T11:18:22+00:00",
-      "summary": "Kaspersky researchers have linked the malware to the BadBox botnet, which has ensnared millions of devices.\nThe post First Malware Built Specifically for Car Head Units Fuels Botnet appeared first on SecurityWeek."
-    },
-    {
-      "title": "Frontier AI: Vulnerability Management's Systemic Revolution",
-      "url": "https://thehackernews.com/2026/08/frontier-ai-vulnerability-managements.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-08-25T11:14:07+00:00",
-      "summary": "Vulnerability management has been a staple of security programs since the dawn of the cybersecurity discipline. The symbiotic relationship between vulnerability and patch management teams has also existed for that time and has gone through waves of contention and thankfulness. While this relationshi"
     },
     {
       "title": "The County Prosecutors Who Became ICE Informants",
@@ -16227,28 +16275,12 @@
       "summary": "A threat actor keeps spreading the WeedHack malware to Minecraft players despite its original infrastructure taken down in July"
     },
     {
-      "title": "Silent Patches Don\u2019t Stop Attackers \u2013 They Blind Defenders",
-      "url": "https://www.securityweek.com/silent-patches-dont-stop-attackers-they-blind-defenders/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-08-25T10:00:00+00:00",
-      "summary": "Silent patches can become exploit intelligence for attackers while leaving defenders without the context needed to prioritize risk.\nThe post Silent Patches Don\u2019t Stop Attackers &#8211; They Blind Defenders appeared first on SecurityWeek."
-    },
-    {
       "title": "ReliaQuest Rejects Compromise Claims After ShinyHunters Incident",
       "url": "https://www.infosecurity-magazine.com/news/reliaquest-not-compromised-by/",
       "source": "Infosecurity Magazine",
       "category": "news",
       "published": "2026-08-25T09:30:00+00:00",
       "summary": "ReliaQuest has detailed a social engineering attack linked to ShinyHunters, denying reports that the threat actor successfully compromised its systems"
-    },
-    {
-      "title": "US Sanctions Mabna Institute Hackers for Iranian Cyber-Attacks",
-      "url": "https://www.infosecurity-magazine.com/news/us-sanctions-mabna-institute/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-25T09:10:00+00:00",
-      "summary": "The US has sanctioned individuals connected to hacking-for-hire group the Mabna Institute"
     },
     {
       "title": "ISC Stormcast For Tuesday, August 25th, 2026 https://isc.sans.edu/podcastdetail/10066, (Tue, Aug 25th)",
@@ -16275,44 +16307,12 @@
       "summary": "ClickFix-style threat campaigns are using a new trick to evade detection and deliver Amatera, an increasingly prevalent infostealer."
     },
     {
-      "title": "New Guidance Helps Businesses Verify Quantum-Safe Hardware Claims",
-      "url": "https://www.infosecurity-magazine.com/news/guidance-verify-quantum-safe/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-24T16:00:00+00:00",
-      "summary": "TCG has released new guidance to help proving that trusted platform modules genuinely meet essential quantum-safe requirements"
-    },
-    {
-      "title": "NIST Warns of Unique Security Risks in Multi-Cloud Environments",
-      "url": "https://www.infosecurity-magazine.com/news/nist-risks-multi-cloud/",
-      "source": "Infosecurity Magazine",
-      "category": "news",
-      "published": "2026-08-24T15:30:00+00:00",
-      "summary": "NIST has set out 23 novel challenges that arise in multi-cloud environments and has encouraged the cyber community to find solutions"
-    },
-    {
       "title": "Tricky 'SynkLoader' Multitool May Herald Ransomware",
       "url": "https://www.darkreading.com/threat-intelligence/tricky-synkloader-multitool-ransomware",
       "source": "Dark Reading",
       "category": "news",
       "published": "2026-08-24T15:02:32+00:00",
       "summary": "An advanced, multilingual malware family brings back a trick from yesteryear \u2014 screen hijacking \u2014 for effective password theft, along with a slew of novel features."
-    },
-    {
-      "title": "ToxicPanda Banking Trojan Matures Into Enterprise Threat",
-      "url": "https://www.darkreading.com/mobile-security/toxicpanda-banking-trojan-matures-enterprise-threat",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-08-24T14:34:59+00:00",
-      "summary": "The latest version of the Android malware has new features that expand its global reach and put more than users' financial applications at risk."
-    },
-    {
-      "title": "The Vulnerability Gap: Why Discovery Is Outrunning Repair",
-      "url": "https://www.darkreading.com/cybersecurity-operations/vulnerability-gap-why-discovery-is-outrunning-repair",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-08-24T14:00:00+00:00",
-      "summary": "AI is discovering more vulnerabilities, faster, and under a tightening regulatory environment, making this an all-hands-on-deck moment for the cybersecurity community."
     },
     {
       "title": "DOUBLECUP's PNG Payload, (Mon, Aug 24th)",
@@ -16597,8 +16597,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 120,
-    "high": 371,
+    "critical": 121,
+    "high": 381,
     "exploited": 2,
     "kev_total": 1676,
     "kev_7d": 6,
