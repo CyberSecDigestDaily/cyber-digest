@@ -1,67 +1,11 @@
 {
-  "generated": "2026-08-30T16:21:19.063767+00:00",
+  "generated": "2026-08-30T20:47:14.341554+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>104 critical CVE(s)</strong> and <strong>11 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-75922",
-      "desc": "Reverse::Proxy versions before 0.04 for Perl allow HTTP request smuggling via a percent-decoded PATH_INFO written unencoded to the upstream request line.\n\nPSGI hands PATH_INFO to an application percent-decoded, so a %XX sequence in the client URL has become a raw byte by the time the proxy sees it. ",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T19:16:28.930",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75922"
-    },
-    {
-      "id": "CVE-2026-19565",
-      "desc": "Apache::AppSamurai::Util versions through 1.01 for Perl generate predictable session authentication keys from the clock and process id in CreateSessionAuthKey.\n\nCreateSessionAuthKey runs five rounds of SHA-256, each over a fresh Time::HiRes reading formatted to six decimal places, the running digest",
-      "cvss": 3.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T20:16:50.053",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19565"
-    },
-    {
-      "id": "CVE-2026-78140",
-      "desc": "A flaw has been found in Dromara UJCMS up to 10.1.3. The impacted element is the function update of the file src/main/java/com/ujcms/cms/ext/web/backendapi/WebFileTemplateController.java of the component web-file-template Endpoint. Executing a manipulation can lead to improper neutralization of spec",
-      "cvss": 4.7,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T20:16:50.380",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78140"
-    },
-    {
-      "id": "CVE-2026-78183",
-      "desc": "DBD::Pg version 3.21.0 for Perl has a heap out-of-bounds write in quote_float.\n\nquote_float() allocates the length of the string + 1, which is the size of the bare numeric symbol plus NULL.  But for special literals NaN, Inf, +Inf, -Inf, Infinity, +Infinity, -Infinity it emits the literal surrounded",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T20:16:50.550",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78183"
-    },
     {
       "id": "CVE-2026-78141",
       "desc": "A vulnerability has been found in Tenda CH22 1.0.0.1. This affects the function formexeCommand of the file /goform/exeCommand. The manipulation of the argument cmdinput leads to command injection. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used.",
@@ -702,10 +646,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00251,
-        "percentile": 0.16264
-      },
+      "epss": null,
       "published": "2026-08-24T06:20:56.080",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78200"
     },
@@ -761,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00258,
+        "percentile": 0.172
+      },
       "published": "2026-08-24T08:16:33.677",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77993"
     },
@@ -1405,10 +1349,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00159,
-        "percentile": 0.05366
-      },
+      "epss": null,
       "published": "2026-08-24T12:16:54.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6017"
     },
@@ -1464,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00226,
+        "percentile": 0.13164
+      },
       "published": "2026-08-24T12:16:55.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78270"
     },
@@ -2108,10 +2052,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00273,
-        "percentile": 0.19327
-      },
+      "epss": null,
       "published": "2026-08-24T15:16:37.940",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39914"
     },
@@ -2167,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0013,
+        "percentile": 0.02927
+      },
       "published": "2026-08-24T15:16:46.860",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76055"
     },
@@ -2811,10 +2755,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00478,
-        "percentile": 0.3935
-      },
+      "epss": null,
       "published": "2026-08-24T18:17:03.110",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71912"
     },
@@ -2870,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.02405,
+        "percentile": 0.82886
+      },
       "published": "2026-08-24T18:17:03.940",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71916"
     },
@@ -3514,10 +3458,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0022,
-        "percentile": 0.12432
-      },
+      "epss": null,
       "published": "2026-08-24T19:16:50.253",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71508"
     },
@@ -3573,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00324,
+        "percentile": 0.24864
+      },
       "published": "2026-08-24T19:16:58.310",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75371"
     },
@@ -4217,10 +4161,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00146,
-        "percentile": 0.04193
-      },
+      "epss": null,
       "published": "2026-08-24T22:16:51.773",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32556"
     },
@@ -4276,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00426,
+        "percentile": 0.35524
+      },
       "published": "2026-08-24T22:16:52.287",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32563"
     },
@@ -4920,10 +4864,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00255,
-        "percentile": 0.1679
-      },
+      "epss": null,
       "published": "2026-08-25T02:16:45.830",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72700"
     },
@@ -4979,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00231,
+        "percentile": 0.13833
+      },
       "published": "2026-08-25T02:16:51.457",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75575"
     },
@@ -5623,10 +5567,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00331,
-        "percentile": 0.25683
-      },
+      "epss": null,
       "published": "2026-08-25T08:18:09.717",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-59769"
     },
@@ -5682,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00282,
+        "percentile": 0.20303
+      },
       "published": "2026-08-25T08:18:10.583",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78322"
     },
@@ -6326,10 +6270,7 @@
       "product": "Hive",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00518,
-        "percentile": 0.41983
-      },
+      "epss": null,
       "published": "2026-08-25T11:16:53.410",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49845"
     },
@@ -6385,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00289,
+        "percentile": 0.20979
+      },
       "published": "2026-08-25T11:16:54.627",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78863"
     },
@@ -7029,10 +6973,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00224,
-        "percentile": 0.12923
-      },
+      "epss": null,
       "published": "2026-08-25T13:19:32.433",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79406"
     },
@@ -7088,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00142,
+        "percentile": 0.03806
+      },
       "published": "2026-08-25T14:16:58.010",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79655"
     },
@@ -7732,10 +7676,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00304,
-        "percentile": 0.22629
-      },
+      "epss": null,
       "published": "2026-08-25T16:17:28.603",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79771"
     },
@@ -7791,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00307,
+        "percentile": 0.22892
+      },
       "published": "2026-08-25T16:17:29.233",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79775"
     },
@@ -8435,10 +8379,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00306,
-        "percentile": 0.22835
-      },
+      "epss": null,
       "published": "2026-08-25T18:17:52.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-26211"
     },
@@ -8494,7 +8435,10 @@
       "product": "Substance 3D Sampler",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00159,
+        "percentile": 0.05355
+      },
       "published": "2026-08-25T18:17:53.450",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48420"
     },
@@ -9138,10 +9082,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00153,
-        "percentile": 0.04815
-      },
+      "epss": null,
       "published": "2026-08-25T19:16:51.060",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55663"
     },
@@ -9197,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00136,
+        "percentile": 0.03346
+      },
       "published": "2026-08-25T19:16:52.307",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65979"
     },
@@ -9841,10 +9785,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00179,
-        "percentile": 0.07468
-      },
+      "epss": null,
       "published": "2026-08-25T21:17:45.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72924"
     },
@@ -9900,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00344,
+        "percentile": 0.27085
+      },
       "published": "2026-08-25T21:17:46.243",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77680"
     },
@@ -10544,10 +10488,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00462,
-        "percentile": 0.38293
-      },
+      "epss": null,
       "published": "2026-08-25T21:17:51.520",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78955"
     },
@@ -10603,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00426,
+        "percentile": 0.35511
+      },
       "published": "2026-08-25T21:17:51.953",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78959"
     },
@@ -11247,10 +11191,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00299,
-        "percentile": 0.22091
-      },
+      "epss": null,
       "published": "2026-08-25T21:17:57.637",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79018"
     },
@@ -11306,7 +11247,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00269,
+        "percentile": 0.18715
+      },
       "published": "2026-08-25T21:17:58.080",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79022"
     },
@@ -11950,10 +11894,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00265,
-        "percentile": 0.18077
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:03.280",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79075"
     },
@@ -12009,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00248,
+        "percentile": 0.15954
+      },
       "published": "2026-08-25T21:18:03.740",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79082"
     },
@@ -12653,10 +12597,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00224,
-        "percentile": 0.12903
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:08.947",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79137"
     },
@@ -12712,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00197,
+        "percentile": 0.09448
+      },
       "published": "2026-08-25T21:18:09.377",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79141"
     },
@@ -13356,10 +13300,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00219,
-        "percentile": 0.12215
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:14.497",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79206"
     },
@@ -13415,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00381,
+        "percentile": 0.31098
+      },
       "published": "2026-08-25T21:18:14.930",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79210"
     },
@@ -14059,12 +14003,68 @@
       "product": "Android, Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00446,
-        "percentile": 0.3715
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:20.117",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79256"
+    },
+    {
+      "id": "CVE-2026-79257",
+      "desc": "Use after free in Views in Google Chrome prior to 152.0.7977.65 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss": 9.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:20.230",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79257"
+    },
+    {
+      "id": "CVE-2026-79258",
+      "desc": "Incorrect authorization in WebXR in Google Chrome prior to 152.0.7977.65 allowed a remote attacker leveraging social engineering to obtain cross-origin data via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:20.340",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79258"
+    },
+    {
+      "id": "CVE-2026-79259",
+      "desc": "Improper input validation in Safebrowsing in Google Chrome prior to 152.0.7977.65 allowed a remote attacker to bypass system access restrictions via a crafted file. (Chromium security severity: Medium)",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:20.450",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79259"
+    },
+    {
+      "id": "CVE-2026-79260",
+      "desc": "Improper input validation in Cookies in Google Chrome prior to 152.0.7977.65 allowed a remote attacker who had compromised the renderer process to bypass web origin policy via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00232,
+        "percentile": 0.13924
+      },
+      "published": "2026-08-25T21:18:20.560",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79260"
     }
   ],
   "kev": [
