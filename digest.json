@@ -1,165 +1,11 @@
 {
-  "generated": "2026-08-30T11:34:04.350362+00:00",
+  "generated": "2026-08-30T16:21:19.063767+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>107 critical CVE(s)</strong> and <strong>11 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>104 critical CVE(s)</strong> and <strong>11 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-4671",
-      "desc": "justhtml before 1.18.0 contains multiple low-severity denial-of-service issues in CSS selector handling and linkification. Applications that evaluate attacker-controlled selector strings (via query(), matches(), or selector-based transforms), run selector matching over very large untrusted documents",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:53.293",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4671"
-    },
-    {
-      "id": "CVE-2026-5388",
-      "desc": "justhtml before 1.15.0 contains multiple security issues in URL sanitization helpers (clean_url_value/clean_url_in_js_string), HTML serialization, Markdown passthrough (html_passthrough=True), and several custom sanitization-policy edge cases. Depending on configuration, an attacker can bypass sanit",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:53.470",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5388"
-    },
-    {
-      "id": "CVE-2026-5389",
-      "desc": "justhtml versions before 1.13.0 contain a cross-site scripting vulnerability in the to_markdown() function when serializing attacker-controlled pre content. Attackers can place backticks inside sanitized pre elements to break out of fixed-length code fences, allowing raw HTML to execute when the gen",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:53.647",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5389"
-    },
-    {
-      "id": "CVE-2026-5751",
-      "desc": "justhtml versions 1.13.0 and earlier contain a parser-differential / mutation cross-site scripting (mXSS) vulnerability when using a custom SanitizationPolicy that preserves foreign namespaces (e.g., drop_foreign_namespaces=False with allowlisted SVG/MathML elements or raw-text containers such as <s",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:53.807",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-5751"
-    },
-    {
-      "id": "CVE-2026-6827",
-      "desc": "justhtml before 1.17.0 contains multiple security issues in sanitization, serialization, and programmatic DOM handling. When custom policies preserve foreign namespaces (SVG/MathML), dangerous content such as HTML integration points (SVG <foreignObject>, MathML <annotation-xml encoding=\"text/html\">)",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:53.963",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6827"
-    },
-    {
-      "id": "CVE-2026-74793",
-      "desc": "justhtml before 3.11.0 contains a cross-site scripting vulnerability where the default sanitizer bypasses event handler removal in selectedcontent projections. Attackers can inject SVG or MathML elements with event handlers that are cloned and reinserted into output without sanitization, enabling st",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:54.127",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74793"
-    },
-    {
-      "id": "CVE-2026-77088",
-      "desc": "justhtml versions 0.9.0 through 1.21.0 contain a cross-site scripting vulnerability in to_markdown() where inline code spans fail to account for blank lines as block boundaries. Attackers can inject blank lines into code or pre element text to break the inline span, causing sanitized HTML to be emit",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:54.433",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77088"
-    },
-    {
-      "id": "CVE-2026-7808",
-      "desc": "justhtml before 1.16.0 contains multiple HTML sanitization bypass issues that can allow active/dangerous content (e.g., script or style) to survive sanitization, potentially leading to cross-site scripting. The issues primarily affect advanced usage rather than the default JustHTML(..., sanitize=Tru",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:54.810",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7808"
-    },
-    {
-      "id": "CVE-2026-8445",
-      "desc": "justhtml versions <= 1.11.0 (fixed in 1.12.0) do not sufficiently escape HTML-significant characters (angle brackets) in text nodes when converting a parsed document to Markdown via to_markdown(). While a small set of Markdown metacharacters are escaped, characters such as < and > are preserved, so ",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:54.957",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8445"
-    },
-    {
-      "id": "CVE-2026-8630",
-      "desc": "justhtml before 1.12.0 (versions <= 1.11.0) contains a mutation cross-site scripting (mXSS) vulnerability in the serialization of raw-text elements such as <style> and <script>. When a DOM tree is processed by sanitize_dom() using a custom policy that keeps these elements, text nodes inside them are",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:55.127",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8630"
-    },
-    {
-      "id": "CVE-2026-9769",
-      "desc": "justhtml through 1.9.1 (fixed in 1.10.0) is vulnerable to uncontrolled recursion leading to denial of service. During JustHTML() construction, TreeBuilder.finish() unconditionally calls _populate_selectedcontent(), which recursively traverses the DOM tree via _find_elements()/_find_element() without",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-23T14:16:55.277",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9769"
-    },
     {
       "id": "CVE-2026-75922",
       "desc": "Reverse::Proxy versions before 0.04 for Perl allow HTTP request smuggling via a percent-decoded PATH_INFO written unencoded to the upstream request line.\n\nPSGI hands PATH_INFO to an application percent-decoded, so a %XX sequence in the client URL has become a raw byte by the time the proxy sees it. ",
@@ -702,10 +548,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0025,
-        "percentile": 0.16148
-      },
+      "epss": null,
       "published": "2026-08-24T04:16:59.297",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78185"
     },
@@ -859,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00251,
+        "percentile": 0.16264
+      },
       "published": "2026-08-24T06:20:56.080",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78200"
     },
@@ -1405,10 +1251,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00268,
-        "percentile": 0.18613
-      },
+      "epss": null,
       "published": "2026-08-24T12:16:51.877",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32558"
     },
@@ -1562,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00159,
+        "percentile": 0.05366
+      },
       "published": "2026-08-24T12:16:54.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-6017"
     },
@@ -2108,10 +1954,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00496,
-        "percentile": 0.40457
-      },
+      "epss": null,
       "published": "2026-08-24T14:17:04.910",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78369"
     },
@@ -2265,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00273,
+        "percentile": 0.19327
+      },
       "published": "2026-08-24T15:16:37.940",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39914"
     },
@@ -2811,10 +2657,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0017,
-        "percentile": 0.06535
-      },
+      "epss": null,
       "published": "2026-08-24T18:16:59.450",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13213"
     },
@@ -2968,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00478,
+        "percentile": 0.3935
+      },
       "published": "2026-08-24T18:17:03.110",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71912"
     },
@@ -3514,10 +3360,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.02346,
-        "percentile": 0.82302
-      },
+      "epss": null,
       "published": "2026-08-24T18:17:34.973",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-9254"
     },
@@ -3671,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0022,
+        "percentile": 0.12432
+      },
       "published": "2026-08-24T19:16:50.253",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71508"
     },
@@ -4217,10 +4063,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00256,
-        "percentile": 0.16947
-      },
+      "epss": null,
       "published": "2026-08-24T21:17:47.253",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75464"
     },
@@ -4374,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00146,
+        "percentile": 0.04193
+      },
       "published": "2026-08-24T22:16:51.773",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32556"
     },
@@ -4920,10 +4766,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00497,
-        "percentile": 0.40516
-      },
+      "epss": null,
       "published": "2026-08-25T02:16:42.330",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-56705"
     },
@@ -5077,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00255,
+        "percentile": 0.1679
+      },
       "published": "2026-08-25T02:16:45.830",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72700"
     },
@@ -5623,10 +5469,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00654,
-        "percentile": 0.48481
-      },
+      "epss": null,
       "published": "2026-08-25T07:17:10.467",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68062"
     },
@@ -5780,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00331,
+        "percentile": 0.25683
+      },
       "published": "2026-08-25T08:18:09.717",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-59769"
     },
@@ -6326,10 +6172,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00275,
-        "percentile": 0.19512
-      },
+      "epss": null,
       "published": "2026-08-25T10:18:09.430",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49050"
     },
@@ -6483,7 +6326,10 @@
       "product": "Hive",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00518,
+        "percentile": 0.41983
+      },
       "published": "2026-08-25T11:16:53.410",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49845"
     },
@@ -7029,10 +6875,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00612,
-        "percentile": 0.46589
-      },
+      "epss": null,
       "published": "2026-08-25T13:19:26.010",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-63072"
     },
@@ -7186,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00224,
+        "percentile": 0.12923
+      },
       "published": "2026-08-25T13:19:32.433",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79406"
     },
@@ -7732,10 +7578,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00151,
-        "percentile": 0.04609
-      },
+      "epss": null,
       "published": "2026-08-25T16:16:55.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55580"
     },
@@ -7889,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00304,
+        "percentile": 0.22629
+      },
       "published": "2026-08-25T16:17:28.603",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79771"
     },
@@ -8435,10 +8281,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00224,
-        "percentile": 0.12865
-      },
+      "epss": null,
       "published": "2026-08-25T17:17:36.787",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-59186"
     },
@@ -8592,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00306,
+        "percentile": 0.22835
+      },
       "published": "2026-08-25T18:17:52.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-26211"
     },
@@ -9138,10 +8984,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00153,
-        "percentile": 0.04787
-      },
+      "epss": null,
       "published": "2026-08-25T18:18:04.673",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76189"
     },
@@ -9295,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00153,
+        "percentile": 0.04815
+      },
       "published": "2026-08-25T19:16:51.060",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55663"
     },
@@ -9841,10 +9687,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00115,
-        "percentile": 0.01705
-      },
+      "epss": null,
       "published": "2026-08-25T21:17:28.680",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65088"
     },
@@ -9998,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00179,
+        "percentile": 0.07468
+      },
       "published": "2026-08-25T21:17:45.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-72924"
     },
@@ -10544,10 +10390,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00279,
-        "percentile": 0.19972
-      },
+      "epss": null,
       "published": "2026-08-25T21:17:50.297",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78944"
     },
@@ -10701,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00462,
+        "percentile": 0.38293
+      },
       "published": "2026-08-25T21:17:51.520",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78955"
     },
@@ -11247,10 +11093,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00402,
-        "percentile": 0.3325
-      },
+      "epss": null,
       "published": "2026-08-25T21:17:56.423",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79007"
     },
@@ -11404,7 +11247,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00299,
+        "percentile": 0.22091
+      },
       "published": "2026-08-25T21:17:57.637",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79018"
     },
@@ -11950,10 +11796,7 @@
       "product": "Chrome, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0039,
-        "percentile": 0.31975
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:02.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79064"
     },
@@ -12107,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00265,
+        "percentile": 0.18077
+      },
       "published": "2026-08-25T21:18:03.280",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79075"
     },
@@ -12653,10 +12499,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00247,
-        "percentile": 0.15829
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:07.653",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79125"
     },
@@ -12810,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00224,
+        "percentile": 0.12903
+      },
       "published": "2026-08-25T21:18:08.947",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79137"
     },
@@ -13356,10 +13202,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00373,
-        "percentile": 0.30093
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:13.250",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79195"
     },
@@ -13513,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00219,
+        "percentile": 0.12215
+      },
       "published": "2026-08-25T21:18:14.497",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79206"
     },
@@ -14059,12 +13905,166 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00084,
-        "percentile": 0.00309
-      },
+      "epss": null,
       "published": "2026-08-25T21:18:18.887",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79245"
+    },
+    {
+      "id": "CVE-2026-79246",
+      "desc": "Information leak in DataTransfer in Google Chrome prior to 152.0.7977.65 allowed a remote attacker to obtain sensitive information via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.000",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79246"
+    },
+    {
+      "id": "CVE-2026-79247",
+      "desc": "Use after free in Chromoting in Google Chrome on on Windows prior to 152.0.7977.65 allowed a remote attacker who had compromised the renderer process to execute arbitrary code outside the sandbox via crafted network traffic. (Chromium security severity: High)",
+      "cvss": 8.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google, Microsoft",
+      "product": "Chrome, Windows",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.107",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79247"
+    },
+    {
+      "id": "CVE-2026-79248",
+      "desc": "Incorrect authorization in Input in Google Chrome prior to 152.0.7977.65 allowed a remote attacker who had compromised the renderer process to bypass web origin policy via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.220",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79248"
+    },
+    {
+      "id": "CVE-2026-79249",
+      "desc": "Code injection in Bisection in Google Chrome prior to 152.0.7977.65 allowed a remote attacker to obtain sensitive information via a crafted file. (Chromium security severity: Medium)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.323",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79249"
+    },
+    {
+      "id": "CVE-2026-79250",
+      "desc": "UI misrepresentation in Navigation in Google Chrome prior to 152.0.7977.65 allowed a remote attacker to spoof address bar via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.440",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79250"
+    },
+    {
+      "id": "CVE-2026-79251",
+      "desc": "Improper input validation in Network in Google Chrome prior to 152.0.7977.65 allowed a remote attacker to potentially bypass web origin policy via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.557",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79251"
+    },
+    {
+      "id": "CVE-2026-79252",
+      "desc": "Information leak in ServiceWorker in Google Chrome prior to 152.0.7977.65 allowed a remote attacker to obtain cross-origin data via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.667",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79252"
+    },
+    {
+      "id": "CVE-2026-79253",
+      "desc": "Improper input validation in Network in Google Chrome on on Windows prior to 152.0.7977.65 allowed a remote attacker leveraging social engineering to leak sensitive information via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google, Microsoft",
+      "product": "Chrome, Windows",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.777",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79253"
+    },
+    {
+      "id": "CVE-2026-79254",
+      "desc": "Incorrect reference resolution in CustomTabs in Google Chrome on on Android prior to 152.0.7977.65 allowed a remote attacker to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Android, Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:19.883",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79254"
+    },
+    {
+      "id": "CVE-2026-79255",
+      "desc": "Improper input validation in WebRTC in Google Chrome prior to 152.0.7977.65 allowed a remote attacker who had compromised the renderer process to bypass web origin policy via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 3.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-08-25T21:18:20.000",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79255"
+    },
+    {
+      "id": "CVE-2026-79256",
+      "desc": "Externally controlled reference in WebView in Google Chrome on on Android prior to 152.0.7977.65 allowed a remote attacker who had compromised the renderer process to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 8.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google",
+      "product": "Android, Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00446,
+        "percentile": 0.3715
+      },
+      "published": "2026-08-25T21:18:20.117",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79256"
     }
   ],
   "kev": [
@@ -15921,6 +15921,30 @@
       "summary": ""
     },
     {
+      "title": "FulcrumSec claims Manchester Airports hack, theft of 86 GB of data",
+      "url": "https://www.bleepingcomputer.com/news/security/fulcrumsec-claims-manchester-airports-hack-theft-of-86-gb-of-data/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-30T15:00:21+00:00",
+      "summary": "FulcrumSec claims it stole 86 GB of data from Manchester Airports Group. BleepingComputer validated one traveller's record, while samples revealed detailed customer, booking, and travel information beyond what MAG initially disclosed. [...]"
+    },
+    {
+      "title": "Anthropic warns infostealer malware is hijacking Claude sessions to drain usage",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-30T14:30:25+00:00",
+      "summary": "Anthropic is warning some Claude users that infostealer malware on their PCs has stolen active Claude login sessions, allowing attackers to access accounts and consume their usage. [...]"
+    },
+    {
+      "title": "Chrome Web Store extensions caught stealing crypto, browser data",
+      "url": "https://www.bleepingcomputer.com/news/security/chrome-web-store-extensions-caught-stealing-crypto-browser-data/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-08-30T14:17:44+00:00",
+      "summary": "Multiple extensions for Google Chrome and Microsoft Edge delivered a malware framework that deployed modules to steal cryptocurrency, sensitive data, and browser history, as well as inject ClickFix lures. [...]"
+    },
+    {
       "title": "TerminalFix Uses Fake Cloudflare CAPTCHAs to Deploy Reverse-Tunnel Backdoor",
       "url": "https://thehackernews.com/2026/08/terminalfix-uses-fake-cloudflare.html",
       "source": "The Hacker News",
@@ -16049,14 +16073,6 @@
       "summary": "Malicious actors are exploiting a newly patched security flaw in PaperCut NG and MF to execute arbitrary code on susceptible instances, as the company released a fresh emergency fix with additional hardening.\n\n\"This vulnerability gives an unauthenticated attacker remote control over PaperCut's trust"
     },
     {
-      "title": "68-year-old imprisoned after making $1.3 million by pirating IPTV services",
-      "url": "https://www.bleepingcomputer.com/news/security/68-year-old-imprisoned-after-making-13-million-by-pirating-iptv-services/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-28T16:36:47+00:00",
-      "summary": "A 68-year-old has been sentenced in the U.K. to more than six years in prison for operating an illegal IPTV (Internet Protocol Television) service that generated \u00a3980,812 ($1.3 million) over three years. [...]"
-    },
-    {
       "title": "PaperCut warns of hackers using printer management software flaw in attacks",
       "url": "https://therecord.media/papercut-warns-of-hackers-using-printer-management-vulnerabilities",
       "source": "The Record",
@@ -16097,14 +16113,6 @@
       "summary": "Cybersecurity researchers have discovered a cluster of 18 Google Chrome and one Microsoft Edge extensions that were published over the last six months and harbored wallet secret stealing and cryptocurrency draining capabilities.\n\n\nThe extensions, per Socket security researcher Karlo Zanki, share sim"
     },
     {
-      "title": "AI Is Accelerating Vulnerability Discovery. Can Defenders Keep Up?",
-      "url": "https://www.bleepingcomputer.com/news/security/ai-is-accelerating-vulnerability-discovery-can-defenders-keep-up/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-28T14:00:10+00:00",
-      "summary": "AI is accelerating vulnerability discovery, putting pressure on systems built to enrich, prioritize, and remediate flaws at a slower pace. Action1 explains why defenders increasingly need to correlate multiple intelligence sources and turn vulnerability data into faster remediation. [...]"
-    },
-    {
       "title": "You Need Cyber Deception for OT",
       "url": "https://www.darkreading.com/ics-ot-security/you-need-cyber-deception-ot",
       "source": "Dark Reading",
@@ -16143,14 +16151,6 @@
       "category": "news",
       "published": "2026-08-28T13:00:00+00:00",
       "summary": "A large-scale phishing campaign used fake voicemail SVG attachments to bypass email defenses, targeting 5527 organizations with over 26,000 malicious messages"
-    },
-    {
-      "title": "Over 8,300 Gitea servers vulnerable to code execution attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-08-28T12:58:43+00:00",
-      "summary": "Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver. [...]"
     },
     {
       "title": "OpenAI Agents Exploited Linux Kernel Flaw on Company\u2019s Own Systems",
@@ -16587,7 +16587,7 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 107,
+    "critical": 104,
     "high": 387,
     "exploited": 0,
     "kev_total": 1685,
