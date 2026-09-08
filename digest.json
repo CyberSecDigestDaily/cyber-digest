@@ -1,445 +1,11 @@
 {
-  "generated": "2026-09-07T21:19:44.183074+00:00",
+  "generated": "2026-09-08T03:48:48.997620+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>87 critical CVE(s)</strong> and <strong>10 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>88 critical CVE(s)</strong> and <strong>8 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-77348",
-      "desc": "Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 5.0.0, the fix for CVE-2026-33407 (GHSA-hhjq-82f8-m6rc, \"SSRF via HTTP Proxy Environment Variable\") hardened endpoints/logos/search.php by disabling cURL proxying (CURLOPT_PROXY = '' + CURLOPT_NOPROXY = '*'). How",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:20.317",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77348"
-    },
-    {
-      "id": "CVE-2026-77351",
-      "desc": "Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 5.0.0, Wallos lets any authenticated user store an arbitrary SMTP host \u2014 including private and cloud-metadata IP addresses \u2014 in their personal email notification settings, with no server-side SSRF validation. Whe",
-      "cvss": 3.5,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:20.467",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77351"
-    },
-    {
-      "id": "CVE-2026-77352",
-      "desc": "Wallos is an open-source, self-hostable personal subscription tracker. From version 2.0.0 to before version 5.0.0, any authenticated Wallos user (no admin rights required) can make the server open arbitrary outbound SMTP connections to internal/link-local addresses, by setting the SMTP host of their",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:20.607",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77352"
-    },
-    {
-      "id": "CVE-2026-77353",
-      "desc": "Wallos is an open-source, self-hostable personal subscription tracker. Prior to version 5.0.0, Wallos allows authenticated users to inject arbitrary iCalendar properties and events into their exported .ics feed by embedding raw CRLF sequences in subscription names or notes. Because the input validat",
-      "cvss": 4.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:20.743",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77353"
-    },
-    {
-      "id": "CVE-2026-82393",
-      "desc": "pnpm is a package manager. Prior to 10.34.5 and 11.11.0, pnpm accepts a scoped path traversal in a tarball dependency's package.json manifest name because pnpm11/resolving/npm-resolver/src/pickPackage.ts rejects slash characters only for unscoped names. During pnpm install, the unvalidated name reac",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:22.353",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82393"
-    },
-    {
-      "id": "CVE-2026-82394",
-      "desc": "Sulu is an open-source PHP content management system based on the Symfony framework. Prior to versions 2.6.25 and 3.0.8, the preview-link endpoint and src/Sulu/Bundle/PreviewBundle/Application/Manager/PreviewLinkManager.php do not enforce VIEW permission for the target resource in PreviewLinkManager",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:22.497",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82394"
-    },
-    {
-      "id": "CVE-2026-82395",
-      "desc": "Sulu is an open-source PHP content management system based on the Symfony framework. Prior to versions 2.6.25 and 3.0.8, the media move endpoint derives its permission check from the client-supplied collection value instead of the media item's actual source collection, and src/Sulu/Bundle/MediaBundl",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:22.647",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82395"
-    },
-    {
-      "id": "CVE-2026-82396",
-      "desc": "Sulu is an open-source PHP content management system based on the Symfony framework. Prior to versions 2.6.25 and 3.0.8, src/Sulu/Bundle/MediaBundle/Controller/MediaStreamController.php allows the /media/{id}/download/{slug} route and its administration variant to honor the inline query parameter fo",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:22.780",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82396"
-    },
-    {
-      "id": "CVE-2026-82397",
-      "desc": "Tornado is a Python web framework and asynchronous networking library. Prior to 6.5.8, Tornado parses application/x-www-form-urlencoded request bodies with urllib.parse.parse_qs in tornado/escape.py without passing max_num_fields. RequestHandler._execute in tornado/web.py parses the body before hand",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:22.920",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82397"
-    },
-    {
-      "id": "CVE-2026-82398",
-      "desc": "pypdf is a free and open-source pure-python PDF library. Prior to 6.15.0, an attacker can craft a PDF that causes long runtimes when the pypdf/_utils.py function read_until_whitespace reads a stream containing a long run of bytes without whitespace. The function repeatedly performs immutable bytes c",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:23.083",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82398"
-    },
-    {
-      "id": "CVE-2026-82882",
-      "desc": "Devtron through 2.2.0 fails to enforce authorization checks on the GET /orchestrator/api-token/webhook endpoint, allowing authenticated users to retrieve admin API tokens. Attackers with any authenticated account can query the endpoint with arbitrary project, environment, and application parameters ",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:31.940",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82882"
-    },
-    {
-      "id": "CVE-2026-82921",
-      "desc": "A weakness has been identified in ShopEx ECShop up to 2.5.1. This affects the function check_img_type of the file admin/pack.php. Executing a manipulation of the argument pack_img can lead to unrestricted upload. It is possible to launch the attack remotely. The exploit has been made available to th",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:33.740",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82921"
-    },
-    {
-      "id": "CVE-2026-82922",
-      "desc": "A security vulnerability has been detected in ShopEx ECShop up to 2.5.1. This vulnerability affects the function flow_update_cart of the file /flow.php?step=update_cart. The manipulation of the argument rec_id leads to sql injection. The attack can be initiated remotely. The exploit has been disclos",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:33.907",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82922"
-    },
-    {
-      "id": "CVE-2026-82954",
-      "desc": "A vulnerability was detected in Dokploy up to 0.29.7. This issue affects the function writeTraefikConfigInPath of the file packages/server/src/utils/traefik/application.ts of the component Settings. The manipulation of the argument path results in path traversal. The attack can be launched remotely.",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:34.080",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82954"
-    },
-    {
-      "id": "CVE-2026-82957",
-      "desc": "A vulnerability was found in hyperledger-firefly firefly up to 1.4.0. The impacted element is the function ValidateOptions of the file internal/events/webhooks/webhooks.go of the component Webhook Subscription. Performing a manipulation of the argument url results in server-side request forgery. Rem",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T22:17:34.250",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82957"
-    },
-    {
-      "id": "CVE-2026-82971",
-      "desc": "A vulnerability was determined in QVidium Opera11 3.3.2a26-Ax4x-opera11. This affects an unknown part of the file /cgi-bin/net_tr.cgi of the component CGI Script. This manipulation of the argument ipaddr causes command injection. The attack may be initiated remotely. The exploit has been publicly di",
-      "cvss": 10.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T23:16:35.460",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82971"
-    },
-    {
-      "id": "CVE-2026-83524",
-      "desc": "A security vulnerability has been detected in RedPort Optimizer wXa-203, Optimizer wXa-213 and Optimizer wXa-223 up to 20260704. This impacts the function exec of the file /xgatev1/system/datetime.php of the component System Clock. The manipulation leads to command injection. The attack may be initi",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-08-31T23:16:35.650",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-83524"
-    },
-    {
-      "id": "CVE-2026-19820",
-      "desc": "A vulnerability in the Backblaze Client allows a local user to make the system not bootable by creating a link from Backblaze's folder to Windows OS system files during a backup. Successful exploitation requires an administrator-level system change that results in the absence of specific Windows OS ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T01:16:33.137",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19820"
-    },
-    {
-      "id": "CVE-2026-18743",
-      "desc": "A flaw was found in popt. This vulnerability allows an attacker to provide specially crafted configuration content to a host, which, when loaded, can lead to a small memory corruption issue. This occurs because of an error in how the `poptConfigFileToString` function reallocates memory for buffers. ",
-      "cvss": 2.5,
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "LOW",
-      "vendor": "Red Hat",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T02:16:57.647",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18743"
-    },
-    {
-      "id": "CVE-2026-48932",
-      "desc": "A flaw in Node.js HTTP client can cause a request desynchronization for Node.js-based forwarding proxies that rebuild outbound headers from the visible `IncomingMessage` headers while piping the original body to a reused backend connection.\r\n\r\nNode.js can omit headers beyond `maxHeadersCount` / `max",
-      "cvss": 3.7,
-      "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:48.680",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48932"
-    },
-    {
-      "id": "CVE-2026-65643",
-      "desc": "Eval injection in cPanel 11.138.0.0 and earlier allows remote authenticated users to execute arbitrary code as root.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "Cpanel",
-      "product": "Cpanel",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:50.807",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65643"
-    },
-    {
-      "id": "CVE-2026-67394",
-      "desc": "A critical local privilege escalation via OS command injection vulnerability has been discovered in Plesk for Linux, affecting all versions from 18.0.34 before 18.0.79.9 and 18.0.80.5. The vulnerability allows a customer or reseller with shell access (or allowed to change their own shell access) to ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:50.937",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67394"
-    },
-    {
-      "id": "CVE-2026-67395",
-      "desc": "A path traversal vulnerability exists in Sage Employee Self Service\u2019s custom logo functionality due to improper validation of file path parameters. By leveraging directory traversal sequences and their encoded variants, an attacker may bypass directory restrictions and access files outside the appli",
-      "cvss": 5.9,
-      "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:51.060",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67395"
-    },
-    {
-      "id": "CVE-2026-74837",
-      "desc": "Allocation of Resources Without Limits or Throttling vulnerability in ash-project ash_typescript allows an unauthenticated attacker to exhaust the BEAM atom table and abort the node via client-supplied RPC field names.\n\nAshTypescript.FieldFormatter.convert_to_field_atom/2 in lib/ash_typescript/field",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:51.187",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74837"
-    },
-    {
-      "id": "CVE-2026-75865",
-      "desc": "The WPLP Cookie Consent \u2013 Cookie Banner & Consent Management for GDPR, CCPA & Google Consent Mode plugin for WordPress is vulnerable to arbitrary file upload due to missing file type validation in the saas_upload_logo() function combined with an authorization bypass on the WPLP connector REST endpoi",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:51.370",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75865"
-    },
-    {
-      "id": "CVE-2026-77856",
-      "desc": "Allocation of Resources Without Limits or Throttling vulnerability in ash-project ash_typescript allows an unauthenticated attacker to exhaust the BEAM atom table and abort the node via client-supplied typed struct field names.\n\nresolve_typed_struct_field/2 in lib/ash_typescript/rpc/field_processing",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:51.500",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77856"
-    },
-    {
-      "id": "CVE-2026-77950",
-      "desc": "Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_typescript allows an unauthenticated attacker to receive unredacted internal error data by provoking an error shape the configured error handler does not match.\n\napply_error_handler/3 in lib/ash_typescript/",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:51.660",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77950"
-    },
-    {
-      "id": "CVE-2026-82730",
-      "desc": "Incorrect Authorization vulnerability in ash-project ash_typescript allows an unauthorized RPC caller to read attribute values that Ash field policies denied.\n\nWhen a field policy denies an attribute, Ash substitutes %Ash.ForbiddenField{}, which retains the real value in original_value because embed",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:52.787",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82730"
-    },
-    {
-      "id": "CVE-2026-82731",
-      "desc": "URL Redirection to Untrusted Site ('Open Redirect') vulnerability in ash-project ash_typescript allows an attacker who controls a path-parameter value to redirect a generated client's request, and the credentials attached to it, to an unintended route or an external origin.\n\nThe URL builders in lib/",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:52.993",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82731"
-    },
-    {
-      "id": "CVE-2026-82732",
-      "desc": "Improper Input Validation vulnerability in ash-project ash_typescript allows a remote attacker to submit argument values outside a declared allowlist or bound on typed-controller routes.\n\nAshTypescript.TypedController.RequestHandler in lib/ash_typescript/typed_controller/request_handler.ex calls Ash",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:53.193",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82732"
-    },
-    {
-      "id": "CVE-2026-82733",
-      "desc": "Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_typescript allows an unauthenticated attacker to read internal application data from an HTTP 500 response body.\n\nWhen a typed-controller route handler returns anything other than a %Plug.Conn{}, dispatch/3 ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-01T03:16:53.373",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82733"
-    },
     {
       "id": "CVE-2026-19032",
       "desc": "jackson-databind's deserializer for java.nio.file.Path resolves an attacker-supplied URI without restricting the URI scheme. In JDKFromStringDeserializer.NioPathHelper.deserialize, a string bound from untrusted JSON is passed to new URI(value) and then to Path.of(uri). When that throws FileSystemNot",
@@ -702,10 +268,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00193,
-        "percentile": 0.09042
-      },
+      "epss": null,
       "published": "2026-09-01T05:17:08.847",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16787"
     },
@@ -1139,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0034,
+        "percentile": 0.26895
+      },
       "published": "2026-09-01T11:16:44.443",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-4813"
     },
@@ -1405,10 +971,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0027,
-        "percentile": 0.18884
-      },
+      "epss": null,
       "published": "2026-09-01T12:17:48.867",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84193"
     },
@@ -1842,7 +1405,10 @@
       "product": "Firefox, Thunderbird",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00233,
+        "percentile": 0.14083
+      },
       "published": "2026-09-01T13:20:06.763",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84128"
     },
@@ -2108,10 +1674,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0039,
-        "percentile": 0.32274
-      },
+      "epss": null,
       "published": "2026-09-01T13:20:08.923",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84148"
     },
@@ -2545,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00349,
+        "percentile": 0.27848
+      },
       "published": "2026-09-01T14:17:41.797",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79684"
     },
@@ -2811,10 +2377,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00686,
-        "percentile": 0.50352
-      },
+      "epss": null,
       "published": "2026-09-01T15:17:23.677",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69664"
     },
@@ -3248,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00366,
+        "percentile": 0.29683
+      },
       "published": "2026-09-01T15:17:40.983",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84110"
     },
@@ -3514,10 +3080,7 @@
       "product": "Nemo Megatron Bridge",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00262,
-        "percentile": 0.17796
-      },
+      "epss": null,
       "published": "2026-09-01T16:17:08.593",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-61756"
     },
@@ -3951,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00238,
+        "percentile": 0.1479
+      },
       "published": "2026-09-01T16:17:35.470",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84205"
     },
@@ -4217,10 +3783,7 @@
       "product": "Kamailio",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00331,
-        "percentile": 0.25829
-      },
+      "epss": null,
       "published": "2026-09-01T18:17:43.243",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-52022"
     },
@@ -4654,7 +4217,10 @@
       "product": "Fabric Composer",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00202,
+        "percentile": 0.10067
+      },
       "published": "2026-09-01T20:17:17.663",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73703"
     },
@@ -4920,10 +4486,7 @@
       "product": "Fabric Composer",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00957,
-        "percentile": 0.59184
-      },
+      "epss": null,
       "published": "2026-09-01T20:17:19.730",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73722"
     },
@@ -5357,7 +4920,10 @@
       "product": "Kibana",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00167,
+        "percentile": 0.06209
+      },
       "published": "2026-09-01T20:17:23.637",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78603"
     },
@@ -5623,10 +5189,7 @@
       "product": "Aruba Cx 10000-48Y6C \\(R8P13A\\), Aruba Cx 10000-48Y6C \\(R8P14A\\), Aruba Cx 10000-48Y6C \\(S0F98A\\)",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00287,
-        "percentile": 0.20966
-      },
+      "epss": null,
       "published": "2026-09-01T21:18:42.337",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73757"
     },
@@ -6060,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00388,
+        "percentile": 0.32022
+      },
       "published": "2026-09-01T21:18:47.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84364"
     },
@@ -6326,10 +5892,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00375,
-        "percentile": 0.30644
-      },
+      "epss": null,
       "published": "2026-09-01T22:17:19.143",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84373"
     },
@@ -6763,7 +6326,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00228,
+        "percentile": 0.13461
+      },
       "published": "2026-09-02T00:18:28.443",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84335"
     },
@@ -7029,10 +6595,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00149,
-        "percentile": 0.04391
-      },
+      "epss": null,
       "published": "2026-09-02T01:17:24.560",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84696"
     },
@@ -7466,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00215,
+        "percentile": 0.11759
+      },
       "published": "2026-09-02T06:17:16.547",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16983"
     },
@@ -7732,10 +7298,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0022,
-        "percentile": 0.12452
-      },
+      "epss": null,
       "published": "2026-09-02T06:17:18.487",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80467"
     },
@@ -8169,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0018,
+        "percentile": 0.07619
+      },
       "published": "2026-09-02T12:17:12.657",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-81289"
     },
@@ -8435,10 +8001,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00161,
-        "percentile": 0.05556
-      },
+      "epss": null,
       "published": "2026-09-02T12:17:15.540",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84781"
     },
@@ -8872,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00176,
+        "percentile": 0.07223
+      },
       "published": "2026-09-02T13:18:11.277",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76782"
     },
@@ -9138,10 +8704,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00193,
-        "percentile": 0.09022
-      },
+      "epss": null,
       "published": "2026-09-02T15:17:36.583",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-15489"
     },
@@ -9575,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00313,
+        "percentile": 0.23829
+      },
       "published": "2026-09-02T15:17:42.297",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79989"
     },
@@ -9841,10 +9407,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00249,
-        "percentile": 0.16164
-      },
+      "epss": null,
       "published": "2026-09-02T16:17:18.910",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-66842"
     },
@@ -10278,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00363,
+        "percentile": 0.29381
+      },
       "published": "2026-09-02T16:17:31.537",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84669"
     },
@@ -10544,10 +10110,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00332,
-        "percentile": 0.25917
-      },
+      "epss": null,
       "published": "2026-09-02T17:17:33.730",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20281"
     },
@@ -10981,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00235,
+        "percentile": 0.14282
+      },
       "published": "2026-09-02T18:21:24.477",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77123"
     },
@@ -11247,10 +10813,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00072,
-        "percentile": 0.00051
-      },
+      "epss": null,
       "published": "2026-09-02T20:17:36.720",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-75135"
     },
@@ -11684,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00349,
+        "percentile": 0.27875
+      },
       "published": "2026-09-03T13:06:07.307",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74768"
     },
@@ -11950,10 +11516,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.002,
-        "percentile": 0.09848
-      },
+      "epss": null,
       "published": "2026-09-03T13:06:11.173",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80727"
     },
@@ -12387,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00175,
+        "percentile": 0.07101
+      },
       "published": "2026-09-03T13:06:15.910",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82918"
     },
@@ -12653,10 +12219,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00552,
-        "percentile": 0.44142
-      },
+      "epss": null,
       "published": "2026-09-03T13:06:21.773",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85124"
     },
@@ -13090,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00124,
+        "percentile": 0.02408
+      },
       "published": "2026-09-03T14:17:03.530",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84815"
     },
@@ -13356,10 +12922,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0023,
-        "percentile": 0.13774
-      },
+      "epss": null,
       "published": "2026-09-03T15:17:39.097",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85179"
     },
@@ -13793,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00096,
+        "percentile": 0.00767
+      },
       "published": "2026-09-03T16:18:25.417",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84965"
     },
@@ -14059,12 +13625,446 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00167,
-        "percentile": 0.06204
-      },
+      "epss": null,
       "published": "2026-09-03T17:17:25.427",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84736"
+    },
+    {
+      "id": "CVE-2026-84752",
+      "desc": "Contributor PHP Object Injection in RTMKit <= 2.1.5 versions.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:25.547",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84752"
+    },
+    {
+      "id": "CVE-2026-84753",
+      "desc": "Unauthenticated PHP Object Injection in Mail Mint <= 1.31.0 versions.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:25.673",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84753"
+    },
+    {
+      "id": "CVE-2026-84754",
+      "desc": "Unauthenticated Broken Access Control in WPFunnels <= 3.12.13 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:25.797",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84754"
+    },
+    {
+      "id": "CVE-2026-84755",
+      "desc": "Unauthenticated Broken Access Control in Mail Mint <= 1.31.0 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:25.917",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84755"
+    },
+    {
+      "id": "CVE-2026-84756",
+      "desc": "Subscriber Privilege Escalation in WCFM Membership <= 2.11.11 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:26.117",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84756"
+    },
+    {
+      "id": "CVE-2026-84757",
+      "desc": "Unauthenticated Settings Change in WP Compress <= 7.21.28 versions.",
+      "cvss": 8.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:26.660",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84757"
+    },
+    {
+      "id": "CVE-2026-84758",
+      "desc": "Unauthenticated Broken Access Control in Business Directory <= 6.4.26 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:26.787",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84758"
+    },
+    {
+      "id": "CVE-2026-84761",
+      "desc": "Unauthenticated Server Side Request Forgery (SSRF) in LiteSpeed Cache <= 7.9 versions.",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:27.060",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84761"
+    },
+    {
+      "id": "CVE-2026-84762",
+      "desc": "Unauthenticated Bypass Vulnerability in WP EasyPay <= 4.5.3 versions.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:27.320",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84762"
+    },
+    {
+      "id": "CVE-2026-84763",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in RTMKit <= 2.1.5 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:27.450",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84763"
+    },
+    {
+      "id": "CVE-2026-84765",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in Breadcrumb NavXT <= 7.5.1 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:27.580",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84765"
+    },
+    {
+      "id": "CVE-2026-84766",
+      "desc": "Unauthenticated Bypass Vulnerability in FluentBooking Pro <= 2.2.1 versions.",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:27.753",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84766"
+    },
+    {
+      "id": "CVE-2026-84767",
+      "desc": "Unauthenticated Bypass Vulnerability in BookIt <= 2.6.0.3 versions.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:27.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84767"
+    },
+    {
+      "id": "CVE-2026-84768",
+      "desc": "Unauthenticated SQL Injection in VikAppointments Services Booking Calendar <= 1.2.20 versions.",
+      "cvss": 9.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.010",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84768"
+    },
+    {
+      "id": "CVE-2026-84769",
+      "desc": "Unauthenticated Insecure Direct Object References (IDOR) in Business Directory <= 6.4.26 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.140",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84769"
+    },
+    {
+      "id": "CVE-2026-84773",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in EWWW Image Optimizer <= 8.7.6 versions.",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.263",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84773"
+    },
+    {
+      "id": "CVE-2026-84774",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in WP Statistics <= 14.16.11 versions.",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.383",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84774"
+    },
+    {
+      "id": "CVE-2026-84776",
+      "desc": "Unauthenticated Denial of Service Attack in MalCare Security <= 6.69 versions.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.507",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84776"
+    },
+    {
+      "id": "CVE-2026-84777",
+      "desc": "Unauthenticated Broken Authentication in Really Simple SSL <= 9.8.0 versions.",
+      "cvss": 7.4,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.623",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84777"
+    },
+    {
+      "id": "CVE-2026-84778",
+      "desc": "Unauthenticated Denial of Service Attack in Migrate Guru \u2013 Site Migration &amp; Cloning <= 6.65 versions.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.747",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84778"
+    },
+    {
+      "id": "CVE-2026-84779",
+      "desc": "Subscriber Broken Access Control in Agentimus \u2013 AI SEO, llms.txt &amp; MCP for AI Agents <= 1.51.0 versions.",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:28.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84779"
+    },
+    {
+      "id": "CVE-2026-84812",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in BP Better Messages <= 2.15.27 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.033",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84812"
+    },
+    {
+      "id": "CVE-2026-84813",
+      "desc": "Unauthenticated SQL Injection in GeoDirectory <= 2.8.174 versions.",
+      "cvss": 9.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.157",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84813"
+    },
+    {
+      "id": "CVE-2026-84814",
+      "desc": "Subscriber Privilege Escalation in Bricksforge <= 3.1.8.8 versions.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.277",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84814"
+    },
+    {
+      "id": "CVE-2026-84834",
+      "desc": "Unauthenticated PHP Object Injection in JobSearch <= 3.2.0 versions.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.400",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84834"
+    },
+    {
+      "id": "CVE-2026-84836",
+      "desc": "Subscriber Insecure Direct Object References (IDOR) in WC Ukraine Shipping <= 1.22.3 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.517",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84836"
+    },
+    {
+      "id": "CVE-2026-84847",
+      "desc": "Unauthenticated Broken Access Control in Quick Event Manager <= 9.17 versions.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.643",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84847"
+    },
+    {
+      "id": "CVE-2026-84848",
+      "desc": "Unauthenticated Cross Site Scripting (XSS) in Quick Event Manager <= 9.17 versions.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.770",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84848"
+    },
+    {
+      "id": "CVE-2026-84849",
+      "desc": "Unauthenticated Bypass Vulnerability in Pre-Orders for WooCommerce <= 2.3 versions.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:29.883",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84849"
+    },
+    {
+      "id": "CVE-2026-85186",
+      "desc": "A weakness has been identified in itsourcecode Online Medicine Delivery System 1.0. Affected by this vulnerability is the function doupdateimage of the file /customer/controller.php?action=photos of the component Customer Controller. Executing a manipulation of the argument photo can lead to unrestr",
+      "cvss": 6.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-03T17:17:30.007",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85186"
+    },
+    {
+      "id": "CVE-2026-85242",
+      "desc": "PlaywrightCapture contains a server-side request forgery (SSRF) vulnerability in its favicon retrieval functionality. When only_global_lookup is enabled, the application validates the initial favicon URL to prevent requests to localhost, loopback, or other non-public network addresses. However, redi",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00254,
+        "percentile": 0.16841
+      },
+      "published": "2026-09-03T17:17:30.177",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85242"
     }
   ],
   "kev": [
@@ -14867,7 +14867,7 @@
       ]
     }
   ],
-  "kev_7d": 10,
+  "kev_7d": 8,
   "gh_advisories": [
     {
       "id": "GHSA-7q9c-hpx7-9cwm",
@@ -15958,6 +15958,14 @@
   ],
   "news": [
     {
+      "title": "ISC Stormcast For Tuesday, September 8th, 2026 https://isc.sans.edu/podcastdetail/10084, (Tue, Sep 8th)",
+      "url": "https://isc.sans.edu/diary/rss/33316",
+      "source": "SANS ISC Diary",
+      "category": "news",
+      "published": "2026-09-08T02:00:03+00:00",
+      "summary": ""
+    },
+    {
       "title": "PEEP Turns Chrome and Edge Into Post-Compromise Backdoors for Host Command Execution",
       "url": "https://thehackernews.com/2026/09/peep-turns-chrome-and-edge-into-post.html",
       "source": "The Hacker News",
@@ -16454,14 +16462,6 @@
       "summary": "The US Army\u2019s laser system is part of a new generation of directed-energy weapons capable of detecting, tracking, and destroying drones with a concentrated beam of light."
     },
     {
-      "title": "ISC Stormcast For Tuesday, September 1st, 2026 https://isc.sans.edu/podcastdetail/10076, (Tue, Sep 1st)",
-      "url": "https://isc.sans.edu/diary/rss/33302",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-09-01T02:00:03+00:00",
-      "summary": ""
-    },
-    {
       "title": "ATM Flaws Reveal Key Weaknesses in the Software Supply Chain",
       "url": "https://www.wired.com/story/atm-flaws-reveal-key-weaknesses-in-the-software-supply-chain/",
       "source": "Wired Security",
@@ -16640,11 +16640,11 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 87,
-    "high": 340,
+    "critical": 88,
+    "high": 347,
     "exploited": 2,
     "kev_total": 1695,
-    "kev_7d": 10,
+    "kev_7d": 8,
     "gh_advisories": 30,
     "threatfox_iocs": 0,
     "epss_enriched": 20
