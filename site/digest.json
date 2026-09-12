@@ -1,389 +1,11 @@
 {
-  "generated": "2026-09-12T10:21:58.594053+00:00",
+  "generated": "2026-09-12T15:16:58.628840+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>78 critical CVE(s)</strong> and <strong>14 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>74 critical CVE(s)</strong> and <strong>14 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-86169",
-      "desc": "Axolotl before 0.19.0 contains a remote code execution vulnerability in the multipack patch path where trust_remote_code defaults to None instead of False, causing the security guard to be bypassed. Attackers can execute arbitrary Python code by crafting a malicious Hugging Face model repository sel",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T11:16:45.703",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86169"
-    },
-    {
-      "id": "CVE-2026-86173",
-      "desc": "MindsDB through 26.1.0 contains a server-side request forgery vulnerability in the web crawler handler that allows unauthenticated attackers to fetch arbitrary URLs by supplying caller-controlled URLs to CrawlerTable.list. Attackers can bypass the allowlist control by exploiting the default empty co",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T11:16:45.850",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86173"
-    },
-    {
-      "id": "CVE-2026-86174",
-      "desc": "Plane through 1.4.2 fails to validate that issues belong to the deploy board's project in the public comment endpoint. Authenticated attackers can post comments to arbitrary issues across workspaces by supplying an issue_id parameter to the public deploy-board comment endpoint.",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T11:16:45.990",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86174"
-    },
-    {
-      "id": "CVE-2026-86175",
-      "desc": "NetBox through 4.7.0 fails to redact sensitive data source backend credentials in REST and GraphQL API responses. Authenticated users with only view permission can retrieve plaintext passwords and secret keys for Git and Amazon S3 backends through API endpoints, gaining unauthorized access to extern",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T11:16:46.123",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86175"
-    },
-    {
-      "id": "CVE-2026-86176",
-      "desc": "NetBox through 4.7.0 fails to properly scope user-private records in REST and GraphQL API endpoints for Notifications, Subscriptions, and Bookmarks. Authenticated users with view permissions can access all users' private records through unscoped querysets, disclosing which users watch or bookmark wh",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T11:16:46.263",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86176"
-    },
-    {
-      "id": "CVE-2026-86177",
-      "desc": "Pterodactyl Panel before 1.14.1 fails to validate action-specific permissions in scheduled task creation, allowing subusers with only schedule.update permission to execute arbitrary console commands. Attackers can create and immediately trigger scheduled tasks that run game-server console commands, ",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T11:16:46.397",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86177"
-    },
-    {
-      "id": "CVE-2026-86178",
-      "desc": "Pixelfed through 0.12.9 fails to validate follower status in StoryComposeController react and comment endpoints, allowing authenticated users to access follower-only stories. Attackers can enumerate sequential story IDs and submit reactions or comments to retrieve story media URLs and author informa",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T11:16:46.537",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86178"
-    },
-    {
-      "id": "CVE-2025-15614",
-      "desc": "ugrep before 7.6.0 contains a heap buffer over-read vulnerability in the LZW decompressor when processing crafted .Z archive files. Attackers can supply malformed .Z files that cause the decompressor to read one byte past the allocated heap buffer, potentially crashing the process.",
-      "cvss": 3.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:45.450",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-15614"
-    },
-    {
-      "id": "CVE-2025-15647",
-      "desc": "CDT before 1.4.5 contains an out-of-bounds read vulnerability in the opposedVertexInd() function when constraint edge intersections are computed in floating point and round outside adjacent triangles. Attackers can supply nearly-degenerate constraint edges through geometry data to trigger an out-of-",
-      "cvss": 5.5,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:46.490",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-15647"
-    },
-    {
-      "id": "CVE-2025-9049",
-      "desc": "The Nokri \u2013 Job Board WordPress Theme theme for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the 'nokri_account_member_permissions' function in all versions up to, and including, 1.6.4. This makes it possible for authenticated attackers, with Subs",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:46.653",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-9049"
-    },
-    {
-      "id": "CVE-2026-10196",
-      "desc": "The Mail Mint \u2013 Email Marketing, Newsletter, Email Automation & WooCommerce Emails plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 1.31.0 via deserialization of untrusted input in the 'handle_form_submission' function. This makes it possible for unaut",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "WordPress",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:46.790",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10196"
-    },
-    {
-      "id": "CVE-2026-12843",
-      "desc": "The LearnDash LMS plugin for WordPress is vulnerable to authorization bypass in versions 4.25.0 - 5.1.6. This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for unauthenticated attackers to enroll arbitrary users in paid courses wit",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:46.923",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12843"
-    },
-    {
-      "id": "CVE-2026-15550",
-      "desc": "The Ninja Forms - Save Progress plugin for WordPress is vulnerable to Missing Authorization in versions up to, and including, 3.0.30. This is due to the lack of capability checks and nonce verification in the 'bulk_actions' function. This makes it possible for authenticated attackers, with subscribe",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:47.050",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15550"
-    },
-    {
-      "id": "CVE-2026-86184",
-      "desc": "Lara Dashboard before 1.3.0 contains an authentication bypass vulnerability in the screenshot-login route that allows unauthenticated attackers to authenticate as any user by email when APP_ENV is not production. Attackers can request the GET /screenshot-login/{email} endpoint with a registered emai",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:49.090",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86184"
-    },
-    {
-      "id": "CVE-2026-86185",
-      "desc": "Bilibili Desktop through 1.18.0 disables TLS certificate verification process-wide and executes unsigned remote JavaScript configuration without integrity checks. An attacker in an on-path network position can intercept configuration fetches, inject arbitrary JavaScript executed in the renderer with",
-      "cvss": 8.0,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T12:16:49.240",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86185"
-    },
-    {
-      "id": "CVE-2026-86186",
-      "desc": "AVideo API fails to enforce rate limits when clients send a bot User-Agent header, allowing attackers to bypass all eight protected operations including login brute-force protection. Attackers can send requests with a bot User-Agent to disable rate limiting and perform unlimited password guessing at",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:13.560",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86186"
-    },
-    {
-      "id": "CVE-2026-86187",
-      "desc": "WWBN AVideo generates passwords for external-login accounts using rand() instead of a cryptographic generator, producing only 31-bit integers. Attackers with access to password hashes can recover plaintext passwords in minutes through offline brute-force attacks due to unsalted MD5-based hashing.",
-      "cvss": 5.9,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:13.703",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86187"
-    },
-    {
-      "id": "CVE-2026-86188",
-      "desc": "AVideo with YPTSocket plugin enabled contains a cross-site scripting vulnerability allowing unauthenticated attackers to execute arbitrary JavaScript in other users' browsers via the websocket callback mechanism. Attackers can send crafted socket messages with callback names resolving to global func",
-      "cvss": 7.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:13.843",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86188"
-    },
-    {
-      "id": "CVE-2026-86189",
-      "desc": "WWBN AVideo contains a path traversal vulnerability in notify.ffmpeg.json.php that allows unauthenticated attackers to write files to arbitrary locations by supplying a caller-chosen path in the avideoRelativePath parameter. Attackers can replay any previously issued ciphertext as a notifyCode token",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.000",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86189"
-    },
-    {
-      "id": "CVE-2026-86190",
-      "desc": "WWBN AVideo contains a broken access control vulnerability in videoViewsInfo endpoints that returns complete user records including password hashes, recovery tokens, and live session identifiers to unauthenticated callers when a hash parameter is provided. Attackers can use the disclosed session ide",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.150",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86190"
-    },
-    {
-      "id": "CVE-2026-86191",
-      "desc": "SiYuan versions before v3.8.2 contain an information disclosure vulnerability in the getAttributeViewKeysByID endpoint that allows publish readers to enumerate private attribute view key definitions without verifying parent database visibility. Attackers can access the endpoint to retrieve complete ",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.300",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86191"
-    },
-    {
-      "id": "CVE-2026-86192",
-      "desc": "SiYuan versions before v3.8.2 fail to properly filter private attribute-view cell values in the getAttributeViewKeys endpoint. Publish readers can retrieve hidden KeyValues payloads from rows bound to inaccessible documents, exposing private database contents without authorization.",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.443",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86192"
-    },
-    {
-      "id": "CVE-2026-86193",
-      "desc": "grav-plugin-api before 1.0.20 fails to validate group-inherited super permissions in user-management guards, allowing non-super user managers to modify super-admin accounts. Attackers with api.access and api.users.write can patch password fields on group-super accounts to gain full administrative co",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.593",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86193"
-    },
-    {
-      "id": "CVE-2026-86194",
-      "desc": "Grav Form Plugin before 9.1.22 fails to verify page authorization when resolving forms by name across pages, allowing anonymous visitors to execute form actions defined on login-restricted or unpublished pages. Attackers can POST to any public page with a restricted form's name to trigger save, uplo",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.727",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86194"
-    },
-    {
-      "id": "CVE-2026-86195",
-      "desc": "grav-plugin-api versions before 1.0.20 contain a privilege escalation vulnerability in the InvitationsController where the stripSuperFlags() method only removes nested super flags but fails to strip dot-keyed equivalents like api.super. A non-super user manager with api.access and api.users.write pe",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.853",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86195"
-    },
-    {
-      "id": "CVE-2026-86196",
-      "desc": "Grav API plugin versions before 1.0.20 build password reset links from the untrusted Host header in the forgot-password endpoint, allowing unauthenticated attackers to redirect reset tokens to attacker-controlled domains. Attackers can send password reset requests for any account with a malicious Ho",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:14.980",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86196"
-    },
-    {
-      "id": "CVE-2026-86197",
-      "desc": "Grav before 2.0.20 contains a cross-site scripting vulnerability in the Twig sandbox policy that allowlists addJs and addCss methods on Grav\\Common\\Assets without proper output escaping. Page editors can inject arbitrary script by registering malicious assets or injecting attributes, which are rende",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-05T13:18:15.110",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86197"
-    },
     {
       "id": "CVE-2026-82752",
       "desc": "Improper Validation of Specified Quantity in Input vulnerability in ash-project ash allows an attacker to store a value of arbitrary size in an attribute whose length constraint should bound it.\n\nAsh measures string length with Elixir's String.length/1, which counts Unicode graphemes, in the max_len",
@@ -702,10 +324,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00301,
-        "percentile": 0.22588
-      },
+      "epss": null,
       "published": "2026-09-06T03:17:15.540",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16310"
     },
@@ -1083,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00334,
+        "percentile": 0.26522
+      },
       "published": "2026-09-06T09:17:16.487",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86183"
     },
@@ -1405,10 +1027,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0018,
-        "percentile": 0.07721
-      },
+      "epss": null,
       "published": "2026-09-06T12:17:16.567",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86256"
     },
@@ -1786,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00269,
+        "percentile": 0.19003
+      },
       "published": "2026-09-06T20:17:28.117",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86222"
     },
@@ -2108,10 +1730,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00109,
-        "percentile": 0.01369
-      },
+      "epss": null,
       "published": "2026-09-07T02:17:19.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20507"
     },
@@ -2489,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00204,
+        "percentile": 0.10574
+      },
       "published": "2026-09-07T04:17:55.467",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86269"
     },
@@ -2811,10 +2433,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00215,
-        "percentile": 0.11912
-      },
+      "epss": null,
       "published": "2026-09-07T08:17:13.897",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86280"
     },
@@ -3192,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00112,
+        "percentile": 0.01514
+      },
       "published": "2026-09-07T11:17:37.490",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85201"
     },
@@ -3514,10 +3136,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0031,
-        "percentile": 0.2362
-      },
+      "epss": null,
       "published": "2026-09-07T13:18:04.133",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12853"
     },
@@ -3895,7 +3514,10 @@
       "product": "Imagemagick",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00109,
+        "percentile": 0.01384
+      },
       "published": "2026-09-07T13:20:41.403",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86424"
     },
@@ -4217,10 +3839,7 @@
       "product": "Secure Connect Gateway",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00397,
-        "percentile": 0.33147
-      },
+      "epss": null,
       "published": "2026-09-07T14:16:54.813",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80130"
     },
@@ -4598,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00101,
+        "percentile": 0.00983
+      },
       "published": "2026-09-07T16:17:29.563",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79943"
     },
@@ -4920,10 +4542,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00201,
-        "percentile": 0.09986
-      },
+      "epss": null,
       "published": "2026-09-07T17:17:27.053",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86488"
     },
@@ -5301,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00329,
+        "percentile": 0.25895
+      },
       "published": "2026-09-07T23:16:52.093",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82586"
     },
@@ -5623,10 +5245,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00094,
-        "percentile": 0.00678
-      },
+      "epss": null,
       "published": "2026-09-08T01:17:54.680",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76960"
     },
@@ -6004,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00337,
+        "percentile": 0.26871
+      },
       "published": "2026-09-08T03:17:19.987",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86515"
     },
@@ -6326,10 +5948,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00337,
-        "percentile": 0.26692
-      },
+      "epss": null,
       "published": "2026-09-08T09:18:16.840",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62647"
     },
@@ -6707,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00248,
+        "percentile": 0.16208
+      },
       "published": "2026-09-08T12:16:59.427",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77968"
     },
@@ -7029,10 +6651,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0013,
-        "percentile": 0.02963
-      },
+      "epss": null,
       "published": "2026-09-08T13:17:27.157",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79602"
     },
@@ -7410,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00169,
+        "percentile": 0.0648
+      },
       "published": "2026-09-08T15:18:39.773",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-0001"
     },
@@ -7732,10 +7354,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0011,
-        "percentile": 0.01424
-      },
+      "epss": null,
       "published": "2026-09-08T15:18:48.773",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-7476"
     },
@@ -8113,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00321,
+        "percentile": 0.2497
+      },
       "published": "2026-09-08T16:18:33.983",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86728"
     },
@@ -8435,10 +8057,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00393,
-        "percentile": 0.32754
-      },
+      "epss": null,
       "published": "2026-09-08T17:18:31.143",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-79569"
     },
@@ -8816,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00622,
+        "percentile": 0.47935
+      },
       "published": "2026-09-08T17:18:36.887",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82533"
     },
@@ -9138,10 +8760,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00219,
-        "percentile": 0.12332
-      },
+      "epss": null,
       "published": "2026-09-08T18:17:44.063",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58611"
     },
@@ -9519,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00475,
+        "percentile": 0.39718
+      },
       "published": "2026-09-08T18:18:21.207",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67378"
     },
@@ -9841,10 +9463,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00552,
-        "percentile": 0.44388
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:24.660",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67645"
     },
@@ -10222,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00245,
+        "percentile": 0.15872
+      },
       "published": "2026-09-08T18:18:31.983",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68841"
     },
@@ -10544,10 +10166,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00834,
-        "percentile": 0.55567
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:36.130",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68887"
     },
@@ -10925,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00252,
+        "percentile": 0.16702
+      },
       "published": "2026-09-08T18:18:42.547",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69281"
     },
@@ -11247,10 +10869,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00636,
-        "percentile": 0.485
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:46.527",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69305"
     },
@@ -11628,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00652,
+        "percentile": 0.49262
+      },
       "published": "2026-09-08T18:18:52.003",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69337"
     },
@@ -11950,10 +11572,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00792,
-        "percentile": 0.54212
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:55.997",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69361"
     },
@@ -12331,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00324,
+        "percentile": 0.25318
+      },
       "published": "2026-09-08T18:19:01.047",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69391"
     },
@@ -12653,10 +12275,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00703,
-        "percentile": 0.51239
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:04.827",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69418"
     },
@@ -13034,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00376,
+        "percentile": 0.31036
+      },
       "published": "2026-09-08T18:19:09.280",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69449"
     },
@@ -13356,10 +12978,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00318,
-        "percentile": 0.24505
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:13.140",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69475"
     },
@@ -13737,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00841,
+        "percentile": 0.55845
+      },
       "published": "2026-09-08T18:19:17.853",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69507"
     },
@@ -14059,12 +13681,390 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00245,
-        "percentile": 0.15759
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:21.923",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69538"
+    },
+    {
+      "id": "CVE-2026-69539",
+      "desc": "Use after free in Windows Remote Desktop Services allows an authorized attacker to execute code over a network.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:22.103",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69539"
+    },
+    {
+      "id": "CVE-2026-69540",
+      "desc": "Use after free in Windows Audio Service allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:22.283",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69540"
+    },
+    {
+      "id": "CVE-2026-69541",
+      "desc": "Heap-based buffer overflow in Virtual Hard Disk (VHD) Miniport Driver allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:22.437",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69541"
+    },
+    {
+      "id": "CVE-2026-69542",
+      "desc": "Heap-based buffer overflow in Windows Camera Frame Server Monitor allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:22.617",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69542"
+    },
+    {
+      "id": "CVE-2026-69544",
+      "desc": "Heap-based buffer overflow in Windows SMB Client allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:22.800",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69544"
+    },
+    {
+      "id": "CVE-2026-69546",
+      "desc": "Use after free in Active Directory Domain Services allows an unauthorized attacker to execute code over a network.",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:22.927",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69546"
+    },
+    {
+      "id": "CVE-2026-69547",
+      "desc": "Heap-based buffer overflow in Windows DHCP Server allows an authorized attacker to execute code over a network.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:23.107",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69547"
+    },
+    {
+      "id": "CVE-2026-69548",
+      "desc": "Heap-based buffer overflow in Windows RNDIS allows an unauthorized attacker to disclose information with a physical attack.",
+      "cvss": 4.6,
+      "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:23.260",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69548"
+    },
+    {
+      "id": "CVE-2026-69549",
+      "desc": "Out-of-bounds read in Virtual Hard Disk (VHD) Miniport Driver allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:23.437",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69549"
+    },
+    {
+      "id": "CVE-2026-69551",
+      "desc": "Use after free in Windows DNS allows an authorized attacker to execute code over a network.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:23.677",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69551"
+    },
+    {
+      "id": "CVE-2026-69552",
+      "desc": "Generation of error message containing sensitive information in Windows Print Spooler Components allows an authorized attacker to disclose information over a network.",
+      "cvss": 5.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:23.840",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69552"
+    },
+    {
+      "id": "CVE-2026-69553",
+      "desc": "Missing authorization in Windows Hyper-V allows an authorized attacker to elevate privileges over a network.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:24.020",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69553"
+    },
+    {
+      "id": "CVE-2026-69554",
+      "desc": "Missing authentication for critical function in Microsoft Windows Search Component allows an authorized attacker to perform tampering locally.",
+      "cvss": 5.5,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:24.170",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69554"
+    },
+    {
+      "id": "CVE-2026-69556",
+      "desc": "Heap-based buffer overflow in Microsoft Office Word allows an unauthorized attacker to execute code over a network.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Microsoft 365, Office 2019",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:24.413",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69556"
+    },
+    {
+      "id": "CVE-2026-69559",
+      "desc": "Origin validation error in Microsoft Teams for Android allows an authorized attacker to disclose information over a network.",
+      "cvss": 5.8,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:24.600",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69559"
+    },
+    {
+      "id": "CVE-2026-69560",
+      "desc": "Use after free in Windows Work Folder Service allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:24.720",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69560"
+    },
+    {
+      "id": "CVE-2026-69561",
+      "desc": "Out-of-bounds read in Windows CD-ROM Driver allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:24.890",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69561"
+    },
+    {
+      "id": "CVE-2026-69562",
+      "desc": "Out-of-bounds read in SQL Server allows an unauthorized attacker to disclose information over a network.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:25.067",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69562"
+    },
+    {
+      "id": "CVE-2026-69563",
+      "desc": "Heap-based buffer overflow in Windows Program Compatibility Assistant Service allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:25.200",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69563"
+    },
+    {
+      "id": "CVE-2026-69564",
+      "desc": "Heap-based buffer overflow in Windows Online Certificate Status Protocol (OCSP) allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:25.360",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69564"
+    },
+    {
+      "id": "CVE-2026-69566",
+      "desc": "Heap-based buffer overflow in Windows NTFS allows an unauthorized attacker to execute code with a physical attack.",
+      "cvss": 6.8,
+      "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:25.510",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69566"
+    },
+    {
+      "id": "CVE-2026-69567",
+      "desc": "Use after free in Windows NTFS allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:25.687",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69567"
+    },
+    {
+      "id": "CVE-2026-69568",
+      "desc": "Out-of-bounds read in Windows Storage Spaces Controller allows an authorized attacker to disclose information locally.",
+      "cvss": 5.5,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:25.867",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69568"
+    },
+    {
+      "id": "CVE-2026-69569",
+      "desc": "Untrusted pointer dereference in Windows Print Spooler Components allows an authorized attacker to deny service over a network.",
+      "cvss": 5.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:26.040",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69569"
+    },
+    {
+      "id": "CVE-2026-69571",
+      "desc": "Heap-based buffer overflow in Windows USB Audio Class driver (usbaudio.sys) allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:26.227",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69571"
+    },
+    {
+      "id": "CVE-2026-69572",
+      "desc": "Out-of-bounds read in Windows SMB Client allows an authorized attacker to disclose information over a network.",
+      "cvss": 5.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:26.403",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69572"
+    },
+    {
+      "id": "CVE-2026-69573",
+      "desc": "Use after free in Windows Universal Disk Format File System Driver (UDFS) allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00252,
+        "percentile": 0.16739
+      },
+      "published": "2026-09-08T18:19:26.583",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69573"
     }
   ],
   "kev": [
@@ -15962,6 +15962,38 @@
   ],
   "news": [
     {
+      "title": "Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent",
+      "url": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-09-12T14:14:32+00:00",
+      "summary": "The Dutch Nationaal Cyber Security Centrum (NCSC) is warning of imminent exploitation of two critical flaws in Check Point VPN tracked as CVE-2026-85102 and CVE-2026-85103. [...]"
+    },
+    {
+      "title": "BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days",
+      "url": "https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-09-12T11:10:00+00:00",
+      "summary": "Multiple espionage-motivated threat actors have adopted BlueMoon in opportunistic, rushed deployments.\nThe post BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days appeared first on SecurityWeek."
+    },
+    {
+      "title": "From Hacks to Bioweapons, Claude Misuse Is Now Everywhere",
+      "url": "https://www.wired.com/story/security-news-this-week-from-hacks-to-bioweapons-claude-misuse-is-now-everywhere/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-09-12T10:30:00+00:00",
+      "summary": "Plus: The US disrupts the internet\u2019s biggest black market, a Conti ransomware hacker gets prison time, Meta fails to stop AI-generated videos of child abuse."
+    },
+    {
+      "title": "When the Whole Company Adopts AI: What It Does to Your SOC",
+      "url": "https://thehackernews.com/2026/09/when-whole-company-adopts-ai-what-it.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-09-12T10:24:44+00:00",
+      "summary": "Over the past year, we watched a new class of alert appear in enterprise security operations centers and grow faster than anything else in the stream: alerts that were triggered by AI tools and agents. Not attacks against AI, but the ordinary, everyday footprint of an organization using it, from dev"
+    },
+    {
       "title": "OpenAI Agents Linked to RubyGems Campaign That Gained RCE on RubyDoc Servers",
       "url": "https://thehackernews.com/2026/09/openai-agents-linked-to-rubygems.html",
       "source": "The Hacker News",
@@ -15984,14 +16016,6 @@
       "category": "news",
       "published": "2026-09-11T20:19:09+00:00",
       "summary": "Anthropic says multiple threat groups, including the financially motivated and state-sponsored espionage groups linked to Russia and China, tried to abuse its Claude AI model for malicious purposes. [...]"
-    },
-    {
-      "title": "Florida says motor vehicle data breach tied to credentials stolen from officer\u2019s personal device",
-      "url": "https://therecord.media/florida-shiny-hunters-motor-vehicle",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-09-11T20:00:00+00:00",
-      "summary": "The Florida Department of Motor Vehicles confirmed a data breach claimed by the cybercrime group ShinyHunters, saying it originated with the theft of credentials stored on a police officer's personal device."
     },
     {
       "title": "Threat Actor Generates 1M Personalized Fraud Emails in 3 Days",
@@ -16024,14 +16048,6 @@
       "category": "news",
       "published": "2026-09-11T18:44:03+00:00",
       "summary": "A new joint government advisory signals a regulatory shift, pressing organizations to adopt more transparent breach notification and incident response protocols."
-    },
-    {
-      "title": "Microsoft sees some new wrinkles in invoice-scam emails",
-      "url": "https://therecord.media/invoice-scam-emails-new-features-microsoft-researchers",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-09-11T18:40:00+00:00",
-      "summary": "Researchers analyzed a flood of fraudulent business emails and found that the threat actors had doubled-up on tactics to make them appear legitimate, including help from AI."
     },
     {
       "title": "Why AI Is So Good at Scamming Humans",
@@ -16162,22 +16178,6 @@
       "summary": "Hackers compromised the Brevo marketing platform and used that access to send phishing emails to users of Trezor, BitBox, and CoinTracking.\nThe post Trezor Says 347,000 Users Received Phishing Emails After Brevo Hack appeared first on SecurityWeek."
     },
     {
-      "title": "Anthropic caught Russia-linked spies using Claude in hacking operations",
-      "url": "https://therecord.media/anthropic-russia-hackers-claude",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-09-11T12:45:00+00:00",
-      "summary": "Anthropic detected and disrupted a Russia-linked cyber-espionage group that used its AI tool Claude in a hacking campaign targeting more than 20 government, intelligence, diplomatic and defense organizations."
-    },
-    {
-      "title": "Ukrainian hacker gets four years in US prison over Conti ransomware attacks",
-      "url": "https://therecord.media/conti-ransomware-ukraine-hacker",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-09-11T12:00:00+00:00",
-      "summary": "A Ukrainian national was sentenced to four years in a U.S. prison for his role in the notorious Conti ransomware operation, which targeted more than 1,000 victims worldwide before shutting down in 2022."
-    },
-    {
       "title": "Your Critical Vulnerabilities Might Not Be Your Biggest Risk",
       "url": "https://thehackernews.com/2026/09/your-critical-vulnerabilities-might-not.html",
       "source": "The Hacker News",
@@ -16210,14 +16210,6 @@
       "summary": "Tracked as CVE-2026-85102 and CVE-2026-85103, the flaws could be exploited for remote code execution.\nThe post Check Point Patches Critical VPN Vulnerabilities appeared first on SecurityWeek."
     },
     {
-      "title": "Kiteworks Acquires Bonfy.AI to Fill the AI Gap in Data Governance",
-      "url": "https://www.securityweek.com/kiteworks-acquires-bonfy-ai-to-fill-the-ai-gap-in-data-governance/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-09-11T10:56:16+00:00",
-      "summary": "Financials have not been disclosed, but the estimated cost is in the tens of millions of dollars.\nThe post Kiteworks Acquires Bonfy.AI to Fill the AI Gap in Data Governance appeared first on SecurityWeek."
-    },
-    {
       "title": "Microsoft fixes Teams, Outlook launch failures on ARM Windows PCs",
       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-teams-outlook-launch-failures-on-arm-windows-pcs/",
       "source": "Bleeping Computer",
@@ -16242,28 +16234,12 @@
       "summary": "The new joint operation uses laser-based technology capable of detecting, tracking, and disabling commercial drones linked to human and drug trafficking."
     },
     {
-      "title": "Trezor: 347,000 users targeted in phishing attacks after Brevo breach",
-      "url": "https://www.bleepingcomputer.com/news/security/trezor-347-000-users-targeted-in-phishing-attacks-after-brevo-breach/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-09-11T07:55:15+00:00",
-      "summary": "Trezor has revealed that phishing attacks against its customers earlier this week targeted 347,000 email addresses and affected 2,500 users who clicked an embedded malicious link. [...]"
-    },
-    {
       "title": "Attackers Chain JFrog Artifactory Flaws to Gain Admin Control and Plant Backdoors",
       "url": "https://thehackernews.com/2026/09/attackers-chain-jfrog-artifactory-flaws.html",
       "source": "The Hacker News",
       "category": "news",
       "published": "2026-09-11T07:31:05+00:00",
       "summary": "Attackers have chained two flaws in JFrog Artifactory, the repository that software build pipelines pull from, to take administrator control of self-hosted servers and plant backdoors, cloud security company Wiz&nbsp;said in a report.\n\nWiz saw the attacks between August 15 and September 8. JFrog had"
-    },
-    {
-      "title": "China-Linked UNC3569 Exploited Sogou Input Method Flaw to Deploy GRAYRABBIT Backdoor",
-      "url": "https://thehackernews.com/2026/09/china-linked-unc3569-exploited-sogou.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-09-11T07:14:09+00:00",
-      "summary": "A China-linked hacking group exploited a flaw in Sogou Input Method, one of the most widely used tools for typing Chinese characters on Windows, to install a backdoor on victims' computers, security company Gen Digital said in&nbsp;research published Thursday.\n\nThe attack started with a crafted link"
     },
     {
       "title": "ISC Stormcast For Friday, September 11th, 2026 https://isc.sans.edu/podcastdetail/10090, (Fri, Sep 11th)",
@@ -16288,14 +16264,6 @@
       "category": "news",
       "published": "2026-09-11T01:00:00+00:00",
       "summary": "The GoldFactory threat group exploits the Android Work Profile feature to deliver the Gigabud Trojan, while Mantax Otax spreads separately."
-    },
-    {
-      "title": "Treasury urges banks to file cyber scam reports, noting nearly $13 billion in losses since 2023",
-      "url": "https://therecord.media/treasury-urges-banks-report-cyber-scams",
-      "source": "The Record",
-      "category": "news",
-      "published": "2026-09-10T21:15:00+00:00",
-      "summary": "As the cyber scam industry expands globally, the U.S. government wants banks to share more information about what's happening to their customers."
     },
     {
       "title": "Voice Callers Exploit BYOD to Reach Microsoft 365, Corporate Data",
@@ -16456,14 +16424,6 @@
       "category": "news",
       "published": "2026-09-08T19:20:30+00:00",
       "summary": "This month, Microsoft released patches for a record-breaking 973 vulnerabilities, including 113 rated critical. It is by far the largest Patch Tuesday to date, well ahead of the previous high of 664 set in July 2026. Two vulnerabilities are listed as exploited in the wild, while none were publicly d"
-    },
-    {
-      "title": "Meta Failed to Catch Hundreds of AI Child Abuse Ads. Some Included Images of Real Kids",
-      "url": "https://www.wired.com/story/meta-failed-to-catch-hundreds-of-ai-child-abuse-ads-some-included-images-of-real-kids/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-09-08T12:00:00+00:00",
-      "summary": "Images of real children\u2014including a member of a European royal family\u2014were used to create some of the 350 ads containing child sexual abuse. Lawmakers say they plan to investigate."
     },
     {
       "title": "ISC Stormcast For Tuesday, September 8th, 2026 https://isc.sans.edu/podcastdetail/10084, (Tue, Sep 8th)",
@@ -16644,8 +16604,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 78,
-    "high": 467,
+    "critical": 74,
+    "high": 479,
     "exploited": 4,
     "kev_total": 1709,
     "kev_7d": 14,
