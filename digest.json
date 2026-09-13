@@ -1,277 +1,11 @@
 {
-  "generated": "2026-09-13T15:52:53.350662+00:00",
+  "generated": "2026-09-13T20:32:15.635886+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>68 critical CVE(s)</strong> and <strong>14 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>66 critical CVE(s)</strong> and <strong>14 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-19633",
-      "desc": "PostgreSQL Anonymizer contains a vulnerability that allows unprivileged masked users to execute arbitrary code by abusing operators, domain casts, or view subqueries that carry untrusted expressions. When these objects are evaluated in the context of the extension\u2019s masking mechanisms, the malicious",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "GitLab",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T16:16:49.583",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19633"
-    },
-    {
-      "id": "CVE-2026-19634",
-      "desc": "PostgreSQL Anonymizer contains a SQL injection vulnerability in two import functions. A user can create a malicious JSON document containing specially crafted object names. If a superuser subsequently calls anon.import_database_rules() or anon.import_roles_rules(), the malicious code is executed wit",
-      "cvss": 6.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "MEDIUM",
-      "vendor": "GitLab",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T16:16:50.603",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19634"
-    },
-    {
-      "id": "CVE-2026-83534",
-      "desc": "PostgreSQL Anonymizer contains a vulnerability in the anon.anonymize_database_parallel() function that allows the owner of a table to run arbitrary code with superuser privilege. The issue is fixed in PostgreSQL Anonymizer 3.2.0 and later versions",
-      "cvss": 6.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "MEDIUM",
-      "vendor": "GitLab",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T16:16:50.753",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-83534"
-    },
-    {
-      "id": "CVE-2026-82750",
-      "desc": "Improper Validation of Specified Quantity in Input in ZenHive mpp allows an unauthenticated remote client to inflate the fee-payer's gas cost per sponsored payment by a large multiplier and to have the sponsor pay for EIP-7702 account delegations of the client's choosing.\n\nWhen the server sponsors T",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T17:17:55.867",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82750"
-    },
-    {
-      "id": "CVE-2026-82751",
-      "desc": "Improper Validation of Specified Quantity in Input in ZenHive mpp allows an unauthenticated remote client to inflate the fee-payer's gas cost per sponsored payment by a large multiplier and to have the sponsor pay for provisioning an access key on the client's own account.\n\nWhen the server sponsors ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T17:17:56.070",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82751"
-    },
-    {
-      "id": "CVE-2026-13608",
-      "desc": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an\nincomplete handshake sequence to be misinterpreted as a successful\ncryptographic verification. An attacker executing a Man-in-the-Middle (MITM)\nattack can inject a premature or shortcut response that bypasses complete peer\nvali",
-      "cvss": 7.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:19.810",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-13608"
-    },
-    {
-      "id": "CVE-2026-18924",
-      "desc": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent\nhandle is set to share connections with other handles, can lead to\nuse-after-free in the cleanup process.",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:20.553",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18924"
-    },
-    {
-      "id": "CVE-2026-19931",
-      "desc": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given\nhostname using Negotiate authentication, when the initial request is done\nusing empty credentials. This can make user B's request get sent over user A's\npreviously authenticated connection.",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:20.733",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19931"
-    },
-    {
-      "id": "CVE-2026-80229",
-      "desc": "When performing transfers via libcurl\u2019s multi interface, pooled TLS\nconnections can outlive their originating easy handles. In OpenSSL 3 provider\nconfigurations, libcurl attaches an allocated library context to the easy\nhandle's state and passes it to OpenSSL without acquiring an ownership\nreference",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:22.217",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80229"
-    },
-    {
-      "id": "CVE-2026-80230",
-      "desc": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable\nstandard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and\n`CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on\nconnections established without a presented server certificate. Bypassing the\npinning",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:22.327",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80230"
-    },
-    {
-      "id": "CVE-2026-80231",
-      "desc": "A flaw in libcurl makes it wrongly reuse an existing HTTPS connection setup\nfor a given hostname even when using a different Native CA Store setting\n(`CURLSSLOPT_NATIVE_CA`) than when the connection was created.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:22.500",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80231"
-    },
-    {
-      "id": "CVE-2026-80255",
-      "desc": "A `Set-Cookie:` header using tab (horizontal tab, ASCII code 9) instead of\nspace (ascii code 32) immediately before the `Secure` attribute causes curl to\nstore the cookie without its Secure flag. The cookie might then wrongfully be\nsent over plaintext HTTP on subsequent requests to the same host.",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:22.623",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80255"
-    },
-    {
-      "id": "CVE-2026-82208",
-      "desc": "With the wolfSSL backend, when CA caching is enabled and an\n`CURLOPT_SSL_CTX_FUNCTION` callback replaces the trust store, libcurl can\nsilently reinstall the cached store after the callback returns. A certificate\ntrusted by the cached store but rejected by the callback-selected store is\nthen incorrec",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:22.733",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82208"
-    },
-    {
-      "id": "CVE-2026-82209",
-      "desc": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a str",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "Haxx",
-      "product": "Curl",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:22.847",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82209"
-    },
-    {
-      "id": "CVE-2026-86219",
-      "desc": "Authen::SASL::Perl::DIGEST_MD5 versions before 2.2100 for Perl accept replayed authentication responses via unverified nonce in server_step.\n\nserver_start generates a fresh nonce and sends it in the challenge, and nothing later compares that value against the nonce the client returns. server_step de",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:23.027",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86219"
-    },
-    {
-      "id": "CVE-2026-86220",
-      "desc": "A vulnerability was detected in SourceCodester Class and Exam Timetabling System 1.0. The affected element is the function mysqli_query of the file /admin/modal_add_course.php. The manipulation of the argument course results in sql injection. The attack can be launched remotely. The exploit is now p",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T18:17:23.150",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86220"
-    },
-    {
-      "id": "CVE-2026-86221",
-      "desc": "A flaw has been found in SourceCodester Class and Exam Timetabling System 1.0. The impacted element is the function mysqli_query of the file /admin/modal_add_course1.php. This manipulation of the argument course causes sql injection. The attack may be initiated remotely. The exploit has been publish",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T19:17:27.943",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86221"
-    },
-    {
-      "id": "CVE-2026-86222",
-      "desc": "A vulnerability has been found in SourceCodester Class and Exam Timetabling System 1.0. This affects the function mysqli_query of the file /admin/modal_add_course2.php. Such manipulation of the argument course leads to sql injection. The attack may be launched remotely. The exploit has been disclose",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T20:17:28.117",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86222"
-    },
-    {
-      "id": "CVE-2026-86223",
-      "desc": "A vulnerability was found in SourceCodester Class and Exam Timetabling System 1.0. This impacts the function mysqli_query of the file /admin/modal_add_coursea.php. Performing a manipulation of the argument course results in sql injection. Remote exploitation of the attack is possible. The exploit ha",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-06T20:17:28.280",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86223"
-    },
     {
       "id": "CVE-2026-86224",
       "desc": "A vulnerability was determined in SourceCodester Class and Exam Timetabling System 1.0. Affected is the function mysqli_query of the file /admin/modal_add_product.php. Executing a manipulation of the argument fname can lead to sql injection. The attack can be executed remotely. The exploit has been ",
@@ -702,10 +436,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00094,
-        "percentile": 0.0066
-      },
+      "epss": null,
       "published": "2026-09-07T02:17:20.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20516"
     },
@@ -971,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00123,
+        "percentile": 0.02381
+      },
       "published": "2026-09-07T04:17:55.650",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86315"
     },
@@ -1405,10 +1139,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00293,
-        "percentile": 0.21711
-      },
+      "epss": null,
       "published": "2026-09-07T09:17:17.297",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86288"
     },
@@ -1674,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00198,
+        "percentile": 0.09758
+      },
       "published": "2026-09-07T11:17:37.613",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85640"
     },
@@ -2108,10 +1842,7 @@
       "product": "Secure Connect Gateway",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00599,
-        "percentile": 0.46825
-      },
+      "epss": null,
       "published": "2026-09-07T13:20:38.800",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80133"
     },
@@ -2377,7 +2108,10 @@
       "product": "Imagemagick",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00146,
+        "percentile": 0.04196
+      },
       "published": "2026-09-07T13:20:41.543",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86425"
     },
@@ -2811,10 +2545,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00837,
-        "percentile": 0.55719
-      },
+      "epss": null,
       "published": "2026-09-07T15:17:30.867",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18355"
     },
@@ -3080,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00131,
+        "percentile": 0.03031
+      },
       "published": "2026-09-07T16:17:29.690",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-80054"
     },
@@ -3514,10 +3248,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00298,
-        "percentile": 0.22328
-      },
+      "epss": null,
       "published": "2026-09-07T17:17:28.097",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86497"
     },
@@ -3783,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00401,
+        "percentile": 0.33695
+      },
       "published": "2026-09-07T23:16:52.227",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82753"
     },
@@ -4217,10 +3951,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00404,
-        "percentile": 0.3395
-      },
+      "epss": null,
       "published": "2026-09-08T01:17:55.777",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82710"
     },
@@ -4486,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00232,
+        "percentile": 0.14056
+      },
       "published": "2026-09-08T04:17:42.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86516"
     },
@@ -4920,10 +4654,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00314,
-        "percentile": 0.24085
-      },
+      "epss": null,
       "published": "2026-09-08T09:18:20.840",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-71377"
     },
@@ -5189,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00212,
+        "percentile": 0.115
+      },
       "published": "2026-09-08T12:16:59.560",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78234"
     },
@@ -5623,10 +5357,7 @@
       "product": "Xenforo",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0037,
-        "percentile": 0.30413
-      },
+      "epss": null,
       "published": "2026-09-08T14:17:25.220",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73311"
     },
@@ -5892,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00245,
+        "percentile": 0.15766
+      },
       "published": "2026-09-08T15:18:39.953",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-0860"
     },
@@ -6326,10 +6060,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00303,
-        "percentile": 0.22786
-      },
+      "epss": null,
       "published": "2026-09-08T16:18:01.997",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16037"
     },
@@ -6595,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00218,
+        "percentile": 0.12351
+      },
       "published": "2026-09-08T16:18:34.523",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86729"
     },
@@ -7029,10 +6763,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00289,
-        "percentile": 0.21375
-      },
+      "epss": null,
       "published": "2026-09-08T17:18:34.427",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82058"
     },
@@ -7298,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00138,
+        "percentile": 0.03494
+      },
       "published": "2026-09-08T17:18:37.030",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84385"
     },
@@ -7732,10 +7466,7 @@
       "product": "365 Apps, Microsoft 365, Office 2016",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00325,
-        "percentile": 0.25396
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:03.127",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-62804"
     },
@@ -8001,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00618,
+        "percentile": 0.47687
+      },
       "published": "2026-09-08T18:18:21.343",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67379"
     },
@@ -8435,10 +8169,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00714,
-        "percentile": 0.51718
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:25.920",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68784"
     },
@@ -8704,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00362,
+        "percentile": 0.2958
+      },
       "published": "2026-09-08T18:18:32.160",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68842"
     },
@@ -9138,10 +8872,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00353,
-        "percentile": 0.28621
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:38.037",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68896"
     },
@@ -9407,7 +9138,10 @@
       "product": "Sharepoint Server",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00527,
+        "percentile": 0.43024
+      },
       "published": "2026-09-08T18:18:42.693",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69282"
     },
@@ -9841,10 +9575,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0047,
-        "percentile": 0.39285
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:48.587",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69315"
     },
@@ -10110,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00522,
+        "percentile": 0.42748
+      },
       "published": "2026-09-08T18:18:52.180",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69338"
     },
@@ -10544,10 +10278,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00807,
-        "percentile": 0.54783
-      },
+      "epss": null,
       "published": "2026-09-08T18:18:57.580",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69372"
     },
@@ -10813,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00252,
+        "percentile": 0.16647
+      },
       "published": "2026-09-08T18:19:01.210",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69392"
     },
@@ -11247,10 +10981,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.01149,
-        "percentile": 0.65043
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:06.407",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69428"
     },
@@ -11516,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00348,
+        "percentile": 0.27974
+      },
       "published": "2026-09-08T18:19:09.457",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69450"
     },
@@ -11950,10 +11684,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00913,
-        "percentile": 0.5808
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:14.667",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69485"
     },
@@ -12219,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00318,
+        "percentile": 0.24569
+      },
       "published": "2026-09-08T18:19:17.993",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69508"
     },
@@ -12653,10 +12387,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00298,
-        "percentile": 0.22317
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:23.437",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69549"
     },
@@ -12922,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00252,
+        "percentile": 0.16689
+      },
       "published": "2026-09-08T18:19:26.760",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69574"
     },
@@ -13356,10 +13090,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00621,
-        "percentile": 0.47872
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:31.837",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69607"
     },
@@ -13625,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00396,
+        "percentile": 0.33157
+      },
       "published": "2026-09-08T18:19:34.933",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69627"
     },
@@ -14059,12 +13793,278 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0057,
-        "percentile": 0.45404
-      },
+      "epss": null,
       "published": "2026-09-08T18:19:40.870",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69688"
+    },
+    {
+      "id": "CVE-2026-69689",
+      "desc": "Out-of-bounds read in Windows Win32K allows an authorized attacker to elevate privileges over a network.",
+      "cvss": 8.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:41.050",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69689"
+    },
+    {
+      "id": "CVE-2026-69690",
+      "desc": "Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Office SharePoint allows an authorized attacker to perform spoofing over a network.",
+      "cvss": 4.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "Sharepoint Server",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:41.197",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69690"
+    },
+    {
+      "id": "CVE-2026-69691",
+      "desc": "Heap-based buffer overflow in Windows Spaceport.sys allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:41.320",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69691"
+    },
+    {
+      "id": "CVE-2026-69692",
+      "desc": "Use after free in Windows Audio Service allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:41.490",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69692"
+    },
+    {
+      "id": "CVE-2026-69693",
+      "desc": "Use after free in Windows Device Association Broker service allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:41.697",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69693"
+    },
+    {
+      "id": "CVE-2026-69694",
+      "desc": "Deserialization of untrusted data in Windows IP Address Management (IPAM) Service allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:41.870",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69694"
+    },
+    {
+      "id": "CVE-2026-69706",
+      "desc": "Use after free in Windows Win32K allows an authorized attacker to elevate privileges over a network.",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:42.037",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69706"
+    },
+    {
+      "id": "CVE-2026-69707",
+      "desc": "Integer overflow or wraparound in Windows USB Audio Class driver (usbaudio.sys) allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:42.217",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69707"
+    },
+    {
+      "id": "CVE-2026-69708",
+      "desc": "Use after free in Windows Web Platform Storage allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:42.400",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69708"
+    },
+    {
+      "id": "CVE-2026-69709",
+      "desc": "Heap-based buffer overflow in Windows NTFS allows an authorized attacker to execute code locally.",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:42.550",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69709"
+    },
+    {
+      "id": "CVE-2026-69710",
+      "desc": "Concurrent execution using shared resource with improper synchronization ('race condition') in Windows Hello allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.5,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:42.730",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69710"
+    },
+    {
+      "id": "CVE-2026-69711",
+      "desc": "Use after free in Windows Device Association Service allows an authorized attacker to elevate privileges locally.",
+      "cvss": 7.0,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:42.860",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69711"
+    },
+    {
+      "id": "CVE-2026-69712",
+      "desc": "Use after free in Windows Key Distribution Center allows an authorized attacker to execute code over a network.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:43.030",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69712"
+    },
+    {
+      "id": "CVE-2026-69713",
+      "desc": "Dependency on vulnerable third-party component in Windows Secure Boot allows an authorized attacker to bypass a security feature locally.",
+      "cvss": 4.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:43.170",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69713"
+    },
+    {
+      "id": "CVE-2026-69714",
+      "desc": "Stack-based buffer overflow in Windows Device Association Service allows an authorized attacker to elevate privileges over a network.",
+      "cvss": 8.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:43.340",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69714"
+    },
+    {
+      "id": "CVE-2026-69715",
+      "desc": "Out-of-bounds read in Windows Direct Show allows an unauthorized attacker to execute code over a network.",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:43.520",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69715"
+    },
+    {
+      "id": "CVE-2026-69716",
+      "desc": "Improper neutralization of special elements used in an sql command ('sql injection') in Microsoft Office SharePoint allows an authorized attacker to elevate privileges over a network.",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "Sharepoint Server",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:43.703",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69716"
+    },
+    {
+      "id": "CVE-2026-69717",
+      "desc": "Untrusted pointer dereference in Windows Group Policy allows an authorized attacker to elevate privileges over a network.",
+      "cvss": 8.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Microsoft",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-08T18:19:43.823",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69717"
+    },
+    {
+      "id": "CVE-2026-69719",
+      "desc": "Buffer over-read in Microsoft Office Word allows an unauthorized attacker to disclose information over a network.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Microsoft",
+      "product": "365 Apps, Microsoft 365, Office 2019",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00868,
+        "percentile": 0.56714
+      },
+      "published": "2026-09-08T18:19:44.007",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-69719"
     }
   ],
   "kev": [
@@ -16644,8 +16644,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 68,
-    "high": 519,
+    "critical": 66,
+    "high": 522,
     "exploited": 1,
     "kev_total": 1709,
     "kev_7d": 14,
