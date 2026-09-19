@@ -1,95 +1,11 @@
 {
-  "generated": "2026-09-19T15:39:00.915796+00:00",
+  "generated": "2026-09-19T20:17:57.729960+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>68 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>67 critical CVE(s)</strong> and <strong>7 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-90556",
-      "desc": "Freeciv versions before 3.2.6 contain a heap buffer overflow in worklist_load() when processing savegame files with declared worklist lengths exceeding the fixed array bound of 64 elements. Attackers can craft malicious savegame files that write past the entries array into adjacent heap-allocated st",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-12T18:16:44.193",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90556"
-    },
-    {
-      "id": "CVE-2026-90557",
-      "desc": "Freeciv versions 3.1.0 through 3.2.5 contain an out-of-bounds read vulnerability in sg_load_player_unit() when processing savegame files with invalid unit activity indices. An attacker can craft a malicious savegame file with an out-of-range activity index that bypasses bounds checking and causes a ",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-12T18:16:44.343",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90557"
-    },
-    {
-      "id": "CVE-2026-90558",
-      "desc": "sngrep through 1.8.4 contains stack buffer overflow vulnerabilities in SIP attribute formatting routines when header values exceed the 255-byte buffer limit. Attackers can craft malicious SIP packets with oversized Call-ID, X-Call-ID, or other header fields to overflow stack buffers and cause crashe",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-12T18:16:44.587",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90558"
-    },
-    {
-      "id": "CVE-2026-90559",
-      "desc": "snappy-java through 1.1.10.8 contains an out-of-bounds write vulnerability in Snappy.uncompress(ByteBuffer, ByteBuffer) because destination buffer capacity is never validated against decompressed size. Attackers can supply valid compressed data that decompresses larger than the destination buffer, c",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-12T18:16:44.743",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90559"
-    },
-    {
-      "id": "CVE-2026-90560",
-      "desc": "zstd-jni versions 1.2.0 through 1.5.7-13 contain an out-of-bounds read vulnerability in the ZstdDictDecompress constructor because offset and length arguments are never validated against the dictionary array bounds. Attackers can supply arbitrary offset or length values to read memory past the end o",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-12T18:16:44.890",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90560"
-    },
-    {
-      "id": "CVE-2026-90616",
-      "desc": "In Flatpak before 1.18.1, a malicious sandboxed app can obtain arbitrary read and write access to files on the host, which can be escalated to arbitrary code execution on the host, a different vulnerability than CVE-2026-76925. Flatpak creates a few app data directories (e.g., /var/cache, /var/data,",
-      "cvss": 7.4,
-      "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-09-12T20:16:30.957",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90616"
-    },
     {
       "id": "CVE-2026-90485",
       "desc": "A flaw has been found in IOBit Uninstaller 15.5.0.11. Affected by this issue is the function sub_11838 of the file IURegistryFilter.sys of the component IOCTL Dispatch Handler. This manipulation causes null pointer dereference. The attack requires local access. The exploit has been published and may",
@@ -702,10 +618,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00439,
-        "percentile": 0.37595
-      },
+      "epss": null,
       "published": "2026-09-13T11:17:00.237",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90513"
     },
@@ -789,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00257,
+        "percentile": 0.17747
+      },
       "published": "2026-09-13T11:17:01.270",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90769"
     },
@@ -1405,10 +1321,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00154,
-        "percentile": 0.04979
-      },
+      "epss": null,
       "published": "2026-09-13T19:16:52.553",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-45480"
     },
@@ -1492,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00391,
+        "percentile": 0.33102
+      },
       "published": "2026-09-13T19:16:53.517",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90579"
     },
@@ -2108,10 +2024,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00081,
-        "percentile": 0.00222
-      },
+      "epss": null,
       "published": "2026-09-14T01:16:27.473",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-23786"
     },
@@ -2195,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00109,
+        "percentile": 0.01386
+      },
       "published": "2026-09-14T02:17:13.397",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-23789"
     },
@@ -2811,10 +2727,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00223,
-        "percentile": 0.13158
-      },
+      "epss": null,
       "published": "2026-09-14T05:16:57.137",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-32778"
     },
@@ -2898,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00118,
+        "percentile": 0.0194
+      },
       "published": "2026-09-14T05:16:58.900",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90683"
     },
@@ -3514,10 +3430,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00128,
-        "percentile": 0.02833
-      },
+      "epss": null,
       "published": "2026-09-14T07:17:20.087",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82783"
     },
@@ -3601,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00305,
+        "percentile": 0.23457
+      },
       "published": "2026-09-14T07:17:20.920",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82789"
     },
@@ -4217,10 +4133,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00248,
-        "percentile": 0.16454
-      },
+      "epss": null,
       "published": "2026-09-14T11:17:02.590",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-10556"
     },
@@ -4304,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00235,
+        "percentile": 0.1469
+      },
       "published": "2026-09-14T11:17:03.697",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15814"
     },
@@ -4920,10 +4836,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00413,
-        "percentile": 0.35323
-      },
+      "epss": null,
       "published": "2026-09-14T13:18:47.250",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78336"
     },
@@ -5007,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00249,
+        "percentile": 0.16535
+      },
       "published": "2026-09-14T13:19:30.710",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90927"
     },
@@ -5623,10 +5539,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00444,
-        "percentile": 0.38011
-      },
+      "epss": null,
       "published": "2026-09-14T15:17:06.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57129"
     },
@@ -5710,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00509,
+        "percentile": 0.42441
+      },
       "published": "2026-09-14T15:17:09.410",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82426"
     },
@@ -6326,10 +6242,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00108,
-        "percentile": 0.01329
-      },
+      "epss": null,
       "published": "2026-09-14T16:17:42.367",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90995"
     },
@@ -6413,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00548,
+        "percentile": 0.44784
+      },
       "published": "2026-09-14T17:17:46.927",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54156"
     },
@@ -7029,10 +6945,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00296,
-        "percentile": 0.22493
-      },
+      "epss": null,
       "published": "2026-09-14T18:17:53.223",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54181"
     },
@@ -7116,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00236,
+        "percentile": 0.1488
+      },
       "published": "2026-09-14T18:17:55.663",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55832"
     },
@@ -7732,10 +7648,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0022,
-        "percentile": 0.12856
-      },
+      "epss": null,
       "published": "2026-09-14T20:16:38.287",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-15412"
     },
@@ -7819,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00167,
+        "percentile": 0.06369
+      },
       "published": "2026-09-14T20:16:39.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16148"
     },
@@ -8435,10 +8351,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00232,
-        "percentile": 0.14345
-      },
+      "epss": null,
       "published": "2026-09-14T20:16:50.993",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-73497"
     },
@@ -8522,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00148,
+        "percentile": 0.04398
+      },
       "published": "2026-09-14T21:17:00.440",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-12763"
     },
@@ -9138,10 +9054,7 @@
       "product": "Ipados, Iphone Os, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00115,
-        "percentile": 0.0176
-      },
+      "epss": null,
       "published": "2026-09-14T21:17:08.653",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-43695"
     },
@@ -9225,7 +9138,10 @@
       "product": "Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00146,
+        "percentile": 0.04218
+      },
       "published": "2026-09-14T21:17:09.837",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-43741"
     },
@@ -9841,10 +9757,7 @@
       "product": "Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00303,
-        "percentile": 0.23229
-      },
+      "epss": null,
       "published": "2026-09-14T21:17:21.500",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65365"
     },
@@ -9928,7 +9841,10 @@
       "product": "Ipados, Iphone Os, Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00158,
+        "percentile": 0.0538
+      },
       "published": "2026-09-14T21:17:22.133",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65377"
     },
@@ -10544,10 +10460,7 @@
       "product": "Ipados, Iphone Os, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0035,
-        "percentile": 0.2865
-      },
+      "epss": null,
       "published": "2026-09-14T21:17:27.510",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84510"
     },
@@ -10631,7 +10544,10 @@
       "product": "Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00418,
+        "percentile": 0.35795
+      },
       "published": "2026-09-14T21:17:28.147",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84516"
     },
@@ -11247,10 +11163,7 @@
       "product": "Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00131,
-        "percentile": 0.03077
-      },
+      "epss": null,
       "published": "2026-09-14T21:17:32.900",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84567"
     },
@@ -11334,7 +11247,10 @@
       "product": "Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00121,
+        "percentile": 0.02196
+      },
       "published": "2026-09-14T21:17:33.523",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84573"
     },
@@ -11950,10 +11866,7 @@
       "product": "Ipados, Iphone Os, Macos",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00127,
-        "percentile": 0.02735
-      },
+      "epss": null,
       "published": "2026-09-14T21:17:38.153",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84632"
     },
@@ -12037,7 +11950,10 @@
       "product": "Ipados, Iphone Os",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00144,
+        "percentile": 0.04095
+      },
       "published": "2026-09-14T21:17:38.797",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86878"
     },
@@ -12653,10 +12569,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00155,
-        "percentile": 0.05072
-      },
+      "epss": null,
       "published": "2026-09-14T22:16:58.303",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90826"
     },
@@ -12740,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00194,
+        "percentile": 0.09362
+      },
       "published": "2026-09-14T22:16:59.447",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-91146"
     },
@@ -13356,10 +13272,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00259,
-        "percentile": 0.17972
-      },
+      "epss": null,
       "published": "2026-09-15T03:17:06.733",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90855"
     },
@@ -13443,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00303,
+        "percentile": 0.23204
+      },
       "published": "2026-09-15T05:16:59.420",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-90878"
     },
@@ -14059,12 +13975,96 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00138,
-        "percentile": 0.03613
-      },
+      "epss": null,
       "published": "2026-09-15T10:17:02.960",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19515"
+    },
+    {
+      "id": "CVE-2026-41573",
+      "desc": "Open Access Management (OpenAM) is an access management solution. Prior to 16.1.1, IdentityResourceV1.queryCollection() passes the _queryId parameter from /json/{realm}/users to CrestQuery with escapeQueryId disabled, bypassing protection added for CVE-2021-29156. The unescaped value reaches DJLDAPv",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-15T10:17:03.123",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-41573"
+    },
+    {
+      "id": "CVE-2026-44202",
+      "desc": "Open Access Management (OpenAM) is an access management solution. Prior to 16.1.1, the /sessionservice addSessionListener operation allows an authenticated user to register an arbitrary notification URL without requiring an administrative or application client token. SessionRequestHandler passes the",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-15T10:17:03.350",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44202"
+    },
+    {
+      "id": "CVE-2026-44203",
+      "desc": "Open Access Management (OpenAM) is an access management solution. Prior to 16.1.1, the OAuth 2.0 and OpenID Connect authorization endpoint does not sufficiently encode user-supplied parameters before FormPostResponse.ftl and checkSession.ftl render them into HTML for the form_post response mode. An ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-15T10:17:03.510",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44203"
+    },
+    {
+      "id": "CVE-2026-44793",
+      "desc": "Open Access Management (OpenAM) is an access management solution. Prior to 16.1.1, certain federation endpoints in a non-default clustered configuration inconsistently encode user-supplied parameters rendered into HTML in the SAML2 cluster cookie-hash redirect path. An unauthenticated attacker can i",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-15T10:17:03.717",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-44793"
+    },
+    {
+      "id": "CVE-2026-45048",
+      "desc": "Open Access Management (OpenAM) is an access management solution. Prior to 16.1.1, SessionRequestHandler in the session management endpoint does not enforce ownership or privilege checks when a low-privileged authenticated user queries session information in deployments using stateful session storag",
+      "cvss": 8.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-09-15T10:17:03.993",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45048"
+    },
+    {
+      "id": "CVE-2026-45051",
+      "desc": "Open Access Management (OpenAM) is an access management solution. Prior to 16.1.1, WebAuthnAuthentication loads a serialized AuthenticatorImpl object graph from the configured userAttribute through loadAuthenticators without an ObjectInputFilter. Exploitation requires the WebAuthn flow to be reachab",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00508,
+        "percentile": 0.42354
+      },
+      "published": "2026-09-15T10:17:04.153",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-45051"
     }
   ],
   "kev": [
@@ -15969,6 +15969,14 @@
       "summary": ""
     },
     {
+      "title": "Claude Opus 5 Helped Researchers Take Over OpenAI Staff Accounts via Chained Flaws",
+      "url": "https://thehackernews.com/2026/09/claude-opus-5-helped-researchers-take.html",
+      "source": "The Hacker News",
+      "category": "news",
+      "published": "2026-09-19T18:36:53+00:00",
+      "summary": "Three researchers at the security firm&nbsp;Hacktron&nbsp;used Anthropic's Claude Opus 5 to chain two flaws and take over the ChatGPT and Codex accounts of several OpenAI employees, then reach an internal OpenAI code repository.\n\nThe chain began with a bug in the software that runs OpenAI's public h"
+    },
+    {
       "title": "BragJack attacks hijack AI browser agents through malicious extensions",
       "url": "https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/",
       "source": "Bleeping Computer",
@@ -16017,16 +16025,8 @@
       "summary": "Identity visibility is a starting point for modern identity security, because stolen and misused credentials are among the most frequently reported initial access vectors in breach research, including Verizon's annual Data Breach Investigations Report. This article explains what identity visibility "
     },
     {
-      "title": "Claude Opus 5 Helped Researchers Take Over OpenAI Staff Accounts via Chained Flaws",
-      "url": "https://thehackernews.com/2026/09/claude-opus-5-helped-researchers-take.html",
-      "source": "The Hacker News",
-      "category": "news",
-      "published": "2026-09-19T13:28:35+00:00",
-      "summary": "Three researchers at the security firm&nbsp;Hacktron&nbsp;used Anthropic's Claude Opus 5 to chain two flaws and take over the ChatGPT and Codex accounts of several OpenAI employees, then reach an internal OpenAI code repository.\n\nThe chain began with a bug in the software that runs OpenAI's public h"
-    },
-    {
-      "title": "Calling viral AI actress Tilly Norwood? Agree to a face scan first",
-      "url": "https://www.bleepingcomputer.com/news/security/calling-viral-ai-actress-tilly-norwood-agree-to-a-face-scan-first/",
+      "title": "Viral AI actress' hotline face-scans every caller, watches their mood",
+      "url": "https://www.bleepingcomputer.com/news/security/viral-ai-actress-hotline-face-scans-every-caller-watches-their-mood/",
       "source": "Bleeping Computer",
       "category": "news",
       "published": "2026-09-19T11:38:20+00:00",
@@ -16643,8 +16643,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 68,
-    "high": 295,
+    "critical": 67,
+    "high": 292,
     "exploited": 1,
     "kev_total": 1716,
     "kev_7d": 7,
