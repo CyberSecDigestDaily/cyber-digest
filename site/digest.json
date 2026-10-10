@@ -1,221 +1,11 @@
 {
-  "generated": "2026-10-10T12:09:35.834616+00:00",
+  "generated": "2026-10-10T21:22:03.051694+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>68 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>69 critical CVE(s)</strong> and <strong>6 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-105105",
-      "desc": "CWE-306: Missing Authentication for Critical Function in the ait.core.server telemetry and command broker (ait-server) in NASA-AMMOS AIT-Core through 3.1.1 allows an unauthenticated remote attacker with network access to the ZeroMQ message bus to inject spacecraft command data, exfiltrate command an",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T12:16:57.183",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105105"
-    },
-    {
-      "id": "CVE-2026-105112",
-      "desc": "Nezha from 1.8.0 before 2.3.13 contains a lock-order inversion in UpdateGroup and DeleteGroup that allows authenticated non-admin users to deadlock the alerting subsystem. Attackers can concurrently call the notification-group and batch-delete endpoints with oversized id lists to widen the race and ",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:37.677",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105112"
-    },
-    {
-      "id": "CVE-2026-105113",
-      "desc": "Nezha Dashboard from 1.8.0 before 2.3.13 contains an improper locking vulnerability where a non-deferred mutex unlock leaks on a nil-map panic path. Any authenticated non-admin member can issue four notification API calls to permanently deadlock the alerting subsystem, then exhaust memory with block",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:37.823",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105113"
-    },
-    {
-      "id": "CVE-2026-105114",
-      "desc": "OpenAM before 16.1.3 contains a reflected cross-site scripting vulnerability that allows unauthenticated attackers to inject script by supplying crafted parameters rendered unencoded on the OAuth2 authorization error page. Attackers can lure victims to a crafted /oauth2/authorize link with repeated ",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:37.963",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105114"
-    },
-    {
-      "id": "CVE-2026-105115",
-      "desc": "OpenAM before 16.1.3 contains an unauthenticated arbitrary class instantiation vulnerability in the legacy JAX-RPC SOAP interface that allows remote attackers to load classes without authentication. Attackers can send SOAP requests to /jaxrpc/* with an unverified session identifier and a chosen clas",
-      "cvss": 8.6,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:38.110",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105115"
-    },
-    {
-      "id": "CVE-2026-105116",
-      "desc": "OpenAM before 16.1.3 contains a latent cross-site scripting defect that places the SAML message, relay state and target URL unencoded into the load-balancer cookie bounce auto-submit page. If reachable with cookieHashRedirectEnabled set, crafted requests could execute script in the OpenAM origin, th",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:38.257",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105116"
-    },
-    {
-      "id": "CVE-2026-105117",
-      "desc": "OpenAM before 16.1.3 contains an email content injection vulnerability that allows unauthenticated attackers to control notification email wording via the forgotPassword and register actions on /json/{realm}/users. Attackers can supply subject and message fields to send phishing mail from the organi",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:38.413",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105117"
-    },
-    {
-      "id": "CVE-2026-105118",
-      "desc": "OpenAM before 16.1.3 contains an open redirect vulnerability that allows unauthenticated attackers to redirect users by supplying an unverified id_token_hint to the /oauth2/connect/endSession endpoint. Attackers can name any realm client in a forged hint to redirect victims to any registered post-lo",
-      "cvss": 4.7,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:38.563",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105118"
-    },
-    {
-      "id": "CVE-2026-105119",
-      "desc": "OpenAM before 16.1.3 applies its OAuth2 Provider PKCE enforcement only to authorization requests whose response_type is exactly code, so codes issued through OpenID Connect hybrid flows (code token, code id_token, code token id_token) carry no bound challenge. An attacker who intercepts such a code ",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:38.710",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105119"
-    },
-    {
-      "id": "CVE-2026-105120",
-      "desc": "OpenAM before 16.1.3 contains an authorization bypass vulnerability in the sessions REST endpoint query operation that allows realm administrators to list sessions of every realm. Attackers holding delegated RealmAdmin privileges can supply a _queryFilter naming another realm to disclose usernames, ",
-      "cvss": 4.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:38.853",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105120"
-    },
-    {
-      "id": "CVE-2026-105121",
-      "desc": "OpenAM before 16.1.3 contains an improper authorization vulnerability that allows delegated administrators to destroy sessions outside their realms because realm checks use the requester's realm. Authenticated accounts holding the iplanet-am-session-destroy-sessions attribute can supply a target ses",
-      "cvss": 4.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:38.997",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105121"
-    },
-    {
-      "id": "CVE-2026-105122",
-      "desc": "OpenAM before 16.1.3 contains a server-side request forgery vulnerability that allows attackers able to register or modify OAuth 2.0 clients to make OpenAM fetch internal resources via an unvalidated jwks_uri. Attackers can trigger unauthenticated fetches through client-authentication and ID-token v",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T14:16:39.140",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105122"
-    },
-    {
-      "id": "CVE-2026-103065",
-      "desc": "Improper Validation of Specified Quantity in Input vulnerability in Themeum Kirki kirki allows Accessing Functionality Not Properly Constrained by ACLs.This issue affects Kirki: from n/a through 6.3.1.",
-      "cvss": 8.2,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T15:16:35.300",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-103065"
-    },
-    {
-      "id": "CVE-2026-103342",
-      "desc": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Unlimited Elements Unlimited Elements For Elementor (Free Widgets, Addons, Templates) unlimited-elements-for-elementor allows Reflected XSS.This issue affects Unlimited Elements For Elementor (Free ",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T15:16:36.087",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-103342"
-    },
-    {
-      "id": "CVE-2026-96451",
-      "desc": "Authorization Bypass Through User-Controlled Key vulnerability in Ultimate Member Ultimate Member ultimate-member allows Privilege Escalation.This issue affects Ultimate Member: from n/a through 2.13.1.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-03T16:16:46.920",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-96451"
-    },
     {
       "id": "CVE-2026-105123",
       "desc": "W (vincent-peugnet/wcms) through 3.18.0 contains a remote code execution vulnerability that allows authenticated editors to write arbitrary files by abusing the unvalidated path in POST /api/v0/media/upload/[*:path]. Attackers can upload .php files executed by the web server, use encoded ../ sequenc",
@@ -702,10 +492,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00278,
-        "percentile": 0.18614
-      },
+      "epss": null,
       "published": "2026-10-04T13:16:54.773",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105147"
     },
@@ -915,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00215,
+        "percentile": 0.10985
+      },
       "published": "2026-10-04T15:16:32.843",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105214"
     },
@@ -1405,10 +1195,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00154,
-        "percentile": 0.03958
-      },
+      "epss": null,
       "published": "2026-10-05T02:16:50.033",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105179"
     },
@@ -1618,7 +1405,10 @@
       "product": "Mt6899, Mt6899 Firmware, Mt6993",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00114,
+        "percentile": 0.01402
+      },
       "published": "2026-10-05T02:16:52.033",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20532"
     },
@@ -2108,10 +1898,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00201,
-        "percentile": 0.09165
-      },
+      "epss": null,
       "published": "2026-10-05T06:16:58.383",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105302"
     },
@@ -2321,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00319,
+        "percentile": 0.22949
+      },
       "published": "2026-10-05T08:17:15.610",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105250"
     },
@@ -2811,10 +2601,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00195,
-        "percentile": 0.0838
-      },
+      "epss": null,
       "published": "2026-10-05T09:17:10.290",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-104811"
     },
@@ -3024,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0017,
+        "percentile": 0.05776
+      },
       "published": "2026-10-05T09:17:13.227",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39721"
     },
@@ -3514,10 +3304,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0018,
-        "percentile": 0.06899
-      },
+      "epss": null,
       "published": "2026-10-05T15:17:21.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105421"
     },
@@ -3727,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00405,
+        "percentile": 0.32766
+      },
       "published": "2026-10-05T16:17:12.460",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105329"
     },
@@ -4217,10 +4007,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00349,
-        "percentile": 0.26423
-      },
+      "epss": null,
       "published": "2026-10-05T18:17:32.113",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-104971"
     },
@@ -4430,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00299,
+        "percentile": 0.20749
+      },
       "published": "2026-10-05T18:17:36.757",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105633"
     },
@@ -4920,10 +4710,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00271,
-        "percentile": 0.17768
-      },
+      "epss": null,
       "published": "2026-10-05T19:17:18.900",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105643"
     },
@@ -5133,7 +4920,10 @@
       "product": "Android",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00073,
+        "percentile": 0.00065
+      },
       "published": "2026-10-05T19:17:20.983",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-49933"
     },
@@ -5623,10 +5413,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00209,
-        "percentile": 0.1026
-      },
+      "epss": null,
       "published": "2026-10-05T20:17:10.610",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105389"
     },
@@ -5836,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0024,
+        "percentile": 0.13925
+      },
       "published": "2026-10-05T20:17:16.647",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105682"
     },
@@ -6326,10 +6116,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00246,
-        "percentile": 0.14566
-      },
+      "epss": null,
       "published": "2026-10-05T21:16:35.410",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105699"
     },
@@ -6539,7 +6326,10 @@
       "product": "Docling",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00344,
+        "percentile": 0.25952
+      },
       "published": "2026-10-05T22:16:57.177",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105744"
     },
@@ -7029,10 +6819,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00666,
-        "percentile": 0.5036
-      },
+      "epss": null,
       "published": "2026-10-06T00:16:37.097",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82989"
     },
@@ -7242,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00095,
+        "percentile": 0.00619
+      },
       "published": "2026-10-06T02:17:03.607",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-104043"
     },
@@ -7732,10 +7522,7 @@
       "product": "Cologne, Cologne Firmware, Cq2390M",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00115,
-        "percentile": 0.01419
-      },
+      "epss": null,
       "published": "2026-10-06T07:16:57.207",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-25269"
     },
@@ -7945,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00206,
+        "percentile": 0.0979
+      },
       "published": "2026-10-06T07:16:59.620",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86786"
     },
@@ -8435,10 +8225,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00171,
-        "percentile": 0.0597
-      },
+      "epss": null,
       "published": "2026-10-06T09:17:41.620",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105879"
     },
@@ -8648,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00274,
+        "percentile": 0.18175
+      },
       "published": "2026-10-06T09:17:43.930",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32581"
     },
@@ -9138,10 +8928,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00357,
-        "percentile": 0.27476
-      },
+      "epss": null,
       "published": "2026-10-06T09:17:49.740",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39772"
     },
@@ -9351,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00423,
+        "percentile": 0.34662
+      },
       "published": "2026-10-06T09:17:52.237",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-39793"
     },
@@ -9841,10 +9631,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00155,
-        "percentile": 0.04125
-      },
+      "epss": null,
       "published": "2026-10-06T09:17:57.887",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98165"
     },
@@ -10054,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0012,
+        "percentile": 0.01696
+      },
       "published": "2026-10-06T09:18:01.617",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98180"
     },
@@ -10544,10 +10334,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00209,
-        "percentile": 0.10123
-      },
+      "epss": null,
       "published": "2026-10-06T09:18:08.107",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98215"
     },
@@ -10757,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00118,
+        "percentile": 0.01585
+      },
       "published": "2026-10-06T09:18:10.397",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98230"
     },
@@ -11247,10 +11037,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00175,
-        "percentile": 0.06437
-      },
+      "epss": null,
       "published": "2026-10-06T09:18:15.797",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98265"
     },
@@ -11460,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00162,
+        "percentile": 0.04909
+      },
       "published": "2026-10-06T09:18:17.910",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98280"
     },
@@ -11950,10 +11740,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00129,
-        "percentile": 0.02214
-      },
+      "epss": null,
       "published": "2026-10-06T09:18:23.200",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98315"
     },
@@ -12163,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00129,
+        "percentile": 0.02185
+      },
       "published": "2026-10-06T09:18:25.387",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98330"
     },
@@ -12653,10 +12443,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00382,
-        "percentile": 0.30088
-      },
+      "epss": null,
       "published": "2026-10-06T09:18:30.677",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-98365"
     },
@@ -12866,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00263,
+        "percentile": 0.167
+      },
       "published": "2026-10-06T12:16:47.287",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105918"
     },
@@ -13356,10 +13146,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00267,
-        "percentile": 0.17324
-      },
+      "epss": null,
       "published": "2026-10-06T15:17:10.857",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-8352"
     },
@@ -13569,7 +13356,10 @@
       "product": "Container Storage Modules",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00509,
+        "percentile": 0.41648
+      },
       "published": "2026-10-06T15:17:18.483",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-54472"
     },
@@ -14059,12 +13849,222 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00434,
-        "percentile": 0.3574
-      },
+      "epss": null,
       "published": "2026-10-06T17:17:21.710",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105857"
+    },
+    {
+      "id": "CVE-2026-105858",
+      "desc": "Payload is a free and open source headless content management system. In versions before 3.90.0 and canary versions before 4.0.0-canary.34, a crafted request to the public first-register operation can execute code remotely when local authentication is enabled and no initial user has been created. Th",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:21.847",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105858"
+    },
+    {
+      "id": "CVE-2026-105859",
+      "desc": "Payload is a free and open source headless content management system. In versions before 3.90.0 and canary versions before 4.0.0-canary.34, an attacker can submit a request to a specific update endpoint that modifies collection documents without enforcing collection or field-level access control whe",
+      "cvss": 9.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:21.987",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105859"
+    },
+    {
+      "id": "CVE-2026-105860",
+      "desc": "Payload is a free and open source headless content management system. In @payloadcms/plugin-multi-tenant versions before 3.90.0 and canary versions before 4.0.0-canary.34, the default tenant array field access allows an authenticated user to assign the user's own account to other tenants. Deployment",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:22.133",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105860"
+    },
+    {
+      "id": "CVE-2026-105861",
+      "desc": "Payload is a free and open source headless content management system. In versions after 3.0.0 and before 3.90.0, authenticated external URL-based upload retrieval can forward authentication data to a redirected destination that was not verified as trusted, potentially exposing a valid session to an ",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:22.277",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105861"
+    },
+    {
+      "id": "CVE-2026-105862",
+      "desc": "Payload is a free and open source headless content management system. In versions before 3.90.0 and canary versions before 4.0.0-canary.34, a collection that allows downloadable SVG uploads can store a malicious SVG that bypasses sanitization and executes attacker-controlled JavaScript when a user d",
+      "cvss": 8.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:22.423",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105862"
+    },
+    {
+      "id": "CVE-2026-105863",
+      "desc": "Payload is a free and open source headless content management system. In versions after 3.0.0 and before 3.90.0, a custom field option that maps a field to a reserved authentication claim name can place unintended values in the authentication token issued at login. This issue is fixed in version 3.9",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:22.570",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105863"
+    },
+    {
+      "id": "CVE-2026-105864",
+      "desc": "Payload is a free and open source headless content management system. In @payloadcms/plugin-multi-tenant versions before 3.90.0 and canary versions before 4.0.0-canary.34, an authenticated user limited to one tenant can create a record in another tenant when at least one tenant-enabled collection ex",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:22.703",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105864"
+    },
+    {
+      "id": "CVE-2026-105865",
+      "desc": "Payload is a free and open source headless content management system. In versions before 3.90.0 and canary versions before 4.0.0-canary.34, an authenticated user who can update or delete uploads stored locally can cause file cleanup to remove unintended files outside the configured upload directory,",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:22.843",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105865"
+    },
+    {
+      "id": "CVE-2026-105866",
+      "desc": "Payload is a free and open source headless content management system. In versions before 3.90.0 and canary versions before 4.0.0-canary.34, an unauthenticated attacker who knows an account email address or username can abuse the account lockout mechanism of a local-authentication collection to preve",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:22.990",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105866"
+    },
+    {
+      "id": "CVE-2026-105867",
+      "desc": "Payload is a free and open source headless content management system. In @payloadcms/storage-s3 versions before 3.90.0 and canary versions before 4.0.0-canary.34, an authenticated user can overwrite an existing S3 object belonging to another upload collection when client uploads are enabled for mult",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:23.137",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105867"
+    },
+    {
+      "id": "CVE-2026-105868",
+      "desc": "Payload is a free and open source headless content management system. In versions before 3.90.0 and canary versions before 4.0.0-canary.34, local upload configurations that accept XML files can store an XML file and stylesheet that execute JavaScript in the Payload origin when a logged-in user opens",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:23.283",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105868"
+    },
+    {
+      "id": "CVE-2026-105957",
+      "desc": "A vulnerability was detected in SourceCodester Performance Indicator System 1.0. The affected element is an unknown function of the file /opils/admin/view_product.php. Performing a manipulation of the argument Category results in sql injection. Remote exploitation of the attack is possible. The expl",
+      "cvss": 6.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:23.500",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105957"
+    },
+    {
+      "id": "CVE-2026-106100",
+      "desc": "Payload is a free and open source headless content management system. In @payloadcms/db-mongodb versions before 3.87.0 and canary versions before 4.0.0-canary.20, an authenticated user who can update a document can modify fields that field-level write access control does not permit that user to chan",
+      "cvss": 7.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:23.957",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-106100"
+    },
+    {
+      "id": "CVE-2026-106101",
+      "desc": "Quasar Framework is a framework for building high-performance Vue.js user interfaces. Prior to 2.32.2, the openURL() utility in ui/src/utils/open-url/open-url.js trusted window.SafariViewController whenever that global existed in an iOS environment. Attacker-controlled HTML rendered by components su",
+      "cvss": 3.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:L",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-06T17:17:24.110",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-106101"
+    },
+    {
+      "id": "CVE-2026-106102",
+      "desc": "Quasar Framework is a framework for building high-performance Vue.js user interfaces. Prior to 2.22.0, the SSR-only getHead() serializer in ui/src/plugins/meta/Meta.js used getAttr() to interpolate values supplied through useMeta() into title, meta, link, and script markup without HTML text or quote",
+      "cvss": 10.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "severity": "CRITICAL",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00299,
+        "percentile": 0.20742
+      },
+      "published": "2026-10-06T17:17:24.270",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-106102"
     }
   ],
   "kev": [
@@ -15415,6 +15415,14 @@
       "summary": "Project Zero often works with software vendors to remediate the vulnerabilities we report and provide broader guidance on making software more secure. Some vendors express concern about potential scenarios in which they are unable to fix vulnerabilities that are causing immediate user harm, due to l"
     },
     {
+      "title": "Secure Your Mission-Critical Application Estate: Qualys TotalAppSec is Now FedRAMP High Authorized (FedRAMP Certified Class D)",
+      "url": "https://blog.qualys.com/category/qualys-insights",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-10-05T16:29:39+00:00",
+      "summary": "Key Takeaways Qualys TotalAppSec is now FedRAMP High Authorized on the Qualys Government Platform (FedRAMP Certified Class D, package FR2231052341).\u00a0 Federal AI use cases more than doubled in a year (3,611 use cases across 56 agencies), and most AI interactions are delivered through APIs; expanding "
+    },
+    {
       "title": "5th October \u2013 Threat Intelligence Report",
       "url": "https://research.checkpoint.com/2026/5th-october-threat-intelligence-report/",
       "source": "Checkpoint Research",
@@ -15479,12 +15487,28 @@
       "summary": "Cisco Talos uncovered a cluster of activity we track as UAT-11587 targeting government and policy organizations across Asia, including in Taiwan, India, the Philippines, and Cambodia, to deliver a previously undocumented backdoor referred to as \u201cAntino\u201d in developer artifacts."
     },
     {
+      "title": "Autonomous Remediation Is Already Running at Enterprise Scale",
+      "url": "https://blog.qualys.com/category/qualys-insights",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-09-29T15:00:00+00:00",
+      "summary": "The following is a guest blog by ITSPmagazine, based on their interview of Qualys President &#38; CEO Sumedh Thakar at Black Hat USA 2026. Sumedh Thakar has watched the same clock compress for 23 years. He joined Qualys as an early software engineer on the scanner, when organizations scanned once ev"
+    },
+    {
       "title": "OperTraitors: How Kubernetes Operators Betray Your Security Posture",
       "url": "https://unit42.paloaltonetworks.com/agentic-ai-kubernetes-operator-risks/",
       "source": "Unit 42",
       "category": "threat",
       "published": "2026-09-29T10:00:48+00:00",
       "summary": "We introduce OperTraitor, a tool to audit privileges of Kubernetes operators, identify excessive RBAC risks, and secure non-human identities.\nThe post OperTraitors: How Kubernetes Operators Betray Your Security Posture appeared first on Unit 42."
+    },
+    {
+      "title": "Lessons from Microsoft Patch KB5002907: Two Layers of Patch Control in Qualys TruRisk Eliminate",
+      "url": "https://blog.qualys.com/category/product-tech",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-09-29T08:28:47+00:00",
+      "summary": "How reliability scoring keeps risky patches out of zero-touch jobs, and how one blocking rule stops a paused update across your environment. Executive Summary Microsoft has paused the rollout of KB5002907, an optional Microsoft 365 Apps update that left some Office 2016 and Office 2019 installations"
     },
     {
       "title": "Building Agents Backwards from Evaluation",
@@ -15501,6 +15525,14 @@
       "category": "threat",
       "published": "2026-09-29T00:00:00+00:00",
       "summary": "Elastic InfoSec runs Linux endpoint management through Elastic Defend with a scheduled workflow that gets Cursor and Codex config onto new laptops without piling up duplicate actions on offline hosts, and it works for other config too."
+    },
+    {
+      "title": "The Developer is the New Perimeter: How Supply Chain Attacks Are Becoming Cloud Breaches",
+      "url": "https://blog.qualys.com/category/vulnerabilities-threat-research",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-09-28T15:00:00+00:00",
+      "summary": "A routine package install can open the door to a cloud breach. Learn how attackers exploit developer credentials. Discover practical steps to contain exposure and protect your cloud environment."
     },
     {
       "title": "28th September \u2013 Threat Intelligence Report",
@@ -15549,6 +15581,14 @@
       "category": "threat",
       "published": "2026-09-25T23:00:28+00:00",
       "summary": "Unit 42 security experts address critical cybersecurity misconceptions, offering practical insights to help your organization reinforce its enterprise defenses.\nThe post 3 Consulting Myths Debunked by Unit 42 Experts appeared first on Unit 42."
+    },
+    {
+      "title": "CISA BOD 26-04 Timelines for Three Linux Kernel CVEs",
+      "url": "https://blog.qualys.com/category/product-tech",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-09-23T15:00:00+00:00",
+      "summary": "Executive Summary CISA added three actively exploited Linux kernel vulnerabilities: CVE-2025-39682, CVE-2026-53266, and CVE-2025-39964 to its KEV Catalog on September 18, 2026, triggering a 3-day remediation deadline that passed on September 21. Under CISA BOD 26-04, a 3-day window applies to CVE-20"
     },
     {
       "title": "21st September \u2013 Threat Intelligence Report",
@@ -15607,6 +15647,14 @@
       "summary": "We linked one Elastic Security project to 100 others and ran the full prebuilt detection catalog from the origin, with all the ingest landing in the linked projects. It held up, and where it deliberately does not reach is the interesting part."
     },
     {
+      "title": "The End of Point-in-Time Compliance: Why Continuous Audit Readiness Matters to You in the AI Era",
+      "url": "https://blog.qualys.com/category/product-tech",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-09-17T22:52:48+00:00",
+      "summary": "AI-driven threats are outpacing traditional audits. Discover how continuous monitoring, automated evidence collection, and risk-based remediation help security teams close compliance gaps and maintain audit readiness as environments change daily."
+    },
+    {
       "title": "Inside the Modern SOC: Defending the Cross-Environment Pivot",
       "url": "https://unit42.paloaltonetworks.com/soc-cross-environment-pivot/",
       "source": "Unit 42",
@@ -15615,12 +15663,28 @@
       "summary": "Cross-environment attacks demand a new approach to security operations. Learn how Unit 42 Managed XSIAM helps SOC teams investigate complete attack paths.\nThe post Inside the Modern SOC: Defending the Cross-Environment Pivot appeared first on Unit 42."
     },
     {
+      "title": "The Autonomous Engine Behind Remediation, and What Finally Makes It Safe",
+      "url": "https://blog.qualys.com/category/qualys-insights",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-09-17T19:05:17+00:00",
+      "summary": "Executive Summary Vulnerability exploitation now happens at a speed that manual, ticket-based remediation can&#8217;t match. Qualys&#8217;s Enterprise TruRisk Management Platform closes that gap with autonomous remediation: exposures are prioritized by threat, business, and environmental context, th"
+    },
+    {
       "title": "AI Threat Landscape Digest: July\u2013August 2026",
       "url": "https://research.checkpoint.com/2026/ai-threat-landscape-digest-july-august-2026/",
       "source": "Checkpoint Research",
       "category": "threat",
       "published": "2026-09-17T14:41:15+00:00",
       "summary": "The defining development of the period came not from attackers but from the AI labs themselves, whose models broke out of controlled evaluations and reached real systems. In the wild, the criminal and state use of AI continued to mature along the lines tracked in earlier editions: models now act as "
+    },
+    {
+      "title": "Oracle Critical Security Patch Update, September 2026 Review",
+      "url": "https://blog.qualys.com/category/vulnerabilities-threat-research",
+      "source": "Qualys Blog",
+      "category": "threat",
+      "published": "2026-09-16T14:15:08+00:00",
+      "summary": "Oracle released its September edition of&#160;Critical Security Patch Update. The update received patches for 673 security vulnerabilities. Some of the vulnerabilities addressed in this update impact more than one product. These patches address vulnerabilities in various product families, including "
     },
     {
       "title": "Oracle September 2026 Critical Security Patch Update addresses 672 CVEs",
@@ -15905,6 +15969,30 @@
   ],
   "news": [
     {
+      "title": "Cyber exec arrested in case allegedly tied to ShinyHunters hackers",
+      "url": "https://www.bleepingcomputer.com/news/security/cyber-exec-arrested-in-case-allegedly-tied-to-shinyhunters-hackers/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-10-10T15:07:54+00:00",
+      "summary": "Canadian cybersecurity executive Edward Dubrovsky has been arrested in Pennsylvania in connection with alleged extortion activity that multiple reports have linked to the FBI's ongoing crackdown on the ShinyHunters hacking group. [...]"
+    },
+    {
+      "title": "ARTEX AI, Claude agents used in cyberattacks on South Korean banks",
+      "url": "https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-10-10T14:16:17+00:00",
+      "summary": "The cyberattacks that shook the South Korean financial sector earlier this month were launched by a Chinese hacker using the ARTEX AI penetration testing suite and Claude agents. [...]"
+    },
+    {
+      "title": "Criminal IP Introduces AITEM as the Next Evolution of Attack Surface Management",
+      "url": "https://www.bleepingcomputer.com/news/security/criminal-ip-introduces-aitem-as-the-next-evolution-of-attack-surface-management/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-10-10T12:30:39+00:00",
+      "summary": "Traditional attack surface management helps organizations discover exposed assets, but visibility alone is not enough to address threats. Criminal IP introduces AITEM, an AI-powered approach that connects exposure discovery with investigation, risk prioritization, and response. [...]"
+    },
+    {
       "title": "AI Is Getting Really Good at Messing With Cybercriminals",
       "url": "https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/",
       "source": "Wired Security",
@@ -15945,7 +16033,7 @@
       "summary": "The Traffic Light Protocol (TLP)&#x5b;1&#x5d;, which is now in its second incarnation, is a wonderful standard that enables one to easily communicate whether information may be shared further (and if so, how far).&#xd;"
     },
     {
-      "title": "FBI Arrests Founder of Ransomware Negotiation Firm",
+      "title": "FBI Arrests Executive at Ransomware Negotiation Firm",
       "url": "https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/",
       "source": "Krebs on Security",
       "category": "news",
@@ -16137,14 +16225,6 @@
       "summary": "Anthropic on Thursday unveiled OSS Scanner as an opt-in vulnerability scanner to help secure the open-source ecosystem using artificial intelligence (AI).\n\n\"It's an opt-in service informed by our experience using Claude to find vulnerabilities during Project Glasswing,\" Anthropic said. \"Projects tha"
     },
     {
-      "title": "Max severity SonicWall SMA1000 flaw now exploited in attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-10-09T12:32:16+00:00",
-      "summary": "Attackers are exploiting a maximum-severity vulnerability in SonicWall SMA1000 appliances (CVE-2026-102255) that was patched on Tuesday, three days ago. [...]"
-    },
-    {
       "title": "In Other News: AI Used in Korean Bank Breaches, Poem-Guided Botnet, Empire Admin Gets 40 Years",
       "url": "https://www.securityweek.com/in-other-news-ai-used-in-korean-bank-breaches-poem-guided-botnet-empire-admin-gets-40-years/",
       "source": "SecurityWeek",
@@ -16169,28 +16249,12 @@
       "summary": "Hackers hijacked the .gh, .sl, and .as ccTLDs and obtained HTTPS certificates for several Google domains.\nThe post Google Domains Impacted by Recent ccTLD Hijacks appeared first on SecurityWeek."
     },
     {
-      "title": "Man admits to running network of 15,000 money mules for cybercriminals",
-      "url": "https://www.bleepingcomputer.com/news/security/ukrainian-russian-dual-citizen-admits-to-laundering-millions-for-cybercriminals/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-10-09T11:14:28+00:00",
-      "summary": "\u200bA Ukrainian-Russian dual citizen has pleaded guilty to running a massive money laundering operation that laundered millions for cybercriminals worldwide. [...]"
-    },
-    {
       "title": "Unpatched AhsayCBS Vulnerabilities Exploited in the Wild",
       "url": "https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/",
       "source": "SecurityWeek",
       "category": "news",
       "published": "2026-10-09T10:23:42+00:00",
       "summary": "The flaws, CVE-2026-105133 and CVE-2026-105134, allow attackers to bypass authentication and inject OS commands.\nThe post Unpatched AhsayCBS Vulnerabilities Exploited in the Wild appeared first on SecurityWeek."
-    },
-    {
-      "title": "Microsoft: Outdated Windows devices will stop receiving security updates",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-outdated-windows-devices-will-lose-security-protection-next-year/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-10-09T10:12:24+00:00",
-      "summary": "Microsoft says devices running unsupported versions of Windows will stop receiving security updates after next year's Windows Update certificate rotation. [...]"
     },
     {
       "title": "UK and Allies Warn of Cyber Threat from China\u2019s Integrity Technology Group",
@@ -16587,7 +16651,7 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 68,
+    "critical": 69,
     "high": 347,
     "exploited": 1,
     "kev_total": 1739,
