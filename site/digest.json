@@ -1,249 +1,11 @@
 {
-  "generated": "2026-10-18T15:37:03.620469+00:00",
+  "generated": "2026-10-18T20:20:16.831498+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
     "message": "<strong>60 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-107761",
-      "desc": "Several Postiz endpoints return the complete database row of the record they operate on instead of only the fields the client needs. Two of them include secrets the caller is not meant to receive.\n\nThe public API's channel delete returns the deleted integration row, including the channel's platform ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T16:16:30.490",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-107761"
-    },
-    {
-      "id": "CVE-2026-108913",
-      "desc": "omarchy-theme-set in Omarchy 4 before 4.0.1 allows code execution via a third-party theme because the files placed into ~/.local/state/omarchy/current/theme may include executable content from an untrusted Git repository.",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T16:16:31.713",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108913"
-    },
-    {
-      "id": "CVE-2026-18418",
-      "desc": "The zbus proxy agent IPC backend in subsys/zbus/proxy_agent/zbus_proxy_agent_ipc.c logged the channel name of a rejected inter-domain frame with a plain %s conversion. The frame type struct zbus_proxy_msg carries a fixed-size channel_name[] array as its last member, and nothing in the transport guar",
-      "cvss": 3.4,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:L",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:58.113",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-18418"
-    },
-    {
-      "id": "CVE-2026-19576",
-      "desc": "The Goodix GT9xx input driver in drivers/input/input_gt911.c reads the touch point count from the controller's status register and masks it with GT911_TOUCH_POINTS_MSK (0x0F), yielding a value of 0..15. In gt911_process() that value is used directly as the loop bound for filling point_reg[], a stack",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:58.300",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19576"
-    },
-    {
-      "id": "CVE-2026-19577",
-      "desc": "net_route_ipv6_packet() in subsys/net/ip/route_ipv6.c resolved the nexthop's link-layer address with net_nbr_get_lladdr(nbr->idx) without first checking whether the neighbor cache entry actually had a linked link-layer address. An unresolved neighbor carries idx == NET_NBR_LLADDR_UNKNOWN (0xff), and",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:58.433",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19577"
-    },
-    {
-      "id": "CVE-2026-19669",
-      "desc": "The user-mode syscall verifiers z_vrfy_fuel_gauge_get_props() and z_vrfy_fuel_gauge_set_props() in drivers/fuel_gauge/fuel_gauge_syscall_handlers.c declared two variable-length arrays, union fuel_gauge_prop_val k_vals[len] and fuel_gauge_prop_t k_props[len], sized directly by the caller-supplied len",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:58.563",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19669"
-    },
-    {
-      "id": "CVE-2026-19735",
-      "desc": "The RFC 6528 initial-sequence-number implementation in subsys/net/ip/tcp.c derived every TCP ISN from SHA-256(unique_key || four-tuple) plus a uptime-derived offset, where unique_key is a 128-bit secret filled once by sys_csrand_get(). The return value of that call was discarded and the once guard w",
-      "cvss": 4.8,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:58.683",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19735"
-    },
-    {
-      "id": "CVE-2026-19736",
-      "desc": "The NXP MCUX TRNG entropy driver in drivers/entropy/entropy_mcux_trng.c passed the caller's byte count straight to the vendor SDK routine TRNG_GetRandomData(). On i.MX RT5xx and RT6xx parts the SDK compiles its TRNG_SW_HEALTH_TESTS variant, which always copies whole 32-bit words and draws entropy ro",
-      "cvss": 7.8,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:58.810",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19736"
-    },
-    {
-      "id": "CVE-2026-19737",
-      "desc": "i2s_esp32_trigger_check() in drivers/i2s/i2s_esp32.c validates the requested direction only for I2S_DIR_BOTH. The I2S_DIR_RX and I2S_DIR_TX branches read dev_cfg->rx.data->configured / dev_cfg->tx.data->configured without first checking the stream pointers. The device instantiation macro I2S_ESP32_S",
-      "cvss": 5.5,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:58.930",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19737"
-    },
-    {
-      "id": "CVE-2026-19738",
-      "desc": "The Bluetooth Link Layer Control Procedure (LLCP) implementation for Connected Isochronous Stream (CIS) creation retains an RX node (ctx->node_ref.rx, marked NODE_RX_TYPE_RETAIN) so it can later be reused as the host notification \u2014 on the peripheral while awaiting the Host's reply to an LL_CIS_REQ, ",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:59.050",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19738"
-    },
-    {
-      "id": "CVE-2026-19739",
-      "desc": "The Bluetooth Link Layer control procedure code in subsys/bluetooth/controller/ll_sw/ull_llcp_conn_upd.c retains the received RX node while a Connection Update / Connection Parameter procedure waits for its instant, so the node can later carry the host notification (llcp_rx_node_retain(), which mark",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:59.170",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19739"
-    },
-    {
-      "id": "CVE-2026-19740",
-      "desc": "The Link Layer Control Procedure (LLCP) implementation of the Zephyr software Bluetooth LE Controller retains the receive node that carried an accepted LL_PHY_UPDATE_IND so that it can later be reused for the host notification when the update instant is reached (llcp_rx_node_retain() in subsys/bluet",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:59.290",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19740"
-    },
-    {
-      "id": "CVE-2026-19935",
-      "desc": "The Bluetooth LE host queues received L2CAP connection-oriented channel (CoC) data for deferred processing through a struct k_work embedded in the channel object (le_chan->rx_work, handler l2cap_rx_process()) whenever the channel uses a dynamic PSM (0x0080-0x00FF). Channel teardown in l2cap_chan_des",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:59.410",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-19935"
-    },
-    {
-      "id": "CVE-2026-59508",
-      "desc": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Interuse i-Bos.\n\nThis issue affects i-Bos: 3.0.",
-      "cvss": 5.9,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T18:16:59.543",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-59508"
-    },
-    {
-      "id": "CVE-2026-108768",
-      "desc": "A vulnerability was identified in zhayujie CowAgent up to 2.2.0. Affected by this issue is the function json.loads of the component Streaming Tool-Call Argument Handler. The manipulation leads to allocation of resources. It is possible to initiate the attack remotely. The exploit is publicly availab",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T19:16:32.870",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108768"
-    },
-    {
-      "id": "CVE-2026-108925",
-      "desc": "Improper neutralization of Script-Related HTML tags in a web page (basic XSS) vulnerability in Cohesity NetBackup Administration Console web interface.\n\nThis issue affects NetBackup Administration Console web interface:\u00a0 versions before 11.2.\n\n\n\nhttps://github.com/cohesity/SecAdvisory/blob/master/CO",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T19:16:33.957",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108925"
-    },
-    {
-      "id": "CVE-2026-108963",
-      "desc": "databasement before 1.8.2 allows remote code execution because it runs certain commands (e.g., mariadb-dump) with a database name that can be specified by any authenticated user. For example, --result-file=/app/public/index.php can write to index.php. In other words, quoting prevents OS command inje",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-11T20:16:32.853",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108963"
-    },
     {
       "id": "CVE-2026-108976",
       "desc": "GNU Emacs before 31.2 (and TRAMP through 2.8.2) allows OS command injection via a filename because tramp-user-regexp has an incomplete list of disallowed inputs. NOTE: this issue exists because of an incomplete fix for CVE-2026-79992.",
@@ -702,10 +464,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00218,
-        "percentile": 0.11429
-      },
+      "epss": null,
       "published": "2026-10-12T04:16:48.173",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108796"
     },
@@ -943,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00174,
+        "percentile": 0.06432
+      },
       "published": "2026-10-12T05:17:01.093",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-21125"
     },
@@ -1405,10 +1167,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00117,
-        "percentile": 0.01553
-      },
+      "epss": null,
       "published": "2026-10-12T07:16:36.453",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-48211"
     },
@@ -1646,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00307,
+        "percentile": 0.22029
+      },
       "published": "2026-10-12T08:17:19.187",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108812"
     },
@@ -2108,10 +1870,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00284,
-        "percentile": 0.19555
-      },
+      "epss": null,
       "published": "2026-10-12T12:17:14.463",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108828"
     },
@@ -2349,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0019,
+        "percentile": 0.08036
+      },
       "published": "2026-10-12T13:17:29.200",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109167"
     },
@@ -2811,10 +2573,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00255,
-        "percentile": 0.15974
-      },
+      "epss": null,
       "published": "2026-10-12T14:17:10.680",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109201"
     },
@@ -3052,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.002,
+        "percentile": 0.09235
+      },
       "published": "2026-10-12T15:17:06.073",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-103526"
     },
@@ -3514,10 +3276,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00349,
-        "percentile": 0.26992
-      },
+      "epss": null,
       "published": "2026-10-12T16:17:06.040",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85947"
     },
@@ -3755,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00214,
+        "percentile": 0.10957
+      },
       "published": "2026-10-12T17:17:12.973",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108476"
     },
@@ -4217,10 +3979,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00366,
-        "percentile": 0.28902
-      },
+      "epss": null,
       "published": "2026-10-12T17:17:18.183",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109263"
     },
@@ -4458,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00112,
+        "percentile": 0.01291
+      },
       "published": "2026-10-12T17:17:20.730",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109280"
     },
@@ -4920,10 +4682,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00351,
-        "percentile": 0.27211
-      },
+      "epss": null,
       "published": "2026-10-12T17:17:26.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109313"
     },
@@ -5161,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00155,
+        "percentile": 0.04184
+      },
       "published": "2026-10-12T17:17:28.670",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109330"
     },
@@ -5623,10 +5385,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00432,
-        "percentile": 0.35958
-      },
+      "epss": null,
       "published": "2026-10-12T17:17:33.953",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109363"
     },
@@ -5864,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00389,
+        "percentile": 0.3148
+      },
       "published": "2026-10-12T17:17:36.877",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85964"
     },
@@ -6326,10 +6088,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00404,
-        "percentile": 0.33092
-      },
+      "epss": null,
       "published": "2026-10-12T19:16:36.387",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-103061"
     },
@@ -6567,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00132,
+        "percentile": 0.02467
+      },
       "published": "2026-10-12T19:16:39.720",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78404"
     },
@@ -7029,10 +6791,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.02873,
-        "percentile": 0.86602
-      },
+      "epss": null,
       "published": "2026-10-12T21:17:07.817",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-71429"
     },
@@ -7270,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0033,
+        "percentile": 0.24524
+      },
       "published": "2026-10-12T21:17:11.790",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109557"
     },
@@ -7732,10 +7494,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00167,
-        "percentile": 0.05604
-      },
+      "epss": null,
       "published": "2026-10-12T21:17:22.663",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84320"
     },
@@ -7973,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00263,
+        "percentile": 0.16967
+      },
       "published": "2026-10-12T22:17:03.430",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108932"
     },
@@ -8435,10 +8197,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00263,
-        "percentile": 0.16909
-      },
+      "epss": null,
       "published": "2026-10-12T23:17:22.557",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109573"
     },
@@ -8676,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00272,
+        "percentile": 0.18333
+      },
       "published": "2026-10-12T23:17:25.353",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109613"
     },
@@ -9138,10 +8900,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00276,
-        "percentile": 0.18739
-      },
+      "epss": null,
       "published": "2026-10-12T23:17:31.213",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109649"
     },
@@ -9379,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00221,
+        "percentile": 0.11723
+      },
       "published": "2026-10-12T23:17:34.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109666"
     },
@@ -9841,10 +9603,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00124,
-        "percentile": 0.01951
-      },
+      "epss": null,
       "published": "2026-10-13T00:17:00.700",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108941"
     },
@@ -10082,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0016,
+        "percentile": 0.04785
+      },
       "published": "2026-10-13T01:16:46.717",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-76972"
     },
@@ -10544,10 +10306,7 @@
       "product": "Gitlab",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00263,
-        "percentile": 0.16938
-      },
+      "epss": null,
       "published": "2026-10-13T02:16:58.457",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-16275"
     },
@@ -10785,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00259,
+        "percentile": 0.16374
+      },
       "published": "2026-10-13T03:16:40.390",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108958"
     },
@@ -11247,10 +11009,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.02265,
-        "percentile": 0.82733
-      },
+      "epss": null,
       "published": "2026-10-13T08:16:59.917",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109108"
     },
@@ -11488,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00139,
+        "percentile": 0.029
+      },
       "published": "2026-10-13T09:17:14.690",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108490"
     },
@@ -11950,10 +11712,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00238,
-        "percentile": 0.13812
-      },
+      "epss": null,
       "published": "2026-10-13T10:17:17.623",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-63352"
     },
@@ -12191,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00368,
+        "percentile": 0.29105
+      },
       "published": "2026-10-13T10:17:21.790",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-89202"
     },
@@ -12653,10 +12415,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0021,
-        "percentile": 0.10511
-      },
+      "epss": null,
       "published": "2026-10-13T13:17:21.537",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109714"
     },
@@ -12894,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00159,
+        "percentile": 0.04567
+      },
       "published": "2026-10-13T13:17:23.633",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109731"
     },
@@ -13356,10 +13118,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00174,
-        "percentile": 0.06451
-      },
+      "epss": null,
       "published": "2026-10-13T13:17:27.360",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109765"
     },
@@ -13597,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00157,
+        "percentile": 0.04451
+      },
       "published": "2026-10-13T13:17:29.117",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109782"
     },
@@ -14059,12 +13821,250 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00264,
-        "percentile": 0.17062
-      },
+      "epss": null,
       "published": "2026-10-13T14:17:30.747",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109676"
+    },
+    {
+      "id": "CVE-2026-109677",
+      "desc": "FreeRDP from 2.0.0-beta1 before 3.28.0 contains an out-of-bounds read vulnerability in smartcard_LocateCardsByATRA_Call because the ATR pattern cbAtr byte count is not capped. Malicious RDP servers can send crafted ATR mask arrays to use query timing as an oracle, leaking heap memory bit-by-bit to d",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:30.897",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109677"
+    },
+    {
+      "id": "CVE-2026-109678",
+      "desc": "FreeRDP 3.0.0-beta1 before 3.32.0, when built with verbose WinPR assertions and using smartcard emulation, has a reachable assertion: the emulated SCardStatusA passes a NULL reader-name destination to scard_copy_strings. A malicious RDP server can send an SCardStatusA request with fmszReaderNamesIsN",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:31.053",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109678"
+    },
+    {
+      "id": "CVE-2026-109679",
+      "desc": "FreeRDP 3.0.0-beta4 before 3.32.0 contains a NULL pointer dereference in arm_handle_request_ok when an ARM endpoint returns an empty HTTP 200 body. Attackers controlling the configured ARM gateway can return a zero-length body to pass NULL to strnlen and crash the connecting client.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:31.220",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109679"
+    },
+    {
+      "id": "CVE-2026-109680",
+      "desc": "FreeRDP 3.18.0 before 3.32.0 has a heap-based out-of-bounds write in freerdp_interruptible_get_line, which shrinks the buffer to 32 bytes while keeping a pre-filled suggested username's length as its write offset. A malicious or compromised ARM routing service can return a long redirectedUsername th",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:31.367",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109680"
+    },
+    {
+      "id": "CVE-2026-109938",
+      "desc": "Positive mapped-video coordinates overflow and abort FreeRDP clients A malicious or compromised RDP server can terminate a FreeRDP client after the user connects with video redirection enabled.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:31.617",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109938"
+    },
+    {
+      "id": "CVE-2026-109939",
+      "desc": "FreeRDP 3.27.1 before 3.32.0 contains a NULL pointer dereference in update_read_cache_bitmap_v3_order() in libfreerdp/core/orders.c, which accesses the client bitmap cache when the CBR3_DO_NOT_CACHE flag is set, even though the cache is not yet initialized before Demand Active. A malicious or compro",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:31.767",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109939"
+    },
+    {
+      "id": "CVE-2026-109940",
+      "desc": "FreeRDP 3.0.0-beta1 before 3.32.0 on Unix builds with PKCS#11 support has a stack-based buffer overflow in wprintKeyName() in WinPR's NCrypt PKCS#11 provider. It hex-encodes a key's CKA_ID, which can be up to 64 bytes, into a fixed 128-byte stack buffer. An attacker supplying a malicious PKCS#11 tok",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:31.910",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109940"
+    },
+    {
+      "id": "CVE-2026-109941",
+      "desc": "FreeRDP from 2.3.0 before 3.32.0 contains an infinite loop vulnerability in http_chuncked_read that allows malicious RD Gateways to hang clients by sending incomplete chunked responses. Attackers can send a partial chunk-size line or footer followed by a clean TLS shutdown, causing zero-byte reads t",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:32.073",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109941"
+    },
+    {
+      "id": "CVE-2026-109942",
+      "desc": "FreeRDP 2.3.0 before 3.32.0 dereferences a NULL stream in rdg_process_close_packet in libfreerdp/core/gateway/rdg.c because rdg_process_control_packet accepts a header-only PKT_TYPE_CLOSE_CHANNEL packet and passes the null payload without a check. A malicious or compromised RD Gateway can send an ei",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:32.220",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109942"
+    },
+    {
+      "id": "CVE-2026-109943",
+      "desc": "FreeRDP 3.29.0 before 3.32.0 contains a double free in the client's async-update message proxy, which shallow-copies the parser-owned PolygonSC or PolygonCB points array when numPoints is zero, so both the queue consumer and parser cleanup free it. A malicious RDP server can send a point-bearing pol",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:32.377",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109943"
+    },
+    {
+      "id": "CVE-2026-109944",
+      "desc": "FreeRDP 3.0.0 before 3.32.0 does not remove card handles when Emulate_SCardReleaseContext releases a smartcard-emulation context, so Emulate_SCardTransmit later looks up the deleted parent context and reaches a terminating WINPR_ASSERT. A malicious RDP server can crash a connecting client with smart",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:32.523",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109944"
+    },
+    {
+      "id": "CVE-2026-109945",
+      "desc": "FreeRDP 3.0.0 before 3.32.0 contains a heap use-after-free vulnerability in smartcard emulation when SCARD_IOCTL_DISCONNECT and SCARD_IOCTL_TRANSMIT operate concurrently on one card handle. A malicious RDP server can overlap these IRPs through separate context workers to free and reuse the SCardHand",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:32.670",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109945"
+    },
+    {
+      "id": "CVE-2026-109946",
+      "desc": "FreeRDP 3.11.0 before 3.32.0 does not validate that AVC444 and AVC444v2 region widths are even before YUV444 conversion, so an odd width reaches an assertion and aborts the client. A malicious or compromised RDP server can terminate a connected FreeRDP client after RDPGFX AVC444 negotiation by sendi",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:32.820",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109946"
+    },
+    {
+      "id": "CVE-2026-109947",
+      "desc": "FreeRDP from 3.20.1 before 3.32.0 contains an uncontrolled resource allocation vulnerability that allows malicious RDP servers to exhaust client memory via oversized drive redirection read requests. Attackers can send IRP_MJ_READ with Length 0xffffffff, causing roughly 4 GiB of zeroed allocation on ",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:32.993",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109947"
+    },
+    {
+      "id": "CVE-2026-109948",
+      "desc": "FreeRDP from 3.0.0 before 3.32.0 contains an uninitialized memory disclosure vulnerability in smartcard_Transmit_Call that allows malicious RDP servers to read client memory. Servers can send SCardTransmit requests with an invalid card handle and nonzero receive length, causing smartcard_pack_transm",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:33.260",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109948"
+    },
+    {
+      "id": "CVE-2026-109949",
+      "desc": "FreeRDP 3.0.0 before 3.32.0 contains an improper restriction of excessive authentication attempts in its virtual smartcard GIDS implementation, which stores the PIN retry counter per-handle. A malicious RDP server can exhaust the counter with VERIFY APDUs, then request a new SCardConnect to reset at",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-13T14:17:33.410",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109949"
+    },
+    {
+      "id": "CVE-2026-109950",
+      "desc": "FreeRDP from 3.0.0 before 3.32.0 contains a heap out-of-bounds read vulnerability that allows a malicious RD Gateway to crash clients by sending mismatched message lengths. Attackers controlling the gateway can set MsgBytes far larger than the NDR string ActualCount in consent or service messages, c",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00283,
+        "percentile": 0.19492
+      },
+      "published": "2026-10-13T14:17:33.563",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-109950"
     }
   ],
   "kev": [
@@ -15964,7 +15964,7 @@
   ],
   "news": [
     {
-      "title": "Hackers exploit SiteGuard WAF flaw to run commands as SYSTEM, root",
+      "title": "Hackers exploit SiteGuard WAF flaw to run commands as admins",
       "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-siteguard-waf-flaw-to-run-commands-as-system-root/",
       "source": "Bleeping Computer",
       "category": "news",
@@ -16647,7 +16647,7 @@
   "stats": {
     "total_cves": 1000,
     "critical": 60,
-    "high": 285,
+    "high": 279,
     "exploited": 0,
     "kev_total": 1748,
     "kev_7d": 9,
