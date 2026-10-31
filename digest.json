@@ -1,221 +1,11 @@
 {
-  "generated": "2026-10-30T22:04:21.292103+00:00",
+  "generated": "2026-10-31T04:50:16.696285+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>37 critical CVE(s)</strong> and <strong>12 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>34 critical CVE(s)</strong> and <strong>10 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-115801",
-      "desc": "A security flaw has been discovered in Kakao khaiii up to 0.4. The impacted element is the function khaiii::nn::Linear::open of the file src/main/cpp/khaiii/nn/Linear.cpp of the component JSON Config File Handler. The manipulation of the argument hidden_dim/class_num results in out-of-bounds read. T",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:57.613",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115801"
-    },
-    {
-      "id": "CVE-2026-115883",
-      "desc": "LangGraph checkpoint savers provide Postgres- and SQLite-backed state persistence for LangGraph workflows and agents. Prior to langgraph-checkpoint-postgres 3.1.3 and langgraph-checkpoint-sqlite 3.1.2, PostgresStore, AsyncPostgresStore, SqliteStore, and AsyncSqliteStore flatten namespace labels with",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:57.820",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115883"
-    },
-    {
-      "id": "CVE-2026-115885",
-      "desc": "The LangGraph CLI is the official command-line interface for LangGraph. From 0.4.15 until 0.4.32, langgraph deploy --verbose passes a temporary registry push token on standard input to docker login --password-stdin, but the CLI subprocess helper prints command input in verbose mode. Anyone who can r",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:57.970",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115885"
-    },
-    {
-      "id": "CVE-2026-115886",
-      "desc": "MLflow is an open source AI engineering platform for agents, large language models, and machine learning models. From 3.12.0rc0 until 3.17.0, the scorer invoke, register, and GenAI evaluate endpoints, including unauthenticated POST /ajax-api/3.0/mlflow/scorer/invoke, accept serialized third-party sc",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:58.110",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115886"
-    },
-    {
-      "id": "CVE-2026-115887",
-      "desc": "GraphQL Scalars is a library of custom GraphQL scalars for creating precise type-safe GraphQL schemas. From 1.24.1 until 2.0.1, GraphQLPhoneNumber in src/scalars/PhoneNumber.ts uses ambiguous nested digit quantifiers that backtrack exponentially when a PhoneNumber value contains a run of digits foll",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:58.253",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115887"
-    },
-    {
-      "id": "CVE-2026-115889",
-      "desc": "Wasmtime is a runtime for WebAssembly. Prior to 36.0.19 and 43.0.0, the Cranelift compiler backend bit-packs SSA value indices in a way that can silently overflow in release builds when compiling a sufficiently large or specially crafted Wasm function with many SSA values. The overflow can make Cran",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:58.400",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115889"
-    },
-    {
-      "id": "CVE-2026-115892",
-      "desc": "Wasmtime is a runtime for WebAssembly. From 46.0.0 until 48.0.7 and 49.0.4, lowering a host-created component-model stream or future into a guest can omit a required payload-type check after the value passes through guest code and returns through StreamAny, FutureAny, Val::Stream, Val::Future, or an",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:58.633",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115892"
-    },
-    {
-      "id": "CVE-2026-115893",
-      "desc": "Wasmtime is a runtime for WebAssembly. Prior to 36.0.19, 48.0.7, and 49.0.4, the Cranelift compiler backend on aarch64 can compile a Wasm br_table instruction with more than approximately 256,000 targets so that it has an incorrect conditional branch target. The branch can then jump to arbitrary oth",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:58.820",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115893"
-    },
-    {
-      "id": "CVE-2026-115895",
-      "desc": "Happy DOM is a JavaScript implementation of a web browser without its graphical user interface. From 17.0.0 until 21.0.4, packages/happy-dom/src/module/ECMAScriptModuleCompiler.ts accepts a named ESM import alias without validating that it is a JavaScript binding identifier before inserting it into ",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:58.987",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115895"
-    },
-    {
-      "id": "CVE-2026-115897",
-      "desc": "Serialize JavaScript serializes JavaScript values to a superset of JSON that includes regular expressions and functions. Prior to 7.1.3, the function-source escaping logic does not neutralize a bare closing-script prefix when attacker-influenced function source text ends exactly at that prefix. Beca",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:59.153",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115897"
-    },
-    {
-      "id": "CVE-2026-115935",
-      "desc": "The\u00a0app/process-api-response-headers\u00a0action accepts fake Craft API response headers from any authenticated control panel user.\n\n\n\nA non-admin user with only\u00a0accessCp\u00a0can place newline characters in\u00a0X-Craft-Plugin-Licenses. Craft passes this value to its\u00a0.env\u00a0writer without removing the newlines.\n\n\n\n",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:59.290",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115935"
-    },
-    {
-      "id": "CVE-2026-115937",
-      "desc": "The Mollie webhook endpoint accepts two independent, attacker-controlled parameters and never verifies that they belong together:\n\n  *  commerceTransactionHash\u00a0\u2014 selects which Craft Commerce transaction is completed\n  *  id\u00a0\u2014 selects which Mollie payment is queried for its status\n\n\n\n\nAn unauthentica",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:59.453",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115937"
-    },
-    {
-      "id": "CVE-2026-115938",
-      "desc": "Craft CMS allows any authenticated control panel user to submit an element-search condition whose element selector is evaluated as a sandboxed Twig object template. Craft\u2019s allowed\u00a0column\u00a0filter delegates property lookup to Yii\u00a0ArrayHelper, outside Twig\u2019s\u00a0SecurityPolicy. Repeated single-segment look",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T22:16:59.597",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115938"
-    },
-    {
-      "id": "CVE-2026-115931",
-      "desc": "Postiz lets a signed-in user ask the backend to run a function on one of their connected channels. The backend did not restrict which functions can be requested, so a user could call internal helper functions that were never meant to be reachable from the web interface.\n\nOne of those helpers reads a",
-      "cvss": 9.9,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-23T23:17:43.263",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115931"
-    },
-    {
-      "id": "CVE-2026-115929",
-      "desc": "MongoDB Compass relies on Electron, a third-party runtime that carries its own TLS root certificate store. This root certificate store has the\u00a0recoverable\u00a0eMudhra intermediate CA certificates.\u00a0Issue is\u00a0resolved by updating to Compass 1.53.1, which includes Electron 44.9.1.",
-      "cvss": 6.8,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "Mozilla",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-24T01:17:08.250",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115929"
-    },
     {
       "id": "CVE-2026-115806",
       "desc": "The Prime Mover \u2013 Backup and Migration plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 2.2.1 via deserialization of untrusted input in the migration search-and-replace routine (recursiveUnserializeReplace()). An unauthenticated attacker can store a cr",
@@ -702,10 +492,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00215,
-        "percentile": 0.1192
-      },
+      "epss": null,
       "published": "2026-10-24T08:16:52.630",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115975"
     },
@@ -915,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00218,
+        "percentile": 0.12306
+      },
       "published": "2026-10-24T12:16:57.777",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116015"
     },
@@ -1405,10 +1195,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00168,
-        "percentile": 0.06186
-      },
+      "epss": null,
       "published": "2026-10-25T06:16:31.597",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-111981"
     },
@@ -1618,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00254,
+        "percentile": 0.16982
+      },
       "published": "2026-10-25T09:16:27.740",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116050"
     },
@@ -2108,10 +1898,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00289,
-        "percentile": 0.21505
-      },
+      "epss": null,
       "published": "2026-10-25T14:16:54.843",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116161"
     },
@@ -2321,7 +2108,10 @@
       "product": "Vllm",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00318,
+        "percentile": 0.24805
+      },
       "published": "2026-10-25T14:16:57.160",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116176"
     },
@@ -2811,10 +2601,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00319,
-        "percentile": 0.24874
-      },
+      "epss": null,
       "published": "2026-10-25T15:17:02.430",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116055"
     },
@@ -3024,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00246,
+        "percentile": 0.15918
+      },
       "published": "2026-10-25T20:16:32.293",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115635"
     },
@@ -3514,10 +3304,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00182,
-        "percentile": 0.0777
-      },
+      "epss": null,
       "published": "2026-10-26T07:17:07.093",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-103306"
     },
@@ -3727,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00144,
+        "percentile": 0.0366
+      },
       "published": "2026-10-26T07:17:09.973",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116228"
     },
@@ -4217,10 +4007,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00274,
-        "percentile": 0.1987
-      },
+      "epss": null,
       "published": "2026-10-26T10:16:52.200",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115949"
     },
@@ -4430,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00289,
+        "percentile": 0.21457
+      },
       "published": "2026-10-26T11:16:35.550",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115948"
     },
@@ -4920,10 +4710,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00602,
-        "percentile": 0.48793
-      },
+      "epss": null,
       "published": "2026-10-26T14:16:26.820",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-110499"
     },
@@ -5133,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00442,
+        "percentile": 0.38405
+      },
       "published": "2026-10-26T14:16:30.893",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115194"
     },
@@ -5623,10 +5413,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00326,
-        "percentile": 0.25677
-      },
+      "epss": null,
       "published": "2026-10-26T15:16:39.643",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116284"
     },
@@ -5836,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00124,
+        "percentile": 0.02091
+      },
       "published": "2026-10-26T15:16:43.787",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77059"
     },
@@ -6326,10 +6116,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00583,
-        "percentile": 0.47852
-      },
+      "epss": null,
       "published": "2026-10-26T16:17:18.183",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116368"
     },
@@ -6539,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00156,
+        "percentile": 0.047
+      },
       "published": "2026-10-26T17:17:11.957",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-106677"
     },
@@ -7029,10 +6819,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00237,
-        "percentile": 0.14744
-      },
+      "epss": null,
       "published": "2026-10-26T18:17:28.863",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105765"
     },
@@ -7242,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0017,
+        "percentile": 0.06375
+      },
       "published": "2026-10-26T18:17:40.540",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115966"
     },
@@ -7732,10 +7522,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00234,
-        "percentile": 0.14394
-      },
+      "epss": null,
       "published": "2026-10-26T20:17:37.780",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-104597"
     },
@@ -7945,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00249,
+        "percentile": 0.16228
+      },
       "published": "2026-10-26T20:17:58.290",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65627"
     },
@@ -8435,10 +8225,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00324,
-        "percentile": 0.25458
-      },
+      "epss": null,
       "published": "2026-10-26T21:17:34.973",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112451"
     },
@@ -8648,7 +8435,10 @@
       "product": "Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00481,
+        "percentile": 0.41515
+      },
       "published": "2026-10-26T21:17:37.353",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112471"
     },
@@ -9138,10 +8928,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00175,
-        "percentile": 0.06947
-      },
+      "epss": null,
       "published": "2026-10-26T21:17:42.910",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112513"
     },
@@ -9351,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00228,
+        "percentile": 0.13639
+      },
       "published": "2026-10-26T21:17:45.457",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112531"
     },
@@ -9841,10 +9631,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00216,
-        "percentile": 0.12013
-      },
+      "epss": null,
       "published": "2026-10-26T21:17:50.970",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112569"
     },
@@ -10054,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00131,
+        "percentile": 0.02657
+      },
       "published": "2026-10-26T21:17:53.373",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112609"
     },
@@ -10544,10 +10334,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00593,
-        "percentile": 0.48302
-      },
+      "epss": null,
       "published": "2026-10-26T21:17:59.020",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112655"
     },
@@ -10757,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00259,
+        "percentile": 0.17697
+      },
       "published": "2026-10-26T21:18:01.417",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112677"
     },
@@ -11247,10 +11037,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00182,
-        "percentile": 0.07863
-      },
+      "epss": null,
       "published": "2026-10-26T21:18:07.430",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-113904"
     },
@@ -11460,7 +11247,10 @@
       "product": "Macos",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00444,
+        "percentile": 0.38652
+      },
       "published": "2026-10-26T21:18:09.837",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-113939"
     },
@@ -11950,10 +11740,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00229,
-        "percentile": 0.13783
-      },
+      "epss": null,
       "published": "2026-10-26T21:18:43.080",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65368"
     },
@@ -12163,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0032,
+        "percentile": 0.25042
+      },
       "published": "2026-10-26T21:20:13.800",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84590"
     },
@@ -12653,10 +12443,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00583,
-        "percentile": 0.47876
-      },
+      "epss": null,
       "published": "2026-10-26T21:20:35.263",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-86971"
     },
@@ -12866,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00609,
+        "percentile": 0.49109
+      },
       "published": "2026-10-26T22:16:54.373",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116508"
     },
@@ -13356,10 +13146,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.01246,
-        "percentile": 0.6928
-      },
+      "epss": null,
       "published": "2026-10-26T22:16:59.610",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116748"
     },
@@ -13569,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0022,
+        "percentile": 0.1254
+      },
       "published": "2026-10-27T00:17:12.463",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116805"
     },
@@ -14059,12 +13849,222 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00101,
-        "percentile": 0.00882
-      },
+      "epss": null,
       "published": "2026-10-27T01:19:07.093",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116839"
+    },
+    {
+      "id": "CVE-2026-116840",
+      "desc": "llama.cpp b5854 before b11275 contains an integer overflow vulnerability in gguf_init_from_reader that bypasses the CVE-2025-53630 size check when padding near-SIZE_MAX tensor sizes. Attackers can supply a crafted GGUF file whose tensor size pads to zero, causing an undersized data blob and out-of-b",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T01:19:07.217",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116840"
+    },
+    {
+      "id": "CVE-2026-116841",
+      "desc": "DevilutionX 1.4.0 through 1.5.5 contains an out-of-bounds read vulnerability in the bundled libmpq libmpq__file_number_from_hash function that allows attackers to read heap memory via unchecked block_table_index values. Attackers can place a crafted .mpq archive in the game's data path, such as a mo",
+      "cvss": 5.5,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T01:19:07.393",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116841"
+    },
+    {
+      "id": "CVE-2026-116842",
+      "desc": "DevilutionX 1.4.0 through 1.5.5 contains a heap buffer overflow vulnerability in the bundled libmpq libmpq__archive_dup routine when opening crafted MPQ archives. Attackers can supply an MPQ archive whose block table count exceeds its hash table count, causing memcpy to overflow the heap during star",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:H",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T01:19:07.573",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116842"
+    },
+    {
+      "id": "CVE-2026-116843",
+      "desc": "Mistral Vibe before 3.0.3 contains a remote code execution vulnerability that allows attackers to run commands by defining git filter drivers in an untrusted repository's .git/config. When started with --worktree, git worktree add applies .gitattributes and runs filter smudge, clean, or process comm",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T01:19:07.730",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116843"
+    },
+    {
+      "id": "CVE-2026-116844",
+      "desc": "Fclairamb ftpserverlib through 0.32.4 contains a cleartext transmission vulnerability because TransferOpen checks only the transferTLS flag set by PROT, not whether the prepared data connection uses TLS. When a client sends PROT P after PASV or PORT, file contents and directory listings cross the ne",
+      "cvss": 4.8,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T01:19:07.887",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116844"
+    },
+    {
+      "id": "CVE-2026-116639",
+      "desc": "A vulnerability was detected in MD-MAFUJUL-HASAN Online-Payroll-Management-System up to a8902bf64575e325f6d6bf93a55f7bd273ec58cd. Affected is an unknown function of the file chat.php. Performing a manipulation of the argument ID results in cross site scripting. It is possible to initiate the attack ",
+      "cvss": 3.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T02:16:45.170",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116639"
+    },
+    {
+      "id": "CVE-2026-116640",
+      "desc": "A flaw has been found in Saruf-Ratul HR-Payroll-Management-System e7cd81477001afdee95b843fd4137894d9418c9f/3fd6f45ead9f8197510c0910f759e06ee67251e5. Affected by this vulnerability is an unknown functionality of the file chat.php. Executing a manipulation of the argument ID can lead to cross site scr",
+      "cvss": 3.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T02:16:45.343",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116640"
+    },
+    {
+      "id": "CVE-2026-88781",
+      "desc": "Untrusted Pointer Dereference in ASUS certain motherboards firmware\u00a0allows a kernel-level privileges\u00a0user can supply an arbitrary memory address via an I/O command, leading to subsequent system information being tampered with or causing a system crash.\nRefer to the 'Security Update for Multiple ASUS",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T03:16:26.663",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-88781"
+    },
+    {
+      "id": "CVE-2026-103312",
+      "desc": "The Payment Integration Wompi WordPress plugin through 4.0.1 does not verify the authenticity of incoming payment notifications on a stock install, because the callback's checksum is keyed on a merchant secret that is empty until it is manually configured, allowing an unauthenticated attacker to for",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T06:17:23.120",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-103312"
+    },
+    {
+      "id": "CVE-2026-103332",
+      "desc": "The Payex Payment Gateway for Woocommerce WordPress plugin through 1.2.10 does not properly verify the authenticity of incoming payment notifications, relying on a validation secret that is empty by default, allowing unauthenticated attackers to forge a valid payment confirmation and mark any order ",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T06:17:23.287",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-103332"
+    },
+    {
+      "id": "CVE-2026-111820",
+      "desc": "The Analytics Insights \u2013 Google Analytics Dashboard for WordPress plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the Page Title in all versions up to, and including, 6.3.12 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated a",
+      "cvss": 7.2,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "severity": "HIGH",
+      "vendor": "WordPress",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T06:17:23.437",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-111820"
+    },
+    {
+      "id": "CVE-2026-117468",
+      "desc": "Psono Server versions 5.3.5 through 7.2.3 used a permission class that did not enforce token write scope when claiming a device code. An authenticated remote attacker holding a restricted API key-derived session could claim an attacker-controlled device code and obtain a full read-write session vali",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "GitLab",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T06:17:24.527",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-117468"
+    },
+    {
+      "id": "CVE-2026-117469",
+      "desc": "Psono Server (CE & EE) versions 1.0.0 through 7.2.3 did not enforce the direction of file-transfer credentials on file-repository operations. An authenticated remote attacker with read-only access to a file could present a download transfer to the upload endpoint, obtain a signed upload URL for an a",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "GitLab",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T06:17:24.683",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-117469"
+    },
+    {
+      "id": "CVE-2026-117470",
+      "desc": "Psono Server CE & EE versions 3.1.0 through 7.2.3 did not consume a stored WebAuthn challenge after assertion verification. An unauthenticated remote attacker who possessed the user's password and one captured valid WebAuthn assertion could replay that assertion with separate login tokens while the ",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "GitLab",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-10-27T06:17:24.867",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-117470"
+    },
+    {
+      "id": "CVE-2026-117471",
+      "desc": "Psono Server CE && EE versions 0.1.0 through 7.2.3 accepted a user-controlled host when configuring a personal Duo device and passed it to the Duo client without an allowlist or explicit timeout. An authenticated remote attacker could cause the server to connect to selected hosts over HTTPS on port ",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "GitLab",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00242,
+        "percentile": 0.15377
+      },
+      "published": "2026-10-27T06:17:25.020",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-117471"
     }
   ],
   "kev": [
@@ -14882,339 +14882,8 @@
       ]
     }
   ],
-  "kev_7d": 12,
-  "gh_advisories": [
-    {
-      "id": "GHSA-5xjx-3w67-w9x9",
-      "cve": null,
-      "severity": "critical",
-      "summary": "pypi-publish action revocation of CA in the chain that Sigstore uses in Trusted Publishing and Digital Attestations for PyPI",
-      "url": "https://github.com/advisories/GHSA-5xjx-3w67-w9x9",
-      "published": "2026-10-30T20:24:24Z",
-      "ecosystem": "actions",
-      "pkg": "pypa/gh-action-pypi-publish",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-jm85-8cpp-9cjc",
-      "cve": "CVE-2026-59978",
-      "severity": "high",
-      "summary": "AdminNeo: version-cache array injection causes persistent denial of service",
-      "url": "https://github.com/advisories/GHSA-jm85-8cpp-9cjc",
-      "published": "2026-10-30T18:53:08Z",
-      "ecosystem": "composer",
-      "pkg": "adminneo-org/adminneo",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-9pg5-8c7x-5hfx",
-      "cve": "CVE-2026-119284",
-      "severity": "medium",
-      "summary": "joserfc: Compact JWS size guard allocates attacker-controlled segments before rejection",
-      "url": "https://github.com/advisories/GHSA-9pg5-8c7x-5hfx",
-      "published": "2026-10-30T14:54:25Z",
-      "ecosystem": "pip",
-      "pkg": "joserfc",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-jpxq-7h8p-2q76",
-      "cve": "CVE-2026-119283",
-      "severity": "high",
-      "summary": "joserfc: Unbounded JWE General JSON `recipients` Array Leads to CPU Exhaustion (DoS) via Repeated RSA Private-Key Decryption",
-      "url": "https://github.com/advisories/GHSA-jpxq-7h8p-2q76",
-      "published": "2026-10-30T14:54:20Z",
-      "ecosystem": "pip",
-      "pkg": "joserfc",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-f3fj-9625-rv3m",
-      "cve": null,
-      "severity": "medium",
-      "summary": "charmbracelet/soft-serve: Race in `SetPrivate` leaves a private repository readable by unauthenticated users",
-      "url": "https://github.com/advisories/GHSA-f3fj-9625-rv3m",
-      "published": "2026-10-30T14:53:57Z",
-      "ecosystem": "go",
-      "pkg": "github.com/charmbracelet/soft-serve",
-      "cvss_score": 5.9
-    },
-    {
-      "id": "GHSA-fgxm-5hvv-x4vh",
-      "cve": null,
-      "severity": "medium",
-      "summary": "charmbracelet/soft-serve HTTP responses disclose the existence and names of private repositories",
-      "url": "https://github.com/advisories/GHSA-fgxm-5hvv-x4vh",
-      "published": "2026-10-30T14:42:35Z",
-      "ecosystem": "go",
-      "pkg": "github.com/charmbracelet/soft-serve",
-      "cvss_score": 5.3
-    },
-    {
-      "id": "GHSA-qm8w-vx34-5j9j",
-      "cve": "CVE-2026-119282",
-      "severity": "high",
-      "summary": "@nx/maven and @nx/gradle have OS command injection via nx.json plugin options",
-      "url": "https://github.com/advisories/GHSA-qm8w-vx34-5j9j",
-      "published": "2026-10-30T14:42:14Z",
-      "ecosystem": "npm",
-      "pkg": "@nx/maven",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-qr28-fpjm-wq7f",
-      "cve": "CVE-2026-118664",
-      "severity": "high",
-      "summary": "decode-uri-component vulnerable to denial of service via quadratic replacement of percent-encoded runs",
-      "url": "https://github.com/advisories/GHSA-qr28-fpjm-wq7f",
-      "published": "2026-10-29T16:41:28Z",
-      "ecosystem": "npm",
-      "pkg": "decode-uri-component",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-vpp8-g58w-m8mp",
-      "cve": null,
-      "severity": "high",
-      "summary": "Twisted: Unauthenticated Remote Denial of Service in the Twisted HTTP/2 Server via Rapid Stream Reset",
-      "url": "https://github.com/advisories/GHSA-vpp8-g58w-m8mp",
-      "published": "2026-10-29T16:41:06Z",
-      "ecosystem": "pip",
-      "pkg": "Twisted",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-9hj8-73fh-9963",
-      "cve": "CVE-2026-115907",
-      "severity": "high",
-      "summary": "zip: legacy Shrink/Reduce/Implode decoder: denial of service from attacker-controlled ZIP64 uncompressed size",
-      "url": "https://github.com/advisories/GHSA-9hj8-73fh-9963",
-      "published": "2026-10-29T16:40:19Z",
-      "ecosystem": "rust",
-      "pkg": "zip",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-hjqx-j4rw-g7xv",
-      "cve": "CVE-2026-115908",
-      "severity": "high",
-      "summary": "zip: Arbitrary file write outside the extraction directory, because ZipArchive::extract validates symlink targets lexically. ",
-      "url": "https://github.com/advisories/GHSA-hjqx-j4rw-g7xv",
-      "published": "2026-10-29T16:40:12Z",
-      "ecosystem": "rust",
-      "pkg": "zip",
-      "cvss_score": 7.4
-    },
-    {
-      "id": "GHSA-8hxf-qr8p-62x4",
-      "cve": "CVE-2026-115906",
-      "severity": "medium",
-      "summary": "zip: AES Entry HMAC Authentication Bypass on Premature EOF",
-      "url": "https://github.com/advisories/GHSA-8hxf-qr8p-62x4",
-      "published": "2026-10-29T16:40:07Z",
-      "ecosystem": "rust",
-      "pkg": "zip",
-      "cvss_score": 6.5
-    },
-    {
-      "id": "GHSA-q7v9-x93c-xqv3",
-      "cve": "CVE-2026-115909",
-      "severity": "high",
-      "summary": "zip: Unbounded Symlink-Target Handling Can Abort Or Exhaust Memory During Extraction",
-      "url": "https://github.com/advisories/GHSA-q7v9-x93c-xqv3",
-      "published": "2026-10-29T16:40:01Z",
-      "ecosystem": "rust",
-      "pkg": "zip",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-8g5g-mxqh-grgj",
-      "cve": "CVE-2026-118662",
-      "severity": "medium",
-      "summary": "Vite: `server.fs.deny` bypassed with queries",
-      "url": "https://github.com/advisories/GHSA-8g5g-mxqh-grgj",
-      "published": "2026-10-29T16:39:56Z",
-      "ecosystem": "npm",
-      "pkg": "vite",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-6j52-38f8-qhxr",
-      "cve": "CVE-2026-63414",
-      "severity": "high",
-      "summary": "Shopify App: Token exchange shop context confusion may allow cross-shop authorization bypass in affected apps",
-      "url": "https://github.com/advisories/GHSA-6j52-38f8-qhxr",
-      "published": "2026-10-29T16:39:49Z",
-      "ecosystem": "rubygems",
-      "pkg": "shopify_app",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-8rvj-mm4h-c258",
-      "cve": "CVE-2026-62290",
-      "severity": "high",
-      "summary": "cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials",
-      "url": "https://github.com/advisories/GHSA-8rvj-mm4h-c258",
-      "published": "2026-10-29T16:39:41Z",
-      "ecosystem": "go",
-      "pkg": "github.com/cert-manager/cert-manager",
-      "cvss_score": 7.3
-    },
-    {
-      "id": "GHSA-v3f7-2p4r-mwfw",
-      "cve": "CVE-2026-9086",
-      "severity": "high",
-      "summary": "Keycloak vulnerable to cross-site scripting (xss) via case-insensitive uri validation bypass",
-      "url": "https://github.com/advisories/GHSA-v3f7-2p4r-mwfw",
-      "published": "2026-10-29T16:39:03Z",
-      "ecosystem": "maven",
-      "pkg": "org.keycloak:keycloak-services",
-      "cvss_score": 7.3
-    },
-    {
-      "id": "GHSA-9jrw-8xf7-xqhq",
-      "cve": "CVE-2026-9083",
-      "severity": "medium",
-      "summary": "Keycloak vulnerable to information disclosure through arbitrary filesystem path probing",
-      "url": "https://github.com/advisories/GHSA-9jrw-8xf7-xqhq",
-      "published": "2026-10-29T16:38:31Z",
-      "ecosystem": "maven",
-      "pkg": "org.keycloak:keycloak-services",
-      "cvss_score": 4.9
-    },
-    {
-      "id": "GHSA-w3p3-7cjg-vgfw",
-      "cve": "CVE-2026-9799",
-      "severity": "medium",
-      "summary": "Keycloak allows unauthorized access to resources via uma permission ticket bypass",
-      "url": "https://github.com/advisories/GHSA-w3p3-7cjg-vgfw",
-      "published": "2026-10-29T16:37:57Z",
-      "ecosystem": "maven",
-      "pkg": "org.keycloak:keycloak-services",
-      "cvss_score": 4.6
-    },
-    {
-      "id": "GHSA-f5p5-6xmx-p252",
-      "cve": "CVE-2026-9800",
-      "severity": "high",
-      "summary": "Keycloak vulnerable to authorization bypass via incorrect uri comparison",
-      "url": "https://github.com/advisories/GHSA-f5p5-6xmx-p252",
-      "published": "2026-10-29T16:37:26Z",
-      "ecosystem": "maven",
-      "pkg": "org.keycloak:keycloak-services",
-      "cvss_score": 8.1
-    },
-    {
-      "id": "GHSA-r7rc-c989-86g6",
-      "cve": "CVE-2026-9705",
-      "severity": "medium",
-      "summary": "Keycloak: Attacker can re-enable and take over disabled clients via registration access token",
-      "url": "https://github.com/advisories/GHSA-r7rc-c989-86g6",
-      "published": "2026-10-29T16:36:21Z",
-      "ecosystem": "maven",
-      "pkg": "org.keycloak:keycloak-services",
-      "cvss_score": 6.5
-    },
-    {
-      "id": "GHSA-w9x9-j56r-h98r",
-      "cve": null,
-      "severity": "high",
-      "summary": "@eeacms/volto-chatbot has Unauthenticated Danswer API Confused Deputy Proxy",
-      "url": "https://github.com/advisories/GHSA-w9x9-j56r-h98r",
-      "published": "2026-10-29T16:35:48Z",
-      "ecosystem": "npm",
-      "pkg": "@eeacms/volto-chatbot",
-      "cvss_score": 8.2
-    },
-    {
-      "id": "GHSA-8vfg-2r28-hvhj",
-      "cve": "CVE-2026-61848",
-      "severity": "medium",
-      "summary": "Crass: Non-ASCII characters cause superlinear CPU consumption",
-      "url": "https://github.com/advisories/GHSA-8vfg-2r28-hvhj",
-      "published": "2026-10-29T16:35:29Z",
-      "ecosystem": "rubygems",
-      "pkg": "crass",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-wwpr-jff3-395c",
-      "cve": "CVE-2026-61847",
-      "severity": "medium",
-      "summary": "Crass: A large number of adjacent CSS comments can trigger a SystemStackError",
-      "url": "https://github.com/advisories/GHSA-wwpr-jff3-395c",
-      "published": "2026-10-29T16:35:23Z",
-      "ecosystem": "rubygems",
-      "pkg": "crass",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-6jxj-px6v-747w",
-      "cve": "CVE-2026-61846",
-      "severity": "medium",
-      "summary": "Crass: Deeply nested CSS blocks and functions can trigger a SystemStackError or excessive memory usage",
-      "url": "https://github.com/advisories/GHSA-6jxj-px6v-747w",
-      "published": "2026-10-29T16:35:16Z",
-      "ecosystem": "rubygems",
-      "pkg": "crass",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-c33x-vcv4-vg3g",
-      "cve": null,
-      "severity": "low",
-      "summary": "Cedar: JSON template is in scope missing slot-id validation allows link panic and decision divergence",
-      "url": "https://github.com/advisories/GHSA-c33x-vcv4-vg3g",
-      "published": "2026-10-29T16:35:04Z",
-      "ecosystem": "rust",
-      "pkg": "cedar-policy",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-q344-5v34-gm84",
-      "cve": "CVE-2026-62264",
-      "severity": "high",
-      "summary": "@sylphx/pdf-reader-mcp: HTTP transport accepts unauthenticated requests despite a configured MCP_API_KEY",
-      "url": "https://github.com/advisories/GHSA-q344-5v34-gm84",
-      "published": "2026-10-29T16:34:35Z",
-      "ecosystem": "npm",
-      "pkg": "@sylphx/pdf-reader-mcp",
-      "cvss_score": 7.5
-    },
-    {
-      "id": "GHSA-26mh-57q7-jfvr",
-      "cve": "CVE-2026-61438",
-      "severity": "high",
-      "summary": "PraisonAI vulnerable to Remote Code Execution via Broken AST Sandbox",
-      "url": "https://github.com/advisories/GHSA-26mh-57q7-jfvr",
-      "published": "2026-10-29T16:34:26Z",
-      "ecosystem": "pip",
-      "pkg": "praisonai",
-      "cvss_score": 7.3
-    },
-    {
-      "id": "GHSA-r899-h629-j84r",
-      "cve": "CVE-2026-61448",
-      "severity": "low",
-      "summary": "Parse Server vulnerable to stored XSS via malformed Content-Type bypassing file upload extension blocklist",
-      "url": "https://github.com/advisories/GHSA-r899-h629-j84r",
-      "published": "2026-10-29T16:33:48Z",
-      "ecosystem": "npm",
-      "pkg": "parse-server",
-      "cvss_score": null
-    },
-    {
-      "id": "GHSA-rhj7-vh3v-mcq6",
-      "cve": "CVE-2026-62160",
-      "severity": "high",
-      "summary": "Daptin: ParseAcceptLanguage `_` separator bypass enables >250x CPU amplification via Accept-Language header in LanguageMiddleware",
-      "url": "https://github.com/advisories/GHSA-rhj7-vh3v-mcq6",
-      "published": "2026-10-29T16:33:09Z",
-      "ecosystem": "go",
-      "pkg": "github.com/daptin/daptin",
-      "cvss_score": null
-    }
-  ],
+  "kev_7d": 10,
+  "gh_advisories": [],
   "threatfox": [],
   "malwarebazaar": [],
   "feodo_c2": [
@@ -16069,6 +15738,14 @@
       "summary": "Two serious security issues hit Cursor on the same day, highlighting the risks for AI-powered integrated development environments (IDEs)."
     },
     {
+      "title": "Behind the Scenes of How Operation Blackout Went Down",
+      "url": "https://www.darkreading.com/cybersecurity-operations/behind-the-scenes-how-operation-blackout-went-down",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-10-30T19:46:08+00:00",
+      "summary": "A recent law enforcement operation to dismantle harmful scam centers was a big success. A threat intelligence expert walks us through what happened and why he wants more of the same."
+    },
+    {
       "title": "Fashion retailer Resolve says hackers stole payment card information",
       "url": "https://therecord.media/resolve-fashion-retailer-data-breach-payment-cards",
       "source": "The Record",
@@ -16379,14 +16056,6 @@
       "category": "news",
       "published": "2026-10-29T19:56:44+00:00",
       "summary": "As artificial intelligence squeezes early-career learning opportunities, capture-the-flag contests could be one way to help pick up the slack."
-    },
-    {
-      "title": "Claude Model Builds Exploits Across Major Browsers &amp; OSes",
-      "url": "https://www.darkreading.com/application-security/claude-model-exploits-major-browsers-oses",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-10-29T18:15:59+00:00",
-      "summary": "An unreleased version of the AI model has found and chained multiple vulnerabilities in Chrome, Safari, Android, Windows, and Linux, Anthropic says."
     },
     {
       "title": "NIK C2 Malware Can Use Victims\u2019 OpenAI Keys for AI Queries",
@@ -16719,12 +16388,12 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 37,
-    "high": 162,
+    "critical": 34,
+    "high": 159,
     "exploited": 0,
     "kev_total": 1766,
-    "kev_7d": 12,
-    "gh_advisories": 30,
+    "kev_7d": 10,
+    "gh_advisories": 0,
     "threatfox_iocs": 0,
     "epss_enriched": 20
   }
