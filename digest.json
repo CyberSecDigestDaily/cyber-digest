@@ -1,305 +1,11 @@
 {
-  "generated": "2026-11-07T12:42:05.177702+00:00",
+  "generated": "2026-11-07T21:37:38.054513+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>75 critical CVE(s)</strong> and <strong>3 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>70 critical CVE(s)</strong> and <strong>3 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-78188",
-      "desc": "WebDyne versions from 2.014 before 3.022 for Perl issue session cookies without the Secure, HttpOnly and SameSite attributes.\n\nWebDyne::Session sets its session cookie with only a name, value and path.\n\nBrowsers then send the session ID over plain HTTP and with cross-site requests, and expose it to ",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T15:16:53.860",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78188"
-    },
-    {
-      "id": "CVE-2026-78189",
-      "desc": "WebDyne versions from 3.007 before 3.022 for Perl execute .psp files outside the document root via path traversal in the PSGI API route fallback.\n\nWhen a request matches no file, the PSGI handler retries it as an API route through api_filename. That keeps .. segments in the request path and only che",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T15:16:54.003",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78189"
-    },
-    {
-      "id": "CVE-2026-78190",
-      "desc": "WebDyne versions from 2.014 before 3.022 for Perl reflect request parameters unescaped into form field values, allowing cross-site scripting.\n\nThe textfield, password_field and filefield tags fill their value attribute from the request parameter of the same name. WEBDYNE_CGI_AUTOESCAPE, which contro",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T15:16:54.123",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78190"
-    },
-    {
-      "id": "CVE-2026-78191",
-      "desc": "WebDyne versions from 2.031 before 3.022 for Perl execute files with .psp anywhere in the name as Perl pages.\n\nWebDyne decides whether to run a requested file as a page by matching its name against WEBDYNE_PSP_EXT_RE, which has no end anchor.\n\nAn application that accepts uploads by checking only the",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T15:16:54.247",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78191"
-    },
-    {
-      "id": "CVE-2026-78192",
-      "desc": "WebDyne versions from 2.022 before 3.022 for Perl disclose application source to unauthenticated clients via the viewer in the default index page.\n\nWebDyne's wrapper scripts, such as webdyne.psgi, enable the built-in index page by default. Its source viewer returns files under the document root name",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T15:16:54.367",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-78192"
-    },
-    {
-      "id": "CVE-2026-102212",
-      "desc": "Heap-based buffer overflow in Opengear IM72XX, CM71XX, and ACM70XX firmware versions 4.8.0 through 5.5.2 on console server appliances allows an unauthenticated remote attacker to crash the index.cgi process via a crafted multipart/form-data POST request containing an overlong Content-Disposition nam",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T16:16:52.553",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-102212"
-    },
-    {
-      "id": "CVE-2026-120199",
-      "desc": "LearnHouse before 1.1.1 contains a missing authorization vulnerability in the assignment API that allows authenticated users to read other users' grades and submissions. Attackers can supply another user_id to the submissions grade endpoint or query submission read functions to view other students' ",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:07.010",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120199"
-    },
-    {
-      "id": "CVE-2026-120200",
-      "desc": "Nexterm through 1.2.2-BETA contains a missing authorization vulnerability that allows authenticated users to hibernate, resume, or terminate other users' remote sessions via session lifecycle routes. Attackers who obtain a session ID can call the hibernate, resume, or DELETE connection endpoints to ",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:07.713",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120200"
-    },
-    {
-      "id": "CVE-2026-120201",
-      "desc": "Jpom 2.10.0 through 2.11.12 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain super-administrator access by injecting query conditions into the JPOM-USER-TOKEN header. Attackers can send a value like 'is not null', which Hutool's Condition parser treats as",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:07.890",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120201"
-    },
-    {
-      "id": "CVE-2026-120202",
-      "desc": "Highflame ramparts 0.8.1 through 0.8.10 contains a security scan bypass vulnerability that allows attackers to hide malicious payloads because collect_bundle_siblings and walk_bundle_subdir skip nested directories and .pyc files. Attackers can distribute a skill bundle with an unchecked-hash .pyc un",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:08.080",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120202"
-    },
-    {
-      "id": "CVE-2026-120203",
-      "desc": "ShowDoc 2.8.14 before 3.9.6 contains a code injection vulnerability in its Mock feature that allows authenticated users to execute shell commands through mockjs templates. Attackers can store a template via MockController::add with escaped parentheses that mockjs evaluates with eval(), then trigger ",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:08.237",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120203"
-    },
-    {
-      "id": "CVE-2026-120204",
-      "desc": "DeepInfer through 0.1.0 contains a path traversal vulnerability in the unauthenticated /profile endpoint that allows remote attackers to create arbitrary directories via the output_dir parameter. Attackers, including cross-site GET requests from an operator's browser, can write chrome trace files to",
-      "cvss": 5.6,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:08.403",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120204"
-    },
-    {
-      "id": "CVE-2026-120205",
-      "desc": "Thelia before 3.1.0 contains a stored cross-site scripting vulnerability in ForSomeCustomers::getSummary() that allows unauthenticated attackers to inject scripts via unescaped customer names. Attackers can register with a script payload as their name that executes when administrators view related c",
-      "cvss": 8.0,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:08.570",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120205"
-    },
-    {
-      "id": "CVE-2026-120206",
-      "desc": "Thelia before 3.2.0 contains a cross-site request forgery vulnerability in the back office that allows attackers to forge administrative actions because per-session CSRF tokens leak via URL query strings. Attackers can reuse leaked tokens or target the unprotected setToggleVisibilityAction and updat",
-      "cvss": 5.9,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:08.747",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120206"
-    },
-    {
-      "id": "CVE-2026-120207",
-      "desc": "Thelia Page Module before 2.0.4 contains a cross-site request forgery vulnerability that allows remote attackers to delete page tags, documents and images by abusing back-office delete routes lacking CSRF tokens and permission checks. Attackers can lure a logged-in administrator into navigating to c",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:08.920",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120207"
-    },
-    {
-      "id": "CVE-2026-120208",
-      "desc": "libheif 1.18.0 before 1.23.3 contains a heap-based buffer overflow vulnerability in unc_decoder_mixed_interleave::processTile() that allows attackers to write out of bounds by supplying chroma components with unequal bit depths. Attackers can craft a HEIF file declaring, for example, 16-bit Cb and 8",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:09.083",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120208"
-    },
-    {
-      "id": "CVE-2026-120209",
-      "desc": "AJ-Report through 1.7.1 signs share tokens with a hard-coded JWT secret, allowing attackers to forge valid Share-Tokens offline. Attackers can mint a token with reportCode 'dataSet' to access the testTransform endpoint, which passes scripts to GroovyClassLoader for unauthenticated remote code execut",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:09.263",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120209"
-    },
-    {
-      "id": "CVE-2026-120210",
-      "desc": "FFmpeg 5.0 through 9.0.2 contains a path traversal vulnerability in the IMF demuxer that allows attackers to open files outside the package via unvalidated ASSETMAP Path elements. Attackers can supply a crafted IMF package with '..' or absolute paths to demux local MXF files, probe file existence an",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T18:17:09.427",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120210"
-    },
-    {
-      "id": "CVE-2026-118147",
-      "desc": "Improper certificate validation in Visual Studio allows an unauthorized attacker to perform spoofing over a network.",
-      "cvss": 7.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
-      "severity": "HIGH",
-      "vendor": "Microsoft",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T19:16:47.213",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-118147"
-    },
-    {
-      "id": "CVE-2026-118636",
-      "desc": "**UNSUPPORTED WHEN ASSIGNED**\u00a0\n\nJavaNativeMessageDecoder in the MINA 3.0 codec module calls ObjectInputStream.readObject() on frame bytes with no class filter, so an\napplication that puts it in front of an untrusted peer is open to gadget-chain RCE.\n\nAs the 3.0.0 branch is inactive, we do not plan t",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "Apache",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T21:16:53.203",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-118636"
-    },
-    {
-      "id": "CVE-2026-120135",
-      "desc": "Uncontrolled Recursion vulnerability in Apache Thrift Java bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.24.0.\n\n\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "Apache",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-10-31T21:16:53.397",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120135"
-    },
     {
       "id": "CVE-2026-120185",
       "desc": "A security flaw has been discovered in ken678 YznCMS up to 2.2.0. The affected element is the function Backend of the file app/admin/controller/auth/Group.php of the component Auth Group Handler. Performing a manipulation results in improper privilege management. The attack can be initiated remotely",
@@ -702,10 +408,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00171,
-        "percentile": 0.06559
-      },
+      "epss": null,
       "published": "2026-11-01T10:18:34.557",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-113429"
     },
@@ -999,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00727,
+        "percentile": 0.54407
+      },
       "published": "2026-11-01T11:18:57.843",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120225"
     },
@@ -1405,10 +1111,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00248,
-        "percentile": 0.16212
-      },
+      "epss": null,
       "published": "2026-11-01T21:17:08.157",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120274"
     },
@@ -1702,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.03211,
+        "percentile": 0.88254
+      },
       "published": "2026-11-02T00:18:09.897",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120276"
     },
@@ -2108,10 +1814,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00242,
-        "percentile": 0.15439
-      },
+      "epss": null,
       "published": "2026-11-02T03:17:31.650",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20548"
     },
@@ -2405,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00117,
+        "percentile": 0.01688
+      },
       "published": "2026-11-02T03:17:34.390",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-20569"
     },
@@ -2811,10 +2517,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00198,
-        "percentile": 0.09601
-      },
+      "epss": null,
       "published": "2026-11-02T03:17:38.213",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-68590"
     },
@@ -3108,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00133,
+        "percentile": 0.02835
+      },
       "published": "2026-11-02T07:18:02.577",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-101176"
     },
@@ -3514,10 +3220,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.02176,
-        "percentile": 0.824
-      },
+      "epss": null,
       "published": "2026-11-02T11:17:33.380",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-8923"
     },
@@ -3811,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00392,
+        "percentile": 0.33608
+      },
       "published": "2026-11-02T14:17:34.520",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105600"
     },
@@ -4217,10 +3923,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00343,
-        "percentile": 0.2798
-      },
+      "epss": null,
       "published": "2026-11-02T15:17:25.937",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120439"
     },
@@ -4514,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00373,
+        "percentile": 0.31397
+      },
       "published": "2026-11-02T15:17:30.053",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-120460"
     },
@@ -4920,10 +4626,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00122,
-        "percentile": 0.02003
-      },
+      "epss": null,
       "published": "2026-11-02T16:17:45.740",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-99218"
     },
@@ -5217,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00126,
+        "percentile": 0.02302
+      },
       "published": "2026-11-02T16:17:49.540",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-99239"
     },
@@ -5623,10 +5329,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00423,
-        "percentile": 0.36757
-      },
+      "epss": null,
       "published": "2026-11-02T19:18:00.980",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-117127"
     },
@@ -5920,7 +5623,10 @@
       "product": "Android",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00083,
+        "percentile": 0.00225
+      },
       "published": "2026-11-02T20:17:22.967",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-22436"
     },
@@ -6326,10 +6032,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00077,
-        "percentile": 0.00108
-      },
+      "epss": null,
       "published": "2026-11-02T20:17:44.330",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-55263"
     },
@@ -6623,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00074,
+        "percentile": 0.00073
+      },
       "published": "2026-11-02T20:17:48.287",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58838"
     },
@@ -7029,10 +6735,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0011,
-        "percentile": 0.01276
-      },
+      "epss": null,
       "published": "2026-11-02T20:17:51.610",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58946"
     },
@@ -7326,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00086,
+        "percentile": 0.00305
+      },
       "published": "2026-11-02T20:17:53.930",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-58979"
     },
@@ -7732,10 +7438,7 @@
       "product": "Android",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00074,
-        "percentile": 0.00068
-      },
+      "epss": null,
       "published": "2026-11-02T20:17:57.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-59031"
     },
@@ -8029,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00226,
+        "percentile": 0.13333
+      },
       "published": "2026-11-02T21:17:24.920",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116766"
     },
@@ -8435,10 +8141,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00293,
-        "percentile": 0.22008
-      },
+      "epss": null,
       "published": "2026-11-03T02:16:52.617",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-107441"
     },
@@ -8732,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00958,
+        "percentile": 0.6169
+      },
       "published": "2026-11-03T05:18:52.577",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77800"
     },
@@ -9138,10 +8844,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00105,
-        "percentile": 0.0105
-      },
+      "epss": null,
       "published": "2026-11-03T09:17:11.387",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-118447"
     },
@@ -9435,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00398,
+        "percentile": 0.34227
+      },
       "published": "2026-11-03T10:17:19.773",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-77778"
     },
@@ -9841,10 +9547,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.003,
-        "percentile": 0.22772
-      },
+      "epss": null,
       "published": "2026-11-03T13:17:18.073",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108052"
     },
@@ -10138,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00166,
+        "percentile": 0.05903
+      },
       "published": "2026-11-03T15:17:19.380",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-100493"
     },
@@ -10544,10 +10250,7 @@
       "product": "Freerdp",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00329,
-        "percentile": 0.26174
-      },
+      "epss": null,
       "published": "2026-11-03T15:17:29.790",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-121409"
     },
@@ -10841,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00143,
+        "percentile": 0.03649
+      },
       "published": "2026-11-03T15:17:33.910",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-121430"
     },
@@ -11247,10 +10953,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00135,
-        "percentile": 0.02979
-      },
+      "epss": null,
       "published": "2026-11-03T15:17:39.337",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-40659"
     },
@@ -11544,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0029,
+        "percentile": 0.21718
+      },
       "published": "2026-11-03T16:17:23.960",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-121451"
     },
@@ -11950,10 +11656,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00136,
-        "percentile": 0.03038
-      },
+      "epss": null,
       "published": "2026-11-03T16:17:35.547",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-65109"
     },
@@ -12247,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00297,
+        "percentile": 0.2251
+      },
       "published": "2026-11-03T17:17:55.630",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-115297"
     },
@@ -12653,10 +12359,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.01036,
-        "percentile": 0.64063
-      },
+      "epss": null,
       "published": "2026-11-03T17:18:12.430",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-28335"
     },
@@ -12950,7 +12653,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00184,
+        "percentile": 0.08071
+      },
       "published": "2026-11-03T19:17:53.727",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-112917"
     },
@@ -13356,10 +13062,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0013,
-        "percentile": 0.02656
-      },
+      "epss": null,
       "published": "2026-11-03T20:18:15.097",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-63433"
     },
@@ -13653,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.0148,
+        "percentile": 0.74075
+      },
       "published": "2026-11-03T20:18:20.693",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95727"
     },
@@ -14059,12 +13765,306 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00132,
-        "percentile": 0.02809
-      },
+      "epss": null,
       "published": "2026-11-03T20:18:24.293",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95757"
+    },
+    {
+      "id": "CVE-2026-95758",
+      "desc": "An authorization bypass vulnerability exists in the API of HPE Networking Fabric Composer. Successful exploitation could allow an authenticated attacker to bypass security restrictions and modify protected resources on the affected system.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:24.413",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95758"
+    },
+    {
+      "id": "CVE-2026-95759",
+      "desc": "Audit log bypass vulnerabilities exist in the API of HPE Networking Fabric Composer. Successful exploitation could allow an authenticated attacker with low privileges to suppress the audit records of their activity on the affected system.",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:24.530",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95759"
+    },
+    {
+      "id": "CVE-2026-95760",
+      "desc": "A privilege escalation vulnerability exists in the API of HPE Networking Fabric Composer if certain preconditions outside of the attacker's control are met. Successful exploitation could allow an authenticated attacker with low privileges to gain elevated privileges on the affected system.",
+      "cvss": 6.4,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:24.643",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95760"
+    },
+    {
+      "id": "CVE-2026-95761",
+      "desc": "An improper certificate validation vulnerability exists in HPE Networking Fabric Composer. Successful exploitation could allow an authenticated attacker with low privileges to obtain sensitive information.",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:24.760",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95761"
+    },
+    {
+      "id": "CVE-2026-95762",
+      "desc": "An insufficient session expiration vulnerability exists in the API of HPE Networking Fabric Composer if certain preconditions outside of the attacker's control are met. Successful exploitation could allow an authenticated administrative attacker to maintain persistent access to the affected system.",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:24.880",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95762"
+    },
+    {
+      "id": "CVE-2026-95763",
+      "desc": "An improper certificate validation vulnerability in HPE Networking Fabric Composer could allow an unauthenticated remote attacker to access sensitive information if certain preconditions outside of the attacker's control are met. Successful exploitation could allow an attacker to intercept transferr",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.003",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95763"
+    },
+    {
+      "id": "CVE-2026-95764",
+      "desc": "An improper certificate validation vulnerability exists in the API of HPE Networking Fabric Composer. Successful exploitation could allow an unauthenticated adjacent attacker to access sensitive information.",
+      "cvss": 5.7,
+      "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.123",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95764"
+    },
+    {
+      "id": "CVE-2026-95765",
+      "desc": "A sensitive information disclosure vulnerability exists in the web-based management interface of HPE Networking Fabric Composer. Successful exploitation could allow an unauthenticated remote attacker to obtain sensitive information.",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.260",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95765"
+    },
+    {
+      "id": "CVE-2026-95766",
+      "desc": "Sensitive information disclosure vulnerabilities in HPE Networking Fabric Composer could allow an authenticated attacker with low privileges to access sensitive information. Successful exploitation could allow an attacker to disclose sensitive information.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.380",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95766"
+    },
+    {
+      "id": "CVE-2026-95767",
+      "desc": "An unauthenticated information disclosure vulnerability exists in the API of HPE Networking Fabric Composer. Successful exploitation could allow an unauthenticated remote attacker to obtain sensitive information about the affected system.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.513",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95767"
+    },
+    {
+      "id": "CVE-2026-95768",
+      "desc": "A privilege escalation vulnerability exists in the API of HPE Networking Fabric Composer if certain preconditions outside of the attacker's control are met. Successful exploitation could allow an authenticated low-privileged remote attacker to obtain sensitive information from the affected system.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.637",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95768"
+    },
+    {
+      "id": "CVE-2026-95769",
+      "desc": "An audit log spoofing vulnerability exists in the API of HPE Networking Fabric Composer. Successful exploitation could allow an unauthenticated remote attacker to falsify the client address recorded in audit records.",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.750",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95769"
+    },
+    {
+      "id": "CVE-2026-95770",
+      "desc": "A sensitive information disclosure vulnerability in the underlying operating system of HPE Networking Fabric Composer could allow an authenticated low-privileged user with local access to view sensitive information, if certain preconditions outside of the attacker's control are met. Successful explo",
+      "cvss": 4.7,
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.873",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95770"
+    },
+    {
+      "id": "CVE-2026-95771",
+      "desc": "An authenticated information disclosure vulnerability exists in an API endpoint of HPE Networking Fabric Composer. Successful exploitation could allow an authenticated remote attacker to obtain limited information about the affected system.",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:25.990",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95771"
+    },
+    {
+      "id": "CVE-2026-95772",
+      "desc": "A race condition vulnerability exists in the API of HPE Networking Fabric Composer. Successful exploitation could allow an authenticated attacker with low privileges to corrupt the configuration state of the affected system.",
+      "cvss": 4.2,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:L",
+      "severity": "MEDIUM",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:26.110",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95772"
+    },
+    {
+      "id": "CVE-2026-95773",
+      "desc": "A denial-of-service vulnerability has been identified in HPE Networking Fabric Composer. Successful exploitation of this vulnerability could allow a low-privileged local attacker to cause a partial denial-of-service condition affecting other workloads on the same host.",
+      "cvss": 3.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:L",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:26.230",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95773"
+    },
+    {
+      "id": "CVE-2026-95774",
+      "desc": "A sensitive information disclosure vulnerability exists in HPE Networking Fabric Composer. Successful exploitation could allow an unauthenticated remote attacker to obtain sensitive information from the affected system.",
+      "cvss": 3.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:26.357",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95774"
+    },
+    {
+      "id": "CVE-2026-95775",
+      "desc": "A local information disclosure vulnerability exists in the underlying operating system of HPE Networking Fabric Composer. Successful exploitation could allow a low-privileged local attacker to read certain files on the underlying operating system.",
+      "cvss": 3.3,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:26.477",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95775"
+    },
+    {
+      "id": "CVE-2026-95776",
+      "desc": "An authenticated path traversal vulnerability exists in the API of HPE Networking Fabric Composer, which could be exploited by an authenticated low-privileged user if certain preconditions outside of the attacker's control are met. Successful exploitation could allow an attacker to read certain file",
+      "cvss": 3.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:26.600",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95776"
+    },
+    {
+      "id": "CVE-2026-95777",
+      "desc": "A sensitive information disclosure vulnerability exists in the management interface of HPE Networking Fabric Composer. Successful exploitation could allow a low-privileged attacker to obtain certain sensitive information stored on the affected system.",
+      "cvss": 3.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-03T20:18:26.730",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-95777"
+    },
+    {
+      "id": "CVE-2026-111751",
+      "desc": "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. From 21.2.0 until 21.2.25 and 22.2.1, RouterLink directives rendered during Node.js server-side rendering retain computed UrlTree instances for the lifetime of each req",
+      "cvss": 0.0,
+      "vector": "",
+      "severity": "NONE",
+      "vendor": "",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00659,
+        "percentile": 0.51796
+      },
+      "published": "2026-11-03T21:16:57.800",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-111751"
     }
   ],
   "kev": [
@@ -16037,6 +16037,30 @@
   ],
   "news": [
     {
+      "title": "Hackers pull off $133 million French bank heist via service provider",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-11-07T15:25:35+00:00",
+      "summary": "French cooperative bank Cr\u00e9dit Mutuel Ark\u00e9a was targeted in a cyberattack that enabled fraudulent transactions of up to $133 million, forcing it to respond by suspending certain systems.v [...]"
+    },
+    {
+      "title": "CTM360 Exposes Fake Gift Card Scams Exploiting Trusted Brands",
+      "url": "https://www.bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-11-07T14:10:19+00:00",
+      "summary": "Scammers are impersonating major brands and celebrities to lure consumers into fake gift card giveaways that collect personal information and trigger unwanted subscriptions. CTM360 reveals how these campaigns use deceptive verification steps and affiliate networks to generate revenue without deliver"
+    },
+    {
+      "title": "The Fridge-Hacking Spree Is an Internet-of-Things Wake-Up Call",
+      "url": "https://www.wired.com/story/kernel-panic-refrigeration-hacks-internet-of-things/",
+      "source": "Wired Security",
+      "category": "news",
+      "published": "2026-11-07T13:00:00+00:00",
+      "summary": "Escalating hacks affecting blood labs and grocery stores show the very real risks to critical infrastructure that come from basic security lapses involving internet-connected devices."
+    },
+    {
       "title": "SonicWall Patches Exploited SonicOS Vulnerability That Weakens VPN Logins",
       "url": "https://www.securityweek.com/sonicwall-patches-exploited-sonicos-bug-that-weakens-vpn-logins/",
       "source": "SecurityWeek",
@@ -16173,14 +16197,6 @@
       "summary": "Threat actors are attempting to exploit a recently disclosed security flaw impacting OpenSSH that can enable sign-ins to accounts that have no password set, according to Previdian.\n\nThe vulnerability, tracked as CVE-2026-123158 (CVSS score: 8.1) and codenamed SSHole (or *sshole), impacts Linux syste"
     },
     {
-      "title": "IMSI vs IMEI: What Your Phone Broadcasts and Who Can Read It",
-      "url": "https://www.bleepingcomputer.com/news/security/imsi-vs-imei-what-your-phone-broadcasts-and-who-can-read-it/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-11-06T15:00:10+00:00",
-      "summary": "IMSI and IMEI are IDs your phone shares with networks. Learn how they differ, how attackers get them, and why rotating your IMSI blunts tracking. [...]"
-    },
-    {
       "title": "OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits",
       "url": "https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html",
       "source": "The Hacker News",
@@ -16203,14 +16219,6 @@
       "category": "news",
       "published": "2026-11-06T14:30:00+00:00",
       "summary": "The U.S. is working on extraditing three suspects from Europe in a case involving more than $100 million in fraud from CEO impersonations."
-    },
-    {
-      "title": "Chainalysis says breach exposed credentials for all customers",
-      "url": "https://www.bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-11-06T14:17:07+00:00",
-      "summary": "Blockchain intelligence firm Chainalysis says a recent attack on its systems and internal tools has exposed credentials and live tokens for all customers. [...]"
     },
     {
       "title": "DigiCert Data Breach Impacts Business Customer Information",
@@ -16557,14 +16565,6 @@
       "summary": ""
     },
     {
-      "title": "Spooky New Infostealer Malware Uses AI to \u2018Autodox\u2019 Victims",
-      "url": "https://www.wired.com/story/kernel-panic-volta-autodoxer-ai-infostealer-malware/",
-      "source": "Wired Security",
-      "category": "news",
-      "published": "2026-10-31T12:00:00+00:00",
-      "summary": "Named Volta-Autodoxer, the recently uncovered malware uses AI tools to collect troves of data about victims, from login credentials and credit card numbers to Discord sessions and UberEats receipts."
-    },
-    {
       "title": "Snake Oilers: Minimal.dev, Request Rocket and TRM Labs",
       "url": "https://risky.biz/SNAKEOILERS24PT2/",
       "source": "Risky Business",
@@ -16719,8 +16719,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 75,
-    "high": 328,
+    "critical": 70,
+    "high": 322,
     "exploited": 1,
     "kev_total": 1769,
     "kev_7d": 3,
