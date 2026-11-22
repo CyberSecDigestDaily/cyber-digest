@@ -1,249 +1,11 @@
 {
-  "generated": "2026-11-21T18:53:37.287889+00:00",
+  "generated": "2026-11-22T05:51:13.261169+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>67 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>63 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2015-10149",
-      "desc": "Dancer versions before 1.3400 for Perl pass unvalidated session ids from the session cookie to the session engine.\n\nread_session_id returns the cookie value as the session id without checking its characters, and Dancer hands it to the session engine to load the session.\n\nA remote attacker may cause ",
-      "cvss": 9.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-14T20:17:39.203",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2015-10149"
-    },
-    {
-      "id": "CVE-2026-129456",
-      "desc": "In FRRouting, bgpd frees the sub-TLV chain of a Tunnel Encapsulation attribute (type 23) while routes stored by bgpd still point to it, if the attribute is received from a neighbor that has \"soft-reconfiguration inbound\" configured. A cache added to speed up attribute interning while processing the ",
-      "cvss": 0.0,
-      "vector": "",
-      "severity": "NONE",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-14T20:17:40.060",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129456"
-    },
-    {
-      "id": "CVE-2026-129351",
-      "desc": "A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. This vulnerability affects the function sprintf of the file /setup.cgi of the component mini_httpd. Such manipulation leads to out-of-bounds write. The attack can be executed remotely. The exploit has been disclosed publicly a",
-      "cvss": 10.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-14T23:16:47.753",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129351"
-    },
-    {
-      "id": "CVE-2026-129352",
-      "desc": "A vulnerability was detected in TRENDnet TEW-657BRM 1.00.1. This issue affects some unknown processing of the file /usr/sbin/upgrade_flash.cgi. Performing a manipulation of the argument boundary results in stack-based buffer overflow. The attack is possible to be carried out remotely. The exploit is",
-      "cvss": 9.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-14T23:16:48.033",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129352"
-    },
-    {
-      "id": "CVE-2026-129353",
-      "desc": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. Affected by this vulnerability is the function authenticationcgi_main of the file authentication.cgi. Performing a manipulation of the argument id/password results in stack-based buffer overflow. Remote exploitation of the attack is possi",
-      "cvss": 10.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T00:16:51.120",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129353"
-    },
-    {
-      "id": "CVE-2026-129354",
-      "desc": "A flaw has been found in D-Link DIR-600L 2.17b02. Affected by this issue is the function hnap_main of the file htdocs/cgibin of the component HNAP Handler. Executing a manipulation can lead to stack-based buffer overflow. The attack can be executed remotely. The exploit has been published and may be",
-      "cvss": 10.0,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "severity": "CRITICAL",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T01:18:03.043",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129354"
-    },
-    {
-      "id": "CVE-2026-129355",
-      "desc": "A vulnerability has been found in sigoden dufs up to 0.46.0. This affects an unknown part of the file src/server.rs of the component WebDAV COPY Operation Handler. The manipulation leads to incorrect authorization. The attack is possible to be carried out remotely. Upgrading to version 0.47.0 is abl",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T01:18:03.237",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129355"
-    },
-    {
-      "id": "CVE-2026-129356",
-      "desc": "A vulnerability was found in vllm-project vllm 0.30.0/0.31.0. This vulnerability affects unknown code of the file single_type_kv_cache_manager.py of the component Common Prefix Handler. The manipulation results in race condition. The attack may be performed from remote. Attacks of this nature are hi",
-      "cvss": 5.0,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T02:17:20.967",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129356"
-    },
-    {
-      "id": "CVE-2026-129454",
-      "desc": "Zr.Admin.NET commit 85cff6a through commit eb9228a contains an insecure direct object reference vulnerability in GET /workflow/instance/{instanceId} that lets logged-in users view others' workflow instances. Authenticated low-privilege attackers can enumerate sequential instance IDs to read other us",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T02:17:21.243",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129454"
-    },
-    {
-      "id": "CVE-2026-129455",
-      "desc": "Zr.Admin.NET commit e6ceaf4 through commit eb9228a contains an insecure direct object reference vulnerability in FrontArticleController that allows authenticated users to change other users' article visibility and pin state. Attackers can send PUT /front/article/changePublic with their own UserId in",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T02:17:21.420",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129455"
-    },
-    {
-      "id": "CVE-2026-129464",
-      "desc": "Zr.Admin.NET commit 0ee1ab8 through commit eb9228a contains a path traversal vulnerability that allows any logged-in user to read arbitrary server files via the path parameter of /common/DownloadFile. Attackers can supply absolute paths or ../ sequences to read appsettings files and use the JwtSetti",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T02:17:21.597",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129464"
-    },
-    {
-      "id": "CVE-2026-129465",
-      "desc": "Zr.Admin.NET commit af07ffc through commit eb9228a contains an insecure direct object reference vulnerability in SysProfileController.UpdateProfile that allows any authenticated user to modify other accounts via UserId. Attackers can set the administrator's phone number to one they control, request ",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T02:17:21.770",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129465"
-    },
-    {
-      "id": "CVE-2026-129466",
-      "desc": "Zr.Admin.NET commit 1845017 through commit eb9228a contains a missing authorization vulnerability in TasksController.Get that allows any logged-in user to read scheduled task details without the monitor:job permission. Attackers can obtain task ids from the unprotected /monitor/jobLog/list endpoint ",
-      "cvss": 4.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T02:17:21.943",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129466"
-    },
-    {
-      "id": "CVE-2026-129357",
-      "desc": "A vulnerability was determined in Linux Foundation Magma up to 1.9.0. This issue affects the function hostOrgMiddleware of the file nms/server/host/middleware.ts of the component Host Middleware. This manipulation of the argument role causes missing authorization. It is possible to initiate the atta",
-      "cvss": 6.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T03:16:46.377",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129357"
-    },
-    {
-      "id": "CVE-2026-129358",
-      "desc": "A vulnerability was identified in Linux Foundation Magma up to 1.9.0. Impacted is the function handleReact of the file nms/server/main/routes.ts of the component NMS. Such manipulation leads to cross site scripting. It is possible to launch the attack remotely. The exploit is publicly available and ",
-      "cvss": 2.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:N/I:L/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T03:16:51.473",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129358"
-    },
-    {
-      "id": "CVE-2026-129359",
-      "desc": "A security flaw has been discovered in Linux Foundation Magma up to 1.9.0. The affected element is an unknown function of the file orc8r/lib/go/registry/interceptors.go. Performing a manipulation results in hard-coded credentials. The attack can be initiated remotely. The exploit has been released t",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T03:16:51.997",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129359"
-    },
-    {
-      "id": "CVE-2026-129360",
-      "desc": "A weakness has been identified in Linux Foundation Magma up to 1.9.0. The impacted element is an unknown function of the file orc8r/cloud/go/services/obsidian/access/operator.go of the component Obsidian REST. Executing a manipulation of the argument X-Magma-Client-Cert-Serial can lead to authentica",
-      "cvss": 7.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-15T04:16:45.090",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129360"
-    },
     {
       "id": "CVE-2026-103361",
       "desc": "The Payment Gateway via Valitor for WooCommerce WordPress plugin before 1.9.41 does not properly validate the authenticity of payment callbacks, relying on a verification secret that ships with a hard-coded default value used by every store that has not changed it, allowing unauthenticated attackers",
@@ -702,10 +464,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00294,
-        "percentile": 0.22298
-      },
+      "epss": null,
       "published": "2026-11-15T14:17:24.497",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-125449"
     },
@@ -943,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00229,
+        "percentile": 0.13784
+      },
       "published": "2026-11-15T14:17:27.227",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129480"
     },
@@ -1405,10 +1167,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00191,
-        "percentile": 0.08733
-      },
+      "epss": null,
       "published": "2026-11-15T22:17:17.500",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-118535"
     },
@@ -1646,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00256,
+        "percentile": 0.17416
+      },
       "published": "2026-11-16T01:17:18.857",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129491"
     },
@@ -2108,10 +1870,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00157,
-        "percentile": 0.04863
-      },
+      "epss": null,
       "published": "2026-11-16T10:17:03.730",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-99300"
     },
@@ -2349,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00292,
+        "percentile": 0.22108
+      },
       "published": "2026-11-16T12:17:46.170",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-123745"
     },
@@ -2811,10 +2573,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00212,
-        "percentile": 0.11561
-      },
+      "epss": null,
       "published": "2026-11-16T12:17:56.920",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-21162"
     },
@@ -3052,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00146,
+        "percentile": 0.03795
+      },
       "published": "2026-11-16T12:17:59.303",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-67250"
     },
@@ -3514,10 +3276,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00437,
-        "percentile": 0.38763
-      },
+      "epss": null,
       "published": "2026-11-16T14:17:08.943",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-74763"
     },
@@ -3755,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00424,
+        "percentile": 0.37481
+      },
       "published": "2026-11-16T15:17:23.763",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129861"
     },
@@ -4217,10 +3979,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00188,
-        "percentile": 0.08471
-      },
+      "epss": null,
       "published": "2026-11-16T15:17:29.417",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129945"
     },
@@ -4458,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00182,
+        "percentile": 0.07793
+      },
       "published": "2026-11-16T17:17:26.173",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-100101"
     },
@@ -4920,10 +4682,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00281,
-        "percentile": 0.2095
-      },
+      "epss": null,
       "published": "2026-11-16T17:17:36.797",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-91112"
     },
@@ -5161,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00328,
+        "percentile": 0.26353
+      },
       "published": "2026-11-16T19:17:26.680",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-119347"
     },
@@ -5623,10 +5385,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00244,
-        "percentile": 0.15737
-      },
+      "epss": null,
       "published": "2026-11-16T20:19:01.350",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129304"
     },
@@ -5864,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00176,
+        "percentile": 0.07142
+      },
       "published": "2026-11-16T21:17:25.240",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-126681"
     },
@@ -6326,10 +6088,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00411,
-        "percentile": 0.36188
-      },
+      "epss": null,
       "published": "2026-11-16T22:18:23.157",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130076"
     },
@@ -6567,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00197,
+        "percentile": 0.0939
+      },
       "published": "2026-11-16T22:18:26.867",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-93671"
     },
@@ -7029,10 +6791,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00335,
-        "percentile": 0.27357
-      },
+      "epss": null,
       "published": "2026-11-17T02:17:19.243",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130364"
     },
@@ -7270,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00326,
+        "percentile": 0.26191
+      },
       "published": "2026-11-17T02:17:22.210",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130381"
     },
@@ -7732,10 +7494,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00224,
-        "percentile": 0.13096
-      },
+      "epss": null,
       "published": "2026-11-17T05:18:34.233",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-122226"
     },
@@ -7973,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00271,
+        "percentile": 0.19618
+      },
       "published": "2026-11-17T07:17:24.743",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-128038"
     },
@@ -8435,10 +8197,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00629,
-        "percentile": 0.51078
-      },
+      "epss": null,
       "published": "2026-11-17T11:17:26.493",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129275"
     },
@@ -8676,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00412,
+        "percentile": 0.36232
+      },
       "published": "2026-11-17T13:17:32.703",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-124646"
     },
@@ -9138,10 +8900,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00268,
-        "percentile": 0.19144
-      },
+      "epss": null,
       "published": "2026-11-17T15:17:40.330",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130628"
     },
@@ -9379,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00147,
+        "percentile": 0.03881
+      },
       "published": "2026-11-17T16:17:34.810",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-100977"
     },
@@ -9841,10 +9603,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00298,
-        "percentile": 0.22789
-      },
+      "epss": null,
       "published": "2026-11-17T17:17:59.657",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-126555"
     },
@@ -10082,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00448,
+        "percentile": 0.39757
+      },
       "published": "2026-11-17T18:17:56.493",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-21594"
     },
@@ -10544,10 +10306,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00171,
-        "percentile": 0.06579
-      },
+      "epss": null,
       "published": "2026-11-17T19:18:02.157",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-85646"
     },
@@ -10785,7 +10544,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00255,
+        "percentile": 0.17257
+      },
       "published": "2026-11-17T20:17:38.210",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-123352"
     },
@@ -11247,10 +11009,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00546,
-        "percentile": 0.46642
-      },
+      "epss": null,
       "published": "2026-11-17T20:17:49.967",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130848"
     },
@@ -11488,7 +11247,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00316,
+        "percentile": 0.25006
+      },
       "published": "2026-11-17T20:17:52.677",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130865"
     },
@@ -11950,10 +11712,7 @@
       "product": "Android, Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00361,
-        "percentile": 0.30532
-      },
+      "epss": null,
       "published": "2026-11-17T21:17:44.480",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130907"
     },
@@ -12191,7 +11950,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00289,
+        "percentile": 0.21766
+      },
       "published": "2026-11-17T21:17:46.803",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130924"
     },
@@ -12653,10 +12415,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00409,
-        "percentile": 0.35951
-      },
+      "epss": null,
       "published": "2026-11-17T21:17:51.713",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130957"
     },
@@ -12894,7 +12653,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00362,
+        "percentile": 0.30597
+      },
       "published": "2026-11-17T21:17:53.760",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130974"
     },
@@ -13356,10 +13118,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00238,
-        "percentile": 0.15001
-      },
+      "epss": null,
       "published": "2026-11-17T21:17:57.827",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131007"
     },
@@ -13597,7 +13356,10 @@
       "product": "Chrome, Iphone Os",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00323,
+        "percentile": 0.25804
+      },
       "published": "2026-11-17T21:18:00.017",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131024"
     },
@@ -14059,12 +13821,250 @@
       "product": "Android, Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00416,
-        "percentile": 0.36698
-      },
+      "epss": null,
       "published": "2026-11-17T21:18:04.947",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131057"
+    },
+    {
+      "id": "CVE-2026-131058",
+      "desc": "UI misrepresentation in WebAppInstalls in Google Chrome prior to 158.0.8127.36 allowed a remote attacker leveraging social engineering to spoof address bar via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 5.4,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.063",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131058"
+    },
+    {
+      "id": "CVE-2026-131059",
+      "desc": "Use after free in Autofill in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.187",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131059"
+    },
+    {
+      "id": "CVE-2026-131060",
+      "desc": "Buffer overflow in Media in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Critical)",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.310",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131060"
+    },
+    {
+      "id": "CVE-2026-131061",
+      "desc": "Buffer overflow in Color in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 9.6,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.430",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131061"
+    },
+    {
+      "id": "CVE-2026-131062",
+      "desc": "Concurrent execution with improper synchronization in ScreenCapture in Google Chrome on on Mac prior to 158.0.8127.36 allowed a remote attacker leveraging social engineering to obtain sensitive information via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Apple, Google",
+      "product": "Chrome, Macos",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.553",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131062"
+    },
+    {
+      "id": "CVE-2026-131063",
+      "desc": "Use after free in CameraCapture in Google Chrome on on Windows prior to 158.0.8127.36 allowed a remote attacker leveraging social engineering to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss": 8.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google, Microsoft",
+      "product": "Chrome, Windows",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.687",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131063"
+    },
+    {
+      "id": "CVE-2026-131064",
+      "desc": "Incorrect authorization in WebAppInstalls in Google Chrome prior to 158.0.8127.36 allowed a remote attacker leveraging social engineering to obtain cross-origin data via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.810",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131064"
+    },
+    {
+      "id": "CVE-2026-131065",
+      "desc": "Use after free in Autofill in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:05.930",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131065"
+    },
+    {
+      "id": "CVE-2026-131066",
+      "desc": "Uninitialized resource in Dawn in Google Chrome on on Android prior to 158.0.8127.36 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 4.7,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Android, Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.050",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131066"
+    },
+    {
+      "id": "CVE-2026-131067",
+      "desc": "Missing authorization in Autofill in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to potentially obtain sensitive information via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.177",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131067"
+    },
+    {
+      "id": "CVE-2026-131068",
+      "desc": "Use after free in DOM in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted Chrome extension. (Chromium security severity: High)",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.300",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131068"
+    },
+    {
+      "id": "CVE-2026-131069",
+      "desc": "Information leak in WebGL in Google Chrome on on Android prior to 158.0.8127.36 allowed a remote attacker to obtain cross-origin data via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 4.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Android, Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.420",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131069"
+    },
+    {
+      "id": "CVE-2026-131070",
+      "desc": "Information leak in DOM in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to obtain sensitive information via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.540",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131070"
+    },
+    {
+      "id": "CVE-2026-131071",
+      "desc": "Confused deputy in Mobile in Google Chrome on on Android prior to 158.0.8127.36 allowed a remote attacker to bypass web origin policy via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 8.1,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "severity": "HIGH",
+      "vendor": "Google",
+      "product": "Android, Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.660",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131071"
+    },
+    {
+      "id": "CVE-2026-131072",
+      "desc": "Incorrect authorization in HID in Google Chrome prior to 158.0.8127.36 allowed a remote attacker leveraging social engineering to leak sensitive information via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.783",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131072"
+    },
+    {
+      "id": "CVE-2026-131073",
+      "desc": "Incorrect authorization in Passwords in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to potentially obtain sensitive information via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T21:18:06.900",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131073"
+    },
+    {
+      "id": "CVE-2026-131074",
+      "desc": "Use after free in DeviceBoundSessionCredentials in Google Chrome prior to 158.0.8127.36 allowed a remote attacker to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss": 8.3,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Google",
+      "product": "Chrome",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00361,
+        "percentile": 0.30533
+      },
+      "published": "2026-11-17T21:18:07.020",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131074"
     }
   ],
   "kev": [
@@ -16043,6 +16043,22 @@
   ],
   "news": [
     {
+      "title": "FBI Investigating Apparent Hack of Its Key National Criminal Justice Database, AP Source Says",
+      "url": "https://www.securityweek.com/fbi-investigating-apparent-hack-of-its-key-national-criminal-justice-database-ap-source-says/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-11-22T00:53:02+00:00",
+      "summary": "The FBI is investigating an apparent hack of a national law enforcement database that it maintains.\nThe post FBI Investigating Apparent Hack of Its Key National Criminal Justice Database, AP Source Says appeared first on SecurityWeek."
+    },
+    {
+      "title": "Rackspace Spot breach let hackers access customer Kubernetes secrets",
+      "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/",
+      "source": "Bleeping Computer",
+      "category": "news",
+      "published": "2026-11-21T22:59:58+00:00",
+      "summary": "Rackspace warned customers that hackers breached its Rackspace Spot cloud platform using compromised credentials, allowing them to deploy unauthorized workloads and access Kubernetes secrets in customer clusters. [...]"
+    },
+    {
       "title": "Microsoft Entra Connect Health flaw exploited to steal tenant data",
       "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/",
       "source": "Bleeping Computer",
@@ -16065,6 +16081,14 @@
       "category": "news",
       "published": "2026-11-21T14:26:04+00:00",
       "summary": "FBI systems have reportedly been breached for the second time in two months, this time targeting the agency's National Crime Information Center (NCIC), which is used to share information between local, state, and federal law enforcement agencies. [...]"
+    },
+    {
+      "title": "President Trump Taps Kirsten Davies as National Cyber Director",
+      "url": "https://www.securityweek.com/president-trump-taps-kirsten-davies-as-national-cyber-director/",
+      "source": "SecurityWeek",
+      "category": "news",
+      "published": "2026-11-21T13:00:00+00:00",
+      "summary": "White House says the battle-tested cyber leader will drive an America First cyber strategy.\nThe post President Trump Taps Kirsten Davies as National Cyber Director appeared first on SecurityWeek."
     },
     {
       "title": "The Outages Are Just Getting Started",
@@ -16275,14 +16299,6 @@
       "summary": "A new Rubrik report has shown that ransomware victims face 20-day median recovery time, with 28% of recovery cases taking longer than six weeks"
     },
     {
-      "title": "N-able says recent security breach led to major service outage",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/n-able-says-recent-security-breach-led-to-major-service-outage/",
-      "source": "Bleeping Computer",
-      "category": "news",
-      "published": "2026-11-20T13:18:36+00:00",
-      "summary": "N-able says attackers who breached one of its servers have caused a major outage affecting Mail Assure and SpamExperts Hosted Cloud services worldwide. [...]"
-    },
-    {
       "title": "Industry Reactions to Major Outages and AI Patching Debate: Feedback Friday",
       "url": "https://www.securityweek.com/industry-reactions-to-major-outages-and-ai-patching-questions-feedback-friday/",
       "source": "SecurityWeek",
@@ -16321,22 +16337,6 @@
       "category": "news",
       "published": "2026-11-20T10:51:42+00:00",
       "summary": "The Commission took certain services offline to contain the incident, but it has no evidence of a data breach.\nThe post European Commission Confirms AI-Assisted Cyberattack Disrupted Services appeared first on SecurityWeek."
-    },
-    {
-      "title": "Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE",
-      "url": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-11-20T10:34:10+00:00",
-      "summary": "Tracked as CVE-2026-132825, the bug is a heap-based buffer overflow that could lead to remote code execution (RCE).\nThe post Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE appeared first on SecurityWeek."
-    },
-    {
-      "title": "N-able Blames Service Disruption on Cyberattack",
-      "url": "https://www.securityweek.com/n-able-blames-service-disruption-on-cyberattack/",
-      "source": "SecurityWeek",
-      "category": "news",
-      "published": "2026-11-20T09:08:35+00:00",
-      "summary": "The incident affected Mail Assure and SpamExperts Hosted Cloud and could have led to credential theft.\nThe post N-able Blames Service Disruption on Cyberattack appeared first on SecurityWeek."
     },
     {
       "title": "Suspected North Korea-Aligned Group Hides C2 on Solana Blockchain",
@@ -16725,8 +16725,8 @@
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 67,
-    "high": 288,
+    "critical": 63,
+    "high": 291,
     "exploited": 1,
     "kev_total": 1790,
     "kev_7d": 9,
