@@ -1,207 +1,11 @@
 {
-  "generated": "2026-11-22T23:25:25.445044+00:00",
+  "generated": "2026-11-23T06:38:14.249204+00:00",
   "urgency": {
     "level": "CRITICAL",
     "colour": "#D94F4F",
-    "message": "<strong>62 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
+    "message": "<strong>63 critical CVE(s)</strong> and <strong>9 new KEV addition(s)</strong> in the last 7 days. Review immediately."
   },
   "cves": [
-    {
-      "id": "CVE-2026-129491",
-      "desc": "Qbian61 forum-java commit 20f7e68 through commit 63152c4 contains a stored cross-site scripting vulnerability that allows authenticated users to inject script by posting unsanitized comment content rendered via jQuery .html() in the reply dialog. Attackers can post comments with img onerror payloads",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T01:17:18.857",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129491"
-    },
-    {
-      "id": "CVE-2026-129492",
-      "desc": "Bolo (bolo-solo) 1.7 through 2.6.4 contains a stored cross-site scripting vulnerability that allows unauthenticated attackers to inject scripts via the unsanitized commentOriginalCommentName parameter. Attackers can post a comment to /article/comments with a short payload that steals non-HttpOnly se",
-      "cvss": 6.1,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T01:17:19.737",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129492"
-    },
-    {
-      "id": "CVE-2026-129493",
-      "desc": "Bolo (bolo-solo) 1.7 through 2.6.4 contains an information disclosure vulnerability that allows unauthenticated attackers to read article view passwords via the public GET /articles endpoint. Attackers can retrieve the plaintext articleViewPwd field returned by ArticleProcessor.getArticlesByPage and",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T01:17:19.897",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129493"
-    },
-    {
-      "id": "CVE-2026-129494",
-      "desc": "CloudPaste 1.1.0 through 1.9.1 contains an information disclosure vulnerability that allows unauthenticated attackers to obtain WebDAV storage credentials through the unauthenticated /api/proxy/link endpoint. Attackers who know a public share slug can retrieve the Basic Authorization header containi",
-      "cvss": 7.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T01:17:20.053",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129494"
-    },
-    {
-      "id": "CVE-2026-129539",
-      "desc": "SSCMS 7.2.0 through 7.4.0 contains an arbitrary file read vulnerability that allows any registered user-center account to copy server files by supplying source paths to the layerImageUpload endpoint. Attackers can send siteId 0 with crafted filePaths entries to copy configuration files into their pu",
-      "cvss": 6.5,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T02:17:11.940",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129539"
-    },
-    {
-      "id": "CVE-2026-129540",
-      "desc": "VoAPI 1.0.0 through 1.2.0 contains a sql injection vulnerability that allows authenticated users to inject SQL by supplying crafted column names as search[...] filter keys on list endpoints such as GET /api/log. Attackers can read the HS256 JWT signing secret from the option table and forge a manage",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T02:17:12.100",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129540"
-    },
-    {
-      "id": "CVE-2026-129541",
-      "desc": "EdgeChat 2.5.0 through 2.21.0 contains a cross-site scripting vulnerability that allows invited users to inject HTML through unescaped usernames in the Vditor @-mention autocomplete. Attackers can register with a username containing an img onerror payload that executes when mentioned, stealing the l",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T02:17:12.273",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129541"
-    },
-    {
-      "id": "CVE-2026-129542",
-      "desc": "Files or directories accessible to external parties vulnerability in Samsung Open Source Starfish allows Probe System Files.",
-      "cvss": 3.1,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
-      "severity": "LOW",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T02:17:12.427",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129542"
-    },
-    {
-      "id": "CVE-2026-129543",
-      "desc": "Access of resource using incompatible type ('type confusion') vulnerability in Samsung Open Source Starfish allows Input Data Manipulation.",
-      "cvss": 6.4,
-      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:H",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T02:17:12.557",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129543"
-    },
-    {
-      "id": "CVE-2026-107520",
-      "desc": "Dell PowerStore contains a stored cross-site scripting (XSS) vulnerability. A low-privileged authenticated attacker could exploit this vulnerability, potentially leading to execution of malicious script in a higher-privileged user's session.",
-      "cvss": 5.4,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T04:16:44.033",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-107520"
-    },
-    {
-      "id": "CVE-2026-82156",
-      "desc": "Dell PowerStore contains an authorization-bypass vulnerability. A low-privileged attacker could exploit it, potentially leading to elevation of privilege to administrator.",
-      "cvss": 8.8,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T04:16:44.230",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82156"
-    },
-    {
-      "id": "CVE-2026-121786",
-      "desc": "The Social Viral Downloader WordPress plugin through 2.0.3 does not have authorisation or nonce checks on a log export action available to unauthenticated users, which could allow them to export the download log, including registered users' email addresses and IP addresses, to a publicly accessible ",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T06:16:48.253",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-121786"
-    },
-    {
-      "id": "CVE-2026-121787",
-      "desc": "The Social Viral Downloader WordPress plugin through 2.0.3 does not have authorisation or nonce checks on a log deletion action available to unauthenticated users, which could allow them to delete the Social Viral Downloader WordPress plugin through 2.0.3's entire download log.",
-      "cvss": 5.3,
-      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-      "severity": "MEDIUM",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T06:16:49.073",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-121787"
-    },
-    {
-      "id": "CVE-2026-129606",
-      "desc": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in Samsung Open Source mTower allows Overflow Buffers.",
-      "cvss": 7.1,
-      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
-      "severity": "HIGH",
-      "vendor": "",
-      "product": "",
-      "exploited": false,
-      "kev": false,
-      "epss": null,
-      "published": "2026-11-16T06:16:49.183",
-      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129606"
-    },
     {
       "id": "CVE-2026-105925",
       "desc": "A denial of service vulnerability in the Qt QXmlSimpleReader class of the Qt 5 Core Compatibility APIs module (Qt 6) and the Qt XML module (Qt 5).",
@@ -702,10 +506,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00298,
-        "percentile": 0.22842
-      },
+      "epss": null,
       "published": "2026-11-16T12:17:43.347",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-116288"
     },
@@ -901,7 +702,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00149,
+        "percentile": 0.04033
+      },
       "published": "2026-11-16T12:17:53.860",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-21141"
     },
@@ -1405,10 +1209,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00129,
-        "percentile": 0.02524
-      },
+      "epss": null,
       "published": "2026-11-16T12:17:59.187",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-63246"
     },
@@ -1604,7 +1405,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00427,
+        "percentile": 0.37738
+      },
       "published": "2026-11-16T13:17:20.297",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-113453"
     },
@@ -2108,10 +1912,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00635,
-        "percentile": 0.51417
-      },
+      "epss": null,
       "published": "2026-11-16T15:17:23.580",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129860"
     },
@@ -2307,7 +2108,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00563,
+        "percentile": 0.47689
+      },
       "published": "2026-11-16T15:17:26.043",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-129874"
     },
@@ -2811,10 +2615,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0025,
-        "percentile": 0.16491
-      },
+      "epss": null,
       "published": "2026-11-16T16:17:53.347",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-32789"
     },
@@ -3010,7 +2811,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00159,
+        "percentile": 0.0502
+      },
       "published": "2026-11-16T17:17:28.280",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-108169"
     },
@@ -3514,10 +3318,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00301,
-        "percentile": 0.23246
-      },
+      "epss": null,
       "published": "2026-11-16T19:17:26.453",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-119346"
     },
@@ -3713,7 +3514,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00511,
+        "percentile": 0.44484
+      },
       "published": "2026-11-16T19:17:35.103",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-127218"
     },
@@ -4217,10 +4021,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00086,
-        "percentile": 0.00287
-      },
+      "epss": null,
       "published": "2026-11-16T21:17:21.397",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-124017"
     },
@@ -4416,7 +4217,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00196,
+        "percentile": 0.09244
+      },
       "published": "2026-11-16T22:18:15.597",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-123353"
     },
@@ -4920,10 +4724,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00141,
-        "percentile": 0.0341
-      },
+      "epss": null,
       "published": "2026-11-16T22:18:26.720",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-93670"
     },
@@ -5119,7 +4920,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00273,
+        "percentile": 0.19972
+      },
       "published": "2026-11-17T02:17:15.727",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130344"
     },
@@ -5623,10 +5427,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00587,
-        "percentile": 0.48953
-      },
+      "epss": null,
       "published": "2026-11-17T02:17:22.037",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130380"
     },
@@ -5822,7 +5623,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00356,
+        "percentile": 0.29943
+      },
       "published": "2026-11-17T05:18:29.513",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-105739"
     },
@@ -6326,10 +6130,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00648,
-        "percentile": 0.52024
-      },
+      "epss": null,
       "published": "2026-11-17T07:17:23.257",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-107904"
     },
@@ -6525,7 +6326,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00235,
+        "percentile": 0.14475
+      },
       "published": "2026-11-17T09:17:27.560",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-35190"
     },
@@ -7029,10 +6833,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0049,
-        "percentile": 0.43032
-      },
+      "epss": null,
       "published": "2026-11-17T13:17:32.560",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-124645"
     },
@@ -7228,7 +7029,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00424,
+        "percentile": 0.37493
+      },
       "published": "2026-11-17T14:17:45.317",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130587"
     },
@@ -7732,10 +7536,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00131,
-        "percentile": 0.02714
-      },
+      "epss": null,
       "published": "2026-11-17T16:17:34.680",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-100976"
     },
@@ -7931,7 +7732,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00128,
+        "percentile": 0.02468
+      },
       "published": "2026-11-17T16:17:40.530",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-122145"
     },
@@ -8435,10 +8239,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.01216,
-        "percentile": 0.69357
-      },
+      "epss": null,
       "published": "2026-11-17T18:17:56.373",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-21593"
     },
@@ -8634,7 +8435,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00322,
+        "percentile": 0.25734
+      },
       "published": "2026-11-17T18:17:59.280",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-84974"
     },
@@ -9138,10 +8942,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00211,
-        "percentile": 0.11289
-      },
+      "epss": null,
       "published": "2026-11-17T20:17:38.063",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-123351"
     },
@@ -9337,7 +9138,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00158,
+        "percentile": 0.04995
+      },
       "published": "2026-11-17T20:17:46.153",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130799"
     },
@@ -9841,10 +9645,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0028,
-        "percentile": 0.20754
-      },
+      "epss": null,
       "published": "2026-11-17T20:17:52.520",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130864"
     },
@@ -10040,7 +9841,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00267,
+        "percentile": 0.19013
+      },
       "published": "2026-11-17T20:17:56.343",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-82038"
     },
@@ -10544,10 +10348,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0037,
-        "percentile": 0.31522
-      },
+      "epss": null,
       "published": "2026-11-17T21:17:46.677",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130923"
     },
@@ -10743,7 +10544,10 @@
       "product": "Chrome, Iphone Os",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00269,
+        "percentile": 0.19353
+      },
       "published": "2026-11-17T21:17:49.220",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130937"
     },
@@ -11247,10 +11051,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00258,
-        "percentile": 0.17647
-      },
+      "epss": null,
       "published": "2026-11-17T21:17:53.640",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130973"
     },
@@ -11446,7 +11247,10 @@
       "product": "Chrome, Windows",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00305,
+        "percentile": 0.23698
+      },
       "published": "2026-11-17T21:17:55.370",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-130987"
     },
@@ -11950,10 +11754,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00265,
-        "percentile": 0.18589
-      },
+      "epss": null,
       "published": "2026-11-17T21:17:59.877",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131023"
     },
@@ -12149,7 +11950,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00462,
+        "percentile": 0.40865
+      },
       "published": "2026-11-17T21:18:01.653",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131037"
     },
@@ -12653,10 +12457,7 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00291,
-        "percentile": 0.21995
-      },
+      "epss": null,
       "published": "2026-11-17T21:18:06.900",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131073"
     },
@@ -12852,7 +12653,10 @@
       "product": "Chrome",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00367,
+        "percentile": 0.31155
+      },
       "published": "2026-11-17T21:18:08.573",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-131087"
     },
@@ -13356,10 +13160,7 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.0036,
-        "percentile": 0.30383
-      },
+      "epss": null,
       "published": "2026-11-17T22:18:04.460",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-101691"
     },
@@ -13555,7 +13356,10 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": null,
+      "epss": {
+        "epss": 0.00373,
+        "percentile": 0.31961
+      },
       "published": "2026-11-17T22:18:06.273",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114788"
     },
@@ -14059,12 +13863,208 @@
       "product": "",
       "exploited": false,
       "kev": false,
-      "epss": {
-        "epss": 0.00483,
-        "percentile": 0.42461
-      },
+      "epss": null,
       "published": "2026-11-17T22:18:10.630",
       "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114826"
+    },
+    {
+      "id": "CVE-2026-114827",
+      "desc": "Vulnerability in the Oracle Managed File Transfer product of Oracle Fusion Middleware (component: MFT Runtime Server).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Orac",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:10.743",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114827"
+    },
+    {
+      "id": "CVE-2026-114828",
+      "desc": "Vulnerability in the Oracle Hyperion Infrastructure Technology product of Oracle Hyperion (component: Installation and Configuration).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Ora",
+      "cvss": 7.8,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:10.863",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114828"
+    },
+    {
+      "id": "CVE-2026-114829",
+      "desc": "Vulnerability in the Oracle Enterprise Manager Base Platform product of Oracle Enterprise Manager (component: Job System).  Supported versions that are affected are 13.5 and  24.1. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Enter",
+      "cvss": 8.8,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "severity": "HIGH",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:10.980",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114829"
+    },
+    {
+      "id": "CVE-2026-114830",
+      "desc": "Vulnerability in the Oracle Enterprise Manager Base Platform product of Oracle Enterprise Manager (component: Agent Next Gen).  Supported versions that are affected are 13.5 and  24.1. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Enter",
+      "cvss": 6.1,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.107",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114830"
+    },
+    {
+      "id": "CVE-2026-114831",
+      "desc": "Vulnerability in the Helidon product of Oracle Fusion Middleware (component: helidon-webserver-static-content).  Supported versions that are affected are 3.0.0-3.2.22, 4.0.0-4.5.6 and 27.0.0-27.0.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTP to co",
+      "cvss": 3.7,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "severity": "LOW",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.223",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114831"
+    },
+    {
+      "id": "CVE-2026-114832",
+      "desc": "Vulnerability in the Helidon product of Oracle Fusion Middleware (component: helidon-security-jwt).  Supported versions that are affected are 3.0.0-3.2.22. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to compromise Helidon.  Successful attacks of thi",
+      "cvss": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.343",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114832"
+    },
+    {
+      "id": "CVE-2026-114833",
+      "desc": "Vulnerability in the Helidon product of Oracle Fusion Middleware (component: helidon-security).  Supported versions that are affected are 3.0.0-3.2.22 and 4.0.0-4.5.6. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Helidon.  Successful att",
+      "cvss": 5.3,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.460",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114833"
+    },
+    {
+      "id": "CVE-2026-114834",
+      "desc": "Vulnerability in the Helidon product of Oracle Fusion Middleware (component: helidon-data-jakarta-persistence).  Supported versions that are affected are 4.0.0-4.5.6 and 27.0.0-27.0.1. Easily exploitable vulnerability allows low privileged attacker with logon to the infrastructure where Helidon exec",
+      "cvss": 3.3,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "severity": "LOW",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.577",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114834"
+    },
+    {
+      "id": "CVE-2026-114835",
+      "desc": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Admin Console).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Access M",
+      "cvss": 10.0,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "severity": "CRITICAL",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.710",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114835"
+    },
+    {
+      "id": "CVE-2026-114836",
+      "desc": "Vulnerability in the Oracle Financial Services Enterprise Case Management product of Oracle Financial Services Applications (component: Web UI).   The supported version that is affected is 8.1.2.10. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to com",
+      "cvss": 6.8,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.830",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114836"
+    },
+    {
+      "id": "CVE-2026-114837",
+      "desc": "Vulnerability in the Oracle Financial Services Enterprise Case Management product of Oracle Financial Services Applications (component: Web UI).   The supported version that is affected is 8.1.2.10. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to com",
+      "cvss": 6.8,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:11.957",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114837"
+    },
+    {
+      "id": "CVE-2026-114838",
+      "desc": "Vulnerability in the Oracle Financial Services Enterprise Case Management product of Oracle Financial Services Applications (component: Web UI).   The supported version that is affected is 8.1.2.10. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTP to com",
+      "cvss": 6.8,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:12.077",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114838"
+    },
+    {
+      "id": "CVE-2026-114839",
+      "desc": "Vulnerability in the Oracle Financial Services Enterprise Case Management product of Oracle Financial Services Applications (component: Installer).   The supported version that is affected is 8.1.2.10. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastructure ",
+      "cvss": 4.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": null,
+      "published": "2026-11-17T22:18:12.200",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114839"
+    },
+    {
+      "id": "CVE-2026-114840",
+      "desc": "Vulnerability in the Oracle Financial Services Regulatory Reporting product of Oracle Financial Services Applications (component: Internal Operations).   The supported version that is affected is 8.1.2.10. Easily exploitable vulnerability allows high privileged attacker with logon to the infrastruct",
+      "cvss": 4.4,
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "severity": "MEDIUM",
+      "vendor": "Oracle",
+      "product": "",
+      "exploited": false,
+      "kev": false,
+      "epss": {
+        "epss": 0.00154,
+        "percentile": 0.04454
+      },
+      "published": "2026-11-17T22:18:12.320",
+      "nvdUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-114840"
     }
   ],
   "kev": [
@@ -16043,6 +16043,22 @@
   ],
   "news": [
     {
+      "title": "ISC Stormcast For Monday, November 23rd, 2026 https://isc.sans.edu/podcastdetail/10190, (Mon, Nov 23rd)",
+      "url": "https://isc.sans.edu/diary/rss/33548",
+      "source": "SANS ISC Diary",
+      "category": "news",
+      "published": "2026-11-23T02:00:04+00:00",
+      "summary": ""
+    },
+    {
+      "title": "Soap Box: Do AI agents need their own identities?",
+      "url": "https://risky.biz/SOAPBOX113/",
+      "source": "Risky Business",
+      "category": "news",
+      "published": "2026-11-23T01:09:45+00:00",
+      "summary": "In this sponsored Soap Box edition of the Risky Business podcast Patrick Gray chats with Fletcher Heisler, the CEO of open source IDP company Authentik.\n\nDo AI agents need their own identities? Or can we scope agent actions and authorisations in different ways?\n\nIt\u2019s a fast moving space and lots of "
+    },
+    {
       "title": "Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices",
       "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/",
       "source": "Bleeping Computer",
@@ -16193,6 +16209,14 @@
       "category": "news",
       "published": "2026-11-21T08:49:13+00:00",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added four flaws impacting Apache Roller, Cisco Expressway, SAP NetWeaver, and Broadcom VMware vCenter to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation.\n\nThe vulnerabilities are listed belo"
+    },
+    {
+      "title": "How Security Vendors Are Tackling Access-Control Challenges for AI Agents",
+      "url": "https://www.darkreading.com/identity-access-management-security/ai-agents-bring-enterprises-new-access-control-challenges",
+      "source": "Dark Reading",
+      "category": "news",
+      "published": "2026-11-21T01:31:23+00:00",
+      "summary": "Identity, runtime and development controls are converging as enterprises are tasked with keeping agents within their assigned tasks. But vendors' approaches vary, so CISOs face a choice."
     },
     {
       "title": "CTO of \u2018RansomwareHelp\u2019 Indicted for Wire Fraud",
@@ -16395,14 +16419,6 @@
       "summary": "November's monthly security release patches seven critical PHP flaws that should be addressed ASAP, though experts say exploitability varies and depends heavily on configuration."
     },
     {
-      "title": "Navigating Vulnerability Hysteria in the AI Era",
-      "url": "https://www.darkreading.com/vulnerabilities-threats/navigating-vulnerability-hysteria-ai-era",
-      "source": "Dark Reading",
-      "category": "news",
-      "published": "2026-11-19T19:46:44+00:00",
-      "summary": "This installment of the Reporters' Notebook video series examines the fallout from recent high-severity flaw disclosures, exploring how fears of AI-assisted exploits trigger widespread panic, operational disruptions, and growing warning fatigue."
-    },
-    {
       "title": "Google Built a Giant \u2018Mirror Dimension\u2019 Internet to Test Its Chrome AI Agents",
       "url": "https://www.wired.com/story/google-built-a-giant-mirror-dimension-internet-to-test-its-chrome-ai-agents/",
       "source": "Wired Security",
@@ -16529,14 +16545,6 @@
       "category": "news",
       "published": "2026-11-17T10:56:38+00:00",
       "summary": "I&&#x23&#x3b;x26&#x3b;&#x23&#x3b;xe2&#x3b;&&#x23&#x3b;x26&#x3b;&#x23&#x3b;x80&#x3b;&&#x23&#x3b;x26&#x3b;&#x23&#x3b;x99&#x3b;ve mentioned before in some of my diaries that it can be instructive to look at what appear to be &&#x23&#x3b;x26&#x3b;&#x23&#x3b;xe2&#x3b;&&#x23&#x3b;x26&#x3b;&#x23&#x3b;x80&#"
-    },
-    {
-      "title": "ISC Stormcast For Tuesday, November 17th, 2026 https://isc.sans.edu/podcastdetail/10182, (Tue, Nov 17th)",
-      "url": "https://isc.sans.edu/diary/rss/33524",
-      "source": "SANS ISC Diary",
-      "category": "news",
-      "published": "2026-11-17T02:05:15+00:00",
-      "summary": ""
     },
     {
       "title": "The Bank Outage May Have Nothing to Do With Your Bank",
@@ -16713,20 +16721,12 @@
       "category": "news",
       "published": "2026-10-15T12:00:00+00:00",
       "summary": "The NCSC publishes its recommendations for configuring post-quantum cryptography in TLS. Now is time to migrate."
-    },
-    {
-      "title": "Risky Business #855 -- ShinyHunters done sowing, enters reaping phase",
-      "url": "https://risky.biz/RB855/",
-      "source": "Risky Business",
-      "category": "news",
-      "published": "2026-10-14T04:35:49+00:00",
-      "summary": "On this week\u2019s show Patrick Gray and James Wilson are joined by special guest co-host Brad Arkin to talk through the week\u2019s cybersecurity news, including:\n\n\n  Sacr\u00e9 bleu! Hackers turn up the heat at French supermarket freezers\n  ShinyHunters enters \u201cfind out\u201d stage\n  Netscaler, Zimbra, SharePoint, A"
     }
   ],
   "stats": {
     "total_cves": 1000,
-    "critical": 62,
-    "high": 294,
+    "critical": 63,
+    "high": 292,
     "exploited": 1,
     "kev_total": 1790,
     "kev_7d": 9,
